@@ -1,0 +1,512 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"projectId\":\"17851586266903645615\",\"sessionId\":\"8588287783672702756\",\"outputComponents\":[{\"designSystem\":{\"name\":\"assets/5c32343eabb748289b6865a4654fa3f0\",\"designSystem\":{\"displayName\":\"Lumina Grid\",\"styleGuidelines\":\"## Brand & Style\\n\\nThe design system is engineered for high-stakes energy monitoring environments where precision and speed of interpretation are paramount. The brand personality is authoritative, sophisticated, and technologically advanced, evoking the feeling of a modern mission control center. \\n\\nThe aesthetic leans into a **Corporate Modern** style with subtle **Minimalist** influences. It prioritizes data density without sacrificing legibility. Visual weight is managed through a strict hierarchy of slate tones, ensuring that the emerald green accents act as beacons for critical information and system health. The overall interface should feel \\\"engineered\\\"—every pixel serves a functional purpose in the pursuit of energy efficiency.\\n\\n## Layout & Spacing\\n\\nThe layout philosophy follows a **Fluid Grid** model to accommodate the varied screen sizes of control room monitors and tablets. It uses a 12-column grid with a consistent 20px gutter.\\n\\nSpacing is governed by a 4px base unit. Internal card padding should default to 24px (lg) to give complex charts room to breathe. Use 16px (md) spacing between dashboard widgets. High-density data tables may drop to 8px (sm) vertical padding to maximize information density on the \\\"Y\\\" axis.\\n\\n## Elevation & Depth\\n\\nHierarchy is established using **Tonal Layers** combined with **Low-contrast Outlines**. Rather than aggressive shadows, this design system uses color-based depth:\\n\\n1.  **Level 0 (Background):** #0f172a - The base canvas.\\n2.  **Level 1 (Cards/Panels):** #1e293b - Main containers, slightly elevated visually by a 1px border (#334155).\\n3.  **Level 2 (Popovers/Modals):** #334155 - Floating elements that use a subtle, 15% opacity black shadow with a 20px blur to indicate focus.\\n\\nInteraction states (hover/active) should be signaled by increasing the border brightness or adding a faint inner glow using the primary emerald green color.\\n\\n## Components\\n\\n- **Buttons:** Primary buttons use a solid Emerald (#059669) fill with white text. Secondary buttons are ghost-style with a Slate-400 border.\\n- **Cards:** Dashboard widgets must have a 1px border (#334155) and a title area separated by a subtle horizontal rule.\\n- **Inputs:** Dark fills (#0f172a) with a 1px slate border. On focus, the border transitions to Emerald with a 2px outer glow.\\n- **Chips:** Used for status (e.g., \\\"Grid Online\\\"). They should use a low-opacity emerald background with high-opacity emerald text for a \\\"glass\\\" look.\\n- **Metrics/KPIs:** Large numerical displays should be accompanied by a small sparkline chart or a percentage change indicator.\\n- **Data Tables:** Row-based with alternating subtle backgrounds; borders are horizontal only to emphasize the flow of data.\\n- **Toggle Switches:** Small and refined, using the emerald color for the \\\"on\\\" state to signify active energy flow.\",\"theme\":{\"colorMode\":\"DARK\",\"font\":\"INTER\",\"roundness\":\"ROUND_FOUR\",\"customColor\":\"#059669\",\"headlineFont\":\"INTER\",\"bodyFont\":\"INTER\",\"labelFont\":\"INTER\",\"namedColors\":{\"background\":\"#0f1511\",\"error\":\"#ffb4ab\",\"error_container\":\"#93000a\",\"inverse_on_surface\":\"#2c322e\",\"inverse_primary\":\"#006c4a\",\"inverse_surface\":\"#dee4de\",\"on_background\":\"#dee4de\",\"on_error\":\"#690005\",\"on_error_container\":\"#ffdad6\",\"on_primary\":\"#003825\",\"on_primary_container\":\"#00311f\",\"on_primary_fixed\":\"#002114\",\"on_primary_fixed_variant\":\"#005137\",\"on_secondary\":\"#213145\",\"on_secondary_container\":\"#a9bad3\",\"on_secondary_fixed\":\"#0b1c30\",\"on_secondary_fixed_variant\":\"#38485d\",\"on_surface\":\"#dee4de\",\"on_surface_variant\":\"#bccac0\",\"on_tertiary\":\"#601214\",\"on_tertiary_container\":\"#570b0e\",\"on_tertiary_fixed\":\"#410004\",\"on_tertiary_fixed_variant\":\"#7f2928\",\"outline\":\"#87948b\",\"outline_variant\":\"#3d4a42\",\"primary\":\"#68dba9\",\"primary_container\":\"#25a475\",\"primary_fixed\":\"#85f8c4\",\"primary_fixed_dim\":\"#68dba9\",\"secondary\":\"#b7c8e1\",\"secondary_container\":\"#3a4a5f\",\"secondary_fixed\":\"#d3e4fe\",\"secondary_fixed_dim\":\"#b7c8e1\",\"surface\":\"#0f1511\",\"surface_bright\":\"#343b37\",\"surface_container\":\"#1b211d\",\"surface_container_high\":\"#252b28\",\"surface_container_highest\":\"#303632\",\"surface_container_low\":\"#171d19\",\"surface_container_lowest\":\"#0a0f0c\",\"surface_dim\":\"#0f1511\",\"surface_tint\":\"#68dba9\",\"surface_variant\":\"#303632\",\"tertiary\":\"#ffb3ae\",\"tertiary_container\":\"#dd706b\",\"tertiary_fixed\":\"#ffdad7\",\"tertiary_fixed_dim\":\"#ffb3ae\"},\"designMd\":\"---\\nname: Lumina Grid\\ncolors:\\n  surface: '#0f1511'\\n  surface-dim: '#0f1511'\\n  surface-bright: '#343b37'\\n  surface-container-lowest: '#0a0f0c'\\n  surface-container-low: '#171d19'\\n  surface-container: '#1b211d'\\n  surface-container-high: '#252b28'\\n  surface-container-highest: '#303632'\\n  on-surface: '#dee4de'\\n  on-surface-variant: '#bccac0'\\n  inverse-surface: '#dee4de'\\n  inverse-on-surface: '#2c322e'\\n  outline: '#87948b'\\n  outline-variant: '#3d4a42'\\n  surface-tint: '#68dba9'\\n  primary: '#68dba9'\\n  on-primary: '#003825'\\n  primary-container: '#25a475'\\n  on-primary-container: '#00311f'\\n  inverse-primary: '#006c4a'\\n  secondary: '#b7c8e1'\\n  on-secondary: '#213145'\\n  secondary-container: '#3a4a5f'\\n  on-secondary-container: '#a9bad3'\\n  tertiary: '#ffb3ae'\\n  on-tertiary: '#601214'\\n  tertiary-container: '#dd706b'\\n  on-tertiary-container: '#570b0e'\\n  error: '#ffb4ab'\\n  on-error: '#690005'\\n  error-container: '#93000a'\\n  on-error-container: '#ffdad6'\\n  primary-fixed: '#85f8c4'\\n  primary-fixed-dim: '#68dba9'\\n  on-primary-fixed: '#002114'\\n  on-primary-fixed-variant: '#005137'\\n  secondary-fixed: '#d3e4fe'\\n  secondary-fixed-dim: '#b7c8e1'\\n  on-secondary-fixed: '#0b1c30'\\n  on-secondary-fixed-variant: '#38485d'\\n  tertiary-fixed: '#ffdad7'\\n  tertiary-fixed-dim: '#ffb3ae'\\n  on-tertiary-fixed: '#410004'\\n  on-tertiary-fixed-variant: '#7f2928'\\n  background: '#0f1511'\\n  on-background: '#dee4de'\\n  surface-variant: '#303632'\\ntypography:\\n  display:\\n    fontFamily: Inter\\n    fontSize: 48px\\n    fontWeight: '700'\\n    lineHeight: '1.1'\\n    letterSpacing: -0.02em\\n  h1:\\n    fontFamily: Inter\\n    fontSize: 32px\\n    fontWeight: '600'\\n    lineHeight: '1.2'\\n    letterSpacing: -0.01em\\n  h2:\\n    fontFamily: Inter\\n    fontSize: 24px\\n    fontWeight: '600'\\n    lineHeight: '1.3'\\n  h3:\\n    fontFamily: Inter\\n    fontSize: 20px\\n    fontWeight: '600'\\n    lineHeight: '1.4'\\n  body-lg:\\n    fontFamily: Inter\\n    fontSize: 18px\\n    fontWeight: '400'\\n    lineHeight: '1.6'\\n  body-md:\\n    fontFamily: Inter\\n    fontSize: 16px\\n    fontWeight: '400'\\n    lineHeight: '1.5'\\n  body-sm:\\n    fontFamily: Inter\\n    fontSize: 14px\\n    fontWeight: '400'\\n    lineHeight: '1.5'\\n  label-caps:\\n    fontFamily: Inter\\n    fontSize: 12px\\n    fontWeight: '600'\\n    lineHeight: '1'\\n    letterSpacing: 0.05em\\n  mono-metric:\\n    fontFamily: Inter\\n    fontSize: 28px\\n    fontWeight: '500'\\n    lineHeight: '1'\\n    letterSpacing: -0.02em\\nrounded:\\n  sm: 0.125rem\\n  DEFAULT: 0.25rem\\n  md: 0.375rem\\n  lg: 0.5rem\\n  xl: 0.75rem\\n  full: 9999px\\nspacing:\\n  unit: 4px\\n  xs: 4px\\n  sm: 8px\\n  md: 16px\\n  lg: 24px\\n  xl: 32px\\n  gutter: 20px\\n  margin: 24px\\n---\\n\\n## Brand & Style\\n\\nThe design system is engineered for high-stakes energy monitoring environments where precision and speed of interpretation are paramount. The brand personality is authoritative, sophisticated, and technologically advanced, evoking the feeling of a modern mission control center. \\n\\nThe aesthetic leans into a **Corporate Modern** style with subtle **Minimalist** influences. It prioritizes data density without sacrificing legibility. Visual weight is managed through a strict hierarchy of slate tones, ensuring that the emerald green accents act as beacons for critical information and system health. The overall interface should feel \\\"engineered\\\"—every pixel serves a functional purpose in the pursuit of energy efficiency.\\n\\n## Colors\\n\\nThe palette for this design system is rooted in a deep slate foundation to reduce eye strain during extended monitoring periods. \\n\\n- **Primary Emerald (#059669):** Reserved for primary actions, active energy flow states, and positive performance metrics.\\n- **Surface & Background:** The background uses a dark slate (#0f172a), while component surfaces use a slightly lighter slate (#1e293b) to create subtle depth.\\n- **Functional Grays:** Supporting grays (Slate 400-600) manage secondary information and structural borders, ensuring the UI remains cohesive and professional.\\n- **Semantic States:** Use a muted amber for warnings and a crisp red for critical grid failures, though these should be used sparingly to maintain the primary green's dominance.\\n\\n## Typography\\n\\nThis design system utilizes the **Inter** font family exclusively to leverage its exceptional readability on high-resolution screens. \\n\\nThe typographic scale is designed for rapid data scanning. **Headline** styles are tight and bold to define clear section breaks. **Body** text remains neutral to facilitate long-form data reading. A specialized **Label-caps** style is used for table headers and metadata to provide contrast against numerical data. For primary energy metrics, use a medium weight with tighter letter spacing to create a \\\"digital readout\\\" feel without resorting to a monospaced font.\\n\\n## Layout & Spacing\\n\\nThe layout philosophy follows a **Fluid Grid** model to accommodate the varied screen sizes of control room monitors and tablets. It uses a 12-column grid with a consistent 20px gutter.\\n\\nSpacing is governed by a 4px base unit. Internal card padding should default to 24px (lg) to give complex charts room to breathe. Use 16px (md) spacing between dashboard widgets. High-density data tables may drop to 8px (sm) vertical padding to maximize information density on the \\\"Y\\\" axis.\\n\\n## Elevation & Depth\\n\\nHierarchy is established using **Tonal Layers** combined with **Low-contrast Outlines**. Rather than aggressive shadows, this design system uses color-based depth:\\n\\n1.  **Level 0 (Background):** #0f172a - The base canvas.\\n2.  **Level 1 (Cards/Panels):** #1e293b - Main containers, slightly elevated visually by a 1px border (#334155).\\n3.  **Level 2 (Popovers/Modals):** #334155 - Floating elements that use a subtle, 15% opacity black shadow with a 20px blur to indicate focus.\\n\\nInteraction states (hover/active) should be signaled by increasing the border brightness or adding a faint inner glow using the primary emerald green color.\\n\\n## Shapes\\n\\nThe shape language is **Soft (Level 1)**. This subtle rounding (4px for base elements, 8px for cards) softens the technical aesthetic just enough to feel modern and accessible while maintaining a professional, rigid structure. \\n\\nButtons and input fields should strictly adhere to the 4px radius. Larger containers like dashboard widgets or sidebar navigations should use 8px to clearly define their boundaries against the background.\\n\\n## Components\\n\\n- **Buttons:** Primary buttons use a solid Emerald (#059669) fill with white text. Secondary buttons are ghost-style with a Slate-400 border.\\n- **Cards:** Dashboard widgets must have a 1px border (#334155) and a title area separated by a subtle horizontal rule.\\n- **Inputs:** Dark fills (#0f172a) with a 1px slate border. On focus, the border transitions to Emerald with a 2px outer glow.\\n- **Chips:** Used for status (e.g., \\\"Grid Online\\\"). They should use a low-opacity emerald background with high-opacity emerald text for a \\\"glass\\\" look.\\n- **Metrics/KPIs:** Large numerical displays should be accompanied by a small sparkline chart or a percentage change indicator.\\n- **Data Tables:** Row-based with alternating subtle backgrounds; borders are horizontal only to emphasize the flow of data.\\n- **Toggle Switches:** Small and refined, using the emerald color for the \\\"on\\\" state to signify active energy flow.\",\"colorVariant\":\"FIDELITY\",\"overridePrimaryColor\":\"#059669\",\"overrideSecondaryColor\":\"#64748b\",\"spacingScale\":2,\"typography\":{\"body-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"18px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.6\"},\"body-md\":{\"fontFamily\":\"Inter\",\"fontSize\":\"16px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.5\"},\"body-sm\":{\"fontFamily\":\"Inter\",\"fontSize\":\"14px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.5\"},\"display\":{\"fontFamily\":\"Inter\",\"fontSize\":\"48px\",\"fontWeight\":\"700\",\"lineHeight\":\"1.1\",\"letterSpacing\":\"-0.02em\"},\"h1\":{\"fontFamily\":\"Inter\",\"fontSize\":\"32px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.2\",\"letterSpacing\":\"-0.01em\"},\"h2\":{\"fontFamily\":\"Inter\",\"fontSize\":\"24px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.3\"},\"h3\":{\"fontFamily\":\"Inter\",\"fontSize\":\"20px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.4\"},\"label-caps\":{\"fontFamily\":\"Inter\",\"fontSize\":\"12px\",\"fontWeight\":\"600\",\"lineHeight\":\"1\",\"letterSpacing\":\"0.05em\"},\"mono-metric\":{\"fontFamily\":\"Inter\",\"fontSize\":\"28px\",\"fontWeight\":\"500\",\"lineHeight\":\"1\",\"letterSpacing\":\"-0.02em\"}},\"spacing\":{\"gutter\":\"20px\",\"lg\":\"24px\",\"margin\":\"24px\",\"md\":\"16px\",\"sm\":\"8px\",\"unit\":\"4px\",\"xl\":\"32px\",\"xs\":\"4px\"},\"headlineFontFamily\":\"Inter\",\"bodyFontFamily\":\"Inter\",\"labelFontFamily\":\"Inter\"}},\"version\":\"1\"}},{\"design\":{\"screens\":[{\"screenshot\":{\"name\":\"projects/17851586266903645615/files/c6659db417984790973b2df66d2391c5\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/ADBb0uijLbKsm3aVoax1xx5t7eyjrjviw2gX2tYE2I9WzwaL_q0k4s7t8CXsrDwRVWgnX-aGuaKSuPVbk0no1gAinTgYLoFMQLaLYPf6HPldNh7uHpQ6ZpybCe1cjh7bsB-dWTqqxaDrK1GwVlK96fA5YUvuaMlO8lsE-XXvRBdxBOSJK0KfBSDemv2KDUR_Hp2ABznMj6B4IPZR-5ihsT5N3CQQ3IgxSD_haHlR3n5BHhuXuG67ISQOWIU7NlE\"},\"htmlCode\":{\"name\":\"projects/17851586266903645615/files/611e0d9dec6e45a3ad5f354753165288\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzM0ZThhN2E1NzU3NDQyNzlhZWM0N2RlYmIxNzRmNjIyEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxNzg1MTU4NjI2NjkwMzY0NTYxNQ&filename=&opi=96797242\",\"mimeType\":\"image/svg+xml\"},\"id\":\"bb4d259a902b4f19b0f78d134c9b6252\",\"generatedBy\":\"interactive_ui_controller\",\"width\":\"40\",\"height\":\"40\",\"title\":\"EnergyOS Logo\",\"prompt\":\"EnergyOS logo: A minimalist lightning bolt or energy wave integrated with the letter 'E', styled in emerald green.. Brand logo\",\"name\":\"projects/17851586266903645615/screens/bb4d259a902b4f19b0f78d134c9b6252\",\"theme\":{},\"screenType\":\"IMAGE\",\"screenMetadata\":{\"agentType\":\"PRO_AGENT\",\"status\":\"COMPLETE\",\"displayMode\":\"SVG\"}},{\"screenshot\":{\"name\":\"projects/17851586266903645615/files/f4278e077dd1491b9ed5be7a8c68012e\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/ADBb0uhiwaDsuJhD4mpnCy0jOj7cwA1XoPo1tsC1PH3a-4s99bY88LmRZOCeWmftavGLcGAN4xSc1IyaJ38-UvZdlmU9POg-AwwAqjclkN-5pdX0sVU3PUSM14mv-YyrfVwxAmMgJYcXNbGjyu5YeBq2I-Qo6CyTfXt0qNf3cy9qC0jhVium6Zfs22Bt6bbworWtU4fC-NKcHsn0N_Db9cp0_PS5Rtt6C2ylf8Xmz6Mz_x0CbddHm6HfctdLugK9\"},\"htmlCode\":{\"name\":\"projects/17851586266903645615/files/fed91b78c0904cc1bc0bc32f8ab2d54a\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2M4NWVlYWY5MTQ3NjRlYTVhMGMxOWVlM2IyZDkwZmY5EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxNzg1MTU4NjI2NjkwMzY0NTYxNQ&filename=&opi=96797242\",\"mimeType\":\"text/html\"},\"id\":\"20f1a81a2dba4ab78954d7d8a08f76d2\",\"generatedBy\":\"figaro_agent\",\"width\":\"2560\",\"height\":\"2160\",\"title\":\"EnergyOS Dashboard\",\"prompt\":\"Main energy management dashboard for 'EnergyOS'.\\n- Header: Include the logo {{DATA:IMAGE:IMAGE_1}} and 'EnergyOS' title. Navigation for Dashboard, Analytics, Properties, and Reports.\\n- Metrics Grid (4 cards):\\n    1. Total Consumption: '4,280 kWh' with a sparkline.\\n    2. Monthly Savings: '€1,420' with a positive percentage indicator.\\n    3. Active Properties: '24' total.\\n    4. Alerts: '2 Critical' in a subtle red/warning tone.\\n- Chart Section: A large, modern line chart showing 'Weekly Consumption'. Include a period selector (Week/Month/Year).\\n- Properties List: 3-4 cards showing property name (e.g., 'Downtown Hub', 'Westside Plaza'), location, a status badge (Online/Offline), and current consumption (kWh).\\n- Styling: Dark slate background (#0f172a), emerald green (#059669) for primary buttons, highlights, and positive metrics. Inter font. Responsive grid layout.\\n## Available Images\\nYou MUST include the following images in this design. You must reference them\\nby putting their exact placeholder IDs in `src` attributes or CSS\\n`background-image` rules. Do NOT use external URLs or generate new\\nplaceholders. Preserve these IDs exactly as written. Read each image's\\nDescription to understand its subject, intended section, and visual role.\\n\\n- {{DATA:IMAGE:IMAGE_1}}\\n  Alt Text: EnergyOS Logo\\n  Description: EnergyOS logo: A minimalist lightning bolt or energy wave integrated with the letter 'E', styled in emerald green.. Brand logo\\n  Dimensions: 40x40\\n  Aspect Ratio: 1.00\\n  Colors: #059669\\n\",\"name\":\"projects/17851586266903645615/screens/20f1a81a2dba4ab78954d7d8a08f76d2\",\"theme\":{\"colorMode\":\"DARK\",\"font\":\"INTER\",\"roundness\":\"ROUND_FOUR\",\"customColor\":\"#059669\",\"headlineFont\":\"INTER\",\"bodyFont\":\"INTER\",\"labelFont\":\"INTER\",\"namedColors\":{\"background\":\"#0f1511\",\"error\":\"#ffb4ab\",\"error_container\":\"#93000a\",\"inverse_on_surface\":\"#2c322e\",\"inverse_primary\":\"#006c4a\",\"inverse_surface\":\"#dee4de\",\"on_background\":\"#dee4de\",\"on_error\":\"#690005\",\"on_error_container\":\"#ffdad6\",\"on_primary\":\"#003825\",\"on_primary_container\":\"#00311f\",\"on_primary_fixed\":\"#002114\",\"on_primary_fixed_variant\":\"#005137\",\"on_secondary\":\"#213145\",\"on_secondary_container\":\"#a9bad3\",\"on_secondary_fixed\":\"#0b1c30\",\"on_secondary_fixed_variant\":\"#38485d\",\"on_surface\":\"#dee4de\",\"on_surface_variant\":\"#bccac0\",\"on_tertiary\":\"#601214\",\"on_tertiary_container\":\"#570b0e\",\"on_tertiary_fixed\":\"#410004\",\"on_tertiary_fixed_variant\":\"#7f2928\",\"outline\":\"#87948b\",\"outline_variant\":\"#3d4a42\",\"primary\":\"#68dba9\",\"primary_container\":\"#25a475\",\"primary_fixed\":\"#85f8c4\",\"primary_fixed_dim\":\"#68dba9\",\"secondary\":\"#b7c8e1\",\"secondary_container\":\"#3a4a5f\",\"secondary_fixed\":\"#d3e4fe\",\"secondary_fixed_dim\":\"#b7c8e1\",\"surface\":\"#0f1511\",\"surface_bright\":\"#343b37\",\"surface_container\":\"#1b211d\",\"surface_container_high\":\"#252b28\",\"surface_container_highest\":\"#303632\",\"surface_container_low\":\"#171d19\",\"surface_container_lowest\":\"#0a0f0c\",\"surface_dim\":\"#0f1511\",\"surface_tint\":\"#68dba9\",\"surface_variant\":\"#303632\",\"tertiary\":\"#ffb3ae\",\"tertiary_container\":\"#dd706b\",\"tertiary_fixed\":\"#ffdad7\",\"tertiary_fixed_dim\":\"#ffb3ae\"},\"designMd\":\"---\\nname: Lumina Grid\\ncolors:\\n  surface: '#0f1511'\\n  surface-dim: '#0f1511'\\n  surface-bright: '#343b37'\\n  surface-container-lowest: '#0a0f0c'\\n  surface-container-low: '#171d19'\\n  surface-container: '#1b211d'\\n  surface-container-high: '#252b28'\\n  surface-container-highest: '#303632'\\n  on-surface: '#dee4de'\\n  on-surface-variant: '#bccac0'\\n  inverse-surface: '#dee4de'\\n  inverse-on-surface: '#2c322e'\\n  outline: '#87948b'\\n  outline-variant: '#3d4a42'\\n  surface-tint: '#68dba9'\\n  primary: '#68dba9'\\n  on-primary: '#003825'\\n  primary-container: '#25a475'\\n  on-primary-container: '#00311f'\\n  inverse-primary: '#006c4a'\\n  secondary: '#b7c8e1'\\n  on-secondary: '#213145'\\n  secondary-container: '#3a4a5f'\\n  on-secondary-container: '#a9bad3'\\n  tertiary: '#ffb3ae'\\n  on-tertiary: '#601214'\\n  tertiary-container: '#dd706b'\\n  on-tertiary-container: '#570b0e'\\n  error: '#ffb4ab'\\n  on-error: '#690005'\\n  error-container: '#93000a'\\n  on-error-container: '#ffdad6'\\n  primary-fixed: '#85f8c4'\\n  primary-fixed-dim: '#68dba9'\\n  on-primary-fixed: '#002114'\\n  on-primary-fixed-variant: '#005137'\\n  secondary-fixed: '#d3e4fe'\\n  secondary-fixed-dim: '#b7c8e1'\\n  on-secondary-fixed: '#0b1c30'\\n  on-secondary-fixed-variant: '#38485d'\\n  tertiary-fixed: '#ffdad7'\\n  tertiary-fixed-dim: '#ffb3ae'\\n  on-tertiary-fixed: '#410004'\\n  on-tertiary-fixed-variant: '#7f2928'\\n  background: '#0f1511'\\n  on-background: '#dee4de'\\n  surface-variant: '#303632'\\ntypography:\\n  display:\\n    fontFamily: Inter\\n    fontSize: 48px\\n    fontWeight: '700'\\n    lineHeight: '1.1'\\n    letterSpacing: -0.02em\\n  h1:\\n    fontFamily: Inter\\n    fontSize: 32px\\n    fontWeight: '600'\\n    lineHeight: '1.2'\\n    letterSpacing: -0.01em\\n  h2:\\n    fontFamily: Inter\\n    fontSize: 24px\\n    fontWeight: '600'\\n    lineHeight: '1.3'\\n  h3:\\n    fontFamily: Inter\\n    fontSize: 20px\\n    fontWeight: '600'\\n    lineHeight: '1.4'\\n  body-lg:\\n    fontFamily: Inter\\n    fontSize: 18px\\n    fontWeight: '400'\\n    lineHeight: '1.6'\\n  body-md:\\n    fontFamily: Inter\\n    fontSize: 16px\\n    fontWeight: '400'\\n    lineHeight: '1.5'\\n  body-sm:\\n    fontFamily: Inter\\n    fontSize: 14px\\n    fontWeight: '400'\\n    lineHeight: '1.5'\\n  label-caps:\\n    fontFamily: Inter\\n    fontSize: 12px\\n    fontWeight: '600'\\n    lineHeight: '1'\\n    letterSpacing: 0.05em\\n  mono-metric:\\n    fontFamily: Inter\\n    fontSize: 28px\\n    fontWeight: '500'\\n    lineHeight: '1'\\n    letterSpacing: -0.02em\\nrounded:\\n  sm: 0.125rem\\n  DEFAULT: 0.25rem\\n  md: 0.375rem\\n  lg: 0.5rem\\n  xl: 0.75rem\\n  full: 9999px\\nspacing:\\n  unit: 4px\\n  xs: 4px\\n  sm: 8px\\n  md: 16px\\n  lg: 24px\\n  xl: 32px\\n  gutter: 20px\\n  margin: 24px\\n---\\n\\n## Brand & Style\\n\\nThe design system is engineered for high-stakes energy monitoring environments where precision and speed of interpretation are paramount. The brand personality is authoritative, sophisticated, and technologically advanced, evoking the feeling of a modern mission control center. \\n\\nThe aesthetic leans into a **Corporate Modern** style with subtle **Minimalist** influences. It prioritizes data density without sacrificing legibility. Visual weight is managed through a strict hierarchy of slate tones, ensuring that the emerald green accents act as beacons for critical information and system health. The overall interface should feel \\\"engineered\\\"—every pixel serves a functional purpose in the pursuit of energy efficiency.\\n\\n## Colors\\n\\nThe palette for this design system is rooted in a deep slate foundation to reduce eye strain during extended monitoring periods. \\n\\n- **Primary Emerald (#059669):** Reserved for primary actions, active energy flow states, and positive performance metrics.\\n- **Surface & Background:** The background uses a dark slate (#0f172a), while component surfaces use a slightly lighter slate (#1e293b) to create subtle depth.\\n- **Functional Grays:** Supporting grays (Slate 400-600) manage secondary information and structural borders, ensuring the UI remains cohesive and professional.\\n- **Semantic States:** Use a muted amber for warnings and a crisp red for critical grid failures, though these should be used sparingly to maintain the primary green's dominance.\\n\\n## Typography\\n\\nThis design system utilizes the **Inter** font family exclusively to leverage its exceptional readability on high-resolution screens. \\n\\nThe typographic scale is designed for rapid data scanning. **Headline** styles are tight and bold to define clear section breaks. **Body** text remains neutral to facilitate long-form data reading. A specialized **Label-caps** style is used for table headers and metadata to provide contrast against numerical data. For primary energy metrics, use a medium weight with tighter letter spacing to create a \\\"digital readout\\\" feel without resorting to a monospaced font.\\n\\n## Layout & Spacing\\n\\nThe layout philosophy follows a **Fluid Grid** model to accommodate the varied screen sizes of control room monitors and tablets. It uses a 12-column grid with a consistent 20px gutter.\\n\\nSpacing is governed by a 4px base unit. Internal card padding should default to 24px (lg) to give complex charts room to breathe. Use 16px (md) spacing between dashboard widgets. High-density data tables may drop to 8px (sm) vertical padding to maximize information density on the \\\"Y\\\" axis.\\n\\n## Elevation & Depth\\n\\nHierarchy is established using **Tonal Layers** combined with **Low-contrast Outlines**. Rather than aggressive shadows, this design system uses color-based depth:\\n\\n1.  **Level 0 (Background):** #0f172a - The base canvas.\\n2.  **Level 1 (Cards/Panels):** #1e293b - Main containers, slightly elevated visually by a 1px border (#334155).\\n3.  **Level 2 (Popovers/Modals):** #334155 - Floating elements that use a subtle, 15% opacity black shadow with a 20px blur to indicate focus.\\n\\nInteraction states (hover/active) should be signaled by increasing the border brightness or adding a faint inner glow using the primary emerald green color.\\n\\n## Shapes\\n\\nThe shape language is **Soft (Level 1)**. This subtle rounding (4px for base elements, 8px for cards) softens the technical aesthetic just enough to feel modern and accessible while maintaining a professional, rigid structure. \\n\\nButtons and input fields should strictly adhere to the 4px radius. Larger containers like dashboard widgets or sidebar navigations should use 8px to clearly define their boundaries against the background.\\n\\n## Components\\n\\n- **Buttons:** Primary buttons use a solid Emerald (#059669) fill with white text. Secondary buttons are ghost-style with a Slate-400 border.\\n- **Cards:** Dashboard widgets must have a 1px border (#334155) and a title area separated by a subtle horizontal rule.\\n- **Inputs:** Dark fills (#0f172a) with a 1px slate border. On focus, the border transitions to Emerald with a 2px outer glow.\\n- **Chips:** Used for status (e.g., \\\"Grid Online\\\"). They should use a low-opacity emerald background with high-opacity emerald text for a \\\"glass\\\" look.\\n- **Metrics/KPIs:** Large numerical displays should be accompanied by a small sparkline chart or a percentage change indicator.\\n- **Data Tables:** Row-based with alternating subtle backgrounds; borders are horizontal only to emphasize the flow of data.\\n- **Toggle Switches:** Small and refined, using the emerald color for the \\\"on\\\" state to signify active energy flow.\",\"colorVariant\":\"FIDELITY\",\"overridePrimaryColor\":\"#059669\",\"overrideSecondaryColor\":\"#64748b\",\"spacingScale\":2,\"typography\":{\"body-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"18px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.6\"},\"body-md\":{\"fontFamily\":\"Inter\",\"fontSize\":\"16px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.5\"},\"body-sm\":{\"fontFamily\":\"Inter\",\"fontSize\":\"14px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.5\"},\"display\":{\"fontFamily\":\"Inter\",\"fontSize\":\"48px\",\"fontWeight\":\"700\",\"lineHeight\":\"1.1\",\"letterSpacing\":\"-0.02em\"},\"h1\":{\"fontFamily\":\"Inter\",\"fontSize\":\"32px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.2\",\"letterSpacing\":\"-0.01em\"},\"h2\":{\"fontFamily\":\"Inter\",\"fontSize\":\"24px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.3\"},\"h3\":{\"fontFamily\":\"Inter\",\"fontSize\":\"20px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.4\"},\"label-caps\":{\"fontFamily\":\"Inter\",\"fontSize\":\"12px\",\"fontWeight\":\"600\",\"lineHeight\":\"1\",\"letterSpacing\":\"0.05em\"},\"mono-metric\":{\"fontFamily\":\"Inter\",\"fontSize\":\"28px\",\"fontWeight\":\"500\",\"lineHeight\":\"1\",\"letterSpacing\":\"-0.02em\"}},\"spacing\":{\"gutter\":\"20px\",\"lg\":\"24px\",\"margin\":\"24px\",\"md\":\"16px\",\"sm\":\"8px\",\"unit\":\"4px\",\"xl\":\"32px\",\"xs\":\"4px\"},\"headlineFontFamily\":\"Inter\",\"bodyFontFamily\":\"Inter\",\"labelFontFamily\":\"Inter\"},\"deviceType\":\"DESKTOP\",\"screenType\":\"DESIGN\",\"screenMetadata\":{\"agentType\":\"PRO_AGENT\",\"status\":\"COMPLETE\"},\"designSystem\":{\"name\":\"assets/5c32343eabb748289b6865a4654fa3f0\",\"designSystem\":{\"displayName\":\"Lumina Grid\",\"styleGuidelines\":\"## Brand & Style\\n\\nThe design system is engineered for high-stakes energy monitoring environments where precision and speed of interpretation are paramount. The brand personality is authoritative, sophisticated, and technologically advanced, evoking the feeling of a modern mission control center. \\n\\nThe aesthetic leans into a **Corporate Modern** style with subtle **Minimalist** influences. It prioritizes data density without sacrificing legibility. Visual weight is managed through a strict hierarchy of slate tones, ensuring that the emerald green accents act as beacons for critical information and system health. The overall interface should feel \\\"engineered\\\"—every pixel serves a functional purpose in the pursuit of energy efficiency.\\n\\n## Layout & Spacing\\n\\nThe layout philosophy follows a **Fluid Grid** model to accommodate the varied screen sizes of control room monitors and tablets. It uses a 12-column grid with a consistent 20px gutter.\\n\\nSpacing is governed by a 4px base unit. Internal card padding should default to 24px (lg) to give complex charts room to breathe. Use 16px (md) spacing between dashboard widgets. High-density data tables may drop to 8px (sm) vertical padding to maximize information density on the \\\"Y\\\" axis.\\n\\n## Elevation & Depth\\n\\nHierarchy is established using **Tonal Layers** combined with **Low-contrast Outlines**. Rather than aggressive shadows, this design system uses color-based depth:\\n\\n1.  **Level 0 (Background):** #0f172a - The base canvas.\\n2.  **Level 1 (Cards/Panels):** #1e293b - Main containers, slightly elevated visually by a 1px border (#334155).\\n3.  **Level 2 (Popovers/Modals):** #334155 - Floating elements that use a subtle, 15% opacity black shadow with a 20px blur to indicate focus.\\n\\nInteraction states (hover/active) should be signaled by increasing the border brightness or adding a faint inner glow using the primary emerald green color.\\n\\n## Components\\n\\n- **Buttons:** Primary buttons use a solid Emerald (#059669) fill with white text. Secondary buttons are ghost-style with a Slate-400 border.\\n- **Cards:** Dashboard widgets must have a 1px border (#334155) and a title area separated by a subtle horizontal rule.\\n- **Inputs:** Dark fills (#0f172a) with a 1px slate border. On focus, the border transitions to Emerald with a 2px outer glow.\\n- **Chips:** Used for status (e.g., \\\"Grid Online\\\"). They should use a low-opacity emerald background with high-opacity emerald text for a \\\"glass\\\" look.\\n- **Metrics/KPIs:** Large numerical displays should be accompanied by a small sparkline chart or a percentage change indicator.\\n- **Data Tables:** Row-based with alternating subtle backgrounds; borders are horizontal only to emphasize the flow of data.\\n- **Toggle Switches:** Small and refined, using the emerald color for the \\\"on\\\" state to signify active energy flow.\",\"theme\":{\"colorMode\":\"DARK\",\"font\":\"INTER\",\"roundness\":\"ROUND_FOUR\",\"customColor\":\"#059669\",\"headlineFont\":\"INTER\",\"bodyFont\":\"INTER\",\"labelFont\":\"INTER\",\"namedColors\":{\"background\":\"#0f1511\",\"error\":\"#ffb4ab\",\"error_container\":\"#93000a\",\"inverse_on_surface\":\"#2c322e\",\"inverse_primary\":\"#006c4a\",\"inverse_surface\":\"#dee4de\",\"on_background\":\"#dee4de\",\"on_error\":\"#690005\",\"on_error_container\":\"#ffdad6\",\"on_primary\":\"#003825\",\"on_primary_container\":\"#00311f\",\"on_primary_fixed\":\"#002114\",\"on_primary_fixed_variant\":\"#005137\",\"on_secondary\":\"#213145\",\"on_secondary_container\":\"#a9bad3\",\"on_secondary_fixed\":\"#0b1c30\",\"on_secondary_fixed_variant\":\"#38485d\",\"on_surface\":\"#dee4de\",\"on_surface_variant\":\"#bccac0\",\"on_tertiary\":\"#601214\",\"on_tertiary_container\":\"#570b0e\",\"on_tertiary_fixed\":\"#410004\",\"on_tertiary_fixed_variant\":\"#7f2928\",\"outline\":\"#87948b\",\"outline_variant\":\"#3d4a42\",\"primary\":\"#68dba9\",\"primary_container\":\"#25a475\",\"primary_fixed\":\"#85f8c4\",\"primary_fixed_dim\":\"#68dba9\",\"secondary\":\"#b7c8e1\",\"secondary_container\":\"#3a4a5f\",\"secondary_fixed\":\"#d3e4fe\",\"secondary_fixed_dim\":\"#b7c8e1\",\"surface\":\"#0f1511\",\"surface_bright\":\"#343b37\",\"surface_container\":\"#1b211d\",\"surface_container_high\":\"#252b28\",\"surface_container_highest\":\"#303632\",\"surface_container_low\":\"#171d19\",\"surface_container_lowest\":\"#0a0f0c\",\"surface_dim\":\"#0f1511\",\"surface_tint\":\"#68dba9\",\"surface_variant\":\"#303632\",\"tertiary\":\"#ffb3ae\",\"tertiary_container\":\"#dd706b\",\"tertiary_fixed\":\"#ffdad7\",\"tertiary_fixed_dim\":\"#ffb3ae\"},\"designMd\":\"---\\nname: Lumina Grid\\ncolors:\\n  surface: '#0f1511'\\n  surface-dim: '#0f1511'\\n  surface-bright: '#343b37'\\n  surface-container-lowest: '#0a0f0c'\\n  surface-container-low: '#171d19'\\n  surface-container: '#1b211d'\\n  surface-container-high: '#252b28'\\n  surface-container-highest: '#303632'\\n  on-surface: '#dee4de'\\n  on-surface-variant: '#bccac0'\\n  inverse-surface: '#dee4de'\\n  inverse-on-surface: '#2c322e'\\n  outline: '#87948b'\\n  outline-variant: '#3d4a42'\\n  surface-tint: '#68dba9'\\n  primary: '#68dba9'\\n  on-primary: '#003825'\\n  primary-container: '#25a475'\\n  on-primary-container: '#00311f'\\n  inverse-primary: '#006c4a'\\n  secondary: '#b7c8e1'\\n  on-secondary: '#213145'\\n  secondary-container: '#3a4a5f'\\n  on-secondary-container: '#a9bad3'\\n  tertiary: '#ffb3ae'\\n  on-tertiary: '#601214'\\n  tertiary-container: '#dd706b'\\n  on-tertiary-container: '#570b0e'\\n  error: '#ffb4ab'\\n  on-error: '#690005'\\n  error-container: '#93000a'\\n  on-error-container: '#ffdad6'\\n  primary-fixed: '#85f8c4'\\n  primary-fixed-dim: '#68dba9'\\n  on-primary-fixed: '#002114'\\n  on-primary-fixed-variant: '#005137'\\n  secondary-fixed: '#d3e4fe'\\n  secondary-fixed-dim: '#b7c8e1'\\n  on-secondary-fixed: '#0b1c30'\\n  on-secondary-fixed-variant: '#38485d'\\n  tertiary-fixed: '#ffdad7'\\n  tertiary-fixed-dim: '#ffb3ae'\\n  on-tertiary-fixed: '#410004'\\n  on-tertiary-fixed-variant: '#7f2928'\\n  background: '#0f1511'\\n  on-background: '#dee4de'\\n  surface-variant: '#303632'\\ntypography:\\n  display:\\n    fontFamily: Inter\\n    fontSize: 48px\\n    fontWeight: '700'\\n    lineHeight: '1.1'\\n    letterSpacing: -0.02em\\n  h1:\\n    fontFamily: Inter\\n    fontSize: 32px\\n    fontWeight: '600'\\n    lineHeight: '1.2'\\n    letterSpacing: -0.01em\\n  h2:\\n    fontFamily: Inter\\n    fontSize: 24px\\n    fontWeight: '600'\\n    lineHeight: '1.3'\\n  h3:\\n    fontFamily: Inter\\n    fontSize: 20px\\n    fontWeight: '600'\\n    lineHeight: '1.4'\\n  body-lg:\\n    fontFamily: Inter\\n    fontSize: 18px\\n    fontWeight: '400'\\n    lineHeight: '1.6'\\n  body-md:\\n    fontFamily: Inter\\n    fontSize: 16px\\n    fontWeight: '400'\\n    lineHeight: '1.5'\\n  body-sm:\\n    fontFamily: Inter\\n    fontSize: 14px\\n    fontWeight: '400'\\n    lineHeight: '1.5'\\n  label-caps:\\n    fontFamily: Inter\\n    fontSize: 12px\\n    fontWeight: '600'\\n    lineHeight: '1'\\n    letterSpacing: 0.05em\\n  mono-metric:\\n    fontFamily: Inter\\n    fontSize: 28px\\n    fontWeight: '500'\\n    lineHeight: '1'\\n    letterSpacing: -0.02em\\nrounded:\\n  sm: 0.125rem\\n  DEFAULT: 0.25rem\\n  md: 0.375rem\\n  lg: 0.5rem\\n  xl: 0.75rem\\n  full: 9999px\\nspacing:\\n  unit: 4px\\n  xs: 4px\\n  sm: 8px\\n  md: 16px\\n  lg: 24px\\n  xl: 32px\\n  gutter: 20px\\n  margin: 24px\\n---\\n\\n## Brand & Style\\n\\nThe design system is engineered for high-stakes energy monitoring environments where precision and speed of interpretation are paramount. The brand personality is authoritative, sophisticated, and technologically advanced, evoking the feeling of a modern mission control center. \\n\\nThe aesthetic leans into a **Corporate Modern** style with subtle **Minimalist** influences. It prioritizes data density without sacrificing legibility. Visual weight is managed through a strict hierarchy of slate tones, ensuring that the emerald green accents act as beacons for critical information and system health. The overall interface should feel \\\"engineered\\\"—every pixel serves a functional purpose in the pursuit of energy efficiency.\\n\\n## Colors\\n\\nThe palette for this design system is rooted in a deep slate foundation to reduce eye strain during extended monitoring periods. \\n\\n- **Primary Emerald (#059669):** Reserved for primary actions, active energy flow states, and positive performance metrics.\\n- **Surface & Background:** The background uses a dark slate (#0f172a), while component surfaces use a slightly lighter slate (#1e293b) to create subtle depth.\\n- **Functional Grays:** Supporting grays (Slate 400-600) manage secondary information and structural borders, ensuring the UI remains cohesive and professional.\\n- **Semantic States:** Use a muted amber for warnings and a crisp red for critical grid failures, though these should be used sparingly to maintain the primary green's dominance.\\n\\n## Typography\\n\\nThis design system utilizes the **Inter** font family exclusively to leverage its exceptional readability on high-resolution screens. \\n\\nThe typographic scale is designed for rapid data scanning. **Headline** styles are tight and bold to define clear section breaks. **Body** text remains neutral to facilitate long-form data reading. A specialized **Label-caps** style is used for table headers and metadata to provide contrast against numerical data. For primary energy metrics, use a medium weight with tighter letter spacing to create a \\\"digital readout\\\" feel without resorting to a monospaced font.\\n\\n## Layout & Spacing\\n\\nThe layout philosophy follows a **Fluid Grid** model to accommodate the varied screen sizes of control room monitors and tablets. It uses a 12-column grid with a consistent 20px gutter.\\n\\nSpacing is governed by a 4px base unit. Internal card padding should default to 24px (lg) to give complex charts room to breathe. Use 16px (md) spacing between dashboard widgets. High-density data tables may drop to 8px (sm) vertical padding to maximize information density on the \\\"Y\\\" axis.\\n\\n## Elevation & Depth\\n\\nHierarchy is established using **Tonal Layers** combined with **Low-contrast Outlines**. Rather than aggressive shadows, this design system uses color-based depth:\\n\\n1.  **Level 0 (Background):** #0f172a - The base canvas.\\n2.  **Level 1 (Cards/Panels):** #1e293b - Main containers, slightly elevated visually by a 1px border (#334155).\\n3.  **Level 2 (Popovers/Modals):** #334155 - Floating elements that use a subtle, 15% opacity black shadow with a 20px blur to indicate focus.\\n\\nInteraction states (hover/active) should be signaled by increasing the border brightness or adding a faint inner glow using the primary emerald green color.\\n\\n## Shapes\\n\\nThe shape language is **Soft (Level 1)**. This subtle rounding (4px for base elements, 8px for cards) softens the technical aesthetic just enough to feel modern and accessible while maintaining a professional, rigid structure. \\n\\nButtons and input fields should strictly adhere to the 4px radius. Larger containers like dashboard widgets or sidebar navigations should use 8px to clearly define their boundaries against the background.\\n\\n## Components\\n\\n- **Buttons:** Primary buttons use a solid Emerald (#059669) fill with white text. Secondary buttons are ghost-style with a Slate-400 border.\\n- **Cards:** Dashboard widgets must have a 1px border (#334155) and a title area separated by a subtle horizontal rule.\\n- **Inputs:** Dark fills (#0f172a) with a 1px slate border. On focus, the border transitions to Emerald with a 2px outer glow.\\n- **Chips:** Used for status (e.g., \\\"Grid Online\\\"). They should use a low-opacity emerald background with high-opacity emerald text for a \\\"glass\\\" look.\\n- **Metrics/KPIs:** Large numerical displays should be accompanied by a small sparkline chart or a percentage change indicator.\\n- **Data Tables:** Row-based with alternating subtle backgrounds; borders are horizontal only to emphasize the flow of data.\\n- **Toggle Switches:** Small and refined, using the emerald color for the \\\"on\\\" state to signify active energy flow.\",\"colorVariant\":\"FIDELITY\",\"overridePrimaryColor\":\"#059669\",\"overrideSecondaryColor\":\"#64748b\",\"spacingScale\":2,\"typography\":{\"body-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"18px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.6\"},\"body-md\":{\"fontFamily\":\"Inter\",\"fontSize\":\"16px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.5\"},\"body-sm\":{\"fontFamily\":\"Inter\",\"fontSize\":\"14px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.5\"},\"display\":{\"fontFamily\":\"Inter\",\"fontSize\":\"48px\",\"fontWeight\":\"700\",\"lineHeight\":\"1.1\",\"letterSpacing\":\"-0.02em\"},\"h1\":{\"fontFamily\":\"Inter\",\"fontSize\":\"32px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.2\",\"letterSpacing\":\"-0.01em\"},\"h2\":{\"fontFamily\":\"Inter\",\"fontSize\":\"24px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.3\"},\"h3\":{\"fontFamily\":\"Inter\",\"fontSize\":\"20px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.4\"},\"label-caps\":{\"fontFamily\":\"Inter\",\"fontSize\":\"12px\",\"fontWeight\":\"600\",\"lineHeight\":\"1\",\"letterSpacing\":\"0.05em\"},\"mono-metric\":{\"fontFamily\":\"Inter\",\"fontSize\":\"28px\",\"fontWeight\":\"500\",\"lineHeight\":\"1\",\"letterSpacing\":\"-0.02em\"}},\"spacing\":{\"gutter\":\"20px\",\"lg\":\"24px\",\"margin\":\"24px\",\"md\":\"16px\",\"sm\":\"8px\",\"unit\":\"4px\",\"xl\":\"32px\",\"xs\":\"4px\"},\"headlineFontFamily\":\"Inter\",\"bodyFontFamily\":\"Inter\",\"labelFontFamily\":\"Inter\"}},\"version\":\"1\"}}],\"theme\":{}}},{\"text\":\"I've designed the **EnergyOS Dashboard**, tailored for efficient energy management with a professional dark theme.\\n\\n### Design Highlights:\\n*   **Visual Foundation**: Used a dark slate background (#0f172a) with high-contrast emerald green (#059669) accents to emphasize key data points.\\n*   **Key Metrics**: Four distinct cards provide an at-a-glance view of total consumption, monthly savings, active properties, and critical alerts.\\n*   **Data Visualization**: Included a prominent \\\"Weekly Consumption\\\" line chart with a period selector to track performance trends over time.\\n*   **Property Insights**: Detailed property cards feature status indicators and specific usage data, allowing for quick operational checks.\\n*   **Consistent Branding**: Integrated the custom EnergyOS logo and used the Inter font family for a modern, legible interface.\\n\\nHow does this look for your mission control? Would you like to explore the **Analytics** view or perhaps add a **Detailed Property** drill-down screen?\"},{\"suggestion\":\"Create the Analytics drill-down screen\"},{\"suggestion\":\"Design a 'Detailed Property' view\"},{\"suggestion\":\"Make the dashboard a bit more compact\"}]}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "outputComponents": [
+        {
+          "designSystem": {
+            "designSystem": {
+              "displayName": "Lumina Grid",
+              "styleGuidelines": "## Brand & Style\n\nThe design system is engineered for high-stakes energy monitoring environments where precision and speed of interpretation are paramount. The brand personality is authoritative, sophisticated, and technologically advanced, evoking the feeling of a modern mission control center. \n\nThe aesthetic leans into a **Corporate Modern** style with subtle **Minimalist** influences. It prioritizes data density without sacrificing legibility. Visual weight is managed through a strict hierarchy of slate tones, ensuring that the emerald green accents act as beacons for critical information and system health. The overall interface should feel \"engineered\"—every pixel serves a functional purpose in the pursuit of energy efficiency.\n\n## Layout & Spacing\n\nThe layout philosophy follows a **Fluid Grid** model to accommodate the varied screen sizes of control room monitors and tablets. It uses a 12-column grid with a consistent 20px gutter.\n\nSpacing is governed by a 4px base unit. Internal card padding should default to 24px (lg) to give complex charts room to breathe. Use 16px (md) spacing between dashboard widgets. High-density data tables may drop to 8px (sm) vertical padding to maximize information density on the \"Y\" axis.\n\n## Elevation & Depth\n\nHierarchy is established using **Tonal Layers** combined with **Low-contrast Outlines**. Rather than aggressive shadows, this design system uses color-based depth:\n\n1.  **Level 0 (Background):** #0f172a - The base canvas.\n2.  **Level 1 (Cards/Panels):** #1e293b - Main containers, slightly elevated visually by a 1px border (#334155).\n3.  **Level 2 (Popovers/Modals):** #334155 - Floating elements that use a subtle, 15% opacity black shadow with a 20px blur to indicate focus.\n\nInteraction states (hover/active) should be signaled by increasing the border brightness or adding a faint inner glow using the primary emerald green color.\n\n## Components\n\n- **Buttons:** Primary buttons use a solid Emerald (#059669) fill with white text. Secondary buttons are ghost-style with a Slate-400 border.\n- **Cards:** Dashboard widgets must have a 1px border (#334155) and a title area separated by a subtle horizontal rule.\n- **Inputs:** Dark fills (#0f172a) with a 1px slate border. On focus, the border transitions to Emerald with a 2px outer glow.\n- **Chips:** Used for status (e.g., \"Grid Online\"). They should use a low-opacity emerald background with high-opacity emerald text for a \"glass\" look.\n- **Metrics/KPIs:** Large numerical displays should be accompanied by a small sparkline chart or a percentage change indicator.\n- **Data Tables:** Row-based with alternating subtle backgrounds; borders are horizontal only to emphasize the flow of data.\n- **Toggle Switches:** Small and refined, using the emerald color for the \"on\" state to signify active energy flow.",
+              "theme": {
+                "bodyFont": "INTER",
+                "bodyFontFamily": "Inter",
+                "colorMode": "DARK",
+                "colorVariant": "FIDELITY",
+                "customColor": "#059669",
+                "designMd": "---\nname: Lumina Grid\ncolors:\n  surface: '#0f1511'\n  surface-dim: '#0f1511'\n  surface-bright: '#343b37'\n  surface-container-lowest: '#0a0f0c'\n  surface-container-low: '#171d19'\n  surface-container: '#1b211d'\n  surface-container-high: '#252b28'\n  surface-container-highest: '#303632'\n  on-surface: '#dee4de'\n  on-surface-variant: '#bccac0'\n  inverse-surface: '#dee4de'\n  inverse-on-surface: '#2c322e'\n  outline: '#87948b'\n  outline-variant: '#3d4a42'\n  surface-tint: '#68dba9'\n  primary: '#68dba9'\n  on-primary: '#003825'\n  primary-container: '#25a475'\n  on-primary-container: '#00311f'\n  inverse-primary: '#006c4a'\n  secondary: '#b7c8e1'\n  on-secondary: '#213145'\n  secondary-container: '#3a4a5f'\n  on-secondary-container: '#a9bad3'\n  tertiary: '#ffb3ae'\n  on-tertiary: '#601214'\n  tertiary-container: '#dd706b'\n  on-tertiary-container: '#570b0e'\n  error: '#ffb4ab'\n  on-error: '#690005'\n  error-container: '#93000a'\n  on-error-container: '#ffdad6'\n  primary-fixed: '#85f8c4'\n  primary-fixed-dim: '#68dba9'\n  on-primary-fixed: '#002114'\n  on-primary-fixed-variant: '#005137'\n  secondary-fixed: '#d3e4fe'\n  secondary-fixed-dim: '#b7c8e1'\n  on-secondary-fixed: '#0b1c30'\n  on-secondary-fixed-variant: '#38485d'\n  tertiary-fixed: '#ffdad7'\n  tertiary-fixed-dim: '#ffb3ae'\n  on-tertiary-fixed: '#410004'\n  on-tertiary-fixed-variant: '#7f2928'\n  background: '#0f1511'\n  on-background: '#dee4de'\n  surface-variant: '#303632'\ntypography:\n  display:\n    fontFamily: Inter\n    fontSize: 48px\n    fontWeight: '700'\n    lineHeight: '1.1'\n    letterSpacing: -0.02em\n  h1:\n    fontFamily: Inter\n    fontSize: 32px\n    fontWeight: '600'\n    lineHeight: '1.2'\n    letterSpacing: -0.01em\n  h2:\n    fontFamily: Inter\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: '1.3'\n  h3:\n    fontFamily: Inter\n    fontSize: 20px\n    fontWeight: '600'\n    lineHeight: '1.4'\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: '1.6'\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: '1.5'\n  body-sm:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: '1.5'\n  label-caps:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: '600'\n    lineHeight: '1'\n    letterSpacing: 0.05em\n  mono-metric:\n    fontFamily: Inter\n    fontSize: 28px\n    fontWeight: '500'\n    lineHeight: '1'\n    letterSpacing: -0.02em\nrounded:\n  sm: 0.125rem\n  DEFAULT: 0.25rem\n  md: 0.375rem\n  lg: 0.5rem\n  xl: 0.75rem\n  full: 9999px\nspacing:\n  unit: 4px\n  xs: 4px\n  sm: 8px\n  md: 16px\n  lg: 24px\n  xl: 32px\n  gutter: 20px\n  margin: 24px\n---\n\n## Brand & Style\n\nThe design system is engineered for high-stakes energy monitoring environments where precision and speed of interpretation are paramount. The brand personality is authoritative, sophisticated, and technologically advanced, evoking the feeling of a modern mission control center. \n\nThe aesthetic leans into a **Corporate Modern** style with subtle **Minimalist** influences. It prioritizes data density without sacrificing legibility. Visual weight is managed through a strict hierarchy of slate tones, ensuring that the emerald green accents act as beacons for critical information and system health. The overall interface should feel \"engineered\"—every pixel serves a functional purpose in the pursuit of energy efficiency.\n\n## Colors\n\nThe palette for this design system is rooted in a deep slate foundation to reduce eye strain during extended monitoring periods. \n\n- **Primary Emerald (#059669):** Reserved for primary actions, active energy flow states, and positive performance metrics.\n- **Surface & Background:** The background uses a dark slate (#0f172a), while component surfaces use a slightly lighter slate (#1e293b) to create subtle depth.\n- **Functional Grays:** Supporting grays (Slate 400-600) manage secondary information and structural borders, ensuring the UI remains cohesive and professional.\n- **Semantic States:** Use a muted amber for warnings and a crisp red for critical grid failures, though these should be used sparingly to maintain the primary green's dominance.\n\n## Typography\n\nThis design system utilizes the **Inter** font family exclusively to leverage its exceptional readability on high-resolution screens. \n\nThe typographic scale is designed for rapid data scanning. **Headline** styles are tight and bold to define clear section breaks. **Body** text remains neutral to facilitate long-form data reading. A specialized **Label-caps** style is used for table headers and metadata to provide contrast against numerical data. For primary energy metrics, use a medium weight with tighter letter spacing to create a \"digital readout\" feel without resorting to a monospaced font.\n\n## Layout & Spacing\n\nThe layout philosophy follows a **Fluid Grid** model to accommodate the varied screen sizes of control room monitors and tablets. It uses a 12-column grid with a consistent 20px gutter.\n\nSpacing is governed by a 4px base unit. Internal card padding should default to 24px (lg) to give complex charts room to breathe. Use 16px (md) spacing between dashboard widgets. High-density data tables may drop to 8px (sm) vertical padding to maximize information density on the \"Y\" axis.\n\n## Elevation & Depth\n\nHierarchy is established using **Tonal Layers** combined with **Low-contrast Outlines**. Rather than aggressive shadows, this design system uses color-based depth:\n\n1.  **Level 0 (Background):** #0f172a - The base canvas.\n2.  **Level 1 (Cards/Panels):** #1e293b - Main containers, slightly elevated visually by a 1px border (#334155).\n3.  **Level 2 (Popovers/Modals):** #334155 - Floating elements that use a subtle, 15% opacity black shadow with a 20px blur to indicate focus.\n\nInteraction states (hover/active) should be signaled by increasing the border brightness or adding a faint inner glow using the primary emerald green color.\n\n## Shapes\n\nThe shape language is **Soft (Level 1)**. This subtle rounding (4px for base elements, 8px for cards) softens the technical aesthetic just enough to feel modern and accessible while maintaining a professional, rigid structure. \n\nButtons and input fields should strictly adhere to the 4px radius. Larger containers like dashboard widgets or sidebar navigations should use 8px to clearly define their boundaries against the background.\n\n## Components\n\n- **Buttons:** Primary buttons use a solid Emerald (#059669) fill with white text. Secondary buttons are ghost-style with a Slate-400 border.\n- **Cards:** Dashboard widgets must have a 1px border (#334155) and a title area separated by a subtle horizontal rule.\n- **Inputs:** Dark fills (#0f172a) with a 1px slate border. On focus, the border transitions to Emerald with a 2px outer glow.\n- **Chips:** Used for status (e.g., \"Grid Online\"). They should use a low-opacity emerald background with high-opacity emerald text for a \"glass\" look.\n- **Metrics/KPIs:** Large numerical displays should be accompanied by a small sparkline chart or a percentage change indicator.\n- **Data Tables:** Row-based with alternating subtle backgrounds; borders are horizontal only to emphasize the flow of data.\n- **Toggle Switches:** Small and refined, using the emerald color for the \"on\" state to signify active energy flow.",
+                "font": "INTER",
+                "headlineFont": "INTER",
+                "headlineFontFamily": "Inter",
+                "labelFont": "INTER",
+                "labelFontFamily": "Inter",
+                "namedColors": {
+                  "background": "#0f1511",
+                  "error": "#ffb4ab",
+                  "error_container": "#93000a",
+                  "inverse_on_surface": "#2c322e",
+                  "inverse_primary": "#006c4a",
+                  "inverse_surface": "#dee4de",
+                  "on_background": "#dee4de",
+                  "on_error": "#690005",
+                  "on_error_container": "#ffdad6",
+                  "on_primary": "#003825",
+                  "on_primary_container": "#00311f",
+                  "on_primary_fixed": "#002114",
+                  "on_primary_fixed_variant": "#005137",
+                  "on_secondary": "#213145",
+                  "on_secondary_container": "#a9bad3",
+                  "on_secondary_fixed": "#0b1c30",
+                  "on_secondary_fixed_variant": "#38485d",
+                  "on_surface": "#dee4de",
+                  "on_surface_variant": "#bccac0",
+                  "on_tertiary": "#601214",
+                  "on_tertiary_container": "#570b0e",
+                  "on_tertiary_fixed": "#410004",
+                  "on_tertiary_fixed_variant": "#7f2928",
+                  "outline": "#87948b",
+                  "outline_variant": "#3d4a42",
+                  "primary": "#68dba9",
+                  "primary_container": "#25a475",
+                  "primary_fixed": "#85f8c4",
+                  "primary_fixed_dim": "#68dba9",
+                  "secondary": "#b7c8e1",
+                  "secondary_container": "#3a4a5f",
+                  "secondary_fixed": "#d3e4fe",
+                  "secondary_fixed_dim": "#b7c8e1",
+                  "surface": "#0f1511",
+                  "surface_bright": "#343b37",
+                  "surface_container": "#1b211d",
+                  "surface_container_high": "#252b28",
+                  "surface_container_highest": "#303632",
+                  "surface_container_low": "#171d19",
+                  "surface_container_lowest": "#0a0f0c",
+                  "surface_dim": "#0f1511",
+                  "surface_tint": "#68dba9",
+                  "surface_variant": "#303632",
+                  "tertiary": "#ffb3ae",
+                  "tertiary_container": "#dd706b",
+                  "tertiary_fixed": "#ffdad7",
+                  "tertiary_fixed_dim": "#ffb3ae"
+                },
+                "overridePrimaryColor": "#059669",
+                "overrideSecondaryColor": "#64748b",
+                "roundness": "ROUND_FOUR",
+                "spacing": {
+                  "gutter": "20px",
+                  "lg": "24px",
+                  "margin": "24px",
+                  "md": "16px",
+                  "sm": "8px",
+                  "unit": "4px",
+                  "xl": "32px",
+                  "xs": "4px"
+                },
+                "spacingScale": 2,
+                "typography": {
+                  "body-lg": {
+                    "fontFamily": "Inter",
+                    "fontSize": "18px",
+                    "fontWeight": "400",
+                    "lineHeight": "1.6"
+                  },
+                  "body-md": {
+                    "fontFamily": "Inter",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "1.5"
+                  },
+                  "body-sm": {
+                    "fontFamily": "Inter",
+                    "fontSize": "14px",
+                    "fontWeight": "400",
+                    "lineHeight": "1.5"
+                  },
+                  "display": {
+                    "fontFamily": "Inter",
+                    "fontSize": "48px",
+                    "fontWeight": "700",
+                    "letterSpacing": "-0.02em",
+                    "lineHeight": "1.1"
+                  },
+                  "h1": {
+                    "fontFamily": "Inter",
+                    "fontSize": "32px",
+                    "fontWeight": "600",
+                    "letterSpacing": "-0.01em",
+                    "lineHeight": "1.2"
+                  },
+                  "h2": {
+                    "fontFamily": "Inter",
+                    "fontSize": "24px",
+                    "fontWeight": "600",
+                    "lineHeight": "1.3"
+                  },
+                  "h3": {
+                    "fontFamily": "Inter",
+                    "fontSize": "20px",
+                    "fontWeight": "600",
+                    "lineHeight": "1.4"
+                  },
+                  "label-caps": {
+                    "fontFamily": "Inter",
+                    "fontSize": "12px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.05em",
+                    "lineHeight": "1"
+                  },
+                  "mono-metric": {
+                    "fontFamily": "Inter",
+                    "fontSize": "28px",
+                    "fontWeight": "500",
+                    "letterSpacing": "-0.02em",
+                    "lineHeight": "1"
+                  }
+                }
+              }
+            },
+            "name": "assets/5c32343eabb748289b6865a4654fa3f0",
+            "version": "1"
+          }
+        },
+        {
+          "design": {
+            "screens": [
+              {
+                "generatedBy": "interactive_ui_controller",
+                "height": "40",
+                "htmlCode": {
+                  "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzM0ZThhN2E1NzU3NDQyNzlhZWM0N2RlYmIxNzRmNjIyEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxNzg1MTU4NjI2NjkwMzY0NTYxNQ&filename=&opi=96797242",
+                  "mimeType": "image/svg+xml",
+                  "name": "projects/17851586266903645615/files/611e0d9dec6e45a3ad5f354753165288"
+                },
+                "id": "bb4d259a902b4f19b0f78d134c9b6252",
+                "name": "projects/17851586266903645615/screens/bb4d259a902b4f19b0f78d134c9b6252",
+                "prompt": "EnergyOS logo: A minimalist lightning bolt or energy wave integrated with the letter 'E', styled in emerald green.. Brand logo",
+                "screenMetadata": {
+                  "agentType": "PRO_AGENT",
+                  "displayMode": "SVG",
+                  "status": "COMPLETE"
+                },
+                "screenType": "IMAGE",
+                "screenshot": {
+                  "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uijLbKsm3aVoax1xx5t7eyjrjviw2gX2tYE2I9WzwaL_q0k4s7t8CXsrDwRVWgnX-aGuaKSuPVbk0no1gAinTgYLoFMQLaLYPf6HPldNh7uHpQ6ZpybCe1cjh7bsB-dWTqqxaDrK1GwVlK96fA5YUvuaMlO8lsE-XXvRBdxBOSJK0KfBSDemv2KDUR_Hp2ABznMj6B4IPZR-5ihsT5N3CQQ3IgxSD_haHlR3n5BHhuXuG67ISQOWIU7NlE",
+                  "name": "projects/17851586266903645615/files/c6659db417984790973b2df66d2391c5"
+                },
+                "theme": {},
+                "title": "EnergyOS Logo",
+                "width": "40"
+              },
+              {
+                "designSystem": {
+                  "designSystem": {
+                    "displayName": "Lumina Grid",
+                    "styleGuidelines": "## Brand & Style\n\nThe design system is engineered for high-stakes energy monitoring environments where precision and speed of interpretation are paramount. The brand personality is authoritative, sophisticated, and technologically advanced, evoking the feeling of a modern mission control center. \n\nThe aesthetic leans into a **Corporate Modern** style with subtle **Minimalist** influences. It prioritizes data density without sacrificing legibility. Visual weight is managed through a strict hierarchy of slate tones, ensuring that the emerald green accents act as beacons for critical information and system health. The overall interface should feel \"engineered\"—every pixel serves a functional purpose in the pursuit of energy efficiency.\n\n## Layout & Spacing\n\nThe layout philosophy follows a **Fluid Grid** model to accommodate the varied screen sizes of control room monitors and tablets. It uses a 12-column grid with a consistent 20px gutter.\n\nSpacing is governed by a 4px base unit. Internal card padding should default to 24px (lg) to give complex charts room to breathe. Use 16px (md) spacing between dashboard widgets. High-density data tables may drop to 8px (sm) vertical padding to maximize information density on the \"Y\" axis.\n\n## Elevation & Depth\n\nHierarchy is established using **Tonal Layers** combined with **Low-contrast Outlines**. Rather than aggressive shadows, this design system uses color-based depth:\n\n1.  **Level 0 (Background):** #0f172a - The base canvas.\n2.  **Level 1 (Cards/Panels):** #1e293b - Main containers, slightly elevated visually by a 1px border (#334155).\n3.  **Level 2 (Popovers/Modals):** #334155 - Floating elements that use a subtle, 15% opacity black shadow with a 20px blur to indicate focus.\n\nInteraction states (hover/active) should be signaled by increasing the border brightness or adding a faint inner glow using the primary emerald green color.\n\n## Components\n\n- **Buttons:** Primary buttons use a solid Emerald (#059669) fill with white text. Secondary buttons are ghost-style with a Slate-400 border.\n- **Cards:** Dashboard widgets must have a 1px border (#334155) and a title area separated by a subtle horizontal rule.\n- **Inputs:** Dark fills (#0f172a) with a 1px slate border. On focus, the border transitions to Emerald with a 2px outer glow.\n- **Chips:** Used for status (e.g., \"Grid Online\"). They should use a low-opacity emerald background with high-opacity emerald text for a \"glass\" look.\n- **Metrics/KPIs:** Large numerical displays should be accompanied by a small sparkline chart or a percentage change indicator.\n- **Data Tables:** Row-based with alternating subtle backgrounds; borders are horizontal only to emphasize the flow of data.\n- **Toggle Switches:** Small and refined, using the emerald color for the \"on\" state to signify active energy flow.",
+                    "theme": {
+                      "bodyFont": "INTER",
+                      "bodyFontFamily": "Inter",
+                      "colorMode": "DARK",
+                      "colorVariant": "FIDELITY",
+                      "customColor": "#059669",
+                      "designMd": "---\nname: Lumina Grid\ncolors:\n  surface: '#0f1511'\n  surface-dim: '#0f1511'\n  surface-bright: '#343b37'\n  surface-container-lowest: '#0a0f0c'\n  surface-container-low: '#171d19'\n  surface-container: '#1b211d'\n  surface-container-high: '#252b28'\n  surface-container-highest: '#303632'\n  on-surface: '#dee4de'\n  on-surface-variant: '#bccac0'\n  inverse-surface: '#dee4de'\n  inverse-on-surface: '#2c322e'\n  outline: '#87948b'\n  outline-variant: '#3d4a42'\n  surface-tint: '#68dba9'\n  primary: '#68dba9'\n  on-primary: '#003825'\n  primary-container: '#25a475'\n  on-primary-container: '#00311f'\n  inverse-primary: '#006c4a'\n  secondary: '#b7c8e1'\n  on-secondary: '#213145'\n  secondary-container: '#3a4a5f'\n  on-secondary-container: '#a9bad3'\n  tertiary: '#ffb3ae'\n  on-tertiary: '#601214'\n  tertiary-container: '#dd706b'\n  on-tertiary-container: '#570b0e'\n  error: '#ffb4ab'\n  on-error: '#690005'\n  error-container: '#93000a'\n  on-error-container: '#ffdad6'\n  primary-fixed: '#85f8c4'\n  primary-fixed-dim: '#68dba9'\n  on-primary-fixed: '#002114'\n  on-primary-fixed-variant: '#005137'\n  secondary-fixed: '#d3e4fe'\n  secondary-fixed-dim: '#b7c8e1'\n  on-secondary-fixed: '#0b1c30'\n  on-secondary-fixed-variant: '#38485d'\n  tertiary-fixed: '#ffdad7'\n  tertiary-fixed-dim: '#ffb3ae'\n  on-tertiary-fixed: '#410004'\n  on-tertiary-fixed-variant: '#7f2928'\n  background: '#0f1511'\n  on-background: '#dee4de'\n  surface-variant: '#303632'\ntypography:\n  display:\n    fontFamily: Inter\n    fontSize: 48px\n    fontWeight: '700'\n    lineHeight: '1.1'\n    letterSpacing: -0.02em\n  h1:\n    fontFamily: Inter\n    fontSize: 32px\n    fontWeight: '600'\n    lineHeight: '1.2'\n    letterSpacing: -0.01em\n  h2:\n    fontFamily: Inter\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: '1.3'\n  h3:\n    fontFamily: Inter\n    fontSize: 20px\n    fontWeight: '600'\n    lineHeight: '1.4'\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: '1.6'\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: '1.5'\n  body-sm:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: '1.5'\n  label-caps:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: '600'\n    lineHeight: '1'\n    letterSpacing: 0.05em\n  mono-metric:\n    fontFamily: Inter\n    fontSize: 28px\n    fontWeight: '500'\n    lineHeight: '1'\n    letterSpacing: -0.02em\nrounded:\n  sm: 0.125rem\n  DEFAULT: 0.25rem\n  md: 0.375rem\n  lg: 0.5rem\n  xl: 0.75rem\n  full: 9999px\nspacing:\n  unit: 4px\n  xs: 4px\n  sm: 8px\n  md: 16px\n  lg: 24px\n  xl: 32px\n  gutter: 20px\n  margin: 24px\n---\n\n## Brand & Style\n\nThe design system is engineered for high-stakes energy monitoring environments where precision and speed of interpretation are paramount. The brand personality is authoritative, sophisticated, and technologically advanced, evoking the feeling of a modern mission control center. \n\nThe aesthetic leans into a **Corporate Modern** style with subtle **Minimalist** influences. It prioritizes data density without sacrificing legibility. Visual weight is managed through a strict hierarchy of slate tones, ensuring that the emerald green accents act as beacons for critical information and system health. The overall interface should feel \"engineered\"—every pixel serves a functional purpose in the pursuit of energy efficiency.\n\n## Colors\n\nThe palette for this design system is rooted in a deep slate foundation to reduce eye strain during extended monitoring periods. \n\n- **Primary Emerald (#059669):** Reserved for primary actions, active energy flow states, and positive performance metrics.\n- **Surface & Background:** The background uses a dark slate (#0f172a), while component surfaces use a slightly lighter slate (#1e293b) to create subtle depth.\n- **Functional Grays:** Supporting grays (Slate 400-600) manage secondary information and structural borders, ensuring the UI remains cohesive and professional.\n- **Semantic States:** Use a muted amber for warnings and a crisp red for critical grid failures, though these should be used sparingly to maintain the primary green's dominance.\n\n## Typography\n\nThis design system utilizes the **Inter** font family exclusively to leverage its exceptional readability on high-resolution screens. \n\nThe typographic scale is designed for rapid data scanning. **Headline** styles are tight and bold to define clear section breaks. **Body** text remains neutral to facilitate long-form data reading. A specialized **Label-caps** style is used for table headers and metadata to provide contrast against numerical data. For primary energy metrics, use a medium weight with tighter letter spacing to create a \"digital readout\" feel without resorting to a monospaced font.\n\n## Layout & Spacing\n\nThe layout philosophy follows a **Fluid Grid** model to accommodate the varied screen sizes of control room monitors and tablets. It uses a 12-column grid with a consistent 20px gutter.\n\nSpacing is governed by a 4px base unit. Internal card padding should default to 24px (lg) to give complex charts room to breathe. Use 16px (md) spacing between dashboard widgets. High-density data tables may drop to 8px (sm) vertical padding to maximize information density on the \"Y\" axis.\n\n## Elevation & Depth\n\nHierarchy is established using **Tonal Layers** combined with **Low-contrast Outlines**. Rather than aggressive shadows, this design system uses color-based depth:\n\n1.  **Level 0 (Background):** #0f172a - The base canvas.\n2.  **Level 1 (Cards/Panels):** #1e293b - Main containers, slightly elevated visually by a 1px border (#334155).\n3.  **Level 2 (Popovers/Modals):** #334155 - Floating elements that use a subtle, 15% opacity black shadow with a 20px blur to indicate focus.\n\nInteraction states (hover/active) should be signaled by increasing the border brightness or adding a faint inner glow using the primary emerald green color.\n\n## Shapes\n\nThe shape language is **Soft (Level 1)**. This subtle rounding (4px for base elements, 8px for cards) softens the technical aesthetic just enough to feel modern and accessible while maintaining a professional, rigid structure. \n\nButtons and input fields should strictly adhere to the 4px radius. Larger containers like dashboard widgets or sidebar navigations should use 8px to clearly define their boundaries against the background.\n\n## Components\n\n- **Buttons:** Primary buttons use a solid Emerald (#059669) fill with white text. Secondary buttons are ghost-style with a Slate-400 border.\n- **Cards:** Dashboard widgets must have a 1px border (#334155) and a title area separated by a subtle horizontal rule.\n- **Inputs:** Dark fills (#0f172a) with a 1px slate border. On focus, the border transitions to Emerald with a 2px outer glow.\n- **Chips:** Used for status (e.g., \"Grid Online\"). They should use a low-opacity emerald background with high-opacity emerald text for a \"glass\" look.\n- **Metrics/KPIs:** Large numerical displays should be accompanied by a small sparkline chart or a percentage change indicator.\n- **Data Tables:** Row-based with alternating subtle backgrounds; borders are horizontal only to emphasize the flow of data.\n- **Toggle Switches:** Small and refined, using the emerald color for the \"on\" state to signify active energy flow.",
+                      "font": "INTER",
+                      "headlineFont": "INTER",
+                      "headlineFontFamily": "Inter",
+                      "labelFont": "INTER",
+                      "labelFontFamily": "Inter",
+                      "namedColors": {
+                        "background": "#0f1511",
+                        "error": "#ffb4ab",
+                        "error_container": "#93000a",
+                        "inverse_on_surface": "#2c322e",
+                        "inverse_primary": "#006c4a",
+                        "inverse_surface": "#dee4de",
+                        "on_background": "#dee4de",
+                        "on_error": "#690005",
+                        "on_error_container": "#ffdad6",
+                        "on_primary": "#003825",
+                        "on_primary_container": "#00311f",
+                        "on_primary_fixed": "#002114",
+                        "on_primary_fixed_variant": "#005137",
+                        "on_secondary": "#213145",
+                        "on_secondary_container": "#a9bad3",
+                        "on_secondary_fixed": "#0b1c30",
+                        "on_secondary_fixed_variant": "#38485d",
+                        "on_surface": "#dee4de",
+                        "on_surface_variant": "#bccac0",
+                        "on_tertiary": "#601214",
+                        "on_tertiary_container": "#570b0e",
+                        "on_tertiary_fixed": "#410004",
+                        "on_tertiary_fixed_variant": "#7f2928",
+                        "outline": "#87948b",
+                        "outline_variant": "#3d4a42",
+                        "primary": "#68dba9",
+                        "primary_container": "#25a475",
+                        "primary_fixed": "#85f8c4",
+                        "primary_fixed_dim": "#68dba9",
+                        "secondary": "#b7c8e1",
+                        "secondary_container": "#3a4a5f",
+                        "secondary_fixed": "#d3e4fe",
+                        "secondary_fixed_dim": "#b7c8e1",
+                        "surface": "#0f1511",
+                        "surface_bright": "#343b37",
+                        "surface_container": "#1b211d",
+                        "surface_container_high": "#252b28",
+                        "surface_container_highest": "#303632",
+                        "surface_container_low": "#171d19",
+                        "surface_container_lowest": "#0a0f0c",
+                        "surface_dim": "#0f1511",
+                        "surface_tint": "#68dba9",
+                        "surface_variant": "#303632",
+                        "tertiary": "#ffb3ae",
+                        "tertiary_container": "#dd706b",
+                        "tertiary_fixed": "#ffdad7",
+                        "tertiary_fixed_dim": "#ffb3ae"
+                      },
+                      "overridePrimaryColor": "#059669",
+                      "overrideSecondaryColor": "#64748b",
+                      "roundness": "ROUND_FOUR",
+                      "spacing": {
+                        "gutter": "20px",
+                        "lg": "24px",
+                        "margin": "24px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "unit": "4px",
+                        "xl": "32px",
+                        "xs": "4px"
+                      },
+                      "spacingScale": 2,
+                      "typography": {
+                        "body-lg": {
+                          "fontFamily": "Inter",
+                          "fontSize": "18px",
+                          "fontWeight": "400",
+                          "lineHeight": "1.6"
+                        },
+                        "body-md": {
+                          "fontFamily": "Inter",
+                          "fontSize": "16px",
+                          "fontWeight": "400",
+                          "lineHeight": "1.5"
+                        },
+                        "body-sm": {
+                          "fontFamily": "Inter",
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "lineHeight": "1.5"
+                        },
+                        "display": {
+                          "fontFamily": "Inter",
+                          "fontSize": "48px",
+                          "fontWeight": "700",
+                          "letterSpacing": "-0.02em",
+                          "lineHeight": "1.1"
+                        },
+                        "h1": {
+                          "fontFamily": "Inter",
+                          "fontSize": "32px",
+                          "fontWeight": "600",
+                          "letterSpacing": "-0.01em",
+                          "lineHeight": "1.2"
+                        },
+                        "h2": {
+                          "fontFamily": "Inter",
+                          "fontSize": "24px",
+                          "fontWeight": "600",
+                          "lineHeight": "1.3"
+                        },
+                        "h3": {
+                          "fontFamily": "Inter",
+                          "fontSize": "20px",
+                          "fontWeight": "600",
+                          "lineHeight": "1.4"
+                        },
+                        "label-caps": {
+                          "fontFamily": "Inter",
+                          "fontSize": "12px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.05em",
+                          "lineHeight": "1"
+                        },
+                        "mono-metric": {
+                          "fontFamily": "Inter",
+                          "fontSize": "28px",
+                          "fontWeight": "500",
+                          "letterSpacing": "-0.02em",
+                          "lineHeight": "1"
+                        }
+                      }
+                    }
+                  },
+                  "name": "assets/5c32343eabb748289b6865a4654fa3f0",
+                  "version": "1"
+                },
+                "deviceType": "DESKTOP",
+                "generatedBy": "figaro_agent",
+                "height": "2160",
+                "htmlCode": {
+                  "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2M4NWVlYWY5MTQ3NjRlYTVhMGMxOWVlM2IyZDkwZmY5EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxNzg1MTU4NjI2NjkwMzY0NTYxNQ&filename=&opi=96797242",
+                  "mimeType": "text/html",
+                  "name": "projects/17851586266903645615/files/fed91b78c0904cc1bc0bc32f8ab2d54a"
+                },
+                "id": "20f1a81a2dba4ab78954d7d8a08f76d2",
+                "name": "projects/17851586266903645615/screens/20f1a81a2dba4ab78954d7d8a08f76d2",
+                "prompt": "Main energy management dashboard for 'EnergyOS'.\n- Header: Include the logo {{DATA:IMAGE:IMAGE_1}} and 'EnergyOS' title. Navigation for Dashboard, Analytics, Properties, and Reports.\n- Metrics Grid (4 cards):\n    1. Total Consumption: '4,280 kWh' with a sparkline.\n    2. Monthly Savings: '€1,420' with a positive percentage indicator.\n    3. Active Properties: '24' total.\n    4. Alerts: '2 Critical' in a subtle red/warning tone.\n- Chart Section: A large, modern line chart showing 'Weekly Consumption'. Include a period selector (Week/Month/Year).\n- Properties List: 3-4 cards showing property name (e.g., 'Downtown Hub', 'Westside Plaza'), location, a status badge (Online/Offline), and current consumption (kWh).\n- Styling: Dark slate background (#0f172a), emerald green (#059669) for primary buttons, highlights, and positive metrics. Inter font. Responsive grid layout.\n## Available Images\nYou MUST include the following images in this design. You must reference them\nby putting their exact placeholder IDs in `src` attributes or CSS\n`background-image` rules. Do NOT use external URLs or generate new\nplaceholders. Preserve these IDs exactly as written. Read each image's\nDescription to understand its subject, intended section, and visual role.\n\n- {{DATA:IMAGE:IMAGE_1}}\n  Alt Text: EnergyOS Logo\n  Description: EnergyOS logo: A minimalist lightning bolt or energy wave integrated with the letter 'E', styled in emerald green.. Brand logo\n  Dimensions: 40x40\n  Aspect Ratio: 1.00\n  Colors: #059669\n",
+                "screenMetadata": {
+                  "agentType": "PRO_AGENT",
+                  "status": "COMPLETE"
+                },
+                "screenType": "DESIGN",
+                "screenshot": {
+                  "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uhiwaDsuJhD4mpnCy0jOj7cwA1XoPo1tsC1PH3a-4s99bY88LmRZOCeWmftavGLcGAN4xSc1IyaJ38-UvZdlmU9POg-AwwAqjclkN-5pdX0sVU3PUSM14mv-YyrfVwxAmMgJYcXNbGjyu5YeBq2I-Qo6CyTfXt0qNf3cy9qC0jhVium6Zfs22Bt6bbworWtU4fC-NKcHsn0N_Db9cp0_PS5Rtt6C2ylf8Xmz6Mz_x0CbddHm6HfctdLugK9",
+                  "name": "projects/17851586266903645615/files/f4278e077dd1491b9ed5be7a8c68012e"
+                },
+                "theme": {
+                  "bodyFont": "INTER",
+                  "bodyFontFamily": "Inter",
+                  "colorMode": "DARK",
+                  "colorVariant": "FIDELITY",
+                  "customColor": "#059669",
+                  "designMd": "---\nname: Lumina Grid\ncolors:\n  surface: '#0f1511'\n  surface-dim: '#0f1511'\n  surface-bright: '#343b37'\n  surface-container-lowest: '#0a0f0c'\n  surface-container-low: '#171d19'\n  surface-container: '#1b211d'\n  surface-container-high: '#252b28'\n  surface-container-highest: '#303632'\n  on-surface: '#dee4de'\n  on-surface-variant: '#bccac0'\n  inverse-surface: '#dee4de'\n  inverse-on-surface: '#2c322e'\n  outline: '#87948b'\n  outline-variant: '#3d4a42'\n  surface-tint: '#68dba9'\n  primary: '#68dba9'\n  on-primary: '#003825'\n  primary-container: '#25a475'\n  on-primary-container: '#00311f'\n  inverse-primary: '#006c4a'\n  secondary: '#b7c8e1'\n  on-secondary: '#213145'\n  secondary-container: '#3a4a5f'\n  on-secondary-container: '#a9bad3'\n  tertiary: '#ffb3ae'\n  on-tertiary: '#601214'\n  tertiary-container: '#dd706b'\n  on-tertiary-container: '#570b0e'\n  error: '#ffb4ab'\n  on-error: '#690005'\n  error-container: '#93000a'\n  on-error-container: '#ffdad6'\n  primary-fixed: '#85f8c4'\n  primary-fixed-dim: '#68dba9'\n  on-primary-fixed: '#002114'\n  on-primary-fixed-variant: '#005137'\n  secondary-fixed: '#d3e4fe'\n  secondary-fixed-dim: '#b7c8e1'\n  on-secondary-fixed: '#0b1c30'\n  on-secondary-fixed-variant: '#38485d'\n  tertiary-fixed: '#ffdad7'\n  tertiary-fixed-dim: '#ffb3ae'\n  on-tertiary-fixed: '#410004'\n  on-tertiary-fixed-variant: '#7f2928'\n  background: '#0f1511'\n  on-background: '#dee4de'\n  surface-variant: '#303632'\ntypography:\n  display:\n    fontFamily: Inter\n    fontSize: 48px\n    fontWeight: '700'\n    lineHeight: '1.1'\n    letterSpacing: -0.02em\n  h1:\n    fontFamily: Inter\n    fontSize: 32px\n    fontWeight: '600'\n    lineHeight: '1.2'\n    letterSpacing: -0.01em\n  h2:\n    fontFamily: Inter\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: '1.3'\n  h3:\n    fontFamily: Inter\n    fontSize: 20px\n    fontWeight: '600'\n    lineHeight: '1.4'\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: '1.6'\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: '1.5'\n  body-sm:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: '1.5'\n  label-caps:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: '600'\n    lineHeight: '1'\n    letterSpacing: 0.05em\n  mono-metric:\n    fontFamily: Inter\n    fontSize: 28px\n    fontWeight: '500'\n    lineHeight: '1'\n    letterSpacing: -0.02em\nrounded:\n  sm: 0.125rem\n  DEFAULT: 0.25rem\n  md: 0.375rem\n  lg: 0.5rem\n  xl: 0.75rem\n  full: 9999px\nspacing:\n  unit: 4px\n  xs: 4px\n  sm: 8px\n  md: 16px\n  lg: 24px\n  xl: 32px\n  gutter: 20px\n  margin: 24px\n---\n\n## Brand & Style\n\nThe design system is engineered for high-stakes energy monitoring environments where precision and speed of interpretation are paramount. The brand personality is authoritative, sophisticated, and technologically advanced, evoking the feeling of a modern mission control center. \n\nThe aesthetic leans into a **Corporate Modern** style with subtle **Minimalist** influences. It prioritizes data density without sacrificing legibility. Visual weight is managed through a strict hierarchy of slate tones, ensuring that the emerald green accents act as beacons for critical information and system health. The overall interface should feel \"engineered\"—every pixel serves a functional purpose in the pursuit of energy efficiency.\n\n## Colors\n\nThe palette for this design system is rooted in a deep slate foundation to reduce eye strain during extended monitoring periods. \n\n- **Primary Emerald (#059669):** Reserved for primary actions, active energy flow states, and positive performance metrics.\n- **Surface & Background:** The background uses a dark slate (#0f172a), while component surfaces use a slightly lighter slate (#1e293b) to create subtle depth.\n- **Functional Grays:** Supporting grays (Slate 400-600) manage secondary information and structural borders, ensuring the UI remains cohesive and professional.\n- **Semantic States:** Use a muted amber for warnings and a crisp red for critical grid failures, though these should be used sparingly to maintain the primary green's dominance.\n\n## Typography\n\nThis design system utilizes the **Inter** font family exclusively to leverage its exceptional readability on high-resolution screens. \n\nThe typographic scale is designed for rapid data scanning. **Headline** styles are tight and bold to define clear section breaks. **Body** text remains neutral to facilitate long-form data reading. A specialized **Label-caps** style is used for table headers and metadata to provide contrast against numerical data. For primary energy metrics, use a medium weight with tighter letter spacing to create a \"digital readout\" feel without resorting to a monospaced font.\n\n## Layout & Spacing\n\nThe layout philosophy follows a **Fluid Grid** model to accommodate the varied screen sizes of control room monitors and tablets. It uses a 12-column grid with a consistent 20px gutter.\n\nSpacing is governed by a 4px base unit. Internal card padding should default to 24px (lg) to give complex charts room to breathe. Use 16px (md) spacing between dashboard widgets. High-density data tables may drop to 8px (sm) vertical padding to maximize information density on the \"Y\" axis.\n\n## Elevation & Depth\n\nHierarchy is established using **Tonal Layers** combined with **Low-contrast Outlines**. Rather than aggressive shadows, this design system uses color-based depth:\n\n1.  **Level 0 (Background):** #0f172a - The base canvas.\n2.  **Level 1 (Cards/Panels):** #1e293b - Main containers, slightly elevated visually by a 1px border (#334155).\n3.  **Level 2 (Popovers/Modals):** #334155 - Floating elements that use a subtle, 15% opacity black shadow with a 20px blur to indicate focus.\n\nInteraction states (hover/active) should be signaled by increasing the border brightness or adding a faint inner glow using the primary emerald green color.\n\n## Shapes\n\nThe shape language is **Soft (Level 1)**. This subtle rounding (4px for base elements, 8px for cards) softens the technical aesthetic just enough to feel modern and accessible while maintaining a professional, rigid structure. \n\nButtons and input fields should strictly adhere to the 4px radius. Larger containers like dashboard widgets or sidebar navigations should use 8px to clearly define their boundaries against the background.\n\n## Components\n\n- **Buttons:** Primary buttons use a solid Emerald (#059669) fill with white text. Secondary buttons are ghost-style with a Slate-400 border.\n- **Cards:** Dashboard widgets must have a 1px border (#334155) and a title area separated by a subtle horizontal rule.\n- **Inputs:** Dark fills (#0f172a) with a 1px slate border. On focus, the border transitions to Emerald with a 2px outer glow.\n- **Chips:** Used for status (e.g., \"Grid Online\"). They should use a low-opacity emerald background with high-opacity emerald text for a \"glass\" look.\n- **Metrics/KPIs:** Large numerical displays should be accompanied by a small sparkline chart or a percentage change indicator.\n- **Data Tables:** Row-based with alternating subtle backgrounds; borders are horizontal only to emphasize the flow of data.\n- **Toggle Switches:** Small and refined, using the emerald color for the \"on\" state to signify active energy flow.",
+                  "font": "INTER",
+                  "headlineFont": "INTER",
+                  "headlineFontFamily": "Inter",
+                  "labelFont": "INTER",
+                  "labelFontFamily": "Inter",
+                  "namedColors": {
+                    "background": "#0f1511",
+                    "error": "#ffb4ab",
+                    "error_container": "#93000a",
+                    "inverse_on_surface": "#2c322e",
+                    "inverse_primary": "#006c4a",
+                    "inverse_surface": "#dee4de",
+                    "on_background": "#dee4de",
+                    "on_error": "#690005",
+                    "on_error_container": "#ffdad6",
+                    "on_primary": "#003825",
+                    "on_primary_container": "#00311f",
+                    "on_primary_fixed": "#002114",
+                    "on_primary_fixed_variant": "#005137",
+                    "on_secondary": "#213145",
+                    "on_secondary_container": "#a9bad3",
+                    "on_secondary_fixed": "#0b1c30",
+                    "on_secondary_fixed_variant": "#38485d",
+                    "on_surface": "#dee4de",
+                    "on_surface_variant": "#bccac0",
+                    "on_tertiary": "#601214",
+                    "on_tertiary_container": "#570b0e",
+                    "on_tertiary_fixed": "#410004",
+                    "on_tertiary_fixed_variant": "#7f2928",
+                    "outline": "#87948b",
+                    "outline_variant": "#3d4a42",
+                    "primary": "#68dba9",
+                    "primary_container": "#25a475",
+                    "primary_fixed": "#85f8c4",
+                    "primary_fixed_dim": "#68dba9",
+                    "secondary": "#b7c8e1",
+                    "secondary_container": "#3a4a5f",
+                    "secondary_fixed": "#d3e4fe",
+                    "secondary_fixed_dim": "#b7c8e1",
+                    "surface": "#0f1511",
+                    "surface_bright": "#343b37",
+                    "surface_container": "#1b211d",
+                    "surface_container_high": "#252b28",
+                    "surface_container_highest": "#303632",
+                    "surface_container_low": "#171d19",
+                    "surface_container_lowest": "#0a0f0c",
+                    "surface_dim": "#0f1511",
+                    "surface_tint": "#68dba9",
+                    "surface_variant": "#303632",
+                    "tertiary": "#ffb3ae",
+                    "tertiary_container": "#dd706b",
+                    "tertiary_fixed": "#ffdad7",
+                    "tertiary_fixed_dim": "#ffb3ae"
+                  },
+                  "overridePrimaryColor": "#059669",
+                  "overrideSecondaryColor": "#64748b",
+                  "roundness": "ROUND_FOUR",
+                  "spacing": {
+                    "gutter": "20px",
+                    "lg": "24px",
+                    "margin": "24px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "unit": "4px",
+                    "xl": "32px",
+                    "xs": "4px"
+                  },
+                  "spacingScale": 2,
+                  "typography": {
+                    "body-lg": {
+                      "fontFamily": "Inter",
+                      "fontSize": "18px",
+                      "fontWeight": "400",
+                      "lineHeight": "1.6"
+                    },
+                    "body-md": {
+                      "fontFamily": "Inter",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "1.5"
+                    },
+                    "body-sm": {
+                      "fontFamily": "Inter",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "1.5"
+                    },
+                    "display": {
+                      "fontFamily": "Inter",
+                      "fontSize": "48px",
+                      "fontWeight": "700",
+                      "letterSpacing": "-0.02em",
+                      "lineHeight": "1.1"
+                    },
+                    "h1": {
+                      "fontFamily": "Inter",
+                      "fontSize": "32px",
+                      "fontWeight": "600",
+                      "letterSpacing": "-0.01em",
+                      "lineHeight": "1.2"
+                    },
+                    "h2": {
+                      "fontFamily": "Inter",
+                      "fontSize": "24px",
+                      "fontWeight": "600",
+                      "lineHeight": "1.3"
+                    },
+                    "h3": {
+                      "fontFamily": "Inter",
+                      "fontSize": "20px",
+                      "fontWeight": "600",
+                      "lineHeight": "1.4"
+                    },
+                    "label-caps": {
+                      "fontFamily": "Inter",
+                      "fontSize": "12px",
+                      "fontWeight": "600",
+                      "letterSpacing": "0.05em",
+                      "lineHeight": "1"
+                    },
+                    "mono-metric": {
+                      "fontFamily": "Inter",
+                      "fontSize": "28px",
+                      "fontWeight": "500",
+                      "letterSpacing": "-0.02em",
+                      "lineHeight": "1"
+                    }
+                  }
+                },
+                "title": "EnergyOS Dashboard",
+                "width": "2560"
+              }
+            ],
+            "theme": {}
+          }
+        },
+        {
+          "text": "I've designed the **EnergyOS Dashboard**, tailored for efficient energy management with a professional dark theme.\n\n### Design Highlights:\n*   **Visual Foundation**: Used a dark slate background (#0f172a) with high-contrast emerald green (#059669) accents to emphasize key data points.\n*   **Key Metrics**: Four distinct cards provide an at-a-glance view of total consumption, monthly savings, active properties, and critical alerts.\n*   **Data Visualization**: Included a prominent \"Weekly Consumption\" line chart with a period selector to track performance trends over time.\n*   **Property Insights**: Detailed property cards feature status indicators and specific usage data, allowing for quick operational checks.\n*   **Consistent Branding**: Integrated the custom EnergyOS logo and used the Inter font family for a modern, legible interface.\n\nHow does this look for your mission control? Would you like to explore the **Analytics** view or perhaps add a **Detailed Property** drill-down screen?"
+        },
+        {
+          "suggestion": "Create the Analytics drill-down screen"
+        },
+        {
+          "suggestion": "Design a 'Detailed Property' view"
+        },
+        {
+          "suggestion": "Make the dashboard a bit more compact"
+        }
+      ],
+      "projectId": "17851586266903645615",
+      "sessionId": "8588287783672702756"
+    }
+  }
+}

@@ -1,0 +1,331 @@
+{
+  "id": 1779012303876,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"projectId\":\"14459937659544842449\",\"sessionId\":\"3706232228140049366\",\"outputComponents\":[{\"design\":{\"screens\":[{\"screenshot\":{\"name\":\"projects/14459937659544842449/files/e62a633b9e884b50bc8f2e99c4c1bc28\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/ADBb0uiNHnaGmgOyIF92ABpT26rzGhHKMekXBj14NDSEDa_S5ykA7X2dFyBjVFLg0Xf8Gli3TBz3yaXpkfmF4rMMTyaFdJRLPsQMI5j_n-EZqxllTDB89PYV0KxRFDVzfO8GoMQZRhcWRk9WHnIjRH-Le1g5vC26rByh6IqUs0BxDz1PhN4MLpyXdBfsBQ59g7weONbJKzaV4t9WE1id9MWzfa_72z9WMLwGG8ZMB6PGp3gIwrTSLJlbt_5ew661\"},\"htmlCode\":{\"name\":\"projects/14459937659544842449/files/d74e20de320244daae9467f596183083\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzhjMTkyOGU4YTg0NjQ3OTQ4NTAyZGE1NmVkYmY3MjI0EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxNDQ1OTkzNzY1OTU0NDg0MjQ0OQ&filename=&opi=96797242\",\"mimeType\":\"text/html\"},\"id\":\"4bc431fe2faf4a3781b22260a65f1750\",\"generatedBy\":\"figaro_agent\",\"width\":\"2560\",\"height\":\"2402\",\"title\":\"Tramo | CRM Interno de Leads\",\"prompt\":\"Create a professional B2B internal CRM screen for 'Tramo'. \\n\\nSTYLE: \\n- Background: #fcf9f8 (cream/paper)\\n- Text: #1c1b1b (ink)\\n- Primary Accent: #e6813a (signal orange)\\n- Secondary Accent: #755c4f (muted brown)\\n- Success State: #0f766e (teal)\\n- Cards: White (#ffffff) with #ead8cd borders, 16px border-radius.\\n- Typography: Plus Jakarta Sans for headlines, Inter for body, JetBrains Mono for metrics/data.\\n\\nLAYOUT:\\n- Top Bar: Logo 'Tramo', Breadcrumb 'Pilot / Leads', and a primary action button '[+ Nuevo Lead]'.\\n- Summary Row: 4 cards showing 'Leads totales: 8', 'Qualificados: 5', 'Llamada programada: 2', and 'Piloto en curso: 1'.\\n- Filter/Sort Bar: Search input 'Buscar lead...', filter pills for Status (Todos, Nuevo, Qualificado, Llamada, Piloto), and Sort dropdown 'Fecha ↓'.\\n- Main Table: Columns: Lead, Empresa, Uds., Ciudad, PMS, Pain principal, Datadis/CUPS, Facturas, Energía pago, Estado, Acciones. \\n- Content: Include the 5 realistic lead rows (Carlos Mendoza, Laura García, Pablo Santos, Elena Torres, Miguel Rodríguez) with their specific data points like 'Beds24', 'Consumo fuera de reserva', 'Cualificado', etc.\\n- Detail Panel (Right Side): Selected lead 'Elena Torres'. Show contact info, status stepper (Nuevo to Cliente), Notes area, Next action (date picker + button), and the Qualification checklist with items like '10+ unidades', 'PMS conocido', etc. Hardware interest dropdown set to 'Shelly + datadis'.\\n\\nEnsure no gradients or decorative orbs. The look should be industrial, editorial, and precise.\",\"name\":\"projects/14459937659544842449/screens/4bc431fe2faf4a3781b22260a65f1750\",\"theme\":{\"colorMode\":\"LIGHT\",\"font\":\"PLUS_JAKARTA_SANS\",\"roundness\":\"ROUND_EIGHT\",\"customColor\":\"#e6813a\",\"headlineFont\":\"PLUS_JAKARTA_SANS\",\"bodyFont\":\"INTER\",\"labelFont\":\"JETBRAINS_MONO\",\"namedColors\":{\"background\":\"#fdf8f8\",\"error\":\"#ba1a1a\",\"error_container\":\"#ffdad6\",\"inverse_on_surface\":\"#f4f0ef\",\"inverse_primary\":\"#ffb68a\",\"inverse_surface\":\"#313030\",\"on_background\":\"#1c1b1b\",\"on_error\":\"#ffffff\",\"on_error_container\":\"#93000a\",\"on_primary\":\"#ffffff\",\"on_primary_container\":\"#562500\",\"on_primary_fixed\":\"#321300\",\"on_primary_fixed_variant\":\"#743500\",\"on_secondary\":\"#ffffff\",\"on_secondary_container\":\"#785f52\",\"on_secondary_fixed\":\"#29170e\",\"on_secondary_fixed_variant\":\"#584236\",\"on_surface\":\"#1c1b1b\",\"on_surface_variant\":\"#554338\",\"on_tertiary\":\"#ffffff\",\"on_tertiary_container\":\"#003846\",\"on_tertiary_fixed\":\"#001f28\",\"on_tertiary_fixed_variant\":\"#004e60\",\"outline\":\"#887367\",\"outline_variant\":\"#dbc1b3\",\"primary\":\"#984700\",\"primary_container\":\"#e6813a\",\"primary_fixed\":\"#ffdbc8\",\"primary_fixed_dim\":\"#ffb68a\",\"secondary\":\"#72594c\",\"secondary_container\":\"#fedccb\",\"secondary_fixed\":\"#fedccb\",\"secondary_fixed_dim\":\"#e0c0b0\",\"surface\":\"#fdf8f8\",\"surface_bright\":\"#fdf8f8\",\"surface_container\":\"#f1edec\",\"surface_container_high\":\"#ece7e7\",\"surface_container_highest\":\"#e6e1e1\",\"surface_container_low\":\"#f7f2f2\",\"surface_container_lowest\":\"#ffffff\",\"surface_dim\":\"#ddd9d8\",\"surface_tint\":\"#984700\",\"surface_variant\":\"#e6e1e1\",\"tertiary\":\"#00677f\",\"tertiary_container\":\"#00a9ce\",\"tertiary_fixed\":\"#b6ebff\",\"tertiary_fixed_dim\":\"#57d5fc\"},\"designMd\":\"---\\nname: Tectonic Ledger\\ncolors:\\n  surface: '#fdf8f8'\\n  surface-dim: '#ddd9d8'\\n  surface-bright: '#fdf8f8'\\n  surface-container-lowest: '#ffffff'\\n  surface-container-low: '#f7f2f2'\\n  surface-container: '#f1edec'\\n  surface-container-high: '#ece7e7'\\n  surface-container-highest: '#e6e1e1'\\n  on-surface: '#1c1b1b'\\n  on-surface-variant: '#554338'\\n  inverse-surface: '#313030'\\n  inverse-on-surface: '#f4f0ef'\\n  outline: '#887367'\\n  outline-variant: '#dbc1b3'\\n  surface-tint: '#984700'\\n  primary: '#984700'\\n  on-primary: '#ffffff'\\n  primary-container: '#e6813a'\\n  on-primary-container: '#562500'\\n  inverse-primary: '#ffb68a'\\n  secondary: '#72594c'\\n  on-secondary: '#ffffff'\\n  secondary-container: '#fedccb'\\n  on-secondary-container: '#785f52'\\n  tertiary: '#00677f'\\n  on-tertiary: '#ffffff'\\n  tertiary-container: '#00a9ce'\\n  on-tertiary-container: '#003846'\\n  error: '#ba1a1a'\\n  on-error: '#ffffff'\\n  error-container: '#ffdad6'\\n  on-error-container: '#93000a'\\n  primary-fixed: '#ffdbc8'\\n  primary-fixed-dim: '#ffb68a'\\n  on-primary-fixed: '#321300'\\n  on-primary-fixed-variant: '#743500'\\n  secondary-fixed: '#fedccb'\\n  secondary-fixed-dim: '#e0c0b0'\\n  on-secondary-fixed: '#29170e'\\n  on-secondary-fixed-variant: '#584236'\\n  tertiary-fixed: '#b6ebff'\\n  tertiary-fixed-dim: '#57d5fc'\\n  on-tertiary-fixed: '#001f28'\\n  on-tertiary-fixed-variant: '#004e60'\\n  background: '#fdf8f8'\\n  on-background: '#1c1b1b'\\n  surface-variant: '#e6e1e1'\\ntypography:\\n  display-lg:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 48px\\n    fontWeight: '700'\\n    lineHeight: '1.1'\\n    letterSpacing: -0.02em\\n  headline-lg:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 32px\\n    fontWeight: '600'\\n    lineHeight: '1.2'\\n    letterSpacing: -0.01em\\n  headline-md:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 24px\\n    fontWeight: '600'\\n    lineHeight: '1.3'\\n  body-lg:\\n    fontFamily: Inter\\n    fontSize: 18px\\n    fontWeight: '400'\\n    lineHeight: '1.6'\\n  body-md:\\n    fontFamily: Inter\\n    fontSize: 16px\\n    fontWeight: '400'\\n    lineHeight: '1.5'\\n  body-sm:\\n    fontFamily: Inter\\n    fontSize: 14px\\n    fontWeight: '400'\\n    lineHeight: '1.5'\\n  mono-metrics:\\n    fontFamily: JetBrains Mono\\n    fontSize: 20px\\n    fontWeight: '500'\\n    lineHeight: '1.2'\\n    letterSpacing: -0.02em\\n  mono-label:\\n    fontFamily: JetBrains Mono\\n    fontSize: 12px\\n    fontWeight: '600'\\n    lineHeight: '1.0'\\nrounded:\\n  sm: 0.25rem\\n  DEFAULT: 0.5rem\\n  md: 0.75rem\\n  lg: 1rem\\n  xl: 1.5rem\\n  full: 9999px\\nspacing:\\n  base: 8px\\n  xs: 4px\\n  sm: 12px\\n  md: 24px\\n  lg: 40px\\n  xl: 64px\\n  gutter: 24px\\n  margin-mobile: 16px\\n  margin-desktop: 32px\\n---\\n\\n## Brand & Style\\nThe design system is anchored in the aesthetic of industrial engineering journals and high-end architectural documentation. It prioritizes clarity, structural integrity, and a \\\"built-to-last\\\" professional tone for B2B relationship management.\\n\\nThe style is **Industrial Editorial**. It utilizes a \\\"Paper and Ink\\\" foundation to reduce eye strain during long-duration work while employing high-visibility \\\"Signal\\\" accents to denote action and status. Every element is governed by a strict grid, eschewing decorative trends like gradients, orbs, or soft blurs in favor of architectural lines, purposeful borders, and a stark typographic hierarchy that treats data as the primary visual hero.\\n\\n## Colors\\nThe palette is divided into functional layers:\\n- **Surface:** The primary canvas is a tactile \\\"Cream Paper\\\" (#fcf9f8), providing a warmer, more sophisticated backdrop than pure white.\\n- **Ink:** Typography and iconography use \\\"Ink\\\" (#1c1b1b) for maximum contrast and legibility.\\n- **Signals:** \\\"Signal Orange\\\" (#e6813a) is reserved strictly for primary actions and critical focus states. \\\"Muted Brown\\\" (#755c4f) provides a secondary, grounding layer for utility icons and metadata.\\n- **Success:** \\\"Teal\\\" (#0f766e) is used for positive growth metrics and completed industrial milestones.\\n- **Structural:** A specific \\\"Warm Border\\\" (#ead8cd) defines the perimeter of all containers, ensuring depth is achieved through line rather than shadow.\\n\\n## Typography\\nThis design system employs a tri-font strategy to differentiate between intent:\\n1. **Plus Jakarta Sans (Headlines):** Used for titles and section headers. Its modern, clean geometry feels architectural and confident.\\n2. **Inter (Interface & Body):** The workhorse for all standard UI elements, forms, and long-form descriptions. It ensures maximum readability across all screen densities.\\n3. **JetBrains Mono (Data & Metrics):** Used exclusively for numerical data, financial figures, IDs, and technical labels. The monospaced nature reflects the precision of industrial accounting and engineering specs.\\n\\n## Layout & Spacing\\nThe layout follows a **Rigid Grid** philosophy. It uses a 12-column fluid system for desktop environments, reflowing to a single column for mobile. \\n\\n- **Alignment:** All elements must snap to an 8px baseline grid. \\n- **Margins:** Large 32px outer margins on desktop create an \\\"editorial\\\" frame, making the CRM feel like a curated report rather than a cluttered dashboard.\\n- **Gutters:** A consistent 24px gutter is maintained between columns to ensure technical data remains digestible.\\n- **Rhythm:** Vertical rhythm is strictly enforced. Group related technical data with `sm` spacing; separate logical sections with `lg` or `xl` spacing to maintain an airy, professional feel.\\n\\n## Elevation & Depth\\nDepth is created through **Flat Structural Layers** rather than shadows. This design system rejects ambient shadows in favor of clear delineation:\\n- **Level 0 (Background):** The Cream Paper (#fcf9f8) surface.\\n- **Level 1 (Containers):** White background cards (#ffffff) with a 1px solid Warm Border (#ead8cd).\\n- **Level 2 (Active/Floating):** Use a slightly thicker 2px border in Signal Orange or Ink to denote focus or active selection.\\n- **Depth Markers:** For critical differentiation (like dropdowns), a sharp \\\"hard shadow\\\" (4px, 0% blur, Ink at 10% opacity) may be used, but soft, diffused shadows are prohibited.\\n\\n## Shapes\\nThe shape language balances industrial rigidity with modern ergonomics.\\n- **Large Containers:** Cards and main content areas use a **16px (rounded-xl)** radius to soften the high-contrast layout.\\n- **Interactive Elements:** Buttons and Input fields use an **8px (rounded-md)** radius for a more precise, technical feel.\\n- **Small Components:** Tags and badges use a **4px (rounded-sm)** radius or remain sharp to indicate they are secondary utility items.\\n\\n## Components\\n- **Buttons:** \\n    - *Primary:* Solid Signal Orange with white JetBrains Mono text (uppercase). No rounded-pill shapes; stick to the 8px radius.\\n    - *Secondary:* Ink border (1px) with Ink text on transparent background.\\n- **Cards:** White background, 1px Warm Border (#ead8cd), 16px radius. Header areas inside cards should be separated by a 1px horizontal rule of the same border color.\\n- **Input Fields:** 1px solid Warm Border background. On focus, the border shifts to 2px Signal Orange. Use JetBrains Mono for the input text to emphasize data entry precision.\\n- **Data Tables:** No vertical lines. Use 1px horizontal dividers in the Warm Border color. The header row should use `mono-label` typography with a subtle Cream Paper background fill.\\n- **Chips/Status:** Rectangular with 4px radius. Success status uses Teal text on a 10% opacity Teal fill.\\n- **Metric Blocks:** Specialized card variant for KPIs. Large `mono-metrics` value in Ink, with a small `mono-label` descriptor in Muted Brown above it.\",\"colorVariant\":\"FIDELITY\",\"overridePrimaryColor\":\"#e6813a\",\"overrideSecondaryColor\":\"#755c4f\",\"overrideNeutralColor\":\"#1c1b1b\",\"spacingScale\":2,\"typography\":{\"body-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"18px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.6\"},\"body-md\":{\"fontFamily\":\"Inter\",\"fontSize\":\"16px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.5\"},\"body-sm\":{\"fontFamily\":\"Inter\",\"fontSize\":\"14px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.5\"},\"display-lg\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"48px\",\"fontWeight\":\"700\",\"lineHeight\":\"1.1\",\"letterSpacing\":\"-0.02em\"},\"headline-lg\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"32px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.2\",\"letterSpacing\":\"-0.01em\"},\"headline-md\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"24px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.3\"},\"mono-label\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"12px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.0\"},\"mono-metrics\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"20px\",\"fontWeight\":\"500\",\"lineHeight\":\"1.2\",\"letterSpacing\":\"-0.02em\"}},\"spacing\":{\"base\":\"8px\",\"gutter\":\"24px\",\"lg\":\"40px\",\"margin-desktop\":\"32px\",\"margin-mobile\":\"16px\",\"md\":\"24px\",\"sm\":\"12px\",\"xl\":\"64px\",\"xs\":\"4px\"},\"headlineFontFamily\":\"Plus Jakarta Sans\",\"bodyFontFamily\":\"Inter\",\"labelFontFamily\":\"Jetbrains Mono\"},\"deviceType\":\"DESKTOP\",\"screenType\":\"DESIGN\",\"screenMetadata\":{\"agentType\":\"PRO_AGENT\",\"status\":\"COMPLETE\"},\"designSystem\":{\"name\":\"assets/078cf4c19fc84119929f20f2a484bdec\",\"designSystem\":{\"displayName\":\"Tectonic Ledger\",\"styleGuidelines\":\"## Brand & Style\\nThe design system is anchored in the aesthetic of industrial engineering journals and high-end architectural documentation. It prioritizes clarity, structural integrity, and a \\\"built-to-last\\\" professional tone for B2B relationship management.\\n\\nThe style is **Industrial Editorial**. It utilizes a \\\"Paper and Ink\\\" foundation to reduce eye strain during long-duration work while employing high-visibility \\\"Signal\\\" accents to denote action and status. Every element is governed by a strict grid, eschewing decorative trends like gradients, orbs, or soft blurs in favor of architectural lines, purposeful borders, and a stark typographic hierarchy that treats data as the primary visual hero.\\n\\n## Layout & Spacing\\nThe layout follows a **Rigid Grid** philosophy. It uses a 12-column fluid system for desktop environments, reflowing to a single column for mobile. \\n\\n- **Alignment:** All elements must snap to an 8px baseline grid. \\n- **Margins:** Large 32px outer margins on desktop create an \\\"editorial\\\" frame, making the CRM feel like a curated report rather than a cluttered dashboard.\\n- **Gutters:** A consistent 24px gutter is maintained between columns to ensure technical data remains digestible.\\n- **Rhythm:** Vertical rhythm is strictly enforced. Group related technical data with `sm` spacing; separate logical sections with `lg` or `xl` spacing to maintain an airy, professional feel.\\n\\n## Elevation & Depth\\nDepth is created through **Flat Structural Layers** rather than shadows. This design system rejects ambient shadows in favor of clear delineation:\\n- **Level 0 (Background):** The Cream Paper (#fcf9f8) surface.\\n- **Level 1 (Containers):** White background cards (#ffffff) with a 1px solid Warm Border (#ead8cd).\\n- **Level 2 (Active/Floating):** Use a slightly thicker 2px border in Signal Orange or Ink to denote focus or active selection.\\n- **Depth Markers:** For critical differentiation (like dropdowns), a sharp \\\"hard shadow\\\" (4px, 0% blur, Ink at 10% opacity) may be used, but soft, diffused shadows are prohibited.\\n\\n## Components\\n- **Buttons:** \\n    - *Primary:* Solid Signal Orange with white JetBrains Mono text (uppercase). No rounded-pill shapes; stick to the 8px radius.\\n    - *Secondary:* Ink border (1px) with Ink text on transparent background.\\n- **Cards:** White background, 1px Warm Border (#ead8cd), 16px radius. Header areas inside cards should be separated by a 1px horizontal rule of the same border color.\\n- **Input Fields:** 1px solid Warm Border background. On focus, the border shifts to 2px Signal Orange. Use JetBrains Mono for the input text to emphasize data entry precision.\\n- **Data Tables:** No vertical lines. Use 1px horizontal dividers in the Warm Border color. The header row should use `mono-label` typography with a subtle Cream Paper background fill.\\n- **Chips/Status:** Rectangular with 4px radius. Success status uses Teal text on a 10% opacity Teal fill.\\n- **Metric Blocks:** Specialized card variant for KPIs. Large `mono-metrics` value in Ink, with a small `mono-label` descriptor in Muted Brown above it.\",\"theme\":{\"colorMode\":\"LIGHT\",\"font\":\"PLUS_JAKARTA_SANS\",\"roundness\":\"ROUND_EIGHT\",\"customColor\":\"#e6813a\",\"headlineFont\":\"PLUS_JAKARTA_SANS\",\"bodyFont\":\"INTER\",\"labelFont\":\"JETBRAINS_MONO\",\"namedColors\":{\"background\":\"#fdf8f8\",\"error\":\"#ba1a1a\",\"error_container\":\"#ffdad6\",\"inverse_on_surface\":\"#f4f0ef\",\"inverse_primary\":\"#ffb68a\",\"inverse_surface\":\"#313030\",\"on_background\":\"#1c1b1b\",\"on_error\":\"#ffffff\",\"on_error_container\":\"#93000a\",\"on_primary\":\"#ffffff\",\"on_primary_container\":\"#562500\",\"on_primary_fixed\":\"#321300\",\"on_primary_fixed_variant\":\"#743500\",\"on_secondary\":\"#ffffff\",\"on_secondary_container\":\"#785f52\",\"on_secondary_fixed\":\"#29170e\",\"on_secondary_fixed_variant\":\"#584236\",\"on_surface\":\"#1c1b1b\",\"on_surface_variant\":\"#554338\",\"on_tertiary\":\"#ffffff\",\"on_tertiary_container\":\"#003846\",\"on_tertiary_fixed\":\"#001f28\",\"on_tertiary_fixed_variant\":\"#004e60\",\"outline\":\"#887367\",\"outline_variant\":\"#dbc1b3\",\"primary\":\"#984700\",\"primary_container\":\"#e6813a\",\"primary_fixed\":\"#ffdbc8\",\"primary_fixed_dim\":\"#ffb68a\",\"secondary\":\"#72594c\",\"secondary_container\":\"#fedccb\",\"secondary_fixed\":\"#fedccb\",\"secondary_fixed_dim\":\"#e0c0b0\",\"surface\":\"#fdf8f8\",\"surface_bright\":\"#fdf8f8\",\"surface_container\":\"#f1edec\",\"surface_container_high\":\"#ece7e7\",\"surface_container_highest\":\"#e6e1e1\",\"surface_container_low\":\"#f7f2f2\",\"surface_container_lowest\":\"#ffffff\",\"surface_dim\":\"#ddd9d8\",\"surface_tint\":\"#984700\",\"surface_variant\":\"#e6e1e1\",\"tertiary\":\"#00677f\",\"tertiary_container\":\"#00a9ce\",\"tertiary_fixed\":\"#b6ebff\",\"tertiary_fixed_dim\":\"#57d5fc\"},\"designMd\":\"---\\nname: Tectonic Ledger\\ncolors:\\n  surface: '#fdf8f8'\\n  surface-dim: '#ddd9d8'\\n  surface-bright: '#fdf8f8'\\n  surface-container-lowest: '#ffffff'\\n  surface-container-low: '#f7f2f2'\\n  surface-container: '#f1edec'\\n  surface-container-high: '#ece7e7'\\n  surface-container-highest: '#e6e1e1'\\n  on-surface: '#1c1b1b'\\n  on-surface-variant: '#554338'\\n  inverse-surface: '#313030'\\n  inverse-on-surface: '#f4f0ef'\\n  outline: '#887367'\\n  outline-variant: '#dbc1b3'\\n  surface-tint: '#984700'\\n  primary: '#984700'\\n  on-primary: '#ffffff'\\n  primary-container: '#e6813a'\\n  on-primary-container: '#562500'\\n  inverse-primary: '#ffb68a'\\n  secondary: '#72594c'\\n  on-secondary: '#ffffff'\\n  secondary-container: '#fedccb'\\n  on-secondary-container: '#785f52'\\n  tertiary: '#00677f'\\n  on-tertiary: '#ffffff'\\n  tertiary-container: '#00a9ce'\\n  on-tertiary-container: '#003846'\\n  error: '#ba1a1a'\\n  on-error: '#ffffff'\\n  error-container: '#ffdad6'\\n  on-error-container: '#93000a'\\n  primary-fixed: '#ffdbc8'\\n  primary-fixed-dim: '#ffb68a'\\n  on-primary-fixed: '#321300'\\n  on-primary-fixed-variant: '#743500'\\n  secondary-fixed: '#fedccb'\\n  secondary-fixed-dim: '#e0c0b0'\\n  on-secondary-fixed: '#29170e'\\n  on-secondary-fixed-variant: '#584236'\\n  tertiary-fixed: '#b6ebff'\\n  tertiary-fixed-dim: '#57d5fc'\\n  on-tertiary-fixed: '#001f28'\\n  on-tertiary-fixed-variant: '#004e60'\\n  background: '#fdf8f8'\\n  on-background: '#1c1b1b'\\n  surface-variant: '#e6e1e1'\\ntypography:\\n  display-lg:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 48px\\n    fontWeight: '700'\\n    lineHeight: '1.1'\\n    letterSpacing: -0.02em\\n  headline-lg:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 32px\\n    fontWeight: '600'\\n    lineHeight: '1.2'\\n    letterSpacing: -0.01em\\n  headline-md:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 24px\\n    fontWeight: '600'\\n    lineHeight: '1.3'\\n  body-lg:\\n    fontFamily: Inter\\n    fontSize: 18px\\n    fontWeight: '400'\\n    lineHeight: '1.6'\\n  body-md:\\n    fontFamily: Inter\\n    fontSize: 16px\\n    fontWeight: '400'\\n    lineHeight: '1.5'\\n  body-sm:\\n    fontFamily: Inter\\n    fontSize: 14px\\n    fontWeight: '400'\\n    lineHeight: '1.5'\\n  mono-metrics:\\n    fontFamily: JetBrains Mono\\n    fontSize: 20px\\n    fontWeight: '500'\\n    lineHeight: '1.2'\\n    letterSpacing: -0.02em\\n  mono-label:\\n    fontFamily: JetBrains Mono\\n    fontSize: 12px\\n    fontWeight: '600'\\n    lineHeight: '1.0'\\nrounded:\\n  sm: 0.25rem\\n  DEFAULT: 0.5rem\\n  md: 0.75rem\\n  lg: 1rem\\n  xl: 1.5rem\\n  full: 9999px\\nspacing:\\n  base: 8px\\n  xs: 4px\\n  sm: 12px\\n  md: 24px\\n  lg: 40px\\n  xl: 64px\\n  gutter: 24px\\n  margin-mobile: 16px\\n  margin-desktop: 32px\\n---\\n\\n## Brand & Style\\nThe design system is anchored in the aesthetic of industrial engineering journals and high-end architectural documentation. It prioritizes clarity, structural integrity, and a \\\"built-to-last\\\" professional tone for B2B relationship management.\\n\\nThe style is **Industrial Editorial**. It utilizes a \\\"Paper and Ink\\\" foundation to reduce eye strain during long-duration work while employing high-visibility \\\"Signal\\\" accents to denote action and status. Every element is governed by a strict grid, eschewing decorative trends like gradients, orbs, or soft blurs in favor of architectural lines, purposeful borders, and a stark typographic hierarchy that treats data as the primary visual hero.\\n\\n## Colors\\nThe palette is divided into functional layers:\\n- **Surface:** The primary canvas is a tactile \\\"Cream Paper\\\" (#fcf9f8), providing a warmer, more sophisticated backdrop than pure white.\\n- **Ink:** Typography and iconography use \\\"Ink\\\" (#1c1b1b) for maximum contrast and legibility.\\n- **Signals:** \\\"Signal Orange\\\" (#e6813a) is reserved strictly for primary actions and critical focus states. \\\"Muted Brown\\\" (#755c4f) provides a secondary, grounding layer for utility icons and metadata.\\n- **Success:** \\\"Teal\\\" (#0f766e) is used for positive growth metrics and completed industrial milestones.\\n- **Structural:** A specific \\\"Warm Border\\\" (#ead8cd) defines the perimeter of all containers, ensuring depth is achieved through line rather than shadow.\\n\\n## Typography\\nThis design system employs a tri-font strategy to differentiate between intent:\\n1. **Plus Jakarta Sans (Headlines):** Used for titles and section headers. Its modern, clean geometry feels architectural and confident.\\n2. **Inter (Interface & Body):** The workhorse for all standard UI elements, forms, and long-form descriptions. It ensures maximum readability across all screen densities.\\n3. **JetBrains Mono (Data & Metrics):** Used exclusively for numerical data, financial figures, IDs, and technical labels. The monospaced nature reflects the precision of industrial accounting and engineering specs.\\n\\n## Layout & Spacing\\nThe layout follows a **Rigid Grid** philosophy. It uses a 12-column fluid system for desktop environments, reflowing to a single column for mobile. \\n\\n- **Alignment:** All elements must snap to an 8px baseline grid. \\n- **Margins:** Large 32px outer margins on desktop create an \\\"editorial\\\" frame, making the CRM feel like a curated report rather than a cluttered dashboard.\\n- **Gutters:** A consistent 24px gutter is maintained between columns to ensure technical data remains digestible.\\n- **Rhythm:** Vertical rhythm is strictly enforced. Group related technical data with `sm` spacing; separate logical sections with `lg` or `xl` spacing to maintain an airy, professional feel.\\n\\n## Elevation & Depth\\nDepth is created through **Flat Structural Layers** rather than shadows. This design system rejects ambient shadows in favor of clear delineation:\\n- **Level 0 (Background):** The Cream Paper (#fcf9f8) surface.\\n- **Level 1 (Containers):** White background cards (#ffffff) with a 1px solid Warm Border (#ead8cd).\\n- **Level 2 (Active/Floating):** Use a slightly thicker 2px border in Signal Orange or Ink to denote focus or active selection.\\n- **Depth Markers:** For critical differentiation (like dropdowns), a sharp \\\"hard shadow\\\" (4px, 0% blur, Ink at 10% opacity) may be used, but soft, diffused shadows are prohibited.\\n\\n## Shapes\\nThe shape language balances industrial rigidity with modern ergonomics.\\n- **Large Containers:** Cards and main content areas use a **16px (rounded-xl)** radius to soften the high-contrast layout.\\n- **Interactive Elements:** Buttons and Input fields use an **8px (rounded-md)** radius for a more precise, technical feel.\\n- **Small Components:** Tags and badges use a **4px (rounded-sm)** radius or remain sharp to indicate they are secondary utility items.\\n\\n## Components\\n- **Buttons:** \\n    - *Primary:* Solid Signal Orange with white JetBrains Mono text (uppercase). No rounded-pill shapes; stick to the 8px radius.\\n    - *Secondary:* Ink border (1px) with Ink text on transparent background.\\n- **Cards:** White background, 1px Warm Border (#ead8cd), 16px radius. Header areas inside cards should be separated by a 1px horizontal rule of the same border color.\\n- **Input Fields:** 1px solid Warm Border background. On focus, the border shifts to 2px Signal Orange. Use JetBrains Mono for the input text to emphasize data entry precision.\\n- **Data Tables:** No vertical lines. Use 1px horizontal dividers in the Warm Border color. The header row should use `mono-label` typography with a subtle Cream Paper background fill.\\n- **Chips/Status:** Rectangular with 4px radius. Success status uses Teal text on a 10% opacity Teal fill.\\n- **Metric Blocks:** Specialized card variant for KPIs. Large `mono-metrics` value in Ink, with a small `mono-label` descriptor in Muted Brown above it.\",\"colorVariant\":\"FIDELITY\",\"overridePrimaryColor\":\"#e6813a\",\"overrideSecondaryColor\":\"#755c4f\",\"overrideNeutralColor\":\"#1c1b1b\",\"spacingScale\":2,\"typography\":{\"body-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"18px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.6\"},\"body-md\":{\"fontFamily\":\"Inter\",\"fontSize\":\"16px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.5\"},\"body-sm\":{\"fontFamily\":\"Inter\",\"fontSize\":\"14px\",\"fontWeight\":\"400\",\"lineHeight\":\"1.5\"},\"display-lg\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"48px\",\"fontWeight\":\"700\",\"lineHeight\":\"1.1\",\"letterSpacing\":\"-0.02em\"},\"headline-lg\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"32px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.2\",\"letterSpacing\":\"-0.01em\"},\"headline-md\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"24px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.3\"},\"mono-label\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"12px\",\"fontWeight\":\"600\",\"lineHeight\":\"1.0\"},\"mono-metrics\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"20px\",\"fontWeight\":\"500\",\"lineHeight\":\"1.2\",\"letterSpacing\":\"-0.02em\"}},\"spacing\":{\"base\":\"8px\",\"gutter\":\"24px\",\"lg\":\"40px\",\"margin-desktop\":\"32px\",\"margin-mobile\":\"16px\",\"md\":\"24px\",\"sm\":\"12px\",\"xl\":\"64px\",\"xs\":\"4px\"},\"headlineFontFamily\":\"Plus Jakarta Sans\",\"bodyFontFamily\":\"Inter\",\"labelFontFamily\":\"Jetbrains Mono\"}},\"version\":\"1\"}}],\"theme\":{}}},{\"text\":\"I've designed the internal CRM for Tramo, focusing on a professional, infrastructure-grade aesthetic that prioritizes data density and workflow efficiency.\\n\\n### Key Design Features:\\n- **Paper-Like Aesthetic**: Used a cream background (`#fcf9f8`) with warm borders (`#ead8cd`) and a high-contrast ink palette to create a \\\"printed report\\\" feel that suits professional utility software.\\n- **Data Hierarchy**: Implemented a combination of summary cards for high-level health metrics and a dense, sortable table for active lead management.\\n- **Integrated Workflow**: The right-hand detail panel allows for immediate action on selected leads, featuring a status tracker, a qualification checklist, and specialized hardware interest selectors.\\n- **Accented Clarity**: Signal orange is reserved for primary actions and highlights, while teal is used for positive qualification states to ensure quick visual scanning.\\n\\nThe design uses **Plus Jakarta Sans** for headlines and **JetBrains Mono** for technical data to reinforce the platform's focus on engineering and management precision.\"},{\"suggestion\":\"Add a 'Pilot Performance' dashboard view\"},{\"suggestion\":\"Design the mobile overlay for lead details\"},{\"suggestion\":\"Show the state when a lead is promoted to 'Pilot'\"}]}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "outputComponents": [
+        {
+          "design": {
+            "screens": [
+              {
+                "designSystem": {
+                  "designSystem": {
+                    "displayName": "Tectonic Ledger",
+                    "styleGuidelines": "## Brand & Style\nThe design system is anchored in the aesthetic of industrial engineering journals and high-end architectural documentation. It prioritizes clarity, structural integrity, and a \"built-to-last\" professional tone for B2B relationship management.\n\nThe style is **Industrial Editorial**. It utilizes a \"Paper and Ink\" foundation to reduce eye strain during long-duration work while employing high-visibility \"Signal\" accents to denote action and status. Every element is governed by a strict grid, eschewing decorative trends like gradients, orbs, or soft blurs in favor of architectural lines, purposeful borders, and a stark typographic hierarchy that treats data as the primary visual hero.\n\n## Layout & Spacing\nThe layout follows a **Rigid Grid** philosophy. It uses a 12-column fluid system for desktop environments, reflowing to a single column for mobile. \n\n- **Alignment:** All elements must snap to an 8px baseline grid. \n- **Margins:** Large 32px outer margins on desktop create an \"editorial\" frame, making the CRM feel like a curated report rather than a cluttered dashboard.\n- **Gutters:** A consistent 24px gutter is maintained between columns to ensure technical data remains digestible.\n- **Rhythm:** Vertical rhythm is strictly enforced. Group related technical data with `sm` spacing; separate logical sections with `lg` or `xl` spacing to maintain an airy, professional feel.\n\n## Elevation & Depth\nDepth is created through **Flat Structural Layers** rather than shadows. This design system rejects ambient shadows in favor of clear delineation:\n- **Level 0 (Background):** The Cream Paper (#fcf9f8) surface.\n- **Level 1 (Containers):** White background cards (#ffffff) with a 1px solid Warm Border (#ead8cd).\n- **Level 2 (Active/Floating):** Use a slightly thicker 2px border in Signal Orange or Ink to denote focus or active selection.\n- **Depth Markers:** For critical differentiation (like dropdowns), a sharp \"hard shadow\" (4px, 0% blur, Ink at 10% opacity) may be used, but soft, diffused shadows are prohibited.\n\n## Components\n- **Buttons:** \n    - *Primary:* Solid Signal Orange with white JetBrains Mono text (uppercase). No rounded-pill shapes; stick to the 8px radius.\n    - *Secondary:* Ink border (1px) with Ink text on transparent background.\n- **Cards:** White background, 1px Warm Border (#ead8cd), 16px radius. Header areas inside cards should be separated by a 1px horizontal rule of the same border color.\n- **Input Fields:** 1px solid Warm Border background. On focus, the border shifts to 2px Signal Orange. Use JetBrains Mono for the input text to emphasize data entry precision.\n- **Data Tables:** No vertical lines. Use 1px horizontal dividers in the Warm Border color. The header row should use `mono-label` typography with a subtle Cream Paper background fill.\n- **Chips/Status:** Rectangular with 4px radius. Success status uses Teal text on a 10% opacity Teal fill.\n- **Metric Blocks:** Specialized card variant for KPIs. Large `mono-metrics` value in Ink, with a small `mono-label` descriptor in Muted Brown above it.",
+                    "theme": {
+                      "bodyFont": "INTER",
+                      "bodyFontFamily": "Inter",
+                      "colorMode": "LIGHT",
+                      "colorVariant": "FIDELITY",
+                      "customColor": "#e6813a",
+                      "designMd": "---\nname: Tectonic Ledger\ncolors:\n  surface: '#fdf8f8'\n  surface-dim: '#ddd9d8'\n  surface-bright: '#fdf8f8'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f7f2f2'\n  surface-container: '#f1edec'\n  surface-container-high: '#ece7e7'\n  surface-container-highest: '#e6e1e1'\n  on-surface: '#1c1b1b'\n  on-surface-variant: '#554338'\n  inverse-surface: '#313030'\n  inverse-on-surface: '#f4f0ef'\n  outline: '#887367'\n  outline-variant: '#dbc1b3'\n  surface-tint: '#984700'\n  primary: '#984700'\n  on-primary: '#ffffff'\n  primary-container: '#e6813a'\n  on-primary-container: '#562500'\n  inverse-primary: '#ffb68a'\n  secondary: '#72594c'\n  on-secondary: '#ffffff'\n  secondary-container: '#fedccb'\n  on-secondary-container: '#785f52'\n  tertiary: '#00677f'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#00a9ce'\n  on-tertiary-container: '#003846'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#ffdbc8'\n  primary-fixed-dim: '#ffb68a'\n  on-primary-fixed: '#321300'\n  on-primary-fixed-variant: '#743500'\n  secondary-fixed: '#fedccb'\n  secondary-fixed-dim: '#e0c0b0'\n  on-secondary-fixed: '#29170e'\n  on-secondary-fixed-variant: '#584236'\n  tertiary-fixed: '#b6ebff'\n  tertiary-fixed-dim: '#57d5fc'\n  on-tertiary-fixed: '#001f28'\n  on-tertiary-fixed-variant: '#004e60'\n  background: '#fdf8f8'\n  on-background: '#1c1b1b'\n  surface-variant: '#e6e1e1'\ntypography:\n  display-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 48px\n    fontWeight: '700'\n    lineHeight: '1.1'\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 32px\n    fontWeight: '600'\n    lineHeight: '1.2'\n    letterSpacing: -0.01em\n  headline-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: '1.3'\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: '1.6'\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: '1.5'\n  body-sm:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: '1.5'\n  mono-metrics:\n    fontFamily: JetBrains Mono\n    fontSize: 20px\n    fontWeight: '500'\n    lineHeight: '1.2'\n    letterSpacing: -0.02em\n  mono-label:\n    fontFamily: JetBrains Mono\n    fontSize: 12px\n    fontWeight: '600'\n    lineHeight: '1.0'\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  base: 8px\n  xs: 4px\n  sm: 12px\n  md: 24px\n  lg: 40px\n  xl: 64px\n  gutter: 24px\n  margin-mobile: 16px\n  margin-desktop: 32px\n---\n\n## Brand & Style\nThe design system is anchored in the aesthetic of industrial engineering journals and high-end architectural documentation. It prioritizes clarity, structural integrity, and a \"built-to-last\" professional tone for B2B relationship management.\n\nThe style is **Industrial Editorial**. It utilizes a \"Paper and Ink\" foundation to reduce eye strain during long-duration work while employing high-visibility \"Signal\" accents to denote action and status. Every element is governed by a strict grid, eschewing decorative trends like gradients, orbs, or soft blurs in favor of architectural lines, purposeful borders, and a stark typographic hierarchy that treats data as the primary visual hero.\n\n## Colors\nThe palette is divided into functional layers:\n- **Surface:** The primary canvas is a tactile \"Cream Paper\" (#fcf9f8), providing a warmer, more sophisticated backdrop than pure white.\n- **Ink:** Typography and iconography use \"Ink\" (#1c1b1b) for maximum contrast and legibility.\n- **Signals:** \"Signal Orange\" (#e6813a) is reserved strictly for primary actions and critical focus states. \"Muted Brown\" (#755c4f) provides a secondary, grounding layer for utility icons and metadata.\n- **Success:** \"Teal\" (#0f766e) is used for positive growth metrics and completed industrial milestones.\n- **Structural:** A specific \"Warm Border\" (#ead8cd) defines the perimeter of all containers, ensuring depth is achieved through line rather than shadow.\n\n## Typography\nThis design system employs a tri-font strategy to differentiate between intent:\n1. **Plus Jakarta Sans (Headlines):** Used for titles and section headers. Its modern, clean geometry feels architectural and confident.\n2. **Inter (Interface & Body):** The workhorse for all standard UI elements, forms, and long-form descriptions. It ensures maximum readability across all screen densities.\n3. **JetBrains Mono (Data & Metrics):** Used exclusively for numerical data, financial figures, IDs, and technical labels. The monospaced nature reflects the precision of industrial accounting and engineering specs.\n\n## Layout & Spacing\nThe layout follows a **Rigid Grid** philosophy. It uses a 12-column fluid system for desktop environments, reflowing to a single column for mobile. \n\n- **Alignment:** All elements must snap to an 8px baseline grid. \n- **Margins:** Large 32px outer margins on desktop create an \"editorial\" frame, making the CRM feel like a curated report rather than a cluttered dashboard.\n- **Gutters:** A consistent 24px gutter is maintained between columns to ensure technical data remains digestible.\n- **Rhythm:** Vertical rhythm is strictly enforced. Group related technical data with `sm` spacing; separate logical sections with `lg` or `xl` spacing to maintain an airy, professional feel.\n\n## Elevation & Depth\nDepth is created through **Flat Structural Layers** rather than shadows. This design system rejects ambient shadows in favor of clear delineation:\n- **Level 0 (Background):** The Cream Paper (#fcf9f8) surface.\n- **Level 1 (Containers):** White background cards (#ffffff) with a 1px solid Warm Border (#ead8cd).\n- **Level 2 (Active/Floating):** Use a slightly thicker 2px border in Signal Orange or Ink to denote focus or active selection.\n- **Depth Markers:** For critical differentiation (like dropdowns), a sharp \"hard shadow\" (4px, 0% blur, Ink at 10% opacity) may be used, but soft, diffused shadows are prohibited.\n\n## Shapes\nThe shape language balances industrial rigidity with modern ergonomics.\n- **Large Containers:** Cards and main content areas use a **16px (rounded-xl)** radius to soften the high-contrast layout.\n- **Interactive Elements:** Buttons and Input fields use an **8px (rounded-md)** radius for a more precise, technical feel.\n- **Small Components:** Tags and badges use a **4px (rounded-sm)** radius or remain sharp to indicate they are secondary utility items.\n\n## Components\n- **Buttons:** \n    - *Primary:* Solid Signal Orange with white JetBrains Mono text (uppercase). No rounded-pill shapes; stick to the 8px radius.\n    - *Secondary:* Ink border (1px) with Ink text on transparent background.\n- **Cards:** White background, 1px Warm Border (#ead8cd), 16px radius. Header areas inside cards should be separated by a 1px horizontal rule of the same border color.\n- **Input Fields:** 1px solid Warm Border background. On focus, the border shifts to 2px Signal Orange. Use JetBrains Mono for the input text to emphasize data entry precision.\n- **Data Tables:** No vertical lines. Use 1px horizontal dividers in the Warm Border color. The header row should use `mono-label` typography with a subtle Cream Paper background fill.\n- **Chips/Status:** Rectangular with 4px radius. Success status uses Teal text on a 10% opacity Teal fill.\n- **Metric Blocks:** Specialized card variant for KPIs. Large `mono-metrics` value in Ink, with a small `mono-label` descriptor in Muted Brown above it.",
+                      "font": "PLUS_JAKARTA_SANS",
+                      "headlineFont": "PLUS_JAKARTA_SANS",
+                      "headlineFontFamily": "Plus Jakarta Sans",
+                      "labelFont": "JETBRAINS_MONO",
+                      "labelFontFamily": "Jetbrains Mono",
+                      "namedColors": {
+                        "background": "#fdf8f8",
+                        "error": "#ba1a1a",
+                        "error_container": "#ffdad6",
+                        "inverse_on_surface": "#f4f0ef",
+                        "inverse_primary": "#ffb68a",
+                        "inverse_surface": "#313030",
+                        "on_background": "#1c1b1b",
+                        "on_error": "#ffffff",
+                        "on_error_container": "#93000a",
+                        "on_primary": "#ffffff",
+                        "on_primary_container": "#562500",
+                        "on_primary_fixed": "#321300",
+                        "on_primary_fixed_variant": "#743500",
+                        "on_secondary": "#ffffff",
+                        "on_secondary_container": "#785f52",
+                        "on_secondary_fixed": "#29170e",
+                        "on_secondary_fixed_variant": "#584236",
+                        "on_surface": "#1c1b1b",
+                        "on_surface_variant": "#554338",
+                        "on_tertiary": "#ffffff",
+                        "on_tertiary_container": "#003846",
+                        "on_tertiary_fixed": "#001f28",
+                        "on_tertiary_fixed_variant": "#004e60",
+                        "outline": "#887367",
+                        "outline_variant": "#dbc1b3",
+                        "primary": "#984700",
+                        "primary_container": "#e6813a",
+                        "primary_fixed": "#ffdbc8",
+                        "primary_fixed_dim": "#ffb68a",
+                        "secondary": "#72594c",
+                        "secondary_container": "#fedccb",
+                        "secondary_fixed": "#fedccb",
+                        "secondary_fixed_dim": "#e0c0b0",
+                        "surface": "#fdf8f8",
+                        "surface_bright": "#fdf8f8",
+                        "surface_container": "#f1edec",
+                        "surface_container_high": "#ece7e7",
+                        "surface_container_highest": "#e6e1e1",
+                        "surface_container_low": "#f7f2f2",
+                        "surface_container_lowest": "#ffffff",
+                        "surface_dim": "#ddd9d8",
+                        "surface_tint": "#984700",
+                        "surface_variant": "#e6e1e1",
+                        "tertiary": "#00677f",
+                        "tertiary_container": "#00a9ce",
+                        "tertiary_fixed": "#b6ebff",
+                        "tertiary_fixed_dim": "#57d5fc"
+                      },
+                      "overrideNeutralColor": "#1c1b1b",
+                      "overridePrimaryColor": "#e6813a",
+                      "overrideSecondaryColor": "#755c4f",
+                      "roundness": "ROUND_EIGHT",
+                      "spacing": {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "lg": "40px",
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "xl": "64px",
+                        "xs": "4px"
+                      },
+                      "spacingScale": 2,
+                      "typography": {
+                        "body-lg": {
+                          "fontFamily": "Inter",
+                          "fontSize": "18px",
+                          "fontWeight": "400",
+                          "lineHeight": "1.6"
+                        },
+                        "body-md": {
+                          "fontFamily": "Inter",
+                          "fontSize": "16px",
+                          "fontWeight": "400",
+                          "lineHeight": "1.5"
+                        },
+                        "body-sm": {
+                          "fontFamily": "Inter",
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "lineHeight": "1.5"
+                        },
+                        "display-lg": {
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": "48px",
+                          "fontWeight": "700",
+                          "letterSpacing": "-0.02em",
+                          "lineHeight": "1.1"
+                        },
+                        "headline-lg": {
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": "32px",
+                          "fontWeight": "600",
+                          "letterSpacing": "-0.01em",
+                          "lineHeight": "1.2"
+                        },
+                        "headline-md": {
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": "24px",
+                          "fontWeight": "600",
+                          "lineHeight": "1.3"
+                        },
+                        "mono-label": {
+                          "fontFamily": "JetBrains Mono",
+                          "fontSize": "12px",
+                          "fontWeight": "600",
+                          "lineHeight": "1.0"
+                        },
+                        "mono-metrics": {
+                          "fontFamily": "JetBrains Mono",
+                          "fontSize": "20px",
+                          "fontWeight": "500",
+                          "letterSpacing": "-0.02em",
+                          "lineHeight": "1.2"
+                        }
+                      }
+                    }
+                  },
+                  "name": "assets/078cf4c19fc84119929f20f2a484bdec",
+                  "version": "1"
+                },
+                "deviceType": "DESKTOP",
+                "generatedBy": "figaro_agent",
+                "height": "2402",
+                "htmlCode": {
+                  "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzhjMTkyOGU4YTg0NjQ3OTQ4NTAyZGE1NmVkYmY3MjI0EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxNDQ1OTkzNzY1OTU0NDg0MjQ0OQ&filename=&opi=96797242",
+                  "mimeType": "text/html",
+                  "name": "projects/14459937659544842449/files/d74e20de320244daae9467f596183083"
+                },
+                "id": "4bc431fe2faf4a3781b22260a65f1750",
+                "name": "projects/14459937659544842449/screens/4bc431fe2faf4a3781b22260a65f1750",
+                "prompt": "Create a professional B2B internal CRM screen for 'Tramo'. \n\nSTYLE: \n- Background: #fcf9f8 (cream/paper)\n- Text: #1c1b1b (ink)\n- Primary Accent: #e6813a (signal orange)\n- Secondary Accent: #755c4f (muted brown)\n- Success State: #0f766e (teal)\n- Cards: White (#ffffff) with #ead8cd borders, 16px border-radius.\n- Typography: Plus Jakarta Sans for headlines, Inter for body, JetBrains Mono for metrics/data.\n\nLAYOUT:\n- Top Bar: Logo 'Tramo', Breadcrumb 'Pilot / Leads', and a primary action button '[+ Nuevo Lead]'.\n- Summary Row: 4 cards showing 'Leads totales: 8', 'Qualificados: 5', 'Llamada programada: 2', and 'Piloto en curso: 1'.\n- Filter/Sort Bar: Search input 'Buscar lead...', filter pills for Status (Todos, Nuevo, Qualificado, Llamada, Piloto), and Sort dropdown 'Fecha ↓'.\n- Main Table: Columns: Lead, Empresa, Uds., Ciudad, PMS, Pain principal, Datadis/CUPS, Facturas, Energía pago, Estado, Acciones. \n- Content: Include the 5 realistic lead rows (Carlos Mendoza, Laura García, Pablo Santos, Elena Torres, Miguel Rodríguez) with their specific data points like 'Beds24', 'Consumo fuera de reserva', 'Cualificado', etc.\n- Detail Panel (Right Side): Selected lead 'Elena Torres'. Show contact info, status stepper (Nuevo to Cliente), Notes area, Next action (date picker + button), and the Qualification checklist with items like '10+ unidades', 'PMS conocido', etc. Hardware interest dropdown set to 'Shelly + datadis'.\n\nEnsure no gradients or decorative orbs. The look should be industrial, editorial, and precise.",
+                "screenMetadata": {
+                  "agentType": "PRO_AGENT",
+                  "status": "COMPLETE"
+                },
+                "screenType": "DESIGN",
+                "screenshot": {
+                  "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uiNHnaGmgOyIF92ABpT26rzGhHKMekXBj14NDSEDa_S5ykA7X2dFyBjVFLg0Xf8Gli3TBz3yaXpkfmF4rMMTyaFdJRLPsQMI5j_n-EZqxllTDB89PYV0KxRFDVzfO8GoMQZRhcWRk9WHnIjRH-Le1g5vC26rByh6IqUs0BxDz1PhN4MLpyXdBfsBQ59g7weONbJKzaV4t9WE1id9MWzfa_72z9WMLwGG8ZMB6PGp3gIwrTSLJlbt_5ew661",
+                  "name": "projects/14459937659544842449/files/e62a633b9e884b50bc8f2e99c4c1bc28"
+                },
+                "theme": {
+                  "bodyFont": "INTER",
+                  "bodyFontFamily": "Inter",
+                  "colorMode": "LIGHT",
+                  "colorVariant": "FIDELITY",
+                  "customColor": "#e6813a",
+                  "designMd": "---\nname: Tectonic Ledger\ncolors:\n  surface: '#fdf8f8'\n  surface-dim: '#ddd9d8'\n  surface-bright: '#fdf8f8'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f7f2f2'\n  surface-container: '#f1edec'\n  surface-container-high: '#ece7e7'\n  surface-container-highest: '#e6e1e1'\n  on-surface: '#1c1b1b'\n  on-surface-variant: '#554338'\n  inverse-surface: '#313030'\n  inverse-on-surface: '#f4f0ef'\n  outline: '#887367'\n  outline-variant: '#dbc1b3'\n  surface-tint: '#984700'\n  primary: '#984700'\n  on-primary: '#ffffff'\n  primary-container: '#e6813a'\n  on-primary-container: '#562500'\n  inverse-primary: '#ffb68a'\n  secondary: '#72594c'\n  on-secondary: '#ffffff'\n  secondary-container: '#fedccb'\n  on-secondary-container: '#785f52'\n  tertiary: '#00677f'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#00a9ce'\n  on-tertiary-container: '#003846'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#ffdbc8'\n  primary-fixed-dim: '#ffb68a'\n  on-primary-fixed: '#321300'\n  on-primary-fixed-variant: '#743500'\n  secondary-fixed: '#fedccb'\n  secondary-fixed-dim: '#e0c0b0'\n  on-secondary-fixed: '#29170e'\n  on-secondary-fixed-variant: '#584236'\n  tertiary-fixed: '#b6ebff'\n  tertiary-fixed-dim: '#57d5fc'\n  on-tertiary-fixed: '#001f28'\n  on-tertiary-fixed-variant: '#004e60'\n  background: '#fdf8f8'\n  on-background: '#1c1b1b'\n  surface-variant: '#e6e1e1'\ntypography:\n  display-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 48px\n    fontWeight: '700'\n    lineHeight: '1.1'\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 32px\n    fontWeight: '600'\n    lineHeight: '1.2'\n    letterSpacing: -0.01em\n  headline-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: '1.3'\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: '1.6'\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: '1.5'\n  body-sm:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: '1.5'\n  mono-metrics:\n    fontFamily: JetBrains Mono\n    fontSize: 20px\n    fontWeight: '500'\n    lineHeight: '1.2'\n    letterSpacing: -0.02em\n  mono-label:\n    fontFamily: JetBrains Mono\n    fontSize: 12px\n    fontWeight: '600'\n    lineHeight: '1.0'\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  base: 8px\n  xs: 4px\n  sm: 12px\n  md: 24px\n  lg: 40px\n  xl: 64px\n  gutter: 24px\n  margin-mobile: 16px\n  margin-desktop: 32px\n---\n\n## Brand & Style\nThe design system is anchored in the aesthetic of industrial engineering journals and high-end architectural documentation. It prioritizes clarity, structural integrity, and a \"built-to-last\" professional tone for B2B relationship management.\n\nThe style is **Industrial Editorial**. It utilizes a \"Paper and Ink\" foundation to reduce eye strain during long-duration work while employing high-visibility \"Signal\" accents to denote action and status. Every element is governed by a strict grid, eschewing decorative trends like gradients, orbs, or soft blurs in favor of architectural lines, purposeful borders, and a stark typographic hierarchy that treats data as the primary visual hero.\n\n## Colors\nThe palette is divided into functional layers:\n- **Surface:** The primary canvas is a tactile \"Cream Paper\" (#fcf9f8), providing a warmer, more sophisticated backdrop than pure white.\n- **Ink:** Typography and iconography use \"Ink\" (#1c1b1b) for maximum contrast and legibility.\n- **Signals:** \"Signal Orange\" (#e6813a) is reserved strictly for primary actions and critical focus states. \"Muted Brown\" (#755c4f) provides a secondary, grounding layer for utility icons and metadata.\n- **Success:** \"Teal\" (#0f766e) is used for positive growth metrics and completed industrial milestones.\n- **Structural:** A specific \"Warm Border\" (#ead8cd) defines the perimeter of all containers, ensuring depth is achieved through line rather than shadow.\n\n## Typography\nThis design system employs a tri-font strategy to differentiate between intent:\n1. **Plus Jakarta Sans (Headlines):** Used for titles and section headers. Its modern, clean geometry feels architectural and confident.\n2. **Inter (Interface & Body):** The workhorse for all standard UI elements, forms, and long-form descriptions. It ensures maximum readability across all screen densities.\n3. **JetBrains Mono (Data & Metrics):** Used exclusively for numerical data, financial figures, IDs, and technical labels. The monospaced nature reflects the precision of industrial accounting and engineering specs.\n\n## Layout & Spacing\nThe layout follows a **Rigid Grid** philosophy. It uses a 12-column fluid system for desktop environments, reflowing to a single column for mobile. \n\n- **Alignment:** All elements must snap to an 8px baseline grid. \n- **Margins:** Large 32px outer margins on desktop create an \"editorial\" frame, making the CRM feel like a curated report rather than a cluttered dashboard.\n- **Gutters:** A consistent 24px gutter is maintained between columns to ensure technical data remains digestible.\n- **Rhythm:** Vertical rhythm is strictly enforced. Group related technical data with `sm` spacing; separate logical sections with `lg` or `xl` spacing to maintain an airy, professional feel.\n\n## Elevation & Depth\nDepth is created through **Flat Structural Layers** rather than shadows. This design system rejects ambient shadows in favor of clear delineation:\n- **Level 0 (Background):** The Cream Paper (#fcf9f8) surface.\n- **Level 1 (Containers):** White background cards (#ffffff) with a 1px solid Warm Border (#ead8cd).\n- **Level 2 (Active/Floating):** Use a slightly thicker 2px border in Signal Orange or Ink to denote focus or active selection.\n- **Depth Markers:** For critical differentiation (like dropdowns), a sharp \"hard shadow\" (4px, 0% blur, Ink at 10% opacity) may be used, but soft, diffused shadows are prohibited.\n\n## Shapes\nThe shape language balances industrial rigidity with modern ergonomics.\n- **Large Containers:** Cards and main content areas use a **16px (rounded-xl)** radius to soften the high-contrast layout.\n- **Interactive Elements:** Buttons and Input fields use an **8px (rounded-md)** radius for a more precise, technical feel.\n- **Small Components:** Tags and badges use a **4px (rounded-sm)** radius or remain sharp to indicate they are secondary utility items.\n\n## Components\n- **Buttons:** \n    - *Primary:* Solid Signal Orange with white JetBrains Mono text (uppercase). No rounded-pill shapes; stick to the 8px radius.\n    - *Secondary:* Ink border (1px) with Ink text on transparent background.\n- **Cards:** White background, 1px Warm Border (#ead8cd), 16px radius. Header areas inside cards should be separated by a 1px horizontal rule of the same border color.\n- **Input Fields:** 1px solid Warm Border background. On focus, the border shifts to 2px Signal Orange. Use JetBrains Mono for the input text to emphasize data entry precision.\n- **Data Tables:** No vertical lines. Use 1px horizontal dividers in the Warm Border color. The header row should use `mono-label` typography with a subtle Cream Paper background fill.\n- **Chips/Status:** Rectangular with 4px radius. Success status uses Teal text on a 10% opacity Teal fill.\n- **Metric Blocks:** Specialized card variant for KPIs. Large `mono-metrics` value in Ink, with a small `mono-label` descriptor in Muted Brown above it.",
+                  "font": "PLUS_JAKARTA_SANS",
+                  "headlineFont": "PLUS_JAKARTA_SANS",
+                  "headlineFontFamily": "Plus Jakarta Sans",
+                  "labelFont": "JETBRAINS_MONO",
+                  "labelFontFamily": "Jetbrains Mono",
+                  "namedColors": {
+                    "background": "#fdf8f8",
+                    "error": "#ba1a1a",
+                    "error_container": "#ffdad6",
+                    "inverse_on_surface": "#f4f0ef",
+                    "inverse_primary": "#ffb68a",
+                    "inverse_surface": "#313030",
+                    "on_background": "#1c1b1b",
+                    "on_error": "#ffffff",
+                    "on_error_container": "#93000a",
+                    "on_primary": "#ffffff",
+                    "on_primary_container": "#562500",
+                    "on_primary_fixed": "#321300",
+                    "on_primary_fixed_variant": "#743500",
+                    "on_secondary": "#ffffff",
+                    "on_secondary_container": "#785f52",
+                    "on_secondary_fixed": "#29170e",
+                    "on_secondary_fixed_variant": "#584236",
+                    "on_surface": "#1c1b1b",
+                    "on_surface_variant": "#554338",
+                    "on_tertiary": "#ffffff",
+                    "on_tertiary_container": "#003846",
+                    "on_tertiary_fixed": "#001f28",
+                    "on_tertiary_fixed_variant": "#004e60",
+                    "outline": "#887367",
+                    "outline_variant": "#dbc1b3",
+                    "primary": "#984700",
+                    "primary_container": "#e6813a",
+                    "primary_fixed": "#ffdbc8",
+                    "primary_fixed_dim": "#ffb68a",
+                    "secondary": "#72594c",
+                    "secondary_container": "#fedccb",
+                    "secondary_fixed": "#fedccb",
+                    "secondary_fixed_dim": "#e0c0b0",
+                    "surface": "#fdf8f8",
+                    "surface_bright": "#fdf8f8",
+                    "surface_container": "#f1edec",
+                    "surface_container_high": "#ece7e7",
+                    "surface_container_highest": "#e6e1e1",
+                    "surface_container_low": "#f7f2f2",
+                    "surface_container_lowest": "#ffffff",
+                    "surface_dim": "#ddd9d8",
+                    "surface_tint": "#984700",
+                    "surface_variant": "#e6e1e1",
+                    "tertiary": "#00677f",
+                    "tertiary_container": "#00a9ce",
+                    "tertiary_fixed": "#b6ebff",
+                    "tertiary_fixed_dim": "#57d5fc"
+                  },
+                  "overrideNeutralColor": "#1c1b1b",
+                  "overridePrimaryColor": "#e6813a",
+                  "overrideSecondaryColor": "#755c4f",
+                  "roundness": "ROUND_EIGHT",
+                  "spacing": {
+                    "base": "8px",
+                    "gutter": "24px",
+                    "lg": "40px",
+                    "margin-desktop": "32px",
+                    "margin-mobile": "16px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "xl": "64px",
+                    "xs": "4px"
+                  },
+                  "spacingScale": 2,
+                  "typography": {
+                    "body-lg": {
+                      "fontFamily": "Inter",
+                      "fontSize": "18px",
+                      "fontWeight": "400",
+                      "lineHeight": "1.6"
+                    },
+                    "body-md": {
+                      "fontFamily": "Inter",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "1.5"
+                    },
+                    "body-sm": {
+                      "fontFamily": "Inter",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "1.5"
+                    },
+                    "display-lg": {
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": "48px",
+                      "fontWeight": "700",
+                      "letterSpacing": "-0.02em",
+                      "lineHeight": "1.1"
+                    },
+                    "headline-lg": {
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": "32px",
+                      "fontWeight": "600",
+                      "letterSpacing": "-0.01em",
+                      "lineHeight": "1.2"
+                    },
+                    "headline-md": {
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": "24px",
+                      "fontWeight": "600",
+                      "lineHeight": "1.3"
+                    },
+                    "mono-label": {
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": "12px",
+                      "fontWeight": "600",
+                      "lineHeight": "1.0"
+                    },
+                    "mono-metrics": {
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": "20px",
+                      "fontWeight": "500",
+                      "letterSpacing": "-0.02em",
+                      "lineHeight": "1.2"
+                    }
+                  }
+                },
+                "title": "Tramo | CRM Interno de Leads",
+                "width": "2560"
+              }
+            ],
+            "theme": {}
+          }
+        },
+        {
+          "text": "I've designed the internal CRM for Tramo, focusing on a professional, infrastructure-grade aesthetic that prioritizes data density and workflow efficiency.\n\n### Key Design Features:\n- **Paper-Like Aesthetic**: Used a cream background (`#fcf9f8`) with warm borders (`#ead8cd`) and a high-contrast ink palette to create a \"printed report\" feel that suits professional utility software.\n- **Data Hierarchy**: Implemented a combination of summary cards for high-level health metrics and a dense, sortable table for active lead management.\n- **Integrated Workflow**: The right-hand detail panel allows for immediate action on selected leads, featuring a status tracker, a qualification checklist, and specialized hardware interest selectors.\n- **Accented Clarity**: Signal orange is reserved for primary actions and highlights, while teal is used for positive qualification states to ensure quick visual scanning.\n\nThe design uses **Plus Jakarta Sans** for headlines and **JetBrains Mono** for technical data to reinforce the platform's focus on engineering and management precision."
+        },
+        {
+          "suggestion": "Add a 'Pilot Performance' dashboard view"
+        },
+        {
+          "suggestion": "Design the mobile overlay for lead details"
+        },
+        {
+          "suggestion": "Show the state when a lead is promoted to 'Pilot'"
+        }
+      ],
+      "projectId": "14459937659544842449",
+      "sessionId": "3706232228140049366"
+    }
+  }
+}

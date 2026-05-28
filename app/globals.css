@@ -1,0 +1,133 @@
+/* Tramo · Workbench + ReflexAI DNA
+ * paper: #f9f8f5 · ink: #061F00 (forest) · accent: #A5E119 (lime) · forest: #061F00
+ * fonts: Plus Jakarta Sans (display) + Inter (body) + JetBrains Mono (data)
+ * motion: GSAP ScrollTrigger + CSS only · reduced-motion: opacity crossfade
+ */
+
+@import "tailwindcss";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ═══════════════════════════════════════════════════
+   REFLEXAI-INSPIRED EDITORIAL — Design Tokens
+   ═══════════════════════════════════════════════════ */
+
+:root {
+  /* Paper — warm editorial */
+  --color-paper: #f9f8f5;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #f4f3ef;
+
+  /* Ink — ReflexAI forest #061F00 (≈ lab(9.2, -15, 13.3)) */
+  --color-ink: #061F00;
+  --color-ink-soft: #0F2E08;
+  --color-muted: #5B6B5F;
+  --color-soft: #748276;
+
+  /* Borders — ReflexAI beige-50 */
+  --color-border: #D9D7C8;
+  --color-border-strong: #C8C5B4;
+
+  /* Accent — lime #A5E119 · Forest #061F00 */
+  --color-accent: #A5E119;
+  --color-accent-ink: #7BAF0A;
+  --color-accent-soft: #eef7d3;
+  --color-forest: #061F00;
+  --color-lime: #A5E119;
+
+  /* Data sections — dark mode */
+  --color-data-bg: #111827;
+  --color-data-surface: #1f2937;
+  --color-data-border: #374151;
+  --color-data-ink: #f9fafb;
+  --color-data-muted: #9ca3af;
+
+  /* Data viz — sen laranxa */
+  --color-viz-in-reserva: #A5E119;
+  --color-viz-fuera-reserva: #dc2626;
+  --color-viz-idle: #c4c0b6;
+  --color-viz-ahorro: #5ee8c2;
+  --color-viz-carga-bateria: #061F00;
+  --color-viz-descarga: #fca5a5;
+
+  /* States — warning en vermello, sen laranxa */
+  --color-success: #059669;
+  --color-warning: #b91c1c;
+  --color-danger: #dc2626;
+
+  /* Typography — Plus Jakarta Sans display · Inter body */
+  --font-display: var(--font-jakarta), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains), 'Fira Code', ui-monospace, monospace;
+
+  /* Radius — industriais */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  /* Shadows — só funcionais */
+  --shadow-focus: 0 0 0 3px rgba(9, 207, 88, 0.25);
+}
+
+/* ── Tailwind CSS variable mappings ── */
+@theme inline {
+  --color-background: var(--color-paper);
+  --color-foreground: var(--color-ink);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+}
+
+/* ── Base ── */
+* { border-color: var(--color-border); }
+
+html {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-paper);
+  overflow-x: clip;
+}
+
+/* ── Typography — ReflexAI-inspired: positive tracking ~0.01em, weight ~450 */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  line-height: 1.05;
+}
+
+.font-mono, .tabular-nums { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-soft); }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

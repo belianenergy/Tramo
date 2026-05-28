@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tramo - Tarifa y Potencia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#fedccb",
+                        "background": "#fdf8f8",
+                        "on-surface": "#1c1b1b",
+                        "primary-fixed-dim": "#ffb68a",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "on-error-container": "#93000a",
+                        "secondary": "#72594c",
+                        "tertiary-fixed-dim": "#80d5cb",
+                        "on-primary-fixed": "#321300",
+                        "on-primary-container": "#562500",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface": "#fdf8f8",
+                        "inverse-primary": "#ffb68a",
+                        "on-secondary-fixed": "#29170e",
+                        "surface-bright": "#fdf8f8",
+                        "on-primary-fixed-variant": "#743500",
+                        "tertiary": "#006a63",
+                        "on-secondary-container": "#785f52",
+                        "primary-container": "#e6813a",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "tertiary-container": "#52a9a0",
+                        "on-secondary-fixed-variant": "#584236",
+                        "surface-tint": "#984700",
+                        "inverse-on-surface": "#f4f0ef",
+                        "secondary-fixed-dim": "#e0c0b0",
+                        "surface-dim": "#ddd9d8",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#00201d",
+                        "surface-container-low": "#f7f2f2",
+                        "on-tertiary-container": "#003a35",
+                        "tertiary-fixed": "#9cf2e8",
+                        "outline": "#887367",
+                        "surface-container": "#f1edec",
+                        "surface-container-high": "#ece7e7",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdbc8",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#fedccb",
+                        "surface-container-highest": "#e6e1e1",
+                        "on-surface-variant": "#554338",
+                        "primary": "#984700",
+                        "outline-variant": "#dbc1b3",
+                        "inverse-surface": "#313030",
+                        "surface-variant": "#e6e1e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "card": "16px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "data-md": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "data-lg": ["JetBrains Mono"],
+                        "headline-xl": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                        "data-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.08em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "data-lg": ["20px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #ead8cd;
+            border-radius: 16px;
+            padding: 32px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface-dim font-headline-md text-headline-md. Links: font-body-md text-body-md. Data: font-data-md text-data-md. docked full-width top-0 border-b border-outline-variant dark:border-outline flat no shadows flex justify-between items-center h-16 w-full px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-6">
+<img alt="Tramo Logo" class="h-10 w-auto" src="data:image/png;base64,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"/>
+<div class="hidden md:flex gap-6 font-body-md">
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-low transition-all" href="#">Portfolio</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 active:scale-95 duration-200 ease-in-out" href="#">Tarifa y Potencia</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-low transition-all" href="#">Análisis</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-low transition-all" href="#">Ahorro</a>
+</div>
+</div>
+<div class="flex gap-4 text-primary dark:text-primary-fixed-dim">
+<button class="hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-low transition-all p-2 rounded"><span class="material-symbols-outlined">notifications</span></button>
+<button class="hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-low transition-all p-2 rounded"><span class="material-symbols-outlined">settings</span></button>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-desktop py-gutter grid grid-cols-12 gap-gutter">
+<!-- Header -->
+<header class="col-span-12 mb-gutter">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm mb-2">
+<span>Portfolio</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="font-bold text-on-surface">Tarifa y Potencia</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Optimización de Potencia</h1>
+</header>
+<!-- SECTION 1: CURRENT TARIFF INFO -->
+<section class="col-span-12 card flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Tarifa actual: 3.0 A (PEAJE 2.0TD)</h2>
+<div class="flex flex-wrap gap-4 text-on-surface-variant font-body-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Billing period: Mayo 2026</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span>Last Datadis sync: Hace 2h</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-1">Potencia Contratada</span>
+<div class="flex gap-4 font-data-lg text-data-lg text-on-surface">
+<span>P1: 4.6 kW</span>
+<span class="text-outline-variant">|</span>
+<span>P2: 4.6 kW</span>
+</div>
+</div>
+</section>
+<!-- Main Content Area -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-gutter">
+<!-- SECTION 2: POWER ANALYSIS TABLE -->
+<section class="card overflow-x-auto">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Análisis de Potencia por Apartamento</h3>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant">
+<th class="py-4 px-2 font-label-caps text-label-caps text-on-surface-variant uppercase">Apartamento</th>
+<th class="py-4 px-2 font-label-caps text-label-caps text-on-surface-variant uppercase">P1 actual</th>
+<th class="py-4 px-2 font-label-caps text-label-caps text-on-surface-variant uppercase">P1 recom.</th>
+<th class="py-4 px-2 font-label-caps text-label-caps text-on-surface-variant uppercase">P2 actual</th>
+<th class="py-4 px-2 font-label-caps text-label-caps text-on-surface-variant uppercase">P2 recom.</th>
+<th class="py-4 px-2 font-label-caps text-label-caps text-on-surface-variant uppercase">Estado</th>
+</tr>
+</thead>
+<tbody class="font-data-md text-data-md">
+<tr class="border-b border-outline-variant bg-error-container/20">
+<td class="py-4 px-2 font-body-md text-on-surface font-semibold">VGO-014</td>
+<td class="py-4 px-2 text-on-surface-variant">4.6</td>
+<td class="py-4 px-2 text-primary font-bold">3.3</td>
+<td class="py-4 px-2 text-on-surface-variant">4.6</td>
+<td class="py-4 px-2 text-primary font-bold">3.3</td>
+<td class="py-4 px-2"><span class="inline-block bg-primary-container text-on-primary-container px-2 py-1 rounded-sm text-xs font-bold uppercase tracking-wider">Revisar</span></td>
+</tr>
+<tr class="border-b border-outline-variant bg-error-container/20">
+<td class="py-4 px-2 font-body-md text-on-surface font-semibold">COR-007</td>
+<td class="py-4 px-2 text-on-surface-variant">4.6</td>
+<td class="py-4 px-2 text-primary font-bold">3.3</td>
+<td class="py-4 px-2 text-on-surface-variant">4.6</td>
+<td class="py-4 px-2 text-primary font-bold">3.3</td>
+<td class="py-4 px-2"><span class="inline-block bg-primary-container text-on-primary-container px-2 py-1 rounded-sm text-xs font-bold uppercase tracking-wider">Revisar</span></td>
+</tr>
+<tr class="border-b border-outline-variant bg-error-container/20">
+<td class="py-4 px-2 font-body-md text-on-surface font-semibold">SJO-021</td>
+<td class="py-4 px-2 text-on-surface-variant">5.5</td>
+<td class="py-4 px-2 text-primary font-bold">4.1</td>
+<td class="py-4 px-2 text-on-surface-variant">5.5</td>
+<td class="py-4 px-2 text-primary font-bold">4.1</td>
+<td class="py-4 px-2"><span class="inline-block bg-primary-container text-on-primary-container px-2 py-1 rounded-sm text-xs font-bold uppercase tracking-wider">Revisar</span></td>
+</tr>
+<tr class="border-b border-outline-variant">
+<td class="py-4 px-2 font-body-md text-on-surface font-semibold">MDR-003</td>
+<td class="py-4 px-2 text-on-surface-variant">3.3</td>
+<td class="py-4 px-2 text-on-surface-variant">3.3</td>
+<td class="py-4 px-2 text-on-surface-variant">4.6</td>
+<td class="py-4 px-2 text-primary font-bold">3.3</td>
+<td class="py-4 px-2"><span class="inline-block text-secondary px-2 py-1 text-xs font-bold uppercase tracking-wider">Pendiente</span></td>
+</tr>
+<tr class="">
+<td class="py-4 px-2 font-body-md text-on-surface font-semibold">PBL-008</td>
+<td class="py-4 px-2 text-on-surface-variant">4.6</td>
+<td class="py-4 px-2 text-on-surface-variant">4.1</td>
+<td class="py-4 px-2 text-on-surface-variant">4.6</td>
+<td class="py-4 px-2 text-on-surface-variant">3.3</td>
+<td class="py-4 px-2"><span class="inline-block bg-tertiary-container text-on-tertiary-container px-2 py-1 rounded-sm text-xs font-bold uppercase tracking-wider">OK</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<!-- SECTION 4: TARIFF COMPARISON CHART -->
+<section class="card">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Comparativa de Perfiles</h3>
+<div class="h-64 flex items-end gap-8 border-b border-outline-variant pb-4 relative">
+<!-- Y Axis Labels -->
+<div class="absolute left-0 bottom-4 top-0 flex flex-col justify-between text-on-surface-variant font-data-md text-[10px] -ml-8">
+<span>5.0</span>
+<span>4.0</span>
+<span>3.0</span>
+<span>2.0</span>
+<span>1.0</span>
+<span>0</span>
+</div>
+<!-- Bar Group P1 -->
+<div class="flex flex-col items-center flex-1 h-full justify-end">
+<div class="flex items-end gap-2 h-full w-full justify-center">
+<div class="w-12 bg-[#e6813a] h-[92%] relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 font-data-md text-xs">4.6</span>
+</div>
+<div class="w-12 bg-[#0f766e] h-[66%] relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 font-data-md text-xs">3.3</span>
+</div>
+</div>
+<span class="font-label-caps mt-4">P1 (Punta)</span>
+</div>
+<!-- Bar Group P2 -->
+<div class="flex flex-col items-center flex-1 h-full justify-end">
+<div class="flex items-end gap-2 h-full w-full justify-center">
+<div class="w-12 bg-[#e6813a] h-[92%] relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 font-data-md text-xs">4.6</span>
+</div>
+<div class="w-12 bg-[#0f766e] h-[66%] relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 font-data-md text-xs">3.3</span>
+</div>
+</div>
+<span class="font-label-caps mt-4">P2 (Valle)</span>
+</div>
+</div>
+<div class="flex justify-center gap-6 mt-6 font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2"><div class="w-3 h-3 bg-[#e6813a]"></div> Actual (3.0A)</div>
+<div class="flex items-center gap-2"><div class="w-3 h-3 bg-[#0f766e]"></div> Sugerido (2.0TD)</div>
+</div>
+</section>
+</div>
+<!-- Sidebar -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-gutter">
+<!-- SECTION 3: SAVINGS ESTIMATE CARD -->
+<section class="card border-l-4 border-l-primary-container">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Estimación de ahorro mensual</h3>
+<p class="font-body-md text-on-surface-variant mb-6">P2 reducida de 4.6 a 3.3 kW en 8 apartamentos</p>
+<div class="bg-surface-container-low p-4 rounded-lg mb-6 border border-outline-variant">
+<p class="font-data-lg text-data-lg font-bold text-primary">Ahorro estimado: 38-52 EUR/mes</p>
+</div>
+<p class="font-body-sm text-on-surface-variant italic mb-8">Basado en 3 meses de consumo. No es una garantía.</p>
+<button class="w-full bg-primary-container text-on-primary-container font-body-md font-semibold py-3 px-6 rounded-[16px] hover:bg-surface-tint hover:text-on-primary transition-colors flex justify-center items-center gap-2">
+                    Revisar todos los cambios propuestos
+                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</section>
+<!-- SECTION 5: RECOMMENDATIONS LIST -->
+<section class="card">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+                    Recomendaciones
+                </h3>
+<ul class="flex flex-col gap-4 font-body-md text-on-surface-variant">
+<li class="flex gap-3 items-start border-b border-outline-variant pb-4 last:border-0 last:pb-0">
+<span class="font-data-md text-primary font-bold mt-1">01.</span>
+<span>Revisar P2 en 8 apartamentos con potencia inflada</span>
+</li>
+<li class="flex gap-3 items-start border-b border-outline-variant pb-4 last:border-0 last:pb-0">
+<span class="font-data-md text-primary font-bold mt-1">02.</span>
+<span>Evaluar cambio a tarifa 2.0TD con maxima potencia reducida</span>
+</li>
+<li class="flex gap-3 items-start border-b border-outline-variant pb-4 last:border-0 last:pb-0">
+<span class="font-data-md text-primary font-bold mt-1">03.</span>
+<span><strong>VGO-014:</strong> El histórico de consumo de mayo sugiere P1 de 3.3 kW suficiente</span>
+</li>
+<li class="flex gap-3 items-start border-b border-outline-variant pb-4 last:border-0 last:pb-0">
+<span class="font-data-md text-primary font-bold mt-1">04.</span>
+<span>Solicitar cambio de potencia a distribuidora antes del día 10 para que sea efectivo el mes siguiente</span>
+</li>
+</ul>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-highest font-body-sm text-body-sm full-width bottom border-t border-outline-variant dark:border-outline flex flex-col md:flex-row justify-between items-center py-unit-4 px-margin-desktop max-w-container-max mx-auto w-full mt-gutter">
+<div class="text-secondary dark:text-secondary-fixed-dim mb-4 md:mb-0">
+            © 2024 Tramo Energy Management. All rights reserved.
+        </div>
+<div class="flex gap-6 font-label-caps text-label-caps uppercase">
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container" href="#">Legal Notice</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container" href="#">Contact Support</a>
+</div>
+</footer>
+</body></html>

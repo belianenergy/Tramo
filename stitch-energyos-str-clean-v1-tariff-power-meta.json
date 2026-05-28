@@ -1,0 +1,23 @@
+{
+  "key": "tariff-power",
+  "title": "EnergyOS - Tarifa/Potencia Refinado Final",
+  "projectId": "3511007415582919208",
+  "projectName": "projects/3511007415582919208",
+  "projectUrl": "https://stitch.withgoogle.com/projects/3511007415582919208",
+  "screenId": "f2deaf9cc8144de59697ae82242bbb70",
+  "screenName": "projects/3511007415582919208/screens/f2deaf9cc8144de59697ae82242bbb70",
+  "width": "2560",
+  "height": "2048",
+  "htmlCodeName": "projects/3511007415582919208/files/bfa26a73c9554e5a93e2bd72c906a09f",
+  "screenshotName": "projects/3511007415582919208/files/1d564169042d4fc4b24e45c7a00aeaaa",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2E2NDVkYjU4MmVjNDQ4NDRhNjhhNTk0Mzg0ZWRjMDdiEgsSBxCg9KiWmAMYAZIBIwoKcHJvamVjdF9pZBIVQhMzNTExMDA3NDE1NTgyOTE5MjA4&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uh87DCNmgGrkm8Qt-QwyLoB_YmGrCv9jrLaRklrT2MFahsssCrT83TRezwuJ4vQnGQAxEhiJhXyd3r7K7aRWtgiJDd4BvZLvc082JUi4yJh9BV3j9jdX_EQnS4tW31BEiI71rF9krznf7qQmizo2KYhiDEMwIuP6wQAqiN1ohAfz3cwTpGHJbVjUL82mnfIJ2v0r6AZa3IyAhfFvpdY2vkkHEY3pt34IWRFQG5L9VgX90HHktcsEcngOdk",
+  "generatedAt": "2026-05-16T00:53:12.664Z",
+  "sourcePromptFile": "STITCH_PROMPT_ENERGYOS_STR_CLEAN_V1.md",
+  "localFiles": {
+    "response": "stitch-energyos-str-clean-v1-tariff-power-response.json",
+    "meta": "stitch-energyos-str-clean-v1-tariff-power-meta.json",
+    "html": "stitch-energyos-str-clean-v1-tariff-power.html",
+    "stitchPng": "stitch-energyos-str-clean-v1-tariff-power-stitch.png"
+  }
+}

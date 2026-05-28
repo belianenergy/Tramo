@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EnergyOS - Configuración del Piloto</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-tertiary-container": "#deeaff",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-container-high": "#e6e8ea",
+                        "on-surface": "#191c1e",
+                        "on-secondary-container": "#5c647a",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-background": "#191c1e",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#00201d",
+                        "primary-fixed": "#9cf2e8",
+                        "on-secondary": "#ffffff",
+                        "outline": "#6e7977",
+                        "primary": "#005c55",
+                        "on-surface-variant": "#3e4947",
+                        "surface-container": "#eceef0",
+                        "primary-container": "#0f766e",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#00504a",
+                        "surface-variant": "#e0e3e5",
+                        "inverse-on-surface": "#eff1f3",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#d3e4fe",
+                        "tertiary-container": "#5a6a81",
+                        "surface-dim": "#d8dadc",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary": "#565e74",
+                        "background": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#bdc9c6",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "primary-fixed-dim": "#80d5cb",
+                        "surface-tint": "#006a63",
+                        "tertiary": "#425268",
+                        "on-primary-container": "#a3faef",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#131b2e",
+                        "inverse-primary": "#80d5cb",
+                        "surface": "#f7f9fb",
+                        "secondary-container": "#dae2fd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "40px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "gutter": "20px"
+                    },
+                    "fontFamily": {
+                        "metric-md": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "metric-lg": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "metric-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "metric-lg": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f7f9fb; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #bdc9c6; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6e7977; 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex antialiased">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col py-lg bg-surface-container-low border-r border-outline-variant fixed left-0 top-0 w-[280px] h-screen z-50">
+<div class="px-lg pb-lg mb-sm border-b border-outline-variant/30 flex items-center justify-between">
+<div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">EnergyOS</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mission Control</p>
+</div>
+<img alt="Manager Profile Avatar" class="w-10 h-10 rounded-full object-cover border border-outline-variant/50" data-alt="Close up professional portrait of a confident male manager in his late 30s wearing a crisp white shirt, standing in a brightly lit modern office with subtle high-key lighting. The environment is clean, corporate, and minimalist, emphasizing reliability and focus. Shot with a shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChAzE3phumVgoEURBPmV793fVL3tn88kVnQu9m76otNXYqCNyQTKZuEd8EJ4Cw77ifGa8n6j5ILO6bOjYDl95wqob5x0QrlyfiPvRyEqyjc09gYkihil4-XJRT0ats_6cbooKAE2KFxpBCh7DH3r7SE3_JNmu6kKsOtNGVdwhbL4DyTms4qXSA3LydldYLHDEfSnQUIBxGs76_1agHl5-xSFyohsIpCGt9Hy2sg41MinBCwzWJrigskXxJJqx7-9wyfshkQHorWns"/>
+</div>
+<div class="flex-1 overflow-y-auto px-md py-sm space-y-xs">
+<!-- Nav Items -->
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="apartment">apartment</span>
+<span class="font-label-caps text-label-caps">Apartamentos</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="engineering">engineering</span>
+<span class="font-label-caps text-label-caps">Operaciones</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="info">info</span>
+<span class="font-label-caps text-label-caps">Detalle</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="bolt">bolt</span>
+<span class="font-label-caps text-label-caps">Tarifa/Potencia</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+<span class="font-label-caps text-label-caps">Leads</span>
+</a>
+<!-- Active Item -->
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps">Configuración</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="assessment">assessment</span>
+<span class="font-label-caps text-label-caps">Informe propietario</span>
+</a>
+</div>
+<div class="px-lg pt-sm mt-auto">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-caps text-label-caps py-sm px-md rounded-lg flex items-center justify-center gap-xs transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Add Property
+            </button>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col ml-0 md:ml-[280px] w-full min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 w-full bg-surface-container-lowest border-b border-outline-variant flex items-center justify-between px-gutter h-16">
+<!-- Mobile Menu & Title (Hidden on md+) -->
+<div class="flex md:hidden items-center gap-sm">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-xs focus:ring-2 focus:ring-primary rounded">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">EnergyOS</span>
+</div>
+<!-- Search Bar -->
+<div class="hidden md:flex items-center flex-1 max-w-md relative mr-md">
+<span class="material-symbols-outlined absolute left-sm text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-full py-xs pl-xl pr-md font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="Buscar propiedades, operaciones..." type="text"/>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-sm">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-xs rounded-full focus:ring-2 focus:ring-primary">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-xs rounded-full focus:ring-2 focus:ring-primary hidden sm:block">
+<span class="material-symbols-outlined text-[22px]" data-icon="help_outline">help_outline</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-xs rounded-full focus:ring-2 focus:ring-primary">
+<span class="material-symbols-outlined text-[22px]" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 p-gutter md:p-container-margin overflow-y-auto">
+<!-- Page Header -->
+<div class="mb-xl flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-on-background mb-xs">Configuración del Piloto</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Gestión de integraciones, alertas y módulos en fase piloto.</p>
+</div>
+<div class="flex items-center gap-sm">
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface font-label-caps text-label-caps py-sm px-md rounded-lg hover:border-outline transition-colors focus:ring-2 focus:ring-primary">
+                        Descartar cambios
+                    </button>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps py-sm px-md rounded-lg hover:bg-primary-container transition-colors focus:ring-2 focus:ring-primary">
+                        Guardar configuración
+                    </button>
+</div>
+</div>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Left Column: Core Integrations -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<!-- 1. Integración de Reservas -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md shadow-[0px_4px_12px_rgba(15,23,42,0.02)]">
+<div class="border-b border-outline-variant/50 pb-sm flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">sync</span>
+                                Integración de Reservas
+                            </h3>
+</div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-md bg-surface-container-low p-md rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-surface-container-lowest rounded-lg border border-outline-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px] text-tertiary">vpn_key</span>
+</div>
+<div>
+<p class="font-metric-md text-metric-md text-on-surface">Guesty Integration</p>
+<div class="flex items-center gap-sm mt-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E0F2FE] text-[#0369A1] font-label-caps text-[10px]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#0369A1] mr-1.5"></span>
+                                            Conectado
+                                        </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Sincronizado hace 5 min</span>
+</div>
+</div>
+</div>
+<button class="bg-surface-container-lowest border border-outline-variant text-error font-label-caps text-label-caps py-xs px-sm rounded-lg hover:bg-error-container/20 transition-colors">
+                                Desconectar
+                            </button>
+</div>
+<div class="mt-xs">
+<details class="group">
+<summary class="font-label-caps text-label-caps text-on-surface-variant cursor-pointer list-none flex items-center gap-xs hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px] group-open:rotate-90 transition-transform">chevron_right</span>
+                                    Opciones de Respaldo (iCal)
+                                </summary>
+<div class="mt-sm pl-lg">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">URL iCal Backup</label>
+<input class="w-full bg-background border border-outline-variant rounded-md py-xs px-sm font-body-sm text-body-sm focus:ring-2 focus:ring-primary focus:border-primary" placeholder="https://..." type="text"/>
+</div>
+</details>
+</div>
+</section>
+<!-- 2. Conexión de Datos Energéticos -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md shadow-[0px_4px_12px_rgba(15,23,42,0.02)]">
+<div class="border-b border-outline-variant/50 pb-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">electric_meter</span>
+                                Conexión de Datos Energéticos
+                            </h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Principal -->
+<div class="flex flex-col gap-sm border border-outline-variant/50 rounded-lg p-md relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary-container/5 rounded-bl-full -z-10"></div>
+<h4 class="font-label-caps text-label-caps text-on-surface">Autorización API Datadis</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-sm flex-1">Conecta directamente con la distribuidora para obtener lecturas horarias automáticas.</p>
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-sm px-md rounded-lg hover:bg-primary-container transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+                                    Autorizar CUPS
+                                </button>
+</div>
+<!-- Alternativo -->
+<div class="flex flex-col gap-sm border border-dashed border-outline-variant rounded-lg p-md bg-background">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant">Método Alternativo</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-sm flex-1">Si Datadis no está disponible, sube el historial manualmente.</p>
+<button class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface font-label-caps text-label-caps py-sm px-md rounded-lg hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+                                    Subir CSV / Factura
+                                </button>
+</div>
+</div>
+</section>
+<!-- 3. Reglas de Alerta -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md shadow-[0px_4px_12px_rgba(15,23,42,0.02)]">
+<div class="border-b border-outline-variant/50 pb-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">notifications_active</span>
+                                Reglas de Alerta
+                            </h3>
+</div>
+<div class="space-y-sm">
+<!-- Rule 1 -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-md p-md bg-background border border-outline-variant/50 rounded-lg">
+<div class="flex-1">
+<div class="flex items-center gap-sm mb-xs">
+<h4 class="font-metric-md text-metric-md text-on-surface">Consumo fuera de reserva</h4>
+<!-- Toggle Switch Mock -->
+<div class="w-10 h-5 bg-primary rounded-full relative cursor-pointer ml-auto sm:ml-sm">
+<div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Alerta si hay consumo sostenido sin huéspedes registrados.</p>
+</div>
+<div class="w-full sm:w-auto">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Umbral Activo (kW)</label>
+<input class="w-full sm:w-24 bg-surface-container-lowest border border-outline-variant rounded-md py-xs px-sm font-metric-md text-metric-md text-right focus:ring-2 focus:ring-primary focus:border-primary" type="text" value="0.5"/>
+</div>
+</div>
+<!-- Rule 2 -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-md p-md bg-background border border-outline-variant/50 rounded-lg">
+<div class="flex-1">
+<div class="flex items-center gap-sm mb-xs">
+<h4 class="font-metric-md text-metric-md text-on-surface">Pico de Potencia</h4>
+<!-- Toggle Switch Mock -->
+<div class="w-10 h-5 bg-primary rounded-full relative cursor-pointer ml-auto sm:ml-sm">
+<div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Notifica si el consumo se acerca al límite contratado para evitar cortes.</p>
+</div>
+<div class="w-full sm:w-auto">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Umbral Alerta (kW)</label>
+<input class="w-full sm:w-24 bg-surface-container-lowest border border-outline-variant rounded-md py-xs px-sm font-metric-md text-metric-md text-right focus:ring-2 focus:ring-primary focus:border-primary" type="text" value="4.2"/>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Settings & Beta -->
+<div class="lg:col-span-4 flex flex-col gap-lg">
+<!-- 4. Configuración de Informes -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md shadow-[0px_4px_12px_rgba(15,23,42,0.02)]">
+<div class="border-b border-outline-variant/50 pb-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary">summarize</span>
+                                Configuración de Informes
+                            </h3>
+</div>
+<div class="space-y-md">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Frecuencia de Envío</label>
+<div class="relative">
+<select class="w-full bg-background border border-outline-variant rounded-md py-sm pl-sm pr-lg font-body-sm text-body-sm appearance-none focus:ring-2 focus:ring-primary focus:border-primary">
+<option>Mensual</option>
+<option>Quincenal</option>
+<option>Semanal</option>
+</select>
+<span class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Formato de Reporte</label>
+<div class="relative">
+<select class="w-full bg-background border border-outline-variant rounded-md py-sm pl-sm pr-lg font-body-sm text-body-sm appearance-none focus:ring-2 focus:ring-primary focus:border-primary">
+<option>PDF Detallado</option>
+<option>Resumen Ejecutivo (PDF)</option>
+<option>Datos Crudos (CSV)</option>
+</select>
+<span class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Módulos Futuros (Pilotos) -->
+<section class="bg-surface-container-lowest border border-primary-fixed-dim/50 rounded-xl p-lg flex flex-col gap-md shadow-[0px_4px_12px_rgba(15,23,42,0.04)] relative overflow-hidden">
+<!-- Decorative bg element -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-bl-full pointer-events-none"></div>
+<div class="border-b border-outline-variant/50 pb-sm flex justify-between items-center z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">science</span>
+                                Módulos Activos
+                            </h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-[10px] px-2 py-0.5 rounded border border-tertiary-fixed-dim">BETA</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant z-10">Activa modelos analíticos avanzados. Requiere datos históricos consistentes.</p>
+<div class="space-y-sm z-10">
+<!-- Module 1 -->
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline text-[20px]">router</span>
+<span class="font-body-sm text-body-sm font-medium">Hardware Shelly (Simulación)</span>
+</div>
+<!-- Toggle Off -->
+<div class="w-8 h-4 bg-outline-variant rounded-full relative cursor-pointer">
+<div class="absolute left-1 top-0.5 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<!-- Module 2 -->
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">solar_power</span>
+<span class="font-body-sm text-body-sm font-medium">Simulación Solar</span>
+</div>
+<!-- Toggle On -->
+<div class="w-8 h-4 bg-primary rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-0.5 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<!-- Module 3 -->
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline text-[20px]">battery_charging_full</span>
+<span class="font-body-sm text-body-sm font-medium">Almacenamiento (Simulación)</span>
+</div>
+<!-- Toggle Off -->
+<div class="w-8 h-4 bg-outline-variant rounded-full relative cursor-pointer">
+<div class="absolute left-1 top-0.5 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<!-- Module 4 -->
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">currency_exchange</span>
+<span class="font-body-sm text-body-sm font-medium">Arbitraje Dinámico (Modelo)</span>
+</div>
+<!-- Toggle On -->
+<div class="w-8 h-4 bg-primary rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-0.5 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</body></html>

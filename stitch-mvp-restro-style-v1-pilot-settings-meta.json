@@ -1,0 +1,26 @@
+{
+  "key": "pilot-settings",
+  "requestedName": "configuracion-piloto",
+  "title": "Configuración piloto",
+  "projectId": "11820050226044719534",
+  "projectName": "projects/11820050226044719534",
+  "screenId": "15faea05908c423f98823f4dad0c2826",
+  "screenName": "projects/11820050226044719534/screens/15faea05908c423f98823f4dad0c2826",
+  "width": "2560",
+  "height": "3170",
+  "htmlCodeName": "projects/11820050226044719534/files/8c1e87592b9940a4b8c38ef08599b9fb",
+  "screenshotName": "projects/11820050226044719534/files/b140657960b84b968115a2b15e31465c",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2U0OTRkZTVkM2Q1MTQyZTViNjRhNTFiMTQ4ZTc3YTdlEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uioROHE_Fg23FTvGFsWSYFIVAS1OqyFW0RDo6_cfT5M-SJqG66awp5qKT85YN3TzDQNucpVkigPa36_vMkEY4fCKPz4dLJowupvNdqZaPFtNqFEHwxkkpWSOYNlWLyp6jH2U9PiVQjisXJG7lb_67pgw2jA4EXLIMDMSRJkgYSDgBobvcpJcTrAQ2fYtqzvXkM4M0GybR1nXyAgXNVYKNmMVTGygHvK3hDG-saG-vTU3gxauoSwqrs03co2",
+  "generatedAt": "2026-05-15T22:43:05.059Z",
+  "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+  "localFiles": {
+    "response": "stitch-mvp-restro-style-v1-pilot-settings-response.json",
+    "meta": "stitch-mvp-restro-style-v1-pilot-settings-meta.json",
+    "html": "stitch-mvp-restro-style-v1-pilot-settings.html",
+    "stitchPng": "stitch-mvp-restro-style-v1-pilot-settings-stitch.png",
+    "previews": []
+  },
+  "editedFromScreenId": "1774c077d6d64fbd9d078c83a15e4ce9",
+  "note": "Remote Stitch platform-copy edit: broadened EnergyOS from narrow A/C/climate copy to full energy operations OS."
+}

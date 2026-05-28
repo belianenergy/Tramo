@@ -1,0 +1,28 @@
+{
+  "id": 1779039940608,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"name\":\"projects/15362465521859509617/screens/aeeaef633d37491e9b472392cdfd7340\",\"title\":\"Tramo — Intelligent Energy Platform\",\"screenshot\":{\"name\":\"projects/15362465521859509617/files/1695ffaec4cb4a2ba21d8db3a0d5aa90\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/ADBb0ugWA5jmnrjJ2punagIFQgHR4D7Fxx7jaduzSHlIgBuF-QBIHTPtRyOemZaWSuFUhe_Wkq-BwvIoksETBv57tCyFMLhoZecN9WEfP9PyNdaoIGh8FWZxqbcVfSK9KgzSiiE6QalPn9P3awgoSkRhzdBDtnlbDOnjXm-fcQeIBd_70ZEj_k6Yx4WB7OxJK34xyzA2pzeQPkYK4peviVvYyLpTpwaFvWPTBkYOAkUm649d5jcGOAxfqRQj9ZI\"},\"htmlCode\":{\"name\":\"projects/15362465521859509617/files/871d64444031456ab219b7f1cb3979b2\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzhmNThlOTViMjlkMzQzZTE5NWM2MWQ0Yjc1ZmYyMTNmEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTM2MjQ2NTUyMTg1OTUwOTYxNw&filename=&opi=96797242\",\"mimeType\":\"text/html\"},\"width\":\"2560\",\"height\":\"10856\",\"deviceType\":\"DESKTOP\"}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "deviceType": "DESKTOP",
+      "height": "10856",
+      "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzhmNThlOTViMjlkMzQzZTE5NWM2MWQ0Yjc1ZmYyMTNmEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTM2MjQ2NTUyMTg1OTUwOTYxNw&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/15362465521859509617/files/871d64444031456ab219b7f1cb3979b2"
+      },
+      "name": "projects/15362465521859509617/screens/aeeaef633d37491e9b472392cdfd7340",
+      "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ugWA5jmnrjJ2punagIFQgHR4D7Fxx7jaduzSHlIgBuF-QBIHTPtRyOemZaWSuFUhe_Wkq-BwvIoksETBv57tCyFMLhoZecN9WEfP9PyNdaoIGh8FWZxqbcVfSK9KgzSiiE6QalPn9P3awgoSkRhzdBDtnlbDOnjXm-fcQeIBd_70ZEj_k6Yx4WB7OxJK34xyzA2pzeQPkYK4peviVvYyLpTpwaFvWPTBkYOAkUm649d5jcGOAxfqRQj9ZI",
+        "name": "projects/15362465521859509617/files/1695ffaec4cb4a2ba21d8db3a0d5aa90"
+      },
+      "title": "Tramo — Intelligent Energy Platform",
+      "width": "2560"
+    }
+  }
+}

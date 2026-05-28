@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EnergyOS - Command Center energético</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#313632",
+                    "on-primary-container": "#447000",
+                    "inverse-on-surface": "#2c322e",
+                    "on-background": "#dfe4de",
+                    "on-secondary-container": "#003b42",
+                    "on-error-container": "#ffdad6",
+                    "tertiary": "#ffffff",
+                    "inverse-surface": "#dfe4de",
+                    "inverse-primary": "#406900",
+                    "primary-container": "#aff755",
+                    "surface-container-highest": "#313632",
+                    "outline-variant": "#424937",
+                    "surface-container-high": "#262b28",
+                    "surface-container": "#1c211e",
+                    "secondary-fixed-dim": "#54d8e8",
+                    "on-surface": "#dfe4de",
+                    "on-tertiary-container": "#815f00",
+                    "on-primary-fixed": "#102000",
+                    "on-primary-fixed-variant": "#2f4f00",
+                    "on-tertiary-fixed-variant": "#5c4300",
+                    "on-secondary-fixed": "#001f23",
+                    "surface-dim": "#0f1412",
+                    "on-primary": "#1f3700",
+                    "on-tertiary": "#402d00",
+                    "on-secondary-fixed-variant": "#004f57",
+                    "surface-container-lowest": "#0a0f0c",
+                    "secondary-fixed": "#91f1ff",
+                    "on-secondary": "#00363c",
+                    "surface-container-low": "#181d1a",
+                    "background": "#0f1412",
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#94da3a",
+                    "secondary-container": "#02aebe",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#f9bd22",
+                    "error": "#ffb4ab",
+                    "tertiary-container": "#ffdf9f",
+                    "primary": "#ffffff",
+                    "on-tertiary-fixed": "#261a00",
+                    "secondary": "#54d8e8",
+                    "tertiary-fixed": "#ffdf9f",
+                    "outline": "#8c947d",
+                    "surface-tint": "#94da3a",
+                    "surface": "#0f1412",
+                    "surface-bright": "#353a37",
+                    "on-surface-variant": "#c1cab1",
+                    "primary-fixed": "#aff755"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "density-comfy": "12px",
+                    "density-tight": "4px",
+                    "unit": "4px",
+                    "gutter": "16px",
+                    "margin-desktop": "24px",
+                    "panel-gap": "12px"
+            },
+            "fontFamily": {
+                    "mono-label": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "mono-metric-lg": ["JetBrains Mono"],
+                    "mono-metric-md": ["JetBrains Mono"],
+                    "headline-sm": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "mono-label": ["10px", {"lineHeight": "12px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "mono-metric-lg": ["28px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "mono-metric-md": ["16px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #0f1412; color: #dfe4de; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; font-size: 18px; }
+        .border-thin { border: 1px solid #313632; }
+        .panel-mask { mask-image: linear-gradient(to bottom, black 80%, transparent); }
+        .scanline {
+            background-image: linear-gradient(rgba(175, 247, 85, 0.05) 1px, transparent 1px);
+            background-size: 100% 8px;
+        }
+        .energy-grid {
+            background-image:
+              linear-gradient(rgba(140, 148, 125, 0.08) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(140, 148, 125, 0.08) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .status-dot { box-shadow: 0 0 0 4px rgba(175, 247, 85, 0.08); }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline-variant fixed top-0 z-50 w-full">
+<div class="flex justify-between items-center w-full px-margin-desktop h-16 max-w-7xl mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface dark:text-on-surface">EnergyOS</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-mono-label text-mono-label text-primary dark:text-primary border-b-2 border-primary pb-1 transition-colors duration-200" href="#">Producto</a>
+<a class="font-mono-label text-mono-label text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Tarifas</a>
+<a class="font-mono-label text-mono-label text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Arbitraje</a>
+<a class="font-mono-label text-mono-label text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Informes</a>
+</nav>
+<button class="bg-primary-fixed text-on-primary-fixed font-mono-label text-mono-label px-4 py-2 uppercase tracking-wider hover:bg-primary-container transition-all active:scale-95">Solicitar diagnóstico</button>
+</div>
+</header>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-margin-desktop py-16 md:py-18 flex flex-col md:flex-row items-center gap-12 min-h-[690px] energy-grid">
+<div class="flex-1 flex flex-col gap-6">
+<div class="inline-flex">
+<span class="bg-surface-container border-thin px-3 py-1 font-mono-label text-mono-label text-primary-fixed uppercase tracking-widest">Energy autopilot para carteras de alojamientos</span>
+</div>
+<h1 class="font-display-lg text-display-lg leading-tight">Controla aparatos, tarifas y baterías desde una sola capa inteligente.</h1>
+<p class="text-on-surface-variant leading-relaxed">EnergyOS cruza reservas, Datadis/CUPS, facturas, precios horarios y dispositivos conectados para decidir cuándo consumir, cortar, cargar o reportar. Menos coste, más control y una explicación defendible para cada propietario.</p>
+<div class="flex flex-wrap gap-3">
+<button class="bg-primary-fixed text-on-primary-fixed h-11 px-6 font-mono-label text-mono-label font-bold uppercase hover:bg-primary-container transition-all">Solicitar diagnóstico gratuito</button>
+<div class="flex items-center gap-2 px-4 border-thin bg-surface-container-low font-mono-label text-mono-label text-on-surface-variant">
+<span class="material-symbols-outlined text-primary-fixed">verified</span>
+                        Sin hardware obligatorio para empezar
+                    </div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-8">
+<div class="border-thin p-3 bg-surface-container-lowest flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary">calendar_month</span>
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-on-surface-variant uppercase">Reservas</span>
+<span class="font-mono-label text-mono-label text-primary">Reglas de consumo</span>
+</div>
+</div>
+<div class="border-thin p-3 bg-surface-container-lowest flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary">database</span>
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-on-surface-variant uppercase">Datadis/CUPS</span>
+<span class="font-mono-label text-mono-label text-primary">Diagnóstico</span>
+</div>
+</div>
+<div class="border-thin p-3 bg-surface-container-lowest flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary">bolt</span>
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-on-surface-variant uppercase">Tarifas</span>
+<span class="font-mono-label text-mono-label text-primary">Potencia y horarios</span>
+</div>
+</div>
+<div class="border-thin p-3 bg-surface-container-lowest flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary">battery_charging_full</span>
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-on-surface-variant uppercase">Baterías</span>
+<span class="font-mono-label text-mono-label text-primary">Arbitraje avanzado</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full relative">
+<div class="border-thin bg-surface-container-high p-3 shadow-2xl relative overflow-hidden scanline">
+<div class="absolute inset-x-0 top-0 h-[2px] bg-primary-fixed"></div>
+<div class="flex items-center justify-between border-b border-outline-variant pb-3 mb-3">
+<div class="flex items-center gap-2">
+<span class="status-dot h-2 w-2 rounded-full bg-primary-fixed animate-pulse"></span>
+<div>
+<p class="font-mono-label text-mono-label text-primary-fixed uppercase">Modo ahorro activo</p>
+<p class="font-mono-label text-[10px] text-on-surface-variant">Cartera Costa Norte · 38 activos</p>
+</div>
+</div>
+<div class="hidden sm:flex gap-2 font-mono-label text-[10px] text-on-surface-variant">
+<span class="border border-outline-variant px-2 py-1">Datadis</span>
+<span class="border border-outline-variant px-2 py-1">PMS</span>
+<span class="border border-outline-variant px-2 py-1">Pool</span>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-2 mb-3">
+<div class="border border-outline-variant bg-surface-container-low p-2">
+<p class="font-mono-label text-[9px] text-on-surface-variant uppercase">Detecta</p>
+<p class="font-mono-label text-[10px] text-primary">fuera reserva</p>
+</div>
+<div class="border border-outline-variant bg-surface-container-low p-2">
+<p class="font-mono-label text-[9px] text-on-surface-variant uppercase">Decide</p>
+<p class="font-mono-label text-[10px] text-secondary">hora valle</p>
+</div>
+<div class="border border-outline-variant bg-surface-container-low p-2">
+<p class="font-mono-label text-[9px] text-on-surface-variant uppercase">Automatiza</p>
+<p class="font-mono-label text-[10px] text-primary-fixed">corte/carga</p>
+</div>
+<div class="border border-outline-variant bg-surface-container-low p-2">
+<p class="font-mono-label text-[9px] text-on-surface-variant uppercase">Reporta</p>
+<p class="font-mono-label text-[10px] text-tertiary-fixed-dim">propietario</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-3">
+<div class="border border-outline-variant bg-surface-container p-3">
+<div class="flex justify-between items-start mb-3">
+<div>
+<p class="font-mono-label text-[9px] uppercase text-on-surface-variant">Unidad 304</p>
+<h3 class="font-headline-sm text-headline-sm">Aparatos</h3>
+</div>
+<span class="font-mono-label text-[9px] text-error border border-error/50 px-2 py-1">consumo activo</span>
+</div>
+<div class="h-10 bg-surface-container-highest border border-outline-variant flex items-center justify-between px-3">
+<span class="font-mono-label text-[10px]">sin reserva ahora</span>
+<span class="font-mono-label text-[10px] text-primary-fixed">OFF recomendado</span>
+</div>
+</div>
+<div class="border border-outline-variant bg-surface-container p-3">
+<p class="font-mono-label text-[9px] uppercase text-on-surface-variant mb-2">Tarifa / Potencia</p>
+<div class="flex items-end gap-1 h-16">
+<div class="flex-1 bg-outline-variant/60 h-7"></div>
+<div class="flex-1 bg-secondary/70 h-10"></div>
+<div class="flex-1 bg-primary-fixed h-14"></div>
+<div class="flex-1 bg-tertiary-fixed-dim h-9"></div>
+<div class="flex-1 bg-error/70 h-12"></div>
+</div>
+<p class="font-mono-label text-[9px] text-on-surface-variant mt-2">comparativa horario · potencia pendiente</p>
+</div>
+<div class="border border-outline-variant bg-surface-container p-3">
+<p class="font-mono-label text-[9px] uppercase text-on-surface-variant mb-2">Solar / Batería</p>
+<div class="space-y-2">
+<div class="h-3 bg-surface-container-highest border border-outline-variant overflow-hidden"><div class="h-full w-2/5 bg-primary-fixed"></div></div>
+<div class="h-3 bg-surface-container-highest border border-outline-variant overflow-hidden"><div class="h-full w-3/5 bg-secondary"></div></div>
+<div class="h-3 bg-surface-container-highest border border-outline-variant overflow-hidden"><div class="h-full w-1/3 bg-tertiary-fixed-dim"></div></div>
+</div>
+<p class="font-mono-label text-[9px] text-on-surface-variant mt-2">simulación de ciclos · no ejecutado</p>
+</div>
+<div class="border border-outline-variant bg-surface-container p-3">
+<p class="font-mono-label text-[9px] uppercase text-on-surface-variant mb-2">Informe propietario</p>
+<div class="space-y-2 font-mono-label text-[10px]">
+<div class="flex justify-between border-b border-outline-variant pb-1"><span>causa</span><span class="text-primary">identificada</span></div>
+<div class="flex justify-between border-b border-outline-variant pb-1"><span>acción</span><span class="text-primary-fixed">preparada</span></div>
+<div class="flex justify-between"><span>estado</span><span class="text-secondary">listo para enviar</span></div>
+</div>
+</div>
+</div>
+<div class="mt-3 border border-error/50 bg-error-container/20 px-3 py-2 flex items-center justify-between">
+<span class="font-mono-label text-[10px] text-on-error-container">Consumo fuera de estancia detectado</span>
+<span class="font-mono-label text-[10px] text-primary-fixed">prioridad alta</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Pain Points Section -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-margin-desktop">
+<div class="mb-16">
+<h2 class="font-headline-md text-headline-md border-l-4 border-primary-fixed pl-6">La factura sube, pero nadie sabe qué la causó.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="border-thin p-8 bg-surface-container flex flex-col gap-4">
+<span class="material-symbols-outlined text-error text-3xl">sensor_door</span>
+<h3 class="font-headline-sm text-headline-sm">Aparatos encendidos fuera de reserva</h3>
+<p class="text-on-surface-variant text-body-sm leading-relaxed">Detecta consumo cuando no hay huéspedes y crea reglas de corte, aviso o revisión para el equipo operativo.</p>
+<div class="mt-auto pt-6 font-mono-label text-mono-label text-on-surface flex items-center gap-2"><span class="w-1 h-1 bg-error rounded-full"></span>FUGA OPERATIVA DETECTADA</div>
+</div>
+<div class="border-thin p-8 bg-surface-container flex flex-col gap-4">
+<span class="material-symbols-outlined text-secondary text-3xl">query_stats</span>
+<h3 class="font-headline-sm text-headline-sm">Potencia y tarifa mal ajustadas</h3>
+<p class="text-on-surface-variant text-body-sm leading-relaxed">Cruza CUPS, facturas y curva horaria para priorizar cambios defendibles ante comercializadoras sin afectar la operativa.</p>
+<div class="mt-auto pt-6 font-mono-label text-mono-label text-on-surface flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span>COMPARATIVA TARIFA/POTENCIA</div>
+</div>
+<div class="border-thin p-8 bg-surface-container flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary-fixed text-3xl">solar_power</span>
+<h3 class="font-headline-sm text-headline-sm">Solar y batería sin estrategia</h3>
+<p class="text-on-surface-variant text-body-sm leading-relaxed">Convierte excedentes, precios horarios y ciclos de batería en decisiones operativas para maximizar el autoconsumo real.</p>
+<div class="mt-auto pt-6 font-mono-label text-mono-label text-on-surface flex items-center gap-2">
+<span class="w-1 h-1 bg-primary-fixed rounded-full"></span>
+                            OPTIMIZACIÓN DE EXCEDENTES
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Control Loop -->
+<section class="max-w-7xl mx-auto px-margin-desktop py-24">
+<h2 class="font-headline-md text-headline-md text-center mb-16">Del dato a la acción, sin perseguir hojas de cálculo.</h2>
+<div class="relative">
+<!-- Line -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-[1px] bg-outline-variant z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+<div class="flex flex-col items-center text-center gap-4">
+<div class="w-24 h-24 border-thin bg-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary-fixed">radar</span>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-mono-label text-mono-label uppercase tracking-widest text-primary-fixed">Detecta</h4>
+<p class="text-body-sm text-on-surface-variant">Cruza Datadis histórico, reservas, inversores y señales de dispositivos conectados</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center gap-4">
+<div class="w-24 h-24 border-thin bg-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary-fixed">memory</span>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-mono-label text-mono-label uppercase tracking-widest text-primary-fixed">Decide</h4>
+<p class="text-body-sm text-on-surface-variant">Evalúa precios horarios, ocupación, potencia y restricciones operativas.</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center gap-4">
+<div class="w-24 h-24 border-thin bg-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary-fixed">settings_input_component</span>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-mono-label text-mono-label uppercase tracking-widest text-primary-fixed">Automatiza</h4>
+<p class="text-body-sm text-on-surface-variant">Prepara cortes, avisos o cargas según permisos e integraciones disponibles.</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center gap-4">
+<div class="w-24 h-24 border-thin bg-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary-fixed">summarize</span>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-mono-label text-mono-label uppercase tracking-widest text-primary-fixed">Reporta</h4>
+<p class="text-body-sm text-on-surface-variant">Genera explicaciones automáticas para el propietario del activo.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto md:h-[600px]">
+<div class="md:col-span-2 border-thin bg-surface-container p-6 flex flex-col gap-4 relative overflow-hidden">
+<div class="font-mono-label text-mono-label text-on-surface-variant uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">hotel</span> Control por reservas
+                        </div>
+<h4 class="font-headline-sm text-headline-sm">Sincronización total con PMS</h4>
+<div class="mt-4 border-thin p-3 bg-surface-container-low flex flex-col gap-3">
+<div class="flex justify-between font-mono-label text-[10px]">
+<span>UNIDAD 304 - LIBRE</span>
+<span class="text-error">CONSUMO ACTIVO</span>
+</div>
+<div class="h-8 bg-surface-container-highest flex items-center px-3 justify-between">
+<span class="font-mono-label text-mono-label">A/A Salón: 2.4kW</span>
+<button class="bg-error text-[10px] px-2 py-0.5 font-bold uppercase">Corte auto</button>
+</div>
+</div>
+</div>
+<div class="border-thin bg-surface-container p-6 flex flex-col gap-4">
+<div class="font-mono-label text-mono-label text-on-surface-variant uppercase">Datadis/CUPS</div>
+<h4 class="font-headline-sm text-headline-sm">Diagnóstico Histórico</h4>
+<div class="flex flex-col gap-1">
+<div class="flex items-end gap-1 h-20">
+<div class="w-full bg-outline-variant h-1/2"></div>
+<div class="w-full bg-outline-variant h-3/4"></div>
+<div class="w-full bg-primary-fixed h-full"></div>
+<div class="w-full bg-outline-variant h-2/3"></div>
+<div class="w-full bg-outline-variant h-1/2"></div>
+</div>
+<span class="font-mono-label text-[10px] text-center">Lectura horaria unificada</span>
+</div>
+</div>
+<div class="border-thin bg-surface-container p-6 flex flex-col gap-4">
+<div class="font-mono-label text-mono-label text-on-surface-variant uppercase">Optimización</div>
+<h4 class="font-headline-sm text-headline-sm">Tarifa y Potencia</h4>
+<div class="flex flex-col gap-2 font-mono-label text-mono-label">
+<div class="flex justify-between border-b border-outline-variant pb-2">
+<span>Actual: 10kW</span>
+<span class="text-on-surface-variant">0.14€</span>
+</div>
+<div class="flex justify-between pt-1">
+<span class="text-primary-fixed">Sug: 6.5kW</span>
+<span class="text-primary-fixed">PENDIENTE DE VALIDAR</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-2 border-thin bg-surface-container p-6 grid grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-4">
+<div class="font-mono-label text-mono-label text-on-surface-variant uppercase">Arbitraje</div>
+<h4 class="font-headline-sm text-headline-sm">Solar &amp; Batería</h4>
+<p class="text-body-sm text-on-surface-variant">Simulación de arbitraje y excedentes basada en precios horarios y estado de batería.</p>
+</div>
+<div class="border-thin bg-surface-container-low p-4 flex flex-col gap-4">
+<div class="flex justify-between font-mono-label text-mono-label">
+<span>ALERTAS</span>
+<span class="text-primary-fixed">ACTIVA</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="bg-surface-container-highest p-2 text-[10px] font-mono-label border-l-2 border-error">Sobretensión detectada: Calle Mayor 14</div>
+<div class="bg-surface-container-highest p-2 text-[10px] font-mono-label border-l-2 border-primary-fixed">Ciclo de batería simulado</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Form -->
+<section class="max-w-4xl mx-auto px-margin-desktop py-24">
+<div class="border-thin bg-surface p-12 flex flex-col gap-8 shadow-2xl">
+<div class="flex flex-col gap-4">
+<h2 class="font-display-lg text-display-lg">Empieza con un diagnóstico de tu cartera.</h2>
+<p class="text-on-surface-variant">En el piloto revisamos una muestra de alojamientos, detectamos fugas y priorizamos las primeras automatizaciones.</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-2">
+<label class="font-mono-label text-mono-label text-on-surface-variant uppercase">Nombre</label>
+<input class="bg-surface-container-lowest border-thin p-3 text-on-surface focus:border-primary-fixed outline-none" placeholder="Tu nombre completo" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-mono-label text-mono-label text-on-surface-variant uppercase">Email</label>
+<input class="bg-surface-container-lowest border-thin p-3 text-on-surface focus:border-primary-fixed outline-none" placeholder="tu@empresa.com" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-mono-label text-mono-label text-on-surface-variant uppercase">Nº de alojamientos</label>
+<input class="bg-surface-container-lowest border-thin p-3 text-on-surface focus:border-primary-fixed outline-none" placeholder="E.g. 50" type="number"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-mono-label text-mono-label text-on-surface-variant uppercase">Principal dolor</label>
+<select class="bg-surface-container-lowest border-thin p-3 text-on-surface focus:border-primary-fixed outline-none">
+<option>Coste de factura incontrolado</option>
+<option>Falta de reporte a propietarios</option>
+<option>Gestión manual de termostatos</option>
+<option>Optimización de solar/batería</option>
+</select>
+</div>
+<div class="md:col-span-2 mt-4">
+<button class="w-full bg-primary-fixed text-on-primary-fixed h-14 font-mono-label text-mono-label font-bold uppercase hover:bg-primary-container transition-all" type="button">Solicitar diagnóstico gratuito</button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-surface border-t border-outline-variant dark:border-outline-variant py-8">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-7xl mx-auto gap-gutter">
+<div class="font-mono-label text-mono-label text-on-surface-variant dark:text-on-surface-variant">
+<span class="text-on-surface font-bold">EnergyOS</span> © 2024. Autopiloto de energía para gestión de activos.
+            </div>
+<div class="flex gap-8">
+<a class="font-mono-label text-mono-label text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-all duration-200" href="#">Privacidad</a>
+<a class="font-mono-label text-mono-label text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-all duration-200" href="#">Términos</a>
+<a class="font-mono-label text-mono-label text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-all duration-200" href="#">Cookies</a>
+<a class="font-mono-label text-mono-label text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-all duration-200" href="#">Contacto</a>
+</div>
+</div>
+</footer>
+</body></html>

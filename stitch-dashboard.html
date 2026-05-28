@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EnergyOS | Mission Control</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#2c322e",
+                      "surface-container-low": "#171d19",
+                      "secondary-fixed-dim": "#b7c8e1",
+                      "background": "#0f1511",
+                      "on-error-container": "#ffdad6",
+                      "error-container": "#93000a",
+                      "on-primary-fixed-variant": "#005137",
+                      "tertiary-fixed-dim": "#ffb3ae",
+                      "outline-variant": "#3d4a42",
+                      "primary": "#68dba9",
+                      "surface-container-lowest": "#0a0f0c",
+                      "on-secondary-fixed-variant": "#38485d",
+                      "on-secondary-fixed": "#0b1c30",
+                      "secondary": "#b7c8e1",
+                      "tertiary-fixed": "#ffdad7",
+                      "on-tertiary-container": "#570b0e",
+                      "on-background": "#dee4de",
+                      "primary-fixed-dim": "#68dba9",
+                      "on-surface-variant": "#bccac0",
+                      "on-surface": "#dee4de",
+                      "on-primary": "#003825",
+                      "on-secondary": "#213145",
+                      "tertiary": "#ffb3ae",
+                      "outline": "#87948b",
+                      "on-tertiary-fixed": "#410004",
+                      "on-secondary-container": "#a9bad3",
+                      "surface-container-high": "#252b28",
+                      "on-error": "#690005",
+                      "secondary-fixed": "#d3e4fe",
+                      "inverse-primary": "#006c4a",
+                      "on-primary-fixed": "#002114",
+                      "primary-container": "#25a475",
+                      "surface-dim": "#0f1511",
+                      "primary-fixed": "#85f8c4",
+                      "surface-container-highest": "#303632",
+                      "surface-container": "#1b211d",
+                      "surface": "#0f1511",
+                      "secondary-container": "#3a4a5f",
+                      "on-tertiary-fixed-variant": "#7f2928",
+                      "tertiary-container": "#dd706b",
+                      "surface-variant": "#303632",
+                      "surface-tint": "#68dba9",
+                      "inverse-surface": "#dee4de",
+                      "surface-bright": "#343b37",
+                      "error": "#ffb4ab",
+                      "on-primary-container": "#00311f",
+                      "on-tertiary": "#601214"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "margin": "24px",
+                      "unit": "4px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "lg": "24px",
+                      "gutter": "20px"
+              },
+              "fontFamily": {
+                      "display": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "h1": ["Inter"],
+                      "h2": ["Inter"],
+                      "mono-metric": ["Inter"],
+                      "label-caps": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "h3": ["Inter"]
+              },
+              "fontSize": {
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "mono-metric": ["28px", {"lineHeight": "1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #0f172a; /* Slate 900 Override per brand instructions */
+            color: #dee4de;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+    </style>
+</head>
+<body class="font-body-md antialiased min-h-screen flex">
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex flex-col h-screen sticky top-0 p-md bg-surface-container dark:bg-surface-container border-r border-outline-variant w-64">
+<div class="flex items-center gap-sm mb-xl">
+<img alt="EnergyOS Logo" class="w-10 h-10" data-alt="The EnergyOS official brand identity mark featuring a stylized, vibrant emerald green lightning bolt forming the shape of a capital E. The icon is clean and minimalist, set against a dark, sophisticated slate-colored background. The lighting is crisp, emphasizing the professional, high-tech energy sector aesthetic of a mission control software platform." src="data:image/png;base64,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"/>
+<span class="font-display text-h3 font-bold text-primary">EnergyOS</span>
+</div>
+<nav class="flex-1 space-y-unit">
+<div class="bg-secondary-container text-on-secondary-container rounded-lg p-sm flex items-center gap-sm cursor-pointer transition-transform scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</div>
+<div class="text-on-surface-variant hover:text-on-surface p-sm flex items-center gap-sm cursor-pointer transition-transform scale-95 active:scale-90 hover:bg-surface-container-high rounded-lg">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</div>
+<div class="text-on-surface-variant hover:text-on-surface p-sm flex items-center gap-sm cursor-pointer transition-transform scale-95 active:scale-90 hover:bg-surface-container-high rounded-lg">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="font-body-md text-body-md">Properties</span>
+</div>
+<div class="text-on-surface-variant hover:text-on-surface p-sm flex items-center gap-sm cursor-pointer transition-transform scale-95 active:scale-90 hover:bg-surface-container-high rounded-lg">
+<span class="material-symbols-outlined" data-icon="router">router</span>
+<span class="font-body-md text-body-md">Devices</span>
+</div>
+<div class="text-on-surface-variant hover:text-on-surface p-sm flex items-center gap-sm cursor-pointer transition-transform scale-95 active:scale-90 hover:bg-surface-container-high rounded-lg">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span class="font-body-md text-body-md">Reports</span>
+</div>
+</nav>
+<div class="pt-xl space-y-unit border-t border-outline-variant">
+<button class="w-full bg-primary-container text-on-primary-container rounded-xl py-sm flex items-center justify-center gap-xs font-bold hover:opacity-90 transition-opacity mb-md">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Add Device
+            </button>
+<div class="text-on-surface-variant hover:text-on-surface p-sm flex items-center gap-sm cursor-pointer transition-all">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Support</span>
+</div>
+<div class="text-on-surface-variant hover:text-on-surface p-sm flex items-center gap-sm cursor-pointer transition-all">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Log Out</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 min-w-0 overflow-y-auto">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-margin h-16 bg-surface dark:bg-surface border-b border-outline-variant sticky top-0 z-50">
+<div class="flex items-center gap-md">
+<h1 class="font-display text-h3 font-bold text-primary dark:text-primary">Mission Control</h1>
+<div class="hidden md:flex gap-md ml-xl">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 transition-colors" href="#">Dashboard</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary-fixed-dim transition-colors" href="#">Analytics</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary-fixed-dim transition-colors" href="#">Properties</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary-fixed-dim transition-colors" href="#">Reports</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative group">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer group-hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="settings">settings</span>
+<div class="h-8 w-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXFvSkotaZMnTReKYrqS8rTrjBWbqs-96YDrQAK5mVv7aFs4Hv-6vHHGK9yCYiuJqfyLcwFM9G0OkdOnhoyAgC3jKsstz5Uu03DWwkKh5uNr3OR9uYEnkDykNo3SmPpXhEhD-5WURFLiUt3E059jtV8rO-oQtru5JmGlUmp8zuh25pqtQtst_c0xErujIGp7Ug-CBTW15x3soDvMivM0hLB_HIwU4A3HsuW1JXdTD-OhjRcgztozzsHDRIEp0hQ8vAzS7maiZODl9k"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Grid Content -->
+<div class="p-margin">
+<!-- Metrics Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-margin">
+<!-- Consumption Card -->
+<div class="bg-[#1e293b] p-lg border border-[#334155] rounded-xl flex flex-col justify-between">
+<div>
+<span class="text-on-surface-variant font-label-caps uppercase">Total Consumption</span>
+<div class="mt-xs flex items-baseline gap-xs">
+<span class="text-mono-metric font-mono-metric text-on-surface">4,280</span>
+<span class="text-body-sm text-on-surface-variant">kWh</span>
+</div>
+</div>
+<div class="h-10 mt-md flex items-end gap-[2px]">
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[30%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[45%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[20%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[60%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[35%]"></div>
+<div class="flex-1 bg-primary rounded-t-sm h-[80%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[40%]"></div>
+</div>
+</div>
+<!-- Savings Card -->
+<div class="bg-[#1e293b] p-lg border border-[#334155] rounded-xl">
+<span class="text-on-surface-variant font-label-caps uppercase">Monthly Savings</span>
+<div class="mt-xs flex items-baseline gap-xs">
+<span class="text-mono-metric font-mono-metric text-on-surface">€1,420</span>
+</div>
+<div class="mt-md flex items-center gap-xs">
+<span class="text-primary text-body-sm flex items-center font-bold">
+<span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span>
+                            12.5%
+                        </span>
+<span class="text-on-surface-variant text-body-sm">vs last month</span>
+</div>
+</div>
+<!-- Properties Card -->
+<div class="bg-[#1e293b] p-lg border border-[#334155] rounded-xl">
+<span class="text-on-surface-variant font-label-caps uppercase">Active Properties</span>
+<div class="mt-xs flex items-baseline gap-xs">
+<span class="text-mono-metric font-mono-metric text-on-surface">24</span>
+</div>
+<div class="mt-md flex -space-x-2">
+<div class="w-6 h-6 rounded-full border border-surface bg-primary-fixed flex items-center justify-center text-[10px] text-on-primary-fixed font-bold">JD</div>
+<div class="w-6 h-6 rounded-full border border-surface bg-secondary-fixed flex items-center justify-center text-[10px] text-on-secondary-fixed font-bold">AS</div>
+<div class="w-6 h-6 rounded-full border border-surface bg-surface-container-highest flex items-center justify-center text-[10px] text-on-surface-variant">+22</div>
+</div>
+</div>
+<!-- Alerts Card -->
+<div class="bg-[#1e293b] p-lg border border-[#334155] rounded-xl">
+<span class="text-on-surface-variant font-label-caps uppercase">Active Alerts</span>
+<div class="mt-xs flex items-center gap-md">
+<span class="text-mono-metric font-mono-metric text-error">2</span>
+<span class="px-sm py-1 bg-error-container text-on-error-container text-[10px] rounded-full font-bold uppercase">Critical</span>
+</div>
+<div class="mt-md text-body-sm text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="warning">warning</span>
+                        System Voltage Fluctuation
+                    </div>
+</div>
+</div>
+<!-- Main Chart Section -->
+<div class="bg-[#1e293b] border border-[#334155] rounded-xl p-lg mb-margin">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-md mb-xl">
+<div>
+<h2 class="text-h2 font-display text-on-surface">Weekly Consumption</h2>
+<p class="text-on-surface-variant text-body-sm">Aggregated performance across all regions</p>
+</div>
+<div class="flex bg-surface-container p-1 rounded-lg">
+<button class="px-md py-1 bg-surface-container-high text-on-surface text-body-sm rounded shadow-sm font-medium">Week</button>
+<button class="px-md py-1 text-on-surface-variant text-body-sm hover:text-on-surface transition-colors">Month</button>
+<button class="px-md py-1 text-on-surface-variant text-body-sm hover:text-on-surface transition-colors">Year</button>
+</div>
+</div>
+<!-- Mockup Visualization Area -->
+<div class="h-[300px] w-full relative">
+<!-- SVG Path for Graph -->
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#059669" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#059669" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line stroke="#334155" stroke-dasharray="4" x1="0" x2="100%" y1="0" y2="0"></line>
+<line stroke="#334155" stroke-dasharray="4" x1="0" x2="100%" y1="50%" y2="50%"></line>
+<line stroke="#334155" stroke-dasharray="4" x1="0" x2="100%" y1="100%" y2="100%"></line>
+<!-- Area Fill -->
+<path class="w-full" d="M0,200 L100,180 L200,220 L300,150 L400,170 L500,80 L600,120 L700,50 L800,100 L900,40 L1000,60 L1100,20 L1200,50 L1200,300 L0,300 Z" fill="url(#chartGradient)"></path>
+<!-- Line -->
+<path d="M0,200 L100,180 L200,220 L300,150 L400,170 L500,80 L600,120 L700,50 L800,100 L900,40 L1000,60 L1100,20 L1200,50" fill="none" stroke="#68dba9" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<!-- X-Axis Labels -->
+<div class="flex justify-between mt-md text-on-surface-variant font-label-caps text-[10px]">
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+<span>Fri</span>
+<span>Sat</span>
+<span>Sun</span>
+</div>
+</div>
+</div>
+<!-- Properties List (Asymmetric Layout) -->
+<div class="flex flex-col lg:flex-row gap-gutter">
+<div class="lg:w-2/3">
+<div class="flex justify-between items-center mb-md">
+<h3 class="text-h3 font-display text-on-surface">Property Insights</h3>
+<button class="text-primary text-body-sm font-bold flex items-center gap-xs">
+                            View All <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="space-y-md">
+<!-- Property Item -->
+<div class="bg-[#1e293b] border border-[#334155] rounded-xl p-md flex items-center justify-between hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="corporate_fare">corporate_fare</span>
+</div>
+<div>
+<h4 class="text-body-md font-bold text-on-surface">Downtown Hub</h4>
+<p class="text-on-surface-variant text-body-sm">456 Broadway Ave, NYC</p>
+</div>
+</div>
+<div class="flex items-center gap-xl">
+<div class="text-right">
+<span class="text-body-sm text-on-surface-variant block uppercase font-label-caps">Status</span>
+<span class="inline-flex items-center gap-xs text-primary font-bold text-body-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Online
+                                    </span>
+</div>
+<div class="text-right min-w-[80px]">
+<span class="text-body-sm text-on-surface-variant block uppercase font-label-caps">Usage</span>
+<span class="text-body-md font-bold text-on-surface">1,240 kWh</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+<!-- Property Item -->
+<div class="bg-[#1e293b] border border-[#334155] rounded-xl p-md flex items-center justify-between hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="apartment">apartment</span>
+</div>
+<div>
+<h4 class="text-body-md font-bold text-on-surface">Westside Plaza</h4>
+<p class="text-on-surface-variant text-body-sm">882 West 12th St, NYC</p>
+</div>
+</div>
+<div class="flex items-center gap-xl">
+<div class="text-right">
+<span class="text-body-sm text-on-surface-variant block uppercase font-label-caps">Status</span>
+<span class="inline-flex items-center gap-xs text-primary font-bold text-body-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Online
+                                    </span>
+</div>
+<div class="text-right min-w-[80px]">
+<span class="text-body-sm text-on-surface-variant block uppercase font-label-caps">Usage</span>
+<span class="text-body-md font-bold text-on-surface">890 kWh</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+<!-- Property Item -->
+<div class="bg-[#1e293b] border border-[#334155] rounded-xl p-md flex items-center justify-between hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center text-on-error">
+<span class="material-symbols-outlined text-error" data-icon="factory">factory</span>
+</div>
+<div>
+<h4 class="text-body-md font-bold text-on-surface">East Industrial Complex</h4>
+<p class="text-on-surface-variant text-body-sm">22 Industrial Rd, Brooklyn</p>
+</div>
+</div>
+<div class="flex items-center gap-xl">
+<div class="text-right">
+<span class="text-body-sm text-on-surface-variant block uppercase font-label-caps">Status</span>
+<span class="inline-flex items-center gap-xs text-error font-bold text-body-sm">
+<span class="w-2 h-2 rounded-full bg-error"></span> Offline
+                                    </span>
+</div>
+<div class="text-right min-w-[80px]">
+<span class="text-body-sm text-on-surface-variant block uppercase font-label-caps">Usage</span>
+<span class="text-body-md font-bold text-on-surface">0 kWh</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Rail Card -->
+<div class="lg:w-1/3">
+<div class="bg-primary-container rounded-xl p-lg text-on-primary-container h-full flex flex-col justify-between overflow-hidden relative">
+<div class="relative z-10">
+<h3 class="text-h3 font-bold mb-sm">AI Efficiency Tip</h3>
+<p class="text-body-md opacity-90 leading-relaxed">Reducing load on Downtown Hub by 15% during peak hours (2 PM - 4 PM) could save an estimated <span class="font-bold underline">€450</span> monthly.</p>
+</div>
+<button class="mt-xl relative z-10 w-full bg-on-primary-container text-primary-container py-md rounded-lg font-bold hover:scale-[1.02] transition-transform">Apply Optimization</button>
+<!-- Decorative Abstract Background -->
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-on-primary-container/10 rounded-full blur-3xl"></div>
+<div class="absolute top-10 right-10 w-24 h-24 bg-primary-fixed/20 rounded-full blur-2xl"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Bottom NavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container flex justify-around items-center border-t border-outline-variant z-50">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="text-[10px]">Analytics</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="text-[10px]">Props</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span class="text-[10px]">Reports</span>
+</div>
+</nav>
+</body></html>

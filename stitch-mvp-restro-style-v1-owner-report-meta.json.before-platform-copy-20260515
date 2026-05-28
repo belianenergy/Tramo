@@ -1,0 +1,25 @@
+{
+  "key": "owner-report",
+  "requestedName": "informe-mensual-propietario",
+  "title": "Informe mensual propietario — EnergyOS",
+  "projectId": "11820050226044719534",
+  "projectName": "projects/11820050226044719534",
+  "screenId": "8ce336bb39d041d3bcd96689da4b4793",
+  "screenName": "projects/11820050226044719534/screens/8ce336bb39d041d3bcd96689da4b4793",
+  "width": "2560",
+  "height": "3136",
+  "htmlCodeName": "projects/11820050226044719534/files/1d7d720513324d87bb38f7769dbd564e",
+  "screenshotName": "projects/11820050226044719534/files/1e5ce05ec7e24a35b50bf380efc940cc",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzA4ZmQ5MWNiMjJhNTRjN2U4NzY0N2M1NjcyY2JkOWVmEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uiOffh584J_lrgeesHt4-WEni2yyaztiqMVhq38fqvoYwXbUl1PCIKqIly31-JdX2REgNUkuxDM6yvHdyNPfXQieqoqeEExLOeLwyTx9xlHh48Dkdwewl4m5g2_-oqTgAedKN8QVir73__rWBG_Mddz9PkVabHgoTQ7oE2Hqk7oHBWehvMIVeqs-n6uhjzcMZ5D0oVoLPghLn9iOTN6-j3fTa_Bx84bG62seFp8UyDJMipg2AVOkBq2t-z1",
+  "generatedAt": "2026-05-12T19:46:42.320Z",
+  "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+  "localFiles": {
+    "response": "stitch-mvp-restro-style-v1-owner-report-response.json",
+    "meta": "stitch-mvp-restro-style-v1-owner-report-meta.json",
+    "html": "stitch-mvp-restro-style-v1-owner-report.html",
+    "stitchPng": "stitch-mvp-restro-style-v1-owner-report-stitch.png",
+    "previews": []
+  },
+  "note": "Regenerated after transient Stitch unavailable error."
+}

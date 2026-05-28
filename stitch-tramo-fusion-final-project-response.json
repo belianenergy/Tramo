@@ -1,0 +1,19 @@
+{
+  "id": 1779041254696,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"name\":\"projects/17971362503071043953\",\"title\":\"Tramo Landing Fusion Final\",\"visibility\":\"PRIVATE\",\"projectType\":\"PROJECT_DESIGN\",\"origin\":\"STITCH\"}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "name": "projects/17971362503071043953",
+      "origin": "STITCH",
+      "projectType": "PROJECT_DESIGN",
+      "title": "Tramo Landing Fusion Final",
+      "visibility": "PRIVATE"
+    }
+  }
+}

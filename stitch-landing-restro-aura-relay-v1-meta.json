@@ -1,0 +1,23 @@
+{
+  "projectTitle": "EnergyOS Landing - Restro Aura Relay V1",
+  "projectId": "4015421481601058460",
+  "projectName": "projects/4015421481601058460",
+  "projectUrl": "https://stitch.withgoogle.com/projects/4015421481601058460",
+  "screenId": "11516edc67de4134b6eff811f2b89fe8",
+  "screenName": "projects/4015421481601058460/screens/11516edc67de4134b6eff811f2b89fe8",
+  "width": "2560",
+  "height": "2090",
+  "modelId": "GEMINI_3_1_PRO",
+  "htmlCodeName": "projects/4015421481601058460/files/cb1fe8c4b78342449dc96399418718c1",
+  "screenshotName": "projects/4015421481601058460/files/d707ed8d41934f0fa61a41c6a0bc99d4",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzE2ZGJhM2YyOTMzZDQ1NGRiY2MxMmFlZTc4OGQ3ZjU5EgsSBxCg9KiWmAMYAZIBIwoKcHJvamVjdF9pZBIVQhM0MDE1NDIxNDgxNjAxMDU4NDYw&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ugpz_Ojjm_L7LbdJoujV7S3bWaojb9LMdY647HeNyaqYA7LRjeNPSmADTVplOHYNMyCRfszl-xcXQymUQEB_UNJMzmWPRNbXOGHt4yEtFcOBMcqieeAOuhIcrUeuCM-CvTqIQ3Cd1bcM4CV8wSTqYsjpJQkLmv5RDwDnYfvC8CEjj6nsZG1uOH8IWu6IWCeotG1g1MD9VyRtPdbqhz-nIib-IjmbBklY2uMJpq_CjmWXlhTvFgqmqL59DM",
+  "generatedAt": "2026-05-16T19:29:18.380Z",
+  "sourcePromptFile": "STITCH_PROMPT_LANDING_RESTRO_AURA_RELAY_V1.md",
+  "localFiles": {
+    "response": "stitch-landing-restro-aura-relay-v1-response.json",
+    "meta": "stitch-landing-restro-aura-relay-v1-meta.json",
+    "html": "stitch-landing-restro-aura-relay-v1.html",
+    "stitchPng": "stitch-landing-restro-aura-relay-v1-stitch.png"
+  }
+}

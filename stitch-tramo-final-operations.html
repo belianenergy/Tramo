@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tramo Operations Queue</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;family=Plus+Jakarta+Sans:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "secondary-container": "#fedccb",
+                  "on-tertiary-container": "#003846",
+                  "tertiary-fixed-dim": "#57d5fc",
+                  "tertiary": "#00677f",
+                  "on-secondary-container": "#785f52",
+                  "on-primary-container": "#562500",
+                  "outline-variant": "#dbc1b3",
+                  "surface-container-lowest": "#ffffff",
+                  "on-surface-variant": "#554338",
+                  "primary-fixed": "#ffdbc8",
+                  "surface-bright": "#fdf8f8",
+                  "secondary-fixed": "#fedccb",
+                  "inverse-surface": "#313030",
+                  "surface-tint": "#984700",
+                  "inverse-on-surface": "#f4f0ef",
+                  "surface-dim": "#ddd9d8",
+                  "surface-container-highest": "#e6e1e1",
+                  "on-error": "#ffffff",
+                  "on-surface": "#1c1b1b",
+                  "surface": "#fdf8f8",
+                  "primary-container": "#e6813a",
+                  "on-primary": "#ffffff",
+                  "tertiary-fixed": "#b6ebff",
+                  "on-tertiary": "#ffffff",
+                  "inverse-primary": "#ffb68a",
+                  "on-secondary-fixed-variant": "#584236",
+                  "on-tertiary-fixed-variant": "#004e60",
+                  "surface-container": "#f1edec",
+                  "on-tertiary-fixed": "#001f28",
+                  "on-background": "#1c1b1b",
+                  "on-error-container": "#93000a",
+                  "background": "#fdf8f8",
+                  "secondary": "#72594c",
+                  "primary-fixed-dim": "#ffb68a",
+                  "surface-container-high": "#ece7e7",
+                  "error-container": "#ffdad6",
+                  "error": "#ba1a1a",
+                  "outline": "#887367",
+                  "on-primary-fixed-variant": "#743500",
+                  "surface-variant": "#e6e1e1",
+                  "surface-container-low": "#f7f2f2",
+                  "on-secondary-fixed": "#29170e",
+                  "on-primary-fixed": "#321300",
+                  "tertiary-container": "#00a9ce",
+                  "primary": "#984700",
+                  "on-secondary": "#ffffff",
+                  "secondary-fixed-dim": "#e0c0b0"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "gutter": "16px",
+                  "section-margin": "48px",
+                  "base": "8px",
+                  "container-padding": "24px",
+                  "panel-gap": "24px"
+          },
+          "fontFamily": {
+                  "data-md": [
+                          "JetBrains Mono"
+                  ],
+                  "label-sm": [
+                          "Inter"
+                  ],
+                  "display-lg": [
+                          "Plus Jakarta Sans"
+                  ],
+                  "body-md": [
+                          "Inter"
+                  ],
+                  "headline-md": [
+                          "Plus Jakarta Sans"
+                  ],
+                  "title-lg": [
+                          "Plus Jakarta Sans"
+                  ],
+                  "headline-lg": [
+                          "Plus Jakarta Sans"
+                  ],
+                  "body-lg": [
+                          "Inter"
+                  ],
+                  "data-lg": [
+                          "JetBrains Mono"
+                  ]
+          },
+          "fontSize": {
+                  "data-md": [
+                          "14px",
+                          {
+                                  "lineHeight": "20px",
+                                  "fontWeight": "500"
+                          }
+                  ],
+                  "label-sm": [
+                          "12px",
+                          {
+                                  "lineHeight": "16px",
+                                  "letterSpacing": "0.05em",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "display-lg": [
+                          "48px",
+                          {
+                                  "lineHeight": "56px",
+                                  "letterSpacing": "-0.02em",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "body-md": [
+                          "14px",
+                          {
+                                  "lineHeight": "20px",
+                                  "fontWeight": "400"
+                          }
+                  ],
+                  "headline-md": [
+                          "24px",
+                          {
+                                  "lineHeight": "32px",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "title-lg": [
+                          "20px",
+                          {
+                                  "lineHeight": "28px",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "headline-lg": [
+                          "32px",
+                          {
+                                  "lineHeight": "40px",
+                                  "letterSpacing": "-0.01em",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "body-lg": [
+                          "16px",
+                          {
+                                  "lineHeight": "24px",
+                                  "fontWeight": "400"
+                          }
+                  ],
+                  "data-lg": [
+                          "16px",
+                          {
+                                  "lineHeight": "24px",
+                                  "fontWeight": "500"
+                          }
+                  ]
+          }
+  },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased h-screen overflow-hidden flex flex-col">
+<!-- TopNavBar (Shared Component Translation) -->
+<header class="bg-surface border-b border-outline-variant flex justify-between items-center w-full px-container-padding h-16 max-w-[1920px] mx-auto shrink-0">
+<div class="flex items-center gap-4">
+<img alt="Tramo Logo" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uhJeRve3lS_iZ5wpV8G_ryloeDv_3JNgVC5jjIkJERJNakJrpG70AaYu4AKw62gY9NmK_HFEwLVP30bI3FGLQe428KTTk-T7AQ2vltkc4XMUBJJUQLppgzmLy-oFD4x4n-rLDEVLblRkKIDcydXRa0BUC9MTAFM3I5OBoXXsdrwRz-ju0D9jCqHv8PllpF50bkR85E3ak0D9NBzWHaHUwTzI64nBk7ZoSk1Xfo3z5PUFwNN3WbGj_v-rpoM"/>
+<span class="text-title-lg font-title-lg font-black text-on-surface">Tramo</span>
+<div class="h-6 w-px bg-outline-variant mx-4"></div>
+<!-- Breadcrumb -->
+<nav class="flex items-center space-x-2 text-secondary font-label-sm text-label-sm">
+<a class="hover:text-primary transition-colors" href="#">Portfolio</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-bold">Operaciones</span>
+</nav>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center space-x-6 h-full">
+<a class="text-secondary hover:text-primary transition-colors h-full flex items-center font-label-sm text-label-sm" href="#">Dashboard</a>
+<a class="text-secondary hover:text-primary transition-colors h-full flex items-center font-label-sm text-label-sm" href="#">Portfolio</a>
+<a class="text-primary font-bold border-b-2 border-primary h-full flex items-center font-label-sm text-label-sm pt-[2px]" href="#">Operaciones</a>
+<a class="text-secondary hover:text-primary transition-colors h-full flex items-center font-label-sm text-label-sm" href="#">Análisis</a>
+<a class="text-secondary hover:text-primary transition-colors h-full flex items-center font-label-sm text-label-sm" href="#">Configuración</a>
+</nav>
+<!-- Search/Actions -->
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[18px]">search</span>
+<input class="pl-9 pr-4 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-lg text-label-sm font-label-sm text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all w-64 placeholder-secondary" placeholder="Buscar operación..." type="text"/>
+</div>
+<button class="text-secondary hover:text-primary transition-colors p-1.5 hover:bg-surface-container rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors p-1.5 hover:bg-surface-container rounded-full">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-label-sm text-label-sm border border-outline-variant ml-2">
+        OP
+      </div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex overflow-hidden w-full max-w-[1920px] mx-auto px-container-padding py-base gap-panel-gap">
+<!-- Left Column: Operations Queue -->
+<div class="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
+<!-- Filters -->
+<div class="mb-4 shrink-0 overflow-x-auto pb-2 -mx-2 px-2">
+<div class="flex space-x-2">
+<button class="px-3 py-1.5 bg-surface-container-lowest border border-primary text-primary font-label-sm text-label-sm rounded-full whitespace-nowrap">
+            Todas (14)
+          </button>
+<button class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant text-secondary hover:border-primary hover:text-primary font-label-sm text-label-sm rounded-full whitespace-nowrap transition-colors">
+            Fuera de reserva (6)
+          </button>
+<button class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant text-secondary hover:border-primary hover:text-primary font-label-sm text-label-sm rounded-full whitespace-nowrap transition-colors">
+            Potencia/Tarifa (4)
+          </button>
+<button class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant text-secondary hover:border-primary hover:text-primary font-label-sm text-label-sm rounded-full whitespace-nowrap transition-colors">
+            Reglas de aparato (3)
+          </button>
+<button class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant text-secondary hover:border-primary hover:text-primary font-label-sm text-label-sm rounded-full whitespace-nowrap transition-colors">
+            Informe propietario (1)
+          </button>
+</div>
+</div>
+<!-- List -->
+<div class="flex-1 overflow-y-auto pr-2 space-y-4 pb-12">
+<!-- Item 1 (Selected) -->
+<div class="bg-surface-container-lowest rounded-xl border-2 border-primary p-4 cursor-pointer hover:bg-surface transition-colors">
+<div class="flex items-start gap-4">
+<div class="p-2 bg-error-container/20 rounded-lg shrink-0 mt-1">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-title-lg font-title-lg text-on-surface truncate">VGO-014 · Consumo fuera de reserva</h3>
+<span class="text-label-sm font-label-sm text-secondary shrink-0 ml-4">Hace 2h</span>
+</div>
+<p class="text-body-md font-body-md text-secondary mb-3 line-clamp-2">
+                checkout <span class="font-data-md text-data-md text-on-surface">11:00</span> · consumo <span class="font-data-md text-data-md text-on-surface">13:10-16:40</span> · <span class="font-data-md text-data-md text-on-surface">4.2 kWh</span> facturado sin reserva activa
+              </p>
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 bg-primary-container/10 text-primary font-label-sm text-label-sm rounded uppercase tracking-wider border border-primary/20">Alta</span>
+<button class="text-primary font-label-sm text-label-sm hover:underline flex items-center gap-1">
+                  Revisar <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 cursor-pointer hover:border-primary transition-colors">
+<div class="flex items-start gap-4">
+<div class="p-2 bg-surface-container rounded-lg shrink-0 mt-1">
+<span class="material-symbols-outlined text-on-surface-variant">bolt</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-title-lg font-title-lg text-on-surface truncate">COR-007 · Potencia recomendada</h3>
+<span class="text-label-sm font-label-sm text-secondary shrink-0 ml-4">Hace 5h</span>
+</div>
+<p class="text-body-md font-body-md text-secondary mb-3 line-clamp-2">
+                P2 recomendada: <span class="font-data-md text-data-md text-on-surface">3.3 kW</span> | Actual: <span class="font-data-md text-data-md text-on-surface">4.6 / 4.6 kW</span> · Penalización activa
+              </p>
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 bg-primary-container/10 text-primary font-label-sm text-label-sm rounded uppercase tracking-wider border border-primary/20">Pendiente</span>
+<button class="text-primary font-label-sm text-label-sm hover:underline flex items-center gap-1">
+                  Revisar <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 cursor-pointer hover:border-primary transition-colors">
+<div class="flex items-start gap-4">
+<div class="p-2 bg-surface-container rounded-lg shrink-0 mt-1">
+<span class="material-symbols-outlined text-on-surface-variant">thermostat</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-title-lg font-title-lg text-on-surface truncate">MDR-003 · Termo activo fuera de reserva</h3>
+<span class="text-label-sm font-label-sm text-secondary shrink-0 ml-4">Ayer 14:30</span>
+</div>
+<p class="text-body-md font-body-md text-secondary mb-3 line-clamp-2">
+                Reserva finalizada hace 3 días · Termo sigue activo · <span class="font-data-md text-data-md text-on-surface">12.4 kWh</span> acumulados
+              </p>
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 bg-tertiary-container/10 text-tertiary-container font-label-sm text-label-sm rounded uppercase tracking-wider border border-tertiary-container/20">Media</span>
+<button class="text-primary font-label-sm text-label-sm hover:underline flex items-center gap-1">
+                  Revisar <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 cursor-pointer hover:border-primary transition-colors">
+<div class="flex items-start gap-4">
+<div class="p-2 bg-surface-container rounded-lg shrink-0 mt-1">
+<span class="material-symbols-outlined text-on-surface-variant">description</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-title-lg font-title-lg text-on-surface truncate">SJO-021 · Informe propietario pendientes</h3>
+<span class="text-label-sm font-label-sm text-secondary shrink-0 ml-4">Hace 1d</span>
+</div>
+<p class="text-body-md font-body-md text-secondary mb-3 line-clamp-2">
+<span class="font-data-md text-data-md text-on-surface">412 kWh</span> Mayo · 3 acciones de gestión · <span class="font-data-md text-data-md text-on-surface">42.50 EUR</span> estimados
+              </p>
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 bg-tertiary/10 text-tertiary font-label-sm text-label-sm rounded uppercase tracking-wider border border-tertiary/20">Listo</span>
+<button class="text-primary font-label-sm text-label-sm hover:underline flex items-center gap-1">
+                  Ver informe <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Detail Panel -->
+<div class="hidden lg:flex w-[480px] shrink-0 flex-col h-full bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<!-- Panel Header -->
+<div class="px-6 py-5 border-b border-outline-variant bg-surface-bright shrink-0">
+<div class="flex items-center gap-2 mb-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">VGO-014 (Villa Gades)</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="px-2 py-0.5 bg-primary-container/10 text-primary font-label-sm text-label-sm rounded uppercase tracking-wider">ALTA PRIORIDAD</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Consumo fuera de reserva</h2>
+</div>
+<!-- Panel Content -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Evidence Block -->
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Evidencia de consumo</h4>
+<div class="border border-outline-variant rounded-lg p-4 bg-surface space-y-3">
+<div class="flex justify-between items-center pb-3 border-b border-outline-variant">
+<span class="font-body-md text-body-md text-secondary">Checkout reportado</span>
+<span class="font-data-md text-data-md text-on-surface">Hoy, 11:00</span>
+</div>
+<div class="flex justify-between items-center pb-3 border-b border-outline-variant">
+<span class="font-body-md text-body-md text-secondary">Pico de consumo</span>
+<span class="font-data-md text-data-md text-on-surface text-primary">13:10 - 16:40</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-secondary">Energía acumulada</span>
+<span class="font-data-md text-data-md text-on-surface font-bold">4.2 kWh</span>
+</div>
+</div>
+</div>
+<!-- Action Needed -->
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-3">Acción Recomendada</h4>
+<div class="bg-surface-container p-4 rounded-lg border-l-4 border-primary">
+<p class="font-body-md text-body-md text-on-surface">
+              Revisar reglas de aparatos post-checkout. Es probable que un sistema de climatización haya quedado encendido tras la salida del huésped.
+            </p>
+</div>
+</div>
+</div>
+<!-- Panel Footer Actions -->
+<div class="p-6 border-t border-outline-variant bg-surface-bright shrink-0 flex flex-col gap-3">
+<button class="w-full py-3 bg-primary text-on-primary font-label-sm text-label-sm rounded-lg hover:bg-primary/90 transition-colors">
+          Marcar como resuelta
+        </button>
+<button class="w-full py-3 bg-transparent border border-secondary text-on-surface font-label-sm text-label-sm rounded-lg hover:bg-surface-container transition-colors">
+          Asignar a propietario
+        </button>
+</div>
+</div>
+</main>
+</body></html>

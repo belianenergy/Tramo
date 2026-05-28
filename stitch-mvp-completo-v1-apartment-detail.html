@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#131b2e",
+                        "secondary-container": "#316bf3",
+                        "on-tertiary-fixed": "#271901",
+                        "outline": "#76777d",
+                        "outline-variant": "#c6c6cd",
+                        "on-primary-fixed": "#131b2e",
+                        "on-tertiary-container": "#98805d",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "inverse-surface": "#303032",
+                        "surface-dim": "#dcd9db",
+                        "on-primary-container": "#7c839b",
+                        "primary-fixed-dim": "#bec6e0",
+                        "primary-fixed": "#dae2fd",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-surface": "#1b1b1d",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "inverse-on-surface": "#f3f0f2",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#565e74",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "tertiary-fixed": "#fcdeb5",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#000000",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-secondary-fixed": "#00174b",
+                        "on-background": "#1b1b1d",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e4e2e4",
+                        "secondary": "#0051d5",
+                        "surface-container": "#f0edef",
+                        "on-surface-variant": "#45464d",
+                        "surface-container-high": "#eae7e9",
+                        "tertiary-container": "#271901",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f5",
+                        "surface": "#fcf8fa",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#bec6e0",
+                        "surface-bright": "#fcf8fa",
+                        "primary": "#000000",
+                        "background": "#fcf8fa",
+                        "on-secondary-container": "#fefcff",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xs": "0.25rem",
+                        "lg": "1.5rem",
+                        "sidebar-width": "260px",
+                        "gutter": "1rem",
+                        "md": "1rem",
+                        "xl": "2rem",
+                        "sm": "0.5rem",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"], "display": ["Inter"], "label-md": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[260px] bg-primary-container flex flex-col py-lg border-r border-outline-variant">
+<div class="px-lg mb-xl">
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary-container">EnergyOS</h1>
+<p class="font-body-md text-body-md text-on-primary-container opacity-60">Gestión Energética</p>
+</div>
+<nav class="flex-1 space-y-1 px-sm">
+<a class="flex items-center gap-3 px-4 py-2 text-on-primary-fixed-variant hover:bg-surface-container-high transition-colors font-body-md text-body-md rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 bg-secondary-container text-on-secondary-container rounded-lg border-l-4 border-primary font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="apartment">apartment</span>
+<span>Apartamentos</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-primary-fixed-variant hover:bg-surface-container-high transition-colors font-body-md text-body-md rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="engineering">engineering</span>
+<span>Operaciones</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-primary-fixed-variant hover:bg-surface-container-high transition-colors font-body-md text-body-md rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span>Informes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-primary-fixed-variant hover:bg-surface-container-high transition-colors font-body-md text-body-md rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span>Tarifa/Potencia</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-primary-fixed-variant hover:bg-surface-container-high transition-colors font-body-md text-body-md rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group_add">group_add</span>
+<span>Leads</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-primary-fixed-variant hover:bg-surface-container-high transition-colors font-body-md text-body-md rounded-lg mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Configuración</span>
+</a>
+</nav>
+<div class="mt-auto px-lg flex items-center gap-3 pt-lg border-t border-on-primary-container/10">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-white text-[10px] font-bold">CN</div>
+<div class="overflow-hidden">
+<p class="font-label-sm text-on-primary-container truncate">Costa Norte Stays</p>
+<p class="font-label-sm text-on-primary-container opacity-40 truncate">Usuario Gestora</p>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-260px)] h-16 bg-surface flex justify-between items-center px-lg border-b border-outline-variant z-10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Buscar apartamento o incidencia...</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md transition-opacity active:opacity-80">Nueva regla</button>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" data-icon="calendar_today">calendar_today</span>
+</div>
+<div class="h-8 w-px bg-outline-variant mx-2"></div>
+<div class="flex items-center gap-2">
+<img alt="Usuario Gestora" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A professional and friendly portrait of a female property manager in a high-end corporate setting. She is wearing a modern business casual outfit. The background is a blurred, bright office interior with minimalist decor, consistent with a clean and efficient property management agency. The lighting is soft and natural, emphasizing a light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-mCeVxPjFI44RqA0ArfAvQ4lSxxXnQBxBghqmdzWpyCfeqlT3Bi2J_S9Cj_gMkoTsOVPaNpBFkBHJ3kYgejjHV5g2-pll5ZugTqkRSA7SkQx_7U64HRyCcye32naw_1zU4VPFW7xxgzns5kSlgXgJx0BftMNGTwpB-EcGcUoutqLlKE5Z2qcDbzJ5fFELHqPgEqHxwQNEdB1Cg9ZGQo8nNtxapx7fNDeHVrnyMnpZUP5990q_BpYCrLMMyBCoe-6w_6VhE-Mmm-MJ"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-sidebar-width pt-16 min-h-screen">
+<div class="max-w-[1440px] mx-auto p-lg">
+<!-- Header Section -->
+<section class="mb-lg flex justify-between items-end">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="font-label-sm text-label-sm bg-surface-container-high px-2 py-1 rounded">VGO-014</span>
+<h2 class="font-display text-display text-primary">Apartamento Areal</h2>
+</div>
+<div class="flex gap-6 font-body-md text-body-md text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span>Vigo</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="person">person</span>
+<span>Propiedad: Marta Lago</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-error-container text-on-error-container px-4 py-2 rounded-lg border border-error/20">
+<span class="material-symbols-outlined" data-icon="warning" data-weight="fill" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider">Alerta Crítica</span>
+</div>
+</section>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-12 gap-lg">
+<!-- Timeline Section (Full Width) -->
+<div class="col-span-12 bg-surface-container-lowest border border-outline-variant p-lg rounded-xl">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-6">Estado de Reserva y Operaciones</h3>
+<div class="relative flex justify-between">
+<!-- Connecting Line -->
+<div class="absolute top-4 left-0 w-full h-[2px] bg-outline-variant -z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center bg-surface-container-lowest px-4">
+<div class="w-8 h-8 rounded-full bg-outline-variant flex items-center justify-center text-white mb-3">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Check-out</p>
+<p class="font-body-md text-body-md font-bold">Ayer 11:00</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center bg-surface-container-lowest px-4">
+<div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-white mb-3">
+<span class="material-symbols-outlined text-sm" data-icon="cleaning_services">cleaning_services</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Limpieza</p>
+<p class="font-body-md text-body-md font-bold text-secondary">Ayer 14:20</p>
+</div>
+<!-- Step 3 (Active) -->
+<div class="relative z-10 flex flex-col items-center text-center bg-surface-container-lowest px-4">
+<div class="w-10 h-10 rounded-full border-4 border-error bg-surface-container-lowest flex items-center justify-center mb-2 -mt-1">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+</div>
+<p class="font-label-sm text-label-sm text-error font-bold uppercase">Estado Actual</p>
+<p class="font-body-md text-body-md font-bold">Sin estancia</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center text-center bg-surface-container-lowest px-4">
+<div class="w-8 h-8 rounded-full bg-outline-variant flex items-center justify-center text-white mb-3">
+<span class="material-symbols-outlined text-sm" data-icon="login">login</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Próximo Check-in</p>
+<p class="font-body-md text-body-md font-bold">Mañana 16:00</p>
+</div>
+</div>
+</div>
+<!-- Climate Module -->
+<div class="col-span-12 md:col-span-5 bg-surface-container-lowest border border-outline-variant p-lg rounded-xl flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Climatización</h3>
+<span class="material-symbols-outlined text-error" data-icon="ac_unit">ac_unit</span>
+</div>
+<div class="mb-6">
+<p class="font-display text-[48px] font-bold text-primary mb-1">22ºC</p>
+<div class="flex items-center gap-2 text-error font-body-md">
+<span class="material-symbols-outlined text-sm" data-icon="error">error</span>
+<span>A/C encendido fuera de reserva</span>
+</div>
+</div>
+<div class="p-md bg-surface-container-low rounded-lg mb-6">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Regla Activa</p>
+<p class="font-body-sm text-body-sm">Debería estar apagado (no hay estancia actual detectada).</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-headline-sm font-bold flex items-center justify-center gap-3 transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="power_settings_new">power_settings_new</span>
+                        Apagar clima ahora
+                    </button>
+</div>
+<!-- Consumption Module -->
+<div class="col-span-12 md:col-span-7 bg-surface-container-lowest border border-outline-variant p-lg rounded-xl">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Consumo en Tiempo Real</h3>
+<div class="text-right">
+<p class="font-headline-lg text-headline-lg font-bold text-primary">1,84 kW</p>
+<p class="font-label-sm text-label-sm text-error">+6,2 kWh exceso hoy</p>
+</div>
+</div>
+<!-- Simplified Chart -->
+<div class="h-32 w-full flex items-end gap-1 mb-6">
+<div class="bg-outline-variant/20 w-full h-[15%] rounded-t-sm"></div>
+<div class="bg-outline-variant/20 w-full h-[12%] rounded-t-sm"></div>
+<div class="bg-outline-variant/20 w-full h-[14%] rounded-t-sm"></div>
+<div class="bg-outline-variant/20 w-full h-[18%] rounded-t-sm"></div>
+<div class="bg-outline-variant/20 w-full h-[15%] rounded-t-sm"></div>
+<div class="bg-secondary w-full h-[85%] rounded-t-sm"></div>
+<div class="bg-secondary w-full h-[95%] rounded-t-sm"></div>
+<div class="bg-secondary w-full h-[100%] rounded-t-sm"></div>
+<div class="bg-outline-variant/20 w-full h-[20%] rounded-t-sm"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="border-t border-outline-variant pt-3">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Basal esperado</p>
+<p class="font-body-md text-body-md font-bold">0,25 - 0,35 kW</p>
+</div>
+<div class="border-t border-outline-variant pt-3">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Coste estimado hoy</p>
+<p class="font-body-md text-body-md font-bold text-error">1,14 € (fuera reserva)</p>
+</div>
+</div>
+</div>
+<!-- Detailed Alert Module -->
+<div class="col-span-12 md:col-span-8 bg-error-container/10 border border-error/20 p-lg rounded-xl">
+<div class="flex items-start gap-4">
+<div class="p-3 bg-error-container rounded-full text-on-error-container">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-headline-md text-headline-md text-on-error-container">A/C activo sin reserva</h3>
+<span class="bg-error text-white px-2 py-1 rounded font-label-sm">ALTA SEVERIDAD</span>
+</div>
+<p class="font-body-md text-body-md mb-6 text-on-surface-variant">
+                                Evidencia: Consumo constante de <strong>&gt;1.5kW</strong> detectado durante los últimos <strong>46 min</strong>. La vivienda ha sido marcada como vacía tras la limpieza de ayer a las 14:20.
+                            </p>
+<div class="flex gap-4">
+<button class="bg-white border border-outline-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors">Ignorar (Mantenimiento)</button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add_task">add_task</span>
+                                    Crear incidencia técnica
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar for specific info -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-low p-lg rounded-xl">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-4">Información de Red</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gateway ID</span>
+<span class="font-label-md text-label-md font-bold">VGO_GW_014</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Señal Zigbee</span>
+<div class="flex gap-0.5">
+<div class="w-1.5 h-1.5 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-2.5 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-3.5 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-4.5 bg-outline-variant/30 rounded-full"></div>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Última lectura</span>
+<span class="font-label-md text-label-md">hace 12 seg.</span>
+</div>
+</div>
+</div>
+<!-- Potency Recommendation -->
+<div class="col-span-12 bg-tertiary-container text-on-tertiary-container p-lg rounded-xl flex items-center gap-6">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed-dim/20 flex items-center justify-center text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-3xl" data-icon="tips_and_updates">tips_and_updates</span>
+</div>
+<div class="flex-1">
+<p class="font-headline-sm text-headline-sm font-bold text-white mb-1">Optimización de potencia disponible</p>
+<p class="font-body-md text-body-md text-on-primary-container">La potencia contratada en horario valle parece estar sobredimensionada para el patrón de uso histórico de este apartamento. Posible ahorro estimado de <strong>12€/mes</strong>.</p>
+</div>
+<button class="text-tertiary-fixed-dim border border-tertiary-fixed-dim/30 px-6 py-2 rounded-lg font-label-md text-label-md hover:bg-white/5 transition-colors">Revisar en optimización</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

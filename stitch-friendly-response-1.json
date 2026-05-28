@@ -1,0 +1,19 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"name\":\"projects/18335361503928945732\",\"title\":\"EnergyOS Dashboard - Amigable v3\",\"visibility\":\"PRIVATE\",\"projectType\":\"PROJECT_DESIGN\",\"origin\":\"STITCH\"}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "name": "projects/18335361503928945732",
+      "origin": "STITCH",
+      "projectType": "PROJECT_DESIGN",
+      "title": "EnergyOS Dashboard - Amigable v3",
+      "visibility": "PRIVATE"
+    }
+  }
+}

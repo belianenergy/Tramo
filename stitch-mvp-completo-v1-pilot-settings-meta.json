@@ -1,0 +1,24 @@
+{
+  "key": "pilot-settings",
+  "requestedName": "configuracion-piloto",
+  "title": "Configuración piloto — EnergyOS",
+  "projectId": "13332484261109626353",
+  "projectName": "projects/13332484261109626353",
+  "screenId": "9e2e69a4554f4304947e0369a6076062",
+  "screenName": "projects/13332484261109626353/screens/9e2e69a4554f4304947e0369a6076062",
+  "width": "2560",
+  "height": "2378",
+  "htmlCodeName": "projects/13332484261109626353/files/b1357845d6de4609b95a59f816b76fcf",
+  "screenshotName": "projects/13332484261109626353/files/1a7e28d50ead430ba92c0c1c6f4382d1",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2E0NTU5YmI1ZGVmZTRkNDM5ZjlhMmY5ZDE1ZDU0N2ExEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMzMzMjQ4NDI2MTEwOTYyNjM1Mw&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ui_9i_zVefXF-4kMxnhaM0VI4Kwl1AgoBasK_Nb5EhGu1EV0FMYC9PtHtmE0H81BAI69FCkuE3g-tKTaenYjPRixU_mmNZgvqZSupSir3RVFL5vV4ZoBTyHvuDKhYH-n_uDhyD2vOk7n5_su2xFB66tOM40JFvgs8LWNMDVe7pDnBt99yJjBPPybYjtegwHTcY9A8qgcEx1OALnTTaYJ_vedHZSCePtK7MJd_RNm1YBq8z-9cdak1sVb07T",
+  "generatedAt": "2026-05-12T19:16:18.346Z",
+  "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_V1.md",
+  "localFiles": {
+    "response": "stitch-mvp-completo-v1-pilot-settings-response.json",
+    "meta": "stitch-mvp-completo-v1-pilot-settings-meta.json",
+    "html": "stitch-mvp-completo-v1-pilot-settings.html",
+    "stitchPng": "stitch-mvp-completo-v1-pilot-settings-stitch.png",
+    "previews": []
+  }
+}

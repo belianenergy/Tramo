@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e141a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3c4a42;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4edea3;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#4edea3",
+                        "surface-bright": "#333a40",
+                        "inverse-surface": "#dde3eb",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "secondary-container": "#0566d9",
+                        "surface-variant": "#2f353c",
+                        "tertiary-container": "#e29100",
+                        "on-tertiary": "#472a00",
+                        "error": "#ffb4ab",
+                        "on-primary-container": "#00422b",
+                        "outline": "#86948a",
+                        "tertiary": "#ffb95f",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-error": "#690005",
+                        "surface-container-high": "#242b31",
+                        "on-secondary-container": "#e6ecff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-surface-variant": "#bbcabf",
+                        "on-surface": "#dde3eb",
+                        "on-primary": "#003824",
+                        "on-secondary": "#002e6a",
+                        "surface": "#0e141a",
+                        "surface-container": "#1a2026",
+                        "surface-container-highest": "#2f353c",
+                        "on-primary-fixed": "#002113",
+                        "inverse-primary": "#006c49",
+                        "primary-container": "#10b981",
+                        "surface-dim": "#0e141a",
+                        "primary-fixed": "#6ffbbe",
+                        "on-secondary-fixed": "#001a42",
+                        "on-secondary-fixed-variant": "#004395",
+                        "surface-container-lowest": "#080f14",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "primary": "#4edea3",
+                        "outline-variant": "#3c4a42",
+                        "primary-fixed-dim": "#4edea3",
+                        "on-background": "#dde3eb",
+                        "secondary": "#adc6ff",
+                        "on-tertiary-container": "#523200",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-error-container": "#ffdad6",
+                        "background": "#0e141a",
+                        "inverse-on-surface": "#2b3137",
+                        "surface-container-low": "#161c22",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#005236"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap": "16px",
+                        "tight-gap": "4px",
+                        "element-gap": "8px",
+                        "unit": "4px",
+                        "container-padding": "24px",
+                        "grid-gutter": "12px"
+                    },
+                    "fontFamily": {
+                        "data-lg": ["JetBrains Mono"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "data-sm": ["JetBrains Mono"],
+                        "body-base": ["Inter"],
+                        "data-base": ["JetBrains Mono"],
+                        "label-caps": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "data-lg": ["18px", {"lineHeight": "24px", "fontWeight": "500"}],
+                        "h1": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h2": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "display-lg": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "data-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-base": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "data-base": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-base overflow-hidden h-screen flex">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col h-full py-4 space-y-2 bg-surface-container-low border-r border-outline-variant w-64 shrink-0 overflow-y-auto">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-weight="fill">bolt</span>
+</div>
+<div>
+<h2 class="font-h2 text-h2 font-black text-on-surface leading-none">Operations</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-1">Management Console</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Nav Item: Dashboard -->
+<a class="text-on-surface-variant px-6 py-2.5 flex items-center gap-3 hover:bg-surface-container-highest hover:text-on-surface transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-body-base">Dashboard</span>
+</a>
+<!-- Nav Item: Communities (ACTIVE) -->
+<a class="bg-surface-variant text-primary border-r-4 border-primary font-bold px-6 py-2.5 flex items-center gap-3 active:translate-x-1" href="#">
+<span class="material-symbols-outlined text-[20px]" data-weight="fill">group</span>
+<span class="font-body-base">Communities</span>
+</a>
+<a class="text-on-surface-variant px-6 py-2.5 flex items-center gap-3 hover:bg-surface-container-highest hover:text-on-surface transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span class="font-body-base">Expenses</span>
+</a>
+<a class="text-on-surface-variant px-6 py-2.5 flex items-center gap-3 hover:bg-surface-container-highest hover:text-on-surface transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined text-[20px]">assessment</span>
+<span class="font-body-base">Reports</span>
+</a>
+<a class="text-on-surface-variant px-6 py-2.5 flex items-center gap-3 hover:bg-surface-container-highest hover:text-on-surface transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined text-[20px]">apartment</span>
+<span class="font-body-base">Properties</span>
+</a>
+<a class="text-on-surface-variant px-6 py-2.5 flex items-center gap-3 hover:bg-surface-container-highest hover:text-on-surface transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span>
+<span class="font-body-base">Tenants</span>
+</a>
+<a class="text-on-surface-variant px-6 py-2.5 flex items-center gap-3 hover:bg-surface-container-highest hover:text-on-surface transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+<span class="font-body-base">Alerts</span>
+</a>
+<a class="text-on-surface-variant px-6 py-2.5 flex items-center gap-3 hover:bg-surface-container-highest hover:text-on-surface transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+<span class="font-body-base">Arbitrage</span>
+</a>
+<a class="text-on-surface-variant px-6 py-2.5 flex items-center gap-3 hover:bg-surface-container-highest hover:text-on-surface transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+<span class="font-body-base">Advisor</span>
+</a>
+<a class="text-on-surface-variant px-6 py-2.5 flex items-center gap-3 hover:bg-surface-container-highest hover:text-on-surface transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-body-base">Settings</span>
+</a>
+</nav>
+<div class="pt-4 border-t border-outline-variant space-y-1">
+<button class="w-full text-on-surface-variant px-6 py-2.5 flex items-center gap-3 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+<span class="font-body-base">Support</span>
+</button>
+<button class="w-full text-on-surface-variant px-6 py-2.5 flex items-center gap-3 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="font-body-base">Sign Out</span>
+</button>
+</div>
+</aside>
+<div class="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+<!-- TopNavBar Component -->
+<header class="flex items-center justify-between px-6 h-14 w-full border-b border-outline-variant bg-surface-container-low shrink-0 z-50">
+<div class="flex items-center gap-8">
+<div class="font-h1 text-h1 font-bold text-primary tracking-tight">EnergyOS Pro</div>
+<nav class="hidden lg:flex items-center gap-6 h-full">
+<a class="text-primary border-b-2 border-primary h-14 flex items-center font-bold" href="#">Fincas</a>
+<a class="text-on-surface-variant font-medium h-14 flex items-center hover:text-primary transition-all duration-200" href="#">Apartamentos</a>
+<a class="text-on-surface-variant font-medium h-14 flex items-center hover:text-primary transition-all duration-200" href="#">Arbitraje</a>
+<a class="text-on-surface-variant font-medium h-14 flex items-center hover:text-primary transition-all duration-200" href="#">Asesor</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="absolute inset-y-0 left-3 flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="bg-surface border border-outline-variant rounded-lg pl-10 pr-4 py-1.5 text-body-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all w-64" placeholder="Search operations..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant ml-2">
+<img alt="User profile avatar" data-alt="A professional close-up headshot of a person with a friendly expression. They have short, dark hair and are wearing a modern dark suit. The background is a clean, neutral slate blue with soft, studio-quality lighting reflecting a high-end corporate energy management persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm_2RZSf7xOGtnC4TTUcFWaq-EeKbxzplsKi1Wi7HC9qKuCAc_lsp9B4UCZ4kFCWgz54XkmYHMTUIdGJwp57SAIA7ukdhvgr7jFO7p_aKKK1rx6RxBl6QCiS8QtiYdqP8FlV-Za51j1OUoQrFySIXCmC5g5qEVtjvRVRoi5TauSdbHN-yM1NjlffPeaq9eX_hDvD13THHSTpDE3Z59BWdOVxJx0aBF9YabnEqOBHV2R5-IMa4U_8TTb2PrdBivGjo7nAM6S_yRpwk"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Breadcrumbs / Title Row -->
+<div class="flex items-center justify-between">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface">Panel de Fincas</h1>
+<p class="text-on-surface-variant font-body-base">Vista general de comunidades de vecinos bajo gestión.</p>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary-container font-bold px-4 py-2 rounded flex items-center gap-2 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                    Nueva Comunidad
+                </button>
+</div>
+<!-- Metric Row -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-surface-container p-4 rounded-xl border border-outline-variant flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Total Comunidades</span>
+<span class="material-symbols-outlined text-[18px]">group</span>
+</div>
+<div class="font-data-lg text-[28px] text-on-surface mt-1">12</div>
+<div class="text-[12px] text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+2 este mes</span>
+</div>
+</div>
+<div class="bg-surface-container p-4 rounded-xl border border-outline-variant flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">kWh Mensual</span>
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<div class="font-data-lg text-[28px] text-on-surface mt-1">45.2k</div>
+<div class="text-[12px] text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+4.2% vs prev.</span>
+</div>
+</div>
+<div class="bg-surface-container p-4 rounded-xl border border-outline-variant flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Custo Mensual</span>
+<span class="material-symbols-outlined text-[18px]">euro</span>
+</div>
+<div class="font-data-lg text-[28px] text-on-surface mt-1">8.420€</div>
+<div class="text-[12px] text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+<span>-1.5% optimización</span>
+</div>
+</div>
+<div class="bg-surface-container p-4 rounded-xl border border-outline-variant flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Alertas Activas</span>
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div class="font-data-lg text-[28px] text-error mt-1">3</div>
+<div class="text-[12px] text-on-surface-variant flex items-center gap-1">
+<span>Ver prioridades</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Charts & Sidebar Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Main Chart -->
+<div class="lg:col-span-2 bg-surface-container p-6 rounded-xl border border-outline-variant flex flex-col h-[400px]">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-h2 text-h2">Consumo Agregado (kWh)</h3>
+<div class="flex gap-2">
+<span class="px-3 py-1 rounded bg-surface-container-highest text-label-caps text-primary border border-primary">24H</span>
+<span class="px-3 py-1 rounded bg-surface-variant text-label-caps text-on-surface-variant">7D</span>
+<span class="px-3 py-1 rounded bg-surface-variant text-label-caps text-on-surface-variant">30D</span>
+</div>
+</div>
+<div class="flex-1 relative">
+<!-- Pseudo-Chart Placeholder -->
+<div class="absolute inset-0 flex items-end gap-1">
+<div class="bg-primary/20 border-t-2 border-primary w-full h-[40%]" style="clip-path: polygon(0 40%, 10% 30%, 20% 60%, 30% 20%, 40% 80%, 50% 50%, 60% 70%, 70% 30%, 80% 40%, 90% 10%, 100% 50%, 100% 100%, 0 100%);"></div>
+</div>
+<!-- Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between opacity-10 pointer-events-none">
+<div class="border-b border-on-surface w-full h-0"></div>
+<div class="border-b border-on-surface w-full h-0"></div>
+<div class="border-b border-on-surface w-full h-0"></div>
+<div class="border-b border-on-surface w-full h-0"></div>
+</div>
+</div>
+<div class="mt-4 flex justify-between text-data-sm text-on-surface-variant font-label-caps">
+<span>00:00</span><span>04:00</span><span>08:00</span><span>12:00</span><span>16:00</span><span>20:00</span><span>23:59</span>
+</div>
+</div>
+<!-- Sidebar Cards -->
+<div class="flex flex-col gap-6">
+<!-- AI Advisor Card -->
+<div class="bg-surface-container-high border border-primary/30 p-5 rounded-xl shadow-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2 opacity-10">
+<span class="material-symbols-outlined text-[80px]">psychology</span>
+</div>
+<div class="flex items-center gap-2 text-primary mb-3">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<span class="font-label-caps text-label-caps">AI ADVISOR</span>
+</div>
+<p class="font-h2 text-[18px] mb-4 text-on-surface leading-snug">3 comunidades poderían aforrar <span class="text-primary font-bold">8.500€/ano</span></p>
+<button class="w-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/50 py-2 rounded font-bold text-body-sm transition-all">Review Optimization</button>
+</div>
+<!-- Arbitrage Opportunity Card -->
+<div class="bg-surface-container p-5 rounded-xl border border-tertiary/30">
+<div class="flex items-center gap-2 text-tertiary mb-3">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+<span class="font-label-caps text-label-caps">OPORTUNIDADE DE ARBITRAXE</span>
+</div>
+<div class="space-y-3">
+<div>
+<p class="text-[12px] text-on-surface-variant uppercase font-label-caps">Comunidade</p>
+<p class="font-body-base font-bold">Calle Mayor 15, Madrid</p>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[12px] text-on-surface-variant uppercase font-label-caps">Potencial</p>
+<p class="font-data-lg text-tertiary">245€/mes</p>
+</div>
+<button class="p-1 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Table Section -->
+<div class="bg-surface-container rounded-xl border border-outline-variant overflow-hidden">
+<div class="px-6 py-4 border-b border-outline-variant flex items-center justify-between">
+<h3 class="font-h2 text-h2">Listaxe de Comunidades</h3>
+<div class="flex gap-4">
+<div class="flex border border-outline-variant rounded bg-surface h-8 overflow-hidden">
+<button class="px-3 text-on-surface-variant border-r border-outline-variant bg-surface-variant text-primary"><span class="material-symbols-outlined text-[18px]">list</span></button>
+<button class="px-3 text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">grid_view</span></button>
+</div>
+<button class="flex items-center gap-2 px-3 py-1 text-body-sm border border-outline-variant rounded hover:bg-surface-variant">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+                            Filtrar
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low text-label-caps text-on-surface-variant border-b border-outline-variant">
+<tr>
+<th class="px-6 py-3 font-semibold uppercase tracking-wider">Nome</th>
+<th class="px-6 py-3 font-semibold uppercase tracking-wider">Unidades</th>
+<th class="px-6 py-3 font-semibold uppercase tracking-wider">kWh (Mes)</th>
+<th class="px-6 py-3 font-semibold uppercase tracking-wider">Custo</th>
+<th class="px-6 py-3 font-semibold uppercase tracking-wider">Estado</th>
+<th class="px-6 py-3 font-semibold uppercase tracking-wider text-right">Accións</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-highest transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">home</span>
+</div>
+<div>
+<p class="font-bold">Residencial Los Álamos</p>
+<p class="text-[12px] text-on-surface-variant">ID: ES-20349</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-data-base">24</td>
+<td class="px-6 py-4 font-data-base">3,450</td>
+<td class="px-6 py-4 font-data-base">712€</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                        Optimizado
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-highest transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">domain</span>
+</div>
+<div>
+<p class="font-bold">Calle Mayor 15</p>
+<p class="text-[12px] text-on-surface-variant">ID: ES-11822</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-data-base">12</td>
+<td class="px-6 py-4 font-data-base">1,820</td>
+<td class="px-6 py-4 font-data-base">445€</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary text-[11px] font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                                        Analizando
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-highest transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">apartment</span>
+</div>
+<div>
+<p class="font-bold">Edificio Mirador</p>
+<p class="text-[12px] text-on-surface-variant">ID: ES-99401</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-data-base">56</td>
+<td class="px-6 py-4 font-data-base">8,120</td>
+<td class="px-6 py-4 font-data-base">1,560€</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-error/10 text-error text-[11px] font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                                        Alerta
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-highest transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_city</span>
+</div>
+<div>
+<p class="font-bold">Urbanización Sol</p>
+<p class="text-[12px] text-on-surface-variant">ID: ES-44210</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-data-base">30</td>
+<td class="px-6 py-4 font-data-base">4,200</td>
+<td class="px-6 py-4 font-data-base">890€</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                        Optimizado
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-3 border-t border-outline-variant bg-surface-container-low flex items-center justify-between text-data-sm text-on-surface-variant">
+<span>Mostrando 4 de 12 comunidades</span>
+<div class="flex gap-2">
+<button class="px-2 py-1 border border-outline-variant rounded opacity-50 cursor-not-allowed"><span class="material-symbols-outlined text-[16px]">chevron_left</span></button>
+<button class="px-2 py-1 border border-outline-variant rounded hover:bg-surface-variant"><span class="material-symbols-outlined text-[16px]">chevron_right</span></button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Mobile Nav Bar (Small screens only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container border-t border-outline-variant flex items-center justify-around z-50">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-label-caps">DASH</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-weight="fill">group</span>
+<span class="text-[10px] font-label-caps">FINCAS</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="text-[10px] font-label-caps">ARBIT</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-label-caps">CONF</span>
+</button>
+</nav>
+</body></html>

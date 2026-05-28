@@ -1,0 +1,22 @@
+{
+  "projectTitle": "Tramo Landing Definitiva",
+  "projectId": "5322604060056266365",
+  "projectName": "projects/5322604060056266365",
+  "projectUrl": "https://stitch.withgoogle.com/projects/5322604060056266365",
+  "screenId": "96f651bc65804e168c72b182041558c1",
+  "screenName": "projects/5322604060056266365/screens/96f651bc65804e168c72b182041558c1",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzJhYWE4Yzg0YWNiNTRlZTliYjc3MjI2YmUxM2MwZDY0EgsSBxCg9KiWmAMYAZIBIwoKcHJvamVjdF9pZBIVQhM1MzIyNjA0MDYwMDU2MjY2MzY1&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ujCx_dLv7YpCK_iSwJZX21Uq2Og3f3gMRpWx92SgY2-HxrB-vCQ7KG8UCxw5uJoAiJCnrB-ggk78XjE_MuFits98aJITp5iWHzYQUhJNDlV9KLa1pl-kz72cRy55xuZso4rxTwncTZfIrYmXDtaHsIXZ1-sg3uasKdCOv_OIWix3kaDFwx5iCc6KVq4ZulHua5am03p6Os3gn70Lxy6NEKoh1n88DDgo6HMjiFCVOz1uJFfqx9s1BAS2KY",
+  "generatedAt": "2026-05-17T19:12:27.635Z",
+  "localFiles": {
+    "script": "stitch-tramo-definitivo.mjs",
+    "projectResponse": "stitch-tramo-definitivo-project-response.json",
+    "generateResponse": "stitch-tramo-definitivo-generate-response.json",
+    "getScreenResponse": "stitch-tramo-definitivo-get-screen-response.json",
+    "screen": "stitch-tramo-definitivo-screen.json",
+    "meta": "stitch-tramo-definitivo-meta.json",
+    "html": "stitch-tramo-definitivo.html",
+    "screenshot": "stitch-tramo-definitivo-stitch.png",
+    "summary": "stitch-tramo-definitivo-summary.md"
+  }
+}

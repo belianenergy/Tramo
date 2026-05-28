@@ -1,0 +1,38 @@
+[
+  {
+    "id": "op_1",
+    "at": "2026-05-12T14:00:00.000Z",
+    "propertyId": "apt_04",
+    "propertyName": "Apartamento Centro 04",
+    "type": "precheckin_climate",
+    "status": "scheduled",
+    "summary": "Activar climatización (22º) 2h antes del check-in"
+  },
+  {
+    "id": "op_2",
+    "at": "2026-05-12T18:30:00.000Z",
+    "propertyId": "apt_02",
+    "propertyName": "Apartamento Playa 02",
+    "type": "anomaly_alert",
+    "status": "needs_review",
+    "summary": "Consumo alto sin reserva activa (3,2 kWh en 2h)"
+  },
+  {
+    "id": "op_3",
+    "at": "2026-05-11T10:00:00.000Z",
+    "propertyId": "apt_07",
+    "propertyName": "Ático Alameda 07",
+    "type": "postcheckout_saving",
+    "status": "done",
+    "summary": "Modo bajo consumo activado tras check-out"
+  },
+  {
+    "id": "op_4",
+    "at": "2026-05-10T09:00:00.000Z",
+    "propertyId": "portfolio",
+    "propertyName": "Cartera completa",
+    "type": "owner_report",
+    "status": "sent",
+    "summary": "Informe mensual enviado a 8 propietarios"
+  }
+]

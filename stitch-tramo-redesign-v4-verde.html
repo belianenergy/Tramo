@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tramo | Cada kWh, en su tramo correcto</title>
+<style>
+/* ============================================
+   TRAMO · Hallmark Redesign v5 — Light Editorial
+   DNA: reflexai.com · light-first palette
+   Brand anchor: dark green accents + cream + signals
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* ---------- TOKENS ---------- */
+:root {
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', monospace;
+
+  /* Forest greens — primary scale */
+  --color-forest: #061F00;
+  --color-forest-light: #0D3B06;
+  --color-forest-mid: #14520A;
+  --color-pine: #1A6610;
+
+  /* Surfaces */
+  --color-paper: #f9f8f5;
+  --color-surface: #f4f2ed;
+  --color-card: #ffffff;
+  --color-surface-low: #edebe4;
+
+  /* Ink & Text */
+  --color-ink: #061F00;
+  --color-muted: #4a5a3e;
+  --color-secondary: #687a5a;
+
+  /* Borders */
+  --color-border: #d8d5cc;
+  --color-border-strong: #c4c0b6;
+
+  /* Signals — warm accents that pop against green */
+  --color-lime: #A5E119;
+  --color-lime-deep: #7DB308;
+  --color-orange: #e6813a;
+  --color-orange-glow: #ffb68a;
+  --color-mint: #5ee8c2;
+
+  /* Status */
+  --color-success: #2ecc71;
+  --color-error: #e74c3c;
+  --color-error-soft: #fdecea;
+  --color-warning: #f39c12;
+
+  /* Data Viz */
+  --color-viz-1: #A5E119;
+  --color-viz-2: #5ee8c2;
+  --color-viz-3: #e6813a;
+  --color-viz-4: #2ecc71;
+  --color-viz-5: #f39c12;
+  --color-viz-6: #e74c3c;
+
+  /* Spacing */
+  --space-gutter: 24px;
+  --space-section: 100px;
+  --space-container: 1280px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+  --radius-full: 9999px;
+
+  /* Motion */
+  --ease-snap: cubic-bezier(0.36, 0, 0.114, 0.92);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 180ms;
+  --duration-normal: 350ms;
+  --duration-slow: 600ms;
+}
+
+/* ---------- RESET ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: clip; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); background: var(--color-paper); color: var(--color-ink); line-height: 1.6; overflow-x: clip; }
+
+/* ---------- TYPOGRAPHY ---------- */
+h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+.display-lg { font-size: clamp(42px, 5.5vw, 68px); line-height: 1.04; font-weight: 700; }
+.headline-lg { font-size: clamp(28px, 3.5vw, 44px); line-height: 1.15; font-weight: 600; }
+.headline-md { font-size: clamp(20px, 2.5vw, 28px); line-height: 1.25; font-weight: 600; }
+.body-lg { font-size: 18px; line-height: 1.65; color: var(--color-muted); }
+.body-md { font-size: 16px; line-height: 1.6; color: var(--color-muted); }
+.body-sm { font-size: 14px; line-height: 1.5; }
+.label-caps { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.data-lg { font-family: var(--font-mono); font-size: 24px; font-weight: 600; }
+.data-md { font-family: var(--font-mono); font-size: 16px; font-weight: 500; }
+.data-sm { font-family: var(--font-mono); font-size: 12px; font-weight: 500; }
+
+/* ---------- UTILITY ---------- */
+.container { max-width: var(--space-container); margin: 0 auto; padding: 0 var(--space-gutter); }
+
+/* ---------- BUTTONS ---------- */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 30px;
+  background: var(--color-forest);
+  color: #fff;
+  font-family: var(--font-display); font-size: 15px; font-weight: 700;
+  border: none; border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out),
+              background var(--duration-fast);
+  position: relative; overflow: hidden;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(6, 31, 0, 0.4);
+  background: var(--color-forest-light);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 30px;
+  background: transparent;
+  color: var(--color-forest);
+  font-family: var(--font-display); font-size: 15px; font-weight: 600;
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: border-color var(--duration-fast), background var(--duration-fast);
+}
+.btn-secondary:hover { border-color: var(--color-forest); background: rgba(6,31,0,0.05); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 22px;
+  background: rgba(6,31,0,0.04);
+  color: var(--color-forest);
+  font-family: var(--font-display); font-size: 13px; font-weight: 600;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--duration-fast);
+}
+.btn-ghost:hover { background: rgba(6,31,0,0.08); border-color: var(--color-forest); }
+
+.arrow-icon { display: inline-block; transition: transform var(--duration-normal) var(--ease-snap); }
+.btn-primary:hover .arrow-icon,
+.btn-secondary:hover .arrow-icon { transform: translateX(4px); }
+
+/* ---------- HEADER ---------- */
+.header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(249, 248, 245, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+}
+.header-inner {
+  max-width: var(--space-container); margin: 0 auto;
+  padding: 0 var(--space-gutter);
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-display); font-size: 22px; font-weight: 700;
+  color: var(--color-forest); text-decoration: none;
+}
+.logo-mark { width: 34px; height: 22px; position: relative; }
+.logo-mark svg { width: 100%; height: 100%; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  font-family: var(--font-body); font-size: 14px; font-weight: 500;
+  color: var(--color-muted); text-decoration: none;
+  transition: color var(--duration-fast);
+}
+.nav-links a:hover { color: var(--color-forest); }
+@media (max-width: 768px) { .nav-links { display: none; } }
+
+/* ---------- HERO ---------- */
+.hero {
+  padding-top: 180px;
+  padding-bottom: 120px;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 80% 30%, rgba(6,31,0,0.03), transparent 65%),
+              radial-gradient(ellipse 40% 50% at 20% 80%, rgba(94,232,194,0.03), transparent 55%);
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: start; position: relative; z-index: 1;
+}
+@media (max-width: 1024px) { .hero-grid { grid-template-columns: 1fr; gap: 48px; } }
+.hero-text { max-width: 540px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px;
+  background: rgba(6,31,0,0.05);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.03em; color: var(--color-forest);
+  margin-bottom: 24px;
+}
+.hero-badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--color-forest-light);
+}
+@keyframes pulse-lime {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.6); }
+}
+.hero h1 { margin-bottom: 20px; color: var(--color-ink); }
+.hero .body-lg { margin-bottom: 36px; max-width: 480px; color: var(--color-muted); }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ---------- HERO INTERACTIVE PANEL ---------- */
+.hero-panel {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 24px rgba(6,31,0,0.06);
+  overflow: hidden;
+  transition: all var(--duration-slow) var(--ease-out);
+}
+.hero-panel:hover {
+  border-color: var(--color-forest-light);
+  box-shadow: 0 12px 40px rgba(6,31,0,0.1);
+}
+.panel-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+.panel-title {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-display); font-size: 13px; font-weight: 600;
+  color: var(--color-ink);
+}
+.panel-title-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--color-forest);
+}
+.panel-meta {
+  font-family: var(--font-mono); font-size: 10px;
+  color: var(--color-muted);
+}
+.panel-body { padding: 20px; }
+
+/* KPI row */
+.kpi-row {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 18px;
+}
+.kpi-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: 14px;
+  transition: all var(--duration-fast);
+  cursor: default;
+}
+.kpi-card:hover {
+  border-color: var(--color-forest);
+  background: var(--color-card);
+  box-shadow: 0 2px 12px rgba(6,31,0,0.06);
+  transform: translateY(-2px);
+}
+.kpi-label { font-family: var(--font-mono); font-size: 9px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-muted); margin-bottom: 6px; }
+.kpi-value { font-family: var(--font-display); font-size: 28px; font-weight: 700; line-height: 1; color: var(--color-ink); }
+.kpi-value.lime { color: var(--color-forest); }
+.kpi-sub { font-family: var(--font-mono); font-size: 9px; color: var(--color-secondary); margin-top: 4px; }
+
+/* Hero live chart */
+.hero-chart-container {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: 16px; margin-bottom: 14px;
+}
+.hero-chart-label {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.04em; color: var(--color-muted);
+  margin-bottom: 14px; display: flex; justify-content: space-between;
+}
+.hero-chart-label span.live {
+  display: flex; align-items: center; gap: 6px; color: var(--color-forest);
+}
+.hero-chart-label span.live::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: currentColor;
+}
+.hero-chart {
+  display: flex; align-items: flex-end; gap: 5px; height: 110px; padding: 4px 0;
+}
+.bar-group {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  gap: 4px; height: 100%; justify-content: flex-end;
+}
+.bar {
+  width: 100%; max-width: 30px;
+  border-radius: 3px 3px 0 0;
+  transition: all var(--duration-normal) var(--ease-snap);
+  cursor: pointer; position: relative;
+}
+.bar-booked { background: var(--color-lime); }
+.bar-alert { background: var(--color-orange); animation: bar-warn 2.5s ease-in-out infinite; }
+.bar-idle { background: var(--color-border); }
+
+.bar-group:hover .bar-booked { filter: brightness(0.9); box-shadow: 0 0 16px rgba(165,225,25,0.3); }
+.bar-group:hover .bar-alert { filter: brightness(1.1); box-shadow: 0 0 16px rgba(230,129,58,0.3); }
+.bar-group:hover .bar-idle { filter: brightness(0.8); box-shadow: 0 0 12px rgba(6,31,0,0.1); }
+
+@keyframes bar-warn {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 0.5; }
+}
+
+/* Hero alert */
+.hero-alert {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px;
+  background: var(--color-error-soft);
+  border: 1px solid rgba(231,76,60,0.2);
+  border-radius: var(--radius-md);
+  transition: transform var(--duration-fast);
+}
+.hero-alert:hover { transform: translateY(-1px); background: rgba(231,76,60,0.12); }
+.hero-alert-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--color-error); flex-shrink: 0; }
+.hero-alert-text { flex: 1; font-size: 11px; color: var(--color-muted); font-family: var(--font-mono); }
+.hero-alert-text strong { color: var(--color-ink); }
+.hero-alert-action { font-size: 10px; font-weight: 600; color: var(--color-error); cursor: pointer; white-space: nowrap; }
+
+/* ---------- SCROLL REVEAL ---------- */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ---------- SECTION HEADER ---------- */
+.section-header { text-align: center; margin-bottom: 64px; max-width: 640px; margin-left: auto; margin-right: auto; }
+.section-header h2 { margin-bottom: 16px; }
+.section-header .body-lg { max-width: 520px; margin: 0 auto; }
+.section-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px;
+  background: rgba(6, 31, 0, 0.04);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.04em; color: var(--color-pine);
+  margin-bottom: 16px;
+}
+
+/* ---------- PAIN SECTION ---------- */
+.pain-section {
+  padding: var(--space-section) 0;
+  position: relative;
+}
+.pain-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+@media (max-width: 768px) { .pain-grid { grid-template-columns: 1fr; } }
+.pain-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: 32px;
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+}
+.pain-card:hover {
+  border-color: var(--color-forest);
+  box-shadow: 0 12px 40px rgba(6,31,0,0.08);
+  transform: translateY(-4px);
+}
+.pain-card::after {
+  content: ''; position: absolute; top: 0; left: 16px; right: 16px; height: 3px;
+  background: linear-gradient(90deg, var(--color-forest), var(--color-forest-light));
+  border-radius: 0 0 3px 3px;
+  transform: scaleY(0); transform-origin: top;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+.pain-card:hover::after { transform: scaleY(1); }
+.pain-icon {
+  width: 46px; height: 46px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; font-size: 20px;
+}
+.pain-icon.p1 { background: rgba(231,76,60,0.08); }
+.pain-icon.p2 { background: rgba(230,129,58,0.08); }
+.pain-icon.p3 { background: rgba(46,204,113,0.08); }
+.pain-card h3 { font-size: 20px; margin-bottom: 12px; }
+.pain-card > p { font-size: 14px; line-height: 1.6; color: var(--color-muted); margin-bottom: 20px; }
+.pain-evidence {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm); padding: 14px;
+  font-family: var(--font-mono); font-size: 12px; color: var(--color-muted);
+}
+.pain-evidence strong { color: var(--color-ink); display: block; margin-bottom: 4px; }
+
+/* ---------- SYSTEM FLOW ---------- */
+.system-section {
+  padding: var(--space-section) 0;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.system-flow {
+  display: flex; align-items: center; justify-content: center;
+  gap: 14px; flex-wrap: wrap; margin-top: 48px;
+}
+.system-node {
+  background: var(--color-card);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: 20px 28px;
+  text-align: center; min-width: 136px;
+  transition: all var(--duration-normal) var(--ease-out);
+  cursor: default;
+}
+.system-node:hover {
+  border-color: var(--color-pine); background: var(--color-forest);
+  box-shadow: 0 12px 36px rgba(6,31,0,0.15);
+  transform: translateY(-3px);
+}
+.system-node:hover .system-node-label { color: #fff; }
+.system-node:hover .system-node-sub { color: var(--color-mint); }
+.system-node-icon { font-size: 24px; margin-bottom: 6px; }
+.system-node-label { font-family: var(--font-display); font-size: 14px; font-weight: 600; transition: color var(--duration-fast); }
+.system-node-sub { font-family: var(--font-mono); font-size: 10px; color: var(--color-muted); margin-top: 4px; transition: color var(--duration-fast); }
+.system-arrow { font-size: 22px; color: var(--color-forest); font-weight: 700; }
+@media (max-width: 768px) { .system-flow { flex-direction: column; } .system-arrow { transform: rotate(90deg); } }
+
+/* ---------- MODULES ---------- */
+.modules-section { padding: var(--space-section) 0; }
+.modules-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 768px) { .modules-grid { grid-template-columns: 1fr; } }
+.module-card {
+  background: var(--color-card); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: 28px;
+  display: flex; gap: 24px; align-items: flex-start;
+  transition: all var(--duration-normal) var(--ease-out);
+  cursor: default; position: relative;
+}
+.module-card:hover {
+  border-color: var(--color-forest);
+  box-shadow: 0 12px 40px rgba(6,31,0,0.06);
+  transform: translateY(-2px);
+}
+.module-badge { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.05em; color: var(--color-pine); margin-bottom: 8px; }
+.module-content h3 { font-size: 20px; margin-bottom: 8px; }
+.module-content > p { font-size: 14px; color: var(--color-muted); line-height: 1.6; margin-bottom: 16px; }
+.module-graphic {
+  flex-shrink: 0; width: 120px; height: 120px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform var(--duration-slow) var(--ease-out);
+  overflow: hidden;
+}
+.module-card:hover .module-graphic { transform: scale(1.05); }
+.module-mini-chart { display: flex; align-items: flex-end; gap: 3px; padding: 16px; height: 100%; }
+.module-mini-bar {
+  width: 8px; border-radius: 2px 2px 0 0;
+  background: var(--color-border);
+  transition: all var(--duration-fast);
+}
+.module-card:hover .module-mini-bar:nth-child(odd) { background: var(--color-forest); }
+.module-card:hover .module-mini-bar:nth-child(even) { background: var(--color-forest-light); }
+.module-mini-data { font-family: var(--font-mono); font-size: 11px; font-weight: 600; padding: 8px; text-align: center; color: var(--color-muted); }
+
+/* ---------- DASHBOARD SECTION ---------- */
+.dashboard-section {
+  padding: var(--space-section) 0;
+  background: var(--color-surface);
+}
+.dashboard {
+  background: var(--color-card); border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 24px rgba(6,31,0,0.03);
+  overflow: hidden;
+  transition: box-shadow var(--duration-slow) var(--ease-out);
+}
+.dashboard:hover { box-shadow: 0 16px 48px rgba(6,31,0,0.08); }
+.dashboard-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 24px; border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+.dashboard-title { font-family: var(--font-display); font-size: 18px; font-weight: 600; }
+.dashboard-meta {
+  font-family: var(--font-mono); font-size: 11px; color: var(--color-muted);
+  background: var(--color-card); padding: 6px 14px;
+  border: 1px solid var(--color-border); border-radius: var(--radius-full);
+}
+.dashboard-body { display: grid; grid-template-columns: 280px 1fr; min-height: 440px; }
+@media (max-width: 768px) { .dashboard-body { grid-template-columns: 1fr; } }
+.dashboard-sidebar { border-right: 1px solid var(--color-border); overflow-y: auto; }
+@media (max-width: 768px) { .dashboard-sidebar { border-right: none; border-bottom: 1px solid var(--color-border); max-height: 180px; } }
+
+.table-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; border-bottom: 1px solid rgba(216,213,204,0.4);
+  font-family: var(--font-mono); font-size: 13px; cursor: pointer;
+  transition: all var(--duration-fast);
+}
+.table-row:hover { background: var(--color-surface-low); }
+.table-row.selected { background: var(--color-surface-low); border-left: 3px solid var(--color-forest); }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+.status-dot.ok { background: var(--color-success); }
+.status-dot.warn { background: var(--color-warning); animation: pulse-lime 2s ease-in-out infinite; }
+.status-dot.bad { background: var(--color-error); animation: pulse-lime 1.5s ease-in-out infinite; }
+
+.dashboard-main { padding: 24px; display: flex; flex-direction: column; gap: 18px; }
+
+/* Main chart */
+.main-chart-container {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: 20px; flex: 1;
+}
+.main-chart {
+  display: flex; align-items: flex-end; gap: 6px; height: 200px; padding: 8px 0;
+}
+.main-bar-group {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; gap: 6px; height: 100%; justify-content: flex-end;
+}
+.main-bar {
+  width: 100%; max-width: 38px;
+  border-radius: 4px 4px 0 0;
+  transition: all var(--duration-normal) var(--ease-snap);
+  cursor: pointer; position: relative;
+}
+.main-bar-group:hover .main-bar {
+  filter: brightness(1.2);
+  box-shadow: 0 0 28px var(--color-lime);
+}
+.main-bar-tooltip {
+  position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+  background: var(--color-forest); color: var(--color-lime);
+  padding: 4px 10px; border-radius: var(--radius-sm);
+  font-family: var(--font-mono); font-size: 10px;
+  white-space: nowrap;
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--duration-fast);
+  margin-bottom: 8px;
+}
+.main-bar-group:hover .main-bar-tooltip { opacity: 1; }
+
+/* Alerts row */
+.alerts-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+@media (max-width: 768px) { .alerts-row { grid-template-columns: 1fr; } }
+.alert-mini {
+  background: var(--color-card); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: 14px;
+  transition: all var(--duration-fast); cursor: default;
+}
+.alert-mini:hover { border-color: var(--color-forest); box-shadow: 0 4px 16px rgba(6,31,0,0.04); }
+
+/* ---------- TRUST ---------- */
+.trust-section { padding: var(--space-section) 0; }
+.trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto; }
+@media (max-width: 768px) { .trust-grid { grid-template-columns: 1fr; } }
+.trust-card {
+  background: var(--color-card); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: 32px;
+  transition: all var(--duration-normal);
+}
+.trust-card:hover { box-shadow: 0 8px 32px rgba(6,31,0,0.04); }
+.trust-card h3 { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.trust-card ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.trust-card li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--color-muted); }
+.trust-icon { font-size: 20px; flex-shrink: 0; }
+.trust-icon.ok { color: var(--color-success); }
+.trust-icon.no { color: var(--color-error); }
+.trust-pilot-banner {
+  margin-top: 40px; text-align: center;
+  padding: 20px 32px;
+  background: rgba(6,31,0,0.03); border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg); max-width: 700px; margin-left: auto; margin-right: auto;
+}
+
+/* ---------- CTA SECTION ---------- */
+.cta-section {
+  padding: var(--space-section) 0;
+  background: var(--color-surface);
+  position: relative; overflow: hidden;
+  border-top: 1px solid var(--color-border);
+}
+.cta-section::before { content: none; }
+.cta-section .section-header { position: relative; z-index: 1; }
+.cta-section .section-header h2,
+.cta-section .section-header p { color: var(--color-ink); }
+.cta-section .section-header .body-lg { color: var(--color-muted); }
+.form-card {
+  position: relative; z-index: 1;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 48px; max-width: 800px; margin: 0 auto;
+  box-shadow: 0 4px 24px rgba(6,31,0,0.04);
+}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+@media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } }
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-field label {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.04em; color: var(--color-muted);
+}
+.form-field input, .form-field select, .form-field textarea {
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body); font-size: 14px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  transition: all var(--duration-fast);
+  outline: none;
+}
+.form-field input::placeholder, .form-field textarea::placeholder { color: var(--color-secondary); }
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+  border-color: var(--color-forest);
+  box-shadow: 0 0 0 3px rgba(6,31,0,0.06);
+}
+.form-radio-group { display: flex; gap: 16px; padding-top: 4px; }
+.form-radio-group label {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--font-body); font-size: 14px; font-weight: 400;
+  color: var(--color-muted); cursor: pointer;
+}
+.form-col-span { grid-column: 1 / -1; }
+.form-submit {
+  width: 100%; padding: 16px;
+  background: var(--color-forest);
+  color: #fff;
+  font-family: var(--font-display); font-size: 15px; font-weight: 700;
+  border: none; border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--duration-fast);
+  margin-top: 8px;
+}
+.form-submit:hover { background: var(--color-forest-light); box-shadow: 0 8px 24px rgba(6, 31, 0, 0.35); transform: translateY(-2px); }
+.form-submit:active { transform: translateY(0); }
+.form-disclaimer {
+  margin-top: 16px; font-size: 12px; color: var(--color-secondary);
+  text-align: center; line-height: 1.5;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  padding: 52px 0;
+  background: var(--color-surface-low);
+  color: var(--color-muted);
+  border-top: 1px solid var(--color-border);
+}
+.footer-inner { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+.footer-logo { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--color-forest); }
+.footer-copy { font-size: 13px; color: var(--color-muted); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+.footer-links a {
+  font-size: 13px; color: var(--color-secondary);
+  text-decoration: none; transition: color var(--duration-fast);
+}
+.footer-links a:hover { color: var(--color-forest); }
+
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border-strong); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 32 20" fill="none">
+          <path d="M2 18 Q6 2 16 2 Q26 2 30 18" stroke="var(--color-forest)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="16" cy="10" r="2.5" fill="var(--color-forest)"/>
+          <line x1="7" y1="16" x2="8" y2="16" stroke="var(--color-forest)" stroke-width="1.5"/>
+          <line x1="11" y1="16" x2="12" y2="16" stroke="var(--color-forest)" stroke-width="1.5"/>
+          <line x1="20" y1="16" x2="21" y2="16" stroke="var(--color-forest)" stroke-width="1.5"/>
+          <line x1="24" y1="16" x2="25" y2="16" stroke="var(--color-forest)" stroke-width="1.5"/>
+        </svg>
+      </div>
+      Tramo
+    </a>
+    <nav class="nav-links">
+      <a href="#producto">Producto</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#contacto" class="btn-ghost">Diagnosticar mi cartera →</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="producto">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Inteligencia Operativa Energética
+        </div>
+        <h1 class="display-lg">Cada kWh, en su tramo correcto</h1>
+        <p class="body-lg">Tramo cruza reservas, CUPS, facturas y tarifas para que cada decisión energética tenga evidencia y cada propietario reciba un informe claro del impacto operativo sobre su factura.</p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn-primary">Diagnosticar mi cartera <span class="arrow-icon">→</span></a>
+          <a href="#dashboard" class="btn-ghost" style="font-size:15px; padding:14px 30px;">Ver ejemplo <span class="arrow-icon">↗</span></a>
+        </div>
+        <p style="margin-top:16px;font-size:13px;color:var(--color-muted);">¿Prefieres hablar? <a href="mailto:hola@tramo.energy" style="color:var(--color-forest);font-weight:600;text-decoration:none;">hola@tramo.energy</a></p>
+      </div>
+
+      <!-- INTERACTIVE HERO PANEL -->
+      <div class="hero-panel" style="margin-top: 8px;">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span class="panel-title-dot"></span>
+            Panel de Control · Cartera Activa
+          </div>
+          <div class="panel-meta">MAYO 2026 · 12 propiedades</div>
+        </div>
+        <div class="panel-body">
+          <div class="kpi-row">
+            <div class="kpi-card">
+              <div class="kpi-label">kWh Totales</div>
+              <div class="kpi-value">3.842</div>
+              <div class="kpi-sub">Cartera activa</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Alerta: fuera reserva</div>
+              <div class="kpi-value lime">412</div>
+              <div class="kpi-sub">kWh detectados</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Ahorro Est.</div>
+              <div class="kpi-value" style="color:var(--color-mint)">342 €</div>
+              <div class="kpi-sub">Mes estimado</div>
+            </div>
+          </div>
+
+          <div class="hero-chart-container">
+            <div class="hero-chart-label">
+              Consumo por estado de reserva · 7 días
+              <span class="live">Vista previa</span>
+            </div>
+            <div class="hero-chart">
+              <div class="bar-group"><div class="bar bar-booked" style="height:65%"></div><span class="data-sm" style="font-size:8px;color:var(--color-muted);margin-top:4px;">L</span></div>
+              <div class="bar-group"><div class="bar bar-booked" style="height:78%"></div><span class="data-sm" style="font-size:8px;color:var(--color-muted);margin-top:4px;">M</span></div>
+              <div class="bar-group"><div class="bar bar-alert" style="height:48%"></div><span class="data-sm" style="font-size:8px;color:var(--color-muted);margin-top:4px;">X</span></div>
+              <div class="bar-group"><div class="bar bar-booked" style="height:85%"></div><span class="data-sm" style="font-size:8px;color:var(--color-muted);margin-top:4px;">J</span></div>
+              <div class="bar-group"><div class="bar bar-booked" style="height:58%"></div><span class="data-sm" style="font-size:8px;color:var(--color-muted);margin-top:4px;">V</span></div>
+              <div class="bar-group"><div class="bar bar-idle" style="height:22%"></div><span class="data-sm" style="font-size:8px;color:var(--color-muted);margin-top:4px;">S</span></div>
+              <div class="bar-group"><div class="bar bar-idle" style="height:16%"></div><span class="data-sm" style="font-size:8px;color:var(--color-muted);margin-top:4px;">D</span></div>
+            </div>
+          </div>
+
+          <div class="hero-alert">
+            <span class="hero-alert-dot"></span>
+            <span class="hero-alert-text"><strong>VGO-014</strong> · 4.2 kWh sin reserva activa · Miércoles 13:10–16:40</span>
+            <span class="hero-alert-action">Revisar →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN TRIPTYCH -->
+<section class="pain-section reveal" id="modulos">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">LO QUE TE CUESTA</div>
+      <h2 class="headline-lg">Tres dolores, un origen común</h2>
+      <p class="body-lg">Los problemas energéticos de una cartera turística empiezan cuando nadie atribuye el consumo a lo que realmente ocurre en cada propiedad.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon p1">⚡</div>
+        <h3>Consumo fuera de reserva</h3>
+        <p>Facturas altas sin explicación. El consumo ocurre cuando la propiedad está vacía y nadie lo detecta.</p>
+        <div class="pain-evidence">
+          <strong>Evidencia real</strong>
+          VGO-014 · checkout 11:00<br/>
+          Consumo 13:10–16:40 · 4.2 kWh<br/>
+          <span style="color:var(--color-error)">Acción: revisar termo y regla post-checkout</span>
+        </div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon p2">📊</div>
+        <h3>Tarifa y potencia desajustada</h3>
+        <p>La potencia contratada se hereda, no se gestiona. Pagas de más cada mes sin saberlo.</p>
+        <div class="pain-evidence">
+          <strong>Análisis detectado</strong>
+          Potencia P2 recomendada: 3.3 kW<br/>
+          Actual: 4.6 / 4.6 kW<br/>
+          <span style="color:var(--color-warning)">Potencial ahorro: 342 €/mes</span>
+        </div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon p3">📋</div>
+        <h3>Reportes sin explicación operativa</h3>
+        <p>Los propietarios ven la factura pero no entienden qué se hizo para optimizarla.</p>
+        <div class="pain-evidence">
+          <strong>Informe Abril 2026</strong>
+          412 kWh totales · 3 acciones de gestión<br/>
+          <span style="color:var(--color-success)">42.50 € estimados por acciones defendibles</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM FLOW -->
+<section class="system-section reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">ARQUITECTURA</div>
+      <h2 class="headline-lg">Cómo funciona Tramo</h2>
+      <p class="body-lg">Conectamos tus datos operativos con la capa energética para atribuir cada kWh a su tramo correcto.</p>
+    </div>
+    <div class="system-flow">
+      <div class="system-node">
+        <div class="system-node-icon">🏨</div>
+        <div class="system-node-label">PMS / Reservas</div>
+        <div class="system-node-sub">Check-in/out</div>
+      </div>
+      <div class="system-arrow">→</div>
+      <div class="system-node">
+        <div class="system-node-icon">🔌</div>
+        <div class="system-node-label">CUPS / Datadis</div>
+        <div class="system-node-sub">Consumo real</div>
+      </div>
+      <div class="system-arrow">→</div>
+      <div class="system-node">
+        <div class="system-node-icon">🧠</div>
+        <div class="system-node-label">Motor Tramo</div>
+        <div class="system-node-sub">Atribución kWh</div>
+      </div>
+      <div class="system-arrow">→</div>
+      <div class="system-node">
+        <div class="system-node-icon">⚠️</div>
+        <div class="system-node-label">Alertas</div>
+        <div class="system-node-sub">Fuera reserva</div>
+      </div>
+      <div class="system-arrow">→</div>
+      <div class="system-node">
+        <div class="system-node-icon">📄</div>
+        <div class="system-node-label">Informes</div>
+        <div class="system-node-sub">Propietarios</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="modules-section reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">MÓDULOS</div>
+      <h2 class="headline-lg">Cuatro capacidades, una plataforma</h2>
+      <p class="body-lg">Diseñadas para convertir datos energéticos en decisiones operativas.</p>
+    </div>
+    <div class="modules-grid">
+      <div class="module-card">
+        <div class="module-graphic">
+          <div class="module-mini-chart">
+            <div class="module-mini-bar" style="height:80%"></div>
+            <div class="module-mini-bar" style="height:55%"></div>
+            <div class="module-mini-bar" style="height:90%"></div>
+            <div class="module-mini-bar" style="height:35%"></div>
+            <div class="module-mini-bar" style="height:70%"></div>
+            <div class="module-mini-bar" style="height:50%"></div>
+            <div class="module-mini-bar" style="height:75%"></div>
+          </div>
+        </div>
+        <div class="module-content">
+          <div class="module-badge">MÓDULO 01</div>
+          <h3>Consumo en Tiempo Real</h3>
+          <p>Visibilidad segundo a segundo. Detecta picos de carga y anomalías antes de que lleguen a la factura.</p>
+          <div class="pain-evidence" style="background:var(--color-card)">
+            <strong>VGO-014 · Monitorizado</strong>
+            74% ocupación activa · 4 propiedades con anomalía
+          </div>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-graphic">
+          <div class="module-mini-chart">
+            <div class="module-mini-bar" style="height:85%"></div>
+            <div class="module-mini-bar" style="height:60%"></div>
+            <div class="module-mini-bar" style="height:90%"></div>
+            <div class="module-mini-bar" style="height:40%"></div>
+            <div class="module-mini-bar" style="height:70%"></div>
+            <div class="module-mini-bar" style="height:55%"></div>
+            <div class="module-mini-bar" style="height:80%"></div>
+          </div>
+        </div>
+        <div class="module-content">
+          <div class="module-badge">MÓDULO 02</div>
+          <h3>Tarifa y Potencia</h3>
+          <p>Análisis del histórico para recomendar la potencia óptima y la mejor tarifa según tu perfil real.</p>
+          <div class="pain-evidence" style="background:var(--color-card)">
+            <strong>8 CUPS optimizables</strong>
+            Potencial ahorro: 342,10 €/mes
+          </div>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-graphic">
+          <div class="module-mini-data" style="display:flex;align-items:center;justify-content:center;height:100%;">⏱️<br/>CHECKOUT<br/>+30'</div>
+        </div>
+        <div class="module-content">
+          <div class="module-badge">MÓDULO 03</div>
+          <h3>Reglas por Reserva</h3>
+          <p>Automatización inteligente: apagado post-checkout, ajustes de climatización según ocupación, reglas por franja.</p>
+          <div class="pain-evidence" style="background:var(--color-card)">
+            <strong>3 reglas activas</strong>
+            18% idle consumption reducido esta semana
+          </div>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-graphic">
+          <div class="module-mini-data" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:2px;">📄<br/><strong>ABR 2026</strong><br/><span style="color:var(--color-lime)">42.50 €</span></div>
+        </div>
+        <div class="module-content">
+          <div class="module-badge">MÓDULO 04</div>
+          <h3>Informes para Propietarios</h3>
+          <p>Reporting automático con lenguaje claro. Justifica la eficiencia de tu gestión con datos.</p>
+          <div class="pain-evidence" style="background:var(--color-card)">
+            <strong>Abril 2026</strong>
+            412 kWh · 3 acciones · 42.50 € identificados
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="dashboard-section reveal" id="dashboard">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">VISTA PREVIA</div>
+      <h2 class="headline-lg">Tu cartera, bajo control</h2>
+      <p class="body-lg">Así se ve Tramo en operación real. Cada barra es una propiedad, cada color es una decisión.</p>
+    </div>
+    <div class="dashboard">
+      <div class="dashboard-header">
+        <div class="dashboard-title">Consolidado de Cartera</div>
+        <div class="dashboard-meta">MAYO 2026</div>
+      </div>
+      <div class="dashboard-body">
+        <div class="dashboard-sidebar">
+          <div class="table-row selected"><span><span class="status-dot warn"></span>VGO-014</span><span style="color:var(--color-error);font-size:11px;">Alerta</span></div>
+          <div class="table-row"><span><span class="status-dot ok"></span>COR-007</span><span style="color:var(--color-success);font-size:11px;">Ok</span></div>
+          <div class="table-row"><span><span class="status-dot ok"></span>MLG-221</span><span style="color:var(--color-success);font-size:11px;">Ok</span></div>
+          <div class="table-row"><span><span class="status-dot ok"></span>MAD-045</span><span style="color:var(--color-muted);font-size:11px;">Vacío</span></div>
+          <div class="table-row"><span><span class="status-dot warn"></span>BCN-088</span><span style="color:var(--color-warning);font-size:11px;">Potencia</span></div>
+          <div class="table-row"><span><span class="status-dot ok"></span>SEV-312</span><span style="color:var(--color-success);font-size:11px;">Ok</span></div>
+          <div class="table-row"><span><span class="status-dot ok"></span>VAL-056</span><span style="color:var(--color-success);font-size:11px;">Ok</span></div>
+        </div>
+        <div class="dashboard-main">
+          <div class="main-chart-container">
+            <div class="hero-chart-label" style="color:var(--color-muted);">
+              Curva de Consumo por Propiedad · kWh/día
+              <span class="live" style="color:var(--color-pine);">Actualizado</span>
+            </div>
+            <div class="main-chart">
+              <div class="main-bar-group"><div class="main-bar" style="height:50%;background:var(--color-lime)"><span class="main-bar-tooltip">VGO · 14.2 kWh</span></div></div>
+              <div class="main-bar-group"><div class="main-bar" style="height:70%;background:var(--color-mint)"><span class="main-bar-tooltip">COR · 19.8 kWh</span></div></div>
+              <div class="main-bar-group"><div class="main-bar" style="height:40%;background:var(--color-mint)"><span class="main-bar-tooltip">MLG · 11.3 kWh</span></div></div>
+              <div class="main-bar-group"><div class="main-bar" style="height:25%;background:var(--color-border)"><span class="main-bar-tooltip">MAD · 7.1 kWh</span></div></div>
+              <div class="main-bar-group"><div class="main-bar" style="height:65%;background:var(--color-lime)"><span class="main-bar-tooltip">BCN · 18.4 kWh</span></div></div>
+              <div class="main-bar-group"><div class="main-bar" style="height:55%;background:var(--color-mint)"><span class="main-bar-tooltip">SEV · 15.6 kWh</span></div></div>
+              <div class="main-bar-group"><div class="main-bar" style="height:35%;background:var(--color-mint)"><span class="main-bar-tooltip">VAL · 9.9 kWh</span></div></div>
+              <div class="main-bar-group"><div class="main-bar" style="height:45%;background:var(--color-lime)"><span class="main-bar-tooltip">ZAR · 12.8 kWh</span></div></div>
+              <div class="main-bar-group"><div class="main-bar" style="height:80%;background:var(--color-mint)"><span class="main-bar-tooltip">PMI · 22.6 kWh</span></div></div>
+              <div class="main-bar-group"><div class="main-bar" style="height:30%;background:var(--color-border)"><span class="main-bar-tooltip">ALI · 8.5 kWh</span></div></div>
+              <div class="main-bar-group"><div class="main-bar" style="height:60%;background:var(--color-mint)"><span class="main-bar-tooltip">BIO · 17.0 kWh</span></div></div>
+              <div class="main-bar-group"><div class="main-bar" style="height:15%;background:var(--color-border)"><span class="main-bar-tooltip">GRX · 4.2 kWh</span></div></div>
+            </div>
+          </div>
+          <div class="alerts-row">
+            <div class="alert-mini">
+              <div class="label-caps" style="color:var(--color-pine);margin-bottom:6px;">Recomendación Tarifaria</div>
+              <div style="font-size:14px;font-weight:600;">8 CUPS con mejora detectada</div>
+              <div style="font-size:11px;color:var(--color-muted);margin-top:4px;">Ahorro est.: 342,10 €/mes</div>
+            </div>
+            <div class="alert-mini">
+              <div class="label-caps" style="color:var(--color-error);margin-bottom:6px;">Cola de Alertas</div>
+              <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;margin-top:4px;">
+                <span>🔴 VGO-014: Sobrecarga A/C</span>
+                <span>🟠 MAD-045: Sensor offline</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-section reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">CONFIANZA</div>
+      <h2 class="headline-lg">Seguridad y Transparencia</h2>
+      <p class="body-lg">Tus datos son tuyos. Nosotros solo los leemos para darte inteligencia operativa.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <h3 class="headline-md"><span class="trust-icon ok">✓</span> Datos que usamos</h3>
+        <ul>
+          <li><span style="color:var(--color-pine)">·</span> Conexión API con tu PMS (solo lectura)</li>
+          <li><span style="color:var(--color-pine)">·</span> Acceso a Datadis vía autorización CUPS</li>
+          <li><span style="color:var(--color-pine)">·</span> Telemetría de sensores (Zigbee/WiFi)</li>
+        </ul>
+      </div>
+      <div class="trust-card">
+        <h3 class="headline-md"><span class="trust-icon no">✗</span> Datos que NO pedimos</h3>
+        <ul>
+          <li><span style="color:var(--color-border-strong)">·</span> Credenciales de comercializadoras</li>
+          <li><span style="color:var(--color-border-strong)">·</span> Datos bancarios</li>
+          <li><span style="color:var(--color-border-strong)">·</span> Información personal de huéspedes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="trust-pilot-banner">
+      <p class="label-caps" style="color:var(--color-pine);margin-bottom:4px;">Piloto Seguro</p>
+      <p style="font-size:15px;font-weight:500;">Diagnostica sin instalación. Evaluamos tu potencial solo con tus datos de CUPS y PMS.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + FORM (forest bg) -->
+<section class="cta-section reveal" id="contacto">
+  <div class="container">
+    <div class="section-header" style="margin-bottom:36px;">
+      <h2 class="headline-lg">Solicita un diagnóstico de cartera</h2>
+      <p class="body-lg">Sin compromiso, sin instalación, sin letra pequeña.</p>
+    </div>
+    <div class="form-card">
+      <form class="form-grid">
+        <div class="form-field"><label>Nombre Completo</label><input type="text" placeholder="Tu nombre"/></div>
+        <div class="form-field"><label>Empresa</label><input type="text" placeholder="Nombre de tu empresa"/></div>
+        <div class="form-field"><label>Email Corporativo</label><input type="email" placeholder="tu@empresa.com"/></div>
+        <div class="form-field"><label>Nº Alojamientos</label><input type="number" placeholder="Ej: 15"/></div>
+        <div class="form-field"><label>Ciudad / Región</label><input type="text" placeholder="Ej: Madrid"/></div>
+        <div class="form-field"><label>PMS que usas</label><input type="text" placeholder="Hostaway, Guesty..."/></div>
+        <div class="form-field">
+          <label>¿Acceso a Datadis?</label>
+          <div class="form-radio-group">
+            <label><input type="radio" name="datadis" style="accent-color:var(--color-forest)"/> Sí</label>
+            <label><input type="radio" name="datadis" style="accent-color:var(--color-forest)"/> No lo sé</label>
+          </div>
+        </div>
+        <div class="form-field">
+          <label>¿Usas baterías?</label>
+          <div class="form-radio-group">
+            <label><input type="radio" name="batteries" style="accent-color:var(--color-forest)"/> Sí</label>
+            <label><input type="radio" name="batteries" style="accent-color:var(--color-forest)"/> No</label>
+          </div>
+        </div>
+        <div class="form-field form-col-span">
+          <label>Mensaje / Dolor principal</label>
+          <textarea rows="3" placeholder="Cuéntanos qué te preocupa..."></textarea>
+        </div>
+        <div class="form-col-span">
+          <button type="submit" class="form-submit">Solicitar diagnóstico</button>
+          <p class="form-disclaimer">No enviamos credenciales ni facturas por este formulario. En la llamada revisamos qué datos tienes disponibles y cómo preparar un piloto seguro.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Tramo</div>
+    <p class="footer-copy">Cada kWh, en su tramo correcto.</p>
+    <div class="footer-links">
+      <a href="#">Privacidad</a>
+      <a href="#">Términos</a>
+      <a href="#">Contacto</a>
+    </div>
+    <p class="footer-copy" style="font-size:11px;">© 2026 Tramo · consumo atribuido por reserva y propietario</p>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Pulse random hero bar
+setInterval(() => {
+  const bars = document.querySelectorAll('.hero-chart .bar');
+  if (!bars.length) return;
+  const b = bars[Math.floor(Math.random() * bars.length)];
+  const origFilter = b.style.filter;
+  b.style.filter = 'brightness(1.6)';
+  b.style.boxShadow = '0 0 30px var(--color-forest)';
+  setTimeout(() => { b.style.filter = origFilter; b.style.boxShadow = ''; }, 700);
+}, 3800);
+
+// Live KPI update
+setInterval(() => {
+  const kpi = document.querySelector('.kpi-value.lime');
+  if (kpi) {
+    const v = parseInt(kpi.textContent);
+    kpi.textContent = Math.max(385, Math.min(435, v + Math.floor((Math.random()-0.5)*16)));
+  }
+}, 5500);
+</script>
+
+</body>
+</html>

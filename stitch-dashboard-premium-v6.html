@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="gl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EnergyOS — Panel Premium</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            canvas: '#FAFAFA', card: '#FFFFFF', line: '#E5E5E5', ink: '#18181B', muted: '#71717A',
+            primary: '#10B981', success: '#4CAF50', warning: '#F59E0B', danger: '#EF4444',
+            fincas: '#1565C0', apartments: '#F57C00', arbitraxe: '#7B1FA2', asesor: '#2E7D32'
+          },
+          fontFamily: { sans: ['Inter','sans-serif'], display: ['Plus Jakarta Sans','sans-serif'], mono: ['JetBrains Mono','monospace'] },
+          boxShadow: { premium: '0 1px 2px rgba(24,24,27,.06), 0 8px 24px rgba(24,24,27,.04)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    body { background:#FAFAFA; color:#18181B; font-family:Inter, sans-serif; }
+    .hairline { border: 1px solid #E5E5E5; }
+    .card { background:#fff; border:1px solid #E5E5E5; border-radius:12px; box-shadow:0 1px 2px rgba(24,24,27,.06),0 8px 24px rgba(24,24,27,.04); }
+    .mono { font-family:'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+    .chart-line { stroke:#10B981; stroke-width:3; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    .chart-fill { fill:url(#areaGradient); }
+    .grid-line { stroke:#E5E5E5; stroke-width:1; }
+  </style>
+</head>
+<body class="min-h-screen bg-canvas">
+  <div class="flex min-h-screen">
+    <aside class="fixed left-0 top-0 z-20 h-screen w-[260px] border-r border-line bg-white/95 backdrop-blur">
+      <div class="flex h-16 items-center gap-3 border-b border-line px-5">
+        <div class="flex h-9 w-9 items-center justify-center rounded-xl border border-emerald-200 bg-emerald-50 text-xl">🦎</div>
+        <div>
+          <div class="font-display text-[17px] font-extrabold tracking-tight">EnergyOS</div>
+          <div class="text-xs font-medium text-muted">Xestión enerxética</div>
+        </div>
+      </div>
+      <nav class="px-3 py-4 text-[14px] font-medium">
+        <a class="mb-1 flex items-center gap-3 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2.5 text-ink" href="#"><span>📊</span><span>Panel</span></a>
+        <a class="mb-1 flex items-center gap-3 rounded-lg px-3 py-2.5 text-muted hover:bg-zinc-50 hover:text-ink" href="#"><span>🏢</span><span>Fincas</span></a>
+        <a class="mb-1 flex items-center gap-3 rounded-lg px-3 py-2.5 text-muted hover:bg-zinc-50 hover:text-ink" href="#"><span>🏠</span><span>Apartamentos</span></a>
+        <a class="mb-1 flex items-center gap-3 rounded-lg px-3 py-2.5 text-muted hover:bg-zinc-50 hover:text-ink" href="#"><span>⚡</span><span>Arbitraxe</span></a>
+        <a class="mb-1 flex items-center gap-3 rounded-lg px-3 py-2.5 text-muted hover:bg-zinc-50 hover:text-ink" href="#"><span>🤖</span><span>Asesor IA</span></a>
+      </nav>
+      <div class="absolute bottom-0 w-full border-t border-line p-3">
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-muted hover:bg-zinc-50 hover:text-ink" href="#"><span>⚙️</span><span>Configuración</span></a>
+      </div>
+    </aside>
+
+    <main class="ml-[260px] flex-1">
+      <header class="sticky top-0 z-10 h-16 border-b border-line bg-white/90 backdrop-blur">
+        <div class="mx-auto flex h-full max-w-7xl items-center justify-between gap-4 px-6">
+          <div class="relative w-full max-w-md">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-muted">🔍</span>
+            <input class="h-10 w-full rounded-lg border border-line bg-[#FAFAFA] pl-9 pr-3 text-sm outline-none transition placeholder:text-zinc-400 focus:border-emerald-300 focus:bg-white focus:ring-4 focus:ring-emerald-100" placeholder="Buscar comunidades, pisos ou alertas..." />
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="relative h-10 rounded-lg border border-line bg-white px-3 text-sm shadow-sm">🔔<span class="absolute -right-1 -top-1 rounded-full bg-danger px-1.5 py-0.5 text-[10px] font-bold text-white">3</span></button>
+            <button class="h-10 rounded-lg border border-line bg-white px-3 font-display text-sm font-bold shadow-sm">MG</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="mx-auto max-w-7xl px-6 py-6">
+        <div class="mb-5 flex items-end justify-between">
+          <div>
+            <p class="mb-1 text-xs font-bold uppercase tracking-[.18em] text-primary">Panel de control</p>
+            <h1 class="font-display text-3xl font-extrabold tracking-[-.03em] text-ink">Visión operativa das comunidades</h1>
+          </div>
+          <button class="rounded-lg bg-ink px-4 py-2.5 text-sm font-semibold text-white shadow-sm">Exportar informe</button>
+        </div>
+
+        <div class="grid grid-cols-4 gap-4">
+          <div class="card p-5"><div class="mb-3 text-sm font-semibold text-muted">Comunidades</div><div class="mono text-3xl font-bold">12</div><div class="mt-3 inline-flex rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-fincas">+2 este mes</div></div>
+          <div class="card p-5"><div class="mb-3 text-sm font-semibold text-muted">Consumo total</div><div class="mono text-3xl font-bold">45.2<span class="text-base text-muted"> MWh</span></div><div class="mt-3 inline-flex rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-primary">−8.4% optimizado</div></div>
+          <div class="card p-5"><div class="mb-3 text-sm font-semibold text-muted">Aforro mensual</div><div class="mono text-3xl font-bold">8.420<span class="text-base text-muted"> €</span></div><div class="mt-3 inline-flex rounded-full bg-purple-50 px-2.5 py-1 text-xs font-semibold text-arbitraxe">arbitraxe activo</div></div>
+          <div class="card p-5"><div class="mb-3 text-sm font-semibold text-muted">Alertas abertas</div><div class="mono text-3xl font-bold">3</div><div class="mt-3 inline-flex rounded-full bg-amber-50 px-2.5 py-1 text-xs font-semibold text-warning">revisión pendente</div></div>
+        </div>
+
+        <div class="mt-4 grid grid-cols-12 gap-4">
+          <section class="card col-span-8 p-5">
+            <div class="mb-5 flex items-center justify-between">
+              <div><h2 class="font-display text-lg font-bold">Consumo e prezo horario</h2><p class="text-sm text-muted">Últimos 30 días · MWh fronte a custo medio</p></div>
+              <div class="flex gap-2 text-xs font-semibold"><span class="rounded-full bg-emerald-50 px-2.5 py-1 text-primary">Consumo</span><span class="rounded-full bg-zinc-100 px-2.5 py-1 text-muted">OMIE</span></div>
+            </div>
+            <svg viewBox="0 0 760 285" class="h-[285px] w-full">
+              <defs><linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#10B981" stop-opacity=".22"/><stop offset="100%" stop-color="#10B981" stop-opacity="0"/></linearGradient></defs>
+              <path class="grid-line" d="M30 40 H730 M30 95 H730 M30 150 H730 M30 205 H730 M30 260 H730"/>
+              <path class="chart-fill" d="M30 210 C90 180 105 195 155 150 C215 96 250 122 300 105 C360 84 390 130 448 116 C515 98 536 62 590 79 C650 98 680 54 730 43 L730 260 L30 260 Z"/>
+              <path class="chart-line" d="M30 210 C90 180 105 195 155 150 C215 96 250 122 300 105 C360 84 390 130 448 116 C515 98 536 62 590 79 C650 98 680 54 730 43"/>
+              <path d="M30 228 C120 238 165 220 235 226 C314 233 365 210 435 218 C514 226 576 204 642 211 C683 216 710 203 730 198" stroke="#A1A1AA" stroke-width="2" fill="none" stroke-dasharray="5 6" stroke-linecap="round"/>
+              <g class="mono" fill="#71717A" font-size="11"><text x="30" y="278">1 Mai</text><text x="355" y="278">15 Mai</text><text x="692" y="278">30 Mai</text></g>
+            </svg>
+          </section>
+
+          <aside class="card col-span-4 overflow-hidden">
+            <div class="border-b border-line p-5"><h2 class="font-display text-lg font-bold">Asesor IA</h2><p class="text-sm text-muted">Oportunidades detectadas</p></div>
+            <div class="p-5">
+              <div class="rounded-xl border border-green-200 bg-green-50 p-4"><div class="mb-2 text-sm font-bold text-asesor">Aforro proxectado</div><div class="mono text-3xl font-bold text-ink">8.500€</div><div class="text-sm font-medium text-muted">ao ano en 4 comunidades</div></div>
+              <div class="mt-4 space-y-3 text-sm">
+                <div class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-primary"></span><p><b>Calle Mayor 15:</b> mover ACS a franxa val.</p></div>
+                <div class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-warning"></span><p><b>Ronda Fonts 5:</b> revisar potencia punta.</p></div>
+                <div class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-fincas"></span><p><b>Avda Galicia 42:</b> autoconsumo viable.</p></div>
+              </div>
+              <button class="mt-5 w-full rounded-lg border border-line bg-white px-4 py-2.5 text-sm font-semibold shadow-sm">Ver recomendacións</button>
+            </div>
+          </aside>
+        </div>
+
+        <div class="mt-4 grid grid-cols-12 gap-4">
+          <section class="card col-span-8 overflow-hidden">
+            <div class="flex items-center justify-between border-b border-line p-5"><div><h2 class="font-display text-lg font-bold">Comunidades monitorizadas</h2><p class="text-sm text-muted">Estado, consumo e aforro estimado</p></div><button class="rounded-lg border border-line bg-white px-3 py-2 text-sm font-semibold shadow-sm">Filtrar</button></div>
+            <table class="w-full text-left text-sm">
+              <thead class="bg-zinc-50 text-xs uppercase tracking-wide text-muted"><tr><th class="px-5 py-3">Comunidade</th><th class="px-5 py-3">Estado</th><th class="px-5 py-3">Consumo</th><th class="px-5 py-3">Aforro</th></tr></thead>
+              <tbody class="divide-y divide-line">
+                <tr><td class="px-5 py-4 font-semibold">Calle Mayor 15</td><td class="px-5 py-4"><span class="rounded-full bg-green-50 px-2.5 py-1 text-xs font-bold text-success">🟢 Óptimo</span></td><td class="mono px-5 py-4">12.8 MWh</td><td class="mono px-5 py-4 text-primary">2.140€</td></tr>
+                <tr><td class="px-5 py-4 font-semibold">Avda Galicia 42</td><td class="px-5 py-4"><span class="rounded-full bg-green-50 px-2.5 py-1 text-xs font-bold text-success">🟢 Estable</span></td><td class="mono px-5 py-4">9.6 MWh</td><td class="mono px-5 py-4 text-primary">1.780€</td></tr>
+                <tr><td class="px-5 py-4 font-semibold">Ronda Fonts 5</td><td class="px-5 py-4"><span class="rounded-full bg-amber-50 px-2.5 py-1 text-xs font-bold text-warning">🟡 Revisar</span></td><td class="mono px-5 py-4">15.1 MWh</td><td class="mono px-5 py-4 text-primary">3.050€</td></tr>
+              </tbody>
+            </table>
+          </section>
+          <section class="card col-span-4 p-5">
+            <h2 class="font-display text-lg font-bold">Mix de carteira</h2><p class="mb-5 text-sm text-muted">Distribución por área</p>
+            <div class="space-y-4">
+              <div><div class="mb-2 flex justify-between text-sm font-semibold"><span class="text-fincas">Fincas</span><span class="mono">48%</span></div><div class="h-2 rounded-full bg-zinc-100"><div class="h-2 w-[48%] rounded-full bg-fincas"></div></div></div>
+              <div><div class="mb-2 flex justify-between text-sm font-semibold"><span class="text-apartments">Apartamentos</span><span class="mono">27%</span></div><div class="h-2 rounded-full bg-zinc-100"><div class="h-2 w-[27%] rounded-full bg-apartments"></div></div></div>
+              <div><div class="mb-2 flex justify-between text-sm font-semibold"><span class="text-arbitraxe">Arbitraxe</span><span class="mono">15%</span></div><div class="h-2 rounded-full bg-zinc-100"><div class="h-2 w-[15%] rounded-full bg-arbitraxe"></div></div></div>
+              <div><div class="mb-2 flex justify-between text-sm font-semibold"><span class="text-asesor">Asesor</span><span class="mono">10%</span></div><div class="h-2 rounded-full bg-zinc-100"><div class="h-2 w-[10%] rounded-full bg-asesor"></div></div></div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

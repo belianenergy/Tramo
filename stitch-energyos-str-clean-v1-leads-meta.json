@@ -1,0 +1,23 @@
+{
+  "key": "leads",
+  "title": "EnergyOS - Cualificación de Leads",
+  "projectId": "3511007415582919208",
+  "projectName": "projects/3511007415582919208",
+  "projectUrl": "https://stitch.withgoogle.com/projects/3511007415582919208",
+  "screenId": "53a3d3632c8343efb852dc75211aa028",
+  "screenName": "projects/3511007415582919208/screens/53a3d3632c8343efb852dc75211aa028",
+  "width": "2560",
+  "height": "2048",
+  "htmlCodeName": "projects/3511007415582919208/files/8b55740c6e574a36b31705132dd7ee83",
+  "screenshotName": "projects/3511007415582919208/files/e392b7ea87334e4db7723d903fa7b1d2",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzNjNjcxMjBmYTZmOTQ5YTg5ZThjMDNmM2I1MGZjMzAxEgsSBxCg9KiWmAMYAZIBIwoKcHJvamVjdF9pZBIVQhMzNTExMDA3NDE1NTgyOTE5MjA4&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uinkZq19r6lF2l1vEBg492qdWXMrHLRiR4zb85ciFQKs2G9wP9rf3oyJtnB5EFm6y3HOB_7iiNE5g8cC0Q7UfJawVWEnkX_AHwWpOx2HE9kAo9lzyYuzno0tgnvyHPaDIE_NOWVmPSq2XCPNIM2oS0ABM4mlyG1-GXRT4QaQhMBMtYh_zgcL5vmyh_LLWFoCUCYzDCoRHoKOTwY1jQe8BHEDJg10dp25Loq2C4TRdOH6Rx-xDDR2OMYHg",
+  "generatedAt": "2026-05-16T00:29:32.769Z",
+  "sourcePromptFile": "STITCH_PROMPT_ENERGYOS_STR_CLEAN_V1.md",
+  "localFiles": {
+    "response": "stitch-energyos-str-clean-v1-leads-response.json",
+    "meta": "stitch-energyos-str-clean-v1-leads-meta.json",
+    "html": "stitch-energyos-str-clean-v1-leads.html",
+    "stitchPng": "stitch-energyos-str-clean-v1-leads-stitch.png"
+  }
+}

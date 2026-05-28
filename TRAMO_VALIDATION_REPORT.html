@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tramo — Proceso de Validación · 17 Maio 2026</title>
+<style>
+  :root {
+    --paper: #fcf9f8;
+    --surface: #fffaf5;
+    --card: #ffffff;
+    --border: #ead8cd;
+    --strong: #dbc1b3;
+    --ink: #1c1b1b;
+    --muted: #554338;
+    --secondary: #755c4f;
+    --orange: #e6813a;
+    --deep: #984700;
+    --success: #0f766e;
+    --error: #ba1a1a;
+    --green-bg: #e6f4ea;
+    --red-bg: #fce8e6;
+    --amber-bg: #fef7e0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: var(--paper); color: var(--ink); line-height:1.6; }
+  .container { max-width: 900px; margin:0 auto; padding: 40px 20px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 32px; }
+  h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 32px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+  .subtitle { color: var(--secondary); font-size: 14px; }
+  h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 22px; font-weight: 600; color: var(--ink); margin: 36px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; margin: 20px 0 8px; }
+  .h1-final { 
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 28px; font-weight: 600; color: var(--ink); 
+    background: var(--surface); padding: 20px 24px; border-radius: 16px; border: 1px solid var(--border);
+    margin: 16px 0; text-align: center;
+  }
+  .badge { display:inline-block; padding:2px 10px; border-radius:20px; font-size:12px; font-weight:600; }
+  .badge-pass { background: var(--green-bg); color: var(--success); }
+  .badge-warn { background: var(--amber-bg); color: #996800; }
+  .badge-fail { background: var(--red-bg); color: var(--error); }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 12px 0; }
+  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:14px; }
+  th { background: var(--surface); text-align:left; padding:10px 12px; font-weight:600; border-bottom:2px solid var(--strong); color: var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:0.05em; }
+  td { padding:10px 12px; border-bottom:1px solid var(--border); }
+  tr:last-child td { border-bottom:none; }
+  .metric { font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 600; color: var(--orange); }
+  .divider { border:none; border-top:1px solid var(--border); margin: 24px 0; }
+  ul { padding-left: 20px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  .code { font-family: 'JetBrains Mono', monospace; font-size: 13px; background: var(--surface); padding: 2px 6px; border-radius: 4px; }
+  .check-row { display:flex; align-items:center; gap:8px; margin:6px 0; }
+  .check-ok { color: var(--success); font-weight:600; }
+  .check-ko { color: var(--error); font-weight:600; }
+  .check-warn { color: #996800; font-weight:600; }
+  .note { background: var(--surface); padding: 16px; border-radius: 8px; margin: 16px 0; font-size: 14px; color: var(--muted); border-left: 3px solid var(--orange); }
+  .phase-header { display:flex; align-items:center; gap:12px; }
+  .phase-num { width:32px; height:32px; border-radius:50%; background: var(--orange); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0; }
+  .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media (max-width:600px) { .grid-2 { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<header>
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+    <div>
+      <h1>Tramo — Proceso de Validación</h1>
+      <div class="subtitle">17 de maio de 2026 · EnergyOS → Tramo · 4 loops · 16 revisións</div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <span class="badge badge-pass">Build ✓</span>
+      <span class="badge badge-pass">TS ✓</span>
+      <span class="badge badge-pass">Stitch ✓</span>
+    </div>
+  </div>
+</header>
+
+<!-- HEADLINE FINAL -->
+<div class="h1-final">
+  Convierte la energía de tu cartera turística en margen operativo.
+</div>
+
+<div style="text-align:center;color:var(--muted);margin-bottom:24px;">
+  Tramo cruza reservas, CUPS/Datadis, facturas y tarifas para que cada kWh tenga explicación,<br>
+  cada decisión tenga evidencia y cada propietario reciba un informe claro.
+</div>
+
+<!-- RESUMO DE LOOPS -->
+<h2>1. Sumario de Loops</h2>
+
+<table>
+  <tr>
+    <th>Loop</th>
+    <th>CEO</th>
+    <th>Design</th>
+    <th>QA</th>
+    <th>Stitch</th>
+  </tr>
+  <tr>
+    <td><strong>Loop 1</strong></td>
+    <td><span class="badge badge-warn">Cambios</span></td>
+    <td><span class="badge badge-warn">11 gaps</span></td>
+    <td><span class="badge badge-pass">Listo</span></td>
+    <td><span class="badge badge-fail">Timeout</span></td>
+  </tr>
+  <tr>
+    <td><strong>Loop 2</strong></td>
+    <td><span class="badge badge-warn">Cambios</span></td>
+    <td><span class="badge badge-warn">Cambios</span></td>
+    <td><span class="badge badge-fail">RED</span></td>
+    <td><span class="badge badge-warn">Parcial</span></td>
+  </tr>
+  <tr>
+    <td><strong>Loop 3</strong></td>
+    <td colspan="3" style="text-align:center"><span class="badge badge-pass">Correccións aplicadas</span></td>
+    <td><span class="badge badge-warn">Landing V3</span></td>
+  </tr>
+  <tr>
+    <td><strong>Loop 4</strong></td>
+    <td><span class="badge badge-pass">Aprobado</span></td>
+    <td><span class="badge badge-pass">Corrixido</span></td>
+    <td><span class="badge badge-pass">Listo</span></td>
+    <td><span class="badge badge-pass">Novo proxecto</span></td>
+  </tr>
+</table>
+
+<!-- CAMBIOS APLICADOS -->
+<h2>2. Cambios Aplicados por Loop</h2>
+
+<div class="grid-2">
+  <div class="card">
+    <div class="phase-header"><div class="phase-num">1</div><h3 style="margin:0">Loop 1</h3></div>
+    <ul>
+      <li>✔ Validación do concepto "Tramo"</li>
+      <li>✔ Identificados 11 gaps de deseño</li>
+      <li>✔ Estado do código documentado</li>
+      <li>✘ Stitch timeout (resolto en Loop 2)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="phase-header"><div class="phase-num">2</div><h3 style="margin:0">Loop 2</h3></div>
+    <ul>
+      <li>✔ Headline profesional definido</li>
+      <li>✔ Evidence row para hero panel</li>
+      <li>✔ CTA "Ver dashboard demo"</li>
+      <li>✔ Shadow recipe documentada</li>
+      <li>🔴 Lead API mismatch detectado</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="phase-header"><div class="phase-num">3</div><h3 style="margin:0">Loop 3</h3></div>
+    <ul>
+      <li>✔ Lead API arranxada</li>
+      <li>✔ EnergyOS → Tramo completo</li>
+      <li>✔ Privacy helper copy engadida</li>
+      <li>✔ Mobile overflow guard</li>
+      <li>✔ Copy interno eliminado</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="phase-header"><div class="phase-num">4</div><h3 style="margin:0">Loop 4</h3></div>
+    <ul>
+      <li>✔ Headline definitivo aprobado</li>
+      <li>✔ Logo monoline SVG (sen Bolt)</li>
+      <li>✔ Novo proxecto Stitch creado</li>
+      <li>✔ Landing xerada con prompt final</li>
+      <li>✔ Build + TS OK</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ESTADO FINAL -->
+<h2>3. Estado Final do Proxecto</h2>
+
+<table>
+  <tr><th>Compoñente</th><th>Estado</th><th>Detalle</th></tr>
+  <tr><td>Headline</td><td><span class="badge badge-pass">✓</span></td><td>"Convierte la energía de tu cartera turística en margen operativo"</td></tr>
+  <tr><td>Build</td><td><span class="badge badge-pass">✓</span></td><td>Next.js 15.5.15 · 19 rutas · 0 erros</td></tr>
+  <tr><td>TypeScript</td><td><span class="badge badge-pass">✓</span></td><td><code>npx tsc --noEmit</code> limpo</td></tr>
+  <tr><td>Logo</td><td><span class="badge badge-pass">✓</span></td><td>SVG monoline segmented bracket + orange dot</td></tr>
+  <tr><td>EnergyOS visible</td><td><span class="badge badge-pass">0</span></td><td>Todo renomeado a "Tramo" en superficies públicas</td></tr>
+  <tr><td>Lead API</td><td><span class="badge badge-pass">✓</span></td><td>Acepta todos os valores de Tramo</td></tr>
+  <tr><td>Privacy copy</td><td><span class="badge badge-pass">✓</span></td><td>Visible cerca do submit</td></tr>
+  <tr><td>CTA secondary</td><td><span class="badge badge-pass">✓</span></td><td>"Ver dashboard demo"</td></tr>
+  <tr><td>Mobile overflow</td><td><span class="badge badge-pass">✓</span></td><td><code>overflow-x: hidden</code> + <code>max-width: 100vw</code></td></tr>
+  <tr><td>Stitch landing</td><td><span class="badge badge-pass">✓</span></td><td>Proxecto <code class="code">11712095792485091370</code> · Screen xerada</td></tr>
+  <tr><td>Stitch pantallas</td><td><span class="badge badge-warn">parcial</span></td><td>8/8 en v2 · Landing final rexenerada en novo proxecto</td></tr>
+</table>
+
+<!-- STITCH -->
+<h2>4. Proxecto Stitch</h2>
+
+<div class="card">
+  <table>
+    <tr><th>Item</th><th>Valor</th></tr>
+    <tr><td>Proxecto final</td><td><code class="code">projects/11712095792485091370</code></td></tr>
+    <tr><td>Landing screen</td><td><code class="code">assets/d0ce71fc35fd44549396328a2080f493</code></td></tr>
+    <tr><td>Proxecto v2 (8 páxinas)</td><td><code class="code">projects/14459937659544842449</code></td></tr>
+    <tr><td>Pantallas v2</td><td>Landing, Dashboard, Operations, Apartments, Tariff & Power, Owner Report, Leads, Pilot Settings</td></tr>
+  </table>
+</div>
+
+<!-- SISTEMA VISUAL -->
+<h2>5. Sistema Visual Final</h2>
+
+<div class="card">
+  <table>
+    <tr><th>Token</th><th>Valor</th><th>Uso</th></tr>
+    <tr><td><code>--paper</code></td><td><span style="display:inline-block;width:16px;height:16px;background:#fcf9f8;border:1px solid #ead8cd;border-radius:3px;vertical-align:middle;margin-right:6px;"></span>#fcf9f8</td><td>Fondo principal</td></tr>
+    <tr><td><code>--surface</code></td><td><span style="display:inline-block;width:16px;height:16px;background:#fffaf5;border:1px solid #ead8cd;border-radius:3px;vertical-align:middle;margin-right:6px;"></span>#fffaf5</td><td>Superficies cálidas</td></tr>
+    <tr><td><code>--card</code></td><td><span style="display:inline-block;width:16px;height:16px;background:#ffffff;border:1px solid #ead8cd;border-radius:3px;vertical-align:middle;margin-right:6px;"></span>#ffffff</td><td>Tarxetas</td></tr>
+    <tr><td><code>--ink</code></td><td><span style="display:inline-block;width:16px;height:16px;background:#1c1b1b;border-radius:3px;vertical-align:middle;margin-right:6px;"></span>#1c1b1b</td><td>Texto principal</td></tr>
+    <tr><td><code>--orange</code></td><td><span style="display:inline-block;width:16px;height:16px;background:#e6813a;border-radius:3px;vertical-align:middle;margin-right:6px;"></span>#e6813a</td><td>Acento, CTAs</td></tr>
+    <tr><td><code>--deep</code></td><td><span style="display:inline-block;width:16px;height:16px;background:#984700;border-radius:3px;vertical-align:middle;margin-right:6px;"></span>#984700</td><td>Hover, activo</td></tr>
+  </table>
+  <br>
+  <strong>Tipografía:</strong> Plus Jakarta Sans (headlines 600), Inter (body 400), JetBrains Mono (métricas)<br>
+  <strong>Radius:</strong> 24px marketing, 16px app panels, 10-12px forms<br>
+  <strong>Shadow:</strong> Cards: <code class="code">0 1px 3px rgba(28,27,27,.06)</code> · Hero panel: <code class="code">0 16px 60px rgba(86,37,0,.08)</code>
+</div>
+
+<!-- QA CHECKS -->
+<h2>6. QA Final Gate</h2>
+
+<div class="card">
+  <div class="check-row"><span class="check-ok">✓</span> <strong>Build:</strong> Next.js 15.5.15 · 19 rutas · compilado sen erros</div>
+  <div class="check-row"><span class="check-ok">✓</span> <strong>TypeScript:</strong> <code>npx tsc --noEmit</code> limpo</div>
+  <div class="check-row"><span class="check-ok">✓</span> <strong>EnergyOS visible:</strong> 0 ocorrencias en texto público</div>
+  <div class="check-row"><span class="check-ok">✓</span> <strong>Lead API:</strong> Acepta todos os valores do schema Tramo</div>
+  <div class="check-row"><span class="check-ok">✓</span> <strong>Privacy copy:</strong> "No envíes credenciales ni facturas por este formulario"</div>
+  <div class="check-row"><span class="check-ok">✓</span> <strong>CTA secondary:</strong> "Ver dashboard demo"</div>
+  <div class="check-row"><span class="check-ok">✓</span> <strong>Logo:</strong> SVG monoline segmented bracket (sen Bolt/Lucide)</div>
+  <div class="check-row"><span class="check-ok">✓</span> <strong>Mobile guard:</strong> <code>overflow-x: hidden; max-width: 100vw</code></div>
+  <div class="check-row"><span class="check-warn">⚠</span> <strong>Playwright:</strong> Non configurado · HTML reports no lugar</div>
+</div>
+
+<!-- PENDENTE -->
+<h2>7. Pendente para Fase de Construción</h2>
+
+<div class="card">
+  <ul>
+    <li><strong>🔴 Playwright screenshots</strong> — Configurar <code>playwright.config.ts</code> con tests de smoke desktop/mobile</li>
+    <li><strong>🟡 Stitch pantallas completas</strong> — Re-xerar as 7 pantallas restantes no novo proxecto co prompt corrixido</li>
+    <li><strong>🟡 Dark section constraint</strong> — Verificar que só hai unha banda ink opcional</li>
+    <li><strong>⚪ Refinamento mobile</strong> — Probas reais en 375px e 390px</li>
+    <li><strong>⚪ Métricas con datos reais</strong> — Substituír mock data por datos creibles de exemplo</li>
+  </ul>
+</div>
+
+<!-- NOTA FINAL -->
+<div class="note">
+  <strong>🔜 Seguinte paso:</strong> co teu OK como CEO gate final, lanzo <code class="code">/codex goal</code> a Codex co <code class="code">TRAMO_BLUEPRINT.md</code> e <code class="code">CODEX_GOAL_TRAMO_BUILD.md</code> para construír o MVP completo con todas as páxinas e APIs.
+</div>
+
+<hr class="divider">
+<div style="text-align:center;color:var(--muted);font-size:12px;">
+  Tramo · 17/05/2026 · Proceso de validación · 4 loops · 16 revisións de subaxentes
+</div>
+
+</div>
+</body>
+</html>

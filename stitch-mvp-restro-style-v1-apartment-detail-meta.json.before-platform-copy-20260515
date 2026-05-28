@@ -1,0 +1,24 @@
+{
+  "key": "apartment-detail",
+  "requestedName": "detalle-apartamento",
+  "title": "Detalle apartamento — EnergyOS",
+  "projectId": "11820050226044719534",
+  "projectName": "projects/11820050226044719534",
+  "screenId": "97fcd530680b4297a7994262f7bd15a9",
+  "screenName": "projects/11820050226044719534/screens/97fcd530680b4297a7994262f7bd15a9",
+  "width": "2560",
+  "height": "2876",
+  "htmlCodeName": "projects/11820050226044719534/files/f72c63f571b34786b4823aedb52bdb00",
+  "screenshotName": "projects/11820050226044719534/files/41f3463389064a89a60113f39bb51471",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzZiY2Q1M2ZlZjQ2YzQ1OTliZWQ2YWM5NjJmMmZlZTA4EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ugOZvq1wI3Wm-PIpJcyWC-lapkee5QxclIgblafVsENHFy46KM35Iy2tjKzcrN2JXc98O8IfqG6ouXma8R_jk5T4rRyT6ESTHIdnIZz5ja5nlGjLGdDMV-RC2pn9y9-7HPbJ2H0TibxCYabq_7ZzdnMYokk4rwvDjJHJmUxT-vtTd9DntVh0jvBt8S2NFR1tRB1OZXTs_ZWQqoEAhb7YFOmJ_xFB-qYKLtWbc331rAInQZ208FTQZxlOyAn",
+  "generatedAt": "2026-05-12T19:40:20.093Z",
+  "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+  "localFiles": {
+    "response": "stitch-mvp-restro-style-v1-apartment-detail-response.json",
+    "meta": "stitch-mvp-restro-style-v1-apartment-detail-meta.json",
+    "html": "stitch-mvp-restro-style-v1-apartment-detail.html",
+    "stitchPng": "stitch-mvp-restro-style-v1-apartment-detail-stitch.png",
+    "previews": []
+  }
+}

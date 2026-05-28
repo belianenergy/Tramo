@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+console.log('Launching browser...');
+const browser = await chromium.launch({ headless: true });
+const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+console.log('Loading page...');
+await page.goto('http://localhost:3000', { waitUntil: 'networkidle', timeout: 30000 });
+await page.waitForTimeout(3000);
+console.log('Taking screenshot...');
+await page.screenshot({ path: '/home/mauro/.openclaw/workspace-local/tramo-landing-v3.png', fullPage: true });
+await browser.close();
+console.log('OK: /home/mauro/.openclaw/workspace-local/tramo-landing-v3.png');

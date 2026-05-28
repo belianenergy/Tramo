@@ -1,0 +1,19 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"name\":\"projects/15922441372002838639\",\"title\":\"Tramo Final — Energy Operations for Tourist Portfolios\",\"visibility\":\"PRIVATE\",\"projectType\":\"PROJECT_DESIGN\",\"origin\":\"STITCH\"}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "name": "projects/15922441372002838639",
+      "origin": "STITCH",
+      "projectType": "PROJECT_DESIGN",
+      "title": "Tramo Final — Energy Operations for Tourist Portfolios",
+      "visibility": "PRIVATE"
+    }
+  }
+}

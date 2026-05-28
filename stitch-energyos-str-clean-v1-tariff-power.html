@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Optimización de Tarifa y Potencia - EnergyOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#191c1e",
+                    "inverse-surface": "#2d3133",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#00201d",
+                    "on-primary-fixed-variant": "#00504a",
+                    "surface": "#f7f9fb",
+                    "surface-container": "#eceef0",
+                    "outline-variant": "#bdc9c6",
+                    "on-secondary-fixed": "#131b2e",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#d3e4fe",
+                    "primary-fixed-dim": "#80d5cb",
+                    "on-primary-container": "#a3faef",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "surface-tint": "#006a63",
+                    "secondary-container": "#dae2fd",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#deeaff",
+                    "surface-container-high": "#e6e8ea",
+                    "inverse-primary": "#80d5cb",
+                    "background": "#f7f9fb",
+                    "primary-fixed": "#9cf2e8",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-variant": "#e0e3e5",
+                    "on-secondary-container": "#5c647a",
+                    "secondary-fixed": "#dae2fd",
+                    "primary": "#005c55",
+                    "secondary": "#565e74",
+                    "surface-bright": "#f7f9fb",
+                    "on-surface-variant": "#3e4947",
+                    "on-error": "#ffffff",
+                    "on-background": "#191c1e",
+                    "primary-container": "#0f766e",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#d8dadc",
+                    "tertiary-container": "#5a6a81",
+                    "tertiary": "#425268",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "outline": "#6e7977"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "gutter": "20px",
+                    "container-margin": "40px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "metric-lg": ["JetBrains Mono"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "metric-md": ["JetBrains Mono"],
+                    "label-caps": ["Inter"],
+                    "headline-sm": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "metric-lg": ["28px", {"lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+                    "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "metric-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col py-lg bg-surface-container-low border-r border-outline-variant fixed left-0 top-0 w-[280px] h-screen z-50">
+<div class="px-gutter mb-xl flex items-center justify-between">
+<div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">EnergyOS</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mission Control</p>
+</div>
+<img alt="Manager Profile Avatar" class="w-10 h-10 rounded-full border border-outline-variant" data-alt="A small circular avatar placeholder image for a user profile, showing a professional corporate headshot. High quality, well lit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfltmfxBvjgSt-EqLzFyLcdNfbe9NIQfFfp3fqM2SvwVWFYkL_fB7gSMoMsgwmn4nbkaJzpczrPQBnr_nNeOuJzC8eOJLK8x-RyFs08me06f3sq0kGVO9DdQZp5GKiKsAKrlyWxdjNNZKbOiXVT35uINTtznLOqQ6Y1dTjrSlDpueKj1Zvx3WMrZKDUeHp2jAxwC_vbXuXqGdASiJYbW2CFR7zmeAGyr2LQX1G36Me80rNRdwB_BdwTeXWlAbsFFlfL_eFUrHsm7A"/>
+</div>
+<div class="flex-1 overflow-y-auto">
+<ul class="flex flex-col gap-xs px-md">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="apartment">apartment</span>
+<span class="font-label-caps text-label-caps">Apartamentos</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="engineering">engineering</span>
+<span class="font-label-caps text-label-caps">Operaciones</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="info">info</span>
+<span class="font-label-caps text-label-caps">Detalle</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="bolt">bolt</span>
+<span class="font-label-caps text-label-caps">Tarifa/Potencia</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+<span class="font-label-caps text-label-caps">Leads</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps">Configuración</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="assessment">assessment</span>
+<span class="font-label-caps text-label-caps">Informe propietario</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="px-md mt-auto">
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-sm rounded-lg hover:bg-primary-fixed-variant transition-colors flex items-center justify-center gap-sm"><span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>Añadir Propiedad</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-[280px] min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 w-full bg-surface-container-lowest border-b border-outline-variant flex items-center justify-between px-gutter h-16">
+<div class="flex items-center gap-md">
+<button class="md:hidden text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<!-- Search on left -->
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-sm bg-surface-container-low border border-transparent rounded-full font-body-sm text-body-sm focus:bg-surface-container-lowest focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition-all w-64" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary rounded-full">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary rounded-full">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 p-gutter md:p-container-margin max-w-[1200px] mx-auto w-full flex flex-col gap-xl">
+<!-- Page Header -->
+<div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-sm">Tarifa y Potencia</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Optimización prudente basada en datos reales de facturación y consumo.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Main Comparison Section (Spans 8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg shadow-[0px_4px_12px_rgba(15,23,42,0.04)] relative overflow-hidden">
+<!-- Decorative bg -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-lg relative z-10">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Comparativa de Planes</h3>
+<div class="flex items-center gap-sm mt-xs">
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-surface-container-low border border-outline-variant font-label-caps text-label-caps text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="verified">verified</span>
+                                        Validado con factura
+                                    </span>
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps">Recomendación pendiente de confirmar</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-primary uppercase block mb-xs">Ahorro estimado anual</span>
+<span class="font-metric-lg text-metric-lg text-primary">342€</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md relative z-10">
+<!-- Current Contract -->
+<div class="border border-outline-variant rounded-lg p-md bg-surface-container-low opacity-80">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant mb-md uppercase tracking-wider border-b border-outline-variant pb-xs">Contrato Actual</h4>
+<div class="flex flex-col gap-md">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tarifa</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Plan Online</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Potencia Contratada</span>
+<span class="font-metric-md text-metric-md text-on-surface">4.6 kW</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Precio Energía</span>
+<span class="font-metric-md text-metric-md text-on-surface">0.18 €/kWh</span>
+</div>
+</div>
+</div>
+<!-- Recommended Contract -->
+<div class="border border-primary rounded-lg p-md bg-surface-container-lowest shadow-[0_0_0_1px_rgba(0,92,85,1)]">
+<h4 class="font-label-caps text-label-caps text-primary mb-md uppercase tracking-wider border-b border-outline-variant pb-xs flex items-center justify-between">
+                                    Optimización Recomendada
+                                    <span class="material-symbols-outlined text-[16px]" data-icon="star">star</span>
+</h4>
+<div class="flex flex-col gap-md">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tarifa</span>
+<span class="font-body-md text-body-md font-semibold text-primary">Plan Ahorro Pro</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Potencia Optimizada</span>
+<div class="flex items-center gap-xs"><span class="material-symbols-outlined text-[16px] text-primary" data-icon="arrow_downward">arrow_downward</span><span class="font-metric-md text-metric-md text-primary font-bold">3.4 kW</span></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Precio Energía</span>
+<div class="flex items-center gap-xs"><span class="material-symbols-outlined text-[16px] text-primary" data-icon="arrow_downward">arrow_downward</span><span class="font-metric-md text-metric-md text-primary font-bold">0.14 €/kWh</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Breakdown Table -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden shadow-[0px_4px_12px_rgba(15,23,42,0.04)]">
+<div class="p-md border-b border-outline-variant bg-surface-container-low">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Desglose de Impacto Anual</h3>
+</div>
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="p-md font-label-caps text-label-caps text-on-surface-variant uppercase">Concepto</th>
+<th class="p-md font-label-caps text-label-caps text-on-surface-variant uppercase text-right">Actual Estimado</th>
+<th class="p-md font-label-caps text-label-caps text-on-surface-variant uppercase text-right">Nuevo Estimado</th>
+<th class="p-md font-label-caps text-label-caps text-on-surface-variant uppercase text-right">Diferencia</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="p-md font-body-sm text-body-sm text-on-surface">Término de potencia</td>
+<td class="p-md font-metric-md text-metric-md text-on-surface-variant text-right">245€</td>
+<td class="p-md font-metric-md text-metric-md text-on-surface text-right">181€</td>
+<td class="p-md font-metric-md text-metric-md text-primary font-bold text-right">-64€</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="p-md font-body-sm text-body-sm text-on-surface">Término de energía</td>
+<td class="p-md font-metric-md text-metric-md text-on-surface-variant text-right">980€</td>
+<td class="p-md font-metric-md text-metric-md text-on-surface text-right">762€</td>
+<td class="p-md font-metric-md text-metric-md text-primary font-bold text-right">-218€</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-md font-body-sm text-body-sm text-on-surface">Impuestos y cargos regulados</td>
+<td class="p-md font-metric-md text-metric-md text-on-surface-variant text-right">258€</td>
+<td class="p-md font-metric-md text-metric-md text-on-surface text-right">198€</td>
+<td class="p-md font-metric-md text-metric-md text-primary font-bold text-right">-60€</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Sidebar Context (Spans 4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-lg">
+<!-- Justification Chart -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg shadow-[0px_4px_12px_rgba(15,23,42,0.04)]">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Justificación de Potencia</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Picos máximos demandados (últimos 12 meses).</p>
+<!-- Pseudo Chart Area -->
+<div class="h-32 w-full bg-surface-container flex items-end justify-between px-sm pt-sm rounded border border-outline-variant relative overflow-hidden">
+<!-- Threshold Line -->
+<div class="absolute w-full h-[1px] border-t border-dashed border-primary top-[30%] left-0 z-10"></div>
+<span class="absolute top-[20%] left-xs font-metric-md text-[10px] text-primary bg-surface-container-lowest px-1 rounded z-20">3.4 kW (Recomendada)</span>
+<!-- Bars -->
+<div class="w-[8%] bg-tertiary-container rounded-t h-[40%]"></div>
+<div class="w-[8%] bg-tertiary-container rounded-t h-[45%]"></div>
+<div class="w-[8%] bg-tertiary-container rounded-t h-[60%]"></div>
+<div class="w-[8%] bg-tertiary-container rounded-t h-[50%]"></div>
+<div class="w-[8%] bg-tertiary-container rounded-t h-[30%]"></div>
+<div class="w-[8%] bg-tertiary-container rounded-t h-[65%]"></div>
+<div class="w-[8%] bg-tertiary-container rounded-t h-[55%]"></div>
+<div class="w-[8%] bg-tertiary-container rounded-t h-[40%]"></div>
+<div class="w-[8%] bg-tertiary-container rounded-t h-[50%]"></div>
+<div class="w-[8%] bg-tertiary-container rounded-t h-[45%]"></div>
+</div>
+<div class="flex justify-between mt-xs px-xs">
+<span class="font-label-caps text-[10px] text-on-surface-variant">Ene</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Dic</span>
+</div>
+<div class="mt-md bg-surface-container-low p-sm rounded-lg border border-outline-variant flex gap-sm items-start">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="lightbulb">lightbulb</span>
+<p class="font-body-sm text-[13px] text-on-surface-variant leading-tight">El pico máximo histórico fue de 3.2 kW en Julio. Reducir la potencia a 3.4 kW deja margen de seguridad y maximiza el ahorro fijo.</p>
+</div>
+</div>
+<!-- Action Bar / Sticky Bottom on Mobile -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg shadow-[0px_4px_12px_rgba(15,23,42,0.04)] flex flex-col gap-md sticky top-20">
+<button class="w-full bg-primary text-on-primary font-headline-sm text-[16px] py-md rounded-lg hover:bg-primary-fixed-variant transition-colors shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-primary flex justify-center items-center gap-sm">
+                            Aplicar optimización
+                            <span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span>
+</button>
+<button class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md py-sm rounded-lg border border-outline-variant hover:bg-surface-container-low transition-colors flex justify-center items-center gap-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant" data-icon="receipt_long">receipt_long</span>
+                            Ver detalle de factura
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#88d982",
+                    "tertiary-fixed": "#9eefff",
+                    "surface-variant": "#e3e2e2",
+                    "on-background": "#1b1c1c",
+                    "on-primary-fixed": "#002204",
+                    "on-primary-container": "#cbffc2",
+                    "on-secondary-fixed": "#2e1500",
+                    "on-surface-variant": "#40493d",
+                    "secondary-fixed": "#ffdcc2",
+                    "error-container": "#ffdad6",
+                    "outline": "#707a6c",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#88d982",
+                    "primary": "#0d631b",
+                    "on-error": "#ffffff",
+                    "surface-container": "#efeded",
+                    "on-primary-fixed-variant": "#005312",
+                    "on-tertiary-fixed": "#001f24",
+                    "secondary-fixed-dim": "#ffb77a",
+                    "secondary": "#8f4e00",
+                    "background": "#fbf9f9",
+                    "surface": "#fbf9f9",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#303031",
+                    "inverse-on-surface": "#f2f0f0",
+                    "surface-tint": "#1b6d24",
+                    "on-surface": "#1b1c1c",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f5f3f3",
+                    "on-secondary-fixed-variant": "#6d3a00",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#a3f69c",
+                    "on-secondary-container": "#623400",
+                    "primary-container": "#2e7d32",
+                    "tertiary-fixed-dim": "#55d7ed",
+                    "tertiary": "#005e6b",
+                    "surface-dim": "#dbdad9",
+                    "tertiary-container": "#007988",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e3e2e2",
+                    "surface-bright": "#fbf9f9",
+                    "on-tertiary-container": "#d4f7ff",
+                    "secondary-container": "#ff8f00",
+                    "outline-variant": "#bfcaba",
+                    "surface-container-high": "#e9e8e7",
+                    "on-tertiary-fixed-variant": "#004e59"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "display": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #FAFAFA; }
+        .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-on-background fixed top-0 left-0 w-full h-16 z-50 flex items-center justify-between px-6 border-b border-outline-variant dark:border-outline shadow-sm">
+<div class="flex items-center gap-8">
+<span class="text-xl font-headline font-bold text-primary dark:text-primary-fixed">EnergyOS Pro</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-surface-variant font-body text-label-md hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80 px-2 py-1">Panel</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body text-label-md hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80 px-2 py-1">Fincas</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary font-body text-label-md cursor-pointer active:opacity-80 px-2 py-1">Apartamentos</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJOBfjRzQ0qhqdj0QOXfkVmfgB3fi0Jw4bQJ4dPNVnfjJ_1zAYD0dkqThx_M26fyhb4a5ACJs_8f1p4z8r4cPchDAhlUUf33doGrQ8X5AB-th_wDKt_vAysKaF6ziPD6bRtQUMA_TcNZsAs9nOTh-mJ0TE1w1xb2p4Xf_qsCnxoO1rKyYDJ6Tt7XIgaU9h7VJ_b8vqBlzUNhPADp242_zH5W-zkzx5Xx5-SRDD5ra9BN79vR2Cg-a4TVSHcp0eQQ1wJ4rfq5AV6qk"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="bg-surface dark:bg-on-background fixed left-0 top-16 bottom-0 w-[260px] flex flex-col p-4 z-40 overflow-y-auto border-r border-outline-variant dark:border-outline hidden lg:flex">
+<div class="flex flex-col gap-1 mb-8">
+<div class="flex items-center gap-3 px-4 py-3">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="domain">domain</span>
+<div>
+<h2 class="font-headline font-bold text-primary">EnergyOS Pro</h2>
+<p class="text-[10px] text-on-surface-variant">Reliable Stewardship</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="text-on-surface-variant dark:text-surface-variant flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg font-body text-label-lg">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Panel</span>
+</div>
+<div class="text-on-surface-variant dark:text-surface-variant flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg font-body text-label-lg">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span>Fincas</span>
+</div>
+<div class="text-primary dark:text-primary-fixed font-bold bg-primary-fixed/10 dark:bg-primary-container/20 rounded-lg flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 font-body text-label-lg">
+<span class="material-symbols-outlined" data-icon="apartment">apartment</span>
+<span>Apartamentos</span>
+</div>
+<div class="text-on-surface-variant dark:text-surface-variant flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg font-body text-label-lg">
+<span class="material-symbols-outlined" data-icon="swap_horiz">swap_horiz</span>
+<span>Arbitraje</span>
+</div>
+<div class="text-on-surface-variant dark:text-surface-variant flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg font-body text-label-lg">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span>Asesor</span>
+</div>
+<div class="pt-4 mt-4 border-t border-outline-variant">
+<div class="text-on-surface-variant dark:text-surface-variant flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg font-body text-label-lg">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Configuración</span>
+</div>
+<div class="text-on-surface-variant dark:text-surface-variant flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg font-body text-label-lg">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Ayuda</span>
+</div>
+</div>
+</nav>
+<div class="mt-auto px-4 py-6">
+<button class="w-full bg-primary-fixed text-on-primary-fixed font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-sm">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+                Lead Generation
+            </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="lg:ml-[260px] pt-16 min-h-screen">
+<div class="max-w-[1280px] mx-auto p-6 md:p-8">
+<!-- Page Header -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<h1 class="text-3xl font-headline font-extrabold text-on-surface tracking-tight">Apartamentos</h1>
+<p class="text-on-surface-variant mt-1">Gestión de propiedades de alquiler</p>
+</div>
+<button class="bg-secondary-container hover:opacity-90 text-on-secondary-container font-bold px-6 py-3 rounded-lg flex items-center gap-2 self-start md:self-auto transition-all shadow-sm">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                    Nueva Propiedad
+                </button>
+</header>
+<!-- Search and Filter Bar -->
+<div class="bg-white border border-outline-variant rounded-xl p-4 mb-8 flex flex-col md:flex-row gap-4 items-center">
+<div class="relative flex-1 w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface rounded-lg border-none focus:ring-2 focus:ring-secondary text-sm" placeholder="Buscar por nombre o dirección..." type="text"/>
+</div>
+<div class="flex gap-2 w-full md:w-auto">
+<button class="flex-1 md:flex-none px-4 py-2 border border-outline-variant rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="filter_list">filter_list</span>
+                        Filtros
+                    </button>
+<button class="flex-1 md:flex-none px-4 py-2 border border-outline-variant rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="sort">sort</span>
+                        Ordenar
+                    </button>
+</div>
+</div>
+<!-- Apartment Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-white rounded-xl border border-outline-variant p-0 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern, high-end apartment interior with floor-to-ceiling windows overlooking a green cityscape. The room features minimalist Scandinavian furniture in soft neutral tones and warm wood accents. Soft, natural daylight floods the space, creating a serene and professional atmosphere that aligns with a clean B2B energy management aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxsD42ON5DGWBIqKp8SWjCFDCTJJA3FkBq2J01EiddDh1prDlIatX_P-X5fLq8v3v3a86cbBrzaIlyqD46yQJD7BBq2DGV3SJkI4h_0UB9XpENcAWtTShWX6CHnP0CYsq1LOrYQt9jtLfzF_iwtZqCH6ivsfE6TCNj2e6dmtLFPFrkQiEj01NQsjtmezaHy7ODEpUaFq5nobRrUg08D8-B7CFSFpeg9K_6uw_QlMhV-5v9srgiI4aZAqQNNqwUxixMZB7G9wr34C8"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-secondary flex items-center gap-1 shadow-sm border border-secondary-container">
+<span class="material-symbols-outlined text-sm" data-icon="warning" data-weight="fill">warning</span>
+                            2 Alertas
+                        </div>
+</div>
+<div class="p-6">
+<div class="mb-4">
+<h3 class="font-headline font-bold text-lg text-on-surface">Ático Terraza del Sol</h3>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                                Calle Mayor 45, 4º B
+                            </p>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="space-y-1">
+<span class="text-[10px] uppercase tracking-wider text-outline font-bold">Inquilino actual</span>
+<p class="text-sm font-semibold flex items-center gap-2">
+<img alt="Tenant" class="w-5 h-5 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd0pg2rSxlylyau9IKolN8yw9vOXfaXnQE1evfovXL4nR1e_o26uGIyKBWOw_Dgh2g-EfOLkbZfiygKDmgJ0pygRnNiYyFH0ilAtKF4_XuFKS-mR5CDRAa8ULphRiwWsGaUW0xyJOQt7zWpVw4-d4I62oznKjvWddpRILUjM3HmTNwaiMSM2G1VuQFoV1_wQwKhd5eBQ71JZETlgolOK_h5r0Jh7MpLYtxot0Bkd6S1vQqcOjjBe1q4GVZGM3BaA480EERWfmLprU"/>
+                                    Carlos Ruiz
+                                </p>
+</div>
+<div class="space-y-1">
+<span class="text-[10px] uppercase tracking-wider text-outline font-bold">Contrato</span>
+<span class="block px-2 py-0.5 bg-primary-fixed/20 text-on-primary-fixed-variant text-[11px] font-bold rounded w-fit">Activo</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4 border border-outline-variant/50">
+<div class="flex justify-between items-end mb-2">
+<span class="text-xs text-on-surface-variant font-medium">Consumo mensual</span>
+<span class="text-lg font-headline font-bold text-secondary">342.5 <span class="text-xs font-normal">kWh</span></span>
+</div>
+<div class="w-full bg-outline-variant rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+<div class="mt-6 flex items-center justify-between pt-4 border-t border-outline-variant">
+<button class="text-primary font-bold text-sm hover:underline">Ver detalles</button>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-high rounded-lg transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high rounded-lg transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-xl border border-outline-variant p-0 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist studio apartment with high ceilings and industrial-chic elements like exposed light grey brick and polished concrete floors. The space is styled with soft textures, plants, and high-tech smart energy meters visible on the wall. Bright, cool natural lighting emphasizes a modern, eco-friendly lifestyle suitable for a professional B2B platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQazoMEBXNsJcpvcZPpNA1jquDsRAd7Aq3RGs7QlwOMMVy1gm_5o3VOY2LOW7JjrfJstvjtRv8TePZ-cmredCfFkL703HjCgs3GS4ieMsyojKeq3irE9dA6EJ_dCvYxkCgVQ8rR9wuEs8nyc6BlyFHwl_0o606QmiQKbO7ctqSNPH0O9TBjR-a8ahWxplUcI6N_WTBJ1eKMQ0VR9Qbx5gNEBvLPGXrbK_T1c7hclLt6EUJd_Vnf8-iZcinUX7SelZyKlg7und8K1M"/>
+<div class="absolute top-4 right-4 bg-primary-fixed/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-on-primary-fixed-variant flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" data-weight="fill">check_circle</span>
+                            Estable
+                        </div>
+</div>
+<div class="p-6">
+<div class="mb-4">
+<h3 class="font-headline font-bold text-lg text-on-surface">Loft Industrial Centro</h3>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                                Av. de la Libertad 12, Bajo A
+                            </p>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="space-y-1">
+<span class="text-[10px] uppercase tracking-wider text-outline font-bold">Inquilino actual</span>
+<p class="text-sm font-semibold flex items-center gap-2">
+<img alt="Tenant" class="w-5 h-5 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhDR3xNJfpSe52XamKZL5UOJY3yn_ydJMgfZjF5mSbXWrYbF-HnkXTRFJY3XoSWUVKQsJLtdk3b3oNmbEocVwL3ottX5dD7dB5Xh8Rj-PcirTRuyVdueXKUx4kIyWywTKCq1ZFdjuOahwHc3IWxb4x5e-dOkPuc-rndt25lQ0dYDwAuxVDap23OP8SAJxWRzZ--NSeIQAP00jpQSTpiApvpYPDi8F5lp-JmIRlUXbIymsuH1QITroN34wPmNKw4yjkKZ28lZajmGg"/>
+                                    Marta Sánchez
+                                </p>
+</div>
+<div class="space-y-1">
+<span class="text-[10px] uppercase tracking-wider text-outline font-bold">Contrato</span>
+<span class="block px-2 py-0.5 bg-primary-fixed/20 text-on-primary-fixed-variant text-[11px] font-bold rounded w-fit">Activo</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4 border border-outline-variant/50">
+<div class="flex justify-between items-end mb-2">
+<span class="text-xs text-on-surface-variant font-medium">Consumo mensual</span>
+<span class="text-lg font-headline font-bold text-secondary">210.8 <span class="text-xs font-normal">kWh</span></span>
+</div>
+<div class="w-full bg-outline-variant rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 40%;"></div>
+</div>
+</div>
+<div class="mt-6 flex items-center justify-between pt-4 border-t border-outline-variant">
+<button class="text-primary font-bold text-sm hover:underline">Ver detalles</button>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-high rounded-lg transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high rounded-lg transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-xl border border-outline-variant p-0 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" data-alt="A bright and airy contemporary living room in a luxury apartment complex. The design features soft grey textiles, white walls, and elegant furniture. Large glass doors open to a balcony with lush green plants. The mood is calm and efficient, with high-key lighting that emphasizes the clean, professional, and reliable stewardship of the energy management platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaJ8q_l3McQoU9e_9LX5BYoJAbjwnW4xDrM_mW4leBJSmYC-KbUVynwzBnHsgLPnXYgiFM9zFXEyfpRTgXC6jdysjEVv_Ahs4PTJJwOEMaC-_gvHm5P45HhipCAPMm31Rl0HAQyqAjXiW12afu_WwmTfBt96GoKKZMJlQPjgEzntbOwd0nf5DGflpQfufiGAJsniY8AP34XD_zfr8VNwdgQ_K3456hjEwx976O6oe6ueqr-e0GjVacZ-rjrKjaT8ewrVJ98upR3S4"/>
+<div class="absolute inset-0 bg-black/5"></div>
+<div class="absolute top-4 right-4 bg-on-surface/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-white flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="event_busy">event_busy</span>
+                            Sin Inquilino
+                        </div>
+</div>
+<div class="p-6">
+<div class="mb-4">
+<h3 class="font-headline font-bold text-lg text-on-surface">Residencial Los Olivos</h3>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                                Calle de las Huertas 8, 2º A
+                            </p>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="space-y-1">
+<span class="text-[10px] uppercase tracking-wider text-outline font-bold">Inquilino actual</span>
+<p class="text-sm font-semibold italic text-outline">
+                                    N/A
+                                </p>
+</div>
+<div class="space-y-1">
+<span class="text-[10px] uppercase tracking-wider text-outline font-bold">Contrato</span>
+<span class="block px-2 py-0.5 bg-surface-variant text-on-surface-variant text-[11px] font-bold rounded w-fit">Pendiente</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4 border border-outline-variant/50">
+<div class="flex justify-between items-end mb-2">
+<span class="text-xs text-on-surface-variant font-medium">Consumo mensual</span>
+<span class="text-lg font-headline font-bold text-secondary">45.2 <span class="text-xs font-normal">kWh</span></span>
+</div>
+<div class="w-full bg-outline-variant rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 8%;"></div>
+</div>
+</div>
+<div class="mt-6 flex items-center justify-between pt-4 border-t border-outline-variant">
+<button class="text-primary font-bold text-sm hover:underline">Gestionar listado</button>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-high rounded-lg transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high rounded-lg transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Dashboard Stats Summary (Bento Style) -->
+<section class="mt-12">
+<h2 class="text-xl font-headline font-bold mb-6">Resumen del Portfolio</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-white p-6 rounded-xl border border-outline-variant shadow-sm md:col-span-2">
+<h4 class="text-sm font-bold text-on-surface-variant mb-4">Tendencia de Consumo Global</h4>
+<div class="h-32 flex items-end gap-2 px-2">
+<div class="flex-1 bg-primary-container/20 rounded-t-lg h-[40%]"></div>
+<div class="flex-1 bg-primary-container/20 rounded-t-lg h-[55%]"></div>
+<div class="flex-1 bg-primary-container/20 rounded-t-lg h-[45%]"></div>
+<div class="flex-1 bg-secondary-container/40 rounded-t-lg h-[70%]"></div>
+<div class="flex-1 bg-primary-container/20 rounded-t-lg h-[50%]"></div>
+<div class="flex-1 bg-primary-container/20 rounded-t-lg h-[60%]"></div>
+<div class="flex-1 bg-primary-container h-[85%]"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] text-outline font-bold uppercase">
+<span>Lun</span><span>Mar</span><span>Mie</span><span>Jue</span><span>Vie</span><span>Sab</span><span>Dom</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary" data-icon="account_balance_wallet">account_balance_wallet</span>
+<h4 class="text-sm font-bold text-on-surface-variant mt-2">Ingresos Estimados</h4>
+</div>
+<div class="mt-4">
+<span class="text-2xl font-headline font-extrabold">12.450€</span>
+<p class="text-xs text-primary font-bold flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+                                +4.2% vs mes ant.
+                            </p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+<h4 class="text-sm font-bold text-on-surface-variant mt-2">Eficiencia Media</h4>
+</div>
+<div class="mt-4">
+<span class="text-2xl font-headline font-extrabold">A+</span>
+<p class="text-xs text-on-surface-variant mt-1">Excelente desempeño</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Floating Action Button (Contextual) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 active:scale-95 transition-all md:hidden">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</body></html>

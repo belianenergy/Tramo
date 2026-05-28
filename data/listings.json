@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "name": "Apartamento Centro Histórico",
+    "location": "Rúa da Praza 5, Santiago de Compostela",
+    "monthlyKwh": 320,
+    "monthlyCost": 54.40,
+    "status": "optimized",
+    "tenant": "María García",
+    "units": 1,
+    "cups": "ES0031400000000001AB",
+    "contractStatus": "active"
+  },
+  {
+    "id": "2",
+    "name": "Piso Beiro",
+    "location": "Avda Madrid 42, Santiago de Compostela",
+    "monthlyKwh": 280,
+    "monthlyCost": 47.60,
+    "status": "optimized",
+    "tenant": null,
+    "units": 1,
+    "cups": "ES0031400000000002CD",
+    "contractStatus": "inactive"
+  },
+  {
+    "id": "3",
+    "name": "Estudio zona universitaria",
+    "location": "Rúa Veiga 15, Santiago de Compostela",
+    "monthlyKwh": 180,
+    "monthlyCost": 30.60,
+    "status": "optimized",
+    "tenant": "Pablo Rodríguez",
+    "units": 1,
+    "cups": "ES0031400000000003EF",
+    "contractStatus": "active"
+  },
+  {
+    "id": "4",
+    "name": "Apartamento Costa",
+    "location": "Rúa Canceas 28, Ferrol",
+    "monthlyKwh": 450,
+    "monthlyCost": 76.50,
+    "status": "warning",
+    "tenant": "Ana López",
+    "units": 1,
+    "cups": "ES0031400000000004GH",
+    "contractStatus": "active"
+  },
+  {
+    "id": "5",
+    "name": "Casa Rural Monforte",
+    "location": "Praza Maior 3, Monforte de Lemos",
+    "monthlyKwh": 520,
+    "monthlyCost": 88.40,
+    "status": "alert",
+    "tenant": null,
+    "units": 1,
+    "cups": "ES0031400000000005IJ",
+    "contractStatus": "pending"
+  }
+]

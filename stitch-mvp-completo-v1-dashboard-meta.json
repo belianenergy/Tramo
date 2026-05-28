@@ -1,0 +1,27 @@
+{
+  "key": "dashboard",
+  "requestedName": "dashboard-operativo",
+  "title": "Dashboard operativo — EnergyOS",
+  "projectId": "13332484261109626353",
+  "projectName": "projects/13332484261109626353",
+  "screenId": "d08564914ecc4eca97bd1bf51c795fc1",
+  "screenName": "projects/13332484261109626353/screens/d08564914ecc4eca97bd1bf51c795fc1",
+  "width": "2560",
+  "height": "2200",
+  "htmlCodeName": "projects/13332484261109626353/files/d80a1b1abba54ed0bba7fb84a47912f6",
+  "screenshotName": "projects/13332484261109626353/files/2736478f12dd4fd9a6df05a468afa887",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzA2YTYzYTQ2YWJlYzQ5M2ViOTBhN2FlNjVmMDAwZTdlEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMzMzMjQ4NDI2MTEwOTYyNjM1Mw&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ujqOXqPVWNWYcPHqa3M4IDrtLk5Js_ZD2TkzyTx20RvA8WcdFzJZjRjC8bScg-BKQcCEexLrYoT16CIrUdH8XDtMCjz_e-XdJjV-r4BYkIXHJ9jm59Ng6yHxjdFViui_EcI6a5GkDfJrQKdRZojHuRBSeqs6GT22JXdDrjksUic7QseexAzTz3w3hWSv4vHo92BChmuQE41hc_Pxd37-d0LZSlZMExNMJt-20-NcJZF9vYAvO25M-SBZ_zx",
+  "generatedAt": "2026-05-12T19:06:57.654Z",
+  "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_V1.md",
+  "localFiles": {
+    "response": "stitch-mvp-completo-v1-dashboard-response.json",
+    "meta": "stitch-mvp-completo-v1-dashboard-meta.json",
+    "html": "stitch-mvp-completo-v1-dashboard.html",
+    "stitchPng": "stitch-mvp-completo-v1-dashboard-stitch.png",
+    "previews": [
+      "stitch-mvp-completo-v1-dashboard-preview-mobile-375.png",
+      "stitch-mvp-completo-v1-dashboard-preview-desktop-1440.png"
+    ]
+  }
+}

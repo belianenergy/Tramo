@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apartamento Sol - Detalle Operativo | EnergyOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "tertiary": "#425268",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "secondary-container": "#dae2fd",
+                        "tertiary-container": "#5a6a81",
+                        "primary-fixed": "#9cf2e8",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "surface-variant": "#e0e3e5",
+                        "secondary": "#565e74",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-secondary-container": "#5c647a",
+                        "surface-tint": "#006a63",
+                        "on-primary-fixed": "#00201d",
+                        "inverse-primary": "#80d5cb",
+                        "primary-fixed-dim": "#80d5cb",
+                        "outline": "#6e7977",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-surface": "#2d3133",
+                        "background": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#191c1e",
+                        "surface-container": "#eceef0",
+                        "outline-variant": "#bdc9c6",
+                        "on-tertiary-container": "#deeaff",
+                        "on-primary-fixed-variant": "#00504a",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "surface-bright": "#f7f9fb",
+                        "primary-container": "#0f766e",
+                        "on-primary-container": "#a3faef",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "secondary-fixed": "#dae2fd",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary": "#005c55",
+                        "on-surface-variant": "#3e4947",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "surface": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "24px",
+                        "container-margin": "40px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "base": "4px",
+                        "gutter": "20px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "metric-lg": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "metric-md": ["JetBrains Mono"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "metric-lg": ["28px", {"lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "metric-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen overflow-hidden flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-full py-md px-sm bg-surface dark:bg-inverse-surface border-r border-outline-variant dark:border-outline fixed left-0 top-0 w-[280px] z-20">
+<div class="flex items-center gap-sm px-sm mb-xl">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed text-[28px]" style="font-variation-settings: 'FILL' 1;">electric_bolt</span>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">EnergyOS</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Short-Term Rental OpEx</p>
+</div>
+</div>
+<nav class="flex-1 space-y-xs overflow-y-auto pr-xs custom-scrollbar">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-variant/10 hover:bg-surface-container-high dark:hover:bg-surface-variant/20 transition-colors duration-200 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-body-sm text-body-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-variant/10 hover:bg-surface-container-high dark:hover:bg-surface-variant/20 transition-colors duration-200 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">apartment</span>
+<span class="font-body-sm text-body-sm">Apartamentos</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-variant/10 hover:bg-surface-container-high dark:hover:bg-surface-variant/20 transition-colors duration-200 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">engineering</span>
+<span class="font-body-sm text-body-sm">Operaciones</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed font-semibold active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-body-sm text-body-sm">Detalle</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-variant/10 hover:bg-surface-container-high dark:hover:bg-surface-variant/20 transition-colors duration-200 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<span class="font-body-sm text-body-sm">Tarifa/Potencia</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-variant/10 hover:bg-surface-container-high dark:hover:bg-surface-variant/20 transition-colors duration-200 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">group_add</span>
+<span class="font-body-sm text-body-sm">Leads</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-variant/10 hover:bg-surface-container-high dark:hover:bg-surface-variant/20 transition-colors duration-200 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-body-sm text-body-sm">Configuración</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-variant/10 hover:bg-surface-container-high dark:hover:bg-surface-variant/20 transition-colors duration-200 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span class="font-body-sm text-body-sm">Informe propietario</span>
+</a>
+</nav>
+</aside>
+<!-- TopNavBar -->
+<header class="hidden md:flex justify-between items-center px-lg h-16 bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline fixed top-0 right-0 left-[280px] z-10">
+<div class="flex-1 max-w-md">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-sm text-on-surface-variant">search</span>
+<input class="w-full bg-surface text-on-surface border border-outline-variant rounded-lg py-xs pl-xl pr-sm font-body-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-on-surface-variant/60" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-sm rounded-full text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-sm rounded-full text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="ml-sm h-8 w-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-caps font-bold cursor-pointer border border-outline-variant">
+                MP
+            </div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 ml-0 md:ml-[280px] mt-0 md:mt-16 overflow-y-auto p-md md:p-container-margin bg-background">
+<div class="max-w-[1400px] mx-auto space-y-lg">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-xl">
+<div>
+<nav aria-label="Breadcrumb" class="flex text-on-surface-variant font-label-caps text-label-caps mb-sm">
+<ol class="inline-flex items-center space-x-1 md:space-x-3">
+<li class="inline-flex items-center">
+<a class="inline-flex items-center hover:text-primary transition-colors" href="#">Apartamentos</a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[16px] mx-1">chevron_right</span>
+<span class="text-on-surface">Apartamento Sol</span>
+</div>
+</li>
+</ol>
+</nav>
+<div class="flex items-center gap-md">
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Apartamento Sol - Detalle Operativo</h2>
+<span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label-caps text-label-caps flex items-center gap-1 border border-secondary-fixed-dim">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                            Ocupado
+                        </span>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="px-md py-sm bg-surface-container-lowest border border-outline-variant text-on-surface font-label-caps text-label-caps rounded-lg hover:bg-surface-container hover:border-outline transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">share</span>
+                        Compartir
+                    </button>
+<button class="px-md py-sm bg-primary text-on-primary font-label-caps text-label-caps rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+                        Preparar Informe de Propietario
+                    </button>
+</div>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Main Content Column -->
+<div class="lg:col-span-8 space-y-lg">
+<!-- Energy State Card (Telemetry) -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant shadow-[0px_4px_12px_rgba(15,23,42,0.04)] overflow-hidden">
+<div class="px-lg py-md border-b border-outline-variant flex justify-between items-center bg-surface/50">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+                                Telemetría en tiempo real
+                            </h3>
+<span class="text-on-surface-variant font-label-caps text-label-caps flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">update</span> Activo
+                            </span>
+</div>
+<div class="p-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg mb-lg">
+<div class="bg-surface rounded-lg p-md border border-outline-variant/50">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Carga Actual</p>
+<div class="flex items-baseline gap-2">
+<span class="font-metric-lg text-metric-lg text-on-surface">4.2</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">kW</span>
+</div>
+<div class="mt-2 h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[80%] rounded-full"></div>
+</div>
+</div>
+<div class="bg-surface rounded-lg p-md border border-outline-variant/50">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Media Diaria</p>
+<div class="flex items-baseline gap-2">
+<span class="font-metric-lg text-metric-lg text-on-surface">14.8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">kWh</span>
+</div>
+<div class="mt-2 flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+<span class="font-metric-md text-metric-md">Estable</span>
+</div>
+</div>
+</div>
+<!-- Mock Sparkline/Chart Area -->
+<div class="h-32 w-full flex items-end justify-between gap-1 mt-md relative border-b border-l border-outline-variant/30 pl-2 pb-2">
+<div class="absolute bottom-0 left-0 w-full h-[1px] bg-outline-variant/50"></div>
+<!-- Mock Bars -->
+<div class="w-full bg-primary/20 hover:bg-primary/40 transition-colors h-[40%] rounded-t-sm"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 transition-colors h-[30%] rounded-t-sm"></div>
+<div class="w-full bg-primary/30 hover:bg-primary/50 transition-colors h-[60%] rounded-t-sm"></div>
+<div class="w-full bg-primary/40 hover:bg-primary/60 transition-colors h-[80%] rounded-t-sm relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-on-secondary font-label-caps text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">4.2 kW</div>
+</div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 transition-colors h-[50%] rounded-t-sm"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 transition-colors h-[35%] rounded-t-sm"></div>
+<div class="w-full bg-primary/20 hover:bg-primary/40 transition-colors h-[20%] rounded-t-sm"></div>
+<div class="w-full bg-primary/30 hover:bg-primary/50 transition-colors h-[45%] rounded-t-sm"></div>
+</div>
+<div class="flex justify-between mt-1 font-label-caps text-[10px] text-on-surface-variant">
+<span>00:00</span>
+<span>06:00</span>
+<span>12:00</span>
+<span>18:00</span>
+<span>24:00</span>
+</div>
+</div>
+</div>
+<!-- Reservation Timeline -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant shadow-[0px_4px_12px_rgba(15,23,42,0.04)] overflow-hidden">
+<div class="px-lg py-md border-b border-outline-variant flex justify-between items-center bg-surface/50">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+                                Cronograma de Reservas e Insights
+                            </h3>
+</div>
+<div class="p-lg">
+<div class="relative pl-6 border-l-2 border-outline-variant/30 space-y-lg">
+<!-- Completed -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 h-4 w-4 rounded-full bg-surface border-2 border-primary-fixed-dim flex items-center justify-center">
+<div class="h-2 w-2 rounded-full bg-primary-fixed-dim"></div>
+</div>
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-sm mb-xs">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-surface-variant text-on-surface-variant font-label-caps text-[10px]">COMPLETADA</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Oct 10 - Oct 12</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface">Thomas Muller</h4>
+</div>
+</div>
+<div class="bg-surface rounded border border-outline-variant/50 p-sm mt-sm flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Consumo coincidente con el perfil esperado (28 kWh total).</p>
+</div>
+</div>
+<!-- Action Required -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 h-4 w-4 rounded-full bg-surface border-2 border-error flex items-center justify-center">
+<div class="h-2 w-2 rounded-full bg-error animate-pulse"></div>
+</div>
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-sm mb-xs">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-caps text-[10px]">ACCIÓN REQUERIDA</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Oct 12 - Oct 14</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface">Espacio de rotación</h4>
+</div>
+</div>
+<div class="bg-error-container/30 rounded border border-error/30 p-sm mt-sm flex items-start gap-sm">
+<span class="material-symbols-outlined text-error text-[18px] mt-0.5">warning</span>
+<p class="font-body-sm text-body-sm text-on-surface">Consumo activo fuera de reserva detectado. Posiblemente por personal de limpieza o equipos encendidos.</p>
+</div>
+</div>
+<!-- Upcoming -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 h-4 w-4 rounded-full bg-surface border-2 border-outline flex items-center justify-center">
+</div>
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-sm mb-xs">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-caps text-[10px]">PRÓXIMA</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Oct 14 - Oct 20</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface">Sarah Connor</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Column -->
+<div class="lg:col-span-4 space-y-lg">
+<!-- Recommended Actions -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant shadow-[0px_4px_12px_rgba(15,23,42,0.04)] overflow-hidden">
+<div class="px-md py-sm border-b border-outline-variant bg-surface/50">
+<h3 class="font-label-caps text-label-caps text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">assignment_late</span>
+                                Acciones Recomendadas
+                            </h3>
+</div>
+<div class="p-sm space-y-sm">
+<!-- Action Card 1 -->
+<div class="bg-surface rounded border border-outline-variant/50 p-md hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-sm">
+<h4 class="font-headline-sm text-[14px] text-on-surface group-hover:text-primary transition-colors">Revisar potencia</h4>
+<span class="material-symbols-outlined text-[18px] text-primary">arrow_forward</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Picos consistentemente por debajo de 4.6 kW. Potencial reducción disponible.</p>
+<button class="w-full py-xs px-sm bg-surface-container-lowest border border-outline-variant rounded text-on-surface font-label-caps text-[10px] hover:bg-surface-container transition-colors">Analizar Downgrade</button>
+</div>
+<!-- Action Card 2 -->
+<div class="bg-error-container/10 rounded border border-error/30 p-md hover:border-error/60 transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-sm">
+<h4 class="font-headline-sm text-[14px] text-on-error-container group-hover:text-error transition-colors">Validar con huésped</h4>
+<span class="material-symbols-outlined text-[18px] text-error">arrow_forward</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Resolver alerta de consumo activo fuera de reserva actual.</p>
+<button class="w-full py-xs px-sm bg-error text-on-error rounded font-label-caps text-[10px] hover:bg-on-error-container transition-colors shadow-sm">Contactar Operaciones</button>
+</div>
+</div>
+</div>
+<!-- Tariff & Power Summary -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant shadow-[0px_4px_12px_rgba(15,23,42,0.04)] overflow-hidden">
+<div class="px-md py-sm border-b border-outline-variant bg-surface/50">
+<h3 class="font-label-caps text-label-caps text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+                                Resumen de Contrato
+                            </h3>
+</div>
+<div class="p-md space-y-md">
+<div class="flex justify-between items-center py-sm border-b border-outline-variant/30">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Estado</span>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps text-[10px]">Optimizada</span>
+</div>
+<div class="flex justify-between items-center py-sm border-b border-outline-variant/30">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Potencia Contratada</span>
+<span class="font-metric-md text-metric-md text-on-surface">4.6 kW</span>
+</div>
+<div class="flex justify-between items-center py-sm border-b border-outline-variant/30">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tarifa Actual</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Iberdrola Plan Online</span>
+</div>
+<div class="flex justify-between items-center py-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Próxima Revisión</span>
+<span class="font-body-sm text-body-sm text-on-surface">Nov 15, 2023</span>
+</div>
+</div>
+</div>
+<!-- References & Docs -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant shadow-[0px_4px_12px_rgba(15,23,42,0.04)] overflow-hidden">
+<div class="px-md py-sm border-b border-outline-variant bg-surface/50">
+<h3 class="font-label-caps text-label-caps text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+                                Referencias y Documentos
+                            </h3>
+</div>
+<div class="p-md space-y-md">
+<div>
+<span class="block font-label-caps text-[10px] text-on-surface-variant mb-1">CUPS</span>
+<div class="flex items-center justify-between bg-surface px-sm py-1.5 rounded border border-outline-variant/50">
+<span class="font-metric-md text-[12px] text-on-surface">ES0031...</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors" title="Copiar">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-[10px] text-on-surface-variant w-16">Datadis:</span>
+<span class="flex items-center gap-1 text-primary font-label-caps text-[10px]">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Activo
+                                </span>
+</div>
+<div class="pt-sm border-t border-outline-variant/30">
+<span class="block font-label-caps text-[10px] text-on-surface-variant mb-2">FACTURAS RECIENTES</span>
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-2 text-on-surface hover:text-primary transition-colors font-body-sm text-[12px] py-1" href="#">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">picture_as_pdf</span>
+                                            Factura_Septiembre.pdf
+                                        </a>
+</li>
+<li>
+<a class="flex items-center gap-2 text-on-surface hover:text-primary transition-colors font-body-sm text-[12px] py-1" href="#">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">picture_as_pdf</span>
+                                            Factura_Agosto.pdf
+                                        </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

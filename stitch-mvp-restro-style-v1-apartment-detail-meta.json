@@ -1,0 +1,26 @@
+{
+  "key": "apartment-detail",
+  "requestedName": "detalle-apartamento",
+  "title": "Detalle apartamento — EnergyOS",
+  "projectId": "11820050226044719534",
+  "projectName": "projects/11820050226044719534",
+  "screenId": "76cf6d979c844aafa99138b3940db6e6",
+  "screenName": "projects/11820050226044719534/screens/76cf6d979c844aafa99138b3940db6e6",
+  "width": "2560",
+  "height": "2876",
+  "htmlCodeName": "projects/11820050226044719534/files/272129e6b21d468abf1c996f76950645",
+  "screenshotName": "projects/11820050226044719534/files/47b8b36bb7384cec9e634697d161c7e3",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzI3OTE2Mzk3MjMyNTRjY2NiYTFkNDFkOTFjYjI1ODRjEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uhlm3cfchukNJAiRFny6-j5vuE1f2SliuZpiy9LtJY45jPXXZO7_IKFdTqYzjg5Fw86GrCuNh8UGR2YZnQSCqo93khjIIvxRJIIxF54o49jbglrZlFNSYxGoDhUNqsmqPPUP1ncaumYioc2QhNeGhoaDiRbfz9f754yXexa_TKEsV-8LqGSRC76WTHsAWmHWz6mC1Wxbw9sen3gfm3Va0AqVZvZkG7Yv2TFUsai8MvqJ2qn-LmEZxSxy2HE",
+  "generatedAt": "2026-05-15T22:18:27.278Z",
+  "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+  "localFiles": {
+    "response": "stitch-mvp-restro-style-v1-apartment-detail-response.json",
+    "meta": "stitch-mvp-restro-style-v1-apartment-detail-meta.json",
+    "html": "stitch-mvp-restro-style-v1-apartment-detail.html",
+    "stitchPng": "stitch-mvp-restro-style-v1-apartment-detail-stitch.png",
+    "previews": []
+  },
+  "editedFromScreenId": "97fcd530680b4297a7994262f7bd15a9",
+  "note": "Remote Stitch platform-copy edit: broadened EnergyOS from narrow A/C/climate copy to full energy operations OS."
+}

@@ -1,0 +1,19 @@
+{
+  "id": 1779039805558,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"name\":\"projects/15362465521859509617\",\"title\":\"Tramo Energetico Landing v3\",\"visibility\":\"PRIVATE\",\"projectType\":\"PROJECT_DESIGN\",\"origin\":\"STITCH\"}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "name": "projects/15362465521859509617",
+      "origin": "STITCH",
+      "projectType": "PROJECT_DESIGN",
+      "title": "Tramo Energetico Landing v3",
+      "visibility": "PRIVATE"
+    }
+  }
+}

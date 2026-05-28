@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tramo — Control energético para carteras turísticas</title>
+  <meta name="description" content="Sistema de atribución de consumo por reserva para gestores profesionales de apartamentos turísticos en España. Detección fuera de estancia, recomendación de potencia e informes por propietario." />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <nav class="container nav" aria-label="Principal">
+      <a class="brand" href="index.html" aria-label="Tramo, inicio">
+        <svg class="logo-mark" viewBox="0 0 80 48" role="img" aria-label="Tramo">
+          <path class="logo-line" d="M10 13 H26 M32 13 H48 M54 13 H70 M10 35 H26 M32 35 H48 M54 35 H70 M10 13 V35 M40 13 V35 M70 13 V35" fill="none" stroke-width="3" stroke-linecap="round"/>
+          <path class="logo-line" d="M26 9 V17 M32 31 V39 M48 9 V17 M54 31 V39" fill="none" stroke-width="2" stroke-linecap="round"/>
+          <circle class="logo-signal" cx="54" cy="13" r="4.5"/>
+        </svg>
+        Tramo
+      </a>
+      <div class="nav-links">
+        <a href="#sistema">Sistema</a>
+        <a href="#datos">Datos</a>
+        <a href="#capacidades">Capacidades</a>
+        <a href="#piloto">Piloto</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn" href="dashboard.html">Abrir demo</a>
+        <a class="btn btn-primary" href="#contacto">Evaluar cartera</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ═══ HERO: producto real en chrome ═══ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">España · gestores de apartamentos turísticos</p>
+          <h1 id="hero-title">Convierte la energía de tu cartera turística en margen operativo.</h1>
+          <p class="lead">
+            Tramo cruza reservas, sensores, CUPS y tarifas para atribuir cada kWh a la estancia que lo generó,
+            detectar consumo fuera de reserva y generar informes por propietario con evidencia defendible.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contacto">Solicitar evaluación</a>
+            <a class="btn" href="dashboard.html">Ver panel demo</a>
+          </div>
+          <div class="trust-strip">
+            <span>10–50+ unidades</span>
+            <span>|</span>
+            <span>PMS + sensores + Datadis</span>
+            <span>|</span>
+            <span>Informes por CUPS</span>
+          </div>
+        </div>
+
+        <aside class="product-visual" aria-label="Panel Tramo — vista previa">
+          <div class="visual-top">
+            <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span class="status-pill">app.tramo.energy/dashboard · telemetría activa</span>
+          </div>
+          <div class="visual-body">
+            <div class="mini-grid">
+              <div class="mini-card">
+                <span class="label">Fuera de estancia</span>
+                <strong class="signal">184 kWh</strong>
+              </div>
+              <div class="mini-card">
+                <span class="label">Coste estimado</span>
+                <strong class="signal">42,70 EUR</strong>
+              </div>
+              <div class="mini-card">
+                <span class="label">Alertas activas</span>
+                <strong class="ok">3</strong>
+              </div>
+            </div>
+            <div class="bar-chart" aria-label="Consumo diario, picos en días 4 y 8">
+              <span style="height:38%"></span><span style="height:46%"></span><span style="height:31%"></span><span class="hot" style="height:76%"></span><span style="height:42%"></span><span style="height:28%"></span><span style="height:36%"></span><span class="hot" style="height:68%"></span><span style="height:44%"></span><span style="height:33%"></span><span style="height:52%"></span><span style="height:39%"></span>
+            </div>
+            <div class="mini-grid" style="margin-top:12px">
+              <div class="event-row">
+                <span><strong>Villa Marosa</strong><br/><small class="label">Split sin reserva</small></span>
+                <span class="badge warn">Revisar</span>
+              </div>
+              <div class="event-row">
+                <span><strong>Riazor 2B</strong><br/><small class="label">CUPS validado</small></span>
+                <span class="badge ok">OK</span>
+              </div>
+              <div class="event-row">
+                <span><strong>O Pino</strong><br/><small class="label">Informe listo</small></span>
+                <span class="badge ok">Enviar</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ═══ PROBLEM: timeline horizontal, non cards ═══ -->
+    <section class="section" id="problema" aria-labelledby="pain-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">El problema no es uno solo</p>
+          <h2 id="pain-title">Tres fuentes de pérdida que se cruzan cada semana.</h2>
+          <p class="section-copy">
+            Climatización encendida sin huésped, potencia contratada que no se revisa desde 2019
+            y propietarios que reciben una factura sin explicación. Tres señales que ninguna gestora debería perseguir a mano.
+          </p>
+        </div>
+        <div class="pain-timeline" role="list">
+          <div class="pain-step" role="listitem">
+            <span class="step-num">01</span>
+            <h3>Ocupación cambiante</h3>
+            <p>Entradas, salidas, limpiezas y bloqueos alteran el patrón energético cada semana. Sin cruce de datos, el consumo fuera de estancia pasa desapercibido durante días.</p>
+          </div>
+          <div class="pain-step" role="listitem">
+            <span class="step-num">02</span>
+            <h3>Potencia heredada</h3>
+            <p>Cada CUPS arrastra una potencia contratada que rara vez se revisa tras cambios de equipos, reformas o nuevos hábitos de uso. La diferencia puede ser de cientos de euros al año por inmueble.</p>
+          </div>
+          <div class="pain-step" role="listitem">
+            <span class="step-num">03</span>
+            <h3>Propietario sin contexto</h3>
+            <p>El propietario recibe un gasto energético sin trazabilidad: no sabe si corresponde a su inquilino, a una incidencia o a un equipo averiado. La gestora necesita datos para defender cada euro.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SYSTEM: flow diagrama técnico ═══ -->
+    <section class="section section-dark" id="sistema" aria-labelledby="sys-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Arquitectura del sistema</p>
+          <h2 id="sys-title">De señales dispersas a una cola de acciones priorizada.</h2>
+          <p class="section-copy">
+            Tramo no sustituye el PMS ni las rutinas del equipo local. Ordena señales, atribuye consumo
+            y genera evidencia para decidir rápido y explicar después.
+          </p>
+        </div>
+        <div class="flow-diagram" aria-label="Flujo de datos: PMS → Sensores → CUPS → Tarifas → Tramo → Alertas → Informes">
+          <div class="flow-node">
+            <span class="node-num">01</span>
+            <h3>PMS</h3>
+            <p>Reservas, salidas, bloqueos y limpiezas.</p>
+          </div>
+          <div class="flow-node">
+            <span class="node-num">02</span>
+            <h3>Sensores</h3>
+            <p>Consumo, clima interior y estados de equipo.</p>
+          </div>
+          <div class="flow-node">
+            <span class="node-num">03</span>
+            <h3>CUPS</h3>
+            <p>Lecturas y facturas recientes por punto.</p>
+          </div>
+          <div class="flow-node">
+            <span class="node-num">04</span>
+            <h3>Tarifas</h3>
+            <p>Periodos, potencia y coste estimado.</p>
+          </div>
+          <div class="flow-node">
+            <span class="node-num">05</span>
+            <h3>Tramo</h3>
+            <p>Atribución, detección, priorización e informes.</p>
+          </div>
+        </div>
+
+        <!-- Terminal block: especificación técnica -->
+        <div class="terminal-block">
+          <div class="terminal-header">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="terminal-title">tramo-engine — integración</span>
+          </div>
+          <div class="terminal-body">
+            <span class="prompt">$</span> tramo connect <span class="key">--pms</span> <span class="val">ical/api</span> <span class="comment"># reservas, bloqueos, limpiezas</span><br/>
+            <span class="prompt">$</span> tramo connect <span class="key">--metering</span> <span class="val">mqtt/w1</span> <span class="comment"># sensores, consumo, clima</span><br/>
+            <span class="prompt">$</span> tramo connect <span class="key">--grid</span> <span class="val">datadis</span> <span class="comment"># CUPS, lecturas, facturas</span><br/>
+            <span class="prompt">$</span> tramo connect <span class="key">--tariff</span> <span class="val">omie+contract</span> <span class="comment"># periodos, P1/P2, €/kWh</span><br/>
+            <span style="color:var(--data-muted)">▸ Motor de reglas activo · 32 propiedades · 18 CUPS · 29 sensores</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ DASHBOARD: dark data section ═══ -->
+    <section class="data-dashboard" id="datos" aria-labelledby="data-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Panel operativo</p>
+          <h2 id="data-title">La cartera turística en una sola vista.</h2>
+          <p class="section-copy">
+            Datos reales del sistema en producción simulada. Periodo 01/05/2026–18/05/2026.
+            Cada fila representa una propiedad monitorizada con atribución de consumo por reserva.
+          </p>
+        </div>
+
+        <div class="kpi-row">
+          <div class="kpi-card">
+            <span class="kpi-label">Fuera de estancia</span>
+            <span class="kpi-value kpi-warn">501 kWh</span>
+            <span class="kpi-detail">+12% vs periodo anterior</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Coste estimado</span>
+            <span class="kpi-value">122,90 EUR</span>
+            <span class="kpi-detail">Tarifa activa por CUPS y periodo</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Alertas abiertas</span>
+            <span class="kpi-value kpi-warn">3</span>
+            <span class="kpi-detail">2 confort · 1 telemetría</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Dispositivos</span>
+            <span class="kpi-value kpi-ok">27/29</span>
+            <span class="kpi-detail">93% operativos</span>
+          </div>
+        </div>
+
+        <div class="data-panel">
+          <div class="data-panel-header">
+            <span>app.tramo.energy/dashboard · Galicia y Costa Norte</span>
+            <span class="mono" style="color:var(--data-muted)">18/05/2026 09:15 UTC+2</span>
+          </div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Propiedad</th><th>Ciudad</th><th>Última lectura</th><th>Entre reservas</th><th>Coste</th><th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Casa Rural O Pino <span style="display:block;color:var(--data-muted);font-size:0.65rem">ES0021000001234567AB</span></td>
+                <td>A Coruña</td><td>18/05 09:15</td>
+                <td style="color:var(--accent)">184 kWh</td>
+                <td>42,70 EUR</td>
+                <td><span class="badge warn">Revisar</span></td>
+              </tr>
+              <tr>
+                <td>Apartamentos Riazor <span style="display:block;color:var(--data-muted);font-size:0.65rem">ES0021000004459120QF</span></td>
+                <td>A Coruña</td><td>18/05 08:40</td><td>96 kWh</td>
+                <td>21,90 EUR</td>
+                <td><span class="badge ok">Controlado</span></td>
+              </tr>
+              <tr>
+                <td>Villa Marosa <span style="display:block;color:var(--data-muted);font-size:0.65rem">ES0031400007812241LR</span></td>
+                <td>Málaga</td><td>17/05 23:10</td>
+                <td style="color:var(--accent)">221 kWh</td>
+                <td>58,30 EUR</td>
+                <td><span class="badge error">Alta</span></td>
+              </tr>
+              <tr>
+                <td>Casa Lestrove <span style="display:block;color:var(--data-muted);font-size:0.65rem">ES0021000009921367XP</span></td>
+                <td>Pontevedra</td><td>18/05 07:55</td><td>72 kWh</td>
+                <td>18,40 EUR</td>
+                <td><span class="badge ok">OK</span></td>
+              </tr>
+              <tr>
+                <td>Ático Compostela <span style="display:block;color:var(--data-muted);font-size:0.65rem">ES0021000003348765MN</span></td>
+                <td>Santiago</td><td>18/05 08:20</td><td>43 kWh</td>
+                <td>11,20 EUR</td>
+                <td><span class="badge ok">OK</span></td>
+              </tr>
+              <tr>
+                <td>Loft Rianxo <span style="display:block;color:var(--data-muted);font-size:0.65rem">ES0021000006671249HK</span></td>
+                <td>Rianxo</td><td>17/05 22:45</td><td>118 kWh</td>
+                <td>31,50 EUR</td>
+                <td><span class="badge warn">Revisar</span></td>
+              </tr>
+              <tr>
+                <td>Dúplex Ferrol <span style="display:block;color:var(--data-muted);font-size:0.65rem">ES0021000008814203DW</span></td>
+                <td>Ferrol</td><td>18/05 06:10</td><td>35 kWh</td>
+                <td>9,80 EUR</td>
+                <td><span class="badge ok">OK</span></td>
+              </tr>
+              <tr>
+                <td>Estudio Coruña <span style="display:block;color:var(--data-muted);font-size:0.65rem">ES0021000005539081BV</span></td>
+                <td>A Coruña</td><td>18/05 09:00</td><td>29 kWh</td>
+                <td>7,60 EUR</td>
+                <td><span class="badge ok">OK</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CAPABILITIES: táboa, non cards ═══ -->
+    <section class="section" id="capacidades" aria-labelledby="cap-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Capacidades</p>
+          <h2 id="cap-title">Producto para gestión turística, no dashboard genérico.</h2>
+          <p class="section-copy">Cada capacidad responde a una pregunta operativa concreta: antes, durante o después de la estancia.</p>
+        </div>
+        <table class="capability-table">
+          <thead>
+            <tr><th>Capacidad</th><th>Qué resuelve</th><th>Señal de entrada</th><th>Resultado</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="cap-name">Detección fuera de estancia</span></td>
+              <td class="cap-detail">Consumo cuando no hay huésped ni limpieza planificada. Cruza reserva PMS con lecturas de sensor.</td>
+              <td class="cap-stat">PMS + sensor</td>
+              <td><span class="cap-stat">184 kWh</span> <span class="cap-unit">detectados</span></td>
+            </tr>
+            <tr>
+              <td><span class="cap-name">Atribución por reserva</span></td>
+              <td class="cap-detail">Cada kWh asignado a la estancia que lo generó. Trazabilidad completa desde check-in hasta check-out.</td>
+              <td class="cap-stat">PMS + CUPS</td>
+              <td><span class="cap-stat">32</span> <span class="cap-unit">propiedades</span></td>
+            </tr>
+            <tr>
+              <td><span class="cap-name">Recomendación de potencia</span></td>
+              <td class="cap-detail">Cruce de periodos P1/P2, potencia contratada y hábitos reales para priorizar cambios con evidencia.</td>
+              <td class="cap-stat">CUPS + tarifa</td>
+              <td><span class="cap-stat">180 €/año</span> <span class="cap-unit">por CUPS</span></td>
+            </tr>
+            <tr>
+              <td><span class="cap-name">Cola de acciones</span></td>
+              <td class="cap-detail">Convierte señales en tareas para limpieza, mantenimiento o revisión remota, priorizadas por check-in próximo.</td>
+              <td class="cap-stat">Alertas + PMS</td>
+              <td><span class="cap-stat">18</span> <span class="cap-unit">reglas activas</span></td>
+            </tr>
+            <tr>
+              <td><span class="cap-name">Informe por propietario</span></td>
+              <td class="cap-detail">Resumen mensual con consumo atribuido, incidencias, acciones realizadas y estimaciones por CUPS.</td>
+              <td class="cap-stat">Todos los datos</td>
+              <td><span class="cap-stat">412 kWh</span> <span class="cap-unit">informados</span></td>
+            </tr>
+            <tr>
+              <td><span class="cap-name">Evaluación avanzada</span></td>
+              <td class="cap-detail">Batería y arbitraje solo cuando el volumen de CUPS y los patrones de consumo lo justifican.</td>
+              <td class="cap-stat">18+ CUPS</td>
+              <td><span class="cap-stat">0,118</span> <span class="cap-unit">EUR/kWh</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ═══ PROOF: terminal + métricas ═══ -->
+    <section class="section section-dark" id="prueba" aria-labelledby="proof-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Evidencia operativa</p>
+          <h2 id="proof-title">El sistema en producción.</h2>
+          <p class="section-copy">Caso real simulado sobre una cartera de 32 alojamientos en Galicia y Costa Norte. Datos de Mayo 2026.</p>
+        </div>
+        <div class="terminal-block">
+          <div class="terminal-header">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="terminal-title">tramo report --property "Villa Marosa" --period 2026-05</span>
+          </div>
+          <div class="terminal-body">
+            <span style="color:var(--data-muted)">══════════════════════════════════════════</span><br/>
+            <span class="key">CUPS</span>        <span class="val">ES0031400007812241LR</span><br/>
+            <span class="key">Ciudad</span>      Málaga<br/>
+            <span class="key">Periodo</span>     01/05/2026 – 18/05/2026<br/>
+            <span style="color:var(--data-muted)">──────────────────────────────────────────</span><br/>
+            <span class="key">Consumo total</span>        <span class="val">412 kWh</span><br/>
+            <span class="key">Fuera de estancia</span>    <span class="val" style="color:var(--accent)">221 kWh</span>  <span class="comment"># 17/05 19:20 split encendido sin reserva</span><br/>
+            <span class="key">Coste estimado</span>        <span class="val">58,30 EUR</span>  <span class="comment"># P1 0,142 + P2 0,118 EUR/kWh</span><br/>
+            <span class="key">Potencia contratada</span>   <span class="val">5,75 kW</span>  <span class="comment"># P1 5,75 / P2 5,75</span><br/>
+            <span class="key">Potencia recomendada</span>  <span class="val">3,45 kW</span>  <span class="comment"># P2 reducción · ahorro est. 180 €/año</span><br/>
+            <span style="color:var(--data-muted)">──────────────────────────────────────────</span><br/>
+            <span class="key">Próxima entrada</span>      <span class="val">19/05/2026</span>  <span class="comment"># limpieza prevista 19/05 11:30</span><br/>
+            <span class="key">Acción</span>                Revisar split + programar desconexión automática post-checkout<br/>
+            <span style="color:var(--data-muted)">══════════════════════════════════════════</span>
+          </div>
+        </div>
+
+        <div class="kpi-row" style="margin-top:var(--space-xl)">
+          <div class="kpi-card">
+            <span class="kpi-label">Coste mayo acumulado</span>
+            <span class="kpi-value">1.428 EUR</span>
+            <span class="kpi-detail">Cartera seleccionada</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Fuera de estancia</span>
+            <span class="kpi-value kpi-warn">501 kWh</span>
+            <span class="kpi-detail">Sobre consumo medido</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Acciones cerradas</span>
+            <span class="kpi-value kpi-ok">14</span>
+            <span class="kpi-detail">Últimos 30 días</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Ahorro identificado</span>
+            <span class="kpi-value kpi-ok">847 €/año</span>
+            <span class="kpi-detail">Solo por potencia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PILOT FORM ═══ -->
+    <section class="section" id="contacto" aria-labelledby="form-title">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow" id="piloto">Piloto cualificado</p>
+          <h2 id="form-title">Cuéntanos cómo gestionas la energía de tu cartera.</h2>
+          <p class="section-copy">
+            Con esos datos podemos evaluar el encaje, las señales disponibles y la primera oportunidad de ahorro operativo.
+            Sin compromiso. Sin promesas de ahorro garantizado.
+          </p>
+          <div class="terminal-block" style="margin-top:var(--space-lg)">
+            <div class="terminal-header">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="terminal-title">Qué necesitamos saber</span>
+            </div>
+            <div class="terminal-body">
+              <span class="comment"># Información mínima para evaluar encaje:</span><br/>
+              <span class="prompt">▸</span> Número de alojamientos gestionados<br/>
+              <span class="prompt">▸</span> Quién paga la factura eléctrica<br/>
+              <span class="prompt">▸</span> Si tenéis acceso a Datadis<br/>
+              <span class="prompt">▸</span> Sistemas actuales: PMS, sensores<br/>
+              <span class="prompt">▸</span> Principal dolor operativo<br/>
+              <span class="comment"># No hace falta adjuntar facturas en este paso.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Solicitud de evaluación</h3>
+          <form action="/api/leads" method="POST" data-lead-form>
+            <div class="field">
+              <label class="field-label" for="name">Nombre</label>
+              <input id="name" name="name" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label class="field-label" for="email">Email profesional</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label class="field-label" for="company">Empresa gestora</label>
+              <input id="company" name="company" autocomplete="organization" required />
+            </div>
+            <div class="field">
+              <label class="field-label" for="units">Unidades gestionadas</label>
+              <select id="units" name="units" required>
+                <option value="">Selecciona rango</option>
+                <option>5–10 alojamientos</option>
+                <option>10–20 alojamientos</option>
+                <option>21–50 alojamientos</option>
+                <option>51+ alojamientos</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label" for="payer">Quién paga la factura</label>
+              <select id="payer" name="payer" required>
+                <option value="">Selecciona opción</option>
+                <option>La gestora</option>
+                <option>El propietario</option>
+                <option>Mixto por vivienda</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label" for="datadis">Acceso a Datadis</label>
+              <select id="datadis" name="datadis" required>
+                <option value="">Estado</option>
+                <option>Sí, con fichero de CUPS</option>
+                <option>Sí, manual por CUPS</option>
+                <option>No</option>
+                <option>No lo sé</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label" for="pain">Principal dolor operativo</label>
+              <select id="pain" name="pain" required>
+                <option value="">Selecciona</option>
+                <option>Consumo sin huésped asignado</option>
+                <option>Facturas difíciles de explicar a propietarios</option>
+                <option>Tarifas y potencia desactualizadas</option>
+                <option>Falta de visibilidad entre reservas</option>
+                <option>Todo lo anterior</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label" for="message">Contexto adicional</label>
+              <textarea id="message" name="message" minlength="20" placeholder="Ej. 24 apartamentos en Málaga, propietarios distintos, incidencias de climatización en verano. PMS: Lodgify."></textarea>
+              <span class="help">Cuanta más información, más precisa será la evaluación de encaje.</span>
+            </div>
+            <div class="field">
+              <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+              <p class="privacy">Usaremos estos datos solo para valorar el encaje del piloto. No se compartirán con terceros.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span class="brand">
+        <svg class="logo-mark" viewBox="0 0 80 48" aria-hidden="true">
+          <path class="logo-line" d="M10 13 H26 M32 13 H48 M54 13 H70 M10 35 H26 M32 35 H48 M54 35 H70 M10 13 V35 M40 13 V35 M70 13 V35" fill="none" stroke-width="3" stroke-linecap="round"/>
+          <path class="logo-line" d="M26 9 V17 M32 31 V39 M48 9 V17 M54 31 V39" fill="none" stroke-width="2" stroke-linecap="round"/>
+          <circle class="logo-signal" cx="54" cy="13" r="4.5"/>
+        </svg>
+        Tramo
+      </span>
+      <span>Tramo — consumo atribuido por reserva y propietario. Sistema de control energético para gestores de apartamentos turísticos en España.</span>
+      <a href="dashboard.html">Panel demo</a>
+    </div>
+  </footer>
+</body>
+</html>

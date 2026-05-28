@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Configuración Piloto - EnergyOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdbc8",
+                        "surface-container-high": "#eae7e7",
+                        "on-error-container": "#93000a",
+                        "primary": "#984700",
+                        "on-secondary-fixed": "#2f1500",
+                        "inverse-surface": "#313030",
+                        "surface-tint": "#984700",
+                        "secondary": "#904d00",
+                        "primary-fixed-dim": "#ffb68a",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#dbc1b3",
+                        "tertiary": "#00677f",
+                        "on-surface-variant": "#554338",
+                        "on-tertiary-fixed-variant": "#004e60",
+                        "surface-variant": "#e5e2e1",
+                        "outline": "#887367",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "on-primary-fixed-variant": "#743500",
+                        "surface-bright": "#fcf9f8",
+                        "surface": "#fcf9f8",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "primary-container": "#e6813a",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-container": "#fe932c",
+                        "on-surface": "#1c1b1b",
+                        "on-primary-container": "#562500",
+                        "on-secondary-container": "#663500",
+                        "on-tertiary-fixed": "#001f28",
+                        "on-tertiary-container": "#003846",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-container": "#f0eded",
+                        "on-background": "#1c1b1b",
+                        "tertiary-container": "#00a9ce",
+                        "background": "#fcf9f8",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#57d5fc",
+                        "tertiary-fixed": "#b6ebff",
+                        "inverse-primary": "#ffb68a",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-primary-fixed": "#321300",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "card": "32px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "container-padding": "32px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "number-data": ["Plus Jakarta Sans"],
+                        "title-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "number-data": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F6F3EC;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 20px rgba(23, 23, 23, 0.03);
+        }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- SideNavBar (Authority: JSON) -->
+<aside class="fixed left-0 top-0 h-full w-[80px] flex flex-col border-r border-outline-variant bg-surface dark:bg-inverse-surface py-8 gap-y-6 items-center">
+<div class="mb-8">
+<span class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface">CNS</span>
+</div>
+<nav class="flex flex-col gap-y-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-3 hover:bg-surface-container-high transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-3 hover:bg-surface-container-high transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="apartment">apartment</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-3 hover:bg-surface-container-high transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="handyman">handyman</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-3 hover:bg-surface-container-high transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-3 hover:bg-surface-container-high transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-3 hover:bg-surface-container-high transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+</button>
+<button class="bg-primary-container text-on-primary-container rounded-full p-3 transition-transform scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</nav>
+<div class="mt-auto">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-3">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</aside>
+<!-- TopNavBar (Authority: JSON) -->
+<header class="fixed top-0 right-0 left-[80px] h-16 flex items-center px-margin-desktop bg-background dark:bg-background border-b border-outline-variant z-10">
+<div class="flex justify-between items-center w-full max-w-[1440px] mx-auto">
+<h1 class="font-title-sm text-title-sm font-bold text-on-surface dark:text-inverse-on-surface">Costa Norte Stays</h1>
+<div class="flex items-center gap-6">
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-4 py-2 rounded-full hover:opacity-90 transition-opacity">Nueva Operación</button>
+<div class="flex gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" data-icon="calendar_today">calendar_today</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden border border-outline-variant">
+<img alt="Usuario Gestor" data-alt="A professional headshot of a senior hospitality manager with a warm and professional expression. He is wearing a minimalist dark blazer over a crisp white shirt, set against a clean, architectural background with soft natural lighting that emphasizes a high-end light-mode aesthetic. The composition is centered, conveying expertise and reliable leadership in a modern energy operations environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0AudyrQW0kTcP5uE9n0G1nTkNM3gWz_aH8rW541HyRtCmj1BieUygonlyOIQOg7MtwTZDzsN2IKRSVYO-dpgyIR1mCkiwXULA4JKIauPFZdkjw-QrG1s1OK-BbvA3Sv9ypc777yGBRm61R6zRZq3p0wbNhlcS_-g4IsRPwvwjJbfxIomFXJMadW6FtRcY_SSZBZGCbdG7VO8_OYg98P05eEQ_TGIw-EM8bTzzoVKoCQDhKzhm1pmqqzD3549xm3bfGP0MnsKqY4Di"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[80px] mt-16 p-margin-desktop min-h-screen">
+<div class="max-w-[1440px] mx-auto">
+<!-- Page Header -->
+<div class="mb-12">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight mb-2">Configuración Piloto</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Gestión avanzada de reglas de climatización, integraciones de hardware y parámetros operativos de EnergyOS.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Section: Integraciones (Left Column) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-gutter">
+<section class="bg-surface border border-outline-variant rounded-card p-container-padding custom-shadow h-full">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">Integraciones activas</h3>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="hub">hub</span>
+</div>
+<div class="space-y-6">
+<!-- Hostaway -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary" data-icon="pms">calendar_month</span>
+</div>
+<div>
+<p class="font-title-sm text-title-sm text-on-surface">Hostaway PMS</p>
+<p class="text-xs text-on-surface-variant">Sincronización de reservas</p>
+</div>
+</div>
+<span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter border border-emerald-200">Conectado</span>
+</div>
+<!-- Shelly -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+</div>
+<div>
+<p class="font-title-sm text-title-sm text-on-surface">Shelly Cloud</p>
+<p class="text-xs text-on-surface-variant">Medidores de consumo</p>
+</div>
+</div>
+<span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter border border-emerald-200">Conectado</span>
+</div>
+<!-- Google Calendar -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/30 opacity-70">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="event">event</span>
+</div>
+<div>
+<p class="font-title-sm text-title-sm text-on-surface">Google Calendar</p>
+<p class="text-xs text-on-surface-variant">Calendario operativo</p>
+</div>
+</div>
+<span class="bg-surface-variant text-on-surface-variant text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter border border-outline-variant">Inactivo</span>
+</div>
+</div>
+<button class="w-full mt-8 py-3 px-4 border border-outline-variant rounded-xl text-on-surface font-label-caps text-label-caps hover:bg-surface-container-high transition-colors">Añadir nueva integración</button>
+</section>
+</div>
+<!-- Section: Climatización (Middle Column) -->
+<div class="col-span-12 lg:col-span-8">
+<section class="bg-surface border border-outline-variant rounded-card p-container-padding custom-shadow">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">Reglas de Climatización Operativa</h3>
+<p class="text-sm text-on-surface-variant mt-1">Automatización basada en ocupación y consumo real.</p>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold text-sm">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                                Nueva Regla
+                            </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Rule Card 1 -->
+<div class="p-6 rounded-3xl border border-outline-variant bg-white hover:border-primary-container transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-primary-fixed p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="no_accounts">no_accounts</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold mb-1">Sin estancia</h4>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Apagar climatización automáticamente si se detecta un consumo superior a 0,8 kW durante 30 min sin reserva activa.</p>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span class="font-label-caps text-[10px]">UMBRAL: 30 MIN</span>
+</div>
+</div>
+<!-- Rule Card 2 -->
+<div class="p-6 rounded-3xl border border-outline-variant bg-white hover:border-primary-container transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-primary-fixed p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="login">login</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold mb-1">Pre-check-in</h4>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Ajustar temperatura a 22°C en modo confort exactamente 90 min antes de la hora prevista de entrada del huésped.</p>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="thermostat">thermostat</span>
+<span class="font-label-caps text-[10px]">TEMPERATURA: 22°C</span>
+</div>
+</div>
+<!-- Rule Card 3 -->
+<div class="p-6 rounded-3xl border border-outline-variant bg-white hover:border-primary-container transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-primary-fixed p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold mb-1">Post-check-out</h4>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Verificación exhaustiva de consumo residual tras 60 min de la salida oficial para detectar equipos encendidos.</p>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="search_check">search_check</span>
+<span class="font-label-caps text-[10px]">INTERVALO: 60 MIN</span>
+</div>
+</div>
+<!-- Add Placeholder -->
+<div class="p-6 rounded-3xl border border-dashed border-outline-variant flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-3xl mb-2" data-icon="add">add</span>
+<span class="font-label-caps">Nueva regla personalizada</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Section: Umbrales (Bottom Right) -->
+<div class="col-span-12 lg:col-span-8">
+<section class="bg-surface border border-outline-variant rounded-card p-container-padding custom-shadow">
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-8">Notificaciones y Alertas</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+<div class="space-y-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-on-surface-variant">CANALES ACTIVOS</label>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full border border-outline-variant">
+<input checked="" class="w-4 h-4 text-primary focus:ring-primary-container border-outline rounded" type="checkbox"/>
+<span class="text-sm font-medium">WhatsApp</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full border border-outline-variant">
+<input checked="" class="w-4 h-4 text-primary focus:ring-primary-container border-outline rounded" type="checkbox"/>
+<span class="text-sm font-medium">Email Administrativo</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-on-surface-variant">EMAIL DE CONTACTO</label>
+<input class="w-full px-4 py-3 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary-container focus:border-primary-container outline-none text-body-md transition-all" placeholder="admin@costanorte.es" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-4 p-6 bg-error-container/30 border border-error/20 rounded-3xl">
+<div class="flex items-center gap-3 text-error">
+<span class="material-symbols-outlined" data-icon="report">report</span>
+<span class="font-title-sm font-bold">Alertas Críticas</span>
+</div>
+<p class="text-sm text-on-error-container">Se notificará inmediatamente si el consumo de una unidad supera los 3.5 kW mantenidos durante 15 minutos (Posible avería o uso indebido).</p>
+<div class="flex items-center justify-between mt-2 pt-4 border-t border-error/10">
+<span class="text-xs font-bold text-error uppercase">Estado: ACTIVO</span>
+<button class="text-error font-bold text-xs underline">Configurar umbral</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Section: Selección Apartamentos (Bottom Left) -->
+<div class="col-span-12 lg:col-span-4">
+<section class="bg-surface border border-outline-variant rounded-card p-container-padding custom-shadow h-full">
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-6">Unidades en Piloto</h3>
+<div class="flex items-end justify-between mb-8">
+<div>
+<span class="text-4xl font-bold text-on-surface">12</span>
+<span class="text-on-surface-variant ml-1">/ 48</span>
+<p class="text-xs text-on-surface-variant mt-1">Apartamentos monitorizados</p>
+</div>
+<div class="w-24 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container" style="width: 25%;"></div>
+</div>
+</div>
+<div class="space-y-2 max-h-[220px] overflow-y-auto pr-2 custom-scrollbar">
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<input checked="" class="w-4 h-4 text-primary rounded" type="checkbox"/>
+<span class="text-sm font-medium">Apartamento 101 - Bahía</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<input checked="" class="w-4 h-4 text-primary rounded" type="checkbox"/>
+<span class="text-sm font-medium">Apartamento 102 - Bahía</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<input checked="" class="w-4 h-4 text-primary rounded" type="checkbox"/>
+<span class="text-sm font-medium">Penthouse A - Faro</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<input class="w-4 h-4 text-primary rounded" type="checkbox"/>
+<span class="text-sm font-medium">Apartamento 201 - Bahía</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<input class="w-4 h-4 text-primary rounded" type="checkbox"/>
+<span class="text-sm font-medium">Villa Palmera 04</span>
+</div>
+</div>
+<button class="w-full mt-6 py-3 text-primary font-bold text-sm hover:underline">Ver todas las unidades</button>
+</section>
+</div>
+</div>
+<!-- Global Footer Actions -->
+<div class="mt-12 flex justify-end items-center gap-6 pb-12">
+<button class="text-on-surface-variant font-bold hover:text-on-surface transition-colors">Descartar cambios</button>
+<button class="bg-primary-container text-on-primary-container px-12 py-4 rounded-full font-bold shadow-lg shadow-primary-container/20 hover:scale-[1.02] active:scale-95 transition-all">Guardar cambios del programa piloto</button>
+</div>
+</div>
+</main>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #F0EDED;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #DBC1B3;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #984700;
+        }
+    </style>
+</body></html>

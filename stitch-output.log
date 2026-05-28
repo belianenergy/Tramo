@@ -1,0 +1,18 @@
+1. Creating Stitch project...
+Project created: {
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"name\":\"projects/16575746514785476065\",\"title\":\"EnergyOS Dashboard\",\"visibility\":\"PRIVATE\",\"projectType\":\"PROJECT_DESIGN\",\"origin\":\"STITCH\"}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "name": "projects/16575746514785476065",
+      "origin": "STITCH",
+      "projectType": "PROJECT_DESIGN",
+      "title": "EnergyOS Dashboard",
+      "visibility": "PRIVATE"
+   

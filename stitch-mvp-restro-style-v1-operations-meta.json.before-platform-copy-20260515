@@ -1,0 +1,27 @@
+{
+  "key": "operations",
+  "requestedName": "operaciones-cola",
+  "title": "Operaciones — EnergyOS",
+  "projectId": "11820050226044719534",
+  "projectName": "projects/11820050226044719534",
+  "screenId": "8739610498ba4782a1c562a3ec1ad70c",
+  "screenName": "projects/11820050226044719534/screens/8739610498ba4782a1c562a3ec1ad70c",
+  "width": "2560",
+  "height": "2156",
+  "htmlCodeName": "projects/11820050226044719534/files/f1367b0bbf504889b7dc10b22af5a755",
+  "screenshotName": "projects/11820050226044719534/files/8b2350539e38422fa457636ebaf75eca",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzQ0NzAyNmFhZTU2YjQ0OWY4OWIyZDIyMWZjODgzYjYzEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uj0hYz5xhJYN1q0Ap_ji8nQxc9XTlLBNps3uGsrZe8hAls5sX7ONLDtx3_IxdSTgIyepWMif1hk69AlbkUBiW4Ti9PA-QW9GePv19Lv7dHI0QaEMtmcDLQEEZkWrtY9ZR-0Hv3uESe3QxnD11iBFY8-GKL5YaUNMutIM3G5HspIGk1tM31qKiS_eMPGYGtYC8Eu-5Aw5lpyj1DJPeBkTRmOI1y19RTtf2neqcdi6RuefLv3APzKz7V3QwnA",
+  "generatedAt": "2026-05-12T19:39:04.073Z",
+  "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+  "localFiles": {
+    "response": "stitch-mvp-restro-style-v1-operations-response.json",
+    "meta": "stitch-mvp-restro-style-v1-operations-meta.json",
+    "html": "stitch-mvp-restro-style-v1-operations.html",
+    "stitchPng": "stitch-mvp-restro-style-v1-operations-stitch.png",
+    "previews": [
+      "stitch-mvp-restro-style-v1-operations-preview-mobile-375.png",
+      "stitch-mvp-restro-style-v1-operations-preview-desktop-1440.png"
+    ]
+  }
+}

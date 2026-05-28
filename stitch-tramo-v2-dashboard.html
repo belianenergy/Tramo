@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tramo - Portfolio Dashboard</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#dbc1b3",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#e0c0b0",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#003a35",
+                        "inverse-on-surface": "#f4f0ef",
+                        "secondary": "#72594c",
+                        "on-secondary-container": "#785f52",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#ffb68a",
+                        "background": "#fdf8f8",
+                        "tertiary-fixed-dim": "#80d5cb",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f1edec",
+                        "tertiary": "#006a63",
+                        "primary-container": "#e6813a",
+                        "primary-fixed-dim": "#ffb68a",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#584236",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fdf8f8",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "on-background": "#1c1b1b",
+                        "surface-container-low": "#f7f2f2",
+                        "inverse-surface": "#313030",
+                        "tertiary-fixed": "#9cf2e8",
+                        "on-primary-container": "#562500",
+                        "surface-tint": "#984700",
+                        "surface-container-high": "#ece7e7",
+                        "primary-fixed": "#ffdbc8",
+                        "on-surface": "#1c1b1b",
+                        "tertiary-container": "#52a9a0",
+                        "outline": "#887367",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#554338",
+                        "primary": "#984700",
+                        "surface-bright": "#fdf8f8",
+                        "on-secondary-fixed": "#29170e",
+                        "surface-container-highest": "#e6e1e1",
+                        "secondary-container": "#fedccb",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-primary-fixed": "#321300",
+                        "surface-variant": "#e6e1e1",
+                        "on-primary-fixed-variant": "#743500",
+                        "secondary-fixed": "#fedccb",
+                        "surface-dim": "#ddd9d8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "1rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "unit": "4px",
+                        "container-max": "1280px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "data-sm": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "data-lg": ["JetBrains Mono"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "data-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "data-lg": ["16px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #fcf9f8; }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #dbc1b3; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #887367; }
+    </style>
+</head>
+<body class="text-on-surface antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+<nav class="hidden md:flex flex-col h-full py-6 px-4 gap-2 bg-surface-container-low dark:bg-surface-container-lowest fixed left-0 top-0 w-64 z-50 border-r border-outline-variant dark:border-outline">
+<div class="mb-8 px-4 flex flex-col gap-1">
+<img alt="Tramo Logo" class="h-8 object-contain object-left mb-2" src="https://lh3.googleusercontent.com/aida/ADBb0ui-wbKe3GeXREggms3Wu3iWZowOCSfwJOGvLMbtDeOE-OpBk3yVJ5mJcgO13JpY6QcvtXFOZ7iBcL26juPV6VRfqsIytu9yShP7mucIlJkrz-q__HNLRm6sW6xUe2tIrcAZARLu4qzCQZQmbNTinCHZUou4-3z-_s-GwEP5BVcH4SRtntkhy_rxjp4iH2UaChixF1iRgD3GxlowlQQ66zl0WlSKVOm7HVp_eRHSdCqqLd8YPLpOCeVPYJlR"/>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Tramo Energy</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Admin Console</span>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<a class="bg-primary-container text-on-primary-container rounded-lg font-bold border-l-4 border-primary px-4 py-3 flex items-center gap-3 active-nav" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-data-sm text-data-sm">Overview</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container px-4 py-3 flex items-center gap-3 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">domain</span>
+<span class="font-data-sm text-data-sm">Properties</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container px-4 py-3 flex items-center gap-3 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">event_available</span>
+<span class="font-data-sm text-data-sm">Reservations</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container px-4 py-3 flex items-center gap-3 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">insert_chart</span>
+<span class="font-data-sm text-data-sm">Analytics</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container px-4 py-3 flex items-center gap-3 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-data-sm text-data-sm">Reports</span>
+</a>
+</div>
+<button class="bg-primary-container text-on-primary font-data-sm text-data-sm py-3 px-4 rounded-lg flex items-center justify-center gap-2 mt-4 hover:bg-surface-tint transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            New Property
+        </button>
+<div class="mt-8 flex flex-col gap-1 border-t border-outline-variant pt-4">
+<a class="text-on-surface-variant hover:bg-surface-container px-4 py-3 flex items-center gap-3 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-data-sm text-data-sm">Settings</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container px-4 py-3 flex items-center gap-3 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-data-sm text-data-sm">Support</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col h-full md:ml-64 relative overflow-y-auto overflow-x-hidden bg-background">
+<!-- TopAppBar (Shared Component adapted for context) -->
+<header class="flex justify-between items-center w-full px-margin-desktop h-16 bg-surface dark:bg-surface-container-low border-b border-outline-variant dark:border-outline docked full-width top-0 z-40 shrink-0 sticky">
+<div class="flex items-center gap-4">
+<div class="flex items-center text-on-surface-variant font-data-sm text-data-sm">
+<span class="hover:text-primary cursor-pointer transition-colors">Portfolio</span>
+<span class="mx-2">/</span>
+<span class="font-bold text-on-surface">Dashboard</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<!-- Date Selector -->
+<button class="flex items-center gap-2 px-3 py-1.5 border border-outline-variant rounded bg-surface-container-lowest hover:bg-surface-container transition-colors text-on-surface font-data-sm text-data-sm">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+                    Mayo 2026
+                    <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<div class="flex items-center gap-4 text-primary dark:text-primary-fixed">
+<button class="hover:text-primary transition-colors duration-200 w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-outline-variant overflow-hidden border border-outline-variant">
+<img alt="Property Manager Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a female property manager with a warm smile, wearing a dark blazer over a light blouse. The background is a slightly blurred, bright office environment. The image is cropped to a perfect circle for use as a UI avatar, demonstrating a clean, modern corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWwMAjPQ9OTYlj6-pnZ1oeFsNMnyWNBmhjd_NnjQyMwgzUgeLj0Z3yStoIjX2T5N6eGoGPH7mkxM2DwQVWSjxS9j5HeC2ngKCIH7unxpDb8MPSs5mTm07CeMfCg29BoXz5BnKsayMGXf01AGzw0l_uIKV7hPx1CqvAZg4-Po7QhlzcIYT0EQJjgLBxE-6xnx9dx1qLvhqdfYqbBVG24GIpNwHipP-Kc2mPZ6JAhPQAyyWif7OzJoEivn42z6g78Y7CSQm8t1owNAGk"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-margin-desktop flex flex-col gap-6 max-w-container-max mx-auto w-full">
+<!-- KPI Row -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-5 flex flex-col gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Total kWh Mayo</span>
+<div class="flex items-end justify-between mt-1">
+<span class="font-data-lg text-data-lg text-on-surface text-2xl font-semibold">1.847 kWh</span>
+<!-- Fake Sparkline using CSS -->
+<div class="w-16 h-8 flex items-end gap-1 opacity-60">
+<div class="w-2 h-3 bg-primary-container rounded-t-sm"></div>
+<div class="w-2 h-5 bg-primary-container rounded-t-sm"></div>
+<div class="w-2 h-4 bg-primary-container rounded-t-sm"></div>
+<div class="w-2 h-7 bg-primary-container rounded-t-sm"></div>
+<div class="w-2 h-6 bg-primary-container rounded-t-sm"></div>
+</div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-5 flex flex-col gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">kWh fuera de reserva</span>
+<div class="flex items-end justify-between mt-1">
+<span class="font-data-lg text-data-lg text-primary-container text-2xl font-bold">312 kWh</span>
+<span class="material-symbols-outlined text-primary-container">trending_up</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-5 flex flex-col gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Alertas activas</span>
+<div class="flex items-end justify-between mt-1">
+<span class="font-data-lg text-data-lg text-on-surface text-2xl font-semibold">7 acciones</span>
+<div class="w-8 h-8 rounded-full bg-error-container text-on-error-container flex items-center justify-center">
+<span class="font-data-sm text-data-sm font-bold">!</span>
+</div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-5 flex flex-col gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Propietarios informados</span>
+<div class="flex items-end justify-between mt-1">
+<span class="font-data-lg text-data-lg text-on-surface text-2xl font-semibold">12 / 14</span>
+<div class="w-full max-w-[60px] h-2 bg-surface-container rounded-full overflow-hidden self-center ml-4">
+<div class="h-full bg-tertiary-container w-[85%] rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Layout: Left Canvas / Right Sidebar -->
+<div class="flex flex-col lg:flex-row gap-6 items-start">
+<!-- LEFT CANVAS (70%) -->
+<div class="w-full lg:w-[70%] flex flex-col gap-6">
+<!-- Chart Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden flex flex-col">
+<div class="p-5 border-b border-outline-variant flex justify-between items-center">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Consumo por estado de reserva</h2>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="p-6">
+<!-- CSS Grid representation of a chart -->
+<div class="h-64 border-l border-b border-outline-variant relative flex items-end justify-between px-2 pb-1 pt-4">
+<!-- Y Axis Labels -->
+<div class="absolute left-[-30px] top-0 bottom-0 flex flex-col justify-between text-on-surface-variant font-data-sm text-data-sm pb-6 text-right w-6">
+<span>200</span>
+<span>150</span>
+<span>100</span>
+<span>50</span>
+<span>0</span>
+</div>
+<!-- Data points (Abstract representation) -->
+<div class="w-8 h-[60%] bg-primary-container bg-opacity-80 rounded-t-sm relative group"><div class="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-[10px] px-1 rounded opacity-0 group-hover:opacity-100 font-data-sm">120</div></div>
+<div class="w-8 h-[80%] bg-primary-container bg-opacity-80 rounded-t-sm relative group"><div class="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-[10px] px-1 rounded opacity-0 group-hover:opacity-100 font-data-sm">160</div></div>
+<div class="w-8 h-[40%] bg-surface-variant rounded-t-sm relative group"><div class="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-[10px] px-1 rounded opacity-0 group-hover:opacity-100 font-data-sm">80</div></div>
+<div class="w-8 h-[90%] bg-primary-container bg-opacity-80 rounded-t-sm relative group"><div class="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-[10px] px-1 rounded opacity-0 group-hover:opacity-100 font-data-sm">180</div></div>
+<div class="w-8 h-[30%] bg-outline-variant rounded-t-sm relative group"><div class="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-[10px] px-1 rounded opacity-0 group-hover:opacity-100 font-data-sm">60</div></div>
+<div class="w-8 h-[70%] bg-primary-container bg-opacity-80 rounded-t-sm relative group"><div class="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-[10px] px-1 rounded opacity-0 group-hover:opacity-100 font-data-sm">140</div></div>
+<div class="w-8 h-[50%] bg-surface-variant rounded-t-sm relative group"><div class="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-[10px] px-1 rounded opacity-0 group-hover:opacity-100 font-data-sm">100</div></div>
+</div>
+<!-- X Axis Labels -->
+<div class="flex justify-between px-2 mt-2 font-data-sm text-[10px] text-on-surface-variant">
+<span>01</span><span>05</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30</span>
+</div>
+<!-- Legend -->
+<div class="flex gap-4 mt-6 justify-center font-data-sm text-data-sm text-on-surface-variant">
+<div class="flex items-center gap-2"><div class="w-3 h-3 bg-primary-container rounded-sm"></div>Estancia</div>
+<div class="flex items-center gap-2"><div class="w-3 h-3 bg-surface-variant rounded-sm"></div>Fuera de reserva</div>
+<div class="flex items-center gap-2"><div class="w-3 h-3 bg-outline-variant rounded-sm"></div>Idle</div>
+</div>
+</div>
+</div>
+<!-- Property List Table -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden flex flex-col">
+<div class="p-5 border-b border-outline-variant flex justify-between items-center bg-surface-container-lowest">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Listado de propiedades</h2>
+<div class="flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center border border-outline-variant rounded text-on-surface-variant hover:bg-surface-container">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center border border-outline-variant rounded text-on-surface-variant hover:bg-surface-container">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface border-b border-outline-variant">
+<th class="py-3 px-4 font-data-sm text-data-sm text-on-surface-variant font-medium">Apartamento</th>
+<th class="py-3 px-4 font-data-sm text-data-sm text-on-surface-variant font-medium">Propietario</th>
+<th class="py-3 px-4 font-data-sm text-data-sm text-on-surface-variant font-medium text-right">Ocupación %</th>
+<th class="py-3 px-4 font-data-sm text-data-sm text-on-surface-variant font-medium text-right">kWh/estancia</th>
+<th class="py-3 px-4 font-data-sm text-data-sm text-on-surface-variant font-medium text-right">kWh fuera reserva</th>
+<th class="py-3 px-4 font-data-sm text-data-sm text-on-surface-variant font-medium text-center">Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-outline-variant hover:bg-surface transition-colors">
+<td class="py-3 px-4 font-data-sm text-data-sm font-semibold text-on-surface">VGO-014</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">Propietario A</td>
+<td class="py-3 px-4 font-data-sm text-data-sm text-on-surface text-right">87%</td>
+<td class="py-3 px-4 font-data-sm text-data-sm text-on-surface text-right">142 kWh</td>
+<td class="py-3 px-4 font-data-sm text-data-sm text-primary-container font-semibold text-right">18.3 kWh</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-block bg-primary-container text-on-primary font-data-sm text-[10px] px-2 py-1 rounded-sm">Alerta</span>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface transition-colors">
+<td class="py-3 px-4 font-data-sm text-data-sm font-semibold text-on-surface">COR-007</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">Propietario B</td>
+<td class="py-3 px-4 font-data-sm text-data-sm text-on-surface text-right">62%</td>
+<td class="py-3 px-4 font-data-sm text-data-sm text-on-surface text-right">98 kWh</td>
+<td class="py-3 px-4 font-data-sm text-data-sm text-on-surface text-right">4.1 kWh</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-block border border-tertiary text-tertiary bg-tertiary-fixed-dim bg-opacity-20 font-data-sm text-[10px] px-2 py-1 rounded-sm">OK</span>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface transition-colors">
+<td class="py-3 px-4 font-data-sm text-data-sm font-semibold text-on-surface">SJO-021</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">Propietario C</td>
+<td class="py-3 px-4 font-data-sm text-data-sm text-on-surface text-right">91%</td>
+<td class="py-3 px-4 font-data-sm text-data-sm text-on-surface text-right">201 kWh</td>
+<td class="py-3 px-4 font-data-sm text-data-sm text-on-surface text-right">0.8 kWh</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-block border border-tertiary text-tertiary bg-tertiary-fixed-dim bg-opacity-20 font-data-sm text-[10px] px-2 py-1 rounded-sm">OK</span>
+</td>
+</tr>
+<tr class="hover:bg-surface transition-colors">
+<td class="py-3 px-4 font-data-sm text-data-sm font-semibold text-on-surface">MDR-003</td>
+<td class="py-3 px-4 font-body-sm text-body-sm text-on-surface-variant">Propietario D</td>
+<td class="py-3 px-4 font-data-sm text-data-sm text-on-surface text-right">45%</td>
+<td class="py-3 px-4 font-data-sm text-data-sm text-on-surface text-right">76 kWh</td>
+<td class="py-3 px-4 font-data-sm text-data-sm text-primary-container font-semibold text-right">22.1 kWh</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-block bg-primary-container text-on-primary font-data-sm text-[10px] px-2 py-1 rounded-sm">Alerta</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- RIGHT SIDEBAR (30%) -->
+<div class="w-full lg:w-[30%]">
+<!-- Alert Queue Panel -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden flex flex-col sticky top-[88px]">
+<div class="p-5 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">warning</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Cola de alertas</h2>
+</div>
+<span class="bg-primary-container text-on-primary font-data-sm text-[10px] px-2 py-0.5 rounded-full">2 nuevas</span>
+</div>
+<div class="flex flex-col">
+<!-- Alert Item 1 -->
+<div class="p-4 border-b border-outline-variant hover:bg-surface transition-colors flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="font-data-sm text-data-sm font-bold text-on-surface">VGO-014</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Hace 2h</span>
+</div>
+<span class="material-symbols-outlined text-primary-container text-[18px]">bolt</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm font-medium text-on-surface">Consumo fuera de reserva</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">4.2 kWh consumidos sin reserva activa en las últimas 24h.</p>
+</div>
+<button class="mt-2 self-start border border-secondary text-secondary font-data-sm text-[12px] px-3 py-1.5 rounded hover:bg-surface-container transition-colors">
+                                    Revisar
+                                </button>
+</div>
+<!-- Alert Item 2 -->
+<div class="p-4 hover:bg-surface transition-colors flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="font-data-sm text-data-sm font-bold text-on-surface">COR-007</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Hace 5h</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">tune</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm font-medium text-on-surface">Potencia recomendada</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">P2: 3.3 kW sugeridos vs actual 4.6 kW. Potencial ahorro: 14€/mes.</p>
+</div>
+<button class="mt-2 self-start border border-secondary text-secondary font-data-sm text-[12px] px-3 py-1.5 rounded hover:bg-surface-container transition-colors">
+                                    Revisar
+                                </button>
+</div>
+</div>
+<div class="p-3 border-t border-outline-variant bg-surface-container-lowest text-center">
+<button class="font-data-sm text-data-sm text-secondary hover:text-on-surface transition-colors">
+                                Ver todas las alertas (7)
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

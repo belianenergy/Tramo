@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tramo — Panel de control</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegación">
+      <a class="brand" href="index.html" aria-label="Tramo, inicio">
+        <svg class="logo-mark" viewBox="0 0 80 48" role="img"><path class="logo-line" d="M10 13 H26 M32 13 H48 M54 13 H70 M10 35 H26 M32 35 H48 M54 35 H70 M10 13 V35 M40 13 V35 M70 13 V35" fill="none" stroke-width="3" stroke-linecap="round"/><path class="logo-line" d="M26 9 V17 M32 31 V39 M48 9 V17 M54 31 V39" fill="none" stroke-width="2" stroke-linecap="round"/><circle class="logo-signal" cx="54" cy="13" r="4.5"/></svg>
+        Tramo
+      </a>
+      <nav class="side-nav" aria-label="Pantallas">
+        <a class="active" href="dashboard.html">Panel</a>
+        <a href="#!">Apartamentos</a>
+        <a href="#!">Operaciones</a>
+        <a href="informe-propietario.html">Informe propietario</a>
+        <a href="index.html">← Landing</a>
+      </nav>
+    </aside>
+
+    <main class="main" id="contenido">
+      <header class="topbar">
+        <a class="brand mobile-brand" href="index.html">Tramo</a>
+        <div class="search" role="search">
+          <label class="field-label" for="global-search" style="font-size:0.7rem">Buscar propiedad, CUPS o alerta</label>
+          <input class="search-input" id="global-search" type="search" placeholder="Riazor, ES0021, confort" />
+        </div>
+        <div class="top-actions">
+          <a class="btn" href="informe-propietario.html">Generar informe</a>
+          <button class="icon-btn" type="button" aria-label="Notificaciones">3</button>
+          <span class="avatar" aria-label="Usuario">MG</span>
+        </div>
+      </header>
+
+      <section class="page-content" aria-labelledby="page-title">
+        <div class="page-title">
+          <div>
+            <p class="eyebrow">Panel operativo</p>
+            <h1 id="page-title">Cartera turística</h1>
+            <p class="section-copy">Periodo <time datetime="2026-05-01">01/05/2026</time>–<time datetime="2026-05-18">18/05/2026</time>. Datos simulados para validar flujo, unidades y priorización.</p>
+          </div>
+          <div class="field">
+            <label class="field-label" for="portfolio">Cartera</label>
+            <select id="portfolio" name="portfolio">
+              <option>Galicia y Costa Norte</option>
+              <option>Andalucía Costa</option>
+              <option>Madrid urbano</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="kpi-row">
+          <div class="kpi-card">
+            <span class="kpi-label">Fuera de estancia</span>
+            <span class="kpi-value kpi-warn">501 kWh</span>
+            <span class="kpi-detail">Consumo sin reserva ni limpieza asignada</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Coste estimado</span>
+            <span class="kpi-value">122,90 EUR</span>
+            <span class="kpi-detail">Tarifa activa por CUPS y periodo</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Alertas abiertas</span>
+            <span class="kpi-value kpi-warn">3</span>
+            <span class="kpi-detail">2 confort · 1 telemetría sin señal</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Dispositivos</span>
+            <span class="kpi-value kpi-ok">27/29</span>
+            <span class="kpi-detail">93% operativos</span>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="chart-panel" aria-labelledby="chart-title">
+            <div class="chart-head">
+              <div><h2 id="chart-title">Consumo y coste por día</h2><p class="section-copy">kWh fuera de estancia frente a coste estimado.</p></div>
+              <div class="segmented" aria-label="Rango">
+                <button type="button">24H</button>
+                <button class="active" type="button">7D</button>
+                <button type="button">30D</button>
+              </div>
+            </div>
+            <div class="energy-chart">
+              <div class="axis mono"><span>260</span><span>190</span><span>120</span><span>50</span></div>
+              <div class="plot">
+                <svg class="area-svg" viewBox="0 0 700 286" preserveAspectRatio="none" role="img" aria-label="Consumo con picos días 10 y 15">
+                  <defs><linearGradient id="area-dash" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="var(--accent)" stop-opacity="0.18"/><stop offset="100%" stop-color="var(--accent)" stop-opacity="0.01"/></linearGradient></defs>
+                  <path d="M0 235 L70 212 L140 225 L210 104 L280 196 L350 220 L420 184 L490 122 L560 174 L630 204 L700 188 L700 286 L0 286 Z" fill="url(#area-dash)"/>
+                  <path d="M0 235 L70 212 L140 225 L210 104 L280 196 L350 220 L420 184 L490 122 L560 174 L630 204 L700 188" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+                  <circle cx="210" cy="104" r="6" fill="var(--accent)"/>
+                  <circle cx="490" cy="122" r="6" fill="var(--accent)"/>
+                </svg>
+                <div class="plot-labels mono"><span>01/05</span><span>05/05</span><span>10/05</span><span>15/05</span><span>18/05</span></div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="property-panel" aria-labelledby="prop-title">
+            <div class="panel-head">
+              <div><h2 id="prop-title">Casa Rural O Pino</h2><p class="section-copy">A Coruña · CUPS <span class="mono">ES0021000001234567AB</span></p></div>
+              <span class="badge warn">Revisar hoy</span>
+            </div>
+            <div class="cost-row"><span><strong>Última salida</strong><br/><small class="label">Reserva finalizada</small></span><span class="mono">16/05/2026</span></div>
+            <div class="cost-row"><span><strong>Próxima entrada</strong><br/><small class="label">Limpieza prevista</small></span><span class="mono">20/05/2026</span></div>
+            <div class="device-row"><span><strong>Temperatura salón</strong><br/><small class="label">Sin huésped</small></span><span class="mono">25,8 °C</span></div>
+            <div class="device-row"><span><strong>Potencia contratada</strong><br/><small class="label">P1/P2 actual</small></span><span class="mono">5,75 kW</span></div>
+            <div class="device-row"><span><strong>Consumo entre reservas</strong><br/><small class="label">17/05–18/05</small></span><span class="mono" style="color:var(--accent)">184 kWh</span></div>
+          </aside>
+        </div>
+
+        <div class="table-wrap" aria-labelledby="table-title">
+          <div class="table-head">
+            <div><h2 id="table-title">Propiedades monitorizadas</h2><p class="section-copy">Lecturas recientes, consumo sin estancia y estado operativo.</p></div>
+            <span class="status-pill">Datadis sincronizado</span>
+          </div>
+          <table>
+            <thead><tr><th>Propiedad</th><th>Ciudad</th><th>Última lectura</th><th class="right">Entre reservas</th><th class="right">Coste</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Casa Rural O Pino</strong><br/><span class="label mono">ES0021000001234567AB</span></td><td>A Coruña</td><td class="mono">18/05 09:15</td><td class="right mono">184 kWh</td><td class="right mono">42,70 EUR</td><td><span class="badge warn">Revisar</span></td></tr>
+              <tr><td><strong>Apartamentos Riazor</strong><br/><span class="label mono">ES0021000004459120QF</span></td><td>A Coruña</td><td class="mono">18/05 08:40</td><td class="right mono">96 kWh</td><td class="right mono">21,90 EUR</td><td><span class="badge ok">Controlado</span></td></tr>
+              <tr><td><strong>Villa Marosa</strong><br/><span class="label mono">ES0031400007812241LR</span></td><td>Málaga</td><td class="mono">17/05 23:10</td><td class="right mono">221 kWh</td><td class="right mono">58,30 EUR</td><td><span class="badge error">Alta</span></td></tr>
+              <tr><td><strong>Casa Lestrove</strong><br/><span class="label mono">ES0021000009921367XP</span></td><td>Pontevedra</td><td class="mono">18/05 07:55</td><td class="right mono">72 kWh</td><td class="right mono">18,40 EUR</td><td><span class="badge ok">OK</span></td></tr>
+              <tr><td><strong>Ático Compostela</strong><br/><span class="label mono">ES0021000003348765MN</span></td><td>Santiago</td><td class="mono">18/05 08:20</td><td class="right mono">43 kWh</td><td class="right mono">11,20 EUR</td><td><span class="badge ok">OK</span></td></tr>
+              <tr><td><strong>Loft Rianxo</strong><br/><span class="label mono">ES0021000006671249HK</span></td><td>Rianxo</td><td class="mono">17/05 22:45</td><td class="right mono">118 kWh</td><td class="right mono">31,50 EUR</td><td><span class="badge warn">Revisar</span></td></tr>
+              <tr><td><strong>Dúplex Ferrol</strong><br/><span class="label mono">ES0021000008814203DW</span></td><td>Ferrol</td><td class="mono">18/05 06:10</td><td class="right mono">35 kWh</td><td class="right mono">9,80 EUR</td><td><span class="badge ok">OK</span></td></tr>
+              <tr><td><strong>Estudio Coruña</strong><br/><span class="label mono">ES0021000005539081BV</span></td><td>A Coruña</td><td class="mono">18/05 09:00</td><td class="right mono">29 kWh</td><td class="right mono">7,60 EUR</td><td><span class="badge ok">OK</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="dashboard-grid" style="margin-top:var(--space-xl)" aria-label="Alertas y resumen">
+          <div class="chart-panel">
+            <div class="panel-head"><div><h2>Alertas operativas</h2><p class="section-copy">Prioridad por coste, huésped próximo y señal disponible.</p></div></div>
+            <div class="alert-list">
+              <article class="alert-card"><header><strong>Villa Marosa · split encendido sin reserva</strong><span class="badge error">Alta</span></header><p>Consumo sostenido desde <span class="mono">17/05 19:20</span>. Próxima entrada <span class="mono">19/05</span>. Acción: revisar programación.</p></article>
+              <article class="alert-card"><header><strong>Casa Rural O Pino · temperatura fuera de rango</strong><span class="badge warn">Media</span></header><p>Salón a <span class="mono">25,8 °C</span> sin ocupación. Revisar antes de limpieza.</p></article>
+              <article class="alert-card"><header><strong>Riazor · sensor dormitorio 2</strong><span class="badge warn">Media</span></header><p>Última señal hace <span class="mono">13 h</span>. Resto de dispositivos OK.</p></article>
+            </div>
+          </div>
+          <aside class="property-panel">
+            <div class="panel-head"><div><h2>Resumen económico</h2><p class="section-copy">Contextual, sin promesa de ahorro garantizado.</p></div></div>
+            <div class="cost-row"><span><strong>Coste mayo acumulado</strong><br/><small class="label">Cartera seleccionada</small></span><span class="mono">1.428 EUR</span></div>
+            <div class="cost-row"><span><strong>Fuera de estancia</strong><br/><small class="label">Sobre consumo total</small></span><span class="mono" style="color:var(--accent)">501 kWh</span></div>
+            <div class="cost-row"><span><strong>Acciones cerradas</strong><br/><small class="label">Últimos 30 días</small></span><span class="mono" style="color:#34d399">14</span></div>
+            <div class="cost-row"><span><strong>Ahorro identificado</strong><br/><small class="label">Solo por potencia</small></span><span class="mono" style="color:#34d399">847 €/año</span></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

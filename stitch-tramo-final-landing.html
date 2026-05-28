@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tramo - Landing Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fdf8f8",
+                        "on-surface": "#1c1b1b",
+                        "on-background": "#1c1b1b",
+                        "inverse-surface": "#313030",
+                        "on-secondary-fixed": "#321300",
+                        "tertiary-fixed": "#9cf2e8",
+                        "surface-container-high": "#ece7e7",
+                        "surface-dim": "#ddd9d8",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#ffb68a",
+                        "outline": "#887367",
+                        "outline-variant": "#dbc1b3",
+                        "surface-container-highest": "#e6e1e1",
+                        "inverse-primary": "#ffb68a",
+                        "surface-bright": "#fdf8f8",
+                        "secondary-fixed": "#ffdbc8",
+                        "on-surface-variant": "#554338",
+                        "inverse-on-surface": "#f4f0ef",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#6f3200",
+                        "primary-fixed": "#ffdbc8",
+                        "primary-container": "#e6813a",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "tertiary-container": "#52a9a0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#743500",
+                        "on-error-container": "#93000a",
+                        "primary": "#984700",
+                        "surface-variant": "#e6e1e1",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-primary-fixed": "#321300",
+                        "surface-tint": "#984700",
+                        "surface": "#fdf8f8",
+                        "secondary-container": "#fe9650",
+                        "on-tertiary-container": "#003a35",
+                        "surface-container": "#f1edec",
+                        "on-secondary-fixed-variant": "#743500",
+                        "surface-container-low": "#f7f2f2",
+                        "secondary-fixed-dim": "#ffb68a",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#984700",
+                        "tertiary-fixed-dim": "#80d5cb",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#562500",
+                        "tertiary": "#006a63"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "margin-desktop": "32px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "gutter": "16px",
+                        "base": "4px",
+                        "max-width": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "label-caps": ["JetBrains Mono"],
+                        "metric-lg": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "metric-md": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.08em", "fontWeight": "700" }],
+                        "metric-lg": ["28px", { "lineHeight": "1", "letterSpacing": "-0.04em", "fontWeight": "600" }],
+                        "body-sm": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "metric-md": ["16px", { "lineHeight": "1", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #fcf9f8; } /* Forced base paper color per style guide */
+    </style>
+</head>
+<body class="text-on-background font-body-md antialiased selection:bg-primary-container selection:text-white">
+<!-- TopNavBar (Shared Component JSON) -->
+<header class="bg-background dark:bg-background border-b border-outline-variant dark:border-outline fixed w-full top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop h-16 max-w-max-width mx-auto">
+<!-- Logo area -->
+<div class="flex items-center gap-sm">
+<img alt="Tramo Logo" class="w-8 h-8 object-contain" src="data:image/png;base64,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"/>
+<span class="text-headline-sm font-headline-sm font-bold text-on-background dark:text-on-background tracking-tight">Tramo</span>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-xl">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 uppercase" href="#">Dashboard</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 uppercase" href="#">Operaciones</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 uppercase" href="#">Apartamentos</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 uppercase" href="#">Tarifas y Potencia</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 uppercase" href="#">Informes</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 uppercase" href="#">Piloto</a>
+</nav>
+<!-- Trailing Action -->
+<button class="hidden md:block bg-primary-container text-white text-label-caps font-label-caps py-sm px-md rounded-DEFAULT hover:bg-primary transition-colors uppercase">
+                Diagnosticar mi cartera
+            </button>
+</div>
+</header>
+<main class="pt-24 md:pt-32 pb-xl">
+<!-- Hero Section -->
+<section class="max-w-max-width mx-auto px-margin-desktop mb-32 grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div class="flex flex-col gap-lg">
+<h1 class="text-headline-lg font-headline-lg lg:text-[48px] lg:leading-[1.1] text-on-surface">
+                    Convierte la energía de tu cartera turística en margen operativo.
+                </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+                    Tramo cruza reservas, CUPS/Datadis, facturas y tarifas para que cada kWh tenga explicación, cada decisión tenga evidencia y cada propietario reciba un informe claro del impacto operativo sobre su factura.
+                </p>
+<div class="flex flex-col sm:flex-row gap-md mt-sm">
+<button class="bg-primary-container text-white text-label-caps font-label-caps py-md px-lg rounded-DEFAULT hover:bg-primary transition-colors uppercase tracking-wider w-fit">
+                        Diagnosticar mi cartera
+                    </button>
+<button class="bg-transparent border border-outline-variant text-on-surface text-label-caps font-label-caps py-md px-lg rounded-DEFAULT hover:bg-surface-container-high transition-colors uppercase tracking-wider w-fit">
+                        Ver dashboard demo
+                    </button>
+</div>
+</div>
+<!-- Product Panel Visual (No Images, CSS/HTML only) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg shadow-sm relative z-10 w-full max-w-lg mx-auto lg:ml-auto group hover:shadow-md transition-shadow duration-300">
+<!-- Header -->
+<div class="flex justify-between items-center border-b border-outline-variant pb-md mb-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase">Evidencia Operativa</span>
+</div>
+<span class="bg-surface-container-high px-2 py-1 rounded-sm text-body-sm font-body-sm text-on-surface-variant">Hoy</span>
+</div>
+<!-- Evidence Row -->
+<div class="mb-lg">
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase mb-xs tracking-wider">Anomalía Detectada</p>
+<div class="bg-surface p-sm border border-outline-variant rounded-DEFAULT font-metric-md text-metric-md text-on-surface mb-sm">
+<span class="text-primary font-bold">VGO-014</span> · checkout 11:00 · <span class="text-error">4,2 kWh</span> entre 13:10-16:40 sin reserva activa
+                    </div>
+<button class="text-primary-container border border-primary-container bg-transparent py-xs px-sm rounded-DEFAULT text-label-caps font-label-caps hover:bg-primary-container hover:text-white transition-colors w-full uppercase">
+                        Revisar termo y regla post-checkout
+                    </button>
+</div>
+<!-- Comparison Row -->
+<div class="border-t border-outline-variant pt-md mb-md">
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase mb-sm tracking-wider">Optimización de Potencia</p>
+<div class="flex flex-col gap-xs font-metric-md text-metric-md">
+<div class="flex justify-between text-on-surface">
+<span>Actual P1/P2:</span>
+<span>4.6/4.6 kW</span>
+</div>
+<div class="flex justify-between text-primary-container font-semibold">
+<span>Recomendado:</span>
+<span>3.3/4.6 kW</span>
+</div>
+</div>
+</div>
+<!-- Footer Status -->
+<div class="mt-lg flex items-center gap-xs text-tertiary border-t border-outline-variant pt-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm font-medium">Informe de propietario listo</span>
+</div>
+<!-- Decorative grid background behind card -->
+<div class="absolute -inset-4 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiNkYmMxYjMiLz48L3N2Zz4=')] opacity-20 -z-10 rounded-lg"></div>
+</div>
+</section>
+<!-- Pain Triptych -->
+<section class="max-w-max-width mx-auto px-margin-desktop mb-32">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-lg text-center max-w-2xl mx-auto">
+                El descontrol energético erosiona la rentabilidad.
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg mt-xl">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-lg flex flex-col gap-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Consumo fuera de reserva</h3>
+<span class="material-symbols-outlined text-error">trending_up</span>
+</div>
+<div class="h-px w-full bg-outline-variant"></div>
+<div class="flex-grow flex flex-col justify-center">
+<p class="font-metric-md text-metric-md text-on-surface mb-2">Exceso post-checkout:</p>
+<p class="font-metric-lg text-metric-lg text-error mb-4">+12.4 kWh</p>
+<div class="bg-surface p-sm border border-outline-variant font-body-sm text-body-sm text-on-surface-variant">
+                            Termo eléctrico encendido 48h antes del check-in.
+                        </div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-lg flex flex-col gap-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Potencia o tarifa equivocada</h3>
+<span class="material-symbols-outlined text-primary-container">bolt</span>
+</div>
+<div class="h-px w-full bg-outline-variant"></div>
+<div class="flex-grow flex flex-col justify-center gap-xs">
+<div class="flex justify-between items-center bg-surface p-sm border border-outline-variant font-metric-md text-metric-md">
+<span class="text-on-surface-variant">P1 Actual:</span>
+<span class="text-on-surface">5.75 kW</span>
+</div>
+<div class="flex justify-between items-center bg-surface p-sm border border-primary-container bg-primary-fixed/20 font-metric-md text-metric-md">
+<span class="text-primary-container font-semibold">P1 Real Máx:</span>
+<span class="text-primary-container font-bold">2.80 kW</span>
+</div>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase mt-xs text-right">Penalización por sobredimensionamiento</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-lg flex flex-col gap-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Informes sin explicación</h3>
+<span class="material-symbols-outlined text-tertiary">receipt_long</span>
+</div>
+<div class="h-px w-full bg-outline-variant"></div>
+<div class="flex-grow flex flex-col justify-center">
+<div class="font-metric-md text-metric-md mb-xs flex justify-between">
+<span class="text-on-surface">Factura:</span>
+<span class="text-on-surface">145.20 EUR</span>
+</div>
+<div class="font-metric-md text-metric-md mb-sm flex justify-between border-b border-outline-variant pb-xs">
+<span class="text-on-surface-variant">Consumo imputable:</span>
+<span class="text-primary-container">-32.40 EUR</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface p-sm border border-outline-variant">
+                            Justifica a los propietarios qué parte del gasto es operativa y qué parte es desperdicio.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- System Flow -->
+<section class="max-w-max-width mx-auto px-margin-desktop mb-32 border-y border-outline-variant py-xl bg-surface">
+<h2 class="text-headline-sm font-headline-sm text-center text-on-surface mb-xl">Flujo del Sistema</h2>
+<div class="flex flex-col md:flex-row items-center justify-center gap-md lg:gap-lg font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">
+<div class="flex flex-col items-center gap-sm bg-surface-container-lowest border border-outline-variant p-md min-w-[140px]">
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 1;">event_available</span>
+<span>PMS/Reservas</span>
+</div>
+<span class="material-symbols-outlined hidden md:block text-outline-variant">arrow_right_alt</span>
+<span class="material-symbols-outlined md:hidden text-outline-variant">arrow_downward</span>
+<div class="flex flex-col items-center gap-sm bg-surface-container-lowest border border-outline-variant p-md min-w-[140px]">
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 1;">dataset</span>
+<span>CUPS/Datadis</span>
+</div>
+<span class="material-symbols-outlined hidden md:block text-outline-variant">arrow_right_alt</span>
+<span class="material-symbols-outlined md:hidden text-outline-variant">arrow_downward</span>
+<div class="flex flex-col items-center gap-sm bg-surface-container-lowest border border-primary-container bg-primary-fixed/10 p-md min-w-[140px]">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="text-primary-container font-bold">Decisiones</span>
+</div>
+<span class="material-symbols-outlined hidden md:block text-outline-variant">arrow_right_alt</span>
+<span class="material-symbols-outlined md:hidden text-outline-variant">arrow_downward</span>
+<div class="flex flex-col items-center gap-sm bg-surface-container-lowest border border-outline-variant p-md min-w-[140px]">
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 1;">summarize</span>
+<span>Informes</span>
+</div>
+</div>
+</section>
+<!-- Modules Section -->
+<section class="max-w-max-width mx-auto px-margin-desktop mb-32">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-lg">Módulos de la Plataforma</h2>
+<div class="grid grid-cols-2 lg:grid-cols-3 gap-px bg-outline-variant border border-outline-variant">
+<!-- Mod 1 -->
+<div class="bg-surface-container-lowest p-lg hover:bg-surface transition-colors group cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-md group-hover:text-primary-container">dashboard</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Dashboard</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Visión global de cartera. KWH total, gasto proyectado y alertas críticas de consumo.</p>
+</div>
+<!-- Mod 2 -->
+<div class="bg-surface-container-lowest p-lg hover:bg-surface transition-colors group cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-md group-hover:text-primary-container">settings_suggest</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Operaciones</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Listado de anomalías post-checkout, consumos fantasma y termostatos desconfigurados.</p>
+</div>
+<!-- Mod 3 -->
+<div class="bg-surface-container-lowest p-lg hover:bg-surface transition-colors group cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-md group-hover:text-primary-container">apartment</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Apartamentos</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ficha técnica por CUPS. Historial de reservas vs consumo real horario.</p>
+</div>
+<!-- Mod 4 -->
+<div class="bg-surface-container-lowest p-lg hover:bg-surface transition-colors group cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-md group-hover:text-primary-container">price_change</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Tarifas y Potencia</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Análisis de sobredimensionamiento de potencia e indexación de precios de mercado.</p>
+</div>
+<!-- Mod 5 -->
+<div class="bg-surface-container-lowest p-lg hover:bg-surface transition-colors group cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-md group-hover:text-primary-container">assignment</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Informes</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Generación automática de PDFs para justificar el gasto energético a propietarios.</p>
+</div>
+<!-- Mod 6 -->
+<div class="bg-surface-container-lowest p-lg hover:bg-surface transition-colors group cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-md group-hover:text-primary-container">rocket_launch</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Piloto</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Entorno de pruebas y configuración inicial de integración con Datadis y PMS.</p>
+</div>
+</div>
+</section>
+<!-- Lead Form Section -->
+<section class="max-w-3xl mx-auto px-margin-desktop mb-16">
+<div class="bg-surface-container-lowest border border-outline-variant p-xl">
+<div class="mb-lg border-b border-outline-variant pb-md">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-sm">Comienza a optimizar tu cartera</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Completa los datos de tu operadora para solicitar un diagnóstico de rentabilidad energética.</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-x-md gap-y-lg">
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Nombre*</label>
+<input class="bg-white border-outline-variant focus:border-primary-container focus:ring-0 text-body-md p-sm rounded-none border" placeholder="Tu nombre" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Empresa*</label>
+<input class="bg-white border-outline-variant focus:border-primary-container focus:ring-0 text-body-md p-sm rounded-none border" placeholder="Nombre de la gestora" type="text"/>
+</div>
+<div class="flex flex-col gap-xs md:col-span-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Email*</label>
+<input class="bg-white border-outline-variant focus:border-primary-container focus:ring-0 text-body-md p-sm rounded-none border" placeholder="correo@empresa.com" type="email"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Nº alojamientos*</label>
+<input class="bg-white border-outline-variant focus:border-primary-container focus:ring-0 text-body-md p-sm rounded-none border font-metric-md" placeholder="0" type="number"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Ciudad/Región*</label>
+<input class="bg-white border-outline-variant focus:border-primary-container focus:ring-0 text-body-md p-sm rounded-none border" placeholder="Ej. Málaga" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">PMS*</label>
+<select class="bg-white border-outline-variant focus:border-primary-container focus:ring-0 text-body-md p-sm rounded-none border">
+<option>Selecciona PMS</option>
+<option>Hostaway</option>
+<option>Guetsy</option>
+<option>Smoobu</option>
+<option>Otro</option>
+</select>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">¿Datadis/CUPS?*</label>
+<select class="bg-white border-outline-variant focus:border-primary-container focus:ring-0 text-body-md p-sm rounded-none border">
+<option>¿Tienes acceso a Datadis?</option>
+<option>Sí, delegado</option>
+<option>No, pero tengo CUPS</option>
+<option>Desconozco</option>
+</select>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">¿Facturas recientes?*</label>
+<select class="bg-white border-outline-variant focus:border-primary-container focus:ring-0 text-body-md p-sm rounded-none border">
+<option>Disponibilidad</option>
+<option>Sí, las recibo yo</option>
+<option>Las recibe el propietario</option>
+</select>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">¿Quién paga?*</label>
+<select class="bg-white border-outline-variant focus:border-primary-container focus:ring-0 text-body-md p-sm rounded-none border">
+<option>Sujeto de pago</option>
+<option>El propietario</option>
+<option>La gestora (yo)</option>
+<option>Mixto</option>
+</select>
+</div>
+<div class="flex flex-col gap-xs md:col-span-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Dolor principal*</label>
+<textarea class="bg-white border-outline-variant focus:border-primary-container focus:ring-0 text-body-md p-sm rounded-none border h-24 resize-none" placeholder="¿Qué problema buscas resolver principalmente?"></textarea>
+</div>
+<div class="md:col-span-2 flex items-center justify-between border-t border-outline-variant pt-md mt-sm">
+<p class="text-body-sm font-body-sm text-on-surface-variant italic">
+                            "No envíes credenciales ni facturas por este formulario."
+                        </p>
+<button class="bg-primary-container text-white text-label-caps font-label-caps py-md px-xl rounded-DEFAULT hover:bg-primary transition-colors uppercase tracking-wider" type="button">
+                            Enviar diagnóstico
+                        </button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component JSON) -->
+<footer class="bg-surface-container dark:bg-inverse-surface border-t border-outline-variant dark:border-outline full-width bottom-0">
+<div class="flex flex-col md:flex-row justify-between items-center w-full py-xl px-margin-desktop max-w-max-width mx-auto gap-lg">
+<!-- Brand / Tagline -->
+<div class="flex flex-col items-center md:items-start gap-xs">
+<span class="text-headline-sm font-headline-sm font-bold text-primary dark:text-primary-fixed-dim">Tramo</span>
+<span class="text-body-sm font-body-sm text-on-surface dark:text-inverse-on-surface">© 2024 Tramo. Cada kWh, en su tramo correcto.</span>
+</div>
+<!-- Links -->
+<div class="flex gap-md">
+<a class="text-on-surface-variant dark:text-on-surface-variant text-label-caps font-label-caps hover:text-secondary dark:hover:text-secondary-fixed transition-colors uppercase focus:ring-1 focus:ring-primary rounded-sm px-1" href="#">Privacidad</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant text-label-caps font-label-caps hover:text-secondary dark:hover:text-secondary-fixed transition-colors uppercase focus:ring-1 focus:ring-primary rounded-sm px-1" href="#">Términos</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant text-label-caps font-label-caps hover:text-secondary dark:hover:text-secondary-fixed transition-colors uppercase focus:ring-1 focus:ring-primary rounded-sm px-1" href="#">Contacto</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant text-label-caps font-label-caps hover:text-secondary dark:hover:text-secondary-fixed transition-colors uppercase focus:ring-1 focus:ring-primary rounded-sm px-1" href="#">Soporte</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tramo | Control Energético para Apartamentos Turísticos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#743500",
+                        "on-tertiary-container": "#562500",
+                        "surface-container-highest": "#e6e1e1",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1c1b1b",
+                        "surface-container": "#f1edec",
+                        "primary": "#984700",
+                        "surface": "#fdf8f8",
+                        "tertiary-fixed-dim": "#ffb68a",
+                        "on-background": "#1c1b1b",
+                        "inverse-primary": "#ffb68a",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#e0c0b0",
+                        "outline-variant": "#dbc1b3",
+                        "tertiary-container": "#e5823e",
+                        "on-primary-container": "#562500",
+                        "primary-fixed-dim": "#ffb68a",
+                        "on-secondary-container": "#785f52",
+                        "outline": "#887367",
+                        "on-primary-fixed": "#321300",
+                        "surface-tint": "#984700",
+                        "background": "#fdf8f8",
+                        "surface-dim": "#ddd9d8",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#584236",
+                        "surface-container-low": "#f7f2f2",
+                        "tertiary-fixed": "#ffdbc8",
+                        "secondary-container": "#fedccb",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#743500",
+                        "secondary": "#72594c",
+                        "surface-container-high": "#ece7e7",
+                        "on-surface-variant": "#554338",
+                        "inverse-surface": "#313030",
+                        "surface-bright": "#fdf8f8",
+                        "secondary-fixed": "#fedccb",
+                        "error": "#ba1a1a",
+                        "primary-container": "#e6813a",
+                        "on-secondary-fixed": "#29170e",
+                        "tertiary": "#984700",
+                        "on-tertiary-fixed": "#321300",
+                        "primary-fixed": "#ffdbc8",
+                        "surface-variant": "#e6e1e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "grid-gutter": "16px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "grid-margin": "24px",
+                        "base": "4px",
+                        "xl": "40px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "data-lg": ["JetBrains Mono"],
+                        "label-caps": ["JetBrains Mono"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "data-md": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "data-lg": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .hero-shadow {
+            box-shadow: 0 16px 60px rgba(86, 37, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-grid-margin py-4 max-w-full bg-surface/95 backdrop-blur-sm border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-sm">
+<svg fill="none" height="32" viewbox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 16H10V8H16V24H22V16H28" stroke="#1c1b1b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<circle cx="22" cy="16" fill="#e6813a" r="3"></circle>
+<path d="M10 6V10M16 22V26" stroke="#1c1b1b" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+<span class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface-variant">Tramo</span>
+</div>
+<nav class="hidden md:flex gap-lg">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#producto">Producto</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#precio">Precio</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#demo">Demo</a>
+</nav>
+<button class="bg-primary-container text-on-primary hover:bg-tertiary-container transition-colors duration-200 px-lg py-sm rounded-lg font-body-md text-body-md">
+            Diagnosticar mi cartera
+        </button>
+</header>
+<main class="pt-[88px]">
+<!-- Hero Section -->
+<section class="px-grid-margin py-xl max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter items-center min-h-[819px]">
+<div class="lg:col-span-5 flex flex-col gap-lg">
+<h1 class="font-display-lg text-display-lg md:font-display-lg md:text-display-lg text-on-surface">
+                    Control energético por reserva para carteras de apartamentos turísticos.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Tramo cruza reservas, CUPS/Datadis, facturas, tarifas y reglas operativas para atribuir consumo, detectar desvíos fuera de estancia y preparar informes defendibles para propietarios.
+                </p>
+<div class="border-l-2 border-primary-container pl-md py-sm">
+<p class="font-data-md text-data-md text-secondary">
+                        Cada kWh queda situado en su tramo: estancia, espera, tarifa, factura y propietario.
+                    </p>
+</div>
+</div>
+<div class="lg:col-span-7 mt-xl lg:mt-0">
+<!-- HERO PRODUCT PANEL -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg hero-shadow flex flex-col gap-md">
+<!-- Top Status Bar -->
+<div class="flex justify-between items-center border-b border-outline-variant pb-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase">Apt: VGO-014</span>
+</div>
+<div class="flex items-center gap-xs bg-surface-container px-sm py-xs rounded">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-data-md text-data-md text-on-surface-variant">Informe Preparado</span>
+</div>
+</div>
+<!-- Evidence Row -->
+<div class="bg-surface border border-error-container rounded-lg p-md flex flex-col gap-sm">
+<div class="flex items-center gap-sm text-error">
+<span class="material-symbols-outlined" data-icon="warning" data-weight="fill" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label-caps text-label-caps uppercase">Alerta Operativa</span>
+</div>
+<p class="font-data-md text-data-md text-on-surface">
+                            VGO-014 · checkout 11:00 · <span class="text-error font-bold">4,2 kWh</span> entre 13:10-16:40 sin reserva activa · acción: revisar termo y regla post-checkout
+                        </p>
+</div>
+<!-- Power Comparison -->
+<div class="grid grid-cols-2 gap-md">
+<div class="border border-outline-variant rounded-lg p-md">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-sm uppercase">Potencia P1</span>
+<div class="flex items-end gap-sm">
+<span class="font-data-lg text-data-lg text-on-surface">4.6 kW</span>
+<span class="font-data-md text-data-md text-outline">/ Rec: 3.3 kW</span>
+</div>
+</div>
+<div class="border border-outline-variant rounded-lg p-md">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-sm uppercase">Potencia P2</span>
+<div class="flex items-end gap-sm">
+<span class="font-data-lg text-data-lg text-on-surface">4.6 kW</span>
+<span class="font-data-md text-data-md text-outline">/ Rec: 4.6 kW</span>
+</div>
+</div>
+</div>
+<!-- Timeline Segment -->
+<div class="pt-sm border-t border-outline-variant">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-md uppercase">Tramo de Consumo</span>
+<div class="h-8 flex rounded overflow-hidden border border-outline-variant">
+<!-- Estancia -->
+<div class="w-[45%] bg-surface-container-high flex items-center justify-center border-r border-outline-variant relative group">
+<span class="font-data-md text-[10px] text-on-surface absolute truncate px-1">Estancia (14.2 kWh)</span>
+</div>
+<!-- Espera / Desvío -->
+<div class="w-[25%] bg-error-container flex items-center justify-center border-r border-outline-variant relative">
+<span class="font-data-md text-[10px] text-error absolute truncate px-1">Espera (4.2 kWh)</span>
+</div>
+<!-- Siguiente Reserva -->
+<div class="w-[30%] bg-surface-container-high flex items-center justify-center relative">
+<span class="font-data-md text-[10px] text-on-surface absolute truncate px-1">Limpieza (1.1 kWh)</span>
+</div>
+</div>
+<div class="flex justify-between mt-xs font-data-md text-[10px] text-outline">
+<span>08:00</span>
+<span>11:00</span>
+<span>16:40</span>
+<span>20:00</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pain Triptych -->
+<section class="bg-surface-container-low border-y border-outline-variant py-xl px-grid-margin" id="producto">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg">
+<div class="w-12 h-12 bg-surface-container rounded flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary-container" data-icon="electric_bolt">electric_bolt</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Consumo fuera de reserva</h3>
+<p class="font-data-md text-data-md text-outline font-medium">4,2 kWh sin reserva activa · VGO-014 · checkout 11:00</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg">
+<div class="w-12 h-12 bg-surface-container rounded flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-secondary" data-icon="speed">speed</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Potencia o tarifa equivocada</h3>
+<p class="font-data-md text-data-md text-outline font-medium">P2 recomendada: 3,3 kW | Actual: 4,6 kW</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg">
+<div class="w-12 h-12 bg-surface-container rounded flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="description">description</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Informes sin explicación operativa</h3>
+<p class="font-data-md text-data-md text-outline font-medium">412 kWh · 3 acciones de gestión · 42,50 EUR</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Lead Form Section -->
+<section class="py-xl px-grid-margin" id="demo">
+<div class="max-w-3xl mx-auto bg-surface-container-lowest border border-outline-variant rounded-xl p-lg md:p-xl hero-shadow">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-lg">Valida Tramo con tu cartera</h2>
+<form class="flex flex-col gap-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface uppercase">Nombre</label>
+<input class="bg-surface-container-lowest border border-outline-variant rounded-[10px] px-sm py-sm focus:border-primary-container focus:ring-0 font-body-md text-on-surface" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface uppercase">Empresa</label>
+<input class="bg-surface-container-lowest border border-outline-variant rounded-[10px] px-sm py-sm focus:border-primary-container focus:ring-0 font-body-md text-on-surface" required="" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface uppercase">Email</label>
+<input class="bg-surface-container-lowest border border-outline-variant rounded-[10px] px-sm py-sm focus:border-primary-container focus:ring-0 font-body-md text-on-surface" required="" type="email"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface uppercase">Nº de alojamientos</label>
+<input class="bg-surface-container-lowest border border-outline-variant rounded-[10px] px-sm py-sm focus:border-primary-container focus:ring-0 font-body-md text-on-surface" required="" type="number"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface uppercase">Ciudad/Región</label>
+<input class="bg-surface-container-lowest border border-outline-variant rounded-[10px] px-sm py-sm focus:border-primary-container focus:ring-0 font-body-md text-on-surface" required="" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface uppercase">Dolor principal</label>
+<textarea class="bg-surface-container-lowest border border-outline-variant rounded-[10px] px-sm py-sm focus:border-primary-container focus:ring-0 font-body-md text-on-surface" required="" rows="3"></textarea>
+</div>
+<div class="bg-surface-container p-md rounded border border-outline-variant">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-0">
+<span class="material-symbols-outlined text-outline align-middle mr-xs text-[16px]" data-icon="lock" data-weight="fill">lock</span>
+                            No envíes credenciales ni facturas por este formulario. En la llamada revisamos qué datos tienes disponibles y cómo preparar un piloto seguro.
+                        </p>
+</div>
+<button class="bg-primary-container text-on-primary hover:bg-tertiary-container transition-colors duration-200 px-lg py-md rounded-lg font-body-md text-body-md font-medium w-full md:w-auto md:self-start" type="submit">
+                        Solicitar Análisis
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-grid-margin grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg bg-surface-container-high dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+<div class="col-span-1 lg:col-span-2 flex flex-col gap-sm">
+<span class="font-headline-md text-headline-md text-on-surface dark:text-on-surface-variant font-bold">Tramo</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant">© 2024 Tramo Energy Operations. Todos los derechos reservados.</p>
+</div>
+<div class="flex flex-col gap-sm">
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-on-surface transition-colors" href="#">Privacidad</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-on-surface transition-colors" href="#">Términos</a>
+</div>
+<div class="flex flex-col gap-sm">
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-on-surface transition-colors" href="#">Contacto</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-on-surface transition-colors" href="#">LinkedIn</a>
+</div>
+</footer>
+</body></html>

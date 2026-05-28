@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-card-shadow {
+            box-shadow: 0px 4px 20px rgba(44, 59, 49, 0.05);
+        }
+        .bento-card-shadow:hover {
+            box-shadow: 0px 10px 30px rgba(44, 59, 49, 0.08);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#ffdad6",
+                      "secondary-container": "#c3e9c5",
+                      "primary-fixed-dim": "#bacbbd",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#c6ecc8",
+                      "background": "#fbf9f7",
+                      "surface-container-low": "#f5f3f1",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#2d4e33",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed": "#d5e7d8",
+                      "on-surface-variant": "#434844",
+                      "surface-bright": "#fbf9f7",
+                      "surface": "#fbf9f7",
+                      "surface-tint": "#526257",
+                      "outline": "#737873",
+                      "tertiary-container": "#333936",
+                      "tertiary-fixed": "#dee4e0",
+                      "secondary": "#44664a",
+                      "on-tertiary-fixed": "#171d1b",
+                      "primary": "#17251c",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#c2c8c4",
+                      "inverse-surface": "#30302f",
+                      "tertiary": "#1d2421",
+                      "on-error-container": "#93000a",
+                      "primary-container": "#2c3b31",
+                      "surface-container-highest": "#e4e2e0",
+                      "inverse-primary": "#bacbbd",
+                      "inverse-on-surface": "#f2f0ee",
+                      "on-secondary-container": "#486a4e",
+                      "on-background": "#1b1c1b",
+                      "surface-variant": "#e4e2e0",
+                      "on-primary-container": "#94a598",
+                      "on-primary-fixed-variant": "#3b4a40",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#dbdad8",
+                      "on-secondary-fixed": "#00210b",
+                      "on-tertiary-fixed-variant": "#424845",
+                      "on-tertiary-container": "#9ca29f",
+                      "on-surface": "#1b1c1b",
+                      "secondary-fixed-dim": "#aad0ad",
+                      "on-primary-fixed": "#101f16",
+                      "outline-variant": "#c3c8c2",
+                      "surface-container": "#efedec",
+                      "surface-container-high": "#eae8e6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "20": "20px"
+              },
+              "spacing": {
+                      "section-gap": "5rem",
+                      "grid-gutter": "1.25rem",
+                      "inner-component-gap": "0.75rem",
+                      "container-padding": "1.5rem"
+              },
+              "fontFamily": {
+                      "body-sm": ["Inter"],
+                      "headline-lg": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "data-label": ["JetBrains Mono"],
+                      "body-lg": ["Inter"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "headline-xl": ["Playfair Display"],
+                      "data-display": ["JetBrains Mono"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "data-label": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "data-display": ["24px", {"lineHeight": "1", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Header (TopNavBar) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-padding py-4 bg-surface/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto w-full flex justify-between items-center">
+<a class="font-headline-md text-headline-md text-primary" href="#">EnergyOS</a>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-body-sm text-body-sm text-primary border-b-2 border-primary" href="#">Propiedades</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Ahorro</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Facturas</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Datadis</a>
+</nav>
+<button class="bg-primary text-on-primary font-body-sm text-body-sm px-6 py-2.5 rounded-full active:scale-95 duration-150 transition-all shadow-md">
+                Solicitar diagnóstico
+            </button>
+</div>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-container-padding grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[819px]">
+<div class="flex flex-col items-start gap-inner-component-gap">
+<span class="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-fixed-variant rounded-full font-body-sm text-body-sm font-semibold">
+                    Gestión energética para alquiler vacacional
+                </span>
+<h1 class="font-headline-xl text-headline-xl text-primary-container mt-2">
+                    Controla el coste energético de tu cartera turística
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mt-4">
+                    Automatiza aparatos por reservas. Optimiza tarifas. Gestiona baterías. Sin hardware adicional.
+                </p>
+<div class="flex flex-wrap gap-4 mt-8">
+<button class="bg-primary-container text-white px-8 py-4 rounded-full font-body-md text-body-md font-semibold transition-all hover:bg-primary active:scale-95">
+                        Solicitar diagnóstico gratuito
+                    </button>
+<button class="border-2 border-primary-container text-primary-container px-8 py-4 rounded-full font-body-md text-body-md font-semibold transition-all hover:bg-primary-container/5 active:scale-95">
+                        Ver cómo funciona
+                    </button>
+</div>
+</div>
+<!-- Dashboard Mockup -->
+<div class="bg-white rounded-20 p-6 bento-card-shadow relative overflow-hidden border border-outline-variant/30">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Apartamento Centro 04</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Última sincronización: Hace 5 min</p>
+</div>
+<span class="bg-secondary-container text-on-secondary-fixed-variant px-3 py-1 rounded-full font-data-label text-data-label font-bold tracking-widest">AUTO</span>
+</div>
+<div class="grid grid-cols-3 gap-4 mb-8">
+<div class="bg-surface-container p-4 rounded-xl">
+<span class="font-body-sm text-body-sm text-on-surface-variant block mb-1">Ahorro</span>
+<span class="font-data-display text-data-display text-secondary">24%</span>
+</div>
+<div class="bg-surface-container p-4 rounded-xl">
+<span class="font-body-sm text-body-sm text-on-surface-variant block mb-1">Tarifa</span>
+<span class="font-data-display text-data-display text-error">-9%</span>
+</div>
+<div class="bg-surface-container p-4 rounded-xl">
+<span class="font-body-sm text-body-sm text-on-surface-variant block mb-1">Alertas</span>
+<span class="font-data-display text-data-display text-primary">1</span>
+</div>
+</div>
+<!-- Main Chart -->
+<div class="h-48 w-full relative mb-8">
+<div class="absolute inset-0 flex flex-col justify-between">
+<div class="border-b border-outline-variant/10 w-full h-0"></div>
+<div class="border-b border-outline-variant/10 w-full h-0"></div>
+<div class="border-b border-outline-variant/10 w-full h-0"></div>
+<div class="border-b border-outline-variant/10 w-full h-0"></div>
+</div>
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 400 120">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#c3e9c5" stop-opacity="0.6"></stop>
+<stop offset="100%" stop-color="#c3e9c5" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,80 Q50,110 100,60 T200,40 T300,90 T400,20 L400,120 L0,120 Z" fill="url(#chartGradient)"></path>
+<path d="M0,80 Q50,110 100,60 T200,40 T300,90 T400,20" fill="none" stroke="#17251c" stroke-linecap="round" stroke-width="2"></path>
+<circle cx="100" cy="60" fill="#44664a" r="4"></circle> <!-- Valley highlight -->
+<circle cx="400" cy="20" fill="#17251c" r="4"></circle> <!-- Peak highlight -->
+</svg>
+<div class="absolute bottom-0 w-full flex justify-between px-2 font-data-label text-data-label text-on-surface-variant pt-2">
+<span>00h</span>
+<span>06h</span>
+<span>12h</span>
+<span>18h</span>
+<span>24h</span>
+</div>
+</div>
+<!-- Battery Arbitrage -->
+<div class="mb-6">
+<p class="font-body-sm text-body-sm font-semibold mb-3">Ciclos de Batería (Arbitraje)</p>
+<div class="flex gap-2 h-8">
+<div class="flex-[0.3] bg-surface-container-highest rounded-full"></div>
+<div class="flex-[0.2] bg-gradient-to-r from-secondary-container to-secondary rounded-full relative group">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 hidden group-hover:block bg-primary text-white text-[10px] px-2 py-0.5 rounded">Carga</span>
+</div>
+<div class="flex-[0.3] bg-surface-container-highest rounded-full"></div>
+<div class="flex-[0.2] bg-gradient-to-r from-primary-container to-primary rounded-full relative group">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 hidden group-hover:block bg-primary text-white text-[10px] px-2 py-0.5 rounded">Descarga</span>
+</div>
+</div>
+<div class="flex justify-between mt-1 px-1 font-data-label text-[10px] text-on-surface-variant">
+<span>07:00</span>
+<span>11:00</span>
+<span>18:00</span>
+<span>22:00</span>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/30 text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">hardware</span>
+<span class="font-body-sm text-body-sm">Sin hardware</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span class="font-body-sm text-body-sm">Datadis Sincronizado</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Proof Bar -->
+<section class="max-w-7xl mx-auto px-container-padding py-section-gap">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-grid-gutter">
+<div class="bg-white p-8 rounded-20 bento-card-shadow text-center">
+<p class="font-data-display text-data-display text-primary-container mb-2">120+</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Propiedades</p>
+</div>
+<div class="bg-white p-8 rounded-20 bento-card-shadow text-center">
+<p class="font-data-display text-data-display text-secondary mb-2">24%</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ahorro Medio</p>
+</div>
+<div class="bg-white p-8 rounded-20 bento-card-shadow text-center">
+<p class="font-data-display text-data-display text-primary-container mb-2">1.400+</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Facturas Auditadas</p>
+</div>
+<div class="bg-white p-8 rounded-20 bento-card-shadow text-center flex flex-col items-center justify-center">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary font-bold">check_circle</span>
+<p class="font-data-display text-data-display text-primary-container">Datadis</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Certificado Sync</p>
+</div>
+</div>
+</section>
+<!-- Problema Section -->
+<section class="max-w-7xl mx-auto px-container-padding py-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-12">Detén la hemorragia de beneficios</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
+<div class="bg-white p-8 rounded-20 bento-card-shadow flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-error-container text-on-error-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">description</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Facturas sin explicación</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">¿Por qué pagaste 400€ en una vivienda vacía? Identificamos consumos fantasma y errores de facturación al instante.</p>
+</div>
+<div class="bg-white p-8 rounded-20 bento-card-shadow flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-error-container text-on-error-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">trending_down</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Tarifas mal optimizadas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">El 85% de los apartamentos turísticos tienen contratada una potencia superior a la necesaria o una tarifa obsoleta.</p>
+</div>
+<div class="bg-white p-8 rounded-20 bento-card-shadow flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-error-container text-on-error-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">battery_alert</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Baterías sin rentabilizar</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Instalar hardware solar es solo el principio. Sin una gestión inteligente de ciclos, tardarás 12 años en amortizar la inversión.</p>
+</div>
+</div>
+</section>
+<!-- Cómo Funciona -->
+<section class="bg-primary-container py-section-gap text-white">
+<div class="max-w-7xl mx-auto px-container-padding">
+<h2 class="font-headline-lg text-headline-lg text-center mb-16">Eficiencia en cuatro pasos</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-grid-gutter">
+<div class="bg-white/5 border border-white/10 p-8 rounded-20 backdrop-blur-sm">
+<div class="font-data-display text-headline-md text-on-primary-container mb-4">01</div>
+<span class="material-symbols-outlined text-4xl mb-4 text-on-primary-container">power</span>
+<h4 class="font-headline-md text-headline-md mb-2">Conecta tus contadores</h4>
+<p class="font-body-sm text-body-sm text-on-primary-container">Sin cables. Nos conectamos a Datadis y a tus plataformas de reservas en segundos.</p>
+</div>
+<div class="bg-white/5 border border-white/10 p-8 rounded-20 backdrop-blur-sm">
+<div class="font-data-display text-headline-md text-on-primary-container mb-4">02</div>
+<span class="material-symbols-outlined text-4xl mb-4 text-on-primary-container">search</span>
+<h4 class="font-headline-md text-headline-md mb-2">Analizamos tu cartera</h4>
+<p class="font-body-sm text-body-sm text-on-primary-container">Nuestra IA detecta patrones de uso y oportunidades de ahorro inmediato en cada unidad.</p>
+</div>
+<div class="bg-white/5 border border-white/10 p-8 rounded-20 backdrop-blur-sm">
+<div class="font-data-display text-headline-md text-on-primary-container mb-4">03</div>
+<span class="material-symbols-outlined text-4xl mb-4 text-on-primary-container">toggle_on</span>
+<h4 class="font-headline-md text-headline-md mb-2">Activamos módulos</h4>
+<p class="font-body-sm text-body-sm text-on-primary-container">Configuramos automatizaciones: aire acondicionado OFF cuando no hay huéspedes confirmados.</p>
+</div>
+<div class="bg-white/5 border border-white/10 p-8 rounded-20 backdrop-blur-sm">
+<div class="font-data-display text-headline-md text-on-primary-container mb-4">04</div>
+<span class="material-symbols-outlined text-4xl mb-4 text-on-primary-container">emoji_events</span>
+<h4 class="font-headline-md text-headline-md mb-2">Mides el ahorro</h4>
+<p class="font-body-sm text-body-sm text-on-primary-container">Panel de control en tiempo real con reportes automáticos para ti y tus propietarios.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Características (3x2 Bento) -->
+<section class="max-w-7xl mx-auto px-container-padding py-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-12">Tecnología de precisión energética</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
+<!-- Card 1 -->
+<div class="bg-white p-8 rounded-20 bento-card-shadow">
+<span class="material-symbols-outlined text-secondary mb-4">calendar_month</span>
+<h3 class="font-body-md text-body-md font-bold mb-2">Automatización por reservas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sincronización con PMS para activar/desactivar climas según el check-in/out.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-8 rounded-20 bento-card-shadow">
+<span class="material-symbols-outlined text-secondary mb-4">notifications_active</span>
+<h3 class="font-body-md text-body-md font-bold mb-2">Alertas de consumo anómalo</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Notificaciones inmediatas si un aire se queda encendido en un piso vacío.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-8 rounded-20 bento-card-shadow">
+<span class="material-symbols-outlined text-secondary mb-4">request_quote</span>
+<h3 class="font-body-md text-body-md font-bold mb-2">Optimización de tarifas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Análisis diario de precios de mercado para cambiarte a la mejor oferta comercial.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-white p-8 rounded-20 bento-card-shadow">
+<span class="material-symbols-outlined text-secondary mb-4">analytics</span>
+<h3 class="font-body-md text-body-md font-bold mb-2">Reporting para propietarios</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Informes automáticos de gastos e impacto ambiental para tus clientes.</p>
+</div>
+<!-- Card 5 -->
+<div class="bg-white p-8 rounded-20 bento-card-shadow">
+<span class="material-symbols-outlined text-secondary mb-4">battery_charging_full</span>
+<h3 class="font-body-md text-body-md font-bold mb-2">Arbitraje de baterías</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Carga en horas valle y consume en horas punta para maximizar rentabilidad solar.</p>
+</div>
+<!-- Card 6 -->
+<div class="bg-white p-8 rounded-20 bento-card-shadow">
+<span class="material-symbols-outlined text-secondary mb-4">cloud_sync</span>
+<h3 class="font-body-md text-body-md font-bold mb-2">Sincronización Datadis</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Acceso oficial a los datos del contador de todas las distribuidoras de España.</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-container-padding py-section-gap">
+<div class="bg-white rounded-20 bento-card-shadow overflow-hidden flex flex-col md:flex-row">
+<div class="md:w-1/2 p-12 bg-primary-container text-white flex flex-col justify-center">
+<h2 class="font-headline-lg text-headline-lg mb-8">Empieza a ahorrar hoy mismo</h2>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+<span class="font-body-md text-body-md">Diagnóstico gratuito de tu cartera</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+<span class="font-body-md text-body-md">Instalación 100% remota en 24h</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+<span class="font-body-md text-body-md">Sin permanencia ni cuotas ocultas</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+<span class="font-body-md text-body-md">Soporte técnico premium en España</span>
+</li>
+</ul>
+</div>
+<div class="md:w-1/2 p-12">
+<form class="space-y-6">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-body-sm text-body-sm font-bold text-on-surface mb-2">Nombre</label>
+<input class="w-full border-[#E2E8E4] rounded-lg focus:ring-secondary focus:border-secondary" placeholder="Tu nombre" type="text"/>
+</div>
+<div>
+<label class="block font-body-sm text-body-sm font-bold text-on-surface mb-2">Email</label>
+<input class="w-full border-[#E2E8E4] rounded-lg focus:ring-secondary focus:border-secondary" placeholder="email@empresa.com" type="email"/>
+</div>
+</div>
+<div>
+<label class="block font-body-sm text-body-sm font-bold text-on-surface mb-2">Propiedades</label>
+<select class="w-full border-[#E2E8E4] rounded-lg focus:ring-secondary focus:border-secondary">
+<option>1 - 10 propiedades</option>
+<option>11 - 50 propiedades</option>
+<option>Más de 50 propiedades</option>
+</select>
+</div>
+<div>
+<label class="block font-body-sm text-body-sm font-bold text-on-surface mb-2">Mensaje</label>
+<textarea class="w-full border-[#E2E8E4] rounded-lg focus:ring-secondary focus:border-secondary" placeholder="Cuéntanos sobre tu cartera..." rows="3"></textarea>
+</div>
+<button class="w-full bg-primary-container text-white py-4 rounded-lg font-body-md text-body-md font-bold transition-all hover:bg-primary" type="submit">
+                            Enviar solicitud de diagnóstico
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-container-padding flex flex-col items-center gap-inner-component-gap bg-surface-container border-t border-outline-variant">
+<div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="font-headline-md text-headline-md text-primary">EnergyOS</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs text-center md:text-left">
+                    © 2024 EnergyOS. Gestión energética de alta fidelidad.
+                </p>
+</div>
+<div class="flex gap-8">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Privacidad</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Términos</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Contacto</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Cookies</a>
+</div>
+<div class="flex gap-4">
+<a class="text-primary-container hover:text-secondary transition-colors" href="#">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tramo — Replantexamento GStack Pro</title>
+  <style>
+    :root {
+      --bg: #fafaf9; --bg-dark: #0f172a; --text: #1e293b;
+      --text-muted: #64748b; --accent: #0d9488; --accent-glow: #14b8a6;
+      --amber: #d97706; --amber-light: #f59e0b; --red: #dc2626;
+      --green: #16a34a; --blue: #2563eb; --border: #e2e8f0;
+      --card: #fff; --card-dark: #1e293b; --radius: 8px; --radius-lg: 14px;
+      --font: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --mono: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace;
+      --max-w: 900px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: auto; }
+    body {
+      font-family: var(--font); background: var(--bg); color: var(--text);
+      line-height: 1.65; font-size: 16px; overflow-x: hidden;
+    }
+    #loader {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--bg-dark); display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 16px;
+    }
+    #loader .logo-loader {
+      width: 64px; height: 64px; border: 3px solid var(--accent);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+    }
+    #loader .bar-track { width: 200px; height: 3px; background: #1e293b; border-radius: 3px; overflow: hidden; }
+    #loader .bar-fill { height: 100%; width: 0%; background: var(--accent-glow); border-radius: 3px; }
+    .doc-header {
+      background: var(--bg-dark); color: #e2e8f0; padding: 72px 20px 52px;
+      text-align: center; border-bottom: 1px solid #1e293b; position: relative; overflow: hidden;
+    }
+    .doc-header::before {
+      content: ''; position: absolute; width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(14,165,233,0.08) 0%, transparent 70%);
+      top: -200px; left: 50%; transform: translateX(-50%); pointer-events: none;
+    }
+    .doc-header .badge {
+      display: inline-block; background: rgba(13,148,136,0.15); color: var(--accent-glow);
+      border: 1px solid rgba(13,148,136,0.25); padding: 5px 16px; border-radius: 20px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 20px; position: relative;
+    }
+    .doc-header h1 { font-size: 2.3rem; font-weight: 800; color: #fff; max-width: var(--max-w); margin: 0 auto 10px; position: relative; line-height: 1.25; }
+    .doc-header .sub { color: #94a3b8; font-size: 1rem; position: relative; }
+    .doc-header .meta { margin-top: 20px; font-size: 0.78rem; color: #475569; display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; position: relative; }
+    .doc-header .meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .toc {
+      background: var(--card); border-bottom: 1px solid var(--border);
+      padding: 14px 20px; position: sticky; top: 0; z-index: 100;
+      display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+      font-size: 0.82rem; font-weight: 600; backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.85);
+    }
+    .toc a { color: var(--text-muted); text-decoration: none; transition: color .2s; padding: 4px 0; border-bottom: 2px solid transparent; }
+    .toc a:hover, .toc a.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .doc-main { max-width: var(--max-w); margin: 0 auto; padding: 40px 20px 100px; }
+    .section-divider { display: flex; align-items: center; gap: 12px; margin: 56px 0 36px; opacity: 1; }
+    .section-divider .line { flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--border), transparent); }
+    .section-divider .label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+    .phase { margin-bottom: 48px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--card); overflow: hidden; }
+    .phase-header { padding: 24px 28px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 14px; }
+    .phase-num { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; flex-shrink: 0; }
+    .phase-header h2 { font-size: 1.25rem; font-weight: 700; line-height: 1.3; }
+    .phase-body { padding: 28px; }
+    h3 { font-size: 1.05rem; font-weight: 700; margin: 30px 0 12px; display: flex; align-items: center; gap: 8px; }
+    h3:first-child { margin-top: 0; }
+    p, ul, ol { margin-bottom: 14px; }
+    ul, ol { padding-left: 22px; }
+    li { margin-bottom: 6px; }
+    .insight-box { background: #f8fafc; border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; margin: 18px 0; font-size: 0.92rem; }
+    .insight-box strong { display: block; margin-bottom: 4px; color: var(--accent); }
+    .quote { background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radius); padding: 18px 22px; margin: 18px 0; font-style: italic; font-size: 0.95rem; }
+    .table-wrap { overflow-x: auto; margin: 16px 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    th { background: #f1f5f9; text-align: left; padding: 10px 14px; font-weight: 700; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--border); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr.row-highlight { background: #fef3c7; }
+    .tag { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; white-space: nowrap; }
+    .tag-p0 { background: #dcfce7; color: #166534; }
+    .tag-p1 { background: #dbeafe; color: #1e40af; }
+    .tag-p2 { background: #f1f5f9; color: #475569; }
+    .tag-no { background: #fee2e2; color: #991b1b; }
+    .tag-green { background: #dcfce7; color: #166534; }
+    .tag-amber { background: #fef3c7; color: #92400e; }
+    .tag-red { background: #fee2e2; color: #991b1b; }
+    .stars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 16px 0; }
+    .star-card { background: #f8fafc; border-radius: var(--radius); padding: 16px 18px; font-size: 0.86rem; border: 1px solid var(--border); transition: transform 0.3s, box-shadow 0.3s; cursor: default; }
+    .star-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .star-card .stars { font-size: 1rem; margin-bottom: 6px; }
+    .star-card strong { color: var(--accent); }
+    .star-card.best { background: #f0fdf4; border-color: #86efac; }
+    .matrix-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; font-size: 0.85rem; }
+    .matrix-wrap .cell { border-radius: var(--radius); padding: 20px 20px; border: 1px solid var(--border); }
+    .matrix-wrap .cell.hi { background: #f0fdf4; border-color: #86efac; }
+    .matrix-wrap .cell.lo { background: #f8fafc; }
+    .matrix-wrap .cell .mlabel { display: block; font-weight: 800; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+    .diagram { background: #0f172a; color: #e2e8f0; border-radius: var(--radius); padding: 22px 24px; margin: 16px 0; font-family: var(--mono); font-size: 0.78rem; line-height: 1.7; overflow-x: auto; white-space: pre; }
+    .diagram .dim { color: #64748b; }
+    .diagram .hl { color: #2dd4bf; font-weight: 700; }
+    .diagram .warn { color: #fbbf24; font-weight: 700; }
+    .diagram .err { color: #f87171; }
+    .landing-section { background: #f8fafc; border-radius: var(--radius); padding: 22px 24px; margin: 16px 0; border-left: 4px solid var(--accent); }
+    .landing-section.s-arbitrage { border-left-color: var(--amber); background: #fffbeb; }
+    .landing-section.s-pricing { border-left-color: var(--blue); background: #f8fafc; }
+    .landing-section .s-num { display: inline-flex; align-items: center; justify-content: center; background: var(--accent); color: #fff; border-radius: 50%; width: 26px; height: 26px; font-size: 0.75rem; font-weight: 800; margin-right: 8px; flex-shrink: 0; }
+    .landing-section.s-arbitrage .s-num { background: var(--amber); }
+    .landing-section.s-pricing .s-num { background: var(--blue); }
+    .landing-section h4 { display: inline; font-size: 0.95rem; color: var(--accent); }
+    .landing-section.s-arbitrage h4 { color: var(--amber); }
+    .landing-section.s-pricing h4 { color: var(--blue); }
+    .landing-section .copy-preview { background: #fff; border-radius: var(--radius); padding: 18px 20px; margin-top: 12px; font-size: 0.9rem; border: 1px solid var(--border); }
+    .landing-section .copy-preview .h1-preview { font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 8px; line-height: 1.3; }
+    .landing-section .copy-preview .lead-preview { color: #475569; margin-bottom: 10px; }
+    .landing-section .copy-preview .visual-note { color: var(--text-muted); font-size: 0.78rem; font-style: italic; margin-top: 8px; display: flex; align-items: flex-start; gap: 6px; }
+    .pricing-card { background: linear-gradient(135deg, #f0fdf4, #ecfdf5); border: 2px solid #86efac; border-radius: var(--radius); padding: 22px 24px; margin: 14px 0; text-align: center; }
+    .pricing-card .price { font-size: 2.2rem; font-weight: 900; color: #0f172a; line-height: 1; margin: 8px 0; }
+    .pricing-card .price small { font-size: 1rem; font-weight: 400; color: var(--text-muted); }
+    .health-card { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 2px solid #f59e0b; border-radius: var(--radius-lg); padding: 28px 32px; margin: 20px 0; }
+    .score-display { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .score-ring { width: 110px; height: 110px; position: relative; flex-shrink: 0; }
+    .score-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+    .score-ring .bg { fill: none; stroke: #e5e7eb; stroke-width: 8; }
+    .score-ring .fg { fill: none; stroke: var(--amber); stroke-width: 8; stroke-linecap: round; }
+    .score-ring .txt { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 900; font-size: 2rem; color: #d97706; }
+    .counter-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 20px 0; }
+    .counter-card { background: var(--bg-dark); color: #e2e8f0; border-radius: var(--radius); padding: 18px 20px; text-align: center; }
+    .counter-card .c-num { font-size: 2.2rem; font-weight: 900; color: var(--accent-glow); line-height: 1.1; }
+    .counter-card .c-label { font-size: 0.78rem; color: #94a3b8; margin-top: 4px; }
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; font-size: 0.88rem; }
+    .compare-grid .col { border-radius: var(--radius); padding: 22px 24px; }
+    .compare-grid .before { background: #fef2f2; border: 1px solid #fecaca; }
+    .compare-grid .after { background: #f0fdf4; border: 1px solid #bbf7d0; }
+    .compare-grid .col h4 { font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+    .swatches { display: flex; gap: 20px; flex-wrap: wrap; background: var(--bg-dark); border-radius: var(--radius); padding: 20px 24px; margin: 16px 0; }
+    .swatch { display: flex; align-items: center; gap: 10px; }
+    .swatch .dot { width: 30px; height: 30px; border-radius: 8px; }
+    .swatch .info { color: #e2e8f0; font-size: 0.82rem; }
+    .swatch .info small { display: block; color: #64748b; font-size: 0.72rem; }
+    #back-to-top { position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px; border-radius: 50%; background: var(--bg-dark); color: #fff; border: none; cursor: pointer; font-size: 1.2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.15); z-index: 50; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s, transform 0.2s; display: flex; align-items: center; justify-content: center; }
+    #back-to-top.visible { opacity: 1; visibility: visible; }
+    #back-to-top:hover { transform: translateY(-3px); }
+    .doc-footer { text-align: center; padding: 36px 20px; color: var(--text-muted); font-size: 0.82rem; border-top: 1px solid var(--border); max-width: var(--max-w); margin: 0 auto; }
+    .gsap-pill { display:inline-block;background:linear-gradient(135deg,#0d9488,#0f766e);color:#fff;padding:3px 12px;border-radius:20px;font-size:0.7rem;font-weight:700;letter-spacing:0.04em;margin-left:8px;vertical-align:middle;}
+    @media (max-width: 700px) {
+      .doc-header h1 { font-size: 1.5rem; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .matrix-wrap { grid-template-columns: 1fr; }
+      .stars-grid { grid-template-columns: 1fr 1fr; }
+      .phase-body { padding: 20px 16px; }
+      .score-display { flex-direction: column; text-align: center; }
+      .counter-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div id="loader"><div class="logo-loader">⚡</div><div class="bar-track"><div class="bar-fill" id="loader-bar"></div></div></div>
+<header class="doc-header" id="top">
+  <div class="badge">GStack Pro · 4 Fases <span class="gsap-pill">GSAP</span></div>
+  <h1>Tramo — Replantexamento Integral</h1>
+  <p class="sub">CEO → Landing → Arquitectura → Deseño</p>
+  <div class="meta"><span>📅 20/05/2026</span><span>🦀 Nécora</span><span>🧠 DeepSeek V4 Pro</span><span>⏱ CEST</span></div>
+</header>
+<nav class="toc" id="toc">
+  <a href="#fase-1">🏛️ CEO</a><a href="#fase-2">📄 Landing</a><a href="#fase-3">🔧 Arquitectura</a><a href="#fase-4">🎨 Diseño</a><a href="#health">📊 Score</a><a href="#resumen">🎯 Resumen</a>
+</nav>
+
+<main class="doc-main">
+
+<!-- COUNTERS -->
+<div class="counter-row" id="counters">
+  <div class="counter-card"><div class="c-num" data-target="1250">0</div><div class="c-label">€/año ahorro por propiedad</div></div>
+  <div class="counter-card"><div class="c-num" data-target="93">0</div><div class="c-label">% menos incidencias</div></div>
+  <div class="counter-card"><div class="c-num" data-target="3">0</div><div class="c-label">meses ROI piloto</div></div>
+  <div class="counter-card"><div class="c-num" data-target="7">0</div><div class="c-label">secciones landing</div></div>
+</div>
+
+<!-- ══════ FASE 1: CEO ══════ -->
+<div class="section-divider"><span class="line"></span><span class="label">Fase 1</span><span class="line"></span></div>
+<section class="phase" id="fase-1">
+  <div class="phase-header">
+    <div class="phase-num" style="background:#fef3c7;color:var(--amber)">1</div>
+    <h2>🏛️ CEO Product Rethink — ¿Qué estamos construyendo realmente?</h2>
+  </div>
+  <div class="phase-body">
+    <h3>🔍 Reconstrucción de la Intención</h3>
+    <div class="insight-box"><strong>Recibimos:</strong>"Quiero replantear el landing y la plataforma para darle más peso al control energético vía domótica y al arbitraje de baterías."</div>
+    <div class="insight-box"><strong>El problema real:</strong>El landing actual vende VISIBILIDAD (atribución, informes, detección). Pero lo que hace que un gestor pague mensualmente no es saber cuánto gastó — es <em>dejar de perder dinero sin hacer nada</em>.</div>
+    <div class="insight-box"><strong>Lo que Mauro realmente quiere:</strong>Posicionar Tramo como un sistema que <strong>actúa</strong> sobre la energía, no solo la monitoriza. La domótica y el arbitraje son las palancas de margen real.</div>
+    <div class="insight-box"><strong>Si solo pudiese hacer una cosa:</strong>Convertir la energía de una cartera turística en un activo gestionable que genera ahorro automático — no un coste fijo que se sufre.</div>
+
+    <h3>⭐ Test de la Estrella 10★</h3>
+    <div class="stars-grid" id="stars-grid">
+      <div class="star-card"><div class="stars">⭐⭐⭐</div><p><strong>3★:</strong> "Veo cuánto gasto. Vale."</p></div>
+      <div class="star-card"><div class="stars">⭐⭐⭐⭐⭐</div><p><strong>5★:</strong> "El sistema apaga los aires cuando no hay huésped. Ahorro 200 €/mes."</p></div>
+      <div class="star-card"><div class="stars">⭐⭐⭐⭐⭐⭐⭐</div><p><strong>7★:</strong> "La batería se carga cuando la luz es barata y se vende cuando es cara. Se paga sola."</p></div>
+      <div class="star-card best"><div class="stars">⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐</div><p><strong>10★:</strong> "Tramo gestiona toda la energía de mi cartera. Yo solo miro el informe mensual de beneficio neto. No toco nada."</p></div>
+    </div>
+
+    <h3>📝 Declaración de Producto Refundada</h3>
+    <div class="quote">Cuando un <strong>gestor profesional de apartamentos turísticos</strong> usa <strong>Tramo</strong>, puede <strong>eliminar el consumo energético fuera de reserva, reducir la factura eléctrica con arbitraje de baterías y generar informes por propietario con evidencia irrefutable</strong>, sin necesidad de perseguir lecturas ni discutir facturas a mano.</div>
+
+    <h3>🥊 Análisis Competitivo Real</h3>
+    <div class="table-wrap"><table>
+      <tr><th>Alternativa actual</th><th>Por qué no llega</th></tr>
+      <tr><td><strong>Excel + facturas</strong></td><td>Lento, manual, sin cruce con reservas</td></tr>
+      <tr><td><strong>Consultor energético</strong></td><td>200-500 €/mes, informe mensual estático, no actúa</td></tr>
+      <tr><td><strong>Domótica genérica</strong> (Home Assistant)</td><td>No entiende el ciclo turístico: check-in, check-out, limpieza</td></tr>
+      <tr><td><strong>PMS con "módulo energético"</strong></td><td>Superficial, sin control de dispositivos, sin arbitraje</td></tr>
+      <tr><td><strong>Comercializadora con "asesoramiento"</strong></td><td>Conflicto de interés — venden energía, no ahorro</td></tr>
+    </table></div>
+    <p style="margin-top:12px"><strong>🥇 Oco de Tramo:</strong> Es el <em>único</em> que cruza <strong>reservas + sensores + tarifas + dispositivos</strong> en una sola plataforma con <strong>acción automática</strong>. Nadie más hace las 4 cosas juntas.</p>
+
+    <h3>📊 Matriz de Prioridades</h3>
+    <div class="matrix-wrap">
+      <div class="cell hi"><span class="mlabel">★ ALTO IMPACTO</span>Arbitraje baterías · Control domótico · Informes propietario · Atribución por reserva</div>
+      <div class="cell lo"><span class="mlabel">☆ MENOR IMPACTO</span>Predicción IA · White-label · App móvil nativa</div>
+      <div class="cell lo"><span class="mlabel">☆ BAJA FRECUENCIA</span>Integración PMS múltiple · Dashboard avanzado</div>
+      <div class="cell lo"><span class="mlabel">☆ POST-MVP</span>Multi-idioma · Soporte comercializadoras · API pública</div>
+    </div>
+
+    <h3>🎯 MVP Redefinido</h3>
+    <div class="table-wrap"><table>
+      <tr><th>Prioridad</th><th>Qué</th><th>Por qué</th></tr>
+      <tr><td><span class="tag tag-p0">P0</span></td><td>Landing que venda control + arbitraje</td><td>Captar leads cualificados</td></tr>
+      <tr><td><span class="tag tag-p0">P0</span></td><td>Dashboard con control domótico simulado</td><td>Demo creíble en primera llamada</td></tr>
+      <tr><td><span class="tag tag-p0">P0</span></td><td>Informe de propietario con atribución</td><td>Cerrar la venta con el propietario final</td></tr>
+      <tr><td><span class="tag tag-p1">P1</span></td><td>Módulo de arbitraje de baterías</td><td>Diferenciador principal, ahorro cuantificable</td></tr>
+      <tr><td><span class="tag tag-p1">P1</span></td><td>Control domótico real (MQTT/Z-Wave)</td><td>Pasar de demo a piloto</td></tr>
+      <tr><td><span class="tag tag-p2">P2</span></td><td>Predicción de consumo con IA</td><td>"Wow factor", requiere datos históricos</td></tr>
+      <tr><td><span class="tag tag-no">❌ NO</span></td><td>App móvil nativa</td><td>Web responsive cubre el 90%</td></tr>
+      <tr><td><span class="tag tag-no">❌ NO</span></td><td>Integraciones PMS simultáneas</td><td>Un PMS bien integrado > varios mal</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- ══════ FASE 2: LANDING ══════ -->
+<div class="section-divider"><span class="line"></span><span class="label">Fase 2</span><span class="line"></span></div>
+<section class="phase" id="fase-2">
+  <div class="phase-header">
+    <div class="phase-num" style="background:#ccfbf1;color:var(--accent)">2</div>
+    <h2>📄 Replantexamento do Landing — 7 Seccións</h2>
+  </div>
+  <div class="phase-body">
+
+    <div class="landing-section">
+      <span class="s-num">1</span><h4>Hero Refundado</h4>
+      <p style="margin-top:8px;color:var(--text-muted);font-size:0.85rem">Concepto: No vendas "control energético" — vende <em>"tu cartera gana dinero mientras duermes"</em>.</p>
+      <div class="copy-preview">
+        <div class="h1-preview">Convierte cada apartamento en un activo energético que se gestiona solo.</div>
+        <p class="lead-preview">Tramo controla la climatización por reserva, activa tus baterías cuando la luz es barata y genera informes por propietario con el ahorro documentado. Todo automático.</p>
+        <p><strong>Trust strip:</strong> Ahorro medio 1.200 €/año por propiedad · 93% menos incidencias · ROI en 3 meses</p>
+        <p class="visual-note">🎬 <span>Animación SVG/GIF 10s — checkout → apagado automático → batería cargando → informe de ahorro</span></p>
+        <p class="visual-note">🔘 <span>CTA dual: "Ver calculadora de ahorro" + "Solicitar demo guiada"</span></p>
+      </div>
+    </div>
+
+    <div class="landing-section">
+      <span class="s-num">2</span><h4>A Dor Cuantificada</h4>
+      <p style="margin-top:8px;color:var(--text-muted);font-size:0.85rem">Concepto: Números reales. El gestor piensa en <strong>ocupación y margen</strong>, no en kWh abstractos.</p>
+      <div class="copy-preview">
+        <div style="font-weight:800;font-size:1.05rem;margin-bottom:8px">Cada semana sin control energético le cuesta a tu cartera entre 80 y 300 € por propiedad.</div>
+        <p class="lead-preview">Tres fugas que no ves hasta que revisas la factura a final de mes:</p>
+        <table style="margin-top:8px">
+          <tr><td style="width:28px">🥶</td><td><strong>Climatización sin huésped</strong></td><td style="color:var(--red);font-weight:700">45-90 € por incidencia</td></tr>
+          <tr><td>⚡</td><td><strong>Potencia contratada obsoleta</strong></td><td style="color:var(--red);font-weight:700">800 €/año regalados</td></tr>
+          <tr><td>🔋</td><td><strong>Batería solar sin arbitraje</strong></td><td style="color:var(--red);font-weight:700">60% del valor perdido</td></tr>
+        </table>
+        <p class="visual-note">📊 <span>Gráfico de barras comparativo "Con Tramo" vs "Sin Tramo" en €. Animado.</span></p>
+      </div>
+    </div>
+
+    <div class="landing-section">
+      <span class="s-num">3</span><h4>O Sistema — Domótica Reforzada ⚡</h4>
+      <p style="margin-top:8px;color:var(--text-muted);font-size:0.85rem">Concepto: <strong>No solo te avisa. Actúa.</strong> Esta sección es ahora el corazón diferencial.</p>
+      <div class="copy-preview">
+        <div style="font-weight:800;font-size:1.05rem;margin-bottom:8px">No solo te avisa. Actúa.</div>
+        <p class="lead-preview">Tramo conecta con tus dispositivos para ejecutar las decisiones que antes dependían de WhatsApp y llamadas al equipo de limpieza.</p>
+        <div class="diagram">
+<span class="dim">          ┌──────────┐
+          │  PMS     │──→</span> Check-out 19/05 11:00
+<span class="dim">          └────┬─────┘
+               ↓
+          ┌──────────┐
+          │ </span><span class="hl">TRAMO   </span><span class="dim"> │──→</span> Regla: apagar a los 30 min del check-out
+<span class="dim">          └────┬─────┘
+               ↓
+     ┌─────────┼─────────┐
+     ↓         ↓          ↓</span>
+<span class="hl">  Split    Calefacción  Termo
+  OFF      OFF          OFF</span>
+<span class="dim">               ↓
+          ┌──────────┐
+          │ </span><span class="hl">Informe  │──→ "Ahorro: 34,20 € esta semana"</span><span class="dim">
+          └──────────┘</span>
+        </div>
+        <p style="margin-top:10px"><strong>Qué controla Tramo hoy:</strong></p>
+        <ul>
+          <li>Climatización (split, radiadores, suelo radiante) — por reserva y umbrales de temperatura</li>
+          <li>Iluminación común — por horario y ocupación</li>
+          <li>Persianas y toldos — protección solar automática</li>
+          <li><strong>Baterías domésticas</strong> — carga/descarga por precio horario →</li>
+        </ul>
+        <p style="font-size:0.85rem;color:var(--text-muted)">Compatible con Shelly, Sonoff, Fibaro, Z-Wave, MQTT y fabricantes principales.</p>
+      </div>
+    </div>
+
+    <div class="landing-section s-arbitrage">
+      <span class="s-num">4</span><h4>Arbitraxe de Baterías — SECCIÓN ESTRELA 🔋</h4>
+      <p style="margin-top:8px;color:var(--text-muted);font-size:0.85rem">Concepto: Esta sección NO existía. Es el diferenciador principal. Merece su propio espacio heroico.</p>
+      <div class="copy-preview">
+        <div style="font-weight:800;font-size:1.05rem;margin-bottom:8px">La batería no es un gasto de instalación. Es una máquina de hacer dinero que aún no has encendido.</div>
+        <p class="lead-preview">Una batería de 5 kWh en un apartamento turístico puede generar entre 300 y 600 € al año solo con arbitraje de precios horarios. Multiplica eso por tu cartera.</p>
+        <p style="font-weight:700;color:var(--amber);margin-top:12px">📈 Visual: Gráfico de precios OMIE 24h con franjas de carga/descarga</p>
+        <div class="diagram">
+<span class="warn">Precio de la luz (€/MWh)
+    ↑
+140 │          ██</span>
+<span class="dim">100 │    ██    ██    ██
+ 60 │ ██████ ██████ ██████
+ 20 │ ██████████████████████
+  0 │──┴──┴──┴──┴──┴──┴──┴──→ horas
+     00  04  08  12  16  20  24</span>
+
+<span class="hl">🔋 CARGA a 20 € → ⚡ DESCARGA a 140 €
+   7x multiplicador de valor</span>
+        </div>
+        <p style="margin-top:12px"><strong>Cómo funciona:</strong></p>
+        <ol>
+          <li>Tramo lee el precio horario OMIE en tiempo real</li>
+          <li>Conoce tu calendario de reservas (no carga batería si mañana entra huésped)</li>
+          <li>Carga batería en horas valle (2-5 AM, 0-40 €/MWh)</li>
+          <li>Descarga en horas punta (19-22h, 100-250 €/MWh)</li>
+          <li>O guarda la carga para el próximo huésped</li>
+        </ol>
+        <p style="font-weight:700">Sin inquilino → arbitraje puro. Con inquilino → autoconsumo optimizado.</p>
+        <div class="table-wrap" style="margin-top:12px"><table>
+          <tr><th>Concepto</th><th>Valor</th></tr>
+          <tr><td>Batería 5 kWh</td><td>1 ciclo/día</td></tr>
+          <tr><td>Diferencial Punta-Valle</td><td>100 €/MWh</td></tr>
+          <tr><td>Ingreso diario arbitraje</td><td>0,50 €</td></tr>
+          <tr><td>Ingreso anual (250 días)</td><td>125 € por batería</td></tr>
+          <tr class="row-highlight"><td><strong>Cartera de 20 propiedades</strong></td><td><strong style="color:var(--amber);font-size:1.1rem">2.500 €/año</strong></td></tr>
+        </table></div>
+      </div>
+    </div>
+
+    <div class="landing-section">
+      <span class="s-num">5</span><h4>Dashboard do Produto (Plataforma Interior)</h4>
+      <p style="margin-top:8px;color:var(--text-muted);font-size:0.85rem">Concepto: No es una landing section más. Es la <strong>demo del producto real</strong>.</p>
+      <div class="copy-preview">
+        <div style="font-weight:800;font-size:1.05rem;margin-bottom:8px">Una sola pantalla para toda tu cartera energética.</div>
+        <p class="lead-preview">Datos reales del sistema. Periodo mayo 2026. 8 propiedades monitorizadas con control domótico activo.</p>
+        <p><strong>KPIs del dashboard:</strong></p>
+        <ul>
+          <li>⚡ <strong>Control activo:</strong> Climatización apagada 12 veces esta semana — 87 € ahorrados</li>
+          <li>🔋 <strong>Baterías:</strong> 3 ciclos de arbitraje — 14,50 € de ingresos</li>
+          <li>🏠 <strong>Confort OK:</strong> 0 incidencias de huésped por temperatura</li>
+          <li>📄 <strong>Informes:</strong> 2 listos para enviar a propietarios</li>
+        </ul>
+        <p class="visual-note">🖥 <span>Screenshot real del dashboard con datos. No mockup.</span></p>
+      </div>
+    </div>
+
+    <div class="landing-section">
+      <span class="s-num">6</span><h4>Informe de Propietario (Valor Social)</h4>
+      <p style="margin-top:8px;color:var(--text-muted);font-size:0.85rem">Concepto: Cierra el círculo. El gestor se convence cuando el propietario también queda satisfecho.</p>
+      <div class="copy-preview">
+        <div style="font-weight:800;font-size:1.05rem;margin-bottom:8px">El propietario recibe un informe que entiende en 30 segundos.</div>
+        <p class="lead-preview">Sin explicaciones. Sin llamadas. Sin "¿por qué pagué esto?"</p>
+        <p><strong>Contenido del informe (1 página):</strong></p>
+        <ul>
+          <li>"Consumo atribuido a tus reservas: 191 kWh (46%)"</li>
+          <li>"Fuera de estancia detectado y corregido: 221 kWh (54%)"</li>
+          <li>"Ahorro por control domótico de Tramo: 58,30 € este mes"</li>
+        </ul>
+        <p class="visual-note">📄 <span>Maqueta del PDF de 1 página con gráficos de atribución</span></p>
+      </div>
+    </div>
+
+    <div class="landing-section s-pricing">
+      <span class="s-num">7</span><h4>Peche + Pricing + CTA</h4>
+      <p style="margin-top:8px;color:var(--text-muted);font-size:0.85rem">Concepto: No dejes pricing para "la llamada". Pon un rango transparente.</p>
+      <div class="copy-preview">
+        <div style="font-weight:800;font-size:1.05rem;margin-bottom:8px">Empieza con 5 propiedades. Escala cuando quieras.</div>
+        <div class="pricing-card">
+          <p style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);font-weight:700">Piloto Tramo</p>
+          <div class="price">190 €<small>/mes</small></div>
+          <p style="color:var(--text-muted);font-size:0.85rem;margin-top:4px">5 propiedades · 3 meses · instalación de sensores incluida</p>
+          <p style="color:var(--text-muted);font-size:0.8rem">Incluye: Dashboard, control domótico básico, informes, arbitraje de baterías*</p>
+          <p style="color:var(--text-muted);font-size:0.72rem">*Requiere batería compatible instalada.</p>
+        </div>
+        <p style="text-align:center;margin-top:8px"><strong>¿Gestionas 20+ apartamentos?</strong> → <em>Solicitar plan cartera</em></p>
+        <div class="quote" style="margin-top:12px">"No pedimos acceso a tus facturas en el formulario. En la llamada de 20 minutos revisamos tus datos, definimos un piloto y te damos una proyección de ahorro antes de que cuelgues."</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:36px">🎨 Ilustracións e Gráficos</h3>
+    <div class="table-wrap"><table>
+      <tr><th>Posición</th><th>Tipo</th><th>Propósito</th></tr>
+      <tr><td><strong>S1 · Hero</strong></td><td>Animación SVG/GIF 10s</td><td>Checkout → apagado → batería → informe</td></tr>
+      <tr><td><strong>S2 · Dor</strong></td><td>Barras comparativas</td><td>"Con Tramo" vs "Sin Tramo" en €</td></tr>
+      <tr><td><strong>S3 · Sistema</strong></td><td>Diagrama de flujo</td><td>PMS → Tramo → Dispositivos → Ahorro</td></tr>
+      <tr><td><strong>S4 · Arbitraje</strong></td><td>Precios OMIE 24h</td><td>Picos de carga/descarga</td></tr>
+      <tr><td><strong>S5 · Dashboard</strong></td><td>Screenshot real</td><td>KPIs: ahorro, control, alertas</td></tr>
+      <tr><td><strong>S6 · Informe</strong></td><td>Maqueta PDF 1 pág</td><td>Lo que recibe el propietario</td></tr>
+      <tr><td><strong>S7 · Peche</strong></td><td>ROI acumulado</td><td>Payback mes 1-12</td></tr>
+    </table></div>
+
+    <h3 style="margin-top:28px">🎨 Paleta de Cores Refinada</h3>
+    <div class="swatches">
+      <div class="swatch"><span class="dot" style="background:#0d9488"></span><div class="info">Verde energía <small>#0D9488 · Ahorro, ingreso, ROI</small></div></div>
+      <div class="swatch"><span class="dot" style="background:#d97706"></span><div class="info">Ámbar/oro <small>#D97706 · Arbitraje, precios</small></div></div>
+      <div class="swatch"><span class="dot" style="background:#334155"></span><div class="info">Gris datos <small>#334155 · Dashboards, datos</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FASE 3: ARQUITECTURA ══════ -->
+<div class="section-divider"><span class="line"></span><span class="label">Fase 3</span><span class="line"></span></div>
+<section class="phase" id="fase-3">
+  <div class="phase-header">
+    <div class="phase-num" style="background:#dbeafe;color:var(--blue)">3</div>
+    <h2>🔧 Arquitectura Técnica do Produto</h2>
+  </div>
+  <div class="phase-body">
+    <h3>🧱 Stack Proposto (Refinado)</h3>
+    <div class="table-wrap"><table>
+      <tr><th>Capa</th><th>Tecnoloxía</th><th>Xustificación</th></tr>
+      <tr><td>Landing</td><td>Astro.js ou Next.js SSG + GSAP</td><td>Velocidade pura, SEO, animacións profesionais</td></tr>
+      <tr><td>Dashboard</td><td>Next.js 14 + Tailwind + shadcn/ui</td><td>Mesmo repo, compoñentes accesibles</td></tr>
+      <tr><td>Backend</td><td>Supabase (PG + Realtime + Auth)</td><td>Menos infra, máis velocidade</td></tr>
+      <tr><td>Domótica</td><td>MQTT Broker (Mosquitto) + Adaptadores</td><td>Protocolo universal para dispositivos</td></tr>
+      <tr><td>Arbitraxe</td><td>Edge Function + OMIE API</td><td>Datos horarios cacheados, decisións en tempo real</td></tr>
+      <tr><td>AI Agent</td><td>OpenClaw + Skills específicas</td><td>Monitorización proactiva, alertas, informes</td></tr>
+      <tr><td>Deploy</td><td>Vercel + Supabase Cloud</td><td>€0 en MVP, escala automática</td></tr>
+    </table></div>
+
+    <h3>🔄 Fluxo de Datos — Control Domótico</h3>
+    <div class="diagram">
+<span class="dim">PMS (iCal/API) ──→ Reservas (check-in/out)
+                        ↓
+Sensores MQTT ──→ Temperatura, consumo, presenza
+                        ↓</span>
+<span class="dim">                  ┌──────────┐
+                  │ </span><span class="hl">TRAMO ENGINE</span><span class="dim"> │
+                  └────┬─────┘
+                       │  Avalía regras:
+                       │  · ¿Check-out + 30 min?
+                       │  · ¿Temperatura > 24°C?
+                       │  · ¿Próxima entrada &lt; 24h?
+                       ↓
+                  Decisión ──→ MQTT publish
+                                 ↓
+                          Dispositivo (Shelly/Sonoff/Z-Wave)
+                                 ↓
+                          AC OFF / Calefacción OFF / Termo OFF
+                                 ↓</span>
+<span class="hl">                          Log en Supabase ──→ Dashboard (ahorro calculado)</span>
+    </div>
+
+    <h3>🔄 Fluxo de Datos — Arbitraxe de Baterías</h3>
+    <div class="diagram">
+<span class="dim">OMIE API ──→ Prezo horario (24h) ──→ Edge Function (cache 1h)
+                                            ↓
+PMS ──→ Calendario de reservas ──→    </span><span class="hl">TRAMO ENGINE</span><span class="dim">
+                                            ↓
+Batería (MQTT/API) ──→ SOC actual ──→    │
+                                          ↓
+                                    Decisión horaria:
+                                    · Baleiro hoxe + prezo valle → CARGA
+                                    · Baleiro hoxe + prezo punta → DESCARGA
+                                    · Mañá entra hóspede → RESERVA CARGA
+                                          ↓
+                                    MQTT → Batería (modo carga/descarga)
+                                          ↓</span>
+<span class="warn">                                    Supabase → Log de ciclos + ingreso
+                                          ↓
+                                    Dashboard → "Arbitraxe: +14,50 € hoxe"</span>
+    </div>
+
+    <h3>🗄 Modelo de Datos Ampliado</h3>
+    <div class="diagram">
+<span class="dim">-- Novas táboas para domótica e arbitraxe</span>
+<span class="hl">devices (</span>
+<span class="dim">  id, property_id,
+  type (split|battery|thermostat|boiler|blind),
+  protocol (mqtt|zwave|shelly|sonoff|modbus),
+  mqtt_topic, config (jsonb), status, last_seen</span>
+<span class="hl">)</span>
+
+<span class="hl">device_actions (</span>
+<span class="dim">  id, device_id, property_id,
+  trigger_type (checkout|tariff|schedule|manual),
+  action (on|off|set_temp|charge|discharge),
+  value, executed_at, energy_saved_kwh, cost_saved_eur</span>
+<span class="hl">)</span>
+
+<span class="warn">battery_cycles (</span>
+<span class="dim">  id, property_id, device_id,
+  charge_start, charge_end, discharge_start, discharge_end,
+  energy_charged_kwh, energy_discharged_kwh,
+  buy_price_eur_mwh, sell_price_eur_mwh,
+  revenue_eur</span>
+<span class="warn">)</span>
+
+<span class="dim">hourly_prices (
+  id, datetime_utc, price_eur_mwh, source (omie|contract),
+  fetched_at
+)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FASE 4: DISEÑO ══════ -->
+<div class="section-divider"><span class="line"></span><span class="label">Fase 4</span><span class="line"></span></div>
+<section class="phase" id="fase-4">
+  <div class="phase-header">
+    <div class="phase-num" style="background:#fce7f3;color:#db2777">4</div>
+    <h2>🎨 Estratexia de Deseño + UI Tooling</h2>
+  </div>
+  <div class="phase-body">
+    <h3>📐 Principios de Deseño</h3>
+    <ol>
+      <li><strong>Datos primeiro, chrome despois.</strong> O valor está nos números.</li>
+      <li><strong>Unha acción por pantalla.</strong> Panel = ver. Operacións = actuar. Informe = compartir.</li>
+      <li><strong>Modo claro para datos.</strong> Táboas sobre fondo claro con filas alternas.</li>
+      <li><strong>Aforro sempre visible.</strong> Badge de "Aforro acumulado" no header.</li>
+      <li><strong>0 configuración visible.</strong> O onboarding configura, o dashboard mostra.</li>
+    </ol>
+
+    <h3>🖥 Pantallas da Plataforma</h3>
+    <div class="table-wrap"><table>
+      <tr><th>Pantalla</th><th>Propósito</th><th>Compoñentes crave</th></tr>
+      <tr><td><strong>Panel</strong></td><td>Vista xeral da carteira</td><td>KPI cards, mapa propiedades, alertas activas, gráfico consumo</td></tr>
+      <tr><td><strong>Propiedade</strong></td><td>Detalle dunha unidade</td><td>Consumo diario, control domótico, ciclos batería, histórico</td></tr>
+      <tr><td><strong>Operacións</strong></td><td>Cola de accións</td><td>Tarefas automáticas, filtro prioridade, rexistro de accións</td></tr>
+      <tr><td><strong>Tarifas</strong></td><td>Prezos enerxía</td><td>OMIE en tempo real, simulación arbitraxe, contratos</td></tr>
+      <tr><td><strong>Informes</strong></td><td>Xerar PDFs</td><td>Informe propietario 1 clic, exportación, envío automático</td></tr>
+      <tr><td><strong>Configuración</strong></td><td>Onboarding</td><td>Vincular PMS, sensores, dispositivos, CUPS (1 vez)</td></tr>
+    </table></div>
+
+    <h3>🛠 Stack UI Recomendado para Tramo</h3>
+    <div class="table-wrap"><table>
+      <tr><th>Categoría</th><th>Ferramenta</th><th>Uso en Tramo</th></tr>
+      <tr><td><strong>Base</strong></td><td>shadcn/ui</td><td>Button, Card, Dialog, Table, Sheet, Tabs, Toast, Dropdown</td></tr>
+      <tr><td><strong>Animacións</strong></td><td>Magic UI</td><td>Marquee (trust strip), Animated Beam (fluxos datos), Bento Grid (KPI layout), Particles (fondo hero)</td></tr>
+      <tr><td><strong>Premium</strong></td><td>Aceternity UI</td><td>Background Beams (seccións escuras), Bento Grid (dashboard preview), 3D Card (produto), Parallax (landing)</td></tr>
+      <tr><td><strong>Community</strong></td><td>21st.dev</td><td>Hero section, Pricing table, Feature grids (8000+ compoñentes)</td></tr>
+      <tr><td><strong>Iconas</strong></td><td>Lucide + Phosphor</td><td>Lucide: UI chrome. Phosphor: dashboard data viz (6 estilos)</td></tr>
+      <tr><td><strong>Assets</strong></td><td>SVG Repo + SVGO</td><td>Ilustracións vectoriais optimizadas para seccións da landing</td></tr>
+      <tr><td><strong>Imaxes</strong></td><td>Sharp + ImageMagick</td><td>Optimizar screenshots dashboard, converter a WebP/AVIF</td></tr>
+    </table></div>
+
+    <h3>🤖 MCPs para o Axente (instalación sen comandos)</h3>
+    <div class="table-wrap"><table>
+      <tr><th>MCP</th><th>Acceso</th><th>Uso en Tramo</th></tr>
+      <tr><td><strong>shadcn/ui MCP</strong></td><td><code>npx @shadcn/mcp</code></td><td>Instalar compoñentes directamente desde o axente</td></tr>
+      <tr><td><strong>Figma MCP</strong></td><td><code>npx @anthropic/figma-mcp</code></td><td>Ler assets e estilos desde Figma (se hai deseños alí)</td></tr>
+      <tr><td><strong>21st.dev MCP</strong></td><td>Integrado</td><td>Buscar e instalar compoñentes desde o chat</td></tr>
+      <tr><td><strong>Playwright MCP</strong></td><td><code>npx @anthropic/playwright-mcp</code></td><td>Screenshots automáticas, QA visual, probas multi-viewport</td></tr>
+    </table></div>
+
+    <h3>🚀 Comandos de Inicialización</h3>
+    <div class="diagram">
+<span class="hl"># 1. Base shadcn/ui</span>
+<span class="dim">npx shadcn@latest init
+npx shadcn@latest add button card dialog table sheet tabs dropdown-menu toast</span>
+
+<span class="hl"># 2. Animacións Magic UI</span>
+<span class="dim">npx magicui-cli add marquee animated-beam bento-grid particles</span>
+
+<span class="hl"># 3. Efectos avanzados Aceternity</span>
+<span class="dim">npx aceternity-ui add background-beams bento-grid parallax-scroll</span>
+
+<span class="hl"># 4. Compoñentes community 21st.dev</span>
+<span class="dim">npx 21st add hero-section pricing-table feature-grid stats-section</span>
+
+<span class="hl"># 5. Iconas</span>
+<span class="dim">npm i lucide-react @phosphor-icons/react</span>
+
+<span class="hl"># 6. GSAP (animacións profesionais)</span>
+<span class="dim">npm i gsap @gsap/react</span>
+
+<span class="hl"># 7. Assets e optimización</span>
+<span class="dim">curl &lt;svg-url&gt; | npx svgo -o src/assets/icon.svg
+npx sharp-cli -i input.png -o output.webp --format webp</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ HEALTH SCORE ══════ -->
+<div class="section-divider"><span class="line"></span><span class="label">Health</span><span class="line"></span></div>
+<section class="phase" id="health" style="border-color:#f59e0b">
+  <div class="phase-header">
+    <div class="phase-num" style="background:#fef3c7;color:#d97706">📊</div>
+    <h2>Health Score — Replantexamento</h2>
+  </div>
+  <div class="phase-body">
+    <div class="health-card">
+      <div class="score-display">
+        <div class="score-ring">
+          <svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="44"/><circle class="fg" id="score-circle" cx="50" cy="50" r="44" stroke-dasharray="276.5" stroke-dashoffset="77.4"/></svg>
+          <div class="txt"><span id="score-num">72</span><small style="font-size:0.6rem;font-weight:400">/100</small></div>
+        </div>
+        <div>
+          <p class="status-badge" style="margin:0 0 8px">🟡 Bo — replantexamento sólido, pendente execución</p>
+          <div class="table-wrap"><table style="margin:0">
+            <tr><th>Dimensión</th><th>Nota</th><th>Comentario</th></tr>
+            <tr><td>Estratexia</td><td><span class="tag tag-green">8/10</span></td><td>Posicionamento claro, diferenciación forte en arbitraxe</td></tr>
+            <tr><td>Landing</td><td><span class="tag tag-green">7/10</span></td><td>Estrutura cobre todos os ángulos, falta validar copy</td></tr>
+            <tr><td>Plataforma</td><td><span class="tag tag-amber">6/10</span></td><td>Arquitectura definida, sen prototipo con datos reais</td></tr>
+            <tr><td>Diferenciación</td><td><span class="tag tag-green">9/10</span></td><td>Arbitraxe + domótica é un oco real sen competencia</td></tr>
+          </table></div>
+        </div>
+      </div>
+      <p style="margin-top:20px"><strong>Próximos pasos:</strong></p>
+      <ol>
+        <li>Executar a landing coa nova estrutura (7 seccións)</li>
+        <li>Construír a demo do dashboard con datos de arbitraxe simulados</li>
+        <li>Validar integración MQTT con 1 dispositivo físico (proba de concepto)</li>
+        <li>Crear o módulo de prezos OMIE na Edge Function</li>
+        <li>Instalar stack UI: shadcn/ui + Magic UI + Aceternity + GSAP</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ RESUMEN ══════ -->
+<div class="section-divider" id="div-summary"><span class="line"></span><span class="label">Resumen</span><span class="line"></span></div>
+<section class="phase" id="resumen" style="border:2px solid var(--accent)">
+  <div class="phase-header" style="background:#f0fdf4">
+    <div class="phase-num" style="background:var(--accent);color:#fff">🎯</div>
+    <h2>Resumo Executivo</h2>
+  </div>
+  <div class="phase-body">
+    <div class="compare-grid">
+      <div class="col before">
+        <h4>🔴 Antes (Tramo actual)</h4>
+        <ul style="margin:0;padding-left:18px;font-size:0.9rem">
+          <li>"Control energético por reserva"</li>
+          <li>Foco en atribución e informes</li>
+          <li>Sen sección de arbitraxe</li>
+          <li>Domótica mencionada de paso</li>
+          <li>Pricing oculto</li>
+          <li>Produto = datos</li>
+        </ul>
+      </div>
+      <div class="col after">
+        <h4>🟢 Despois (Tramo replanteado)</h4>
+        <ul style="margin:0;padding-left:18px;font-size:0.9rem">
+          <li><strong>"Cada apartamento se gestiona solo y genera ingresos"</strong></li>
+          <li>Foco en acción automática + retorno económico</li>
+          <li><strong>Sección estrela: batería como activo financeiro</strong></li>
+          <li><strong>Domótica como columna vertebral</strong></li>
+          <li>Pricing transparente (190€/mes piloto)</li>
+          <li><strong>Produto = aforro automatizado cuantificable</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:28px">📦 Stack Final</h3>
+    <div class="diagram">
+<span class="hl">Landing</span>   Astro.js/Next.js + GSAP + Tailwind + Magic UI
+<span class="hl">Dashboard</span> Next.js 14 + shadcn/ui + Aceternity UI
+<span class="hl">Backend</span>   Supabase (PG + Auth + Realtime + Edge)
+<span class="hl">Domótica</span>  MQTT Broker + Adaptadores (Shelly/Sonoff/Z-Wave)
+<span class="hl">Arbitraxe</span> Edge Function + OMIE API
+<span class="hl">AI Agent</span>  OpenClaw + Skills
+<span class="hl">Deploy</span>    Vercel + Supabase Cloud</div>
+
+    <div class="quote" style="margin-top:20px">
+      <strong>O que cambia de verdade:</strong> Tramo deixa de ser un cadro de mandos para converterse no <em>operador automático</em> da enerxía dunha carteira turística. Non mira, actúa. Non rexistra, aforra. Non mostra datos, produce ingresos.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="doc-footer">
+  <p>Tramo — Replantexamento GStack Pro · 20/05/2026 · Nécora 🦀</p>
+  <p style="font-size:0.75rem;color:#94a3b8;margin-top:4px">GSAP · shadcn/ui · Magic UI · Aceternity UI · Lucide · Phosphor · Supabase · Next.js</p>
+</footer>
+
+<button id="back-to-top" aria-label="Volver arriba">↑</button>
+
+<!-- ══════ GSAP + ScrollTrigger ══════ -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+<script>
+// ── LOADER ──
+gsap.to('#loader-bar', { width: '100%', duration: 0.6, ease: 'power2.inOut',
+  onComplete: function() {
+    gsap.to('#loader', { opacity: 0, duration: 0.4, delay: 0.15,
+      onComplete: function() {
+        document.getElementById('loader').style.display = 'none';
+        // Start entrance animations
+        animateHeader();
+      }
+    });
+  }
+});
+
+function animateHeader() {
+  // Header stagger
+  gsap.from('.doc-header h1', { y: 30, opacity: 0, duration: 0.7, ease: 'power3.out' });
+  gsap.from('.doc-header .sub', { y: 20, opacity: 0, duration: 0.6, delay: 0.15, ease: 'power3.out' });
+  gsap.from('.doc-header .badge', { scale: 0.8, opacity: 0, duration: 0.5, delay: 0.25, ease: 'back.out(1.7)' });
+  gsap.from('.doc-header .meta span', { y: 15, opacity: 0, duration: 0.4, stagger: 0.08, delay: 0.35 });
+  gsap.from('.counter-card', { y: 40, opacity: 0, duration: 0.6, stagger: 0.1, delay: 0.5, ease: 'power2.out' });
+
+  // Counter animation
+  document.querySelectorAll('.c-num').forEach(function(el) {
+    var target = parseInt(el.getAttribute('data-target'));
+    gsap.from(el, {
+      textContent: 0,
+      duration: 1.5,
+      delay: 0.8,
+      ease: 'power2.out',
+      snap: { textContent: 1 },
+      onUpdate: function() {
+        el.textContent = Math.round(el.textContent);
+      },
+      onComplete: function() {
+        el.textContent = target;
+      }
+    });
+  });
+}
+
+// ── SCROLLTRIGGER ──
+gsap.registerPlugin(ScrollTrigger);
+
+// Section dividers
+gsap.utils.toArray('.section-divider').forEach(function(el) {
+  gsap.from(el, {
+    scrollTrigger: { trigger: el, start: 'top 85%' },
+    opacity: 0, y: 20, duration: 0.6
+  });
+});
+
+// Phase cards
+gsap.utils.toArray('.phase').forEach(function(el) {
+  gsap.from(el, {
+    scrollTrigger: { trigger: el, start: 'top 82%' },
+    opacity: 0, y: 40, duration: 0.7, ease: 'power2.out'
+  });
+});
+
+// Landing sections stagger
+gsap.utils.toArray('.landing-section').forEach(function(el) {
+  gsap.from(el, {
+    scrollTrigger: { trigger: el, start: 'top 85%' },
+    opacity: 0, x: -30, duration: 0.6, ease: 'power2.out'
+  });
+});
+
+// Star cards
+gsap.utils.toArray('.star-card').forEach(function(el, i) {
+  gsap.from(el, {
+    scrollTrigger: { trigger: el, start: 'top 88%' },
+    opacity: 0, y: 25, duration: 0.5, delay: i * 0.08, ease: 'power2.out'
+  });
+});
+
+// Matrix cells
+gsap.utils.toArray('.matrix-wrap .cell').forEach(function(el, i) {
+  gsap.from(el, {
+    scrollTrigger: { trigger: el, start: 'top 88%' },
+    opacity: 0, scale: 0.95, duration: 0.5, delay: i * 0.07, ease: 'power2.out'
+  });
+});
+
+// Table rows
+gsap.utils.toArray('.row-anim').forEach(function(row) {
+  gsap.from(row, {
+    scrollTrigger: { trigger: row, start: 'top 92%' },
+    opacity: 0, x: -15, duration: 0.4, ease: 'power2.out'
+  });
+});
+
+// Insight boxes stagger
+gsap.utils.toArray('.insight-box').forEach(function(el, i) {
+  gsap.from(el, {
+    scrollTrigger: { trigger: el, start: 'top 90%' },
+    opacity: 0, x: -20, duration: 0.5, delay: i * 0.1, ease: 'power2.out'
+  });
+});
+
+// Quote boxes
+gsap.utils.toArray('.quote').forEach(function(el) {
+  gsap.from(el, {
+    scrollTrigger: { trigger: el, start: 'top 90%' },
+    opacity: 0, scale: 0.97, duration: 0.5, ease: 'power2.out'
+  });
+});
+
+// Diagrams - slight zoom
+gsap.utils.toArray('.diagram').forEach(function(el) {
+  gsap.from(el, {
+    scrollTrigger: { trigger: el, start: 'top 88%' },
+    opacity: 0, scale: 0.96, duration: 0.6, ease: 'power3.out'
+  });
+});
+
+// Health score ring animation
+ScrollTrigger.create({
+  trigger: '#score-circle',
+  start: 'top 85%',
+  onEnter: function() {
+    gsap.to('#score-circle', {
+      strokeDashoffset: 77.4,
+      duration: 1.5,
+      ease: 'power2.inOut'
+    });
+    // Animate number
+    gsap.from('#score-num', {
+      textContent: 0,
+      duration: 1.5,
+      ease: 'power2.out',
+      snap: { textContent: 1 },
+      onUpdate: function() {
+        document.getElementById('score-num').textContent = Math.round(document.getElementById('score-num').textContent);
+      },
+      onComplete: function() {
+        document.getElementById('score-num').textContent = '72';
+      }
+    });
+  }
+});
+
+// Compare grid
+gsap.utils.toArray('.compare-grid .col').forEach(function(el, i) {
+  gsap.from(el, {
+    scrollTrigger: { trigger: el, start: 'top 88%' },
+    opacity: 0, y: 30, duration: 0.6, delay: i * 0.15, ease: 'power2.out'
+  });
+});
+
+// Pricing card - pop effect
+ScrollTrigger.create({
+  trigger: '.pricing-card',
+  start: 'top 85%',
+  onEnter: function() {
+    gsap.from('.pricing-card', { scale: 0.9, opacity: 0, duration: 0.7, ease: 'back.out(1.4)' });
+  }
+});
+
+// Swatches
+gsap.utils.toArray('.swatch').forEach(function(el, i) {
+  gsap.from(el, {
+    scrollTrigger: { trigger: el.parentElement, start: 'top 88%' },
+    opacity: 0, x: -15, duration: 0.4, delay: i * 0.08, ease: 'power2.out'
+  });
+});
+
+// ── BACK TO TOP ──
+var backBtn = document.getElementById('back-to-top');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 600) { backBtn.classList.add('visible'); }
+  else { backBtn.classList.remove('visible'); }
+});
+backBtn.addEventListener('click', function() {
+  gsap.to(window, { scrollTo: '#top', duration: 0.8, ease: 'power2.inOut' });
+});
+
+// ── TOC active section highlight ──
+window.addEventListener('scroll', function() {
+  var sections = ['fase-1','fase-2','fase-3','fase-4','health','resumen'];
+  var navLinks = document.querySelectorAll('.toc a');
+  var current = '';
+  sections.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 120) current = id;
+  });
+  navLinks.forEach(function(link) {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+  });
+});
+
+// ── SMOOTH SCROLL for toc links ──
+document.querySelectorAll('.toc a').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      gsap.to(window, { scrollTo: { y: target, offsetY: 80 }, duration: 0.8, ease: 'power2.inOut' });
+    }
+  });
+});
+</script>
+</body>
+</html>

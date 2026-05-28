@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EnergyOS Preview</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: 
+    radial-gradient(ellipse at top, rgba(139, 92, 246, 0.12), transparent 70%),
+    radial-gradient(ellipse at bottom-right, rgba(232, 145, 58, 0.08), transparent 60%),
+    linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 50%, #0f0f1a 100%);
+  background-attachment: fixed;
+  color: #f0f0f5;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0; top: 0;
+  width: 72px; height: 100vh;
+  background: rgba(15, 15, 26, 0.8);
+  backdrop-filter: blur(24px);
+  border-right: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px;
+  z-index: 50;
+}
+
+.logo {
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, #e8913a, #f0a050);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.nav-item {
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a0a0b0;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-item:hover { background: rgba(255,255,255,0.06); color: #f0f0f5; }
+.nav-item.active {
+  background: linear-gradient(135deg, rgba(232,145,58,0.15), rgba(232,145,58,0.05));
+  color: #e8913a;
+  border: 1px solid rgba(232,145,58,0.3);
+}
+
+.main { margin-left: 72px; }
+
+.header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(24px);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.search {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 10px 16px 10px 40px;
+  color: #f0f0f5;
+  width: 400px;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #e8913a, #f0a050);
+  color: #0f0f1a;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.content {
+  padding: 32px;
+  max-width: 1400px;
+}
+
+.glass-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.05);
+  transition: all 0.3s;
+}
+
+.glass-card:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.hero {
+  background: linear-gradient(135deg, rgba(232,145,58,0.15), rgba(232,145,58,0.05));
+  border: 1px solid rgba(232,145,58,0.25);
+  border-radius: 24px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -30%;
+  width: 100%; height: 200%;
+  background: radial-gradient(ellipse, rgba(232,145,58,0.08) 0%, transparent 70%);
+}
+
+.grid { display: grid; gap: 16px; }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: 2fr 1fr; }
+
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.badge-success { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.25); }
+.badge-warning { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
+
+.alert {
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  border: 1px solid;
+}
+.alert-warning { background: rgba(251,191,36,0.05); border-color: rgba(251,191,36,0.15); }
+.alert-success { background: rgba(52,211,153,0.05); border-color: rgba(52,211,153,0.15); }
+.alert-info { background: rgba(96,165,250,0.05); border-color: rgba(96,165,250,0.15); }
+
+h1 { font-size: 32px; font-weight: 600; }
+h2 { font-size: 24px; font-weight: 600; }
+h3 { font-size: 18px; font-weight: 600; }
+.text-muted { color: #606070; }
+.text-secondary { color: #a0a0b0; }
+
+.chart { height: 200px; background: linear-gradient(180deg, rgba(232,145,58,0.2) 0%, transparent 100%); border-radius: 12px; position: relative; }
+.chart::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e8913a, transparent);
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="logo">⚡</div>
+  <div class="nav-item active">⊞</div>
+  <div class="nav-item">🏢</div>
+  <div class="nav-item">🏠</div>
+  <div class="nav-item">⚡</div>
+  <div class="nav-item">🤖</div>
+  <div class="nav-item">🗄</div>
+</div>
+
+<div class="main">
+  <div class="header">
+    <input class="search" placeholder="Buscar propiedades, alertas..." />
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span style="color:#606070;">🔔</span>
+      <button class="btn-primary">+ Nova Propiedade</button>
+      <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#e8913a,#f0a050);display:flex;align-items:center;justify-content:center;font-weight:700;color:#0f0f1a;">M</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div style="margin-bottom:24px;">
+      <h1>Dashboard</h1>
+      <p class="text-secondary">Resumo da túa xestión enerxética</p>
+    </div>
+
+    <!-- Hero Metric -->
+    <div class="hero">
+      <div style="position:relative;z-index:1;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span class="text-secondary" style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;">Consumo Total</span>
+          <span class="badge badge-success">Este Mes</span>
+        </div>
+        <h2 class="font-mono" style="font-size:56px;font-weight:700;">2,450 <span style="font-size:24px;color:#a0a0b0;">kWh</span></h2>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:12px;color:#34d399;">
+          <span>↗</span>
+          <span style="font-weight:500;">↑ 12% vs mes anterior</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="grid grid-4" style="margin-bottom:24px;">
+      <div class="glass-card">
+        <p class="text-secondary" style="font-size:12px;text-transform:uppercase;margin-bottom:8px;">Aforro Mensual</p>
+        <h2 class="font-mono" style="color:#34d399;">340 <span style="font-size:16px;color:#a0a0b0;">€</span></h2>
+        <div style="display:flex;align-items:center;gap:4px;margin-top:8px;color:#34d399;font-size:13px;">
+          <span>↗</span> <span>8% vs antes</span>
+        </div>
+      </div>
+      <div class="glass-card">
+        <p class="text-secondary" style="font-size:12px;text-transform:uppercase;margin-bottom:8px;">Propiedades</p>
+        <h2 class="font-mono" style="color:#fbbf24;">12 <span style="font-size:16px;color:#a0a0b0;">activas</span></h2>
+        <div style="display:flex;align-items:center;gap:4px;margin-top:8px;color:#34d399;font-size:13px;">
+          <span>↗</span> <span>+2 este mes</span>
+        </div>
+      </div>
+      <div class="glass-card">
+        <p class="text-secondary" style="font-size:12px;text-transform:uppercase;margin-bottom:8px;">Prezo OMIE</p>
+        <h2 class="font-mono" style="color:#60a5fa;">62.4 <span style="font-size:16px;color:#a0a0b0;">€/MWh</span></h2>
+        <div style="display:flex;align-items:center;gap:4px;margin-top:8px;color:#34d399;font-size:13px;">
+          <span>↘</span> <span>-3% vs onte</span>
+        </div>
+      </div>
+      <div class="glass-card">
+        <p class="text-secondary" style="font-size:12px;text-transform:uppercase;margin-bottom:8px;">Ocupación</p>
+        <h2 class="font-mono" style="color:#8b5cf6;">80 <span style="font-size:16px;color:#a0a0b0;">%</span></h2>
+        <div style="display:flex;align-items:center;gap:4px;margin-top:8px;color:#34d399;font-size:13px;">
+          <span>↗</span> <span>+5% vs mes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart + Alerts -->
+    <div class="grid grid-3" style="margin-bottom:24px;">
+      <div class="glass-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+          <h3>Consumo Horario</h3>
+          <div style="display:flex;gap:4px;background:rgba(255,255,255,0.04);padding:4px;border-radius:10px;">
+            <span style="padding:6px 12px;background:#e8913a;color:#0f0f1a;border-radius:8px;font-size:13px;font-weight:500;">24H</span>
+            <span style="padding:6px 12px;color:#a0a0b0;font-size:13px;">7D</span>
+            <span style="padding:6px 12px;color:#a0a0b0;font-size:13px;">30D</span>
+          </div>
+        </div>
+        <div class="chart"></div>
+      </div>
+
+      <div class="glass-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <h3>Alertas</h3>
+            <span class="badge badge-warning">3 novas</span>
+          </div>
+          <span style="color:#e8913a;font-size:13px;cursor:pointer;">Ver todas</span>
+        </div>
+        <div class="alert alert-warning">
+          <div style="display:flex;align-items:start;gap:8px;">
+            <span>⚠️</span>
+            <div>
+              <p style="font-size:14px;">Consumo alto en Vigo Centro — 45% sobre a media</p>
+              <p class="text-muted" style="font-size:12px;margin-top:4px;">Hai 2h</p>
+            </div>
+          </div>
+        </div>
+        <div class="alert alert-success">
+          <div style="display:flex;align-items:start;gap:8px;">
+            <span>✨</span>
+            <div>
+              <p style="font-size:14px;">Oportunidade de aforro: tarifa indexada recomendada</p>
+              <p class="text-muted" style="font-size:12px;margin-top:4px;">Hai 5h</p>
+            </div>
+          </div>
+        </div>
+        <div class="alert alert-info">
+          <div style="display:flex;align-items:start;gap:8px;">
+            <span>ℹ️</span>
+            <div>
+              <p style="font-size:14px;">Datadis: Novos datos para 3 propiedades</p>
+              <p class="text-muted" style="font-size:12px;margin-top:4px;">Hai 1d</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Cards -->
+    <div class="grid grid-2">
+      <div class="glass-card" style="background:linear-gradient(135deg,rgba(16,185,129,0.1),rgba(16,185,129,0.03));border-color:rgba(16,185,129,0.2);">
+        <div style="display:flex;justify-content:space-between;margin-bottom:16px;">
+          <div style="width:48px;height:48px;border-radius:16px;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;color:#34d399;font-size:24px;">🤖</div>
+          <span class="badge badge-success">IA</span>
+        </div>
+        <h3 style="margin-bottom:8px;">Aforra ata €500/ano</h3>
+        <p class="text-secondary" style="margin-bottom:20px;font-size:14px;">Análise intelixente de tarifas baseada no teu consumo real</p>
+        <button style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:#f0f0f5;padding:10px 20px;border-radius:12px;cursor:pointer;display:flex;align-items:center;gap:8px;font-size:14px;">
+          Ver Estratexia →
+        </button>
+      </div>
+      <div class="glass-card" style="background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(139,92,246,0.03));border-color:rgba(139,92,246,0.2);">
+        <div style="display:flex;justify-content:space-between;margin-bottom:16px;">
+          <div style="width:48px;height:48px;border-radius:16px;background:rgba(139,92,246,0.15);display:flex;align-items:center;justify-content:center;color:#a78bfa;font-size:24px;">🔋</div>
+          <span class="badge" style="background:rgba(96,165,250,0.15);color:#60a5fa;border:1px solid rgba(96,165,250,0.25);">OMIE</span>
+        </div>
+        <h3 style="margin-bottom:8px;">Simula o teu retorno</h3>
+        <p class="text-secondary" style="margin-bottom:20px;font-size:14px;">Datos OMIE en tempo real + dimensionamento de baterías con IA</p>
+        <button style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:#f0f0f5;padding:10px 20px;border-radius:12px;cursor:pointer;display:flex;align-items:center;gap:8px;font-size:14px;">
+          Calcular ROI →
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

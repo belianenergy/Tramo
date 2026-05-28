@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "secondary-container": "#316bf3",
+                    "outline-variant": "#c6c6cd",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#565e74",
+                    "inverse-primary": "#bec6e0",
+                    "surface-bright": "#fcf8fa",
+                    "on-tertiary-fixed": "#271901",
+                    "primary-container": "#131b2e",
+                    "background": "#fcf8fa",
+                    "tertiary-fixed": "#fcdeb5",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#bec6e0",
+                    "surface": "#fcf8fa",
+                    "on-tertiary-container": "#98805d",
+                    "secondary-fixed": "#dbe1ff",
+                    "primary-fixed": "#dae2fd",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "inverse-surface": "#303032",
+                    "inverse-on-surface": "#f3f0f2",
+                    "on-surface-variant": "#45464d",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#f0edef",
+                    "on-secondary-container": "#fefcff",
+                    "on-tertiary-fixed-variant": "#574425",
+                    "on-primary-container": "#7c839b",
+                    "surface-variant": "#e4e2e4",
+                    "surface-container-high": "#eae7e9",
+                    "primary": "#000000",
+                    "on-secondary-fixed-variant": "#003ea8",
+                    "tertiary": "#000000",
+                    "surface-dim": "#dcd9db",
+                    "outline": "#76777d",
+                    "surface-container-low": "#f6f3f5",
+                    "tertiary-container": "#271901",
+                    "on-primary-fixed": "#131b2e",
+                    "on-secondary-fixed": "#00174b",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e4e2e4",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-background": "#1b1b1d",
+                    "secondary": "#0051d5",
+                    "tertiary-fixed-dim": "#dec29a",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#1b1b1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "0.5rem",
+                    "md": "1rem",
+                    "container-max": "1440px",
+                    "xs": "0.25rem",
+                    "gutter": "1rem",
+                    "sidebar-width": "260px",
+                    "lg": "1.5rem",
+                    "xl": "2rem"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "display": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+                    "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "display": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcf8fa; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .sidebar-active-indicator { position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background-color: #0051d5; }
+    </style>
+</head>
+<body class="antialiased text-on-surface">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-screen w-sidebar-width bg-primary-container border-r border-outline-variant flex flex-col h-full py-lg px-md z-50">
+<div class="mb-xl px-sm">
+<h1 class="font-headline-md text-headline-md text-on-primary-container font-black">EnergyOS</h1>
+<p class="font-body-sm text-body-sm text-on-primary-container/60">v2.4.0</p>
+</div>
+<nav class="flex-1 space-y-xs">
+<!-- Nav Items based on JSON -->
+<a class="flex items-center gap-sm px-sm py-xs rounded text-on-primary-container/70 font-body-md text-body-md hover:bg-surface-container-high/20 transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded text-on-primary-container/70 font-body-md text-body-md hover:bg-surface-container-high/20 transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="apartment">apartment</span>
+<span>Apartamentos</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded text-on-primary-container/70 font-body-md text-body-md hover:bg-surface-container-high/20 transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="settings_remote">settings_remote</span>
+<span>Operaciones</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded text-on-primary-container/70 font-body-md text-body-md hover:bg-surface-container-high/20 transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Informes</span>
+</a>
+<!-- ACTIVE TAB -->
+<a class="relative flex items-center gap-sm px-sm py-xs text-on-secondary-container font-bold border-l-2 border-secondary bg-surface-container-highest/10 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span>Tarifa/Potencia</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded text-on-primary-container/70 font-body-md text-body-md hover:bg-surface-container-high/20 transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+<span>Leads</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded text-on-primary-container/70 font-body-md text-body-md hover:bg-surface-container-high/20 transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Configuración</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant/20 pt-lg space-y-xs">
+<a class="flex items-center gap-sm px-sm py-xs text-on-primary-container/70 font-body-md text-body-md hover:bg-surface-container-high/20 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Ayuda</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-on-primary-container/70 font-body-md text-body-md hover:bg-surface-container-high/20 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span>Soporte</span>
+</a>
+<button class="mt-md w-full bg-secondary text-on-secondary font-label-md text-label-md py-xs rounded-lg hover:opacity-90 transition-all">Upgrade Plan</button>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 left-sidebar-width h-16 bg-surface border-b border-outline-variant flex justify-between items-center px-lg z-40">
+<div class="flex items-center gap-md">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Costa Norte Stays</span>
+<div class="relative ml-xl">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]" data-icon="search">search</span>
+<input class="bg-surface-container-low border border-outline-variant rounded-lg pl-10 pr-4 py-1.5 w-80 text-body-sm focus:outline-none focus:ring-1 focus:ring-secondary transition-all" placeholder="Búsqueda de apartamentos..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</button>
+<button class="flex items-center gap-sm text-on-surface-variant hover:bg-surface-container-low p-1 pl-2 rounded-full transition-colors active:scale-95 border border-outline-variant/30">
+<span class="text-label-md font-medium px-1">Admin</span>
+<span class="material-symbols-outlined text-[32px] text-secondary" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-sidebar-width mt-16 p-xl max-w-[1440px]">
+<!-- Page Header -->
+<header class="mb-xl flex justify-between items-end">
+<div>
+<h2 class="font-display text-display text-primary">Optimización de Tarifa y Potencia</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-xs max-w-2xl">Módulo complementario enfocado en la eficiencia estructural y ahorro operativo de su cartera de propiedades.</p>
+</div>
+<div class="flex gap-sm">
+<button class="border border-outline-variant bg-surface px-md py-sm rounded-lg font-label-md text-label-md text-primary flex items-center gap-sm hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="file_download">file_download</span>
+                    Exportar Reporte
+                </button>
+<button class="bg-secondary text-on-secondary px-md py-sm rounded-lg font-label-md text-label-md flex items-center gap-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]" data-icon="refresh">refresh</span>
+                    Recalcular Cartera
+                </button>
+</div>
+</header>
+<div class="grid grid-cols-12 gap-xl">
+<!-- Left Side: Dashboard Metrics & Main Analysis -->
+<div class="col-span-8 space-y-xl">
+<!-- Main Feature: Current Detail Analysis -->
+<section class="bg-surface border border-outline-variant rounded-xl p-xl">
+<div class="flex justify-between items-start mb-lg">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-secondary-container/10 text-secondary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]" data-icon="bolt" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">VGO-014 · Apartamento Areal</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Análisis de Potencia Recomendada basado en consumo P2</p>
+</div>
+</div>
+<span class="bg-error-container text-on-error-container text-label-sm font-semibold px-sm py-xs rounded flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="warning">warning</span>
+                            Sobredimensionado
+                        </span>
+</div>
+<div class="grid grid-cols-2 gap-xl mb-xl">
+<!-- Chart Comparison Mockup -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg">
+<div class="flex justify-between mb-sm items-end h-32 gap-xl">
+<div class="flex-1 bg-surface-container-highest rounded-t-lg relative group">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-primary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">4.6 kW</div>
+<div class="w-full bg-outline-variant/40 h-full rounded-t-lg"></div>
+</div>
+<div class="flex-1 bg-secondary/20 rounded-t-lg relative group h-[71%]">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-secondary text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">3.3 kW</div>
+<div class="w-full bg-secondary h-full rounded-t-lg"></div>
+</div>
+</div>
+<div class="flex justify-between mt-md border-t border-outline-variant pt-sm">
+<div class="text-center flex-1">
+<p class="font-label-sm text-on-surface-variant">Actual</p>
+<p class="font-headline-md text-on-surface">4.6 <span class="text-body-sm font-normal">kW</span></p>
+</div>
+<div class="text-center flex-1">
+<p class="font-label-sm text-secondary font-bold">Recomendada</p>
+<p class="font-headline-md text-secondary">3.3 <span class="text-body-sm font-normal">kW</span></p>
+</div>
+</div>
+</div>
+<!-- Recommendation Card -->
+<div class="flex flex-col justify-between">
+<div class="space-y-md">
+<div class="bg-surface-container-low p-md rounded-lg border-l-4 border-secondary">
+<h4 class="font-label-md text-label-md text-secondary uppercase tracking-wider">Recomendación</h4>
+<p class="font-body-md text-body-md text-on-surface mt-xs">Bajar potencia contratada en periodo valle (P2).</p>
+</div>
+<div class="flex items-center gap-md">
+<div>
+<p class="font-label-sm text-on-surface-variant">Ahorro estimado</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">12€<span class="text-body-md font-normal text-on-surface-variant">/mes</span></p>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<div>
+<p class="font-label-sm text-on-surface-variant">Ahorro anual</p>
+<p class="font-headline-lg text-headline-lg text-secondary">145€</p>
+</div>
+</div>
+</div>
+<button class="w-full py-md bg-primary text-on-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-sm hover:bg-on-primary-fixed-variant transition-colors">
+                                Aplicar cambio ahora
+                                <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Portfolio Table -->
+<section class="bg-surface border border-outline-variant rounded-xl overflow-hidden">
+<div class="px-xl py-lg border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Tabla comparativa de cartera</h3>
+<div class="flex gap-sm">
+<button class="p-2 border border-outline-variant rounded hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="filter_list">filter_list</span></button>
+</div>
+</div>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-xl py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Apartamento</th>
+<th class="px-xl py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Tarifa Actual</th>
+<th class="px-xl py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Potencia (P1/P2)</th>
+<th class="px-xl py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Recomendación</th>
+<th class="px-xl py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-right">Ahorro Est.</th>
+<th class="px-xl py-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Estado</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-xl py-md font-body-md text-body-md font-medium text-on-surface">VGO-014</td>
+<td class="px-xl py-md font-body-sm text-body-sm text-on-surface-variant">Endesa One 2.0TD</td>
+<td class="px-xl py-md font-body-sm text-body-sm">4.6 / 4.6 kW</td>
+<td class="px-xl py-md font-body-sm text-body-sm text-secondary">Bajar P2 a 3.3 kW</td>
+<td class="px-xl py-md font-body-md text-body-md font-semibold text-right">145€/año</td>
+<td class="px-xl py-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-surface-container-highest text-on-surface-variant border border-outline-variant">Pendiente</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-xl py-md font-body-md text-body-md font-medium text-on-surface">SCQ-022</td>
+<td class="px-xl py-md font-body-sm text-body-sm text-on-surface-variant">Iberdrola Plan Estable</td>
+<td class="px-xl py-md font-body-sm text-body-sm">3.3 / 3.3 kW</td>
+<td class="px-xl py-md font-body-sm text-body-sm text-on-tertiary-container">Optimizado</td>
+<td class="px-xl py-md font-body-md text-body-md font-semibold text-right text-outline">-</td>
+<td class="px-xl py-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-secondary-fixed text-on-secondary-fixed-variant border border-secondary-fixed-dim">Completado</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-xl py-md font-body-md text-body-md font-medium text-on-surface">LCG-008</td>
+<td class="px-xl py-md font-body-sm text-body-sm text-on-surface-variant">Naturgy Por Uso</td>
+<td class="px-xl py-md font-body-sm text-body-sm">5.7 / 5.7 kW</td>
+<td class="px-xl py-md font-body-sm text-body-sm text-secondary">Bajar P1/P2 a 4.6 kW</td>
+<td class="px-xl py-md font-body-md text-body-md font-semibold text-right text-on-surface">210€/año</td>
+<td class="px-xl py-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-surface-container-highest text-on-surface-variant border border-outline-variant">Pendiente</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-xl py-md font-body-md text-body-md font-medium text-on-surface">SNX-031</td>
+<td class="px-xl py-md font-body-sm text-body-sm text-on-surface-variant">TotalEnergies</td>
+<td class="px-xl py-md font-body-sm text-body-sm">4.6 / 4.6 kW</td>
+<td class="px-xl py-md font-body-sm text-body-sm text-secondary">Cambio a Tarifa Indexada</td>
+<td class="px-xl py-md font-body-md text-body-md font-semibold text-right text-on-surface">112€/año</td>
+<td class="px-xl py-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-tertiary-fixed text-on-tertiary-fixed-variant border border-tertiary-fixed-dim">En trámite</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-xl py-md font-body-md text-body-md font-medium text-on-surface">BAI-006</td>
+<td class="px-xl py-md font-body-sm text-body-sm text-on-surface-variant">Endesa Tempo 24h</td>
+<td class="px-xl py-md font-body-sm text-body-sm">3.3 / 3.3 kW</td>
+<td class="px-xl py-md font-body-sm text-body-sm text-secondary">Bajar P2 a 2.3 kW</td>
+<td class="px-xl py-md font-body-md text-body-md font-semibold text-right text-on-surface">117€/año</td>
+<td class="px-xl py-md">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-surface-container-highest text-on-surface-variant border border-outline-variant">Pendiente</span>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<footer class="mt-lg">
+<div class="bg-surface-container-low rounded-lg p-md border border-outline-variant/50 flex gap-md items-start">
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="info">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                            Nota informativa: Los ahorros son estimaciones basadas en el consumo histórico de los últimos 12 meses. La aplicación efectiva de los cambios depende de la aprobación de la comercializadora y la distribuidora regional.
+                        </p>
+</div>
+</footer>
+</div>
+<!-- Right Side: Portfolio Summary & Actions -->
+<div class="col-span-4 space-y-xl">
+<!-- Portfolio Summary Card -->
+<section class="bg-primary-container text-on-primary-container rounded-xl p-xl border border-outline-variant shadow-lg relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md mb-xl text-on-secondary-container">Resumen de cartera</h3>
+<div class="space-y-lg">
+<div class="flex justify-between items-center group">
+<span class="font-body-md text-body-md opacity-80">Apartamentos analizados</span>
+<span class="font-headline-md text-headline-md">5</span>
+</div>
+<div class="h-px bg-on-primary-container/20 w-full"></div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md opacity-80">Acciones pendientes</span>
+<span class="font-headline-md text-headline-md text-secondary-fixed">3</span>
+</div>
+<div class="h-px bg-on-primary-container/20 w-full"></div>
+<div class="pt-sm">
+<p class="font-label-sm text-on-secondary-container/60 mb-xs uppercase tracking-widest">Ahorro potencial total</p>
+<div class="flex items-baseline gap-xs">
+<span class="font-display text-[42px] leading-tight text-on-secondary-container">584€</span>
+<span class="font-headline-md text-on-secondary-container/70">/ año</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Visual Element -->
+<div class="absolute -right-12 -bottom-12 opacity-10">
+<span class="material-symbols-outlined text-[160px]" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+</div>
+</section>
+<!-- Secondary Promotion / Info Section -->
+<section class="bg-white border border-outline-variant rounded-xl p-lg">
+<img alt="Interior de oficina moderna" class="w-full h-32 object-cover rounded-lg mb-md" data-alt="A clean, minimalist high-end corporate office interior with floor-to-ceiling windows showing a blurred cityscape. The lighting is bright and natural, creating a professional and calm workspace environment. The scene is dominated by white and soft grey tones with deep navy accents, reflecting a modern B2B software aesthetic. High-quality furniture and subtle architectural details emphasize precision and structural efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZs8xh32_z-8dsxMVtZS2B8O_ApWMRSDR90hSInYpCMSlxDJ2Y-69p9MxoL4KEmsLShpqMFD8F9dttS8DKa96nZ4Mp0DTiQ3NzR4_eIsc1IR7Sav7gD4tSJ5hoZyzZQxqH8sQABy0ioZlQY2Zk7MU-5p85hCFgWw4bSXAj54GWY4zPFmxAPB-2lAhshUJ6gryk2f0zpRIWVTleAA7J45aPwMifwh7R1Nz69_cyRrAaC1aTYmVSOBsyIt7epZR1_E0AqNh8oRGFeQ8c"/>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-xs">Eficiencia Estructural</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">La optimización de potencia es la forma más rápida de reducir gastos fijos sin afectar al confort del huésped.</p>
+<div class="space-y-sm">
+<div class="flex items-center gap-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Reducción de coste fijo mensual
+                        </div>
+<div class="flex items-center gap-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Eliminación de penalizaciones
+                        </div>
+<div class="flex items-center gap-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Gestión unificada de contratos
+                        </div>
+</div>
+</section>
+<!-- Quick Tips Card -->
+<section class="bg-surface-container-low border border-outline-variant/50 rounded-xl p-lg">
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="lightbulb">lightbulb</span>
+                        CONSEJO RÁPIDO
+                    </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">
+                        "El 80% de los apartamentos analizados en Vigo tienen una potencia sobredimensionada en el periodo Valle (P2). Ajustarla puede ahorrar hasta 120€ anuales por unidad."
+                    </p>
+</section>
+</div>
+</div>
+</main>
+</body></html>

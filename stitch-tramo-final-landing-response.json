@@ -1,0 +1,530 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"projectId\":\"11712095792485091370\",\"sessionId\":\"17195158481940401954\",\"outputComponents\":[{\"designSystem\":{\"name\":\"assets/d0ce71fc35fd44549396328a2080f493\",\"designSystem\":{\"displayName\":\"Tramo Operational System\",\"styleGuidelines\":\"## Brand & Style\\nThis design system is built for high-stakes B2B energy operations, where precision and clarity are paramount. The aesthetic is inspired by high-quality tactile stationery—specifically technical ledger paper—evoking a sense of reliability and permanence.\\n\\nThe style avoids the ephemeral nature of modern SaaS \\\"software bloat\\\" (gradients, blurs, and organic shapes) in favor of a structured, physical presence. It utilizes a \\\"Paper & Ink\\\" philosophy: high-contrast typography, crisp borders, and a warm, low-fatigue background palette. The emotional response is one of calm authority, intentionality, and operational rigor.\\n\\n## Layout & Spacing\\nThe layout follows a rigorous **Fixed Grid** philosophy on desktop to maintain \\\"dashboard-like\\\" predictability. \\n\\n- **Grid Model:** A 12-column system with a 20px gutter. Content is housed in \\\"Report Modules\\\" (cards) that align to the grid.\\n- **Spacing Rhythm:** Based on a 4px baseline. Tight spacing (4px, 8px) is used for data-dense groupings, while larger spacing (24px, 40px) defines structural sections.\\n- **Responsive Behavior:** On tablet, the grid shifts to 8 columns. On mobile, it collapses to a single-column fluid layout with a 16px safe-margin on either side.\\n\\n## Elevation & Depth\\nThis design system rejects the use of shadows to communicate depth. Instead, it uses **Tonal Layering** and **Strong Borders** to define hierarchy.\\n\\n1.  **Level 0 (Background):** #fcf9f8 (The \\\"Desk\\\").\\n2.  **Level 1 (Surfaces):** #fffaf5 (Secondary operational areas like sidebars).\\n3.  **Level 2 (Active Cards):** #ffffff (Primary work surfaces) with a 1px #ead8cd border.\\n4.  **Interaction:** Elements do not \\\"lift\\\" on hover; instead, they utilize border weight increases or color shifts (e.g., from #ead8cd to #dbc1b3) to indicate focus. This maintains the \\\"flat paper\\\" metaphor.\\n\\n## Components\\n\\n- **Buttons:** Primary buttons use #1c1b1b background with #ffffff text. Secondary buttons use a #dbc1b3 border with no fill. All buttons use 14px Inter Medium and 4px border-radius.\\n- **Input Fields:** Use #ffffff background with a #dbc1b3 border. Labels use `label-caps` in #554338. Focus states switch the border to #e6813a with a 2px thickness.\\n- **Data Cards:** Essential to the operational feel. Must have a 1px border (#ead8cd) and a clear header section separated by a horizontal rule.\\n- **Status Chips:** Use a subtle background of the signal color (e.g., Success or Signal Orange at 10% opacity) with a 1px solid border of the same color and JetBrains Mono text.\\n- **Metrics/KPIs:** Large monospaced numbers (JetBrains Mono) paired with a `label-caps` description. Avoid icons; use text-based trends (e.g., \\\"+12.4%\\\").\\n- **Tables:** No vertical lines. Use horizontal separators in #ead8cd. Header rows use #fffaf5 background and `label-caps` text.\",\"theme\":{\"colorMode\":\"LIGHT\",\"font\":\"PLUS_JAKARTA_SANS\",\"roundness\":\"ROUND_FOUR\",\"customColor\":\"#1c1b1b\",\"headlineFont\":\"PLUS_JAKARTA_SANS\",\"bodyFont\":\"INTER\",\"labelFont\":\"JETBRAINS_MONO\",\"namedColors\":{\"background\":\"#fdf8f8\",\"error\":\"#ba1a1a\",\"error_container\":\"#ffdad6\",\"inverse_on_surface\":\"#f4f0ef\",\"inverse_primary\":\"#c9c6c5\",\"inverse_surface\":\"#313030\",\"on_background\":\"#1c1b1b\",\"on_error\":\"#ffffff\",\"on_error_container\":\"#93000a\",\"on_primary\":\"#ffffff\",\"on_primary_container\":\"#868383\",\"on_primary_fixed\":\"#1c1b1b\",\"on_primary_fixed_variant\":\"#484646\",\"on_secondary\":\"#ffffff\",\"on_secondary_container\":\"#785f52\",\"on_secondary_fixed\":\"#29170e\",\"on_secondary_fixed_variant\":\"#584236\",\"on_surface\":\"#1c1b1b\",\"on_surface_variant\":\"#4c4547\",\"on_tertiary\":\"#ffffff\",\"on_tertiary_container\":\"#868383\",\"on_tertiary_fixed\":\"#1c1b1b\",\"on_tertiary_fixed_variant\":\"#484646\",\"outline\":\"#7d7577\",\"outline_variant\":\"#cfc4c6\",\"primary\":\"#000000\",\"primary_container\":\"#1c1b1b\",\"primary_fixed\":\"#e6e1e1\",\"primary_fixed_dim\":\"#c9c6c5\",\"secondary\":\"#72594c\",\"secondary_container\":\"#fedccb\",\"secondary_fixed\":\"#fedccb\",\"secondary_fixed_dim\":\"#e0c0b0\",\"surface\":\"#fdf8f8\",\"surface_bright\":\"#fdf8f8\",\"surface_container\":\"#f1edec\",\"surface_container_high\":\"#ebe7e6\",\"surface_container_highest\":\"#e5e2e1\",\"surface_container_low\":\"#f7f3f2\",\"surface_container_lowest\":\"#ffffff\",\"surface_dim\":\"#ddd9d8\",\"surface_tint\":\"#605e5e\",\"surface_variant\":\"#e5e2e1\",\"tertiary\":\"#000000\",\"tertiary_container\":\"#1c1b1b\",\"tertiary_fixed\":\"#e6e1e1\",\"tertiary_fixed_dim\":\"#c9c6c5\"},\"designMd\":\"---\\nname: Tramo Operational System\\ncolors:\\n  surface: '#fdf8f8'\\n  surface-dim: '#ddd9d8'\\n  surface-bright: '#fdf8f8'\\n  surface-container-lowest: '#ffffff'\\n  surface-container-low: '#f7f3f2'\\n  surface-container: '#f1edec'\\n  surface-container-high: '#ebe7e6'\\n  surface-container-highest: '#e5e2e1'\\n  on-surface: '#1c1b1b'\\n  on-surface-variant: '#4c4547'\\n  inverse-surface: '#313030'\\n  inverse-on-surface: '#f4f0ef'\\n  outline: '#7d7577'\\n  outline-variant: '#cfc4c6'\\n  surface-tint: '#605e5e'\\n  primary: '#000000'\\n  on-primary: '#ffffff'\\n  primary-container: '#1c1b1b'\\n  on-primary-container: '#868383'\\n  inverse-primary: '#c9c6c5'\\n  secondary: '#72594c'\\n  on-secondary: '#ffffff'\\n  secondary-container: '#fedccb'\\n  on-secondary-container: '#785f52'\\n  tertiary: '#000000'\\n  on-tertiary: '#ffffff'\\n  tertiary-container: '#1c1b1b'\\n  on-tertiary-container: '#868383'\\n  error: '#ba1a1a'\\n  on-error: '#ffffff'\\n  error-container: '#ffdad6'\\n  on-error-container: '#93000a'\\n  primary-fixed: '#e6e1e1'\\n  primary-fixed-dim: '#c9c6c5'\\n  on-primary-fixed: '#1c1b1b'\\n  on-primary-fixed-variant: '#484646'\\n  secondary-fixed: '#fedccb'\\n  secondary-fixed-dim: '#e0c0b0'\\n  on-secondary-fixed: '#29170e'\\n  on-secondary-fixed-variant: '#584236'\\n  tertiary-fixed: '#e6e1e1'\\n  tertiary-fixed-dim: '#c9c6c5'\\n  on-tertiary-fixed: '#1c1b1b'\\n  on-tertiary-fixed-variant: '#484646'\\n  background: '#fdf8f8'\\n  on-background: '#1c1b1b'\\n  surface-variant: '#e5e2e1'\\ntypography:\\n  headline-xl:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 40px\\n    fontWeight: '600'\\n    lineHeight: 48px\\n    letterSpacing: -0.02em\\n  headline-lg:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 32px\\n    fontWeight: '600'\\n    lineHeight: 40px\\n    letterSpacing: -0.02em\\n  headline-md:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 24px\\n    fontWeight: '600'\\n    lineHeight: 32px\\n  headline-sm:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 20px\\n    fontWeight: '600'\\n    lineHeight: 28px\\n  body-lg:\\n    fontFamily: Inter\\n    fontSize: 18px\\n    fontWeight: '400'\\n    lineHeight: 28px\\n  body-md:\\n    fontFamily: Inter\\n    fontSize: 16px\\n    fontWeight: '400'\\n    lineHeight: 24px\\n  body-sm:\\n    fontFamily: Inter\\n    fontSize: 14px\\n    fontWeight: '400'\\n    lineHeight: 20px\\n  metric-lg:\\n    fontFamily: JetBrains Mono\\n    fontSize: 24px\\n    fontWeight: '500'\\n    lineHeight: 32px\\n    letterSpacing: -0.01em\\n  metric-md:\\n    fontFamily: JetBrains Mono\\n    fontSize: 16px\\n    fontWeight: '500'\\n    lineHeight: 24px\\n  label-caps:\\n    fontFamily: Inter\\n    fontSize: 12px\\n    fontWeight: '600'\\n    lineHeight: 16px\\n    letterSpacing: 0.05em\\nrounded:\\n  sm: 0.125rem\\n  DEFAULT: 0.25rem\\n  md: 0.375rem\\n  lg: 0.5rem\\n  xl: 0.75rem\\n  full: 9999px\\nspacing:\\n  unit: 4px\\n  xs: 4px\\n  sm: 8px\\n  md: 16px\\n  lg: 24px\\n  xl: 40px\\n  container-margin: 32px\\n  gutter: 20px\\n---\\n\\n## Brand & Style\\nThis design system is built for high-stakes B2B energy operations, where precision and clarity are paramount. The aesthetic is inspired by high-quality tactile stationery—specifically technical ledger paper—evoking a sense of reliability and permanence.\\n\\nThe style avoids the ephemeral nature of modern SaaS \\\"software bloat\\\" (gradients, blurs, and organic shapes) in favor of a structured, physical presence. It utilizes a \\\"Paper & Ink\\\" philosophy: high-contrast typography, crisp borders, and a warm, low-fatigue background palette. The emotional response is one of calm authority, intentionality, and operational rigor.\\n\\n## Colors\\nThe palette is rooted in a warm, cream-based \\\"Paper\\\" foundation to reduce eye strain during long operational shifts. \\n\\n- **Foundational Neutrals:** The background and surface colors provide a subtle hierarchy of depth without relying on shadows.\\n- **Ink & Muted Text:** Pure \\\"Ink\\\" (#1c1b1b) is reserved for primary data and headlines to ensure maximum legibility, while \\\"Muted\\\" (#554338) handles secondary metadata.\\n- **Operational Accents:** \\\"Signal Orange\\\" and \\\"Deep Orange\\\" are used sparingly for active states and critical highlights.\\n- **Semantic Clarity:** Success and Error tokens are high-chroma but balanced against the warm background to ensure they remain professional and integrated into the \\\"paper\\\" feel.\\n\\n## Typography\\nThe typographic system utilizes a tri-font strategy to separate intent and improve information processing speed.\\n\\n- **Headlines (Plus Jakarta Sans):** Chosen for its contemporary yet professional geometry. Used for page titles and section headers.\\n- **Body (Inter):** The workhorse for all operational text, descriptions, and user inputs. It provides neutral, high-legibility performance.\\n- **Numbers & Metrics (JetBrains Mono):** A monospaced font is strictly required for all numerical data, energy readings, and timestamps. This ensures that columns of figures align perfectly, allowing operators to spot anomalies across data tables instantly.\\n\\n## Layout & Spacing\\nThe layout follows a rigorous **Fixed Grid** philosophy on desktop to maintain \\\"dashboard-like\\\" predictability. \\n\\n- **Grid Model:** A 12-column system with a 20px gutter. Content is housed in \\\"Report Modules\\\" (cards) that align to the grid.\\n- **Spacing Rhythm:** Based on a 4px baseline. Tight spacing (4px, 8px) is used for data-dense groupings, while larger spacing (24px, 40px) defines structural sections.\\n- **Responsive Behavior:** On tablet, the grid shifts to 8 columns. On mobile, it collapses to a single-column fluid layout with a 16px safe-margin on either side.\\n\\n## Elevation & Depth\\nThis design system rejects the use of shadows to communicate depth. Instead, it uses **Tonal Layering** and **Strong Borders** to define hierarchy.\\n\\n1.  **Level 0 (Background):** #fcf9f8 (The \\\"Desk\\\").\\n2.  **Level 1 (Surfaces):** #fffaf5 (Secondary operational areas like sidebars).\\n3.  **Level 2 (Active Cards):** #ffffff (Primary work surfaces) with a 1px #ead8cd border.\\n4.  **Interaction:** Elements do not \\\"lift\\\" on hover; instead, they utilize border weight increases or color shifts (e.g., from #ead8cd to #dbc1b3) to indicate focus. This maintains the \\\"flat paper\\\" metaphor.\\n\\n## Shapes\\nIn keeping with the professional and operational tone, the shape language is **Soft (0.25rem)**. \\n\\nWhile sharp corners are often too aggressive, large rounded corners feel too \\\"consumer-grade.\\\" A subtle 4px radius provides a hint of modern refinement while maintaining the structural integrity of a technical document. \\n\\n- **Buttons & Inputs:** 4px radius.\\n- **Cards/Modules:** 8px (rounded-lg) for outer containers.\\n- **Tags/Status Chips:** 2px for a more technical, \\\"stamped\\\" look.\\n\\n## Components\\n\\n- **Buttons:** Primary buttons use #1c1b1b background with #ffffff text. Secondary buttons use a #dbc1b3 border with no fill. All buttons use 14px Inter Medium and 4px border-radius.\\n- **Input Fields:** Use #ffffff background with a #dbc1b3 border. Labels use `label-caps` in #554338. Focus states switch the border to #e6813a with a 2px thickness.\\n- **Data Cards:** Essential to the operational feel. Must have a 1px border (#ead8cd) and a clear header section separated by a horizontal rule.\\n- **Status Chips:** Use a subtle background of the signal color (e.g., Success or Signal Orange at 10% opacity) with a 1px solid border of the same color and JetBrains Mono text.\\n- **Metrics/KPIs:** Large monospaced numbers (JetBrains Mono) paired with a `label-caps` description. Avoid icons; use text-based trends (e.g., \\\"+12.4%\\\").\\n- **Tables:** No vertical lines. Use horizontal separators in #ead8cd. Header rows use #fffaf5 background and `label-caps` text.\",\"colorVariant\":\"FIDELITY\",\"overridePrimaryColor\":\"#1c1b1b\",\"overrideSecondaryColor\":\"#755c4f\",\"spacingScale\":2,\"typography\":{\"body-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"18px\",\"fontWeight\":\"400\",\"lineHeight\":\"28px\"},\"body-md\":{\"fontFamily\":\"Inter\",\"fontSize\":\"16px\",\"fontWeight\":\"400\",\"lineHeight\":\"24px\"},\"body-sm\":{\"fontFamily\":\"Inter\",\"fontSize\":\"14px\",\"fontWeight\":\"400\",\"lineHeight\":\"20px\"},\"headline-lg\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"32px\",\"fontWeight\":\"600\",\"lineHeight\":\"40px\",\"letterSpacing\":\"-0.02em\"},\"headline-md\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"24px\",\"fontWeight\":\"600\",\"lineHeight\":\"32px\"},\"headline-sm\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"20px\",\"fontWeight\":\"600\",\"lineHeight\":\"28px\"},\"headline-xl\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"40px\",\"fontWeight\":\"600\",\"lineHeight\":\"48px\",\"letterSpacing\":\"-0.02em\"},\"label-caps\":{\"fontFamily\":\"Inter\",\"fontSize\":\"12px\",\"fontWeight\":\"600\",\"lineHeight\":\"16px\",\"letterSpacing\":\"0.05em\"},\"metric-lg\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"24px\",\"fontWeight\":\"500\",\"lineHeight\":\"32px\",\"letterSpacing\":\"-0.01em\"},\"metric-md\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"16px\",\"fontWeight\":\"500\",\"lineHeight\":\"24px\"}},\"spacing\":{\"container-margin\":\"32px\",\"gutter\":\"20px\",\"lg\":\"24px\",\"md\":\"16px\",\"sm\":\"8px\",\"unit\":\"4px\",\"xl\":\"40px\",\"xs\":\"4px\"},\"headlineFontFamily\":\"Plus Jakarta Sans\",\"bodyFontFamily\":\"Inter\",\"labelFontFamily\":\"Jetbrains Mono\"}},\"version\":\"1\"}},{\"design\":{\"screens\":[{\"screenshot\":{\"name\":\"projects/11712095792485091370/files/01e9fbdd704b43678729f16c1698e1d3\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/ADBb0uiscuIfL7nx0ikeWQes46X1VSCRalrJGAuQX7FksIm_qDCa-18pvFosbeWDa2_Qy3k6bgDf6lTi9r2fOVgI2QBmH7iKEOiSZd-cwUA2aAYnhba1NAqnZt1Dx5_KjvXThnjL2xd_giE6-AXZ8Jm2vlMDP93LfsNDoGALew5fhQ5NzOGvKF_u4VkjKwyIFWUL5x_HbbFLs4Sy1LEY_jl7fIe3pffY-QaMZrYOGJ_ICMilK3VUN2RiAtOnHhc\"},\"htmlCode\":{\"name\":\"projects/11712095792485091370/files/1b72862c894c4eff988778fa8e130e29\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2M4ZWIxNWM2YzYwNzRmMzJhNWJhODBjNzZjYjA4ODk2EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTcxMjA5NTc5MjQ4NTA5MTM3MA&filename=&opi=96797242\",\"mimeType\":\"image/svg+xml\"},\"id\":\"1e9186015dd14d929c6d47fc2957c265\",\"generatedBy\":\"interactive_ui_controller\",\"width\":\"40\",\"height\":\"40\",\"title\":\"Tramo Logo\",\"prompt\":\"Inline SVG monoline segmented bracket/path with three interval segments, one orange (#e6813a) signal dot on the active segment, and small tick marks at segment boundaries. No lightning, leaf, or AI symbols.. Brand logo\",\"name\":\"projects/11712095792485091370/screens/1e9186015dd14d929c6d47fc2957c265\",\"theme\":{},\"screenType\":\"IMAGE\",\"screenMetadata\":{\"agentType\":\"PRO_AGENT\",\"status\":\"COMPLETE\",\"displayMode\":\"SVG\"}},{\"screenshot\":{\"name\":\"projects/11712095792485091370/files/350fc46744634578a0a0290847c1689b\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/ADBb0ujNBmQMhYt7YxOXlkKdPeTcEDts5BUkWt4RnG3TxX2XydXAUOuFLGoNckpfyKtHggscaKCQc842NMBFOGlVKVpk1YwIgSgHfg_NJJsB-tXuPqM7JjqXsb1d6iY9Tn17NJxNIO0FtKTNauvzaTuZMjlAamN1pTNr_OitwMMLfEjgKtVKtizLTgceMrHFiXPrXzmE-sM3ADQCio7NJ5ilgnedRkuE7J24E46PaHE0_5K2B3of8idzWrjbzOY\"},\"htmlCode\":{\"name\":\"projects/11712095792485091370/files/1cdcd0c1884f460da8d41298824e80ef\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2RjZGIyODM1NDE1MTRhNDU5OTA3ZDRlNTJhOTExYjI5EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTcxMjA5NTc5MjQ4NTA5MTM3MA&filename=&opi=96797242\",\"mimeType\":\"text/html\"},\"id\":\"aadd6ec4b01a4960832fda2a297ad0f4\",\"generatedBy\":\"figaro_agent\",\"width\":\"780\",\"height\":\"10348\",\"title\":\"Tramo Landing Page - Mobile\",\"prompt\":\"Design a B2B landing page for Tramo in Spanish for mobile (375px). \\n\\nHeader: Logo {{DATA:IMAGE:IMAGE_1}}, brand name \\\"Tramo\\\".\\n\\nHero Section:\\n- Small pill badge: \\\"Pilotos con gestoras 10+ alojamientos\\\"\\n- H1 (EXACT): \\\"Convierte la energía de tu cartera turística en margen operativo.\\\" (Plus Jakarta Sans, weight 600)\\n- Subcopy: \\\"Tramo cruza reservas, CUPS/Datadis, facturas y tarifas para que cada kWh tenga explicación, cada decisión tenga evidencia y cada propietario reciba un informe claro del impacto operativo sobre su factura.\\\" (Inter, weight 400)\\n- Tagline: \\\"Cada kWh, en su tramo correcto.\\\"\\n- Buttons: Primary \\\"Diagnosticar mi cartera\\\" (Orange #e6813a filled), Secondary \\\"Ver dashboard demo\\\" (Ghost outlined).\\n- Right/Bottom side Product Panel (HTML/CSS): Card with \\\"Panel de control\\\", \\\"Mayo 2026\\\". KPI: \\\"1.847 kWh\\\" (JetBrains Mono), \\\"312 kWh fuera de reserva\\\" (Orange). Evidence: \\\"VGO-014 · checkout 11:00 · 4,2 kWh entre 13:10-16:40 sin reserva activa\\\". Comparison: \\\"Actual: 4.6/4.6 kW | Recomendado: 3.3/4.6 kW\\\". Action: \\\"Revisar termo y regla post-checkout\\\".\\n\\nPain Triptych (Stack on mobile):\\n1. \\\"Consumo fuera de reserva\\\" — \\\"4,2 kWh sin reserva activa · VGO-014 · checkout 11:00\\\"\\n2. \\\"Potencia o tarifa equivocada\\\" — \\\"P2 recomendada: 3,3 kW | Actual: 4,6 kW · Ahorro potencial\\\"\\n3. \\\"Informes sin explicación operativa\\\" — \\\"412 kWh · 3 acciones de gestión · 42,50 EUR estimados\\\"\\n\\nSystem Flow Section:\\n- \\\"PMS/Reservas → CUPS/Datadis/Facturas → Decisiones defendibles → Informes propietarios\\\"\\n- Horizontal layout with clean icons and arrows. Background #fcf9f8.\\n\\nModules Grid (Grid on mobile):\\n- Cards for: Dashboard, Operaciones, Apartamentos, Tarifas y Potencia, Informes Propietario, Piloto.\\n- Extra \\\"premium\\\" card at bottom: \\\"Batería / Arbitraje\\\".\\n\\nProduct Proof:\\n- \\\"Valida Tramo con tu cartera\\\" - Dashboard preview card.\\n\\nLead Form:\\n- Title: \\\"Solicitar diagnóstico\\\"\\n- Fields: Nombre, Empresa, Email, Nº de alojamientos, Ciudad/Región, PMS utilizado, ¿Acceso a Datadis/CUPS? (Sí/No/No lo sé), ¿Facturas recientes? (Sí/No), ¿Quién paga la factura eléctrica?, Dolor principal (textarea).\\n- Modules checkboxes: Consumo fuera de reserva, Reglas operativas, Tarifa/potencia, Informes propietarios, Evaluación batería.\\n- Privacy helper: \\\"No envíes credenciales ni facturas por este formulario. En la llamada revisamos qué datos tienes disponibles y cómo preparar un piloto seguro.\\\"\\n- Submit: \\\"Solicitar diagnóstico\\\" (Filled orange).\\n\\nColor Palette:\\n- Bg: #fcf9f8\\n- Surface: #fffaf5\\n- Borders: #ead8cd / #dbc1b3\\n- Text: #1c1b1b\\n- Signal Orange: #e6813a\\n\\nNo English, no lightning/eco icons, no gradients. Use JetBrains Mono for all numbers.\\n## Available Images\\nYou MUST include the following images in this design. You must reference them\\nby putting their exact placeholder IDs in `src` attributes or CSS\\n`background-image` rules. Do NOT use external URLs or generate new\\nplaceholders. Preserve these IDs exactly as written. Read each image's\\nDescription to understand its subject, intended section, and visual role.\\n\\n- {{DATA:IMAGE:IMAGE_1}}\\n  Alt Text: Tramo Logo\\n  Description: Inline SVG monoline segmented bracket/path with three interval segments, one orange (#e6813a) signal dot on the active segment, and small tick marks at segment boundaries. No lightning, leaf, or AI symbols.. Brand logo\\n  Dimensions: 40x40\\n  Aspect Ratio: 1.00\\n  Colors: #1c1b1b, #dbc1b3, #e6813a\\n\",\"name\":\"projects/11712095792485091370/screens/aadd6ec4b01a4960832fda2a297ad0f4\",\"theme\":{\"colorMode\":\"LIGHT\",\"font\":\"PLUS_JAKARTA_SANS\",\"roundness\":\"ROUND_FOUR\",\"customColor\":\"#1c1b1b\",\"headlineFont\":\"PLUS_JAKARTA_SANS\",\"bodyFont\":\"INTER\",\"labelFont\":\"JETBRAINS_MONO\",\"namedColors\":{\"background\":\"#fdf8f8\",\"error\":\"#ba1a1a\",\"error_container\":\"#ffdad6\",\"inverse_on_surface\":\"#f4f0ef\",\"inverse_primary\":\"#c9c6c5\",\"inverse_surface\":\"#313030\",\"on_background\":\"#1c1b1b\",\"on_error\":\"#ffffff\",\"on_error_container\":\"#93000a\",\"on_primary\":\"#ffffff\",\"on_primary_container\":\"#868383\",\"on_primary_fixed\":\"#1c1b1b\",\"on_primary_fixed_variant\":\"#484646\",\"on_secondary\":\"#ffffff\",\"on_secondary_container\":\"#785f52\",\"on_secondary_fixed\":\"#29170e\",\"on_secondary_fixed_variant\":\"#584236\",\"on_surface\":\"#1c1b1b\",\"on_surface_variant\":\"#4c4547\",\"on_tertiary\":\"#ffffff\",\"on_tertiary_container\":\"#868383\",\"on_tertiary_fixed\":\"#1c1b1b\",\"on_tertiary_fixed_variant\":\"#484646\",\"outline\":\"#7d7577\",\"outline_variant\":\"#cfc4c6\",\"primary\":\"#000000\",\"primary_container\":\"#1c1b1b\",\"primary_fixed\":\"#e6e1e1\",\"primary_fixed_dim\":\"#c9c6c5\",\"secondary\":\"#72594c\",\"secondary_container\":\"#fedccb\",\"secondary_fixed\":\"#fedccb\",\"secondary_fixed_dim\":\"#e0c0b0\",\"surface\":\"#fdf8f8\",\"surface_bright\":\"#fdf8f8\",\"surface_container\":\"#f1edec\",\"surface_container_high\":\"#ebe7e6\",\"surface_container_highest\":\"#e5e2e1\",\"surface_container_low\":\"#f7f3f2\",\"surface_container_lowest\":\"#ffffff\",\"surface_dim\":\"#ddd9d8\",\"surface_tint\":\"#605e5e\",\"surface_variant\":\"#e5e2e1\",\"tertiary\":\"#000000\",\"tertiary_container\":\"#1c1b1b\",\"tertiary_fixed\":\"#e6e1e1\",\"tertiary_fixed_dim\":\"#c9c6c5\"},\"designMd\":\"---\\nname: Tramo Operational System\\ncolors:\\n  surface: '#fdf8f8'\\n  surface-dim: '#ddd9d8'\\n  surface-bright: '#fdf8f8'\\n  surface-container-lowest: '#ffffff'\\n  surface-container-low: '#f7f3f2'\\n  surface-container: '#f1edec'\\n  surface-container-high: '#ebe7e6'\\n  surface-container-highest: '#e5e2e1'\\n  on-surface: '#1c1b1b'\\n  on-surface-variant: '#4c4547'\\n  inverse-surface: '#313030'\\n  inverse-on-surface: '#f4f0ef'\\n  outline: '#7d7577'\\n  outline-variant: '#cfc4c6'\\n  surface-tint: '#605e5e'\\n  primary: '#000000'\\n  on-primary: '#ffffff'\\n  primary-container: '#1c1b1b'\\n  on-primary-container: '#868383'\\n  inverse-primary: '#c9c6c5'\\n  secondary: '#72594c'\\n  on-secondary: '#ffffff'\\n  secondary-container: '#fedccb'\\n  on-secondary-container: '#785f52'\\n  tertiary: '#000000'\\n  on-tertiary: '#ffffff'\\n  tertiary-container: '#1c1b1b'\\n  on-tertiary-container: '#868383'\\n  error: '#ba1a1a'\\n  on-error: '#ffffff'\\n  error-container: '#ffdad6'\\n  on-error-container: '#93000a'\\n  primary-fixed: '#e6e1e1'\\n  primary-fixed-dim: '#c9c6c5'\\n  on-primary-fixed: '#1c1b1b'\\n  on-primary-fixed-variant: '#484646'\\n  secondary-fixed: '#fedccb'\\n  secondary-fixed-dim: '#e0c0b0'\\n  on-secondary-fixed: '#29170e'\\n  on-secondary-fixed-variant: '#584236'\\n  tertiary-fixed: '#e6e1e1'\\n  tertiary-fixed-dim: '#c9c6c5'\\n  on-tertiary-fixed: '#1c1b1b'\\n  on-tertiary-fixed-variant: '#484646'\\n  background: '#fdf8f8'\\n  on-background: '#1c1b1b'\\n  surface-variant: '#e5e2e1'\\ntypography:\\n  headline-xl:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 40px\\n    fontWeight: '600'\\n    lineHeight: 48px\\n    letterSpacing: -0.02em\\n  headline-lg:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 32px\\n    fontWeight: '600'\\n    lineHeight: 40px\\n    letterSpacing: -0.02em\\n  headline-md:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 24px\\n    fontWeight: '600'\\n    lineHeight: 32px\\n  headline-sm:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 20px\\n    fontWeight: '600'\\n    lineHeight: 28px\\n  body-lg:\\n    fontFamily: Inter\\n    fontSize: 18px\\n    fontWeight: '400'\\n    lineHeight: 28px\\n  body-md:\\n    fontFamily: Inter\\n    fontSize: 16px\\n    fontWeight: '400'\\n    lineHeight: 24px\\n  body-sm:\\n    fontFamily: Inter\\n    fontSize: 14px\\n    fontWeight: '400'\\n    lineHeight: 20px\\n  metric-lg:\\n    fontFamily: JetBrains Mono\\n    fontSize: 24px\\n    fontWeight: '500'\\n    lineHeight: 32px\\n    letterSpacing: -0.01em\\n  metric-md:\\n    fontFamily: JetBrains Mono\\n    fontSize: 16px\\n    fontWeight: '500'\\n    lineHeight: 24px\\n  label-caps:\\n    fontFamily: Inter\\n    fontSize: 12px\\n    fontWeight: '600'\\n    lineHeight: 16px\\n    letterSpacing: 0.05em\\nrounded:\\n  sm: 0.125rem\\n  DEFAULT: 0.25rem\\n  md: 0.375rem\\n  lg: 0.5rem\\n  xl: 0.75rem\\n  full: 9999px\\nspacing:\\n  unit: 4px\\n  xs: 4px\\n  sm: 8px\\n  md: 16px\\n  lg: 24px\\n  xl: 40px\\n  container-margin: 32px\\n  gutter: 20px\\n---\\n\\n## Brand & Style\\nThis design system is built for high-stakes B2B energy operations, where precision and clarity are paramount. The aesthetic is inspired by high-quality tactile stationery—specifically technical ledger paper—evoking a sense of reliability and permanence.\\n\\nThe style avoids the ephemeral nature of modern SaaS \\\"software bloat\\\" (gradients, blurs, and organic shapes) in favor of a structured, physical presence. It utilizes a \\\"Paper & Ink\\\" philosophy: high-contrast typography, crisp borders, and a warm, low-fatigue background palette. The emotional response is one of calm authority, intentionality, and operational rigor.\\n\\n## Colors\\nThe palette is rooted in a warm, cream-based \\\"Paper\\\" foundation to reduce eye strain during long operational shifts. \\n\\n- **Foundational Neutrals:** The background and surface colors provide a subtle hierarchy of depth without relying on shadows.\\n- **Ink & Muted Text:** Pure \\\"Ink\\\" (#1c1b1b) is reserved for primary data and headlines to ensure maximum legibility, while \\\"Muted\\\" (#554338) handles secondary metadata.\\n- **Operational Accents:** \\\"Signal Orange\\\" and \\\"Deep Orange\\\" are used sparingly for active states and critical highlights.\\n- **Semantic Clarity:** Success and Error tokens are high-chroma but balanced against the warm background to ensure they remain professional and integrated into the \\\"paper\\\" feel.\\n\\n## Typography\\nThe typographic system utilizes a tri-font strategy to separate intent and improve information processing speed.\\n\\n- **Headlines (Plus Jakarta Sans):** Chosen for its contemporary yet professional geometry. Used for page titles and section headers.\\n- **Body (Inter):** The workhorse for all operational text, descriptions, and user inputs. It provides neutral, high-legibility performance.\\n- **Numbers & Metrics (JetBrains Mono):** A monospaced font is strictly required for all numerical data, energy readings, and timestamps. This ensures that columns of figures align perfectly, allowing operators to spot anomalies across data tables instantly.\\n\\n## Layout & Spacing\\nThe layout follows a rigorous **Fixed Grid** philosophy on desktop to maintain \\\"dashboard-like\\\" predictability. \\n\\n- **Grid Model:** A 12-column system with a 20px gutter. Content is housed in \\\"Report Modules\\\" (cards) that align to the grid.\\n- **Spacing Rhythm:** Based on a 4px baseline. Tight spacing (4px, 8px) is used for data-dense groupings, while larger spacing (24px, 40px) defines structural sections.\\n- **Responsive Behavior:** On tablet, the grid shifts to 8 columns. On mobile, it collapses to a single-column fluid layout with a 16px safe-margin on either side.\\n\\n## Elevation & Depth\\nThis design system rejects the use of shadows to communicate depth. Instead, it uses **Tonal Layering** and **Strong Borders** to define hierarchy.\\n\\n1.  **Level 0 (Background):** #fcf9f8 (The \\\"Desk\\\").\\n2.  **Level 1 (Surfaces):** #fffaf5 (Secondary operational areas like sidebars).\\n3.  **Level 2 (Active Cards):** #ffffff (Primary work surfaces) with a 1px #ead8cd border.\\n4.  **Interaction:** Elements do not \\\"lift\\\" on hover; instead, they utilize border weight increases or color shifts (e.g., from #ead8cd to #dbc1b3) to indicate focus. This maintains the \\\"flat paper\\\" metaphor.\\n\\n## Shapes\\nIn keeping with the professional and operational tone, the shape language is **Soft (0.25rem)**. \\n\\nWhile sharp corners are often too aggressive, large rounded corners feel too \\\"consumer-grade.\\\" A subtle 4px radius provides a hint of modern refinement while maintaining the structural integrity of a technical document. \\n\\n- **Buttons & Inputs:** 4px radius.\\n- **Cards/Modules:** 8px (rounded-lg) for outer containers.\\n- **Tags/Status Chips:** 2px for a more technical, \\\"stamped\\\" look.\\n\\n## Components\\n\\n- **Buttons:** Primary buttons use #1c1b1b background with #ffffff text. Secondary buttons use a #dbc1b3 border with no fill. All buttons use 14px Inter Medium and 4px border-radius.\\n- **Input Fields:** Use #ffffff background with a #dbc1b3 border. Labels use `label-caps` in #554338. Focus states switch the border to #e6813a with a 2px thickness.\\n- **Data Cards:** Essential to the operational feel. Must have a 1px border (#ead8cd) and a clear header section separated by a horizontal rule.\\n- **Status Chips:** Use a subtle background of the signal color (e.g., Success or Signal Orange at 10% opacity) with a 1px solid border of the same color and JetBrains Mono text.\\n- **Metrics/KPIs:** Large monospaced numbers (JetBrains Mono) paired with a `label-caps` description. Avoid icons; use text-based trends (e.g., \\\"+12.4%\\\").\\n- **Tables:** No vertical lines. Use horizontal separators in #ead8cd. Header rows use #fffaf5 background and `label-caps` text.\",\"colorVariant\":\"FIDELITY\",\"overridePrimaryColor\":\"#1c1b1b\",\"overrideSecondaryColor\":\"#755c4f\",\"spacingScale\":2,\"typography\":{\"body-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"18px\",\"fontWeight\":\"400\",\"lineHeight\":\"28px\"},\"body-md\":{\"fontFamily\":\"Inter\",\"fontSize\":\"16px\",\"fontWeight\":\"400\",\"lineHeight\":\"24px\"},\"body-sm\":{\"fontFamily\":\"Inter\",\"fontSize\":\"14px\",\"fontWeight\":\"400\",\"lineHeight\":\"20px\"},\"headline-lg\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"32px\",\"fontWeight\":\"600\",\"lineHeight\":\"40px\",\"letterSpacing\":\"-0.02em\"},\"headline-md\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"24px\",\"fontWeight\":\"600\",\"lineHeight\":\"32px\"},\"headline-sm\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"20px\",\"fontWeight\":\"600\",\"lineHeight\":\"28px\"},\"headline-xl\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"40px\",\"fontWeight\":\"600\",\"lineHeight\":\"48px\",\"letterSpacing\":\"-0.02em\"},\"label-caps\":{\"fontFamily\":\"Inter\",\"fontSize\":\"12px\",\"fontWeight\":\"600\",\"lineHeight\":\"16px\",\"letterSpacing\":\"0.05em\"},\"metric-lg\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"24px\",\"fontWeight\":\"500\",\"lineHeight\":\"32px\",\"letterSpacing\":\"-0.01em\"},\"metric-md\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"16px\",\"fontWeight\":\"500\",\"lineHeight\":\"24px\"}},\"spacing\":{\"container-margin\":\"32px\",\"gutter\":\"20px\",\"lg\":\"24px\",\"md\":\"16px\",\"sm\":\"8px\",\"unit\":\"4px\",\"xl\":\"40px\",\"xs\":\"4px\"},\"headlineFontFamily\":\"Plus Jakarta Sans\",\"bodyFontFamily\":\"Inter\",\"labelFontFamily\":\"Jetbrains Mono\"},\"deviceType\":\"MOBILE\",\"screenType\":\"DESIGN\",\"screenMetadata\":{\"agentType\":\"PRO_AGENT\",\"status\":\"COMPLETE\"},\"designSystem\":{\"name\":\"assets/d0ce71fc35fd44549396328a2080f493\",\"designSystem\":{\"displayName\":\"Tramo Operational System\",\"styleGuidelines\":\"## Brand & Style\\nThis design system is built for high-stakes B2B energy operations, where precision and clarity are paramount. The aesthetic is inspired by high-quality tactile stationery—specifically technical ledger paper—evoking a sense of reliability and permanence.\\n\\nThe style avoids the ephemeral nature of modern SaaS \\\"software bloat\\\" (gradients, blurs, and organic shapes) in favor of a structured, physical presence. It utilizes a \\\"Paper & Ink\\\" philosophy: high-contrast typography, crisp borders, and a warm, low-fatigue background palette. The emotional response is one of calm authority, intentionality, and operational rigor.\\n\\n## Layout & Spacing\\nThe layout follows a rigorous **Fixed Grid** philosophy on desktop to maintain \\\"dashboard-like\\\" predictability. \\n\\n- **Grid Model:** A 12-column system with a 20px gutter. Content is housed in \\\"Report Modules\\\" (cards) that align to the grid.\\n- **Spacing Rhythm:** Based on a 4px baseline. Tight spacing (4px, 8px) is used for data-dense groupings, while larger spacing (24px, 40px) defines structural sections.\\n- **Responsive Behavior:** On tablet, the grid shifts to 8 columns. On mobile, it collapses to a single-column fluid layout with a 16px safe-margin on either side.\\n\\n## Elevation & Depth\\nThis design system rejects the use of shadows to communicate depth. Instead, it uses **Tonal Layering** and **Strong Borders** to define hierarchy.\\n\\n1.  **Level 0 (Background):** #fcf9f8 (The \\\"Desk\\\").\\n2.  **Level 1 (Surfaces):** #fffaf5 (Secondary operational areas like sidebars).\\n3.  **Level 2 (Active Cards):** #ffffff (Primary work surfaces) with a 1px #ead8cd border.\\n4.  **Interaction:** Elements do not \\\"lift\\\" on hover; instead, they utilize border weight increases or color shifts (e.g., from #ead8cd to #dbc1b3) to indicate focus. This maintains the \\\"flat paper\\\" metaphor.\\n\\n## Components\\n\\n- **Buttons:** Primary buttons use #1c1b1b background with #ffffff text. Secondary buttons use a #dbc1b3 border with no fill. All buttons use 14px Inter Medium and 4px border-radius.\\n- **Input Fields:** Use #ffffff background with a #dbc1b3 border. Labels use `label-caps` in #554338. Focus states switch the border to #e6813a with a 2px thickness.\\n- **Data Cards:** Essential to the operational feel. Must have a 1px border (#ead8cd) and a clear header section separated by a horizontal rule.\\n- **Status Chips:** Use a subtle background of the signal color (e.g., Success or Signal Orange at 10% opacity) with a 1px solid border of the same color and JetBrains Mono text.\\n- **Metrics/KPIs:** Large monospaced numbers (JetBrains Mono) paired with a `label-caps` description. Avoid icons; use text-based trends (e.g., \\\"+12.4%\\\").\\n- **Tables:** No vertical lines. Use horizontal separators in #ead8cd. Header rows use #fffaf5 background and `label-caps` text.\",\"theme\":{\"colorMode\":\"LIGHT\",\"font\":\"PLUS_JAKARTA_SANS\",\"roundness\":\"ROUND_FOUR\",\"customColor\":\"#1c1b1b\",\"headlineFont\":\"PLUS_JAKARTA_SANS\",\"bodyFont\":\"INTER\",\"labelFont\":\"JETBRAINS_MONO\",\"namedColors\":{\"background\":\"#fdf8f8\",\"error\":\"#ba1a1a\",\"error_container\":\"#ffdad6\",\"inverse_on_surface\":\"#f4f0ef\",\"inverse_primary\":\"#c9c6c5\",\"inverse_surface\":\"#313030\",\"on_background\":\"#1c1b1b\",\"on_error\":\"#ffffff\",\"on_error_container\":\"#93000a\",\"on_primary\":\"#ffffff\",\"on_primary_container\":\"#868383\",\"on_primary_fixed\":\"#1c1b1b\",\"on_primary_fixed_variant\":\"#484646\",\"on_secondary\":\"#ffffff\",\"on_secondary_container\":\"#785f52\",\"on_secondary_fixed\":\"#29170e\",\"on_secondary_fixed_variant\":\"#584236\",\"on_surface\":\"#1c1b1b\",\"on_surface_variant\":\"#4c4547\",\"on_tertiary\":\"#ffffff\",\"on_tertiary_container\":\"#868383\",\"on_tertiary_fixed\":\"#1c1b1b\",\"on_tertiary_fixed_variant\":\"#484646\",\"outline\":\"#7d7577\",\"outline_variant\":\"#cfc4c6\",\"primary\":\"#000000\",\"primary_container\":\"#1c1b1b\",\"primary_fixed\":\"#e6e1e1\",\"primary_fixed_dim\":\"#c9c6c5\",\"secondary\":\"#72594c\",\"secondary_container\":\"#fedccb\",\"secondary_fixed\":\"#fedccb\",\"secondary_fixed_dim\":\"#e0c0b0\",\"surface\":\"#fdf8f8\",\"surface_bright\":\"#fdf8f8\",\"surface_container\":\"#f1edec\",\"surface_container_high\":\"#ebe7e6\",\"surface_container_highest\":\"#e5e2e1\",\"surface_container_low\":\"#f7f3f2\",\"surface_container_lowest\":\"#ffffff\",\"surface_dim\":\"#ddd9d8\",\"surface_tint\":\"#605e5e\",\"surface_variant\":\"#e5e2e1\",\"tertiary\":\"#000000\",\"tertiary_container\":\"#1c1b1b\",\"tertiary_fixed\":\"#e6e1e1\",\"tertiary_fixed_dim\":\"#c9c6c5\"},\"designMd\":\"---\\nname: Tramo Operational System\\ncolors:\\n  surface: '#fdf8f8'\\n  surface-dim: '#ddd9d8'\\n  surface-bright: '#fdf8f8'\\n  surface-container-lowest: '#ffffff'\\n  surface-container-low: '#f7f3f2'\\n  surface-container: '#f1edec'\\n  surface-container-high: '#ebe7e6'\\n  surface-container-highest: '#e5e2e1'\\n  on-surface: '#1c1b1b'\\n  on-surface-variant: '#4c4547'\\n  inverse-surface: '#313030'\\n  inverse-on-surface: '#f4f0ef'\\n  outline: '#7d7577'\\n  outline-variant: '#cfc4c6'\\n  surface-tint: '#605e5e'\\n  primary: '#000000'\\n  on-primary: '#ffffff'\\n  primary-container: '#1c1b1b'\\n  on-primary-container: '#868383'\\n  inverse-primary: '#c9c6c5'\\n  secondary: '#72594c'\\n  on-secondary: '#ffffff'\\n  secondary-container: '#fedccb'\\n  on-secondary-container: '#785f52'\\n  tertiary: '#000000'\\n  on-tertiary: '#ffffff'\\n  tertiary-container: '#1c1b1b'\\n  on-tertiary-container: '#868383'\\n  error: '#ba1a1a'\\n  on-error: '#ffffff'\\n  error-container: '#ffdad6'\\n  on-error-container: '#93000a'\\n  primary-fixed: '#e6e1e1'\\n  primary-fixed-dim: '#c9c6c5'\\n  on-primary-fixed: '#1c1b1b'\\n  on-primary-fixed-variant: '#484646'\\n  secondary-fixed: '#fedccb'\\n  secondary-fixed-dim: '#e0c0b0'\\n  on-secondary-fixed: '#29170e'\\n  on-secondary-fixed-variant: '#584236'\\n  tertiary-fixed: '#e6e1e1'\\n  tertiary-fixed-dim: '#c9c6c5'\\n  on-tertiary-fixed: '#1c1b1b'\\n  on-tertiary-fixed-variant: '#484646'\\n  background: '#fdf8f8'\\n  on-background: '#1c1b1b'\\n  surface-variant: '#e5e2e1'\\ntypography:\\n  headline-xl:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 40px\\n    fontWeight: '600'\\n    lineHeight: 48px\\n    letterSpacing: -0.02em\\n  headline-lg:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 32px\\n    fontWeight: '600'\\n    lineHeight: 40px\\n    letterSpacing: -0.02em\\n  headline-md:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 24px\\n    fontWeight: '600'\\n    lineHeight: 32px\\n  headline-sm:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 20px\\n    fontWeight: '600'\\n    lineHeight: 28px\\n  body-lg:\\n    fontFamily: Inter\\n    fontSize: 18px\\n    fontWeight: '400'\\n    lineHeight: 28px\\n  body-md:\\n    fontFamily: Inter\\n    fontSize: 16px\\n    fontWeight: '400'\\n    lineHeight: 24px\\n  body-sm:\\n    fontFamily: Inter\\n    fontSize: 14px\\n    fontWeight: '400'\\n    lineHeight: 20px\\n  metric-lg:\\n    fontFamily: JetBrains Mono\\n    fontSize: 24px\\n    fontWeight: '500'\\n    lineHeight: 32px\\n    letterSpacing: -0.01em\\n  metric-md:\\n    fontFamily: JetBrains Mono\\n    fontSize: 16px\\n    fontWeight: '500'\\n    lineHeight: 24px\\n  label-caps:\\n    fontFamily: Inter\\n    fontSize: 12px\\n    fontWeight: '600'\\n    lineHeight: 16px\\n    letterSpacing: 0.05em\\nrounded:\\n  sm: 0.125rem\\n  DEFAULT: 0.25rem\\n  md: 0.375rem\\n  lg: 0.5rem\\n  xl: 0.75rem\\n  full: 9999px\\nspacing:\\n  unit: 4px\\n  xs: 4px\\n  sm: 8px\\n  md: 16px\\n  lg: 24px\\n  xl: 40px\\n  container-margin: 32px\\n  gutter: 20px\\n---\\n\\n## Brand & Style\\nThis design system is built for high-stakes B2B energy operations, where precision and clarity are paramount. The aesthetic is inspired by high-quality tactile stationery—specifically technical ledger paper—evoking a sense of reliability and permanence.\\n\\nThe style avoids the ephemeral nature of modern SaaS \\\"software bloat\\\" (gradients, blurs, and organic shapes) in favor of a structured, physical presence. It utilizes a \\\"Paper & Ink\\\" philosophy: high-contrast typography, crisp borders, and a warm, low-fatigue background palette. The emotional response is one of calm authority, intentionality, and operational rigor.\\n\\n## Colors\\nThe palette is rooted in a warm, cream-based \\\"Paper\\\" foundation to reduce eye strain during long operational shifts. \\n\\n- **Foundational Neutrals:** The background and surface colors provide a subtle hierarchy of depth without relying on shadows.\\n- **Ink & Muted Text:** Pure \\\"Ink\\\" (#1c1b1b) is reserved for primary data and headlines to ensure maximum legibility, while \\\"Muted\\\" (#554338) handles secondary metadata.\\n- **Operational Accents:** \\\"Signal Orange\\\" and \\\"Deep Orange\\\" are used sparingly for active states and critical highlights.\\n- **Semantic Clarity:** Success and Error tokens are high-chroma but balanced against the warm background to ensure they remain professional and integrated into the \\\"paper\\\" feel.\\n\\n## Typography\\nThe typographic system utilizes a tri-font strategy to separate intent and improve information processing speed.\\n\\n- **Headlines (Plus Jakarta Sans):** Chosen for its contemporary yet professional geometry. Used for page titles and section headers.\\n- **Body (Inter):** The workhorse for all operational text, descriptions, and user inputs. It provides neutral, high-legibility performance.\\n- **Numbers & Metrics (JetBrains Mono):** A monospaced font is strictly required for all numerical data, energy readings, and timestamps. This ensures that columns of figures align perfectly, allowing operators to spot anomalies across data tables instantly.\\n\\n## Layout & Spacing\\nThe layout follows a rigorous **Fixed Grid** philosophy on desktop to maintain \\\"dashboard-like\\\" predictability. \\n\\n- **Grid Model:** A 12-column system with a 20px gutter. Content is housed in \\\"Report Modules\\\" (cards) that align to the grid.\\n- **Spacing Rhythm:** Based on a 4px baseline. Tight spacing (4px, 8px) is used for data-dense groupings, while larger spacing (24px, 40px) defines structural sections.\\n- **Responsive Behavior:** On tablet, the grid shifts to 8 columns. On mobile, it collapses to a single-column fluid layout with a 16px safe-margin on either side.\\n\\n## Elevation & Depth\\nThis design system rejects the use of shadows to communicate depth. Instead, it uses **Tonal Layering** and **Strong Borders** to define hierarchy.\\n\\n1.  **Level 0 (Background):** #fcf9f8 (The \\\"Desk\\\").\\n2.  **Level 1 (Surfaces):** #fffaf5 (Secondary operational areas like sidebars).\\n3.  **Level 2 (Active Cards):** #ffffff (Primary work surfaces) with a 1px #ead8cd border.\\n4.  **Interaction:** Elements do not \\\"lift\\\" on hover; instead, they utilize border weight increases or color shifts (e.g., from #ead8cd to #dbc1b3) to indicate focus. This maintains the \\\"flat paper\\\" metaphor.\\n\\n## Shapes\\nIn keeping with the professional and operational tone, the shape language is **Soft (0.25rem)**. \\n\\nWhile sharp corners are often too aggressive, large rounded corners feel too \\\"consumer-grade.\\\" A subtle 4px radius provides a hint of modern refinement while maintaining the structural integrity of a technical document. \\n\\n- **Buttons & Inputs:** 4px radius.\\n- **Cards/Modules:** 8px (rounded-lg) for outer containers.\\n- **Tags/Status Chips:** 2px for a more technical, \\\"stamped\\\" look.\\n\\n## Components\\n\\n- **Buttons:** Primary buttons use #1c1b1b background with #ffffff text. Secondary buttons use a #dbc1b3 border with no fill. All buttons use 14px Inter Medium and 4px border-radius.\\n- **Input Fields:** Use #ffffff background with a #dbc1b3 border. Labels use `label-caps` in #554338. Focus states switch the border to #e6813a with a 2px thickness.\\n- **Data Cards:** Essential to the operational feel. Must have a 1px border (#ead8cd) and a clear header section separated by a horizontal rule.\\n- **Status Chips:** Use a subtle background of the signal color (e.g., Success or Signal Orange at 10% opacity) with a 1px solid border of the same color and JetBrains Mono text.\\n- **Metrics/KPIs:** Large monospaced numbers (JetBrains Mono) paired with a `label-caps` description. Avoid icons; use text-based trends (e.g., \\\"+12.4%\\\").\\n- **Tables:** No vertical lines. Use horizontal separators in #ead8cd. Header rows use #fffaf5 background and `label-caps` text.\",\"colorVariant\":\"FIDELITY\",\"overridePrimaryColor\":\"#1c1b1b\",\"overrideSecondaryColor\":\"#755c4f\",\"spacingScale\":2,\"typography\":{\"body-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"18px\",\"fontWeight\":\"400\",\"lineHeight\":\"28px\"},\"body-md\":{\"fontFamily\":\"Inter\",\"fontSize\":\"16px\",\"fontWeight\":\"400\",\"lineHeight\":\"24px\"},\"body-sm\":{\"fontFamily\":\"Inter\",\"fontSize\":\"14px\",\"fontWeight\":\"400\",\"lineHeight\":\"20px\"},\"headline-lg\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"32px\",\"fontWeight\":\"600\",\"lineHeight\":\"40px\",\"letterSpacing\":\"-0.02em\"},\"headline-md\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"24px\",\"fontWeight\":\"600\",\"lineHeight\":\"32px\"},\"headline-sm\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"20px\",\"fontWeight\":\"600\",\"lineHeight\":\"28px\"},\"headline-xl\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"40px\",\"fontWeight\":\"600\",\"lineHeight\":\"48px\",\"letterSpacing\":\"-0.02em\"},\"label-caps\":{\"fontFamily\":\"Inter\",\"fontSize\":\"12px\",\"fontWeight\":\"600\",\"lineHeight\":\"16px\",\"letterSpacing\":\"0.05em\"},\"metric-lg\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"24px\",\"fontWeight\":\"500\",\"lineHeight\":\"32px\",\"letterSpacing\":\"-0.01em\"},\"metric-md\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"16px\",\"fontWeight\":\"500\",\"lineHeight\":\"24px\"}},\"spacing\":{\"container-margin\":\"32px\",\"gutter\":\"20px\",\"lg\":\"24px\",\"md\":\"16px\",\"sm\":\"8px\",\"unit\":\"4px\",\"xl\":\"40px\",\"xs\":\"4px\"},\"headlineFontFamily\":\"Plus Jakarta Sans\",\"bodyFontFamily\":\"Inter\",\"labelFontFamily\":\"Jetbrains Mono\"}},\"version\":\"1\"}}],\"theme\":{}}},{\"text\":\"He diseñado la página de aterrizaje de Tramo para dispositivos móviles, centrada en la operatividad y eficiencia energética para gestores turísticos.\\n\\n### Decisiones de Diseño:\\n- **Identidad Visual**: He creado un logotipo SVG monolineal siguiendo tus especificaciones precisas, evitando símbolos genéricos y reforzando la idea de \\\"tramos\\\" y precisión.\\n- **Sistema de Diseño**: He aplicado una paleta de colores \\\"papel\\\" (#fcf9f8 y #fffaf5) que transmite profesionalidad y claridad operativa. La tipografía combina la fuerza de **Plus Jakarta Sans** en titulares con la legibilidad técnica de **JetBrains Mono** para todas las métricas de energía.\\n- **Panel de Producto Hero**: En lugar de una imagen estática, he construido el panel de control directamente en el hero usando HTML/CSS. Esto permite mostrar datos realistas (kWh, potencias P1/P2) con la nitidez necesaria para una herramienta B2B.\\n- **Estructura Móvil**: La disposición vertical asegura que los CTAs sean visibles rápidamente y que el formulario de contacto sea fácil de completar en pantallas pequeñas.\\n- **Contenido**: Toda la página está íntegramente en español, respetando los textos exactos solicitados y manteniendo un tono profesional y directo.\\n\\n¿Te gustaría ajustar algún detalle del panel de control o prefieres que procedamos con la versión de escritorio?\"},{\"suggestion\":\"Generar la versión de escritorio\"},{\"suggestion\":\"Ajustar el panel de control del hero\"},{\"suggestion\":\"Cambiar la sección de flujo del sistema\"}]}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "outputComponents": [
+        {
+          "designSystem": {
+            "designSystem": {
+              "displayName": "Tramo Operational System",
+              "styleGuidelines": "## Brand & Style\nThis design system is built for high-stakes B2B energy operations, where precision and clarity are paramount. The aesthetic is inspired by high-quality tactile stationery—specifically technical ledger paper—evoking a sense of reliability and permanence.\n\nThe style avoids the ephemeral nature of modern SaaS \"software bloat\" (gradients, blurs, and organic shapes) in favor of a structured, physical presence. It utilizes a \"Paper & Ink\" philosophy: high-contrast typography, crisp borders, and a warm, low-fatigue background palette. The emotional response is one of calm authority, intentionality, and operational rigor.\n\n## Layout & Spacing\nThe layout follows a rigorous **Fixed Grid** philosophy on desktop to maintain \"dashboard-like\" predictability. \n\n- **Grid Model:** A 12-column system with a 20px gutter. Content is housed in \"Report Modules\" (cards) that align to the grid.\n- **Spacing Rhythm:** Based on a 4px baseline. Tight spacing (4px, 8px) is used for data-dense groupings, while larger spacing (24px, 40px) defines structural sections.\n- **Responsive Behavior:** On tablet, the grid shifts to 8 columns. On mobile, it collapses to a single-column fluid layout with a 16px safe-margin on either side.\n\n## Elevation & Depth\nThis design system rejects the use of shadows to communicate depth. Instead, it uses **Tonal Layering** and **Strong Borders** to define hierarchy.\n\n1.  **Level 0 (Background):** #fcf9f8 (The \"Desk\").\n2.  **Level 1 (Surfaces):** #fffaf5 (Secondary operational areas like sidebars).\n3.  **Level 2 (Active Cards):** #ffffff (Primary work surfaces) with a 1px #ead8cd border.\n4.  **Interaction:** Elements do not \"lift\" on hover; instead, they utilize border weight increases or color shifts (e.g., from #ead8cd to #dbc1b3) to indicate focus. This maintains the \"flat paper\" metaphor.\n\n## Components\n\n- **Buttons:** Primary buttons use #1c1b1b background with #ffffff text. Secondary buttons use a #dbc1b3 border with no fill. All buttons use 14px Inter Medium and 4px border-radius.\n- **Input Fields:** Use #ffffff background with a #dbc1b3 border. Labels use `label-caps` in #554338. Focus states switch the border to #e6813a with a 2px thickness.\n- **Data Cards:** Essential to the operational feel. Must have a 1px border (#ead8cd) and a clear header section separated by a horizontal rule.\n- **Status Chips:** Use a subtle background of the signal color (e.g., Success or Signal Orange at 10% opacity) with a 1px solid border of the same color and JetBrains Mono text.\n- **Metrics/KPIs:** Large monospaced numbers (JetBrains Mono) paired with a `label-caps` description. Avoid icons; use text-based trends (e.g., \"+12.4%\").\n- **Tables:** No vertical lines. Use horizontal separators in #ead8cd. Header rows use #fffaf5 background and `label-caps` text.",
+              "theme": {
+                "bodyFont": "INTER",
+                "bodyFontFamily": "Inter",
+                "colorMode": "LIGHT",
+                "colorVariant": "FIDELITY",
+                "customColor": "#1c1b1b",
+                "designMd": "---\nname: Tramo Operational System\ncolors:\n  surface: '#fdf8f8'\n  surface-dim: '#ddd9d8'\n  surface-bright: '#fdf8f8'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f7f3f2'\n  surface-container: '#f1edec'\n  surface-container-high: '#ebe7e6'\n  surface-container-highest: '#e5e2e1'\n  on-surface: '#1c1b1b'\n  on-surface-variant: '#4c4547'\n  inverse-surface: '#313030'\n  inverse-on-surface: '#f4f0ef'\n  outline: '#7d7577'\n  outline-variant: '#cfc4c6'\n  surface-tint: '#605e5e'\n  primary: '#000000'\n  on-primary: '#ffffff'\n  primary-container: '#1c1b1b'\n  on-primary-container: '#868383'\n  inverse-primary: '#c9c6c5'\n  secondary: '#72594c'\n  on-secondary: '#ffffff'\n  secondary-container: '#fedccb'\n  on-secondary-container: '#785f52'\n  tertiary: '#000000'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#1c1b1b'\n  on-tertiary-container: '#868383'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#e6e1e1'\n  primary-fixed-dim: '#c9c6c5'\n  on-primary-fixed: '#1c1b1b'\n  on-primary-fixed-variant: '#484646'\n  secondary-fixed: '#fedccb'\n  secondary-fixed-dim: '#e0c0b0'\n  on-secondary-fixed: '#29170e'\n  on-secondary-fixed-variant: '#584236'\n  tertiary-fixed: '#e6e1e1'\n  tertiary-fixed-dim: '#c9c6c5'\n  on-tertiary-fixed: '#1c1b1b'\n  on-tertiary-fixed-variant: '#484646'\n  background: '#fdf8f8'\n  on-background: '#1c1b1b'\n  surface-variant: '#e5e2e1'\ntypography:\n  headline-xl:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 40px\n    fontWeight: '600'\n    lineHeight: 48px\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 32px\n    fontWeight: '600'\n    lineHeight: 40px\n    letterSpacing: -0.02em\n  headline-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n  headline-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 20px\n    fontWeight: '600'\n    lineHeight: 28px\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: 28px\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: 24px\n  body-sm:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 20px\n  metric-lg:\n    fontFamily: JetBrains Mono\n    fontSize: 24px\n    fontWeight: '500'\n    lineHeight: 32px\n    letterSpacing: -0.01em\n  metric-md:\n    fontFamily: JetBrains Mono\n    fontSize: 16px\n    fontWeight: '500'\n    lineHeight: 24px\n  label-caps:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: '600'\n    lineHeight: 16px\n    letterSpacing: 0.05em\nrounded:\n  sm: 0.125rem\n  DEFAULT: 0.25rem\n  md: 0.375rem\n  lg: 0.5rem\n  xl: 0.75rem\n  full: 9999px\nspacing:\n  unit: 4px\n  xs: 4px\n  sm: 8px\n  md: 16px\n  lg: 24px\n  xl: 40px\n  container-margin: 32px\n  gutter: 20px\n---\n\n## Brand & Style\nThis design system is built for high-stakes B2B energy operations, where precision and clarity are paramount. The aesthetic is inspired by high-quality tactile stationery—specifically technical ledger paper—evoking a sense of reliability and permanence.\n\nThe style avoids the ephemeral nature of modern SaaS \"software bloat\" (gradients, blurs, and organic shapes) in favor of a structured, physical presence. It utilizes a \"Paper & Ink\" philosophy: high-contrast typography, crisp borders, and a warm, low-fatigue background palette. The emotional response is one of calm authority, intentionality, and operational rigor.\n\n## Colors\nThe palette is rooted in a warm, cream-based \"Paper\" foundation to reduce eye strain during long operational shifts. \n\n- **Foundational Neutrals:** The background and surface colors provide a subtle hierarchy of depth without relying on shadows.\n- **Ink & Muted Text:** Pure \"Ink\" (#1c1b1b) is reserved for primary data and headlines to ensure maximum legibility, while \"Muted\" (#554338) handles secondary metadata.\n- **Operational Accents:** \"Signal Orange\" and \"Deep Orange\" are used sparingly for active states and critical highlights.\n- **Semantic Clarity:** Success and Error tokens are high-chroma but balanced against the warm background to ensure they remain professional and integrated into the \"paper\" feel.\n\n## Typography\nThe typographic system utilizes a tri-font strategy to separate intent and improve information processing speed.\n\n- **Headlines (Plus Jakarta Sans):** Chosen for its contemporary yet professional geometry. Used for page titles and section headers.\n- **Body (Inter):** The workhorse for all operational text, descriptions, and user inputs. It provides neutral, high-legibility performance.\n- **Numbers & Metrics (JetBrains Mono):** A monospaced font is strictly required for all numerical data, energy readings, and timestamps. This ensures that columns of figures align perfectly, allowing operators to spot anomalies across data tables instantly.\n\n## Layout & Spacing\nThe layout follows a rigorous **Fixed Grid** philosophy on desktop to maintain \"dashboard-like\" predictability. \n\n- **Grid Model:** A 12-column system with a 20px gutter. Content is housed in \"Report Modules\" (cards) that align to the grid.\n- **Spacing Rhythm:** Based on a 4px baseline. Tight spacing (4px, 8px) is used for data-dense groupings, while larger spacing (24px, 40px) defines structural sections.\n- **Responsive Behavior:** On tablet, the grid shifts to 8 columns. On mobile, it collapses to a single-column fluid layout with a 16px safe-margin on either side.\n\n## Elevation & Depth\nThis design system rejects the use of shadows to communicate depth. Instead, it uses **Tonal Layering** and **Strong Borders** to define hierarchy.\n\n1.  **Level 0 (Background):** #fcf9f8 (The \"Desk\").\n2.  **Level 1 (Surfaces):** #fffaf5 (Secondary operational areas like sidebars).\n3.  **Level 2 (Active Cards):** #ffffff (Primary work surfaces) with a 1px #ead8cd border.\n4.  **Interaction:** Elements do not \"lift\" on hover; instead, they utilize border weight increases or color shifts (e.g., from #ead8cd to #dbc1b3) to indicate focus. This maintains the \"flat paper\" metaphor.\n\n## Shapes\nIn keeping with the professional and operational tone, the shape language is **Soft (0.25rem)**. \n\nWhile sharp corners are often too aggressive, large rounded corners feel too \"consumer-grade.\" A subtle 4px radius provides a hint of modern refinement while maintaining the structural integrity of a technical document. \n\n- **Buttons & Inputs:** 4px radius.\n- **Cards/Modules:** 8px (rounded-lg) for outer containers.\n- **Tags/Status Chips:** 2px for a more technical, \"stamped\" look.\n\n## Components\n\n- **Buttons:** Primary buttons use #1c1b1b background with #ffffff text. Secondary buttons use a #dbc1b3 border with no fill. All buttons use 14px Inter Medium and 4px border-radius.\n- **Input Fields:** Use #ffffff background with a #dbc1b3 border. Labels use `label-caps` in #554338. Focus states switch the border to #e6813a with a 2px thickness.\n- **Data Cards:** Essential to the operational feel. Must have a 1px border (#ead8cd) and a clear header section separated by a horizontal rule.\n- **Status Chips:** Use a subtle background of the signal color (e.g., Success or Signal Orange at 10% opacity) with a 1px solid border of the same color and JetBrains Mono text.\n- **Metrics/KPIs:** Large monospaced numbers (JetBrains Mono) paired with a `label-caps` description. Avoid icons; use text-based trends (e.g., \"+12.4%\").\n- **Tables:** No vertical lines. Use horizontal separators in #ead8cd. Header rows use #fffaf5 background and `label-caps` text.",
+                "font": "PLUS_JAKARTA_SANS",
+                "headlineFont": "PLUS_JAKARTA_SANS",
+                "headlineFontFamily": "Plus Jakarta Sans",
+                "labelFont": "JETBRAINS_MONO",
+                "labelFontFamily": "Jetbrains Mono",
+                "namedColors": {
+                  "background": "#fdf8f8",
+                  "error": "#ba1a1a",
+                  "error_container": "#ffdad6",
+                  "inverse_on_surface": "#f4f0ef",
+                  "inverse_primary": "#c9c6c5",
+                  "inverse_surface": "#313030",
+                  "on_background": "#1c1b1b",
+                  "on_error": "#ffffff",
+                  "on_error_container": "#93000a",
+                  "on_primary": "#ffffff",
+                  "on_primary_container": "#868383",
+                  "on_primary_fixed": "#1c1b1b",
+                  "on_primary_fixed_variant": "#484646",
+                  "on_secondary": "#ffffff",
+                  "on_secondary_container": "#785f52",
+                  "on_secondary_fixed": "#29170e",
+                  "on_secondary_fixed_variant": "#584236",
+                  "on_surface": "#1c1b1b",
+                  "on_surface_variant": "#4c4547",
+                  "on_tertiary": "#ffffff",
+                  "on_tertiary_container": "#868383",
+                  "on_tertiary_fixed": "#1c1b1b",
+                  "on_tertiary_fixed_variant": "#484646",
+                  "outline": "#7d7577",
+                  "outline_variant": "#cfc4c6",
+                  "primary": "#000000",
+                  "primary_container": "#1c1b1b",
+                  "primary_fixed": "#e6e1e1",
+                  "primary_fixed_dim": "#c9c6c5",
+                  "secondary": "#72594c",
+                  "secondary_container": "#fedccb",
+                  "secondary_fixed": "#fedccb",
+                  "secondary_fixed_dim": "#e0c0b0",
+                  "surface": "#fdf8f8",
+                  "surface_bright": "#fdf8f8",
+                  "surface_container": "#f1edec",
+                  "surface_container_high": "#ebe7e6",
+                  "surface_container_highest": "#e5e2e1",
+                  "surface_container_low": "#f7f3f2",
+                  "surface_container_lowest": "#ffffff",
+                  "surface_dim": "#ddd9d8",
+                  "surface_tint": "#605e5e",
+                  "surface_variant": "#e5e2e1",
+                  "tertiary": "#000000",
+                  "tertiary_container": "#1c1b1b",
+                  "tertiary_fixed": "#e6e1e1",
+                  "tertiary_fixed_dim": "#c9c6c5"
+                },
+                "overridePrimaryColor": "#1c1b1b",
+                "overrideSecondaryColor": "#755c4f",
+                "roundness": "ROUND_FOUR",
+                "spacing": {
+                  "container-margin": "32px",
+                  "gutter": "20px",
+                  "lg": "24px",
+                  "md": "16px",
+                  "sm": "8px",
+                  "unit": "4px",
+                  "xl": "40px",
+                  "xs": "4px"
+                },
+                "spacingScale": 2,
+                "typography": {
+                  "body-lg": {
+                    "fontFamily": "Inter",
+                    "fontSize": "18px",
+                    "fontWeight": "400",
+                    "lineHeight": "28px"
+                  },
+                  "body-md": {
+                    "fontFamily": "Inter",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "24px"
+                  },
+                  "body-sm": {
+                    "fontFamily": "Inter",
+                    "fontSize": "14px",
+                    "fontWeight": "400",
+                    "lineHeight": "20px"
+                  },
+                  "headline-lg": {
+                    "fontFamily": "Plus Jakarta Sans",
+                    "fontSize": "32px",
+                    "fontWeight": "600",
+                    "letterSpacing": "-0.02em",
+                    "lineHeight": "40px"
+                  },
+                  "headline-md": {
+                    "fontFamily": "Plus Jakarta Sans",
+                    "fontSize": "24px",
+                    "fontWeight": "600",
+                    "lineHeight": "32px"
+                  },
+                  "headline-sm": {
+                    "fontFamily": "Plus Jakarta Sans",
+                    "fontSize": "20px",
+                    "fontWeight": "600",
+                    "lineHeight": "28px"
+                  },
+                  "headline-xl": {
+                    "fontFamily": "Plus Jakarta Sans",
+                    "fontSize": "40px",
+                    "fontWeight": "600",
+                    "letterSpacing": "-0.02em",
+                    "lineHeight": "48px"
+                  },
+                  "label-caps": {
+                    "fontFamily": "Inter",
+                    "fontSize": "12px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.05em",
+                    "lineHeight": "16px"
+                  },
+                  "metric-lg": {
+                    "fontFamily": "JetBrains Mono",
+                    "fontSize": "24px",
+                    "fontWeight": "500",
+                    "letterSpacing": "-0.01em",
+                    "lineHeight": "32px"
+                  },
+                  "metric-md": {
+                    "fontFamily": "JetBrains Mono",
+                    "fontSize": "16px",
+                    "fontWeight": "500",
+                    "lineHeight": "24px"
+                  }
+                }
+              }
+            },
+            "name": "assets/d0ce71fc35fd44549396328a2080f493",
+            "version": "1"
+          }
+        },
+        {
+          "design": {
+            "screens": [
+              {
+                "generatedBy": "interactive_ui_controller",
+                "height": "40",
+                "htmlCode": {
+                  "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2M4ZWIxNWM2YzYwNzRmMzJhNWJhODBjNzZjYjA4ODk2EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTcxMjA5NTc5MjQ4NTA5MTM3MA&filename=&opi=96797242",
+                  "mimeType": "image/svg+xml",
+                  "name": "projects/11712095792485091370/files/1b72862c894c4eff988778fa8e130e29"
+                },
+                "id": "1e9186015dd14d929c6d47fc2957c265",
+                "name": "projects/11712095792485091370/screens/1e9186015dd14d929c6d47fc2957c265",
+                "prompt": "Inline SVG monoline segmented bracket/path with three interval segments, one orange (#e6813a) signal dot on the active segment, and small tick marks at segment boundaries. No lightning, leaf, or AI symbols.. Brand logo",
+                "screenMetadata": {
+                  "agentType": "PRO_AGENT",
+                  "displayMode": "SVG",
+                  "status": "COMPLETE"
+                },
+                "screenType": "IMAGE",
+                "screenshot": {
+                  "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uiscuIfL7nx0ikeWQes46X1VSCRalrJGAuQX7FksIm_qDCa-18pvFosbeWDa2_Qy3k6bgDf6lTi9r2fOVgI2QBmH7iKEOiSZd-cwUA2aAYnhba1NAqnZt1Dx5_KjvXThnjL2xd_giE6-AXZ8Jm2vlMDP93LfsNDoGALew5fhQ5NzOGvKF_u4VkjKwyIFWUL5x_HbbFLs4Sy1LEY_jl7fIe3pffY-QaMZrYOGJ_ICMilK3VUN2RiAtOnHhc",
+                  "name": "projects/11712095792485091370/files/01e9fbdd704b43678729f16c1698e1d3"
+                },
+                "theme": {},
+                "title": "Tramo Logo",
+                "width": "40"
+              },
+              {
+                "designSystem": {
+                  "designSystem": {
+                    "displayName": "Tramo Operational System",
+                    "styleGuidelines": "## Brand & Style\nThis design system is built for high-stakes B2B energy operations, where precision and clarity are paramount. The aesthetic is inspired by high-quality tactile stationery—specifically technical ledger paper—evoking a sense of reliability and permanence.\n\nThe style avoids the ephemeral nature of modern SaaS \"software bloat\" (gradients, blurs, and organic shapes) in favor of a structured, physical presence. It utilizes a \"Paper & Ink\" philosophy: high-contrast typography, crisp borders, and a warm, low-fatigue background palette. The emotional response is one of calm authority, intentionality, and operational rigor.\n\n## Layout & Spacing\nThe layout follows a rigorous **Fixed Grid** philosophy on desktop to maintain \"dashboard-like\" predictability. \n\n- **Grid Model:** A 12-column system with a 20px gutter. Content is housed in \"Report Modules\" (cards) that align to the grid.\n- **Spacing Rhythm:** Based on a 4px baseline. Tight spacing (4px, 8px) is used for data-dense groupings, while larger spacing (24px, 40px) defines structural sections.\n- **Responsive Behavior:** On tablet, the grid shifts to 8 columns. On mobile, it collapses to a single-column fluid layout with a 16px safe-margin on either side.\n\n## Elevation & Depth\nThis design system rejects the use of shadows to communicate depth. Instead, it uses **Tonal Layering** and **Strong Borders** to define hierarchy.\n\n1.  **Level 0 (Background):** #fcf9f8 (The \"Desk\").\n2.  **Level 1 (Surfaces):** #fffaf5 (Secondary operational areas like sidebars).\n3.  **Level 2 (Active Cards):** #ffffff (Primary work surfaces) with a 1px #ead8cd border.\n4.  **Interaction:** Elements do not \"lift\" on hover; instead, they utilize border weight increases or color shifts (e.g., from #ead8cd to #dbc1b3) to indicate focus. This maintains the \"flat paper\" metaphor.\n\n## Components\n\n- **Buttons:** Primary buttons use #1c1b1b background with #ffffff text. Secondary buttons use a #dbc1b3 border with no fill. All buttons use 14px Inter Medium and 4px border-radius.\n- **Input Fields:** Use #ffffff background with a #dbc1b3 border. Labels use `label-caps` in #554338. Focus states switch the border to #e6813a with a 2px thickness.\n- **Data Cards:** Essential to the operational feel. Must have a 1px border (#ead8cd) and a clear header section separated by a horizontal rule.\n- **Status Chips:** Use a subtle background of the signal color (e.g., Success or Signal Orange at 10% opacity) with a 1px solid border of the same color and JetBrains Mono text.\n- **Metrics/KPIs:** Large monospaced numbers (JetBrains Mono) paired with a `label-caps` description. Avoid icons; use text-based trends (e.g., \"+12.4%\").\n- **Tables:** No vertical lines. Use horizontal separators in #ead8cd. Header rows use #fffaf5 background and `label-caps` text.",
+                    "theme": {
+                      "bodyFont": "INTER",
+                      "bodyFontFamily": "Inter",
+                      "colorMode": "LIGHT",
+                      "colorVariant": "FIDELITY",
+                      "customColor": "#1c1b1b",
+                      "designMd": "---\nname: Tramo Operational System\ncolors:\n  surface: '#fdf8f8'\n  surface-dim: '#ddd9d8'\n  surface-bright: '#fdf8f8'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f7f3f2'\n  surface-container: '#f1edec'\n  surface-container-high: '#ebe7e6'\n  surface-container-highest: '#e5e2e1'\n  on-surface: '#1c1b1b'\n  on-surface-variant: '#4c4547'\n  inverse-surface: '#313030'\n  inverse-on-surface: '#f4f0ef'\n  outline: '#7d7577'\n  outline-variant: '#cfc4c6'\n  surface-tint: '#605e5e'\n  primary: '#000000'\n  on-primary: '#ffffff'\n  primary-container: '#1c1b1b'\n  on-primary-container: '#868383'\n  inverse-primary: '#c9c6c5'\n  secondary: '#72594c'\n  on-secondary: '#ffffff'\n  secondary-container: '#fedccb'\n  on-secondary-container: '#785f52'\n  tertiary: '#000000'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#1c1b1b'\n  on-tertiary-container: '#868383'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#e6e1e1'\n  primary-fixed-dim: '#c9c6c5'\n  on-primary-fixed: '#1c1b1b'\n  on-primary-fixed-variant: '#484646'\n  secondary-fixed: '#fedccb'\n  secondary-fixed-dim: '#e0c0b0'\n  on-secondary-fixed: '#29170e'\n  on-secondary-fixed-variant: '#584236'\n  tertiary-fixed: '#e6e1e1'\n  tertiary-fixed-dim: '#c9c6c5'\n  on-tertiary-fixed: '#1c1b1b'\n  on-tertiary-fixed-variant: '#484646'\n  background: '#fdf8f8'\n  on-background: '#1c1b1b'\n  surface-variant: '#e5e2e1'\ntypography:\n  headline-xl:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 40px\n    fontWeight: '600'\n    lineHeight: 48px\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 32px\n    fontWeight: '600'\n    lineHeight: 40px\n    letterSpacing: -0.02em\n  headline-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n  headline-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 20px\n    fontWeight: '600'\n    lineHeight: 28px\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: 28px\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: 24px\n  body-sm:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 20px\n  metric-lg:\n    fontFamily: JetBrains Mono\n    fontSize: 24px\n    fontWeight: '500'\n    lineHeight: 32px\n    letterSpacing: -0.01em\n  metric-md:\n    fontFamily: JetBrains Mono\n    fontSize: 16px\n    fontWeight: '500'\n    lineHeight: 24px\n  label-caps:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: '600'\n    lineHeight: 16px\n    letterSpacing: 0.05em\nrounded:\n  sm: 0.125rem\n  DEFAULT: 0.25rem\n  md: 0.375rem\n  lg: 0.5rem\n  xl: 0.75rem\n  full: 9999px\nspacing:\n  unit: 4px\n  xs: 4px\n  sm: 8px\n  md: 16px\n  lg: 24px\n  xl: 40px\n  container-margin: 32px\n  gutter: 20px\n---\n\n## Brand & Style\nThis design system is built for high-stakes B2B energy operations, where precision and clarity are paramount. The aesthetic is inspired by high-quality tactile stationery—specifically technical ledger paper—evoking a sense of reliability and permanence.\n\nThe style avoids the ephemeral nature of modern SaaS \"software bloat\" (gradients, blurs, and organic shapes) in favor of a structured, physical presence. It utilizes a \"Paper & Ink\" philosophy: high-contrast typography, crisp borders, and a warm, low-fatigue background palette. The emotional response is one of calm authority, intentionality, and operational rigor.\n\n## Colors\nThe palette is rooted in a warm, cream-based \"Paper\" foundation to reduce eye strain during long operational shifts. \n\n- **Foundational Neutrals:** The background and surface colors provide a subtle hierarchy of depth without relying on shadows.\n- **Ink & Muted Text:** Pure \"Ink\" (#1c1b1b) is reserved for primary data and headlines to ensure maximum legibility, while \"Muted\" (#554338) handles secondary metadata.\n- **Operational Accents:** \"Signal Orange\" and \"Deep Orange\" are used sparingly for active states and critical highlights.\n- **Semantic Clarity:** Success and Error tokens are high-chroma but balanced against the warm background to ensure they remain professional and integrated into the \"paper\" feel.\n\n## Typography\nThe typographic system utilizes a tri-font strategy to separate intent and improve information processing speed.\n\n- **Headlines (Plus Jakarta Sans):** Chosen for its contemporary yet professional geometry. Used for page titles and section headers.\n- **Body (Inter):** The workhorse for all operational text, descriptions, and user inputs. It provides neutral, high-legibility performance.\n- **Numbers & Metrics (JetBrains Mono):** A monospaced font is strictly required for all numerical data, energy readings, and timestamps. This ensures that columns of figures align perfectly, allowing operators to spot anomalies across data tables instantly.\n\n## Layout & Spacing\nThe layout follows a rigorous **Fixed Grid** philosophy on desktop to maintain \"dashboard-like\" predictability. \n\n- **Grid Model:** A 12-column system with a 20px gutter. Content is housed in \"Report Modules\" (cards) that align to the grid.\n- **Spacing Rhythm:** Based on a 4px baseline. Tight spacing (4px, 8px) is used for data-dense groupings, while larger spacing (24px, 40px) defines structural sections.\n- **Responsive Behavior:** On tablet, the grid shifts to 8 columns. On mobile, it collapses to a single-column fluid layout with a 16px safe-margin on either side.\n\n## Elevation & Depth\nThis design system rejects the use of shadows to communicate depth. Instead, it uses **Tonal Layering** and **Strong Borders** to define hierarchy.\n\n1.  **Level 0 (Background):** #fcf9f8 (The \"Desk\").\n2.  **Level 1 (Surfaces):** #fffaf5 (Secondary operational areas like sidebars).\n3.  **Level 2 (Active Cards):** #ffffff (Primary work surfaces) with a 1px #ead8cd border.\n4.  **Interaction:** Elements do not \"lift\" on hover; instead, they utilize border weight increases or color shifts (e.g., from #ead8cd to #dbc1b3) to indicate focus. This maintains the \"flat paper\" metaphor.\n\n## Shapes\nIn keeping with the professional and operational tone, the shape language is **Soft (0.25rem)**. \n\nWhile sharp corners are often too aggressive, large rounded corners feel too \"consumer-grade.\" A subtle 4px radius provides a hint of modern refinement while maintaining the structural integrity of a technical document. \n\n- **Buttons & Inputs:** 4px radius.\n- **Cards/Modules:** 8px (rounded-lg) for outer containers.\n- **Tags/Status Chips:** 2px for a more technical, \"stamped\" look.\n\n## Components\n\n- **Buttons:** Primary buttons use #1c1b1b background with #ffffff text. Secondary buttons use a #dbc1b3 border with no fill. All buttons use 14px Inter Medium and 4px border-radius.\n- **Input Fields:** Use #ffffff background with a #dbc1b3 border. Labels use `label-caps` in #554338. Focus states switch the border to #e6813a with a 2px thickness.\n- **Data Cards:** Essential to the operational feel. Must have a 1px border (#ead8cd) and a clear header section separated by a horizontal rule.\n- **Status Chips:** Use a subtle background of the signal color (e.g., Success or Signal Orange at 10% opacity) with a 1px solid border of the same color and JetBrains Mono text.\n- **Metrics/KPIs:** Large monospaced numbers (JetBrains Mono) paired with a `label-caps` description. Avoid icons; use text-based trends (e.g., \"+12.4%\").\n- **Tables:** No vertical lines. Use horizontal separators in #ead8cd. Header rows use #fffaf5 background and `label-caps` text.",
+                      "font": "PLUS_JAKARTA_SANS",
+                      "headlineFont": "PLUS_JAKARTA_SANS",
+                      "headlineFontFamily": "Plus Jakarta Sans",
+                      "labelFont": "JETBRAINS_MONO",
+                      "labelFontFamily": "Jetbrains Mono",
+                      "namedColors": {
+                        "background": "#fdf8f8",
+                        "error": "#ba1a1a",
+                        "error_container": "#ffdad6",
+                        "inverse_on_surface": "#f4f0ef",
+                        "inverse_primary": "#c9c6c5",
+                        "inverse_surface": "#313030",
+                        "on_background": "#1c1b1b",
+                        "on_error": "#ffffff",
+                        "on_error_container": "#93000a",
+                        "on_primary": "#ffffff",
+                        "on_primary_container": "#868383",
+                        "on_primary_fixed": "#1c1b1b",
+                        "on_primary_fixed_variant": "#484646",
+                        "on_secondary": "#ffffff",
+                        "on_secondary_container": "#785f52",
+                        "on_secondary_fixed": "#29170e",
+                        "on_secondary_fixed_variant": "#584236",
+                        "on_surface": "#1c1b1b",
+                        "on_surface_variant": "#4c4547",
+                        "on_tertiary": "#ffffff",
+                        "on_tertiary_container": "#868383",
+                        "on_tertiary_fixed": "#1c1b1b",
+                        "on_tertiary_fixed_variant": "#484646",
+                        "outline": "#7d7577",
+                        "outline_variant": "#cfc4c6",
+                        "primary": "#000000",
+                        "primary_container": "#1c1b1b",
+                        "primary_fixed": "#e6e1e1",
+                        "primary_fixed_dim": "#c9c6c5",
+                        "secondary": "#72594c",
+                        "secondary_container": "#fedccb",
+                        "secondary_fixed": "#fedccb",
+                        "secondary_fixed_dim": "#e0c0b0",
+                        "surface": "#fdf8f8",
+                        "surface_bright": "#fdf8f8",
+                        "surface_container": "#f1edec",
+                        "surface_container_high": "#ebe7e6",
+                        "surface_container_highest": "#e5e2e1",
+                        "surface_container_low": "#f7f3f2",
+                        "surface_container_lowest": "#ffffff",
+                        "surface_dim": "#ddd9d8",
+                        "surface_tint": "#605e5e",
+                        "surface_variant": "#e5e2e1",
+                        "tertiary": "#000000",
+                        "tertiary_container": "#1c1b1b",
+                        "tertiary_fixed": "#e6e1e1",
+                        "tertiary_fixed_dim": "#c9c6c5"
+                      },
+                      "overridePrimaryColor": "#1c1b1b",
+                      "overrideSecondaryColor": "#755c4f",
+                      "roundness": "ROUND_FOUR",
+                      "spacing": {
+                        "container-margin": "32px",
+                        "gutter": "20px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "unit": "4px",
+                        "xl": "40px",
+                        "xs": "4px"
+                      },
+                      "spacingScale": 2,
+                      "typography": {
+                        "body-lg": {
+                          "fontFamily": "Inter",
+                          "fontSize": "18px",
+                          "fontWeight": "400",
+                          "lineHeight": "28px"
+                        },
+                        "body-md": {
+                          "fontFamily": "Inter",
+                          "fontSize": "16px",
+                          "fontWeight": "400",
+                          "lineHeight": "24px"
+                        },
+                        "body-sm": {
+                          "fontFamily": "Inter",
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "lineHeight": "20px"
+                        },
+                        "headline-lg": {
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": "32px",
+                          "fontWeight": "600",
+                          "letterSpacing": "-0.02em",
+                          "lineHeight": "40px"
+                        },
+                        "headline-md": {
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": "24px",
+                          "fontWeight": "600",
+                          "lineHeight": "32px"
+                        },
+                        "headline-sm": {
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": "20px",
+                          "fontWeight": "600",
+                          "lineHeight": "28px"
+                        },
+                        "headline-xl": {
+                          "fontFamily": "Plus Jakarta Sans",
+                          "fontSize": "40px",
+                          "fontWeight": "600",
+                          "letterSpacing": "-0.02em",
+                          "lineHeight": "48px"
+                        },
+                        "label-caps": {
+                          "fontFamily": "Inter",
+                          "fontSize": "12px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0.05em",
+                          "lineHeight": "16px"
+                        },
+                        "metric-lg": {
+                          "fontFamily": "JetBrains Mono",
+                          "fontSize": "24px",
+                          "fontWeight": "500",
+                          "letterSpacing": "-0.01em",
+                          "lineHeight": "32px"
+                        },
+                        "metric-md": {
+                          "fontFamily": "JetBrains Mono",
+                          "fontSize": "16px",
+                          "fontWeight": "500",
+                          "lineHeight": "24px"
+                        }
+                      }
+                    }
+                  },
+                  "name": "assets/d0ce71fc35fd44549396328a2080f493",
+                  "version": "1"
+                },
+                "deviceType": "MOBILE",
+                "generatedBy": "figaro_agent",
+                "height": "10348",
+                "htmlCode": {
+                  "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2RjZGIyODM1NDE1MTRhNDU5OTA3ZDRlNTJhOTExYjI5EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTcxMjA5NTc5MjQ4NTA5MTM3MA&filename=&opi=96797242",
+                  "mimeType": "text/html",
+                  "name": "projects/11712095792485091370/files/1cdcd0c1884f460da8d41298824e80ef"
+                },
+                "id": "aadd6ec4b01a4960832fda2a297ad0f4",
+                "name": "projects/11712095792485091370/screens/aadd6ec4b01a4960832fda2a297ad0f4",
+                "prompt": "Design a B2B landing page for Tramo in Spanish for mobile (375px). \n\nHeader: Logo {{DATA:IMAGE:IMAGE_1}}, brand name \"Tramo\".\n\nHero Section:\n- Small pill badge: \"Pilotos con gestoras 10+ alojamientos\"\n- H1 (EXACT): \"Convierte la energía de tu cartera turística en margen operativo.\" (Plus Jakarta Sans, weight 600)\n- Subcopy: \"Tramo cruza reservas, CUPS/Datadis, facturas y tarifas para que cada kWh tenga explicación, cada decisión tenga evidencia y cada propietario reciba un informe claro del impacto operativo sobre su factura.\" (Inter, weight 400)\n- Tagline: \"Cada kWh, en su tramo correcto.\"\n- Buttons: Primary \"Diagnosticar mi cartera\" (Orange #e6813a filled), Secondary \"Ver dashboard demo\" (Ghost outlined).\n- Right/Bottom side Product Panel (HTML/CSS): Card with \"Panel de control\", \"Mayo 2026\". KPI: \"1.847 kWh\" (JetBrains Mono), \"312 kWh fuera de reserva\" (Orange). Evidence: \"VGO-014 · checkout 11:00 · 4,2 kWh entre 13:10-16:40 sin reserva activa\". Comparison: \"Actual: 4.6/4.6 kW | Recomendado: 3.3/4.6 kW\". Action: \"Revisar termo y regla post-checkout\".\n\nPain Triptych (Stack on mobile):\n1. \"Consumo fuera de reserva\" — \"4,2 kWh sin reserva activa · VGO-014 · checkout 11:00\"\n2. \"Potencia o tarifa equivocada\" — \"P2 recomendada: 3,3 kW | Actual: 4,6 kW · Ahorro potencial\"\n3. \"Informes sin explicación operativa\" — \"412 kWh · 3 acciones de gestión · 42,50 EUR estimados\"\n\nSystem Flow Section:\n- \"PMS/Reservas → CUPS/Datadis/Facturas → Decisiones defendibles → Informes propietarios\"\n- Horizontal layout with clean icons and arrows. Background #fcf9f8.\n\nModules Grid (Grid on mobile):\n- Cards for: Dashboard, Operaciones, Apartamentos, Tarifas y Potencia, Informes Propietario, Piloto.\n- Extra \"premium\" card at bottom: \"Batería / Arbitraje\".\n\nProduct Proof:\n- \"Valida Tramo con tu cartera\" - Dashboard preview card.\n\nLead Form:\n- Title: \"Solicitar diagnóstico\"\n- Fields: Nombre, Empresa, Email, Nº de alojamientos, Ciudad/Región, PMS utilizado, ¿Acceso a Datadis/CUPS? (Sí/No/No lo sé), ¿Facturas recientes? (Sí/No), ¿Quién paga la factura eléctrica?, Dolor principal (textarea).\n- Modules checkboxes: Consumo fuera de reserva, Reglas operativas, Tarifa/potencia, Informes propietarios, Evaluación batería.\n- Privacy helper: \"No envíes credenciales ni facturas por este formulario. En la llamada revisamos qué datos tienes disponibles y cómo preparar un piloto seguro.\"\n- Submit: \"Solicitar diagnóstico\" (Filled orange).\n\nColor Palette:\n- Bg: #fcf9f8\n- Surface: #fffaf5\n- Borders: #ead8cd / #dbc1b3\n- Text: #1c1b1b\n- Signal Orange: #e6813a\n\nNo English, no lightning/eco icons, no gradients. Use JetBrains Mono for all numbers.\n## Available Images\nYou MUST include the following images in this design. You must reference them\nby putting their exact placeholder IDs in `src` attributes or CSS\n`background-image` rules. Do NOT use external URLs or generate new\nplaceholders. Preserve these IDs exactly as written. Read each image's\nDescription to understand its subject, intended section, and visual role.\n\n- {{DATA:IMAGE:IMAGE_1}}\n  Alt Text: Tramo Logo\n  Description: Inline SVG monoline segmented bracket/path with three interval segments, one orange (#e6813a) signal dot on the active segment, and small tick marks at segment boundaries. No lightning, leaf, or AI symbols.. Brand logo\n  Dimensions: 40x40\n  Aspect Ratio: 1.00\n  Colors: #1c1b1b, #dbc1b3, #e6813a\n",
+                "screenMetadata": {
+                  "agentType": "PRO_AGENT",
+                  "status": "COMPLETE"
+                },
+                "screenType": "DESIGN",
+                "screenshot": {
+                  "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ujNBmQMhYt7YxOXlkKdPeTcEDts5BUkWt4RnG3TxX2XydXAUOuFLGoNckpfyKtHggscaKCQc842NMBFOGlVKVpk1YwIgSgHfg_NJJsB-tXuPqM7JjqXsb1d6iY9Tn17NJxNIO0FtKTNauvzaTuZMjlAamN1pTNr_OitwMMLfEjgKtVKtizLTgceMrHFiXPrXzmE-sM3ADQCio7NJ5ilgnedRkuE7J24E46PaHE0_5K2B3of8idzWrjbzOY",
+                  "name": "projects/11712095792485091370/files/350fc46744634578a0a0290847c1689b"
+                },
+                "theme": {
+                  "bodyFont": "INTER",
+                  "bodyFontFamily": "Inter",
+                  "colorMode": "LIGHT",
+                  "colorVariant": "FIDELITY",
+                  "customColor": "#1c1b1b",
+                  "designMd": "---\nname: Tramo Operational System\ncolors:\n  surface: '#fdf8f8'\n  surface-dim: '#ddd9d8'\n  surface-bright: '#fdf8f8'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f7f3f2'\n  surface-container: '#f1edec'\n  surface-container-high: '#ebe7e6'\n  surface-container-highest: '#e5e2e1'\n  on-surface: '#1c1b1b'\n  on-surface-variant: '#4c4547'\n  inverse-surface: '#313030'\n  inverse-on-surface: '#f4f0ef'\n  outline: '#7d7577'\n  outline-variant: '#cfc4c6'\n  surface-tint: '#605e5e'\n  primary: '#000000'\n  on-primary: '#ffffff'\n  primary-container: '#1c1b1b'\n  on-primary-container: '#868383'\n  inverse-primary: '#c9c6c5'\n  secondary: '#72594c'\n  on-secondary: '#ffffff'\n  secondary-container: '#fedccb'\n  on-secondary-container: '#785f52'\n  tertiary: '#000000'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#1c1b1b'\n  on-tertiary-container: '#868383'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#e6e1e1'\n  primary-fixed-dim: '#c9c6c5'\n  on-primary-fixed: '#1c1b1b'\n  on-primary-fixed-variant: '#484646'\n  secondary-fixed: '#fedccb'\n  secondary-fixed-dim: '#e0c0b0'\n  on-secondary-fixed: '#29170e'\n  on-secondary-fixed-variant: '#584236'\n  tertiary-fixed: '#e6e1e1'\n  tertiary-fixed-dim: '#c9c6c5'\n  on-tertiary-fixed: '#1c1b1b'\n  on-tertiary-fixed-variant: '#484646'\n  background: '#fdf8f8'\n  on-background: '#1c1b1b'\n  surface-variant: '#e5e2e1'\ntypography:\n  headline-xl:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 40px\n    fontWeight: '600'\n    lineHeight: 48px\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 32px\n    fontWeight: '600'\n    lineHeight: 40px\n    letterSpacing: -0.02em\n  headline-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n  headline-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 20px\n    fontWeight: '600'\n    lineHeight: 28px\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: 28px\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: 24px\n  body-sm:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 20px\n  metric-lg:\n    fontFamily: JetBrains Mono\n    fontSize: 24px\n    fontWeight: '500'\n    lineHeight: 32px\n    letterSpacing: -0.01em\n  metric-md:\n    fontFamily: JetBrains Mono\n    fontSize: 16px\n    fontWeight: '500'\n    lineHeight: 24px\n  label-caps:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: '600'\n    lineHeight: 16px\n    letterSpacing: 0.05em\nrounded:\n  sm: 0.125rem\n  DEFAULT: 0.25rem\n  md: 0.375rem\n  lg: 0.5rem\n  xl: 0.75rem\n  full: 9999px\nspacing:\n  unit: 4px\n  xs: 4px\n  sm: 8px\n  md: 16px\n  lg: 24px\n  xl: 40px\n  container-margin: 32px\n  gutter: 20px\n---\n\n## Brand & Style\nThis design system is built for high-stakes B2B energy operations, where precision and clarity are paramount. The aesthetic is inspired by high-quality tactile stationery—specifically technical ledger paper—evoking a sense of reliability and permanence.\n\nThe style avoids the ephemeral nature of modern SaaS \"software bloat\" (gradients, blurs, and organic shapes) in favor of a structured, physical presence. It utilizes a \"Paper & Ink\" philosophy: high-contrast typography, crisp borders, and a warm, low-fatigue background palette. The emotional response is one of calm authority, intentionality, and operational rigor.\n\n## Colors\nThe palette is rooted in a warm, cream-based \"Paper\" foundation to reduce eye strain during long operational shifts. \n\n- **Foundational Neutrals:** The background and surface colors provide a subtle hierarchy of depth without relying on shadows.\n- **Ink & Muted Text:** Pure \"Ink\" (#1c1b1b) is reserved for primary data and headlines to ensure maximum legibility, while \"Muted\" (#554338) handles secondary metadata.\n- **Operational Accents:** \"Signal Orange\" and \"Deep Orange\" are used sparingly for active states and critical highlights.\n- **Semantic Clarity:** Success and Error tokens are high-chroma but balanced against the warm background to ensure they remain professional and integrated into the \"paper\" feel.\n\n## Typography\nThe typographic system utilizes a tri-font strategy to separate intent and improve information processing speed.\n\n- **Headlines (Plus Jakarta Sans):** Chosen for its contemporary yet professional geometry. Used for page titles and section headers.\n- **Body (Inter):** The workhorse for all operational text, descriptions, and user inputs. It provides neutral, high-legibility performance.\n- **Numbers & Metrics (JetBrains Mono):** A monospaced font is strictly required for all numerical data, energy readings, and timestamps. This ensures that columns of figures align perfectly, allowing operators to spot anomalies across data tables instantly.\n\n## Layout & Spacing\nThe layout follows a rigorous **Fixed Grid** philosophy on desktop to maintain \"dashboard-like\" predictability. \n\n- **Grid Model:** A 12-column system with a 20px gutter. Content is housed in \"Report Modules\" (cards) that align to the grid.\n- **Spacing Rhythm:** Based on a 4px baseline. Tight spacing (4px, 8px) is used for data-dense groupings, while larger spacing (24px, 40px) defines structural sections.\n- **Responsive Behavior:** On tablet, the grid shifts to 8 columns. On mobile, it collapses to a single-column fluid layout with a 16px safe-margin on either side.\n\n## Elevation & Depth\nThis design system rejects the use of shadows to communicate depth. Instead, it uses **Tonal Layering** and **Strong Borders** to define hierarchy.\n\n1.  **Level 0 (Background):** #fcf9f8 (The \"Desk\").\n2.  **Level 1 (Surfaces):** #fffaf5 (Secondary operational areas like sidebars).\n3.  **Level 2 (Active Cards):** #ffffff (Primary work surfaces) with a 1px #ead8cd border.\n4.  **Interaction:** Elements do not \"lift\" on hover; instead, they utilize border weight increases or color shifts (e.g., from #ead8cd to #dbc1b3) to indicate focus. This maintains the \"flat paper\" metaphor.\n\n## Shapes\nIn keeping with the professional and operational tone, the shape language is **Soft (0.25rem)**. \n\nWhile sharp corners are often too aggressive, large rounded corners feel too \"consumer-grade.\" A subtle 4px radius provides a hint of modern refinement while maintaining the structural integrity of a technical document. \n\n- **Buttons & Inputs:** 4px radius.\n- **Cards/Modules:** 8px (rounded-lg) for outer containers.\n- **Tags/Status Chips:** 2px for a more technical, \"stamped\" look.\n\n## Components\n\n- **Buttons:** Primary buttons use #1c1b1b background with #ffffff text. Secondary buttons use a #dbc1b3 border with no fill. All buttons use 14px Inter Medium and 4px border-radius.\n- **Input Fields:** Use #ffffff background with a #dbc1b3 border. Labels use `label-caps` in #554338. Focus states switch the border to #e6813a with a 2px thickness.\n- **Data Cards:** Essential to the operational feel. Must have a 1px border (#ead8cd) and a clear header section separated by a horizontal rule.\n- **Status Chips:** Use a subtle background of the signal color (e.g., Success or Signal Orange at 10% opacity) with a 1px solid border of the same color and JetBrains Mono text.\n- **Metrics/KPIs:** Large monospaced numbers (JetBrains Mono) paired with a `label-caps` description. Avoid icons; use text-based trends (e.g., \"+12.4%\").\n- **Tables:** No vertical lines. Use horizontal separators in #ead8cd. Header rows use #fffaf5 background and `label-caps` text.",
+                  "font": "PLUS_JAKARTA_SANS",
+                  "headlineFont": "PLUS_JAKARTA_SANS",
+                  "headlineFontFamily": "Plus Jakarta Sans",
+                  "labelFont": "JETBRAINS_MONO",
+                  "labelFontFamily": "Jetbrains Mono",
+                  "namedColors": {
+                    "background": "#fdf8f8",
+                    "error": "#ba1a1a",
+                    "error_container": "#ffdad6",
+                    "inverse_on_surface": "#f4f0ef",
+                    "inverse_primary": "#c9c6c5",
+                    "inverse_surface": "#313030",
+                    "on_background": "#1c1b1b",
+                    "on_error": "#ffffff",
+                    "on_error_container": "#93000a",
+                    "on_primary": "#ffffff",
+                    "on_primary_container": "#868383",
+                    "on_primary_fixed": "#1c1b1b",
+                    "on_primary_fixed_variant": "#484646",
+                    "on_secondary": "#ffffff",
+                    "on_secondary_container": "#785f52",
+                    "on_secondary_fixed": "#29170e",
+                    "on_secondary_fixed_variant": "#584236",
+                    "on_surface": "#1c1b1b",
+                    "on_surface_variant": "#4c4547",
+                    "on_tertiary": "#ffffff",
+                    "on_tertiary_container": "#868383",
+                    "on_tertiary_fixed": "#1c1b1b",
+                    "on_tertiary_fixed_variant": "#484646",
+                    "outline": "#7d7577",
+                    "outline_variant": "#cfc4c6",
+                    "primary": "#000000",
+                    "primary_container": "#1c1b1b",
+                    "primary_fixed": "#e6e1e1",
+                    "primary_fixed_dim": "#c9c6c5",
+                    "secondary": "#72594c",
+                    "secondary_container": "#fedccb",
+                    "secondary_fixed": "#fedccb",
+                    "secondary_fixed_dim": "#e0c0b0",
+                    "surface": "#fdf8f8",
+                    "surface_bright": "#fdf8f8",
+                    "surface_container": "#f1edec",
+                    "surface_container_high": "#ebe7e6",
+                    "surface_container_highest": "#e5e2e1",
+                    "surface_container_low": "#f7f3f2",
+                    "surface_container_lowest": "#ffffff",
+                    "surface_dim": "#ddd9d8",
+                    "surface_tint": "#605e5e",
+                    "surface_variant": "#e5e2e1",
+                    "tertiary": "#000000",
+                    "tertiary_container": "#1c1b1b",
+                    "tertiary_fixed": "#e6e1e1",
+                    "tertiary_fixed_dim": "#c9c6c5"
+                  },
+                  "overridePrimaryColor": "#1c1b1b",
+                  "overrideSecondaryColor": "#755c4f",
+                  "roundness": "ROUND_FOUR",
+                  "spacing": {
+                    "container-margin": "32px",
+                    "gutter": "20px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "unit": "4px",
+                    "xl": "40px",
+                    "xs": "4px"
+                  },
+                  "spacingScale": 2,
+                  "typography": {
+                    "body-lg": {
+                      "fontFamily": "Inter",
+                      "fontSize": "18px",
+                      "fontWeight": "400",
+                      "lineHeight": "28px"
+                    },
+                    "body-md": {
+                      "fontFamily": "Inter",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px"
+                    },
+                    "body-sm": {
+                      "fontFamily": "Inter",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px"
+                    },
+                    "headline-lg": {
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": "32px",
+                      "fontWeight": "600",
+                      "letterSpacing": "-0.02em",
+                      "lineHeight": "40px"
+                    },
+                    "headline-md": {
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": "24px",
+                      "fontWeight": "600",
+                      "lineHeight": "32px"
+                    },
+                    "headline-sm": {
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": "20px",
+                      "fontWeight": "600",
+                      "lineHeight": "28px"
+                    },
+                    "headline-xl": {
+                      "fontFamily": "Plus Jakarta Sans",
+                      "fontSize": "40px",
+                      "fontWeight": "600",
+                      "letterSpacing": "-0.02em",
+                      "lineHeight": "48px"
+                    },
+                    "label-caps": {
+                      "fontFamily": "Inter",
+                      "fontSize": "12px",
+                      "fontWeight": "600",
+                      "letterSpacing": "0.05em",
+                      "lineHeight": "16px"
+                    },
+                    "metric-lg": {
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": "24px",
+                      "fontWeight": "500",
+                      "letterSpacing": "-0.01em",
+                      "lineHeight": "32px"
+                    },
+                    "metric-md": {
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": "16px",
+                      "fontWeight": "500",
+                      "lineHeight": "24px"
+                    }
+                  }
+                },
+                "title": "Tramo Landing Page - Mobile",
+                "width": "780"
+              }
+            ],
+            "theme": {}
+          }
+        },
+        {
+          "text": "He diseñado la página de aterrizaje de Tramo para dispositivos móviles, centrada en la operatividad y eficiencia energética para gestores turísticos.\n\n### Decisiones de Diseño:\n- **Identidad Visual**: He creado un logotipo SVG monolineal siguiendo tus especificaciones precisas, evitando símbolos genéricos y reforzando la idea de \"tramos\" y precisión.\n- **Sistema de Diseño**: He aplicado una paleta de colores \"papel\" (#fcf9f8 y #fffaf5) que transmite profesionalidad y claridad operativa. La tipografía combina la fuerza de **Plus Jakarta Sans** en titulares con la legibilidad técnica de **JetBrains Mono** para todas las métricas de energía.\n- **Panel de Producto Hero**: En lugar de una imagen estática, he construido el panel de control directamente en el hero usando HTML/CSS. Esto permite mostrar datos realistas (kWh, potencias P1/P2) con la nitidez necesaria para una herramienta B2B.\n- **Estructura Móvil**: La disposición vertical asegura que los CTAs sean visibles rápidamente y que el formulario de contacto sea fácil de completar en pantallas pequeñas.\n- **Contenido**: Toda la página está íntegramente en español, respetando los textos exactos solicitados y manteniendo un tono profesional y directo.\n\n¿Te gustaría ajustar algún detalle del panel de control o prefieres que procedamos con la versión de escritorio?"
+        },
+        {
+          "suggestion": "Generar la versión de escritorio"
+        },
+        {
+          "suggestion": "Ajustar el panel de control del hero"
+        },
+        {
+          "suggestion": "Cambiar la sección de flujo del sistema"
+        }
+      ],
+      "projectId": "11712095792485091370",
+      "sessionId": "17195158481940401954"
+    }
+  }
+}

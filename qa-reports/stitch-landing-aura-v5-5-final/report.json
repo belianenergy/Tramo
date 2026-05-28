@@ -1,0 +1,184 @@
+{
+  "generatedAt": "2026-05-16T13:46:03.565Z",
+  "pages": [
+    {
+      "viewport": "desktop-1440",
+      "status": "pass",
+      "issues": [],
+      "metrics": {
+        "title": "EnergyOS - Autopiloto de Energía",
+        "h1s": [
+          "Controla aparatos, tarifas y baterías desde una sola capa inteligente."
+        ],
+        "h1Length": 70,
+        "textLength": 2613,
+        "scrollWidth": 1440,
+        "viewportWidth": 1440,
+        "documentHeight": 3404,
+        "overflow": false,
+        "requiredHits": {
+          "aparatos": [
+            "aparatos",
+            "dispositivos",
+            "cortar",
+            "consumo",
+            "Aparatos",
+            "consumo",
+            "consumo",
+            "dispositivos",
+            "CONSUMO"
+          ],
+          "tarifas": [
+            "Tarifa",
+            "tarifa",
+            "precios horarios",
+            "TARIFA",
+            "Potencia",
+            "Potencia",
+            "tarifa",
+            "TARIFA",
+            "POTENCIA",
+            "precios horarios",
+            "precios horarios",
+            "Tarifa",
+            "Potencia"
+          ],
+          "baterias": [
+            "Arbitraje",
+            "batería",
+            "BATERÍA",
+            "Arbitraje",
+            "solar",
+            "Solar",
+            "batería",
+            "batería",
+            "ARBITRAJE",
+            "Solar",
+            "Batería",
+            "Arbitraje",
+            "batería",
+            "solar",
+            "batería"
+          ],
+          "datadis": [
+            "Datadis",
+            "CUPS",
+            "facturas",
+            "DATADIS",
+            "CUPS",
+            "CUPS",
+            "facturas",
+            "Datadis",
+            "DATADIS",
+            "CUPS"
+          ],
+          "reporting": [
+            "Informe",
+            "reporta",
+            "propietario",
+            "REPORTA",
+            "propietario",
+            "propietario"
+          ]
+        },
+        "bannedHits": [],
+        "unsupportedPercentHits": [],
+        "badRealtimeDatadis": false,
+        "firstText": "EnergyOS\nProducto\nTarifas\nArbitraje\nInformes\nSOLICITAR DIAGNÓSTICO\nENERGY AUTOPILOT PARA CARTERAS DE ALOJAMIENTOS\nControla aparatos, tarifas y baterías desde una sola capa inteligente.\n\nEnergyOS cruza reservas, Datadis/CUPS, facturas, precios horarios y dispositivos conectados para decidir cuándo consumir, cortar, cargar o reportar. Menos coste, más control y explicaciones claras para cada propietario.\n\nSOLICITAR DIAGNÓSTICO GRATUITO\nverified\nSin hardware obligatorio para empezar\ncalendar_month\n"
+      },
+      "errors": [],
+      "warnings": [
+        "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+      ],
+      "screenshot": "desktop-1440.png"
+    },
+    {
+      "viewport": "mobile-375",
+      "status": "pass",
+      "issues": [],
+      "metrics": {
+        "title": "EnergyOS - Autopiloto de Energía",
+        "h1s": [
+          "Controla aparatos, tarifas y baterías desde una sola capa inteligente."
+        ],
+        "h1Length": 70,
+        "textLength": 2577,
+        "scrollWidth": 375,
+        "viewportWidth": 375,
+        "documentHeight": 5798,
+        "overflow": false,
+        "requiredHits": {
+          "aparatos": [
+            "aparatos",
+            "dispositivos",
+            "cortar",
+            "consumo",
+            "Aparatos",
+            "consumo",
+            "consumo",
+            "dispositivos",
+            "CONSUMO"
+          ],
+          "tarifas": [
+            "tarifa",
+            "precios horarios",
+            "TARIFA",
+            "Potencia",
+            "Potencia",
+            "tarifa",
+            "TARIFA",
+            "POTENCIA",
+            "precios horarios",
+            "precios horarios",
+            "Tarifa",
+            "Potencia"
+          ],
+          "baterias": [
+            "batería",
+            "BATERÍA",
+            "Arbitraje",
+            "solar",
+            "Solar",
+            "batería",
+            "batería",
+            "ARBITRAJE",
+            "Solar",
+            "Batería",
+            "Arbitraje",
+            "batería",
+            "solar",
+            "batería"
+          ],
+          "datadis": [
+            "Datadis",
+            "CUPS",
+            "facturas",
+            "DATADIS",
+            "CUPS",
+            "CUPS",
+            "facturas",
+            "Datadis",
+            "DATADIS",
+            "CUPS"
+          ],
+          "reporting": [
+            "reporta",
+            "propietario",
+            "REPORTA",
+            "propietario",
+            "propietario"
+          ]
+        },
+        "bannedHits": [],
+        "unsupportedPercentHits": [],
+        "badRealtimeDatadis": false,
+        "firstText": "EnergyOS\nSOLICITAR DIAGNÓSTICO\nENERGY AUTOPILOT PARA CARTERAS DE ALOJAMIENTOS\nControla aparatos, tarifas y baterías desde una sola capa inteligente.\n\nEnergyOS cruza reservas, Datadis/CUPS, facturas, precios horarios y dispositivos conectados para decidir cuándo consumir, cortar, cargar o reportar. Menos coste, más control y explicaciones claras para cada propietario.\n\nSOLICITAR DIAGNÓSTICO GRATUITO\nverified\nSin hardware obligatorio para empezar\ncalendar_month\nRESERVAS\nReglas de consumo\ndatabase\n"
+      },
+      "errors": [],
+      "warnings": [
+        "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+      ],
+      "screenshot": "mobile-375.png"
+    }
+  ]
+}

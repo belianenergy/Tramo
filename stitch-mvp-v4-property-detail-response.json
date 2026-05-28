@@ -1,0 +1,490 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"projectId\":\"12456492063083112200\",\"sessionId\":\"16387434778664464898\",\"outputComponents\":[{\"designSystem\":{\"name\":\"assets/52bcc6685f18479f901be7bc71d0d27d\",\"designSystem\":{\"displayName\":\"EnergyOS Design System\",\"styleGuidelines\":\"## Marca e Estilo\\n\\nEste sistema de deseño proxecta unha imaxe de precisión técnica, eficiencia enerxética e fiabilidade industrial. O obxectivo é transmitir unha sensación de control absoluto sobre datos complexos mediante unha interface limpa e de alta fidelidade. \\n\\nO estilo visual enmárcase nun **Minimalismo Corporativo Moderno**. Prioriza o espazo en branco para reducir a fatiga cognitiva, utilizando sutís contrastes de superficie para delimitar áreas de traballo. A estética busca ser profesional e sofisticada, eliminando calquera elemento ornamental innecesario para que os datos de rendemento enerxético sexan os protagonistas. A linguaxe visual é directa, rigorosa e optimizada para procesos de toma de decisións en contornas B2B.\\n\\n## Deseño e Espazado\\n\\nEste deseño utiliza un **sistema de cuadrícula fixa** para o contido principal en escritorio (máximo 1440px) e un sistema fluído para tabletas e móbiles.\\n\\n- **Ritmo Vertical:** Baseado nunha unidade de 8px. Todos os compoñentes e espazados deben ser múltiplos de 8 para manter a consistencia visual.\\n- **Cuadrícula:** 12 columnas en escritorio con canles (*gutters*) de 24px.\\n- **Adaptabilidade:** \\n    - No móbil, as marxes redúcense a 16px e os elementos adoitan ocupar o ancho total (12 columnas de 12).\\n    - Os espazos entre seccións (padding) redúcense un 50% en pantallas menores de 768px.\\n\\n## Elevación e Profundidade\\n\\nA xerarquía constrúese mediante **capas tonais** e sombras de luz ambiental moi suaves:\\n\\n- **Nivel 0 (Fondo):** `#FAFAFA`. É a base do sistema.\\n- **Nivel 1 (Superficie):** `#FFFFFF`. Utilizado para tarxetas e colectores principais. Inclúe un bordo fino de 1px en cor `#E5E7EB` (Gris 200) para definir a forma sen peso visual.\\n- **Nivel 2 (Elevación):** Sombras extra-difusas con baixa opacidade (4-8%) para elementos interactivos como menús despregables ou modais. \\n\\nNon se utilizan sombras pesadas nin efectos de cristal. A profundidade é sutil, mantendo un perfil técnico e plano que reforza a precisión do software.\\n\\n## Compoñentes\\n\\n- **Botóns:** O botón primario usa un fondo sólido `#10B981` con texto branco. Os botóns secundarios deben ser de estilo \\\"Ghost\\\" ou con bordo fino, priorizando a claridade sobre a saturación.\\n- **Entradas de Datos:** Bordos de 1px en gris neutro que cambian a Emerald ao recibir o foco. As etiquetas (labels) sempre deben estar fóra do campo para maior accesibilidade.\\n- **Tarxetas (Cards):** Deben incluír un espazado interno (padding) de 24px. As cabeceiras das tarxetas poden ter un fondo lixeiramente gris (`#F3F4F6`) para separar o título do contido.\\n- **Visualización de Datos:** Gráficos de liñas e barras utilizando a paleta de esmeraldas e verdes escuros. As lendas de datos deben usar obrigatoriamente JetBrains Mono.\\n- **Indicadores de Estado:** Chips con bordos redondeados e cores semánticas suaves (fondo con 10% de opacidade da cor de estado) para indicar \\\"Activo\\\", \\\"Mantemento\\\" ou \\\"Erro\\\".\",\"theme\":{\"colorMode\":\"LIGHT\",\"font\":\"INTER\",\"roundness\":\"ROUND_EIGHT\",\"customColor\":\"#10b981\",\"headlineFont\":\"INTER\",\"bodyFont\":\"INTER\",\"labelFont\":\"JETBRAINS_MONO\",\"namedColors\":{\"background\":\"#f9f9ff\",\"error\":\"#ba1a1a\",\"error_container\":\"#ffdad6\",\"inverse_on_surface\":\"#ebf1ff\",\"inverse_primary\":\"#4edea3\",\"inverse_surface\":\"#2a313d\",\"on_background\":\"#151c27\",\"on_error\":\"#ffffff\",\"on_error_container\":\"#93000a\",\"on_primary\":\"#ffffff\",\"on_primary_container\":\"#00422b\",\"on_primary_fixed\":\"#002113\",\"on_primary_fixed_variant\":\"#005236\",\"on_secondary\":\"#ffffff\",\"on_secondary_container\":\"#306d58\",\"on_secondary_fixed\":\"#002117\",\"on_secondary_fixed_variant\":\"#0b513d\",\"on_surface\":\"#151c27\",\"on_surface_variant\":\"#3c4a42\",\"on_tertiary\":\"#ffffff\",\"on_tertiary_container\":\"#711419\",\"on_tertiary_fixed\":\"#410005\",\"on_tertiary_fixed_variant\":\"#842225\",\"outline\":\"#6c7a71\",\"outline_variant\":\"#bbcabf\",\"primary\":\"#006c49\",\"primary_container\":\"#10b981\",\"primary_fixed\":\"#6ffbbe\",\"primary_fixed_dim\":\"#4edea3\",\"secondary\":\"#2b6954\",\"secondary_container\":\"#adedd3\",\"secondary_fixed\":\"#b0f0d6\",\"secondary_fixed_dim\":\"#95d3ba\",\"surface\":\"#f9f9ff\",\"surface_bright\":\"#f9f9ff\",\"surface_container\":\"#e7eefe\",\"surface_container_high\":\"#e2e8f8\",\"surface_container_highest\":\"#dce2f3\",\"surface_container_low\":\"#f0f3ff\",\"surface_container_lowest\":\"#ffffff\",\"surface_dim\":\"#d3daea\",\"surface_tint\":\"#006c49\",\"surface_variant\":\"#dce2f3\",\"tertiary\":\"#a43a3a\",\"tertiary_container\":\"#fc7c78\",\"tertiary_fixed\":\"#ffdad7\",\"tertiary_fixed_dim\":\"#ffb3af\"},\"designMd\":\"---\\nname: EnergyOS Design System\\ncolors:\\n  surface: '#f9f9ff'\\n  surface-dim: '#d3daea'\\n  surface-bright: '#f9f9ff'\\n  surface-container-lowest: '#ffffff'\\n  surface-container-low: '#f0f3ff'\\n  surface-container: '#e7eefe'\\n  surface-container-high: '#e2e8f8'\\n  surface-container-highest: '#dce2f3'\\n  on-surface: '#151c27'\\n  on-surface-variant: '#3c4a42'\\n  inverse-surface: '#2a313d'\\n  inverse-on-surface: '#ebf1ff'\\n  outline: '#6c7a71'\\n  outline-variant: '#bbcabf'\\n  surface-tint: '#006c49'\\n  primary: '#006c49'\\n  on-primary: '#ffffff'\\n  primary-container: '#10b981'\\n  on-primary-container: '#00422b'\\n  inverse-primary: '#4edea3'\\n  secondary: '#2b6954'\\n  on-secondary: '#ffffff'\\n  secondary-container: '#adedd3'\\n  on-secondary-container: '#306d58'\\n  tertiary: '#a43a3a'\\n  on-tertiary: '#ffffff'\\n  tertiary-container: '#fc7c78'\\n  on-tertiary-container: '#711419'\\n  error: '#ba1a1a'\\n  on-error: '#ffffff'\\n  error-container: '#ffdad6'\\n  on-error-container: '#93000a'\\n  primary-fixed: '#6ffbbe'\\n  primary-fixed-dim: '#4edea3'\\n  on-primary-fixed: '#002113'\\n  on-primary-fixed-variant: '#005236'\\n  secondary-fixed: '#b0f0d6'\\n  secondary-fixed-dim: '#95d3ba'\\n  on-secondary-fixed: '#002117'\\n  on-secondary-fixed-variant: '#0b513d'\\n  tertiary-fixed: '#ffdad7'\\n  tertiary-fixed-dim: '#ffb3af'\\n  on-tertiary-fixed: '#410005'\\n  on-tertiary-fixed-variant: '#842225'\\n  background: '#f9f9ff'\\n  on-background: '#151c27'\\n  surface-variant: '#dce2f3'\\ntypography:\\n  display-lg:\\n    fontFamily: Inter\\n    fontSize: 48px\\n    fontWeight: '700'\\n    lineHeight: 56px\\n    letterSpacing: -0.02em\\n  headline-lg:\\n    fontFamily: Inter\\n    fontSize: 32px\\n    fontWeight: '600'\\n    lineHeight: 40px\\n    letterSpacing: -0.01em\\n  headline-md:\\n    fontFamily: Inter\\n    fontSize: 24px\\n    fontWeight: '600'\\n    lineHeight: 32px\\n  body-lg:\\n    fontFamily: Inter\\n    fontSize: 18px\\n    fontWeight: '400'\\n    lineHeight: 28px\\n  body-md:\\n    fontFamily: Inter\\n    fontSize: 16px\\n    fontWeight: '400'\\n    lineHeight: 24px\\n  body-sm:\\n    fontFamily: Inter\\n    fontSize: 14px\\n    fontWeight: '400'\\n    lineHeight: 20px\\n  data-lg:\\n    fontFamily: JetBrains Mono\\n    fontSize: 20px\\n    fontWeight: '600'\\n    lineHeight: 28px\\n  data-md:\\n    fontFamily: JetBrains Mono\\n    fontSize: 14px\\n    fontWeight: '500'\\n    lineHeight: 20px\\n  label-caps:\\n    fontFamily: Inter\\n    fontSize: 12px\\n    fontWeight: '700'\\n    lineHeight: 16px\\n    letterSpacing: 0.05em\\nrounded:\\n  sm: 0.25rem\\n  DEFAULT: 0.5rem\\n  md: 0.75rem\\n  lg: 1rem\\n  xl: 1.5rem\\n  full: 9999px\\nspacing:\\n  base: 8px\\n  xs: 4px\\n  sm: 12px\\n  md: 24px\\n  lg: 40px\\n  xl: 64px\\n  gutter: 24px\\n  margin-mobile: 16px\\n  margin-desktop: 32px\\n---\\n\\n## Marca e Estilo\\n\\nEste sistema de deseño proxecta unha imaxe de precisión técnica, eficiencia enerxética e fiabilidade industrial. O obxectivo é transmitir unha sensación de control absoluto sobre datos complexos mediante unha interface limpa e de alta fidelidade. \\n\\nO estilo visual enmárcase nun **Minimalismo Corporativo Moderno**. Prioriza o espazo en branco para reducir a fatiga cognitiva, utilizando sutís contrastes de superficie para delimitar áreas de traballo. A estética busca ser profesional e sofisticada, eliminando calquera elemento ornamental innecesario para que os datos de rendemento enerxético sexan os protagonistas. A linguaxe visual é directa, rigorosa e optimizada para procesos de toma de decisións en contornas B2B.\\n\\n## Cores\\n\\nA paleta de cores está deseñada para reforzar a identidade sostible e tecnolóxica do sector enerxético:\\n\\n- **Primaria (Emerald):** Utilízase para accións principais, estados positivos e indicadores de eficiencia. É o fío condutor da marca.\\n- **Superficie e Fondo:** O uso de `#FAFAFA` para o fondo xeral e `#FFFFFF` para tarxetas e colectores crea unha xerarquía visual por capas sen necesidade de liñas pesadas.\\n- **Funcionais:** O vermello `#EF4444` resérvase estritamente para alertas críticas e erros de sistema, garantindo unha resposta visual inmediata.\\n- **Neutros:** Unha escala de grises azulados para tipografía e bordos sutís, mantendo a sobriedade do sistema.\\n\\n## Tipografía\\n\\nA estratexia tipográfica divide a interface en dous mundos:\\n\\n1.  **Inter (UI e Lectura):** Emprégase para a navegación, textos descritivos e etiquetas de interface. A súa neutralidade facilita a lexibilidade en densidades altas de información.\\n2.  **JetBrains Mono (Datos e Métricas):** Como ferramenta especializada para o sector enerxético, as cifras, coordenadas e valores técnicos móstranse nesta fonte monoespazada. Isto asegura que as columnas de números estean sempre aliñadas, facilitando a comparación rápida de métricas de consumo e produción.\\n\\nOs títulos utilizan un *kerning* lixeiramente pechado para un aspecto máis premium e compacto.\\n\\n## Deseño e Espazado\\n\\nEste deseño utiliza un **sistema de cuadrícula fixa** para o contido principal en escritorio (máximo 1440px) e un sistema fluído para tabletas e móbiles.\\n\\n- **Ritmo Vertical:** Baseado nunha unidade de 8px. Todos os compoñentes e espazados deben ser múltiplos de 8 para manter a consistencia visual.\\n- **Cuadrícula:** 12 columnas en escritorio con canles (*gutters*) de 24px.\\n- **Adaptabilidade:** \\n    - No móbil, as marxes redúcense a 16px e os elementos adoitan ocupar o ancho total (12 columnas de 12).\\n    - Os espazos entre seccións (padding) redúcense un 50% en pantallas menores de 768px.\\n\\n## Elevación e Profundidade\\n\\nA xerarquía constrúese mediante **capas tonais** e sombras de luz ambiental moi suaves:\\n\\n- **Nivel 0 (Fondo):** `#FAFAFA`. É a base do sistema.\\n- **Nivel 1 (Superficie):** `#FFFFFF`. Utilizado para tarxetas e colectores principais. Inclúe un bordo fino de 1px en cor `#E5E7EB` (Gris 200) para definir a forma sen peso visual.\\n- **Nivel 2 (Elevación):** Sombras extra-difusas con baixa opacidade (4-8%) para elementos interactivos como menús despregables ou modais. \\n\\nNon se utilizan sombras pesadas nin efectos de cristal. A profundidade é sutil, mantendo un perfil técnico e plano que reforza a precisión do software.\\n\\n## Formas\\n\\nO sistema de formas é homoxéneo e estruturado:\\n\\n- **Radio Estándar:** 8px (`0.5rem`). Aplícase a botóns, campos de entrada, tarxetas e colectores de datos.\\n- **Radio de Selección:** Os elementos pequenos como *checkboxes* manteñen un radio reducido de 4px para preservar a nitidez.\\n- **Consistencia:** Evítanse as formas circulares ou orgánicas, agás en avatares e iconas específicas, para manter a linguaxe profesional e arquitectónica do sector enerxético.\\n\\n## Compoñentes\\n\\n- **Botóns:** O botón primario usa un fondo sólido `#10B981` con texto branco. Os botóns secundarios deben ser de estilo \\\"Ghost\\\" ou con bordo fino, priorizando a claridade sobre a saturación.\\n- **Entradas de Datos:** Bordos de 1px en gris neutro que cambian a Emerald ao recibir o foco. As etiquetas (labels) sempre deben estar fóra do campo para maior accesibilidade.\\n- **Tarxetas (Cards):** Deben incluír un espazado interno (padding) de 24px. As cabeceiras das tarxetas poden ter un fondo lixeiramente gris (`#F3F4F6`) para separar o título do contido.\\n- **Visualización de Datos:** Gráficos de liñas e barras utilizando a paleta de esmeraldas e verdes escuros. As lendas de datos deben usar obrigatoriamente JetBrains Mono.\\n- **Indicadores de Estado:** Chips con bordos redondeados e cores semánticas suaves (fondo con 10% de opacidade da cor de estado) para indicar \\\"Activo\\\", \\\"Mantemento\\\" ou \\\"Erro\\\".\",\"colorVariant\":\"FIDELITY\",\"overridePrimaryColor\":\"#10b981\",\"overrideSecondaryColor\":\"#064e3b\",\"overrideNeutralColor\":\"#6b7280\",\"spacingScale\":2,\"typography\":{\"body-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"18px\",\"fontWeight\":\"400\",\"lineHeight\":\"28px\"},\"body-md\":{\"fontFamily\":\"Inter\",\"fontSize\":\"16px\",\"fontWeight\":\"400\",\"lineHeight\":\"24px\"},\"body-sm\":{\"fontFamily\":\"Inter\",\"fontSize\":\"14px\",\"fontWeight\":\"400\",\"lineHeight\":\"20px\"},\"data-lg\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"20px\",\"fontWeight\":\"600\",\"lineHeight\":\"28px\"},\"data-md\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"14px\",\"fontWeight\":\"500\",\"lineHeight\":\"20px\"},\"display-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"48px\",\"fontWeight\":\"700\",\"lineHeight\":\"56px\",\"letterSpacing\":\"-0.02em\"},\"headline-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"32px\",\"fontWeight\":\"600\",\"lineHeight\":\"40px\",\"letterSpacing\":\"-0.01em\"},\"headline-md\":{\"fontFamily\":\"Inter\",\"fontSize\":\"24px\",\"fontWeight\":\"600\",\"lineHeight\":\"32px\"},\"label-caps\":{\"fontFamily\":\"Inter\",\"fontSize\":\"12px\",\"fontWeight\":\"700\",\"lineHeight\":\"16px\",\"letterSpacing\":\"0.05em\"}},\"spacing\":{\"base\":\"8px\",\"gutter\":\"24px\",\"lg\":\"40px\",\"margin-desktop\":\"32px\",\"margin-mobile\":\"16px\",\"md\":\"24px\",\"sm\":\"12px\",\"xl\":\"64px\",\"xs\":\"4px\"},\"headlineFontFamily\":\"Inter\",\"bodyFontFamily\":\"Inter\",\"labelFontFamily\":\"Jetbrains Mono\"}},\"version\":\"1\"}},{\"design\":{\"screens\":[{\"screenshot\":{\"name\":\"projects/12456492063083112200/files/39f0dbf5c34c4a1e8be11192b8b37601\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/ADBb0ugjajkuw9wOdmfgTUY-Bfcp29P3Vt3Kv0jtggeM44xwAXKNJOLX34x4OfCyob230_Sw4fF2vAqpqnOcGbPlNFTjYHrcL9dkPEJXWip7rfvhJWeVnj_9KUiUFfGsZZkfNrf19mYdagrhcWy8BOB7k9f30P9qKJCcOFrom_ANz2bCLV56wpiRsLYvlSm19lp-AIdRm4H8oDPbBTT6uKPIbOMnz3npRqnY4AQCRCo7iuWTC4NPOi05EfCg8Cs\"},\"htmlCode\":{\"name\":\"projects/12456492063083112200/files/c0a35c39d68f4d9ab49604bcf41ea5e6\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzM1M2QzZjMyNjMwMDQ0MDQ5MjdlODYwOGRlODc1MmNmEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMjQ1NjQ5MjA2MzA4MzExMjIwMA&filename=&opi=96797242\",\"mimeType\":\"text/html\"},\"id\":\"ec15862b00874a4a84bde2e33fa732c1\",\"generatedBy\":\"figaro_agent\",\"width\":\"2560\",\"height\":\"2508\",\"title\":\"Detalle de Propiedade - Apartamento Praia\",\"prompt\":\"Create a high-fidelity desktop property detail page for \\\"Apartamento Praia — Airbnb\\\". \\nLanguage: Galician.\\nLayout: Sidebar navigation (SideNavBar) on the left, main content area with a top bar (TopNavBar).\\n\\nContent:\\n- Breadcrumb/Back link: \\\"← Volver\\\" (links to properties list).\\n- Header: Title \\\"🏠 Apartamento Praia — Airbnb\\\".\\n\\nMain Dashboard Grid:\\n1. Large Consumption Card (Top Left): \\n   - Value: \\\"2.1 kWh/hora\\\" in JetBrains Mono font.\\n   - Badge: Red/Danger \\\"ANÓMALO\\\".\\n   - Subtext: \\\"Consumo 7x superior ao normal\\\".\\n   - Aesthetic: Clean, white surface, prominent metric.\\n\\n2. Consumption Chart Card (Top Right):\\n   - Tabs: [HOXE, 7 DÍAS (Active), 30 DÍAS, ANO].\\n   - Chart: A large area chart showing energy consumption over time with a clear spike. \\n   - Palette: Use #10B981 for normal, #EF4444 for the spike.\\n\\n3. Recent Alerts List (Bottom Left):\\n   - Title: \\\"Alertas recentes\\\".\\n   - Item 1: \\\"Hoxe 14:32 — Consumo anómalo\\\" (Critical icon).\\n   - Item 2: \\\"Onte 23:15 — Consumo elevado\\\" (Warning icon).\\n   - Item 3: \\\"Onte 22:00 — Normalizado\\\" (Success icon).\\n\\n4. Configuration Card (Bottom Right):\\n   - Title: \\\"Configuración de alertas\\\".\\n   - Field: Threshold input labeled \\\"Limiar de consumo\\\" with value \\\"0.5 kWh/hora\\\".\\n   - Field: Notification channel dropdown with \\\"Telegram\\\" selected.\\n   - Button: Primary green (#10B981) button labeled \\\"Gardar cambios\\\".\\n\\nVisual Style: Premium B2B SaaS, light mode, background #FAFAFA, surfaces #FFFFFF, Inter typography, 8px rounding. Match the sidebar style from the dashboard.\",\"name\":\"projects/12456492063083112200/screens/ec15862b00874a4a84bde2e33fa732c1\",\"theme\":{\"colorMode\":\"LIGHT\",\"font\":\"INTER\",\"roundness\":\"ROUND_EIGHT\",\"customColor\":\"#10b981\",\"headlineFont\":\"INTER\",\"bodyFont\":\"INTER\",\"labelFont\":\"JETBRAINS_MONO\",\"namedColors\":{\"background\":\"#f9f9ff\",\"error\":\"#ba1a1a\",\"error_container\":\"#ffdad6\",\"inverse_on_surface\":\"#ebf1ff\",\"inverse_primary\":\"#4edea3\",\"inverse_surface\":\"#2a313d\",\"on_background\":\"#151c27\",\"on_error\":\"#ffffff\",\"on_error_container\":\"#93000a\",\"on_primary\":\"#ffffff\",\"on_primary_container\":\"#00422b\",\"on_primary_fixed\":\"#002113\",\"on_primary_fixed_variant\":\"#005236\",\"on_secondary\":\"#ffffff\",\"on_secondary_container\":\"#306d58\",\"on_secondary_fixed\":\"#002117\",\"on_secondary_fixed_variant\":\"#0b513d\",\"on_surface\":\"#151c27\",\"on_surface_variant\":\"#3c4a42\",\"on_tertiary\":\"#ffffff\",\"on_tertiary_container\":\"#711419\",\"on_tertiary_fixed\":\"#410005\",\"on_tertiary_fixed_variant\":\"#842225\",\"outline\":\"#6c7a71\",\"outline_variant\":\"#bbcabf\",\"primary\":\"#006c49\",\"primary_container\":\"#10b981\",\"primary_fixed\":\"#6ffbbe\",\"primary_fixed_dim\":\"#4edea3\",\"secondary\":\"#2b6954\",\"secondary_container\":\"#adedd3\",\"secondary_fixed\":\"#b0f0d6\",\"secondary_fixed_dim\":\"#95d3ba\",\"surface\":\"#f9f9ff\",\"surface_bright\":\"#f9f9ff\",\"surface_container\":\"#e7eefe\",\"surface_container_high\":\"#e2e8f8\",\"surface_container_highest\":\"#dce2f3\",\"surface_container_low\":\"#f0f3ff\",\"surface_container_lowest\":\"#ffffff\",\"surface_dim\":\"#d3daea\",\"surface_tint\":\"#006c49\",\"surface_variant\":\"#dce2f3\",\"tertiary\":\"#a43a3a\",\"tertiary_container\":\"#fc7c78\",\"tertiary_fixed\":\"#ffdad7\",\"tertiary_fixed_dim\":\"#ffb3af\"},\"designMd\":\"---\\nname: EnergyOS Design System\\ncolors:\\n  surface: '#f9f9ff'\\n  surface-dim: '#d3daea'\\n  surface-bright: '#f9f9ff'\\n  surface-container-lowest: '#ffffff'\\n  surface-container-low: '#f0f3ff'\\n  surface-container: '#e7eefe'\\n  surface-container-high: '#e2e8f8'\\n  surface-container-highest: '#dce2f3'\\n  on-surface: '#151c27'\\n  on-surface-variant: '#3c4a42'\\n  inverse-surface: '#2a313d'\\n  inverse-on-surface: '#ebf1ff'\\n  outline: '#6c7a71'\\n  outline-variant: '#bbcabf'\\n  surface-tint: '#006c49'\\n  primary: '#006c49'\\n  on-primary: '#ffffff'\\n  primary-container: '#10b981'\\n  on-primary-container: '#00422b'\\n  inverse-primary: '#4edea3'\\n  secondary: '#2b6954'\\n  on-secondary: '#ffffff'\\n  secondary-container: '#adedd3'\\n  on-secondary-container: '#306d58'\\n  tertiary: '#a43a3a'\\n  on-tertiary: '#ffffff'\\n  tertiary-container: '#fc7c78'\\n  on-tertiary-container: '#711419'\\n  error: '#ba1a1a'\\n  on-error: '#ffffff'\\n  error-container: '#ffdad6'\\n  on-error-container: '#93000a'\\n  primary-fixed: '#6ffbbe'\\n  primary-fixed-dim: '#4edea3'\\n  on-primary-fixed: '#002113'\\n  on-primary-fixed-variant: '#005236'\\n  secondary-fixed: '#b0f0d6'\\n  secondary-fixed-dim: '#95d3ba'\\n  on-secondary-fixed: '#002117'\\n  on-secondary-fixed-variant: '#0b513d'\\n  tertiary-fixed: '#ffdad7'\\n  tertiary-fixed-dim: '#ffb3af'\\n  on-tertiary-fixed: '#410005'\\n  on-tertiary-fixed-variant: '#842225'\\n  background: '#f9f9ff'\\n  on-background: '#151c27'\\n  surface-variant: '#dce2f3'\\ntypography:\\n  display-lg:\\n    fontFamily: Inter\\n    fontSize: 48px\\n    fontWeight: '700'\\n    lineHeight: 56px\\n    letterSpacing: -0.02em\\n  headline-lg:\\n    fontFamily: Inter\\n    fontSize: 32px\\n    fontWeight: '600'\\n    lineHeight: 40px\\n    letterSpacing: -0.01em\\n  headline-md:\\n    fontFamily: Inter\\n    fontSize: 24px\\n    fontWeight: '600'\\n    lineHeight: 32px\\n  body-lg:\\n    fontFamily: Inter\\n    fontSize: 18px\\n    fontWeight: '400'\\n    lineHeight: 28px\\n  body-md:\\n    fontFamily: Inter\\n    fontSize: 16px\\n    fontWeight: '400'\\n    lineHeight: 24px\\n  body-sm:\\n    fontFamily: Inter\\n    fontSize: 14px\\n    fontWeight: '400'\\n    lineHeight: 20px\\n  data-lg:\\n    fontFamily: JetBrains Mono\\n    fontSize: 20px\\n    fontWeight: '600'\\n    lineHeight: 28px\\n  data-md:\\n    fontFamily: JetBrains Mono\\n    fontSize: 14px\\n    fontWeight: '500'\\n    lineHeight: 20px\\n  label-caps:\\n    fontFamily: Inter\\n    fontSize: 12px\\n    fontWeight: '700'\\n    lineHeight: 16px\\n    letterSpacing: 0.05em\\nrounded:\\n  sm: 0.25rem\\n  DEFAULT: 0.5rem\\n  md: 0.75rem\\n  lg: 1rem\\n  xl: 1.5rem\\n  full: 9999px\\nspacing:\\n  base: 8px\\n  xs: 4px\\n  sm: 12px\\n  md: 24px\\n  lg: 40px\\n  xl: 64px\\n  gutter: 24px\\n  margin-mobile: 16px\\n  margin-desktop: 32px\\n---\\n\\n## Marca e Estilo\\n\\nEste sistema de deseño proxecta unha imaxe de precisión técnica, eficiencia enerxética e fiabilidade industrial. O obxectivo é transmitir unha sensación de control absoluto sobre datos complexos mediante unha interface limpa e de alta fidelidade. \\n\\nO estilo visual enmárcase nun **Minimalismo Corporativo Moderno**. Prioriza o espazo en branco para reducir a fatiga cognitiva, utilizando sutís contrastes de superficie para delimitar áreas de traballo. A estética busca ser profesional e sofisticada, eliminando calquera elemento ornamental innecesario para que os datos de rendemento enerxético sexan os protagonistas. A linguaxe visual é directa, rigorosa e optimizada para procesos de toma de decisións en contornas B2B.\\n\\n## Cores\\n\\nA paleta de cores está deseñada para reforzar a identidade sostible e tecnolóxica do sector enerxético:\\n\\n- **Primaria (Emerald):** Utilízase para accións principais, estados positivos e indicadores de eficiencia. É o fío condutor da marca.\\n- **Superficie e Fondo:** O uso de `#FAFAFA` para o fondo xeral e `#FFFFFF` para tarxetas e colectores crea unha xerarquía visual por capas sen necesidade de liñas pesadas.\\n- **Funcionais:** O vermello `#EF4444` resérvase estritamente para alertas críticas e erros de sistema, garantindo unha resposta visual inmediata.\\n- **Neutros:** Unha escala de grises azulados para tipografía e bordos sutís, mantendo a sobriedade do sistema.\\n\\n## Tipografía\\n\\nA estratexia tipográfica divide a interface en dous mundos:\\n\\n1.  **Inter (UI e Lectura):** Emprégase para a navegación, textos descritivos e etiquetas de interface. A súa neutralidade facilita a lexibilidade en densidades altas de información.\\n2.  **JetBrains Mono (Datos e Métricas):** Como ferramenta especializada para o sector enerxético, as cifras, coordenadas e valores técnicos móstranse nesta fonte monoespazada. Isto asegura que as columnas de números estean sempre aliñadas, facilitando a comparación rápida de métricas de consumo e produción.\\n\\nOs títulos utilizan un *kerning* lixeiramente pechado para un aspecto máis premium e compacto.\\n\\n## Deseño e Espazado\\n\\nEste deseño utiliza un **sistema de cuadrícula fixa** para o contido principal en escritorio (máximo 1440px) e un sistema fluído para tabletas e móbiles.\\n\\n- **Ritmo Vertical:** Baseado nunha unidade de 8px. Todos os compoñentes e espazados deben ser múltiplos de 8 para manter a consistencia visual.\\n- **Cuadrícula:** 12 columnas en escritorio con canles (*gutters*) de 24px.\\n- **Adaptabilidade:** \\n    - No móbil, as marxes redúcense a 16px e os elementos adoitan ocupar o ancho total (12 columnas de 12).\\n    - Os espazos entre seccións (padding) redúcense un 50% en pantallas menores de 768px.\\n\\n## Elevación e Profundidade\\n\\nA xerarquía constrúese mediante **capas tonais** e sombras de luz ambiental moi suaves:\\n\\n- **Nivel 0 (Fondo):** `#FAFAFA`. É a base do sistema.\\n- **Nivel 1 (Superficie):** `#FFFFFF`. Utilizado para tarxetas e colectores principais. Inclúe un bordo fino de 1px en cor `#E5E7EB` (Gris 200) para definir a forma sen peso visual.\\n- **Nivel 2 (Elevación):** Sombras extra-difusas con baixa opacidade (4-8%) para elementos interactivos como menús despregables ou modais. \\n\\nNon se utilizan sombras pesadas nin efectos de cristal. A profundidade é sutil, mantendo un perfil técnico e plano que reforza a precisión do software.\\n\\n## Formas\\n\\nO sistema de formas é homoxéneo e estruturado:\\n\\n- **Radio Estándar:** 8px (`0.5rem`). Aplícase a botóns, campos de entrada, tarxetas e colectores de datos.\\n- **Radio de Selección:** Os elementos pequenos como *checkboxes* manteñen un radio reducido de 4px para preservar a nitidez.\\n- **Consistencia:** Evítanse as formas circulares ou orgánicas, agás en avatares e iconas específicas, para manter a linguaxe profesional e arquitectónica do sector enerxético.\\n\\n## Compoñentes\\n\\n- **Botóns:** O botón primario usa un fondo sólido `#10B981` con texto branco. Os botóns secundarios deben ser de estilo \\\"Ghost\\\" ou con bordo fino, priorizando a claridade sobre a saturación.\\n- **Entradas de Datos:** Bordos de 1px en gris neutro que cambian a Emerald ao recibir o foco. As etiquetas (labels) sempre deben estar fóra do campo para maior accesibilidade.\\n- **Tarxetas (Cards):** Deben incluír un espazado interno (padding) de 24px. As cabeceiras das tarxetas poden ter un fondo lixeiramente gris (`#F3F4F6`) para separar o título do contido.\\n- **Visualización de Datos:** Gráficos de liñas e barras utilizando a paleta de esmeraldas e verdes escuros. As lendas de datos deben usar obrigatoriamente JetBrains Mono.\\n- **Indicadores de Estado:** Chips con bordos redondeados e cores semánticas suaves (fondo con 10% de opacidade da cor de estado) para indicar \\\"Activo\\\", \\\"Mantemento\\\" ou \\\"Erro\\\".\",\"colorVariant\":\"FIDELITY\",\"overridePrimaryColor\":\"#10b981\",\"overrideSecondaryColor\":\"#064e3b\",\"overrideNeutralColor\":\"#6b7280\",\"spacingScale\":2,\"typography\":{\"body-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"18px\",\"fontWeight\":\"400\",\"lineHeight\":\"28px\"},\"body-md\":{\"fontFamily\":\"Inter\",\"fontSize\":\"16px\",\"fontWeight\":\"400\",\"lineHeight\":\"24px\"},\"body-sm\":{\"fontFamily\":\"Inter\",\"fontSize\":\"14px\",\"fontWeight\":\"400\",\"lineHeight\":\"20px\"},\"data-lg\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"20px\",\"fontWeight\":\"600\",\"lineHeight\":\"28px\"},\"data-md\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"14px\",\"fontWeight\":\"500\",\"lineHeight\":\"20px\"},\"display-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"48px\",\"fontWeight\":\"700\",\"lineHeight\":\"56px\",\"letterSpacing\":\"-0.02em\"},\"headline-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"32px\",\"fontWeight\":\"600\",\"lineHeight\":\"40px\",\"letterSpacing\":\"-0.01em\"},\"headline-md\":{\"fontFamily\":\"Inter\",\"fontSize\":\"24px\",\"fontWeight\":\"600\",\"lineHeight\":\"32px\"},\"label-caps\":{\"fontFamily\":\"Inter\",\"fontSize\":\"12px\",\"fontWeight\":\"700\",\"lineHeight\":\"16px\",\"letterSpacing\":\"0.05em\"}},\"spacing\":{\"base\":\"8px\",\"gutter\":\"24px\",\"lg\":\"40px\",\"margin-desktop\":\"32px\",\"margin-mobile\":\"16px\",\"md\":\"24px\",\"sm\":\"12px\",\"xl\":\"64px\",\"xs\":\"4px\"},\"headlineFontFamily\":\"Inter\",\"bodyFontFamily\":\"Inter\",\"labelFontFamily\":\"Jetbrains Mono\"},\"deviceType\":\"DESKTOP\",\"screenType\":\"DESIGN\",\"screenMetadata\":{\"agentType\":\"PRO_AGENT\",\"status\":\"COMPLETE\"},\"designSystem\":{\"name\":\"assets/52bcc6685f18479f901be7bc71d0d27d\",\"designSystem\":{\"displayName\":\"EnergyOS Design System\",\"styleGuidelines\":\"## Marca e Estilo\\n\\nEste sistema de deseño proxecta unha imaxe de precisión técnica, eficiencia enerxética e fiabilidade industrial. O obxectivo é transmitir unha sensación de control absoluto sobre datos complexos mediante unha interface limpa e de alta fidelidade. \\n\\nO estilo visual enmárcase nun **Minimalismo Corporativo Moderno**. Prioriza o espazo en branco para reducir a fatiga cognitiva, utilizando sutís contrastes de superficie para delimitar áreas de traballo. A estética busca ser profesional e sofisticada, eliminando calquera elemento ornamental innecesario para que os datos de rendemento enerxético sexan os protagonistas. A linguaxe visual é directa, rigorosa e optimizada para procesos de toma de decisións en contornas B2B.\\n\\n## Deseño e Espazado\\n\\nEste deseño utiliza un **sistema de cuadrícula fixa** para o contido principal en escritorio (máximo 1440px) e un sistema fluído para tabletas e móbiles.\\n\\n- **Ritmo Vertical:** Baseado nunha unidade de 8px. Todos os compoñentes e espazados deben ser múltiplos de 8 para manter a consistencia visual.\\n- **Cuadrícula:** 12 columnas en escritorio con canles (*gutters*) de 24px.\\n- **Adaptabilidade:** \\n    - No móbil, as marxes redúcense a 16px e os elementos adoitan ocupar o ancho total (12 columnas de 12).\\n    - Os espazos entre seccións (padding) redúcense un 50% en pantallas menores de 768px.\\n\\n## Elevación e Profundidade\\n\\nA xerarquía constrúese mediante **capas tonais** e sombras de luz ambiental moi suaves:\\n\\n- **Nivel 0 (Fondo):** `#FAFAFA`. É a base do sistema.\\n- **Nivel 1 (Superficie):** `#FFFFFF`. Utilizado para tarxetas e colectores principais. Inclúe un bordo fino de 1px en cor `#E5E7EB` (Gris 200) para definir a forma sen peso visual.\\n- **Nivel 2 (Elevación):** Sombras extra-difusas con baixa opacidade (4-8%) para elementos interactivos como menús despregables ou modais. \\n\\nNon se utilizan sombras pesadas nin efectos de cristal. A profundidade é sutil, mantendo un perfil técnico e plano que reforza a precisión do software.\\n\\n## Compoñentes\\n\\n- **Botóns:** O botón primario usa un fondo sólido `#10B981` con texto branco. Os botóns secundarios deben ser de estilo \\\"Ghost\\\" ou con bordo fino, priorizando a claridade sobre a saturación.\\n- **Entradas de Datos:** Bordos de 1px en gris neutro que cambian a Emerald ao recibir o foco. As etiquetas (labels) sempre deben estar fóra do campo para maior accesibilidade.\\n- **Tarxetas (Cards):** Deben incluír un espazado interno (padding) de 24px. As cabeceiras das tarxetas poden ter un fondo lixeiramente gris (`#F3F4F6`) para separar o título do contido.\\n- **Visualización de Datos:** Gráficos de liñas e barras utilizando a paleta de esmeraldas e verdes escuros. As lendas de datos deben usar obrigatoriamente JetBrains Mono.\\n- **Indicadores de Estado:** Chips con bordos redondeados e cores semánticas suaves (fondo con 10% de opacidade da cor de estado) para indicar \\\"Activo\\\", \\\"Mantemento\\\" ou \\\"Erro\\\".\",\"theme\":{\"colorMode\":\"LIGHT\",\"font\":\"INTER\",\"roundness\":\"ROUND_EIGHT\",\"customColor\":\"#10b981\",\"headlineFont\":\"INTER\",\"bodyFont\":\"INTER\",\"labelFont\":\"JETBRAINS_MONO\",\"namedColors\":{\"background\":\"#f9f9ff\",\"error\":\"#ba1a1a\",\"error_container\":\"#ffdad6\",\"inverse_on_surface\":\"#ebf1ff\",\"inverse_primary\":\"#4edea3\",\"inverse_surface\":\"#2a313d\",\"on_background\":\"#151c27\",\"on_error\":\"#ffffff\",\"on_error_container\":\"#93000a\",\"on_primary\":\"#ffffff\",\"on_primary_container\":\"#00422b\",\"on_primary_fixed\":\"#002113\",\"on_primary_fixed_variant\":\"#005236\",\"on_secondary\":\"#ffffff\",\"on_secondary_container\":\"#306d58\",\"on_secondary_fixed\":\"#002117\",\"on_secondary_fixed_variant\":\"#0b513d\",\"on_surface\":\"#151c27\",\"on_surface_variant\":\"#3c4a42\",\"on_tertiary\":\"#ffffff\",\"on_tertiary_container\":\"#711419\",\"on_tertiary_fixed\":\"#410005\",\"on_tertiary_fixed_variant\":\"#842225\",\"outline\":\"#6c7a71\",\"outline_variant\":\"#bbcabf\",\"primary\":\"#006c49\",\"primary_container\":\"#10b981\",\"primary_fixed\":\"#6ffbbe\",\"primary_fixed_dim\":\"#4edea3\",\"secondary\":\"#2b6954\",\"secondary_container\":\"#adedd3\",\"secondary_fixed\":\"#b0f0d6\",\"secondary_fixed_dim\":\"#95d3ba\",\"surface\":\"#f9f9ff\",\"surface_bright\":\"#f9f9ff\",\"surface_container\":\"#e7eefe\",\"surface_container_high\":\"#e2e8f8\",\"surface_container_highest\":\"#dce2f3\",\"surface_container_low\":\"#f0f3ff\",\"surface_container_lowest\":\"#ffffff\",\"surface_dim\":\"#d3daea\",\"surface_tint\":\"#006c49\",\"surface_variant\":\"#dce2f3\",\"tertiary\":\"#a43a3a\",\"tertiary_container\":\"#fc7c78\",\"tertiary_fixed\":\"#ffdad7\",\"tertiary_fixed_dim\":\"#ffb3af\"},\"designMd\":\"---\\nname: EnergyOS Design System\\ncolors:\\n  surface: '#f9f9ff'\\n  surface-dim: '#d3daea'\\n  surface-bright: '#f9f9ff'\\n  surface-container-lowest: '#ffffff'\\n  surface-container-low: '#f0f3ff'\\n  surface-container: '#e7eefe'\\n  surface-container-high: '#e2e8f8'\\n  surface-container-highest: '#dce2f3'\\n  on-surface: '#151c27'\\n  on-surface-variant: '#3c4a42'\\n  inverse-surface: '#2a313d'\\n  inverse-on-surface: '#ebf1ff'\\n  outline: '#6c7a71'\\n  outline-variant: '#bbcabf'\\n  surface-tint: '#006c49'\\n  primary: '#006c49'\\n  on-primary: '#ffffff'\\n  primary-container: '#10b981'\\n  on-primary-container: '#00422b'\\n  inverse-primary: '#4edea3'\\n  secondary: '#2b6954'\\n  on-secondary: '#ffffff'\\n  secondary-container: '#adedd3'\\n  on-secondary-container: '#306d58'\\n  tertiary: '#a43a3a'\\n  on-tertiary: '#ffffff'\\n  tertiary-container: '#fc7c78'\\n  on-tertiary-container: '#711419'\\n  error: '#ba1a1a'\\n  on-error: '#ffffff'\\n  error-container: '#ffdad6'\\n  on-error-container: '#93000a'\\n  primary-fixed: '#6ffbbe'\\n  primary-fixed-dim: '#4edea3'\\n  on-primary-fixed: '#002113'\\n  on-primary-fixed-variant: '#005236'\\n  secondary-fixed: '#b0f0d6'\\n  secondary-fixed-dim: '#95d3ba'\\n  on-secondary-fixed: '#002117'\\n  on-secondary-fixed-variant: '#0b513d'\\n  tertiary-fixed: '#ffdad7'\\n  tertiary-fixed-dim: '#ffb3af'\\n  on-tertiary-fixed: '#410005'\\n  on-tertiary-fixed-variant: '#842225'\\n  background: '#f9f9ff'\\n  on-background: '#151c27'\\n  surface-variant: '#dce2f3'\\ntypography:\\n  display-lg:\\n    fontFamily: Inter\\n    fontSize: 48px\\n    fontWeight: '700'\\n    lineHeight: 56px\\n    letterSpacing: -0.02em\\n  headline-lg:\\n    fontFamily: Inter\\n    fontSize: 32px\\n    fontWeight: '600'\\n    lineHeight: 40px\\n    letterSpacing: -0.01em\\n  headline-md:\\n    fontFamily: Inter\\n    fontSize: 24px\\n    fontWeight: '600'\\n    lineHeight: 32px\\n  body-lg:\\n    fontFamily: Inter\\n    fontSize: 18px\\n    fontWeight: '400'\\n    lineHeight: 28px\\n  body-md:\\n    fontFamily: Inter\\n    fontSize: 16px\\n    fontWeight: '400'\\n    lineHeight: 24px\\n  body-sm:\\n    fontFamily: Inter\\n    fontSize: 14px\\n    fontWeight: '400'\\n    lineHeight: 20px\\n  data-lg:\\n    fontFamily: JetBrains Mono\\n    fontSize: 20px\\n    fontWeight: '600'\\n    lineHeight: 28px\\n  data-md:\\n    fontFamily: JetBrains Mono\\n    fontSize: 14px\\n    fontWeight: '500'\\n    lineHeight: 20px\\n  label-caps:\\n    fontFamily: Inter\\n    fontSize: 12px\\n    fontWeight: '700'\\n    lineHeight: 16px\\n    letterSpacing: 0.05em\\nrounded:\\n  sm: 0.25rem\\n  DEFAULT: 0.5rem\\n  md: 0.75rem\\n  lg: 1rem\\n  xl: 1.5rem\\n  full: 9999px\\nspacing:\\n  base: 8px\\n  xs: 4px\\n  sm: 12px\\n  md: 24px\\n  lg: 40px\\n  xl: 64px\\n  gutter: 24px\\n  margin-mobile: 16px\\n  margin-desktop: 32px\\n---\\n\\n## Marca e Estilo\\n\\nEste sistema de deseño proxecta unha imaxe de precisión técnica, eficiencia enerxética e fiabilidade industrial. O obxectivo é transmitir unha sensación de control absoluto sobre datos complexos mediante unha interface limpa e de alta fidelidade. \\n\\nO estilo visual enmárcase nun **Minimalismo Corporativo Moderno**. Prioriza o espazo en branco para reducir a fatiga cognitiva, utilizando sutís contrastes de superficie para delimitar áreas de traballo. A estética busca ser profesional e sofisticada, eliminando calquera elemento ornamental innecesario para que os datos de rendemento enerxético sexan os protagonistas. A linguaxe visual é directa, rigorosa e optimizada para procesos de toma de decisións en contornas B2B.\\n\\n## Cores\\n\\nA paleta de cores está deseñada para reforzar a identidade sostible e tecnolóxica do sector enerxético:\\n\\n- **Primaria (Emerald):** Utilízase para accións principais, estados positivos e indicadores de eficiencia. É o fío condutor da marca.\\n- **Superficie e Fondo:** O uso de `#FAFAFA` para o fondo xeral e `#FFFFFF` para tarxetas e colectores crea unha xerarquía visual por capas sen necesidade de liñas pesadas.\\n- **Funcionais:** O vermello `#EF4444` resérvase estritamente para alertas críticas e erros de sistema, garantindo unha resposta visual inmediata.\\n- **Neutros:** Unha escala de grises azulados para tipografía e bordos sutís, mantendo a sobriedade do sistema.\\n\\n## Tipografía\\n\\nA estratexia tipográfica divide a interface en dous mundos:\\n\\n1.  **Inter (UI e Lectura):** Emprégase para a navegación, textos descritivos e etiquetas de interface. A súa neutralidade facilita a lexibilidade en densidades altas de información.\\n2.  **JetBrains Mono (Datos e Métricas):** Como ferramenta especializada para o sector enerxético, as cifras, coordenadas e valores técnicos móstranse nesta fonte monoespazada. Isto asegura que as columnas de números estean sempre aliñadas, facilitando a comparación rápida de métricas de consumo e produción.\\n\\nOs títulos utilizan un *kerning* lixeiramente pechado para un aspecto máis premium e compacto.\\n\\n## Deseño e Espazado\\n\\nEste deseño utiliza un **sistema de cuadrícula fixa** para o contido principal en escritorio (máximo 1440px) e un sistema fluído para tabletas e móbiles.\\n\\n- **Ritmo Vertical:** Baseado nunha unidade de 8px. Todos os compoñentes e espazados deben ser múltiplos de 8 para manter a consistencia visual.\\n- **Cuadrícula:** 12 columnas en escritorio con canles (*gutters*) de 24px.\\n- **Adaptabilidade:** \\n    - No móbil, as marxes redúcense a 16px e os elementos adoitan ocupar o ancho total (12 columnas de 12).\\n    - Os espazos entre seccións (padding) redúcense un 50% en pantallas menores de 768px.\\n\\n## Elevación e Profundidade\\n\\nA xerarquía constrúese mediante **capas tonais** e sombras de luz ambiental moi suaves:\\n\\n- **Nivel 0 (Fondo):** `#FAFAFA`. É a base do sistema.\\n- **Nivel 1 (Superficie):** `#FFFFFF`. Utilizado para tarxetas e colectores principais. Inclúe un bordo fino de 1px en cor `#E5E7EB` (Gris 200) para definir a forma sen peso visual.\\n- **Nivel 2 (Elevación):** Sombras extra-difusas con baixa opacidade (4-8%) para elementos interactivos como menús despregables ou modais. \\n\\nNon se utilizan sombras pesadas nin efectos de cristal. A profundidade é sutil, mantendo un perfil técnico e plano que reforza a precisión do software.\\n\\n## Formas\\n\\nO sistema de formas é homoxéneo e estruturado:\\n\\n- **Radio Estándar:** 8px (`0.5rem`). Aplícase a botóns, campos de entrada, tarxetas e colectores de datos.\\n- **Radio de Selección:** Os elementos pequenos como *checkboxes* manteñen un radio reducido de 4px para preservar a nitidez.\\n- **Consistencia:** Evítanse as formas circulares ou orgánicas, agás en avatares e iconas específicas, para manter a linguaxe profesional e arquitectónica do sector enerxético.\\n\\n## Compoñentes\\n\\n- **Botóns:** O botón primario usa un fondo sólido `#10B981` con texto branco. Os botóns secundarios deben ser de estilo \\\"Ghost\\\" ou con bordo fino, priorizando a claridade sobre a saturación.\\n- **Entradas de Datos:** Bordos de 1px en gris neutro que cambian a Emerald ao recibir o foco. As etiquetas (labels) sempre deben estar fóra do campo para maior accesibilidade.\\n- **Tarxetas (Cards):** Deben incluír un espazado interno (padding) de 24px. As cabeceiras das tarxetas poden ter un fondo lixeiramente gris (`#F3F4F6`) para separar o título do contido.\\n- **Visualización de Datos:** Gráficos de liñas e barras utilizando a paleta de esmeraldas e verdes escuros. As lendas de datos deben usar obrigatoriamente JetBrains Mono.\\n- **Indicadores de Estado:** Chips con bordos redondeados e cores semánticas suaves (fondo con 10% de opacidade da cor de estado) para indicar \\\"Activo\\\", \\\"Mantemento\\\" ou \\\"Erro\\\".\",\"colorVariant\":\"FIDELITY\",\"overridePrimaryColor\":\"#10b981\",\"overrideSecondaryColor\":\"#064e3b\",\"overrideNeutralColor\":\"#6b7280\",\"spacingScale\":2,\"typography\":{\"body-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"18px\",\"fontWeight\":\"400\",\"lineHeight\":\"28px\"},\"body-md\":{\"fontFamily\":\"Inter\",\"fontSize\":\"16px\",\"fontWeight\":\"400\",\"lineHeight\":\"24px\"},\"body-sm\":{\"fontFamily\":\"Inter\",\"fontSize\":\"14px\",\"fontWeight\":\"400\",\"lineHeight\":\"20px\"},\"data-lg\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"20px\",\"fontWeight\":\"600\",\"lineHeight\":\"28px\"},\"data-md\":{\"fontFamily\":\"JetBrains Mono\",\"fontSize\":\"14px\",\"fontWeight\":\"500\",\"lineHeight\":\"20px\"},\"display-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"48px\",\"fontWeight\":\"700\",\"lineHeight\":\"56px\",\"letterSpacing\":\"-0.02em\"},\"headline-lg\":{\"fontFamily\":\"Inter\",\"fontSize\":\"32px\",\"fontWeight\":\"600\",\"lineHeight\":\"40px\",\"letterSpacing\":\"-0.01em\"},\"headline-md\":{\"fontFamily\":\"Inter\",\"fontSize\":\"24px\",\"fontWeight\":\"600\",\"lineHeight\":\"32px\"},\"label-caps\":{\"fontFamily\":\"Inter\",\"fontSize\":\"12px\",\"fontWeight\":\"700\",\"lineHeight\":\"16px\",\"letterSpacing\":\"0.05em\"}},\"spacing\":{\"base\":\"8px\",\"gutter\":\"24px\",\"lg\":\"40px\",\"margin-desktop\":\"32px\",\"margin-mobile\":\"16px\",\"md\":\"24px\",\"sm\":\"12px\",\"xl\":\"64px\",\"xs\":\"4px\"},\"headlineFontFamily\":\"Inter\",\"bodyFontFamily\":\"Inter\",\"labelFontFamily\":\"Jetbrains Mono\"}},\"version\":\"1\"}}],\"theme\":{}}},{\"text\":\"Xa tes lista a páxina de detalle para o **Apartamento Praia**. \\n\\nDeseñei a interface seguindo a estética Premium B2B que solicitaches, asegurando que a barra lateral e a navegación sexan idénticas ao teu dashboard actual para manter a continuidade. \\n\\n**Puntos clave do deseño:**\\n- **Métricas Críticas:** Destaquei o consumo de **2.1 kWh/hora** usando *JetBrains Mono* e unha etiqueta de \\\"ANÓMALO\\\" en vermello (#EF4444) para captar a atención de inmediato.\\n- **Visualización de Datos:** Incluín unha gráfica de área con pestanas temporais que amosa claramente o pico de consumo que activou a alerta.\\n- **Xestión Proactiva:** Engadín a sección de alertas recentes e o panel de configuración para axustar os limiares de consumo e as notificacións vía Telegram.\\n\\nQue che parece este deseño? Gustaríache que engadise algún outro parámetro de configuración ou un desglose por dispositivos?\"},{\"suggestion\":\"Engadir desglose por electrodomésticos\"},{\"suggestion\":\"Simular modo escuro para esta páxina\"},{\"suggestion\":\"Axustar o gráfico a 24 horas\"}]}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "outputComponents": [
+        {
+          "designSystem": {
+            "designSystem": {
+              "displayName": "EnergyOS Design System",
+              "styleGuidelines": "## Marca e Estilo\n\nEste sistema de deseño proxecta unha imaxe de precisión técnica, eficiencia enerxética e fiabilidade industrial. O obxectivo é transmitir unha sensación de control absoluto sobre datos complexos mediante unha interface limpa e de alta fidelidade. \n\nO estilo visual enmárcase nun **Minimalismo Corporativo Moderno**. Prioriza o espazo en branco para reducir a fatiga cognitiva, utilizando sutís contrastes de superficie para delimitar áreas de traballo. A estética busca ser profesional e sofisticada, eliminando calquera elemento ornamental innecesario para que os datos de rendemento enerxético sexan os protagonistas. A linguaxe visual é directa, rigorosa e optimizada para procesos de toma de decisións en contornas B2B.\n\n## Deseño e Espazado\n\nEste deseño utiliza un **sistema de cuadrícula fixa** para o contido principal en escritorio (máximo 1440px) e un sistema fluído para tabletas e móbiles.\n\n- **Ritmo Vertical:** Baseado nunha unidade de 8px. Todos os compoñentes e espazados deben ser múltiplos de 8 para manter a consistencia visual.\n- **Cuadrícula:** 12 columnas en escritorio con canles (*gutters*) de 24px.\n- **Adaptabilidade:** \n    - No móbil, as marxes redúcense a 16px e os elementos adoitan ocupar o ancho total (12 columnas de 12).\n    - Os espazos entre seccións (padding) redúcense un 50% en pantallas menores de 768px.\n\n## Elevación e Profundidade\n\nA xerarquía constrúese mediante **capas tonais** e sombras de luz ambiental moi suaves:\n\n- **Nivel 0 (Fondo):** `#FAFAFA`. É a base do sistema.\n- **Nivel 1 (Superficie):** `#FFFFFF`. Utilizado para tarxetas e colectores principais. Inclúe un bordo fino de 1px en cor `#E5E7EB` (Gris 200) para definir a forma sen peso visual.\n- **Nivel 2 (Elevación):** Sombras extra-difusas con baixa opacidade (4-8%) para elementos interactivos como menús despregables ou modais. \n\nNon se utilizan sombras pesadas nin efectos de cristal. A profundidade é sutil, mantendo un perfil técnico e plano que reforza a precisión do software.\n\n## Compoñentes\n\n- **Botóns:** O botón primario usa un fondo sólido `#10B981` con texto branco. Os botóns secundarios deben ser de estilo \"Ghost\" ou con bordo fino, priorizando a claridade sobre a saturación.\n- **Entradas de Datos:** Bordos de 1px en gris neutro que cambian a Emerald ao recibir o foco. As etiquetas (labels) sempre deben estar fóra do campo para maior accesibilidade.\n- **Tarxetas (Cards):** Deben incluír un espazado interno (padding) de 24px. As cabeceiras das tarxetas poden ter un fondo lixeiramente gris (`#F3F4F6`) para separar o título do contido.\n- **Visualización de Datos:** Gráficos de liñas e barras utilizando a paleta de esmeraldas e verdes escuros. As lendas de datos deben usar obrigatoriamente JetBrains Mono.\n- **Indicadores de Estado:** Chips con bordos redondeados e cores semánticas suaves (fondo con 10% de opacidade da cor de estado) para indicar \"Activo\", \"Mantemento\" ou \"Erro\".",
+              "theme": {
+                "bodyFont": "INTER",
+                "bodyFontFamily": "Inter",
+                "colorMode": "LIGHT",
+                "colorVariant": "FIDELITY",
+                "customColor": "#10b981",
+                "designMd": "---\nname: EnergyOS Design System\ncolors:\n  surface: '#f9f9ff'\n  surface-dim: '#d3daea'\n  surface-bright: '#f9f9ff'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f0f3ff'\n  surface-container: '#e7eefe'\n  surface-container-high: '#e2e8f8'\n  surface-container-highest: '#dce2f3'\n  on-surface: '#151c27'\n  on-surface-variant: '#3c4a42'\n  inverse-surface: '#2a313d'\n  inverse-on-surface: '#ebf1ff'\n  outline: '#6c7a71'\n  outline-variant: '#bbcabf'\n  surface-tint: '#006c49'\n  primary: '#006c49'\n  on-primary: '#ffffff'\n  primary-container: '#10b981'\n  on-primary-container: '#00422b'\n  inverse-primary: '#4edea3'\n  secondary: '#2b6954'\n  on-secondary: '#ffffff'\n  secondary-container: '#adedd3'\n  on-secondary-container: '#306d58'\n  tertiary: '#a43a3a'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#fc7c78'\n  on-tertiary-container: '#711419'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#6ffbbe'\n  primary-fixed-dim: '#4edea3'\n  on-primary-fixed: '#002113'\n  on-primary-fixed-variant: '#005236'\n  secondary-fixed: '#b0f0d6'\n  secondary-fixed-dim: '#95d3ba'\n  on-secondary-fixed: '#002117'\n  on-secondary-fixed-variant: '#0b513d'\n  tertiary-fixed: '#ffdad7'\n  tertiary-fixed-dim: '#ffb3af'\n  on-tertiary-fixed: '#410005'\n  on-tertiary-fixed-variant: '#842225'\n  background: '#f9f9ff'\n  on-background: '#151c27'\n  surface-variant: '#dce2f3'\ntypography:\n  display-lg:\n    fontFamily: Inter\n    fontSize: 48px\n    fontWeight: '700'\n    lineHeight: 56px\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Inter\n    fontSize: 32px\n    fontWeight: '600'\n    lineHeight: 40px\n    letterSpacing: -0.01em\n  headline-md:\n    fontFamily: Inter\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: 28px\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: 24px\n  body-sm:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 20px\n  data-lg:\n    fontFamily: JetBrains Mono\n    fontSize: 20px\n    fontWeight: '600'\n    lineHeight: 28px\n  data-md:\n    fontFamily: JetBrains Mono\n    fontSize: 14px\n    fontWeight: '500'\n    lineHeight: 20px\n  label-caps:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: '700'\n    lineHeight: 16px\n    letterSpacing: 0.05em\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  base: 8px\n  xs: 4px\n  sm: 12px\n  md: 24px\n  lg: 40px\n  xl: 64px\n  gutter: 24px\n  margin-mobile: 16px\n  margin-desktop: 32px\n---\n\n## Marca e Estilo\n\nEste sistema de deseño proxecta unha imaxe de precisión técnica, eficiencia enerxética e fiabilidade industrial. O obxectivo é transmitir unha sensación de control absoluto sobre datos complexos mediante unha interface limpa e de alta fidelidade. \n\nO estilo visual enmárcase nun **Minimalismo Corporativo Moderno**. Prioriza o espazo en branco para reducir a fatiga cognitiva, utilizando sutís contrastes de superficie para delimitar áreas de traballo. A estética busca ser profesional e sofisticada, eliminando calquera elemento ornamental innecesario para que os datos de rendemento enerxético sexan os protagonistas. A linguaxe visual é directa, rigorosa e optimizada para procesos de toma de decisións en contornas B2B.\n\n## Cores\n\nA paleta de cores está deseñada para reforzar a identidade sostible e tecnolóxica do sector enerxético:\n\n- **Primaria (Emerald):** Utilízase para accións principais, estados positivos e indicadores de eficiencia. É o fío condutor da marca.\n- **Superficie e Fondo:** O uso de `#FAFAFA` para o fondo xeral e `#FFFFFF` para tarxetas e colectores crea unha xerarquía visual por capas sen necesidade de liñas pesadas.\n- **Funcionais:** O vermello `#EF4444` resérvase estritamente para alertas críticas e erros de sistema, garantindo unha resposta visual inmediata.\n- **Neutros:** Unha escala de grises azulados para tipografía e bordos sutís, mantendo a sobriedade do sistema.\n\n## Tipografía\n\nA estratexia tipográfica divide a interface en dous mundos:\n\n1.  **Inter (UI e Lectura):** Emprégase para a navegación, textos descritivos e etiquetas de interface. A súa neutralidade facilita a lexibilidade en densidades altas de información.\n2.  **JetBrains Mono (Datos e Métricas):** Como ferramenta especializada para o sector enerxético, as cifras, coordenadas e valores técnicos móstranse nesta fonte monoespazada. Isto asegura que as columnas de números estean sempre aliñadas, facilitando a comparación rápida de métricas de consumo e produción.\n\nOs títulos utilizan un *kerning* lixeiramente pechado para un aspecto máis premium e compacto.\n\n## Deseño e Espazado\n\nEste deseño utiliza un **sistema de cuadrícula fixa** para o contido principal en escritorio (máximo 1440px) e un sistema fluído para tabletas e móbiles.\n\n- **Ritmo Vertical:** Baseado nunha unidade de 8px. Todos os compoñentes e espazados deben ser múltiplos de 8 para manter a consistencia visual.\n- **Cuadrícula:** 12 columnas en escritorio con canles (*gutters*) de 24px.\n- **Adaptabilidade:** \n    - No móbil, as marxes redúcense a 16px e os elementos adoitan ocupar o ancho total (12 columnas de 12).\n    - Os espazos entre seccións (padding) redúcense un 50% en pantallas menores de 768px.\n\n## Elevación e Profundidade\n\nA xerarquía constrúese mediante **capas tonais** e sombras de luz ambiental moi suaves:\n\n- **Nivel 0 (Fondo):** `#FAFAFA`. É a base do sistema.\n- **Nivel 1 (Superficie):** `#FFFFFF`. Utilizado para tarxetas e colectores principais. Inclúe un bordo fino de 1px en cor `#E5E7EB` (Gris 200) para definir a forma sen peso visual.\n- **Nivel 2 (Elevación):** Sombras extra-difusas con baixa opacidade (4-8%) para elementos interactivos como menús despregables ou modais. \n\nNon se utilizan sombras pesadas nin efectos de cristal. A profundidade é sutil, mantendo un perfil técnico e plano que reforza a precisión do software.\n\n## Formas\n\nO sistema de formas é homoxéneo e estruturado:\n\n- **Radio Estándar:** 8px (`0.5rem`). Aplícase a botóns, campos de entrada, tarxetas e colectores de datos.\n- **Radio de Selección:** Os elementos pequenos como *checkboxes* manteñen un radio reducido de 4px para preservar a nitidez.\n- **Consistencia:** Evítanse as formas circulares ou orgánicas, agás en avatares e iconas específicas, para manter a linguaxe profesional e arquitectónica do sector enerxético.\n\n## Compoñentes\n\n- **Botóns:** O botón primario usa un fondo sólido `#10B981` con texto branco. Os botóns secundarios deben ser de estilo \"Ghost\" ou con bordo fino, priorizando a claridade sobre a saturación.\n- **Entradas de Datos:** Bordos de 1px en gris neutro que cambian a Emerald ao recibir o foco. As etiquetas (labels) sempre deben estar fóra do campo para maior accesibilidade.\n- **Tarxetas (Cards):** Deben incluír un espazado interno (padding) de 24px. As cabeceiras das tarxetas poden ter un fondo lixeiramente gris (`#F3F4F6`) para separar o título do contido.\n- **Visualización de Datos:** Gráficos de liñas e barras utilizando a paleta de esmeraldas e verdes escuros. As lendas de datos deben usar obrigatoriamente JetBrains Mono.\n- **Indicadores de Estado:** Chips con bordos redondeados e cores semánticas suaves (fondo con 10% de opacidade da cor de estado) para indicar \"Activo\", \"Mantemento\" ou \"Erro\".",
+                "font": "INTER",
+                "headlineFont": "INTER",
+                "headlineFontFamily": "Inter",
+                "labelFont": "JETBRAINS_MONO",
+                "labelFontFamily": "Jetbrains Mono",
+                "namedColors": {
+                  "background": "#f9f9ff",
+                  "error": "#ba1a1a",
+                  "error_container": "#ffdad6",
+                  "inverse_on_surface": "#ebf1ff",
+                  "inverse_primary": "#4edea3",
+                  "inverse_surface": "#2a313d",
+                  "on_background": "#151c27",
+                  "on_error": "#ffffff",
+                  "on_error_container": "#93000a",
+                  "on_primary": "#ffffff",
+                  "on_primary_container": "#00422b",
+                  "on_primary_fixed": "#002113",
+                  "on_primary_fixed_variant": "#005236",
+                  "on_secondary": "#ffffff",
+                  "on_secondary_container": "#306d58",
+                  "on_secondary_fixed": "#002117",
+                  "on_secondary_fixed_variant": "#0b513d",
+                  "on_surface": "#151c27",
+                  "on_surface_variant": "#3c4a42",
+                  "on_tertiary": "#ffffff",
+                  "on_tertiary_container": "#711419",
+                  "on_tertiary_fixed": "#410005",
+                  "on_tertiary_fixed_variant": "#842225",
+                  "outline": "#6c7a71",
+                  "outline_variant": "#bbcabf",
+                  "primary": "#006c49",
+                  "primary_container": "#10b981",
+                  "primary_fixed": "#6ffbbe",
+                  "primary_fixed_dim": "#4edea3",
+                  "secondary": "#2b6954",
+                  "secondary_container": "#adedd3",
+                  "secondary_fixed": "#b0f0d6",
+                  "secondary_fixed_dim": "#95d3ba",
+                  "surface": "#f9f9ff",
+                  "surface_bright": "#f9f9ff",
+                  "surface_container": "#e7eefe",
+                  "surface_container_high": "#e2e8f8",
+                  "surface_container_highest": "#dce2f3",
+                  "surface_container_low": "#f0f3ff",
+                  "surface_container_lowest": "#ffffff",
+                  "surface_dim": "#d3daea",
+                  "surface_tint": "#006c49",
+                  "surface_variant": "#dce2f3",
+                  "tertiary": "#a43a3a",
+                  "tertiary_container": "#fc7c78",
+                  "tertiary_fixed": "#ffdad7",
+                  "tertiary_fixed_dim": "#ffb3af"
+                },
+                "overrideNeutralColor": "#6b7280",
+                "overridePrimaryColor": "#10b981",
+                "overrideSecondaryColor": "#064e3b",
+                "roundness": "ROUND_EIGHT",
+                "spacing": {
+                  "base": "8px",
+                  "gutter": "24px",
+                  "lg": "40px",
+                  "margin-desktop": "32px",
+                  "margin-mobile": "16px",
+                  "md": "24px",
+                  "sm": "12px",
+                  "xl": "64px",
+                  "xs": "4px"
+                },
+                "spacingScale": 2,
+                "typography": {
+                  "body-lg": {
+                    "fontFamily": "Inter",
+                    "fontSize": "18px",
+                    "fontWeight": "400",
+                    "lineHeight": "28px"
+                  },
+                  "body-md": {
+                    "fontFamily": "Inter",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "24px"
+                  },
+                  "body-sm": {
+                    "fontFamily": "Inter",
+                    "fontSize": "14px",
+                    "fontWeight": "400",
+                    "lineHeight": "20px"
+                  },
+                  "data-lg": {
+                    "fontFamily": "JetBrains Mono",
+                    "fontSize": "20px",
+                    "fontWeight": "600",
+                    "lineHeight": "28px"
+                  },
+                  "data-md": {
+                    "fontFamily": "JetBrains Mono",
+                    "fontSize": "14px",
+                    "fontWeight": "500",
+                    "lineHeight": "20px"
+                  },
+                  "display-lg": {
+                    "fontFamily": "Inter",
+                    "fontSize": "48px",
+                    "fontWeight": "700",
+                    "letterSpacing": "-0.02em",
+                    "lineHeight": "56px"
+                  },
+                  "headline-lg": {
+                    "fontFamily": "Inter",
+                    "fontSize": "32px",
+                    "fontWeight": "600",
+                    "letterSpacing": "-0.01em",
+                    "lineHeight": "40px"
+                  },
+                  "headline-md": {
+                    "fontFamily": "Inter",
+                    "fontSize": "24px",
+                    "fontWeight": "600",
+                    "lineHeight": "32px"
+                  },
+                  "label-caps": {
+                    "fontFamily": "Inter",
+                    "fontSize": "12px",
+                    "fontWeight": "700",
+                    "letterSpacing": "0.05em",
+                    "lineHeight": "16px"
+                  }
+                }
+              }
+            },
+            "name": "assets/52bcc6685f18479f901be7bc71d0d27d",
+            "version": "1"
+          }
+        },
+        {
+          "design": {
+            "screens": [
+              {
+                "designSystem": {
+                  "designSystem": {
+                    "displayName": "EnergyOS Design System",
+                    "styleGuidelines": "## Marca e Estilo\n\nEste sistema de deseño proxecta unha imaxe de precisión técnica, eficiencia enerxética e fiabilidade industrial. O obxectivo é transmitir unha sensación de control absoluto sobre datos complexos mediante unha interface limpa e de alta fidelidade. \n\nO estilo visual enmárcase nun **Minimalismo Corporativo Moderno**. Prioriza o espazo en branco para reducir a fatiga cognitiva, utilizando sutís contrastes de superficie para delimitar áreas de traballo. A estética busca ser profesional e sofisticada, eliminando calquera elemento ornamental innecesario para que os datos de rendemento enerxético sexan os protagonistas. A linguaxe visual é directa, rigorosa e optimizada para procesos de toma de decisións en contornas B2B.\n\n## Deseño e Espazado\n\nEste deseño utiliza un **sistema de cuadrícula fixa** para o contido principal en escritorio (máximo 1440px) e un sistema fluído para tabletas e móbiles.\n\n- **Ritmo Vertical:** Baseado nunha unidade de 8px. Todos os compoñentes e espazados deben ser múltiplos de 8 para manter a consistencia visual.\n- **Cuadrícula:** 12 columnas en escritorio con canles (*gutters*) de 24px.\n- **Adaptabilidade:** \n    - No móbil, as marxes redúcense a 16px e os elementos adoitan ocupar o ancho total (12 columnas de 12).\n    - Os espazos entre seccións (padding) redúcense un 50% en pantallas menores de 768px.\n\n## Elevación e Profundidade\n\nA xerarquía constrúese mediante **capas tonais** e sombras de luz ambiental moi suaves:\n\n- **Nivel 0 (Fondo):** `#FAFAFA`. É a base do sistema.\n- **Nivel 1 (Superficie):** `#FFFFFF`. Utilizado para tarxetas e colectores principais. Inclúe un bordo fino de 1px en cor `#E5E7EB` (Gris 200) para definir a forma sen peso visual.\n- **Nivel 2 (Elevación):** Sombras extra-difusas con baixa opacidade (4-8%) para elementos interactivos como menús despregables ou modais. \n\nNon se utilizan sombras pesadas nin efectos de cristal. A profundidade é sutil, mantendo un perfil técnico e plano que reforza a precisión do software.\n\n## Compoñentes\n\n- **Botóns:** O botón primario usa un fondo sólido `#10B981` con texto branco. Os botóns secundarios deben ser de estilo \"Ghost\" ou con bordo fino, priorizando a claridade sobre a saturación.\n- **Entradas de Datos:** Bordos de 1px en gris neutro que cambian a Emerald ao recibir o foco. As etiquetas (labels) sempre deben estar fóra do campo para maior accesibilidade.\n- **Tarxetas (Cards):** Deben incluír un espazado interno (padding) de 24px. As cabeceiras das tarxetas poden ter un fondo lixeiramente gris (`#F3F4F6`) para separar o título do contido.\n- **Visualización de Datos:** Gráficos de liñas e barras utilizando a paleta de esmeraldas e verdes escuros. As lendas de datos deben usar obrigatoriamente JetBrains Mono.\n- **Indicadores de Estado:** Chips con bordos redondeados e cores semánticas suaves (fondo con 10% de opacidade da cor de estado) para indicar \"Activo\", \"Mantemento\" ou \"Erro\".",
+                    "theme": {
+                      "bodyFont": "INTER",
+                      "bodyFontFamily": "Inter",
+                      "colorMode": "LIGHT",
+                      "colorVariant": "FIDELITY",
+                      "customColor": "#10b981",
+                      "designMd": "---\nname: EnergyOS Design System\ncolors:\n  surface: '#f9f9ff'\n  surface-dim: '#d3daea'\n  surface-bright: '#f9f9ff'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f0f3ff'\n  surface-container: '#e7eefe'\n  surface-container-high: '#e2e8f8'\n  surface-container-highest: '#dce2f3'\n  on-surface: '#151c27'\n  on-surface-variant: '#3c4a42'\n  inverse-surface: '#2a313d'\n  inverse-on-surface: '#ebf1ff'\n  outline: '#6c7a71'\n  outline-variant: '#bbcabf'\n  surface-tint: '#006c49'\n  primary: '#006c49'\n  on-primary: '#ffffff'\n  primary-container: '#10b981'\n  on-primary-container: '#00422b'\n  inverse-primary: '#4edea3'\n  secondary: '#2b6954'\n  on-secondary: '#ffffff'\n  secondary-container: '#adedd3'\n  on-secondary-container: '#306d58'\n  tertiary: '#a43a3a'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#fc7c78'\n  on-tertiary-container: '#711419'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#6ffbbe'\n  primary-fixed-dim: '#4edea3'\n  on-primary-fixed: '#002113'\n  on-primary-fixed-variant: '#005236'\n  secondary-fixed: '#b0f0d6'\n  secondary-fixed-dim: '#95d3ba'\n  on-secondary-fixed: '#002117'\n  on-secondary-fixed-variant: '#0b513d'\n  tertiary-fixed: '#ffdad7'\n  tertiary-fixed-dim: '#ffb3af'\n  on-tertiary-fixed: '#410005'\n  on-tertiary-fixed-variant: '#842225'\n  background: '#f9f9ff'\n  on-background: '#151c27'\n  surface-variant: '#dce2f3'\ntypography:\n  display-lg:\n    fontFamily: Inter\n    fontSize: 48px\n    fontWeight: '700'\n    lineHeight: 56px\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Inter\n    fontSize: 32px\n    fontWeight: '600'\n    lineHeight: 40px\n    letterSpacing: -0.01em\n  headline-md:\n    fontFamily: Inter\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: 28px\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: 24px\n  body-sm:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 20px\n  data-lg:\n    fontFamily: JetBrains Mono\n    fontSize: 20px\n    fontWeight: '600'\n    lineHeight: 28px\n  data-md:\n    fontFamily: JetBrains Mono\n    fontSize: 14px\n    fontWeight: '500'\n    lineHeight: 20px\n  label-caps:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: '700'\n    lineHeight: 16px\n    letterSpacing: 0.05em\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  base: 8px\n  xs: 4px\n  sm: 12px\n  md: 24px\n  lg: 40px\n  xl: 64px\n  gutter: 24px\n  margin-mobile: 16px\n  margin-desktop: 32px\n---\n\n## Marca e Estilo\n\nEste sistema de deseño proxecta unha imaxe de precisión técnica, eficiencia enerxética e fiabilidade industrial. O obxectivo é transmitir unha sensación de control absoluto sobre datos complexos mediante unha interface limpa e de alta fidelidade. \n\nO estilo visual enmárcase nun **Minimalismo Corporativo Moderno**. Prioriza o espazo en branco para reducir a fatiga cognitiva, utilizando sutís contrastes de superficie para delimitar áreas de traballo. A estética busca ser profesional e sofisticada, eliminando calquera elemento ornamental innecesario para que os datos de rendemento enerxético sexan os protagonistas. A linguaxe visual é directa, rigorosa e optimizada para procesos de toma de decisións en contornas B2B.\n\n## Cores\n\nA paleta de cores está deseñada para reforzar a identidade sostible e tecnolóxica do sector enerxético:\n\n- **Primaria (Emerald):** Utilízase para accións principais, estados positivos e indicadores de eficiencia. É o fío condutor da marca.\n- **Superficie e Fondo:** O uso de `#FAFAFA` para o fondo xeral e `#FFFFFF` para tarxetas e colectores crea unha xerarquía visual por capas sen necesidade de liñas pesadas.\n- **Funcionais:** O vermello `#EF4444` resérvase estritamente para alertas críticas e erros de sistema, garantindo unha resposta visual inmediata.\n- **Neutros:** Unha escala de grises azulados para tipografía e bordos sutís, mantendo a sobriedade do sistema.\n\n## Tipografía\n\nA estratexia tipográfica divide a interface en dous mundos:\n\n1.  **Inter (UI e Lectura):** Emprégase para a navegación, textos descritivos e etiquetas de interface. A súa neutralidade facilita a lexibilidade en densidades altas de información.\n2.  **JetBrains Mono (Datos e Métricas):** Como ferramenta especializada para o sector enerxético, as cifras, coordenadas e valores técnicos móstranse nesta fonte monoespazada. Isto asegura que as columnas de números estean sempre aliñadas, facilitando a comparación rápida de métricas de consumo e produción.\n\nOs títulos utilizan un *kerning* lixeiramente pechado para un aspecto máis premium e compacto.\n\n## Deseño e Espazado\n\nEste deseño utiliza un **sistema de cuadrícula fixa** para o contido principal en escritorio (máximo 1440px) e un sistema fluído para tabletas e móbiles.\n\n- **Ritmo Vertical:** Baseado nunha unidade de 8px. Todos os compoñentes e espazados deben ser múltiplos de 8 para manter a consistencia visual.\n- **Cuadrícula:** 12 columnas en escritorio con canles (*gutters*) de 24px.\n- **Adaptabilidade:** \n    - No móbil, as marxes redúcense a 16px e os elementos adoitan ocupar o ancho total (12 columnas de 12).\n    - Os espazos entre seccións (padding) redúcense un 50% en pantallas menores de 768px.\n\n## Elevación e Profundidade\n\nA xerarquía constrúese mediante **capas tonais** e sombras de luz ambiental moi suaves:\n\n- **Nivel 0 (Fondo):** `#FAFAFA`. É a base do sistema.\n- **Nivel 1 (Superficie):** `#FFFFFF`. Utilizado para tarxetas e colectores principais. Inclúe un bordo fino de 1px en cor `#E5E7EB` (Gris 200) para definir a forma sen peso visual.\n- **Nivel 2 (Elevación):** Sombras extra-difusas con baixa opacidade (4-8%) para elementos interactivos como menús despregables ou modais. \n\nNon se utilizan sombras pesadas nin efectos de cristal. A profundidade é sutil, mantendo un perfil técnico e plano que reforza a precisión do software.\n\n## Formas\n\nO sistema de formas é homoxéneo e estruturado:\n\n- **Radio Estándar:** 8px (`0.5rem`). Aplícase a botóns, campos de entrada, tarxetas e colectores de datos.\n- **Radio de Selección:** Os elementos pequenos como *checkboxes* manteñen un radio reducido de 4px para preservar a nitidez.\n- **Consistencia:** Evítanse as formas circulares ou orgánicas, agás en avatares e iconas específicas, para manter a linguaxe profesional e arquitectónica do sector enerxético.\n\n## Compoñentes\n\n- **Botóns:** O botón primario usa un fondo sólido `#10B981` con texto branco. Os botóns secundarios deben ser de estilo \"Ghost\" ou con bordo fino, priorizando a claridade sobre a saturación.\n- **Entradas de Datos:** Bordos de 1px en gris neutro que cambian a Emerald ao recibir o foco. As etiquetas (labels) sempre deben estar fóra do campo para maior accesibilidade.\n- **Tarxetas (Cards):** Deben incluír un espazado interno (padding) de 24px. As cabeceiras das tarxetas poden ter un fondo lixeiramente gris (`#F3F4F6`) para separar o título do contido.\n- **Visualización de Datos:** Gráficos de liñas e barras utilizando a paleta de esmeraldas e verdes escuros. As lendas de datos deben usar obrigatoriamente JetBrains Mono.\n- **Indicadores de Estado:** Chips con bordos redondeados e cores semánticas suaves (fondo con 10% de opacidade da cor de estado) para indicar \"Activo\", \"Mantemento\" ou \"Erro\".",
+                      "font": "INTER",
+                      "headlineFont": "INTER",
+                      "headlineFontFamily": "Inter",
+                      "labelFont": "JETBRAINS_MONO",
+                      "labelFontFamily": "Jetbrains Mono",
+                      "namedColors": {
+                        "background": "#f9f9ff",
+                        "error": "#ba1a1a",
+                        "error_container": "#ffdad6",
+                        "inverse_on_surface": "#ebf1ff",
+                        "inverse_primary": "#4edea3",
+                        "inverse_surface": "#2a313d",
+                        "on_background": "#151c27",
+                        "on_error": "#ffffff",
+                        "on_error_container": "#93000a",
+                        "on_primary": "#ffffff",
+                        "on_primary_container": "#00422b",
+                        "on_primary_fixed": "#002113",
+                        "on_primary_fixed_variant": "#005236",
+                        "on_secondary": "#ffffff",
+                        "on_secondary_container": "#306d58",
+                        "on_secondary_fixed": "#002117",
+                        "on_secondary_fixed_variant": "#0b513d",
+                        "on_surface": "#151c27",
+                        "on_surface_variant": "#3c4a42",
+                        "on_tertiary": "#ffffff",
+                        "on_tertiary_container": "#711419",
+                        "on_tertiary_fixed": "#410005",
+                        "on_tertiary_fixed_variant": "#842225",
+                        "outline": "#6c7a71",
+                        "outline_variant": "#bbcabf",
+                        "primary": "#006c49",
+                        "primary_container": "#10b981",
+                        "primary_fixed": "#6ffbbe",
+                        "primary_fixed_dim": "#4edea3",
+                        "secondary": "#2b6954",
+                        "secondary_container": "#adedd3",
+                        "secondary_fixed": "#b0f0d6",
+                        "secondary_fixed_dim": "#95d3ba",
+                        "surface": "#f9f9ff",
+                        "surface_bright": "#f9f9ff",
+                        "surface_container": "#e7eefe",
+                        "surface_container_high": "#e2e8f8",
+                        "surface_container_highest": "#dce2f3",
+                        "surface_container_low": "#f0f3ff",
+                        "surface_container_lowest": "#ffffff",
+                        "surface_dim": "#d3daea",
+                        "surface_tint": "#006c49",
+                        "surface_variant": "#dce2f3",
+                        "tertiary": "#a43a3a",
+                        "tertiary_container": "#fc7c78",
+                        "tertiary_fixed": "#ffdad7",
+                        "tertiary_fixed_dim": "#ffb3af"
+                      },
+                      "overrideNeutralColor": "#6b7280",
+                      "overridePrimaryColor": "#10b981",
+                      "overrideSecondaryColor": "#064e3b",
+                      "roundness": "ROUND_EIGHT",
+                      "spacing": {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "lg": "40px",
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "xl": "64px",
+                        "xs": "4px"
+                      },
+                      "spacingScale": 2,
+                      "typography": {
+                        "body-lg": {
+                          "fontFamily": "Inter",
+                          "fontSize": "18px",
+                          "fontWeight": "400",
+                          "lineHeight": "28px"
+                        },
+                        "body-md": {
+                          "fontFamily": "Inter",
+                          "fontSize": "16px",
+                          "fontWeight": "400",
+                          "lineHeight": "24px"
+                        },
+                        "body-sm": {
+                          "fontFamily": "Inter",
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "lineHeight": "20px"
+                        },
+                        "data-lg": {
+                          "fontFamily": "JetBrains Mono",
+                          "fontSize": "20px",
+                          "fontWeight": "600",
+                          "lineHeight": "28px"
+                        },
+                        "data-md": {
+                          "fontFamily": "JetBrains Mono",
+                          "fontSize": "14px",
+                          "fontWeight": "500",
+                          "lineHeight": "20px"
+                        },
+                        "display-lg": {
+                          "fontFamily": "Inter",
+                          "fontSize": "48px",
+                          "fontWeight": "700",
+                          "letterSpacing": "-0.02em",
+                          "lineHeight": "56px"
+                        },
+                        "headline-lg": {
+                          "fontFamily": "Inter",
+                          "fontSize": "32px",
+                          "fontWeight": "600",
+                          "letterSpacing": "-0.01em",
+                          "lineHeight": "40px"
+                        },
+                        "headline-md": {
+                          "fontFamily": "Inter",
+                          "fontSize": "24px",
+                          "fontWeight": "600",
+                          "lineHeight": "32px"
+                        },
+                        "label-caps": {
+                          "fontFamily": "Inter",
+                          "fontSize": "12px",
+                          "fontWeight": "700",
+                          "letterSpacing": "0.05em",
+                          "lineHeight": "16px"
+                        }
+                      }
+                    }
+                  },
+                  "name": "assets/52bcc6685f18479f901be7bc71d0d27d",
+                  "version": "1"
+                },
+                "deviceType": "DESKTOP",
+                "generatedBy": "figaro_agent",
+                "height": "2508",
+                "htmlCode": {
+                  "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzM1M2QzZjMyNjMwMDQ0MDQ5MjdlODYwOGRlODc1MmNmEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMjQ1NjQ5MjA2MzA4MzExMjIwMA&filename=&opi=96797242",
+                  "mimeType": "text/html",
+                  "name": "projects/12456492063083112200/files/c0a35c39d68f4d9ab49604bcf41ea5e6"
+                },
+                "id": "ec15862b00874a4a84bde2e33fa732c1",
+                "name": "projects/12456492063083112200/screens/ec15862b00874a4a84bde2e33fa732c1",
+                "prompt": "Create a high-fidelity desktop property detail page for \"Apartamento Praia — Airbnb\". \nLanguage: Galician.\nLayout: Sidebar navigation (SideNavBar) on the left, main content area with a top bar (TopNavBar).\n\nContent:\n- Breadcrumb/Back link: \"← Volver\" (links to properties list).\n- Header: Title \"🏠 Apartamento Praia — Airbnb\".\n\nMain Dashboard Grid:\n1. Large Consumption Card (Top Left): \n   - Value: \"2.1 kWh/hora\" in JetBrains Mono font.\n   - Badge: Red/Danger \"ANÓMALO\".\n   - Subtext: \"Consumo 7x superior ao normal\".\n   - Aesthetic: Clean, white surface, prominent metric.\n\n2. Consumption Chart Card (Top Right):\n   - Tabs: [HOXE, 7 DÍAS (Active), 30 DÍAS, ANO].\n   - Chart: A large area chart showing energy consumption over time with a clear spike. \n   - Palette: Use #10B981 for normal, #EF4444 for the spike.\n\n3. Recent Alerts List (Bottom Left):\n   - Title: \"Alertas recentes\".\n   - Item 1: \"Hoxe 14:32 — Consumo anómalo\" (Critical icon).\n   - Item 2: \"Onte 23:15 — Consumo elevado\" (Warning icon).\n   - Item 3: \"Onte 22:00 — Normalizado\" (Success icon).\n\n4. Configuration Card (Bottom Right):\n   - Title: \"Configuración de alertas\".\n   - Field: Threshold input labeled \"Limiar de consumo\" with value \"0.5 kWh/hora\".\n   - Field: Notification channel dropdown with \"Telegram\" selected.\n   - Button: Primary green (#10B981) button labeled \"Gardar cambios\".\n\nVisual Style: Premium B2B SaaS, light mode, background #FAFAFA, surfaces #FFFFFF, Inter typography, 8px rounding. Match the sidebar style from the dashboard.",
+                "screenMetadata": {
+                  "agentType": "PRO_AGENT",
+                  "status": "COMPLETE"
+                },
+                "screenType": "DESIGN",
+                "screenshot": {
+                  "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ugjajkuw9wOdmfgTUY-Bfcp29P3Vt3Kv0jtggeM44xwAXKNJOLX34x4OfCyob230_Sw4fF2vAqpqnOcGbPlNFTjYHrcL9dkPEJXWip7rfvhJWeVnj_9KUiUFfGsZZkfNrf19mYdagrhcWy8BOB7k9f30P9qKJCcOFrom_ANz2bCLV56wpiRsLYvlSm19lp-AIdRm4H8oDPbBTT6uKPIbOMnz3npRqnY4AQCRCo7iuWTC4NPOi05EfCg8Cs",
+                  "name": "projects/12456492063083112200/files/39f0dbf5c34c4a1e8be11192b8b37601"
+                },
+                "theme": {
+                  "bodyFont": "INTER",
+                  "bodyFontFamily": "Inter",
+                  "colorMode": "LIGHT",
+                  "colorVariant": "FIDELITY",
+                  "customColor": "#10b981",
+                  "designMd": "---\nname: EnergyOS Design System\ncolors:\n  surface: '#f9f9ff'\n  surface-dim: '#d3daea'\n  surface-bright: '#f9f9ff'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f0f3ff'\n  surface-container: '#e7eefe'\n  surface-container-high: '#e2e8f8'\n  surface-container-highest: '#dce2f3'\n  on-surface: '#151c27'\n  on-surface-variant: '#3c4a42'\n  inverse-surface: '#2a313d'\n  inverse-on-surface: '#ebf1ff'\n  outline: '#6c7a71'\n  outline-variant: '#bbcabf'\n  surface-tint: '#006c49'\n  primary: '#006c49'\n  on-primary: '#ffffff'\n  primary-container: '#10b981'\n  on-primary-container: '#00422b'\n  inverse-primary: '#4edea3'\n  secondary: '#2b6954'\n  on-secondary: '#ffffff'\n  secondary-container: '#adedd3'\n  on-secondary-container: '#306d58'\n  tertiary: '#a43a3a'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#fc7c78'\n  on-tertiary-container: '#711419'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#6ffbbe'\n  primary-fixed-dim: '#4edea3'\n  on-primary-fixed: '#002113'\n  on-primary-fixed-variant: '#005236'\n  secondary-fixed: '#b0f0d6'\n  secondary-fixed-dim: '#95d3ba'\n  on-secondary-fixed: '#002117'\n  on-secondary-fixed-variant: '#0b513d'\n  tertiary-fixed: '#ffdad7'\n  tertiary-fixed-dim: '#ffb3af'\n  on-tertiary-fixed: '#410005'\n  on-tertiary-fixed-variant: '#842225'\n  background: '#f9f9ff'\n  on-background: '#151c27'\n  surface-variant: '#dce2f3'\ntypography:\n  display-lg:\n    fontFamily: Inter\n    fontSize: 48px\n    fontWeight: '700'\n    lineHeight: 56px\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Inter\n    fontSize: 32px\n    fontWeight: '600'\n    lineHeight: 40px\n    letterSpacing: -0.01em\n  headline-md:\n    fontFamily: Inter\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: 28px\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: 24px\n  body-sm:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 20px\n  data-lg:\n    fontFamily: JetBrains Mono\n    fontSize: 20px\n    fontWeight: '600'\n    lineHeight: 28px\n  data-md:\n    fontFamily: JetBrains Mono\n    fontSize: 14px\n    fontWeight: '500'\n    lineHeight: 20px\n  label-caps:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: '700'\n    lineHeight: 16px\n    letterSpacing: 0.05em\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  base: 8px\n  xs: 4px\n  sm: 12px\n  md: 24px\n  lg: 40px\n  xl: 64px\n  gutter: 24px\n  margin-mobile: 16px\n  margin-desktop: 32px\n---\n\n## Marca e Estilo\n\nEste sistema de deseño proxecta unha imaxe de precisión técnica, eficiencia enerxética e fiabilidade industrial. O obxectivo é transmitir unha sensación de control absoluto sobre datos complexos mediante unha interface limpa e de alta fidelidade. \n\nO estilo visual enmárcase nun **Minimalismo Corporativo Moderno**. Prioriza o espazo en branco para reducir a fatiga cognitiva, utilizando sutís contrastes de superficie para delimitar áreas de traballo. A estética busca ser profesional e sofisticada, eliminando calquera elemento ornamental innecesario para que os datos de rendemento enerxético sexan os protagonistas. A linguaxe visual é directa, rigorosa e optimizada para procesos de toma de decisións en contornas B2B.\n\n## Cores\n\nA paleta de cores está deseñada para reforzar a identidade sostible e tecnolóxica do sector enerxético:\n\n- **Primaria (Emerald):** Utilízase para accións principais, estados positivos e indicadores de eficiencia. É o fío condutor da marca.\n- **Superficie e Fondo:** O uso de `#FAFAFA` para o fondo xeral e `#FFFFFF` para tarxetas e colectores crea unha xerarquía visual por capas sen necesidade de liñas pesadas.\n- **Funcionais:** O vermello `#EF4444` resérvase estritamente para alertas críticas e erros de sistema, garantindo unha resposta visual inmediata.\n- **Neutros:** Unha escala de grises azulados para tipografía e bordos sutís, mantendo a sobriedade do sistema.\n\n## Tipografía\n\nA estratexia tipográfica divide a interface en dous mundos:\n\n1.  **Inter (UI e Lectura):** Emprégase para a navegación, textos descritivos e etiquetas de interface. A súa neutralidade facilita a lexibilidade en densidades altas de información.\n2.  **JetBrains Mono (Datos e Métricas):** Como ferramenta especializada para o sector enerxético, as cifras, coordenadas e valores técnicos móstranse nesta fonte monoespazada. Isto asegura que as columnas de números estean sempre aliñadas, facilitando a comparación rápida de métricas de consumo e produción.\n\nOs títulos utilizan un *kerning* lixeiramente pechado para un aspecto máis premium e compacto.\n\n## Deseño e Espazado\n\nEste deseño utiliza un **sistema de cuadrícula fixa** para o contido principal en escritorio (máximo 1440px) e un sistema fluído para tabletas e móbiles.\n\n- **Ritmo Vertical:** Baseado nunha unidade de 8px. Todos os compoñentes e espazados deben ser múltiplos de 8 para manter a consistencia visual.\n- **Cuadrícula:** 12 columnas en escritorio con canles (*gutters*) de 24px.\n- **Adaptabilidade:** \n    - No móbil, as marxes redúcense a 16px e os elementos adoitan ocupar o ancho total (12 columnas de 12).\n    - Os espazos entre seccións (padding) redúcense un 50% en pantallas menores de 768px.\n\n## Elevación e Profundidade\n\nA xerarquía constrúese mediante **capas tonais** e sombras de luz ambiental moi suaves:\n\n- **Nivel 0 (Fondo):** `#FAFAFA`. É a base do sistema.\n- **Nivel 1 (Superficie):** `#FFFFFF`. Utilizado para tarxetas e colectores principais. Inclúe un bordo fino de 1px en cor `#E5E7EB` (Gris 200) para definir a forma sen peso visual.\n- **Nivel 2 (Elevación):** Sombras extra-difusas con baixa opacidade (4-8%) para elementos interactivos como menús despregables ou modais. \n\nNon se utilizan sombras pesadas nin efectos de cristal. A profundidade é sutil, mantendo un perfil técnico e plano que reforza a precisión do software.\n\n## Formas\n\nO sistema de formas é homoxéneo e estruturado:\n\n- **Radio Estándar:** 8px (`0.5rem`). Aplícase a botóns, campos de entrada, tarxetas e colectores de datos.\n- **Radio de Selección:** Os elementos pequenos como *checkboxes* manteñen un radio reducido de 4px para preservar a nitidez.\n- **Consistencia:** Evítanse as formas circulares ou orgánicas, agás en avatares e iconas específicas, para manter a linguaxe profesional e arquitectónica do sector enerxético.\n\n## Compoñentes\n\n- **Botóns:** O botón primario usa un fondo sólido `#10B981` con texto branco. Os botóns secundarios deben ser de estilo \"Ghost\" ou con bordo fino, priorizando a claridade sobre a saturación.\n- **Entradas de Datos:** Bordos de 1px en gris neutro que cambian a Emerald ao recibir o foco. As etiquetas (labels) sempre deben estar fóra do campo para maior accesibilidade.\n- **Tarxetas (Cards):** Deben incluír un espazado interno (padding) de 24px. As cabeceiras das tarxetas poden ter un fondo lixeiramente gris (`#F3F4F6`) para separar o título do contido.\n- **Visualización de Datos:** Gráficos de liñas e barras utilizando a paleta de esmeraldas e verdes escuros. As lendas de datos deben usar obrigatoriamente JetBrains Mono.\n- **Indicadores de Estado:** Chips con bordos redondeados e cores semánticas suaves (fondo con 10% de opacidade da cor de estado) para indicar \"Activo\", \"Mantemento\" ou \"Erro\".",
+                  "font": "INTER",
+                  "headlineFont": "INTER",
+                  "headlineFontFamily": "Inter",
+                  "labelFont": "JETBRAINS_MONO",
+                  "labelFontFamily": "Jetbrains Mono",
+                  "namedColors": {
+                    "background": "#f9f9ff",
+                    "error": "#ba1a1a",
+                    "error_container": "#ffdad6",
+                    "inverse_on_surface": "#ebf1ff",
+                    "inverse_primary": "#4edea3",
+                    "inverse_surface": "#2a313d",
+                    "on_background": "#151c27",
+                    "on_error": "#ffffff",
+                    "on_error_container": "#93000a",
+                    "on_primary": "#ffffff",
+                    "on_primary_container": "#00422b",
+                    "on_primary_fixed": "#002113",
+                    "on_primary_fixed_variant": "#005236",
+                    "on_secondary": "#ffffff",
+                    "on_secondary_container": "#306d58",
+                    "on_secondary_fixed": "#002117",
+                    "on_secondary_fixed_variant": "#0b513d",
+                    "on_surface": "#151c27",
+                    "on_surface_variant": "#3c4a42",
+                    "on_tertiary": "#ffffff",
+                    "on_tertiary_container": "#711419",
+                    "on_tertiary_fixed": "#410005",
+                    "on_tertiary_fixed_variant": "#842225",
+                    "outline": "#6c7a71",
+                    "outline_variant": "#bbcabf",
+                    "primary": "#006c49",
+                    "primary_container": "#10b981",
+                    "primary_fixed": "#6ffbbe",
+                    "primary_fixed_dim": "#4edea3",
+                    "secondary": "#2b6954",
+                    "secondary_container": "#adedd3",
+                    "secondary_fixed": "#b0f0d6",
+                    "secondary_fixed_dim": "#95d3ba",
+                    "surface": "#f9f9ff",
+                    "surface_bright": "#f9f9ff",
+                    "surface_container": "#e7eefe",
+                    "surface_container_high": "#e2e8f8",
+                    "surface_container_highest": "#dce2f3",
+                    "surface_container_low": "#f0f3ff",
+                    "surface_container_lowest": "#ffffff",
+                    "surface_dim": "#d3daea",
+                    "surface_tint": "#006c49",
+                    "surface_variant": "#dce2f3",
+                    "tertiary": "#a43a3a",
+                    "tertiary_container": "#fc7c78",
+                    "tertiary_fixed": "#ffdad7",
+                    "tertiary_fixed_dim": "#ffb3af"
+                  },
+                  "overrideNeutralColor": "#6b7280",
+                  "overridePrimaryColor": "#10b981",
+                  "overrideSecondaryColor": "#064e3b",
+                  "roundness": "ROUND_EIGHT",
+                  "spacing": {
+                    "base": "8px",
+                    "gutter": "24px",
+                    "lg": "40px",
+                    "margin-desktop": "32px",
+                    "margin-mobile": "16px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "xl": "64px",
+                    "xs": "4px"
+                  },
+                  "spacingScale": 2,
+                  "typography": {
+                    "body-lg": {
+                      "fontFamily": "Inter",
+                      "fontSize": "18px",
+                      "fontWeight": "400",
+                      "lineHeight": "28px"
+                    },
+                    "body-md": {
+                      "fontFamily": "Inter",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px"
+                    },
+                    "body-sm": {
+                      "fontFamily": "Inter",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px"
+                    },
+                    "data-lg": {
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": "20px",
+                      "fontWeight": "600",
+                      "lineHeight": "28px"
+                    },
+                    "data-md": {
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": "14px",
+                      "fontWeight": "500",
+                      "lineHeight": "20px"
+                    },
+                    "display-lg": {
+                      "fontFamily": "Inter",
+                      "fontSize": "48px",
+                      "fontWeight": "700",
+                      "letterSpacing": "-0.02em",
+                      "lineHeight": "56px"
+                    },
+                    "headline-lg": {
+                      "fontFamily": "Inter",
+                      "fontSize": "32px",
+                      "fontWeight": "600",
+                      "letterSpacing": "-0.01em",
+                      "lineHeight": "40px"
+                    },
+                    "headline-md": {
+                      "fontFamily": "Inter",
+                      "fontSize": "24px",
+                      "fontWeight": "600",
+                      "lineHeight": "32px"
+                    },
+                    "label-caps": {
+                      "fontFamily": "Inter",
+                      "fontSize": "12px",
+                      "fontWeight": "700",
+                      "letterSpacing": "0.05em",
+                      "lineHeight": "16px"
+                    }
+                  }
+                },
+                "title": "Detalle de Propiedade - Apartamento Praia",
+                "width": "2560"
+              }
+            ],
+            "theme": {}
+          }
+        },
+        {
+          "text": "Xa tes lista a páxina de detalle para o **Apartamento Praia**. \n\nDeseñei a interface seguindo a estética Premium B2B que solicitaches, asegurando que a barra lateral e a navegación sexan idénticas ao teu dashboard actual para manter a continuidade. \n\n**Puntos clave do deseño:**\n- **Métricas Críticas:** Destaquei o consumo de **2.1 kWh/hora** usando *JetBrains Mono* e unha etiqueta de \"ANÓMALO\" en vermello (#EF4444) para captar a atención de inmediato.\n- **Visualización de Datos:** Incluín unha gráfica de área con pestanas temporais que amosa claramente o pico de consumo que activou a alerta.\n- **Xestión Proactiva:** Engadín a sección de alertas recentes e o panel de configuración para axustar os limiares de consumo e as notificacións vía Telegram.\n\nQue che parece este deseño? Gustaríache que engadise algún outro parámetro de configuración ou un desglose por dispositivos?"
+        },
+        {
+          "suggestion": "Engadir desglose por electrodomésticos"
+        },
+        {
+          "suggestion": "Simular modo escuro para esta páxina"
+        },
+        {
+          "suggestion": "Axustar o gráfico a 24 horas"
+        }
+      ],
+      "projectId": "12456492063083112200",
+      "sessionId": "16387434778664464898"
+    }
+  }
+}

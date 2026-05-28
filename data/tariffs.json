@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "name": "PVPC (Indexada)",
+    "type": "variable",
+    "pricePerKwh": 0.1450,
+    "powerCostPerDay": 0.0821,
+    "peakRate": 0.18,
+    "offPeakRate": 0.08,
+    "description": "Tarifa regulada indexada al mercado mayorista OMIE"
+  },
+  {
+    "id": "2",
+    "name": "Tarifa Fija 2.0TD",
+    "type": "fixed",
+    "pricePerKwh": 0.14,
+    "powerCostPerDay": 4.50,
+    "peakRate": 0.14,
+    "offPeakRate": 0.14,
+    "description": "Precio fijo estable, sin sorpresas en la factura"
+  },
+  {
+    "id": "3",
+    "name": "Tarifa Nocturna 2.0TD",
+    "type": "discriminacion",
+    "pricePerKwh": 0.12,
+    "powerCostPerDay": 4.80,
+    "peakRate": 0.16,
+    "offPeakRate": 0.06,
+    "description": "Diferencia punta/valle para optimizar consumo nocturno"
+  }
+]

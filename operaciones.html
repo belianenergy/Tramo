@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tramo | Operaciones</title>
+    <meta name="description" content="Cola de operaciones energéticas para apartamentos turísticos monitorizados por Tramo." />
+    <link rel="stylesheet" href="app.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegación de producto">
+        <a class="brand" href="index.html" aria-label="Tramo, inicio">
+          <svg class="logo-mark" viewBox="0 0 80 48" aria-hidden="true"><path class="logo-line" d="M10 13 H26 M32 13 H48 M54 13 H70 M10 35 H26 M32 35 H48 M54 35 H70 M10 13 V35 M40 13 V35 M70 13 V35" fill="none" stroke-width="3" stroke-linecap="round" /><path class="logo-line" d="M26 9 V17 M32 31 V39 M48 9 V17 M54 31 V39" fill="none" stroke-width="2" stroke-linecap="round" /><circle class="logo-signal" cx="54" cy="13" r="4.5" /></svg>
+          Tramo
+        </a>
+        <nav class="side-nav" aria-label="Pantallas">
+          <a href="dashboard.html">Panel</a>
+          <a href="apartamentos.html">Apartamentos</a>
+          <a class="active" href="operaciones.html">Operaciones</a>
+          <a href="informe-propietario.html">Informe propietario</a>
+          <a href="index.html">Landing</a>
+        </nav>
+      </aside>
+
+      <main class="main" id="contenido">
+        <header class="topbar">
+          <a class="brand mobile-brand" href="index.html">Tramo</a>
+          <div class="search" role="search">
+            <label class="field-label" for="ops-search">Buscar acción</label>
+            <input class="search-input" id="ops-search" type="search" placeholder="Propiedad, responsable o incidencia" />
+          </div>
+          <div class="top-actions">
+            <a class="btn" href="apartamentos.html">Ver cartera</a>
+            <a class="btn btn-primary" href="informe-propietario.html">Informe</a>
+          </div>
+        </header>
+
+        <section class="page-content" aria-labelledby="page-title" data-od-id="operations">
+          <div class="page-title">
+            <div>
+              <p class="eyebrow teal">Cola operativa</p>
+              <h1 id="page-title">Operaciones</h1>
+              <p class="section-copy">Acciones priorizadas por coste, próxima entrada y riesgo de confort para el huésped.</p>
+            </div>
+            <div class="segmented" aria-label="Filtrar tareas por prioridad">
+              <button class="active" type="button" data-task-filter="todos">Todas</button>
+              <button type="button" data-task-filter="alta">Alta</button>
+              <button type="button" data-task-filter="media">Media</button>
+              <button type="button" data-task-filter="baja">Baja</button>
+            </div>
+          </div>
+
+          <div class="kpi-grid" aria-label="Estado de operaciones">
+            <article class="kpi-card"><div class="topline"><span class="label">Abiertas</span><span class="badge warn">hoy</span></div><strong class="metric mono">7</strong><p>Incluye tareas remotas y visitas locales.</p></article>
+            <article class="kpi-card"><div class="topline"><span class="label">Alta prioridad</span><span class="badge error">3</span></div><strong class="metric mono signal">3</strong><p>Impactan estancia próxima o coste alto.</p></article>
+            <article class="kpi-card"><div class="topline"><span class="label">Tiempo medio</span><span class="badge ok">30 días</span></div><strong class="metric mono teal">3 h</strong><p>Desde alerta hasta acción cerrada.</p></article>
+            <article class="kpi-card"><div class="topline"><span class="label">Cerradas</span><span class="badge ok">mes</span></div><strong class="metric mono">14</strong><p>Acciones documentadas para informe.</p></article>
+          </div>
+
+          <div class="ops-grid" style="margin-top: 16px;">
+            <section class="chart-panel" aria-labelledby="task-title" data-od-id="operations-task-list">
+              <div class="panel-head"><div><h2 id="task-title">Acciones pendientes</h2><p class="section-copy">Marca tareas como hechas para simular el flujo de cierre.</p></div></div>
+              <div class="task-list" data-task-list>
+                <article class="task-row" data-task-row data-priority="alta">
+                  <div><strong>Villa Marosa · apagar split salón</strong><br /><span class="label">Próxima entrada 19/05 · coste estimado 58,30 EUR</span><p>Confirmar con equipo local o cortar programación si el dispositivo está accesible.</p></div>
+                  <div class="row-actions"><span class="badge error">Alta</span><button class="btn" type="button" data-complete-task>Marcar hecha</button></div>
+                </article>
+                <article class="task-row" data-task-row data-priority="alta">
+                  <div><strong>Casa Rural O Pino · revisar temperatura</strong><br /><span class="label">Salón 25,8 C · sin huésped</span><p>Ajustar consigna antes de la limpieza programada del 20/05.</p></div>
+                  <div class="row-actions"><span class="badge error">Alta</span><button class="btn" type="button" data-complete-task>Marcar hecha</button></div>
+                </article>
+                <article class="task-row" data-task-row data-priority="media">
+                  <div><strong>Apartamentos Riazor · sensor dormitorio 2</strong><br /><span class="label">Última señal hace 13 h</span><p>Solicitar comprobación de pila o cobertura en próxima visita de limpieza.</p></div>
+                  <div class="row-actions"><span class="badge warn">Media</span><button class="btn" type="button" data-complete-task>Marcar hecha</button></div>
+                </article>
+                <article class="task-row" data-task-row data-priority="media">
+                  <div><strong>Soho Loft 2B · revisar termo</strong><br /><span class="label">Pico nocturno repetido</span><p>Validar horario del termo y cruzarlo con huecos entre reservas.</p></div>
+                  <div class="row-actions"><span class="badge warn">Media</span><button class="btn" type="button" data-complete-task>Marcar hecha</button></div>
+                </article>
+                <article class="task-row" data-task-row data-priority="baja">
+                  <div><strong>Cabanyal Blue · actualizar potencia</strong><br /><span class="label">Revisión mensual</span><p>Preparar propuesta si el patrón de junio mantiene baja demanda en P1.</p></div>
+                  <div class="row-actions"><span class="badge ok">Baja</span><button class="btn" type="button" data-complete-task>Marcar hecha</button></div>
+                </article>
+              </div>
+            </section>
+
+            <aside class="property-panel" aria-labelledby="playbook-title">
+              <div class="panel-head"><div><h2 id="playbook-title">Playbook recomendado</h2><p class="section-copy">Secuencia para no perder contexto operativo.</p></div></div>
+              <ol class="plain-list">
+                <li>Validar si hay huésped, limpieza o mantenimiento asignado.</li>
+                <li>Comprobar lectura reciente y sensor de referencia.</li>
+                <li>Asignar responsable remoto o visita local.</li>
+                <li>Cerrar con nota para el informe propietario.</li>
+              </ol>
+              <div class="panel" style="margin-top: 16px;">
+                <h3>Potencial avanzado</h3>
+                <p>Batería/arbitraje queda fuera de esta cola salvo que la cartera tenga volumen suficiente y facturas recientes para modelar escenarios.</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

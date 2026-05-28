@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EnergyOS Pro - Panel de Control</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#3f6653",
+                    "surface-container": "#efecff",
+                    "surface-variant": "#e2e0fc",
+                    "tertiary": "#401b1b",
+                    "primary-fixed-dim": "#a5d0b9",
+                    "tertiary-fixed": "#ffdad8",
+                    "outline-variant": "#c1c8c2",
+                    "primary": "#012d1d",
+                    "on-surface-variant": "#414844",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#f5b7b4",
+                    "on-tertiary-fixed": "#331111",
+                    "surface-container-high": "#e8e5ff",
+                    "on-primary-fixed": "#002114",
+                    "secondary-container": "#fecb97",
+                    "primary-fixed": "#c1ecd4",
+                    "background": "#fcf8ff",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#efbd8a",
+                    "inverse-on-surface": "#f2efff",
+                    "inverse-surface": "#2f2e43",
+                    "secondary": "#7c572d",
+                    "primary-container": "#1b4332",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#79542a",
+                    "surface-bright": "#fcf8ff",
+                    "inverse-primary": "#a5d0b9",
+                    "on-primary-fixed-variant": "#274e3d",
+                    "on-secondary-fixed": "#2c1700",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e2e0fc",
+                    "on-surface": "#1a1a2e",
+                    "on-secondary-fixed-variant": "#614018",
+                    "surface-dim": "#dad7f3",
+                    "on-background": "#1a1a2e",
+                    "surface-container-low": "#f5f2ff",
+                    "on-tertiary-fixed-variant": "#673a39",
+                    "on-primary-container": "#86af99",
+                    "surface": "#fcf8ff",
+                    "outline": "#717973",
+                    "on-tertiary-container": "#d29895",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#5a302f",
+                    "secondary-fixed": "#ffdcbc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "lg": "24px",
+                    "container-max": "1440px",
+                    "sm": "8px",
+                    "2xl": "48px",
+                    "unit": "4px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "data-mono": ["Plus Jakarta Sans"],
+                    "display": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "data-mono": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "450"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h3": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #F8F7F4;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .premium-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .chart-gradient {
+            background: linear-gradient(180deg, rgba(27, 67, 50, 0.1) 0%, rgba(27, 67, 50, 0) 100%);
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full w-[280px] border-r border-outline-variant/30 bg-surface-container-low dark:bg-surface-dim shadow-sm dark:shadow-none z-50">
+<div class="flex flex-col py-lg px-md gap-sm h-full">
+<div class="mb-xl px-sm flex items-center gap-md">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-white">bolt</span>
+</div>
+<div>
+<h1 class="font-display text-h2 font-bold text-primary dark:text-primary-fixed-dim leading-none">EnergyOS Pro</h1>
+<p class="font-display text-body-sm font-medium text-on-surface-variant">Gestión de Energía</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-xs">
+<!-- Panel de Control (Active) -->
+<a class="flex items-center gap-md px-md py-sm bg-primary-fixed text-on-primary-fixed-variant rounded-xl border-l-4 border-primary font-display text-body-md font-medium transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Panel de Control</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-xl transition-all duration-200 font-display text-body-md font-medium" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<span>Consumo Eléctrico</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-xl transition-all duration-200 font-display text-body-md font-medium" href="#">
+<span class="material-symbols-outlined">router</span>
+<span>Dispositivos Shelly</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-xl transition-all duration-200 font-display text-body-md font-medium" href="#">
+<span class="material-symbols-outlined">notifications_active</span>
+<span>Alertas Críticas</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-xl transition-all duration-200 font-display text-body-md font-medium" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Informes Energéticos</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-xl transition-all duration-200 font-display text-body-md font-medium" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Configuración</span>
+</a>
+</nav>
+<div class="mt-auto pt-md flex flex-col gap-xs">
+<button class="mb-md flex items-center justify-center gap-sm bg-primary-container text-white py-sm rounded-xl font-display text-body-md font-semibold hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+<span>Añadir Dispositivo</span>
+</button>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-xl transition-all font-display text-body-md font-medium" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Centro de Ayuda</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-xl transition-all font-display text-body-md font-medium" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Cerrar Sesión</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 right-0 left-[280px] h-20 z-40 bg-surface/80 backdrop-blur-md dark:bg-surface-dim/80 border-b border-outline-variant/20 flex justify-between items-center px-xl">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-xl pl-12 pr-4 py-2.5 focus:ring-2 focus:ring-primary-container transition-all" placeholder="Buscar dispositivos, comunidades o informes..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-md">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings_suggest</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-md">
+<div class="text-right">
+<p class="font-display text-body-sm font-bold text-on-surface leading-none">Admin Usuario</p>
+<p class="font-display text-[12px] text-on-surface-variant">Gestor Senior</p>
+</div>
+<div class="relative">
+<img alt="Usuario Administrador" class="w-10 h-10 rounded-full border-2 border-white shadow-sm" data-alt="A professional headshot of a senior administrator for a high-tech energy management company. The male subject has a confident expression, wearing professional attire against a clean, softly lit studio background. The visual style is premium and corporate, with warm ambient lighting and a shallow depth of field to emphasize expertise and trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIYyc0O3TMkb1gHHJZf-j3LPjgIHWBF4nfTKiQM-2NFYnPiLE-NJ84p0DmpAEnUlXjW7HaqxLoM1vO1miJ2XOWCCSodxYjMRqt0BCgZ98oSkFVy6IaKtdlYYVdO__Hwqblyuz3_ltlA2gt3KZQbHDqog-NWlsawnUNYE0ew3X91gvdknh7kG2yro4lWkmM61IXvqQHpqd7CFIfAPeAsGT387at6iNVIidmFVjHQy9Ntgvhw-RlkKBsd384QNNfq0fKiTe6iu0oWfs"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-[280px] pt-20 p-xl max-w-[1440px]">
+<!-- Header -->
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h2 class="font-display text-h1 font-bold text-primary tracking-tight">Panel de Control</h2>
+<p class="font-display text-body-lg text-on-surface-variant">Resumen operativo de red eléctrica y consumo comunitario.</p>
+</div>
+<div class="flex items-center gap-md bg-white p-sm rounded-xl shadow-sm">
+<button class="px-md py-2 text-body-sm font-semibold text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors">7 Días</button>
+<button class="px-md py-2 text-body-sm font-semibold text-white bg-primary-container rounded-lg shadow-sm">Este Mes</button>
+<button class="px-md py-2 text-body-sm font-semibold text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors">Año</button>
+<div class="h-6 w-[1px] bg-outline-variant/30 mx-xs"></div>
+<button class="flex items-center gap-sm px-md py-2 text-body-sm font-semibold text-on-surface-variant border border-outline-variant/30 rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>1 Mayo - 24 Mayo</span>
+</button>
+</div>
+</div>
+<!-- KPI Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-xl">
+<div class="premium-card p-lg flex flex-col justify-between">
+<div class="flex justify-between items-start mb-md">
+<div class="p-sm bg-primary/5 rounded-xl">
+<span class="material-symbols-outlined text-primary">apartment</span>
+</div>
+<span class="font-display text-[12px] font-bold text-green-600 bg-green-50 py-1 px-3 rounded-full">+2 vs mes ant.</span>
+</div>
+<div>
+<p class="font-display text-label text-on-surface-variant uppercase mb-xs">TOTAL COMUNIDADES</p>
+<p class="font-display text-display text-[32px] font-bold text-primary">24</p>
+</div>
+</div>
+<div class="premium-card p-lg flex flex-col justify-between">
+<div class="flex justify-between items-start mb-md">
+<div class="p-sm bg-primary/5 rounded-xl">
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+<span class="font-display text-[12px] font-bold text-green-600 bg-green-50 py-1 px-3 rounded-full">-5% ahorro</span>
+</div>
+<div>
+<p class="font-display text-label text-on-surface-variant uppercase mb-xs">KWH MENSUAL</p>
+<p class="font-display text-display text-[32px] font-bold text-primary">12.450</p>
+</div>
+</div>
+<div class="premium-card p-lg flex flex-col justify-between">
+<div class="flex justify-between items-start mb-md">
+<div class="p-sm bg-primary/5 rounded-xl">
+<span class="material-symbols-outlined text-primary">euro</span>
+</div>
+<span class="font-display text-[12px] font-bold text-red-600 bg-red-50 py-1 px-3 rounded-full">+1.2% varianza</span>
+</div>
+<div>
+<p class="font-display text-label text-on-surface-variant uppercase mb-xs">COSTE MENSUAL</p>
+<p class="font-display text-display text-[32px] font-bold text-primary">2.140 €</p>
+</div>
+</div>
+<div class="premium-card p-lg flex flex-col justify-between">
+<div class="flex justify-between items-start mb-md">
+<div class="p-sm bg-orange-50 rounded-xl">
+<span class="material-symbols-outlined text-orange-600">warning</span>
+</div>
+<span class="font-display text-[12px] font-bold text-orange-600 bg-orange-50 py-1 px-3 rounded-full">1 crítica</span>
+</div>
+<div>
+<p class="font-display text-label text-on-surface-variant uppercase mb-xs">ALERTAS ACTIVAS</p>
+<p class="font-display text-display text-[32px] font-bold text-primary">3</p>
+</div>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-xl">
+<!-- Column 1: Area Chart -->
+<div class="lg:col-span-8 premium-card p-xl">
+<div class="flex justify-between items-center mb-xl">
+<div>
+<h3 class="font-display text-h3 font-bold text-primary">Distribución de Consumo</h3>
+<p class="font-display text-body-sm text-on-surface-variant">Consumo agregado de todas las propiedades en las últimas 24h.</p>
+</div>
+<select class="bg-surface-container-low border-none rounded-lg font-display text-body-sm font-semibold text-on-surface-variant py-2 pl-4 pr-10 focus:ring-primary-container cursor-pointer">
+<option>Consumo (kWh)</option>
+<option>Coste (€)</option>
+</select>
+</div>
+<div class="relative h-[300px] w-full mt-xl flex items-end gap-sm overflow-hidden border-b border-l border-outline-variant/20">
+<!-- Fake Area Chart with Visual Elements -->
+<div class="absolute inset-0 chart-gradient opacity-40"></div>
+<svg class="absolute bottom-0 left-0 w-full h-[200px]" preserveaspectratio="none" viewbox="0 0 1000 200">
+<path d="M0,200 L0,150 C100,140 200,180 300,120 C400,60 500,100 600,40 C700,20 800,80 900,100 L1000,60 L1000,200 Z" fill="rgba(27, 67, 50, 0.1)"></path>
+<path d="M0,150 C100,140 200,180 300,120 C400,60 500,100 600,40 C700,20 800,80 900,100 L1000,60" fill="none" stroke="#1B4332" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex justify-between px-md pointer-events-none items-end">
+<div class="h-full border-r border-dashed border-outline-variant/20 w-[1px]"></div>
+<div class="h-full border-r border-dashed border-outline-variant/20 w-[1px]"></div>
+<div class="h-full border-r border-dashed border-outline-variant/20 w-[1px]"></div>
+<div class="h-full border-r border-dashed border-outline-variant/20 w-[1px]"></div>
+<div class="h-full border-r border-dashed border-outline-variant/20 w-[1px]"></div>
+<div class="h-full border-r border-dashed border-outline-variant/20 w-[1px]"></div>
+</div>
+</div>
+<div class="flex justify-between mt-md px-md">
+<span class="font-display text-label text-on-surface-variant">00:00</span>
+<span class="font-display text-label text-on-surface-variant">04:00</span>
+<span class="font-display text-label text-on-surface-variant">08:00</span>
+<span class="font-display text-label text-on-surface-variant">12:00</span>
+<span class="font-display text-label text-on-surface-variant">16:00</span>
+<span class="font-display text-label text-on-surface-variant">20:00</span>
+<span class="font-display text-label text-on-surface-variant">23:59</span>
+</div>
+</div>
+<!-- Column 2: Shelly Hardware -->
+<div class="lg:col-span-4 premium-card p-xl bg-primary text-white overflow-hidden relative group">
+<div class="relative z-10 flex flex-col h-full">
+<h3 class="font-display text-h3 font-bold mb-md">Monitorización en Tiempo Real</h3>
+<p class="font-display text-body-md text-white/80 mb-xl">Optimiza tu red con la tecnología Shelly Pro para un control absoluto.</p>
+<div class="flex flex-col gap-md mb-xl flex-1">
+<div class="flex items-start gap-md bg-white/10 p-md rounded-xl backdrop-blur-sm border border-white/10 hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-secondary-fixed">verified</span>
+<div>
+<p class="font-display text-body-md font-bold">Ahorro garantizado</p>
+<p class="font-display text-body-sm text-white/60">Reduce hasta un 30% en costes operativos.</p>
+</div>
+</div>
+<div class="flex items-start gap-md bg-white/10 p-md rounded-xl backdrop-blur-sm border border-white/10 hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-secondary-fixed">speed</span>
+<div>
+<p class="font-display text-body-md font-bold">Instalación rápida</p>
+<p class="font-display text-body-sm text-white/60">Plug &amp; Play con integración inmediata.</p>
+</div>
+</div>
+<div class="flex items-start gap-md bg-white/10 p-md rounded-xl backdrop-blur-sm border border-white/10 hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-secondary-fixed">update</span>
+<div>
+<p class="font-display text-body-md font-bold">Datos 24/7</p>
+<p class="font-display text-body-sm text-white/60">Telemetría segundo a segundo sin cortes.</p>
+</div>
+</div>
+</div>
+<button class="w-full bg-secondary text-on-secondary py-lg rounded-xl font-display text-body-md font-bold hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-black/20">
+                        Solicitar Presupuesto Gratis
+                    </button>
+</div>
+<!-- Abstract visual element -->
+<div class="absolute -bottom-20 -right-20 w-64 h-64 bg-primary-container rounded-full blur-[60px] opacity-40 group-hover:opacity-60 transition-opacity"></div>
+<div class="absolute top-0 right-0 p-xl opacity-20 group-hover:rotate-12 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">router</span>
+</div>
+</div>
+</div>
+<!-- Bottom Section: Data Table -->
+<div class="premium-card overflow-hidden">
+<div class="px-xl py-lg flex justify-between items-center bg-surface-container-low/50">
+<h3 class="font-display text-h3 font-bold text-primary">Estado de las Propiedades</h3>
+<div class="flex gap-md">
+<button class="flex items-center gap-sm px-md py-2 text-body-sm font-semibold text-primary hover:bg-white rounded-lg transition-all border border-outline-variant/30">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Exportar CSV</span>
+</button>
+<button class="flex items-center gap-sm px-md py-2 text-body-sm font-semibold text-primary hover:bg-white rounded-lg transition-all border border-outline-variant/30">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+<span>Filtrar</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/30 border-b border-outline-variant/20">
+<th class="px-xl py-md font-display text-label text-on-surface-variant uppercase tracking-wider">Nombre</th>
+<th class="px-xl py-md font-display text-label text-on-surface-variant uppercase tracking-wider">Unidades</th>
+<th class="px-xl py-md font-display text-label text-on-surface-variant uppercase tracking-wider">Consumo (kWh)</th>
+<th class="px-xl py-md font-display text-label text-on-surface-variant uppercase tracking-wider">Coste (€)</th>
+<th class="px-xl py-md font-display text-label text-on-surface-variant uppercase tracking-wider">Estado</th>
+<th class="px-xl py-md"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group">
+<td class="px-xl py-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Edificio Aurora" class="w-full h-full object-cover" data-alt="A modern luxury apartment building with glass balconies and architectural lighting at twilight. The shot is crisp and professionally taken, emphasizing energy efficiency and high-end residential living. The atmosphere is calm and sophisticated with deep blue evening skies." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5TQya6r8QxSyPf3M91guLIaezbDmsdih3BfKyDPzS2vXDLVyuqpBwnuCvALQi2j-eyhkfOiUiH264_VlGFcfwWyf6GFE7K-5L5u_gQhpKxfYudpo3tmKDUFfaZniwV7-RGW6_Axr3ljhJ_ceQ99Mqb56k67wKiCPHdvyxiO_MHa4SYBtqNE2_LPeS4FSfZeZPJpAbYwCrVKWSxHEX0BJxAsT6OiQaWttAra8tnStpSeuTm8-nGHsnv4wMi2WXYXrjT6vKnpedle4"/>
+</div>
+<span class="font-display text-body-md font-bold text-primary">Edificio Aurora</span>
+</div>
+</td>
+<td class="px-xl py-lg font-display text-body-md">120</td>
+<td class="px-xl py-lg font-display text-body-md font-medium">4.200</td>
+<td class="px-xl py-lg font-display text-body-md font-medium">840,00 €</td>
+<td class="px-xl py-lg">
+<span class="px-3 py-1 rounded-full bg-green-50 text-green-700 text-[12px] font-bold border border-green-100">Optimizado</span>
+</td>
+<td class="px-xl py-lg text-right">
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group">
+<td class="px-xl py-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Residencial Mar" class="w-full h-full object-cover" data-alt="A beautiful coastal residential complex with whitewashed walls and sustainable design features. Bright Mediterranean sunlight illuminates the scene, suggesting high solar potential. The image quality is high-key and professional, fitting a premium real estate tech brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt17QDY96R5W5guEzEGjgI3zTtP98FzVorV8CqTpqiX9u9UO0hZgZhjBcyfHFenEK1yL6ubzBwpF2szZxCU-ar8XeGK0l_7Pava40Ik6dHhhOkTQcwRt-AijDMesPR2U0DqmSV96_P9S8KSLMgKEpfCr2Y07ItnaYRHJtdIN42F911PvpYWshJ_b6gImu6eqBzBi4SlnfT9d7qnpWFHweKxzHu6surtX5APphqoQDB92EwqUCsYguzON25rzJ2JVgV_BTrrGBi30Y"/>
+</div>
+<span class="font-display text-body-md font-bold text-primary">Residencial Mar</span>
+</div>
+</td>
+<td class="px-xl py-lg font-display text-body-md">85</td>
+<td class="px-xl py-lg font-display text-body-md font-medium">2.800</td>
+<td class="px-xl py-lg font-display text-body-md font-medium">560,00 €</td>
+<td class="px-xl py-lg">
+<span class="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[12px] font-bold border border-blue-100">Analizando</span>
+</td>
+<td class="px-xl py-lg text-right">
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group">
+<td class="px-xl py-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Torre Norte" class="w-full h-full object-cover" data-alt="A high-rise commercial steel and glass skyscraper in a modern business district. The perspective is from the ground looking up against a clear sky. The building represents a critical energy hub. The photography is sharp with high contrast, conveying urban scale and technical complexity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACSnoimg6yLYxLYq-AlwygUtcwtA3H6IJkQ5LqyTZy94Y_XuYYx5lLJwTBSFtcV7hQopZg2Rn2Kr19mAFcDK1Nz4m2y-pZJE_qLc-7JwugwfQIRAFTo5hX8lT8Yv6yKnodW9gHfLDVwJ0677DUQ-BDi7Q2XTAL971OUt-Z1JwXpl1Q8CtkivfjR2K2yz9NGfg-_XRT7VRHkNVK7kHVqMMS2RG11CxKVkd8oHrY3CNm5lwBErTusESvaJ8hajSSGcw9hlbCWuR-ApU"/>
+</div>
+<span class="font-display text-body-md font-bold text-primary">Torre Norte</span>
+</div>
+</td>
+<td class="px-xl py-lg font-display text-body-md">210</td>
+<td class="px-xl py-lg font-display text-body-md font-medium">5.450</td>
+<td class="px-xl py-lg font-display text-body-md font-medium">1.090,00 €</td>
+<td class="px-xl py-lg">
+<span class="px-3 py-1 rounded-full bg-red-50 text-red-700 text-[12px] font-bold border border-red-100">Alerta</span>
+</td>
+<td class="px-xl py-lg text-right">
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-xl py-lg bg-surface-container-low/20 flex justify-between items-center">
+<p class="font-display text-body-sm text-on-surface-variant">Mostrando 3 de 24 comunidades</p>
+<div class="flex gap-sm">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant/30 text-on-surface-variant hover:bg-white transition-all disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant/30 bg-primary text-white font-bold text-body-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant/30 text-on-surface-variant hover:bg-white transition-all">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant/30 text-on-surface-variant hover:bg-white transition-all">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant/30 text-on-surface-variant hover:bg-white transition-all">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

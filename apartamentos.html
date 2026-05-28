@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tramo | Apartamentos</title>
+    <meta name="description" content="Listado operativo de apartamentos turísticos monitorizados por Tramo." />
+    <link rel="stylesheet" href="app.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegación de producto">
+        <a class="brand" href="index.html" aria-label="Tramo, inicio">
+          <svg class="logo-mark" viewBox="0 0 80 48" aria-hidden="true"><path class="logo-line" d="M10 13 H26 M32 13 H48 M54 13 H70 M10 35 H26 M32 35 H48 M54 35 H70 M10 13 V35 M40 13 V35 M70 13 V35" fill="none" stroke-width="3" stroke-linecap="round" /><path class="logo-line" d="M26 9 V17 M32 31 V39 M48 9 V17 M54 31 V39" fill="none" stroke-width="2" stroke-linecap="round" /><circle class="logo-signal" cx="54" cy="13" r="4.5" /></svg>
+          Tramo
+        </a>
+        <nav class="side-nav" aria-label="Pantallas">
+          <a href="dashboard.html">Panel</a>
+          <a class="active" href="apartamentos.html">Apartamentos</a>
+          <a href="operaciones.html">Operaciones</a>
+          <a href="informe-propietario.html">Informe propietario</a>
+          <a href="index.html">Landing</a>
+        </nav>
+      </aside>
+
+      <main class="main" id="contenido">
+        <header class="topbar">
+          <a class="brand mobile-brand" href="index.html">Tramo</a>
+          <div class="search" role="search">
+            <label class="field-label" for="global-search">Buscar en cartera</label>
+            <input class="search-input" id="global-search" type="search" placeholder="Nombre, ciudad o CUPS" />
+          </div>
+          <div class="top-actions">
+            <a class="btn" href="operaciones.html">Ver acciones</a>
+            <a class="btn btn-primary" href="informe-propietario.html">Preparar informe</a>
+          </div>
+        </header>
+
+        <section class="page-content" aria-labelledby="page-title" data-od-id="apartments">
+          <div class="page-title">
+            <div>
+              <p class="eyebrow teal">Cartera</p>
+              <h1 id="page-title">Apartamentos</h1>
+              <p class="section-copy">Unidades turísticas con ocupación, CUPS, sensores y estado energético en una sola vista.</p>
+            </div>
+            <span class="status-pill" data-apartment-count>6 propiedades</span>
+          </div>
+
+          <form class="filter-form panel" data-apartment-filters aria-label="Filtros de apartamentos">
+            <div class="field">
+              <label class="field-label" for="query">Buscar</label>
+              <input id="query" name="query" type="search" placeholder="Ej. Riazor, Málaga, ES0021" />
+            </div>
+            <div class="field">
+              <label class="field-label" for="status">Estado</label>
+              <select id="status" name="status">
+                <option value="todos">Todos</option>
+                <option value="revisar">Revisar</option>
+                <option value="controlado">Controlado</option>
+                <option value="alerta">Alerta</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label" for="city">Ciudad</label>
+              <select id="city" name="city">
+                <option value="todas">Todas</option>
+                <option value="coruna">A Coruña</option>
+                <option value="malaga">Málaga</option>
+                <option value="valencia">Valencia</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label" for="sort">Orden</label>
+              <select id="sort" name="sort">
+                <option>Mayor coste estimado</option>
+                <option>Próxima entrada</option>
+                <option>Última lectura</option>
+              </select>
+            </div>
+          </form>
+
+          <div class="apartment-grid" style="margin-top: 16px;">
+            <article class="apartment-card" data-apartment-card data-status="revisar" data-city="coruna">
+              <div class="apartment-meta"><span class="badge warn">Revisar</span><span class="mono">A Coruña</span></div>
+              <div><h2>Casa Rural O Pino</h2><p class="section-copy">CUPS <span class="mono">ES0021000001234567AB</span></p></div>
+              <div class="sparkline" aria-label="Consumo reciente"><i style="height: 26%"></i><i style="height: 38%"></i><i class="hot" style="height: 88%"></i><i style="height: 44%"></i><i style="height: 36%"></i><i style="height: 31%"></i><i class="hot" style="height: 70%"></i><i style="height: 42%"></i><i style="height: 35%"></i><i style="height: 30%"></i></div>
+              <div class="cost-row"><span><strong>Entre reservas</strong><br /><small class="label">01/05-18/05</small></span><span class="mono signal">184 kWh</span></div>
+              <div class="cost-row"><span><strong>Próxima entrada</strong><br /><small class="label">Limpieza previa</small></span><span class="mono">20/05</span></div>
+            </article>
+
+            <article class="apartment-card" data-apartment-card data-status="controlado" data-city="coruna">
+              <div class="apartment-meta"><span class="badge ok">Controlado</span><span class="mono">A Coruña</span></div>
+              <div><h2>Apartamentos Riazor</h2><p class="section-copy">CUPS <span class="mono">ES0021000004459120QF</span></p></div>
+              <div class="sparkline" aria-label="Consumo reciente"><i style="height: 28%"></i><i style="height: 32%"></i><i style="height: 42%"></i><i style="height: 39%"></i><i style="height: 30%"></i><i style="height: 29%"></i><i style="height: 36%"></i><i style="height: 31%"></i><i style="height: 34%"></i><i style="height: 30%"></i></div>
+              <div class="cost-row"><span><strong>Entre reservas</strong><br /><small class="label">01/05-18/05</small></span><span class="mono teal">96 kWh</span></div>
+              <div class="cost-row"><span><strong>Próxima entrada</strong><br /><small class="label">Reserva confirmada</small></span><span class="mono">22/05</span></div>
+            </article>
+
+            <article class="apartment-card" data-apartment-card data-status="alerta" data-city="malaga">
+              <div class="apartment-meta"><span class="badge error">Alerta</span><span class="mono">Málaga</span></div>
+              <div><h2>Villa Marosa</h2><p class="section-copy">CUPS <span class="mono">ES0031400007812241LR</span></p></div>
+              <div class="sparkline" aria-label="Consumo reciente"><i style="height: 34%"></i><i class="hot" style="height: 76%"></i><i style="height: 46%"></i><i style="height: 52%"></i><i class="hot" style="height: 91%"></i><i style="height: 58%"></i><i style="height: 55%"></i><i style="height: 49%"></i><i style="height: 42%"></i><i style="height: 40%"></i></div>
+              <div class="cost-row"><span><strong>Entre reservas</strong><br /><small class="label">01/05-18/05</small></span><span class="mono signal">221 kWh</span></div>
+              <div class="cost-row"><span><strong>Próxima entrada</strong><br /><small class="label">Alta prioridad</small></span><span class="mono">19/05</span></div>
+            </article>
+
+            <article class="apartment-card" data-apartment-card data-status="controlado" data-city="valencia">
+              <div class="apartment-meta"><span class="badge ok">Controlado</span><span class="mono">Valencia</span></div>
+              <div><h2>Mercado Central 4A</h2><p class="section-copy">CUPS <span class="mono">ES0022000008841200ZT</span></p></div>
+              <div class="sparkline" aria-label="Consumo reciente"><i style="height: 22%"></i><i style="height: 26%"></i><i style="height: 31%"></i><i style="height: 29%"></i><i style="height: 35%"></i><i style="height: 28%"></i><i style="height: 30%"></i><i style="height: 27%"></i><i style="height: 33%"></i><i style="height: 29%"></i></div>
+              <div class="cost-row"><span><strong>Entre reservas</strong><br /><small class="label">01/05-18/05</small></span><span class="mono teal">72 kWh</span></div>
+              <div class="cost-row"><span><strong>Próxima entrada</strong><br /><small class="label">Sin incidencias</small></span><span class="mono">24/05</span></div>
+            </article>
+
+            <article class="apartment-card" data-apartment-card data-status="revisar" data-city="malaga">
+              <div class="apartment-meta"><span class="badge warn">Revisar</span><span class="mono">Málaga</span></div>
+              <div><h2>Soho Loft 2B</h2><p class="section-copy">CUPS <span class="mono">ES0031400006729910NJ</span></p></div>
+              <div class="sparkline" aria-label="Consumo reciente"><i style="height: 30%"></i><i style="height: 34%"></i><i style="height: 45%"></i><i class="hot" style="height: 63%"></i><i style="height: 41%"></i><i style="height: 38%"></i><i style="height: 36%"></i><i style="height: 33%"></i><i style="height: 37%"></i><i style="height: 32%"></i></div>
+              <div class="cost-row"><span><strong>Entre reservas</strong><br /><small class="label">01/05-18/05</small></span><span class="mono signal">118 kWh</span></div>
+              <div class="cost-row"><span><strong>Próxima entrada</strong><br /><small class="label">Revisión remota</small></span><span class="mono">21/05</span></div>
+            </article>
+
+            <article class="apartment-card" data-apartment-card data-status="controlado" data-city="valencia">
+              <div class="apartment-meta"><span class="badge ok">Controlado</span><span class="mono">Valencia</span></div>
+              <div><h2>Cabanyal Blue</h2><p class="section-copy">CUPS <span class="mono">ES0022000003317492MC</span></p></div>
+              <div class="sparkline" aria-label="Consumo reciente"><i style="height: 25%"></i><i style="height: 26%"></i><i style="height: 32%"></i><i style="height: 36%"></i><i style="height: 30%"></i><i style="height: 31%"></i><i style="height: 28%"></i><i style="height: 34%"></i><i style="height: 33%"></i><i style="height: 29%"></i></div>
+              <div class="cost-row"><span><strong>Entre reservas</strong><br /><small class="label">01/05-18/05</small></span><span class="mono teal">64 kWh</span></div>
+              <div class="cost-row"><span><strong>Próxima entrada</strong><br /><small class="label">Sin incidencias</small></span><span class="mono">23/05</span></div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

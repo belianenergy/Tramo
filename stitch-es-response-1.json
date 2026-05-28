@@ -1,0 +1,19 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"name\":\"projects/7650483038031167120\",\"title\":\"EnergyOS Dashboard - España\",\"visibility\":\"PRIVATE\",\"projectType\":\"PROJECT_DESIGN\",\"origin\":\"STITCH\"}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "name": "projects/7650483038031167120",
+      "origin": "STITCH",
+      "projectType": "PROJECT_DESIGN",
+      "title": "EnergyOS Dashboard - España",
+      "visibility": "PRIVATE"
+    }
+  }
+}

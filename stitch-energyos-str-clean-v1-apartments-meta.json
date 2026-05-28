@@ -1,0 +1,23 @@
+{
+  "key": "apartments",
+  "title": "EnergyOS - Gestión de Apartamentos",
+  "projectId": "3511007415582919208",
+  "projectName": "projects/3511007415582919208",
+  "projectUrl": "https://stitch.withgoogle.com/projects/3511007415582919208",
+  "screenId": "874387efb80a4afa82e36604374fefac",
+  "screenName": "projects/3511007415582919208/screens/874387efb80a4afa82e36604374fefac",
+  "width": "2560",
+  "height": "2048",
+  "htmlCodeName": "projects/3511007415582919208/files/31310c5894eb446f9890622eceb2fbad",
+  "screenshotName": "projects/3511007415582919208/files/ee84b2cfbc984771b6ea77bdd5cb1b2b",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2Q0MmIxNjQyODkzNDQ0NzJhNzQ3YzI2ODkzOTk5ZDY1EgsSBxCg9KiWmAMYAZIBIwoKcHJvamVjdF9pZBIVQhMzNTExMDA3NDE1NTgyOTE5MjA4&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uiUHu1xWQAViOLy7KW9dHUVYcRikgZd-SsrX4hKrnCxneMpJ-1J6eRwgCMnboe4nyQHmDoSBLSyHxIfCZXlfN8ELxGy5g6gVA9H8rCjyo9ABdre_srlyt8iyfySZWlaVS5ObGyAyD80WE3arXpg-LBw7VPBFKbayd4kwFYNuEfpAufVGbrC7GQo6YMwBVvfBC16HmkHz5zpdLVw4bQ2W_CMUerymDNijvQmAKE4QtP8l_rfRoXH8v6dv6k",
+  "generatedAt": "2026-05-16T00:23:31.440Z",
+  "sourcePromptFile": "STITCH_PROMPT_ENERGYOS_STR_CLEAN_V1.md",
+  "localFiles": {
+    "response": "stitch-energyos-str-clean-v1-apartments-response.json",
+    "meta": "stitch-energyos-str-clean-v1-apartments-meta.json",
+    "html": "stitch-energyos-str-clean-v1-apartments.html",
+    "stitchPng": "stitch-energyos-str-clean-v1-apartments-stitch.png"
+  }
+}

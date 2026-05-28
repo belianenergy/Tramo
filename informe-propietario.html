@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tramo — Informe propietario</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegación">
+      <a class="brand" href="index.html" aria-label="Tramo, inicio">
+        <svg class="logo-mark" viewBox="0 0 80 48" role="img"><path class="logo-line" d="M10 13 H26 M32 13 H48 M54 13 H70 M10 35 H26 M32 35 H48 M54 35 H70 M10 13 V35 M40 13 V35 M70 13 V35" fill="none" stroke-width="3" stroke-linecap="round"/><path class="logo-line" d="M26 9 V17 M32 31 V39 M48 9 V17 M54 31 V39" fill="none" stroke-width="2" stroke-linecap="round"/><circle class="logo-signal" cx="54" cy="13" r="4.5"/></svg>
+        Tramo
+      </a>
+      <nav class="side-nav" aria-label="Pantallas">
+        <a href="dashboard.html">Panel</a>
+        <a href="#!">Apartamentos</a>
+        <a href="#!">Operaciones</a>
+        <a class="active" href="informe-propietario.html">Informe propietario</a>
+        <a href="index.html">← Landing</a>
+      </nav>
+    </aside>
+
+    <main class="main" id="contenido">
+      <header class="topbar">
+        <a class="brand mobile-brand" href="index.html">Tramo</a>
+        <div class="top-actions" style="margin-left:auto">
+          <a class="btn btn-primary" href="#!">Exportar PDF</a>
+          <span class="avatar" aria-label="Usuario">MG</span>
+        </div>
+      </header>
+
+      <section class="page-content">
+        <div class="page-title">
+          <div>
+            <p class="eyebrow">Informe para propietario</p>
+            <h1>Villa Marosa — Mayo 2026</h1>
+            <p class="section-copy">CUPS <span class="mono">ES0031400007812241LR</span> · Málaga · Generado el <time class="mono" datetime="2026-05-18">18/05/2026 09:30</time></p>
+          </div>
+          <div class="field">
+            <label class="field-label" for="month">Mes</label>
+            <select id="month" name="month">
+              <option>Mayo 2026</option>
+              <option>Abril 2026</option>
+              <option>Marzo 2026</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="kpi-row">
+          <div class="kpi-card">
+            <span class="kpi-label">Consumo total</span>
+            <span class="kpi-value">412 kWh</span>
+            <span class="kpi-detail">01/05–18/05/2026</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Fuera de estancia</span>
+            <span class="kpi-value kpi-warn">221 kWh</span>
+            <span class="kpi-detail">53,6% del consumo total</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Coste estimado</span>
+            <span class="kpi-value">58,30 EUR</span>
+            <span class="kpi-detail">P1 0,142 + P2 0,118 €/kWh</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Acciones tomadas</span>
+            <span class="kpi-value kpi-ok">3</span>
+            <span class="kpi-detail">2 cerradas · 1 pendiente</span>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="chart-panel">
+            <div class="chart-head"><div><h2>Consumo diario</h2><p class="section-copy">kWh totales y fuera de estancia por día.</p></div></div>
+            <div class="energy-chart">
+              <div class="axis mono"><span>80</span><span>60</span><span>40</span><span>20</span></div>
+              <div class="plot">
+                <svg class="area-svg" viewBox="0 0 700 286" preserveAspectRatio="none" role="img" aria-label="Consumo diario mayo 2026">
+                  <defs><linearGradient id="area-inf" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="var(--accent)" stop-opacity="0.18"/><stop offset="100%" stop-color="var(--accent)" stop-opacity="0.01"/></linearGradient></defs>
+                  <path d="M0 180 L70 160 L140 150 L210 75 L280 140 L350 165 L420 130 L490 60 L560 125 L630 155 L700 140 L700 286 L0 286 Z" fill="url(#area-inf)"/>
+                  <path d="M0 180 L70 160 L140 150 L210 75 L280 140 L350 165 L420 130 L490 60 L560 125 L630 155 L700 140" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+                  <circle cx="210" cy="75" r="6" fill="var(--accent)"/>
+                  <circle cx="490" cy="60" r="6" fill="#dc2626"/>
+                </svg>
+                <div class="plot-labels mono"><span>01</span><span>05</span><span>10</span><span>15</span><span>18</span></div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="property-panel">
+            <div class="panel-head"><div><h2>Detalle del inmueble</h2><p class="section-copy">Datos del periodo.</p></div></div>
+            <div class="cost-row"><span><strong>CUPS</strong></span><span class="mono">ES0031400007812241LR</span></div>
+            <div class="cost-row"><span><strong>Potencia contratada</strong></span><span class="mono">5,75 kW</span></div>
+            <div class="cost-row"><span><strong>Potencia recomendada</strong></span><span class="mono" style="color:#34d399">3,45 kW</span></div>
+            <div class="cost-row"><span><strong>Estancias este mes</strong></span><span class="mono">3</span></div>
+            <div class="cost-row"><span><strong>Días sin ocupación</strong></span><span class="mono">8</span></div>
+          </aside>
+        </div>
+
+        <div class="table-wrap" style="margin-top:var(--space-xl)">
+          <div class="table-head"><div><h2>Incidencias y acciones</h2><p class="section-copy">Registro de eventos detectados y medidas tomadas durante el periodo.</p></div></div>
+          <table>
+            <thead><tr><th>Fecha</th><th>Evento</th><th>Consumo</th><th>Coste est.</th><th>Acción</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td class="mono">17/05 19:20</td><td>Split encendido sin reserva activa</td><td class="mono">184 kWh</td><td class="mono">42,70 EUR</td><td>Revisar programación y desconexión automática</td><td><span class="badge error">Pendiente</span></td></tr>
+              <tr><td class="mono">10/05 14:10</td><td>Termo fuera de horario programado</td><td class="mono">37 kWh</td><td class="mono">5,20 EUR</td><td>Ajustada programación horaria</td><td><span class="badge ok">Cerrada</span></td></tr>
+              <tr><td class="mono">04/05 08:30</td><td>Temperatura salón elevada sin ocupación</td><td class="mono">—</td><td class="mono">—</td><td>Verificado: ventana abierta por limpieza</td><td><span class="badge ok">Cerrada</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="terminal-block" style="margin-top:var(--space-xl)">
+          <div class="terminal-header">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="terminal-title">notas del gestor</span>
+          </div>
+          <div class="terminal-body">
+            <span class="comment"># Villa Marosa — Mayo 2026</span><br/>
+            <span class="prompt">▸</span> El 53,6% del consumo de este mes se produjo fuera de estancias activas.<br/>
+            <span class="prompt">▸</span> La incidencia del 17/05 (split encendido 19:20) es la principal contribuyente (184 kWh, 42,70 EUR).<br/>
+            <span class="prompt">▸</span> Recomendación: instalar regla de desconexión automática post-checkout para climatización.<br/>
+            <span class="prompt">▸</span> Potencia contratada (5,75 kW) duplica la recomendada (3,45 kW). El cambio supondría un ahorro estimado de 180 €/año sin afectar al servicio.<br/>
+            <span class="prompt">▸</span> Próxima revisión programada: 01/06/2026.
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

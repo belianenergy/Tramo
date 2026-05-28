@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tramo | Eficiencia Energética para el Sector Hospitality</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#ffb68a",
+                        "tertiary-fixed": "#f1dfd4",
+                        "primary-container": "#e6813a",
+                        "surface-bright": "#fdf8f8",
+                        "surface-container-low": "#f7f2f2",
+                        "secondary-container": "#fe9650",
+                        "surface": "#fdf8f8",
+                        "on-tertiary-fixed": "#231a13",
+                        "secondary-fixed-dim": "#ffb68a",
+                        "tertiary-container": "#a8988e",
+                        "outline": "#887367",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e6e1e1",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#313030",
+                        "secondary-fixed": "#ffdbc8",
+                        "on-tertiary-fixed-variant": "#50443c",
+                        "on-secondary-fixed": "#321300",
+                        "on-primary-fixed-variant": "#743500",
+                        "tertiary-fixed-dim": "#d4c3b9",
+                        "on-surface-variant": "#554338",
+                        "on-primary-container": "#562500",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#984700",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-secondary-fixed-variant": "#743500",
+                        "surface-container-highest": "#e6e1e1",
+                        "on-surface": "#1c1b1b",
+                        "on-tertiary-container": "#3b3129",
+                        "background": "#fdf8f8",
+                        "surface-dim": "#ddd9d8",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f1edec",
+                        "primary-fixed-dim": "#ffb68a",
+                        "on-secondary-container": "#6f3200",
+                        "surface-container-high": "#ece7e7",
+                        "primary-fixed": "#ffdbc8",
+                        "on-background": "#1c1b1b",
+                        "primary": "#984700",
+                        "tertiary": "#695c53",
+                        "surface-tint": "#984700",
+                        "outline-variant": "#dbc1b3",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#321300",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "xl": "40px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "mono-label": ["JetBrains Mono"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "mono-data": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "mono-label": ["13px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "mono-data": ["16px", {"lineHeight": "24px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #fcf9f8; color: #1c1b1b; }
+        .card-outline { border: 1px solid #ead8cd; }
+        .warm-surface { background-color: #fffaf5; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-surface border-b border-outline-variant">
+<div class="flex justify-between items-center w-full h-20 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="flex items-center gap-sm">
+<img alt="Tramo Logo" class="h-10 w-10" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAEd0lEQVR4AeyYQU8TQRTHZ1oV41ENSjkbDB44mAht1Kh8BIXEi0fRD6B4wW45iR69iNEvYPUjgEYNhXiQo0QOXqiQaGIMB4Mp47y2W8eBZbed3b5W/k2HfTvz3vxn/r9OWUgJvFgdAABW+4UAAABgdoBZHicAAJgdYJbHCQAAZgeY5XECAIDZAWb5/XkCmE035QHAdIMhBgAG001JADDdYIgBgMF0UxIATDcYYgBgMN2UBADTDYYYABhMNyUBwHSDIQYABtNNyTYCMGUR+w4AgO8E0xUAmIz3ZQHAd4LpCgBMxvuyAOA7wXQFACbjfVkA8J1gugIAk/G+LAD4TjBdASBh48OmB4AwhxIeB4CEDQ6bHgDCHEp4HAASNjhsegAIcyjhcQBI2OCw6dkAXL08Mj52ZfgTNYrDFhr3OGmSNjWK454/6nxsAFJSTQspB6hV46grjimvqsmo72+DDQAZ7y/in7jRuXuw7g2PlL3sbLmQe7tWyH6jRnG5kH1CY7tX7dJL5vvdZuz3tenKB6DJDSrv0uE1LzezLdPvNbCbuvyCFPIYNYqFkBM09rWQe6Bmzx4UXfLqCgAb0+eGynJrWUpxV/ua1i3onVZCTJbXez5QTVBSJ/V3BYBtdeC6FGIgqnE6d4hqouZz5jkDGBsdUWaLezMbXjanlLrT7LxUk8QpMPdKcbPrsvOdAdgTxn1fkeKG/s5vfp1SpioqfTvu9cQ9X/Mbq69gbHT4Gj1D128bF/pURGmNgnoQVPPlp5iopzR9Wf0hJoLmtScLyrP7d9TR3zLaC7s/6n3LALRAQbTh8e3EEa3U4rvXoTayZM2DQuR8K9EFgDVVMre/t5OZt1NmdQGQF0qsioRfa5v6wbJFDZfayJJKrejcvG4tvVsGUJxbelmcXzxlqxbnFmWUFrVu8Ghqxs6Nek+1QWux5wjKs/t31M0vnS5qL+z+qPctA4gq4JqXTlWe60fKrabnUWIzrdSzpuvaXOAMoGh94uNef+/U0mepRAtHXE31eqXYvyLj3q8zgL+GJxf1nSk9UkJ9jKqglFjuGyw9jprPmdcVAOS4qGRUT07/i4F+H1T2MKyizX+YEYeyVLNHXscMdQUAckt6b3715RfupVTlvBBqVve906fiOzWKhVJPaazfW5ikXN3XFW8+ALXHt5pJZlzrCfx50ltazORLtzL5hYv9+dJxahRnvNIEjQUW2gOmphnbeQnfswHYVvK+/tSuUKvGCW/Unr6qScbrVo3thDbdswF49XrxRZGeoXWjuE37bciQJqe+vxA2AP4C9vsVAJg/AQAAAMwOMMvjBDgCcC0HAFcHHesBwNFA13IAcHXQsR4AHA10LQcAVwcd6wHA0UDXcgBwddCxHgAcDXQtBwBXBx3rAcDRQNfy7gTguusOqgcAZhgAAADMDjDL4wQAALMDzPI4AQDA7ACzPE4AADA7wCyPE9A9AJhX+p/K4wQwgwUAAGB2gFkeJwAAmB1glscJAABmB5jlcQIAgNkBZnmcgBAASQ//AQAA//8be5F4AAAABklEQVQDAA5TlNCruRF+AAAAAElFTkSuQmCC"/>
+<span class="font-headline-md text-headline-md font-bold text-primary">Tramo</span>
+</div>
+<div class="hidden md:flex items-center gap-xl">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#modulos">Módulos</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#beneficios">Beneficios</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#panel">Panel</a>
+</div>
+<a class="bg-primary text-on-primary px-lg py-sm rounded-lg font-headline-sm text-sm hover:bg-secondary transition-all active:scale-95" href="#contacto">
+                Solicitar diagnóstico
+            </a>
+</div>
+</nav>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="relative py-xl px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl items-center">
+<!-- Content -->
+<div class="lg:col-span-7">
+<span class="inline-flex items-center gap-xs px-sm py-xs bg-tertiary-fixed text-on-tertiary-fixed rounded-full font-mono-label text-mono-label mb-lg">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        12 PILOTOS ACTIVOS EN ESPAÑA
+                    </span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-lg leading-tight">
+                        Convierte cada kWh de tu cartera turística en <span class="text-primary">margen operativo.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-2xl">
+                        Tramo conecta sensores, reservas, CUPS, Datadis y tarifas para darte control en tiempo real sobre aparatos, optimizar cada tarifa y activar arbitraje con baterías cuando los números cuadren. Todo desde una sola plataforma, con informes claros para cada propietario.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-md">
+<button class="bg-primary text-on-primary px-lg py-md rounded-lg font-headline-sm hover:bg-secondary transition-all">
+                            Solicitar diagnóstico de cartera
+                        </button>
+<button class="border border-outline-variant text-on-surface px-lg py-md rounded-lg font-headline-sm hover:bg-surface-container transition-all">
+                            Ver panel en vivo
+                        </button>
+</div>
+</div>
+<!-- Product Panel Representation -->
+<div class="lg:col-span-5 relative">
+<div class="bg-white card-outline rounded-xl p-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-lg">
+<div>
+<p class="font-mono-label text-mono-label text-on-surface-variant uppercase mb-xs">Estado de Red</p>
+<h3 class="font-headline-sm text-headline-sm flex items-center gap-sm">
+                                    VGO-014 
+                                    <span class="inline-block w-2 h-2 rounded-full bg-[#2e7d32]"></span>
+</h3>
+</div>
+<div class="text-right">
+<p class="font-mono-label text-mono-label text-on-surface-variant mb-xs">Consumo Ahora</p>
+<p class="font-mono-data text-mono-data text-primary">2.4 kW</p>
+</div>
+</div>
+<div class="space-y-md">
+<!-- Alert Item -->
+<div class="warm-surface rounded p-md flex items-start gap-md border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary">warning</span>
+<div>
+<p class="font-body-sm text-body-sm font-semibold">Alerta de Consumo</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">VGO-014 · 4.2 kWh fuera de reserva · hace 2h</p>
+</div>
+</div>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-2 gap-md">
+<div class="bg-surface-container rounded p-md">
+<p class="font-mono-label text-mono-label text-on-surface-variant mb-xs">RESERVAS</p>
+<p class="font-body-md text-body-md font-semibold">3 activas</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Check-out 11:00</p>
+</div>
+<div class="bg-surface-container rounded p-md">
+<p class="font-mono-label text-mono-label text-on-surface-variant mb-xs">BATERÍA</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[#2e7d32] text-sm">bolt</span>
+<p class="font-body-md text-body-md font-semibold">Cargando</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">0.08 €/kWh · OMIE</p>
+</div>
+</div>
+<!-- Sparkline Mock -->
+<div class="pt-md border-t border-surface-variant">
+<p class="font-mono-label text-mono-label text-on-surface-variant mb-sm">TENDENCIA OMIE (24H)</p>
+<div class="h-16 w-full flex items-end gap-1">
+<div class="bg-outline-variant flex-1 h-3/4 rounded-t-sm"></div>
+<div class="bg-outline-variant flex-1 h-1/2 rounded-t-sm"></div>
+<div class="bg-outline-variant flex-1 h-1/3 rounded-t-sm"></div>
+<div class="bg-primary flex-1 h-1/4 rounded-t-sm"></div>
+<div class="bg-primary flex-1 h-1/5 rounded-t-sm"></div>
+<div class="bg-primary flex-1 h-1/6 rounded-t-sm"></div>
+<div class="bg-outline-variant flex-1 h-1/2 rounded-t-sm"></div>
+<div class="bg-outline-variant flex-1 h-2/3 rounded-t-sm"></div>
+<div class="bg-outline-variant flex-1 h-5/6 rounded-t-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Modules Section -->
+<section class="py-xl bg-surface-container-low" id="modulos">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-xl">
+<!-- Mod 1: Consumo -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div class="order-2 md:order-1">
+<div class="inline-flex items-center gap-sm text-primary mb-md">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-mono-label text-mono-label tracking-widest">CONSUMO EN TIEMPO REAL</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-md">Detecta fugas antes de que llegue la factura.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Nuestros sensores monitorizan el consumo 24/7 en cada alojamiento. Cuando detectamos consumo fuera de reserva, te avisamos al instante por Telegram.</p>
+<div class="bg-white card-outline rounded p-md border-l-4 border-primary">
+<p class="font-mono-data text-mono-data text-on-surface-variant text-sm">EVIDENCIA:</p>
+<p class="font-body-sm text-body-sm">VGO-014 · checkout 11:00 · 4.2 kWh entre 13:10-16:40 sin reserva activa · <span class="text-primary font-bold">ahorro estimado: 42€</span></p>
+</div>
+</div>
+<div class="order-1 md:order-2 bg-white card-outline rounded-xl p-lg aspect-video flex items-center justify-center">
+<div class="w-full h-full relative">
+<!-- Visual placeholder for dashboard -->
+<div class="absolute inset-0 bg-surface-container opacity-20 rounded-lg"></div>
+<div class="relative z-10 p-md h-full flex flex-col justify-between">
+<div class="flex justify-between border-b border-outline-variant pb-sm">
+<span class="font-mono-label text-mono-label">LIVE FEED</span>
+<span class="text-primary text-xs font-bold">● CONNECTED</span>
+</div>
+<div class="space-y-sm">
+<div class="h-2 bg-primary w-2/3 rounded-full"></div>
+<div class="h-2 bg-outline-variant w-1/2 rounded-full"></div>
+<div class="h-2 bg-outline-variant w-3/4 rounded-full"></div>
+</div>
+<div class="flex gap-md">
+<div class="flex-1 p-sm warm-surface rounded text-center">
+<p class="text-[10px] uppercase font-mono-label">Pico Hoy</p>
+<p class="font-mono-data">5.1 kW</p>
+</div>
+<div class="flex-1 p-sm warm-surface rounded text-center">
+<p class="text-[10px] uppercase font-mono-label">Standby</p>
+<p class="font-mono-data">0.2 kW</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mod 2: Tarifas -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div class="order-1 bg-white card-outline rounded-xl p-lg aspect-video flex items-center justify-center">
+<div class="w-full space-y-md">
+<div class="flex items-end gap-md">
+<div class="flex-1 space-y-sm">
+<p class="font-mono-label text-mono-label text-on-surface-variant">ACTUAL (P2)</p>
+<div class="h-32 bg-surface-container rounded-t relative flex items-end">
+<div class="bg-outline w-full h-full opacity-50 rounded-t"></div>
+<span class="absolute top-2 left-2 font-mono-data text-xs">4.6 kW</span>
+</div>
+</div>
+<div class="flex-1 space-y-sm">
+<p class="font-mono-label text-mono-label text-primary">RECOMENDADO (P2)</p>
+<div class="h-32 bg-surface-container rounded-t relative flex items-end">
+<div class="bg-primary w-full h-[71%] rounded-t"></div>
+<span class="absolute top-2 left-2 font-mono-data text-xs text-primary">3.3 kW</span>
+</div>
+</div>
+</div>
+<div class="p-sm bg-surface rounded text-center border border-dashed border-outline-variant">
+<p class="font-mono-label text-mono-label text-on-surface-variant">Potencia optimizada · -28% costes fijos</p>
+</div>
+</div>
+</div>
+<div class="order-2">
+<div class="inline-flex items-center gap-sm text-primary mb-md">
+<span class="material-symbols-outlined">bolt</span>
+<span class="font-mono-label text-mono-label tracking-widest">TARIFAS &amp; POTENCIA</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-md">Cada propiedad con la tarifa y potencia óptimas.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Analizamos tus facturas y CUPS para asegurar que cada propiedad tiene la potencia contratada correcta y la tarifa más competitiva del mercado.</p>
+<div class="bg-white card-outline rounded p-md border-l-4 border-primary">
+<p class="font-mono-data text-mono-data text-on-surface-variant text-sm">EVIDENCIA:</p>
+<p class="font-body-sm text-body-sm">P2 recomendada: 3.3 kW | Actual: 4.6 kW · <span class="text-primary font-bold">Ahorro estimado: 180€/año</span></p>
+</div>
+</div>
+</div>
+<!-- Mod 3: Arbitraje -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div class="order-2 md:order-1">
+<div class="inline-flex items-center gap-sm text-primary mb-md">
+<span class="material-symbols-outlined">battery_charging_full</span>
+<span class="font-mono-label text-mono-label tracking-widest">BATERÍA &amp; ARBITRAJE</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-md">Tus baterías trabajando cuando la red está cara.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Tramo analiza los precios horarios de OMIE y activa tus baterías para comprar barato y consumir cuando conviene, maximizando el autoconsumo real.</p>
+<div class="bg-white card-outline rounded p-md border-l-4 border-primary">
+<p class="font-mono-data text-mono-data text-on-surface-variant text-sm">EVIDENCIA:</p>
+<p class="font-body-sm text-body-sm">Ciclo diario: carga a 0.06€, descarga a 0.18€ · <span class="text-primary font-bold">Diferencial: 0.12€/kWh</span></p>
+</div>
+</div>
+<div class="order-1 md:order-2 bg-white card-outline rounded-xl p-lg overflow-hidden">
+<div class="relative h-48 flex items-end justify-between gap-1">
+<!-- OMIE Mock Chart -->
+<div class="bg-surface-container flex-1 h-3/4 rounded-t relative">
+<span class="absolute -top-6 left-0 text-[10px] font-mono-label text-primary">CARGA</span>
+<div class="absolute bottom-0 w-full h-1/4 bg-primary/20"></div>
+</div>
+<div class="bg-surface-container flex-1 h-1/2 rounded-t"></div>
+<div class="bg-surface-container flex-1 h-1/3 rounded-t"></div>
+<div class="bg-surface-container flex-1 h-2/3 rounded-t"></div>
+<div class="bg-surface-container flex-1 h-5/6 rounded-t relative">
+<span class="absolute -top-6 left-0 text-[10px] font-mono-label text-primary">DESCARGA</span>
+<div class="absolute inset-0 bg-primary/40 border-t-2 border-primary"></div>
+</div>
+<div class="bg-surface-container flex-1 h-1/2 rounded-t"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pain/Solution -->
+<section class="py-xl max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop" id="beneficios">
+<h2 class="font-headline-lg text-headline-lg text-center mb-xl">Soluciones operativas para gestores de activos</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Visibilidad -->
+<div class="bg-white card-outline p-lg rounded-xl hover:translate-y-[-4px] transition-transform">
+<p class="text-error font-mono-label text-mono-label mb-xs">EL DOLOR</p>
+<h3 class="font-headline-sm text-headline-sm mb-md">Cero visibilidad</h3>
+<p class="text-on-surface-variant mb-lg">No sabes cuánto gasta cada casa hasta que llega la factura de la comercializadora 45 días después.</p>
+<div class="pt-lg border-t border-outline-variant">
+<p class="text-primary font-mono-label text-mono-label mb-xs">CON TRAMO</p>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Métricas en vivo integradas con tu PMS para cruzar ocupación y gasto.</p>
+</div>
+</div>
+<!-- Tarifas -->
+<div class="bg-white card-outline p-lg rounded-xl hover:translate-y-[-4px] transition-transform">
+<p class="text-error font-mono-label text-mono-label mb-xs">EL DOLOR</p>
+<h3 class="font-headline-sm text-headline-sm mb-md">Tarifas heredadas</h3>
+<p class="text-on-surface-variant mb-lg">Propiedades con potencias sobredimensionadas o tarifas indexadas sin control de picos.</p>
+<div class="pt-lg border-t border-outline-variant">
+<p class="text-primary font-mono-label text-mono-label mb-xs">CON TRAMO</p>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Auditoría automática de CUPS y recomendación de la mejor tarifa cada mes.</p>
+</div>
+</div>
+<!-- Informes -->
+<div class="bg-white card-outline p-lg rounded-xl hover:translate-y-[-4px] transition-transform">
+<p class="text-error font-mono-label text-mono-label mb-xs">EL DOLOR</p>
+<h3 class="font-headline-sm text-headline-sm mb-md">Informes manuales</h3>
+<p class="text-on-surface-variant mb-lg">Horas perdidas en Excel descargando datos de Datadis para liquidar gastos a propietarios.</p>
+<div class="pt-lg border-t border-outline-variant">
+<p class="text-primary font-mono-label text-mono-label mb-xs">CON TRAMO</p>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Informes PDF automáticos por propiedad listos para adjuntar a la liquidación.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Proof Section -->
+<section class="py-xl bg-surface" id="panel">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg">Tramo en acción</h2>
+<p class="text-on-surface-variant mt-sm">Control total de tu portfolio desde una sola vista técnica.</p>
+</div>
+<div class="bg-white card-outline rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container border-b border-outline-variant">
+<tr>
+<th class="px-lg py-md font-mono-label text-mono-label uppercase">Propiedad (ID)</th>
+<th class="px-lg py-md font-mono-label text-mono-label uppercase">Estado PMS</th>
+<th class="px-lg py-md font-mono-label text-mono-label uppercase">Consumo (24h)</th>
+<th class="px-lg py-md font-mono-label text-mono-label uppercase">Potencia Max</th>
+<th class="px-lg py-md font-mono-label text-mono-label uppercase">Alerta</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-md font-semibold">VGO-014 (Vigo Centro)</td>
+<td class="px-lg py-md"><span class="px-sm py-1 bg-surface-container rounded-full text-xs">VACÍO</span></td>
+<td class="px-lg py-md font-mono-data">8.4 kWh</td>
+<td class="px-lg py-md font-mono-data">4.2 kW</td>
+<td class="px-lg py-md"><span class="flex items-center gap-sm text-primary font-bold text-xs"><span class="w-2 h-2 rounded-full bg-primary"></span> FUERA RESERVA</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-md font-semibold">MAD-102 (Gran Vía)</td>
+<td class="px-lg py-md"><span class="px-sm py-1 bg-primary text-on-primary rounded-full text-xs">OCUPADO</span></td>
+<td class="px-lg py-md font-mono-data">24.1 kWh</td>
+<td class="px-lg py-md font-mono-data">5.1 kW</td>
+<td class="px-lg py-md text-on-surface-variant text-xs">—</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-md font-semibold">BCN-005 (Eixample)</td>
+<td class="px-lg py-md"><span class="px-sm py-1 bg-primary text-on-primary rounded-full text-xs">OCUPADO</span></td>
+<td class="px-lg py-md font-mono-data">12.2 kWh</td>
+<td class="px-lg py-md font-mono-data">3.2 kW</td>
+<td class="px-lg py-md text-on-surface-variant text-xs">—</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- Lead Form -->
+<section class="py-xl bg-surface-container-low" id="contacto">
+<div class="max-w-3xl mx-auto px-margin-mobile">
+<div class="bg-white card-outline rounded-xl p-xl shadow-lg">
+<h2 class="font-headline-lg text-headline-lg text-center mb-md">Solicitar diagnóstico de cartera</h2>
+<p class="text-on-surface-variant text-center mb-xl">Analizamos tus datos de consumo históricos y te mostramos el potencial de ahorro real sin compromiso.</p>
+<form class="space-y-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-xs">
+<label class="font-body-sm font-semibold">Nombre</label>
+<input class="w-full border-outline-variant rounded p-sm focus:ring-primary focus:border-primary" placeholder="Tu nombre completo" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-body-sm font-semibold">Empresa</label>
+<input class="w-full border-outline-variant rounded p-sm focus:ring-primary focus:border-primary" placeholder="Nombre de la gestora" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-xs">
+<label class="font-body-sm font-semibold">Email corporativo</label>
+<input class="w-full border-outline-variant rounded p-sm focus:ring-primary focus:border-primary" placeholder="ejemplo@empresa.com" type="email"/>
+</div>
+<div class="space-y-xs">
+<label class="font-body-sm font-semibold">Nº de alojamientos</label>
+<input class="w-full border-outline-variant rounded p-sm focus:ring-primary focus:border-primary" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-xs">
+<label class="font-body-sm font-semibold">Ciudad/Región principal</label>
+<input class="w-full border-outline-variant rounded p-sm focus:ring-primary focus:border-primary" placeholder="Ej. Madrid, Costa del Sol" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-body-sm font-semibold">PMS utilizado</label>
+<input class="w-full border-outline-variant rounded p-sm focus:ring-primary focus:border-primary" placeholder="Hostaway, Guesty, Icnea..." type="text"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-body-sm font-semibold">¿Tienes acceso a Datadis/CUPS?</label>
+<div class="flex gap-lg mt-sm">
+<label class="inline-flex items-center gap-sm cursor-pointer"><input class="text-primary focus:ring-primary" name="cups" type="radio"/> <span class="text-body-sm">Sí</span></label>
+<label class="inline-flex items-center gap-sm cursor-pointer"><input class="text-primary focus:ring-primary" name="cups" type="radio"/> <span class="text-body-sm">No</span></label>
+<label class="inline-flex items-center gap-sm cursor-pointer"><input class="text-primary focus:ring-primary" name="cups" type="radio"/> <span class="text-body-sm">No lo sé</span></label>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-body-sm font-semibold">Módulos de interés</label>
+<div class="grid grid-cols-2 gap-sm mt-sm">
+<label class="inline-flex items-center gap-sm cursor-pointer"><input class="rounded text-primary focus:ring-primary" type="checkbox"/> <span class="text-body-sm">Consumo Tiempo Real</span></label>
+<label class="inline-flex items-center gap-sm cursor-pointer"><input class="rounded text-primary focus:ring-primary" type="checkbox"/> <span class="text-body-sm">Optimización Tarifas</span></label>
+<label class="inline-flex items-center gap-sm cursor-pointer"><input class="rounded text-primary focus:ring-primary" type="checkbox"/> <span class="text-body-sm">Baterías &amp; Arbitraje</span></label>
+<label class="inline-flex items-center gap-sm cursor-pointer"><input class="rounded text-primary focus:ring-primary" type="checkbox"/> <span class="text-body-sm">Informes Propietarios</span></label>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-md rounded-lg font-headline-sm hover:bg-secondary transition-all shadow-md" type="submit">
+                            Solicitar diagnóstico
+                        </button>
+<p class="text-center font-body-sm text-body-sm text-on-surface-variant italic">
+                            No envíes credenciales ni facturas por este formulario. En la llamada revisamos qué datos tienes disponibles.
+                        </p>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant">
+<div class="max-w-7xl mx-auto py-xl px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-start md:items-center gap-lg">
+<div class="space-y-md max-w-sm">
+<div class="flex items-center gap-sm">
+<img alt="Tramo Technical Logo" class="h-8 w-8" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAEd0lEQVR4AeyYQU8TQRTHZ1oV41ENSjkbDB44mAht1Kh8BIXEi0fRD6B4wW45iR69iNEvYPUjgEYNhXiQo0QOXqiQaGIMB4Mp47y2W8eBZbed3b5W/k2HfTvz3vxn/r9OWUgJvFgdAABW+4UAAABgdoBZHicAAJgdYJbHCQAAZgeY5XECAIDZAWb5/XkCmE035QHAdIMhBgAG001JADDdYIgBgMF0UxIATDcYYgBgMN2UBADTDYYYABhMNyUBwHSDIQYABtNNyTYCMGUR+w4AgO8E0xUAmIz3ZQHAd4LpCgBMxvuyAOA7wXQFACbjfVkA8J1gugIAk/G+LAD4TjBdASBh48OmB4AwhxIeB4CEDQ6bHgDCHEp4HAASNjhsegAIcyjhcQBI2OCw6dkAXL08Mj52ZfgTNYrDFhr3OGmSNjWK454/6nxsAFJSTQspB6hV46grjimvqsmo72+DDQAZ7y/in7jRuXuw7g2PlL3sbLmQe7tWyH6jRnG5kH1CY7tX7dJL5vvdZuz3tenKB6DJDSrv0uE1LzezLdPvNbCbuvyCFPIYNYqFkBM09rWQe6Bmzx4UXfLqCgAb0+eGynJrWUpxV/ua1i3onVZCTJbXez5QTVBSJ/V3BYBtdeC6FGIgqnE6d4hqouZz5jkDGBsdUWaLezMbXjanlLrT7LxUk8QpMPdKcbPrsvOdAdgTxn1fkeKG/s5vfp1SpioqfTvu9cQ9X/Mbq69gbHT4Gj1D128bF/pURGmNgnoQVPPlp5iopzR9Wf0hJoLmtScLyrP7d9TR3zLaC7s/6n3LALRAQbTh8e3EEa3U4rvXoTayZM2DQuR8K9EFgDVVMre/t5OZt1NmdQGQF0qsioRfa5v6wbJFDZfayJJKrejcvG4tvVsGUJxbelmcXzxlqxbnFmWUFrVu8Ghqxs6Nek+1QWux5wjKs/t31M0vnS5qL+z+qPctA4gq4JqXTlWe60fKrabnUWIzrdSzpuvaXOAMoGh94uNef+/U0mepRAtHXE31eqXYvyLj3q8zgL+GJxf1nSk9UkJ9jKqglFjuGyw9jprPmdcVAOS4qGRUT07/i4F+H1T2MKyizX+YEYeyVLNHXscMdQUAckt6b3715RfupVTlvBBqVve906fiOzWKhVJPaazfW5ikXN3XFW8+ALXHt5pJZlzrCfx50ltazORLtzL5hYv9+dJxahRnvNIEjQUW2gOmphnbeQnfswHYVvK+/tSuUKvGCW/Unr6qScbrVo3thDbdswF49XrxRZGeoXWjuE37bciQJqe+vxA2AP4C9vsVAJg/AQAAAMwOMMvjBDgCcC0HAFcHHesBwNFA13IAcHXQsR4AHA10LQcAVwcd6wHA0UDXcgBwddCxHgAcDXQtBwBXBx3rAcDRQNfy7gTguusOqgcAZhgAAADMDjDL4wQAALMDzPI4AQDA7ACzPE4AADA7wCyPE9A9AJhX+p/K4wQwgwUAAGB2gFkeJwAAmB1glscJAABmB5jlcQIAgNkBZnmcgBAASQ//AQAA//8be5F4AAAABklEQVQDAA5TlNCruRF+AAAAAElFTkSuQmCC"/>
+<span class="font-headline-sm text-headline-sm font-bold">Tramo</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Eficiencia energética basada en datos reales para el sector hospitality. Maximiza tu margen operativo sin sacrificar el confort del huésped.</p>
+<p class="font-mono-label text-mono-label text-on-surface-variant">© 2026 Tramo. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap gap-xl">
+<div class="flex flex-col gap-sm">
+<span class="font-mono-label text-mono-label text-on-surface-variant uppercase">Producto</span>
+<a class="text-body-sm hover:text-primary transition-all" href="#">Módulos</a>
+<a class="text-body-sm hover:text-primary transition-all" href="#">Integraciones</a>
+<a class="text-body-sm hover:text-primary transition-all" href="#">Dashboard</a>
+</div>
+<div class="flex flex-col gap-sm">
+<span class="font-mono-label text-mono-label text-on-surface-variant uppercase">Legal</span>
+<a class="text-body-sm hover:text-primary transition-all" href="#">Privacidad</a>
+<a class="text-body-sm hover:text-primary transition-all" href="#">Términos</a>
+<a class="text-body-sm hover:text-primary transition-all" href="#">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

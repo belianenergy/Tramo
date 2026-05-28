@@ -1,0 +1,24 @@
+{
+  "key": "apartments",
+  "requestedName": "apartamentos-cartera",
+  "title": "Apartamentos / cartera — EnergyOS",
+  "projectId": "11820050226044719534",
+  "projectName": "projects/11820050226044719534",
+  "screenId": "948a2d4cd0c1404a9a1e0720220fe93f",
+  "screenName": "projects/11820050226044719534/screens/948a2d4cd0c1404a9a1e0720220fe93f",
+  "width": "2560",
+  "height": "2048",
+  "htmlCodeName": "projects/11820050226044719534/files/5505d7e2a43a407baf339dc9bb3da0ad",
+  "screenshotName": "projects/11820050226044719534/files/ababf216edaa4f5c88ddec3505b094b1",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzc3NTIwZDEyMTU1MjRhNDc5ODc5NTdkNzc1Nzg2YjU3EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uguTBViUfW1Tm4EjalHRRluB0iUAY_0c3Biuzq9kvQAcnWkTNZLJ5csU0CcZt878FBVhXZLj8uiFbquVW3plR_5UgR829S0eJtyikUeYkMA2v9_76LuyW4rB3p3-KLwws1JAAyZFznzkX7ZrzCsD8pXbD-_VZ38JuGjffzv38N__ifzRpOaEWeA0w8aec5joLeNix1qhXgyBzQVCcGTsPTU8G9wnWvavWB0CY7L9viJmtQQxwAPECFTojz1",
+  "generatedAt": "2026-05-12T19:37:49.725Z",
+  "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+  "localFiles": {
+    "response": "stitch-mvp-restro-style-v1-apartments-response.json",
+    "meta": "stitch-mvp-restro-style-v1-apartments-meta.json",
+    "html": "stitch-mvp-restro-style-v1-apartments.html",
+    "stitchPng": "stitch-mvp-restro-style-v1-apartments-stitch.png",
+    "previews": []
+  }
+}

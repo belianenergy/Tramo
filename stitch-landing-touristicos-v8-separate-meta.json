@@ -1,0 +1,22 @@
+{
+  "projectId": "15913095808578827673",
+  "projectName": "projects/15913095808578827673",
+  "screenId": "a964990df31c4096b79cef25a543349e",
+  "screenName": "projects/15913095808578827673/screens/a964990df31c4096b79cef25a543349e",
+  "title": "EnergyOS — Landing MVP para gestoras de apartamentos turísticos",
+  "width": "2560",
+  "height": "6372",
+  "htmlCodeName": "projects/15913095808578827673/files/b8c6139decf645538e071dbdd0b32f9f",
+  "screenshotName": "projects/15913095808578827673/files/8219d100846f4bcb91d1c9232f1e1253",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzUzOTYxZGY5NjNhNDRmMjhiY2FmNzg3NGNkMTFkYWViEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTkxMzA5NTgwODU3ODgyNzY3Mw&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uj6T8kO8T297JfGCpr0OLWDpUuHY4ci99Vv4gqTdFgkOPtG-3MrCH_cB_a0yq2x6D32VbqTR5qjOi1UYlLP_0DQO0OPzb8NPSvfzgjHYoUAN2r-VHjWTIrbE31xt2R8a0I2jckj-KiSpkeXyHbExDWpdlMvEpaDGTYEcSnk-8Cv5ksqxTw8NK-0ko9TsmFeQgkYShqvO83CsxA3HHq90uxqUOM6GZCni_-qq63IvJe_gNK7JjmIq3Z2MdaL",
+  "generatedAt": "2026-05-12T18:54:26.762Z",
+  "sourcePromptFile": "STITCH_PROMPT_APARTAMENTOS_TURISTICOS_V8.md",
+  "sourceScreen": "projects/9100679721232803019/screens/f49b9826a13c4402a0463e1cb7f919dc",
+  "note": "Clean standalone project generated from the approved v8 prompt because Stitch move-between-projects is not exposed by the current scripts/API.",
+  "localPreviews": [
+    "stitch-landing-touristicos-v8-separate-preview-mobile-375.png",
+    "stitch-landing-touristicos-v8-separate-preview-tablet-768.png",
+    "stitch-landing-touristicos-v8-separate-preview-desktop-1440.png"
+  ]
+}

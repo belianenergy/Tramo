@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cualificación de Leads - EnergyOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "tertiary": "#425268",
+                        "on-secondary-container": "#5c647a",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed-dim": "#80d5cb",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-primary-container": "#a3faef",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary": "#565e74",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e6e8ea",
+                        "on-surface-variant": "#3e4947",
+                        "on-primary-fixed": "#00201d",
+                        "primary-fixed": "#9cf2e8",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#191c1e",
+                        "secondary-container": "#dae2fd",
+                        "tertiary-fixed": "#d3e4fe",
+                        "tertiary-container": "#5a6a81",
+                        "outline-variant": "#bdc9c6",
+                        "on-primary-fixed-variant": "#00504a",
+                        "primary-container": "#0f766e",
+                        "primary": "#005c55",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#006a63",
+                        "secondary-fixed": "#dae2fd",
+                        "surface": "#f7f9fb",
+                        "on-tertiary-container": "#deeaff",
+                        "outline": "#6e7977",
+                        "inverse-surface": "#2d3133",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#80d5cb",
+                        "surface-container": "#eceef0",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-error": "#ffffff",
+                        "background": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "container-margin": "40px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "gutter": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "metric-lg": ["JetBrains Mono"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Inter"],
+                        "metric-md": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "headline-xl": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "metric-lg": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+                        "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "metric-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-full py-md px-sm bg-surface-container-lowest border-r border-outline-variant fixed left-0 top-0 h-screen w-[280px] z-20">
+<div class="mb-xl px-sm">
+<h1 class="font-headline-lg text-headline-lg text-primary">EnergyOS</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Utility Operations</p>
+</div>
+<div class="flex-1 flex flex-col gap-y-xs">
+<a class="flex items-center gap-x-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-x-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">apartment</span>
+                Apartamentos
+            </a>
+<a class="flex items-center gap-x-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">engineering</span>
+                Operaciones
+            </a>
+<a class="flex items-center gap-x-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">info</span>
+                Detalle
+            </a>
+<a class="flex items-center gap-x-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">bolt</span>
+                Tarifa/Potencia
+            </a>
+<a class="flex items-center gap-x-md px-md py-sm rounded-lg text-primary font-bold border-r-2 border-primary bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person_add</span>
+                Leads
+            </a>
+<a class="flex items-center gap-x-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+                Configuración
+            </a>
+<a class="flex items-center gap-x-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">description</span>
+                Informe propietario
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[280px] min-w-0 flex flex-col">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center h-16 px-lg bg-surface border-b border-outline-variant sticky top-0 z-10 w-full">
+<div class="flex-1 flex items-center">
+<div class="relative w-96 focus-within:ring-2 focus-within:ring-primary rounded-lg">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-body-sm font-body-sm text-on-surface focus:outline-none focus:ring-0" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-x-md">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-sm text-headline-sm ml-sm">
+                    M
+                </div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-xl flex-1 flex flex-col gap-y-xl">
+<!-- Header Section -->
+<div>
+<h2 class="font-headline-xl text-headline-xl text-on-background">Cualificación de Leads</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Gestión y seguimiento de candidatos para el programa piloto.</p>
+</div>
+<!-- Filter & Search Bar for Table -->
+<div class="flex items-center justify-between gap-x-md">
+<div class="flex-1 max-w-md relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" style="font-variation-settings: 'FILL' 0;">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-sm text-body-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none" placeholder="Buscar por empresa, PMS o estado..." type="text"/>
+</div>
+<div class="flex items-center gap-x-sm">
+<button class="flex items-center gap-x-2 px-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-sm text-body-sm hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 0;">filter_list</span>
+                        Filtros
+                    </button>
+<button class="flex items-center gap-x-2 px-4 py-2 bg-primary text-on-primary rounded-lg font-body-sm text-body-sm hover:bg-[#004a44] transition-colors shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">add</span>
+                        Nuevo Lead
+                    </button>
+</div>
+</div>
+<!-- Table Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg flex-1 overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[1000px]">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="p-md font-label-caps text-label-caps text-on-surface-variant uppercase">Empresa / Lead</th>
+<th class="p-md font-label-caps text-label-caps text-on-surface-variant uppercase text-right">Unidades</th>
+<th class="p-md font-label-caps text-label-caps text-on-surface-variant uppercase">Software PMS</th>
+<th class="p-md font-label-caps text-label-caps text-on-surface-variant uppercase">Estado Datadis</th>
+<th class="p-md font-label-caps text-label-caps text-on-surface-variant uppercase text-right">Facturas</th>
+<th class="p-md font-label-caps text-label-caps text-on-surface-variant uppercase">Prioridad</th>
+<th class="p-md font-label-caps text-label-caps text-on-surface-variant uppercase text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant font-body-sm text-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="p-md">
+<div class="font-headline-sm text-headline-sm text-on-surface">Gestión Turística Madrid</div>
+<div class="text-on-surface-variant mt-1">Contacto: Laura Gómez</div>
+</td>
+<td class="p-md text-right font-metric-md text-metric-md text-on-surface">55</td>
+<td class="p-md text-on-surface">Guesty</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-x-1 px-2 py-1 bg-[#a3faef] text-[#00504a] rounded-full font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                        Conectado
+                                    </span>
+</td>
+<td class="p-md text-right font-metric-md text-metric-md text-on-surface">12 meses</td>
+<td class="p-md">
+<span class="inline-flex items-center px-2 py-1 bg-error-container text-on-error-container rounded-full font-label-caps text-label-caps">Alta</span>
+</td>
+<td class="p-md text-right">
+<button class="text-outline hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">more_vert</span></button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="p-md">
+<div class="font-headline-sm text-headline-sm text-on-surface">Apartamentos Sol Costa</div>
+<div class="text-on-surface-variant mt-1">Contacto: Miguel Ruiz</div>
+</td>
+<td class="p-md text-right font-metric-md text-metric-md text-on-surface">120</td>
+<td class="p-md text-on-surface">Hostaway</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-x-1 px-2 py-1 bg-[#ffeeba] text-[#856404] rounded-full font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+                                        En Proceso
+                                    </span>
+</td>
+<td class="p-md text-right font-metric-md text-metric-md text-on-surface">3 meses</td>
+<td class="p-md">
+<span class="inline-flex items-center px-2 py-1 bg-[#ffeeba] text-[#856404] rounded-full font-label-caps text-label-caps">Media</span>
+</td>
+<td class="p-md text-right">
+<button class="text-outline hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">more_vert</span></button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="p-md">
+<div class="font-headline-sm text-headline-sm text-on-surface">Urban Stays BCN</div>
+<div class="text-on-surface-variant mt-1">Contacto: Ana Torres</div>
+</td>
+<td class="p-md text-right font-metric-md text-metric-md text-on-surface">18</td>
+<td class="p-md text-on-surface">Smoobu</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-x-1 px-2 py-1 bg-[#f5c6cb] text-[#721c24] rounded-full font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                                        Error Credenciales
+                                    </span>
+</td>
+<td class="p-md text-right font-metric-md text-metric-md text-on-surface">0 meses</td>
+<td class="p-md">
+<span class="inline-flex items-center px-2 py-1 bg-surface-container-high text-on-surface-variant rounded-full font-label-caps text-label-caps">Baja</span>
+</td>
+<td class="p-md text-right">
+<button class="text-outline hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">more_vert</span></button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="p-md">
+<div class="font-headline-sm text-headline-sm text-on-surface">Luxury Rentals Sur</div>
+<div class="text-on-surface-variant mt-1">Contacto: Carlos Mendoza</div>
+</td>
+<td class="p-md text-right font-metric-md text-metric-md text-on-surface">42</td>
+<td class="p-md text-on-surface">Beds24</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-x-1 px-2 py-1 bg-surface-container-high text-on-surface-variant rounded-full font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+                                        Pendiente Autorización
+                                    </span>
+</td>
+<td class="p-md text-right font-metric-md text-metric-md text-on-surface">1 mes</td>
+<td class="p-md">
+<span class="inline-flex items-center px-2 py-1 bg-error-container text-on-error-container rounded-full font-label-caps text-label-caps">Alta</span>
+</td>
+<td class="p-md text-right">
+<button class="text-outline hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Tag Cloud Section inside Card Footer -->
+<div class="mt-auto border-t border-outline-variant bg-surface p-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Alcance del Piloto</h3>
+<div class="flex flex-wrap gap-sm">
+<!-- Active Tags -->
+<span class="px-3 py-1.5 bg-primary-container text-on-primary-container rounded-full font-body-sm text-body-sm border border-primary-container">consumo</span>
+<span class="px-3 py-1.5 bg-primary-container text-on-primary-container rounded-full font-body-sm text-body-sm border border-primary-container">tarifa</span>
+<span class="px-3 py-1.5 bg-primary-container text-on-primary-container rounded-full font-body-sm text-body-sm border border-primary-container">operaciones</span>
+<!-- Neutral Tags -->
+<span class="px-3 py-1.5 bg-surface-container-lowest text-on-surface-variant rounded-full font-body-sm text-body-sm border border-outline-variant hover:border-outline cursor-pointer transition-colors">reservas</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest text-on-surface-variant rounded-full font-body-sm text-body-sm border border-outline-variant hover:border-outline cursor-pointer transition-colors">potencia</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest text-on-surface-variant rounded-full font-body-sm text-body-sm border border-outline-variant hover:border-outline cursor-pointer transition-colors">contrato</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest text-on-surface-variant rounded-full font-body-sm text-body-sm border border-outline-variant hover:border-outline cursor-pointer transition-colors">propietario</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest text-on-surface-variant rounded-full font-body-sm text-body-sm border border-outline-variant hover:border-outline cursor-pointer transition-colors">informe</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest text-on-surface-variant rounded-full font-body-sm text-body-sm border border-outline-variant hover:border-outline cursor-pointer transition-colors">cartera</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest text-on-surface-variant rounded-full font-body-sm text-body-sm border border-outline-variant hover:border-outline cursor-pointer transition-colors">solar</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest text-on-surface-variant rounded-full font-body-sm text-body-sm border border-outline-variant hover:border-outline cursor-pointer transition-colors">batería</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest text-on-surface-variant rounded-full font-body-sm text-body-sm border border-outline-variant hover:border-outline cursor-pointer transition-colors">arbitraje</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

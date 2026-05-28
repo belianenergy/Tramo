@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "name": "Comunidad de Vecinos Calle Mayor 15",
+    "address": "Calle Mayor 15",
+    "city": "Madrid",
+    "postalCode": "28013",
+    "units": 24,
+    "totalKwh": 2400,
+    "totalCost": 408,
+    "status": "optimized",
+    "administrator": "Gestión Inmobiliaria García SL"
+  },
+  {
+    "id": "2",
+    "name": "Comunidad Avda Galicia 42",
+    "address": "Avenida de Galicia 42",
+    "city": "Santiago de Compostela",
+    "postalCode": "15704",
+    "units": 18,
+    "totalKwh": 1800,
+    "totalCost": 306,
+    "status": "optimized",
+    "administrator": "Administraciones Finisterre SL"
+  },
+  {
+    "id": "3",
+    "name": "Comunidad Ronda das Fonts 5",
+    "address": "Ronda das Fonts 5",
+    "city": "A Coruña",
+    "postalCode": "15011",
+    "units": 12,
+    "totalKwh": 1200,
+    "totalCost": 204,
+    "status": "warning",
+    "administrator": "Galicia Gestión Comunidad SL"
+  },
+  {
+    "id": "4",
+    "name": "Comunidad Calle Catalina 8",
+    "address": "Calle Catalina 8",
+    "city": "Barcelona",
+    "postalCode": "08022",
+    "units": 32,
+    "totalKwh": 3200,
+    "totalCost": 544,
+    "status": "optimized",
+    "administrator": "Barcelona Propietats SA"
+  },
+  {
+    "id": "5",
+    "name": "Comunidad Plaza Mayor 1",
+    "address": "Plaza Mayor 1",
+    "city": "Salamanca",
+    "postalCode": "37002",
+    "units": 8,
+    "totalKwh": 800,
+    "totalCost": 136,
+    "status": "alert",
+    "administrator": "Inmobiliaria Castellana SL"
+  }
+]

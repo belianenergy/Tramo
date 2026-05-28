@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Informe Mensual Propietario — Costa Norte Stays</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F4F1EA;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#e6813a",
+                    "secondary-container": "#fe932c",
+                    "on-tertiary-fixed": "#001f28",
+                    "outline": "#887367",
+                    "on-primary-fixed": "#321300",
+                    "outline-variant": "#dbc1b3",
+                    "on-tertiary-container": "#003846",
+                    "secondary-fixed-dim": "#ffb77d",
+                    "inverse-surface": "#313030",
+                    "primary-fixed-dim": "#ffb68a",
+                    "primary-fixed": "#ffdbc8",
+                    "surface-dim": "#dcd9d9",
+                    "on-primary-container": "#562500",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#004e60",
+                    "tertiary-fixed-dim": "#57d5fc",
+                    "on-surface": "#1c1b1b",
+                    "secondary-fixed": "#ffdcc3",
+                    "on-primary-fixed-variant": "#743500",
+                    "surface-tint": "#984700",
+                    "on-secondary-fixed-variant": "#6e3900",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#b6ebff",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#00677f",
+                    "on-background": "#1c1b1b",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-secondary-fixed": "#2f1500",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e5e2e1",
+                    "secondary": "#904d00",
+                    "tertiary-container": "#00a9ce",
+                    "surface-container": "#f0eded",
+                    "on-surface-variant": "#554338",
+                    "surface-container-high": "#eae7e7",
+                    "surface-bright": "#fcf9f8",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f6f3f2",
+                    "surface": "#fcf9f8",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#ffb68a",
+                    "on-secondary-container": "#663500",
+                    "on-error-container": "#93000a",
+                    "primary": "#984700",
+                    "background": "#fcf9f8",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-padding": "32px",
+                    "margin-desktop": "40px",
+                    "unit": "4px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "number-data": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "title-sm": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "number-data": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full w-[80px] flex flex-col border-r border-outline-variant bg-surface z-50 py-8 gap-y-6 items-center">
+<div class="mb-4">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">CNS</span>
+</div>
+<nav class="flex flex-col gap-y-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-3 hover:bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined">dashboard</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-3 hover:bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined">apartment</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-3 hover:bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined">handyman</span>
+</button>
+<button class="bg-primary-container text-on-primary-container rounded-full p-3 shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-3 hover:bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined">payments</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-3 hover:bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined">person_search</span>
+</button>
+</nav>
+<div class="mt-auto">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-3 hover:bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 left-[80px] h-16 flex items-center px-margin-desktop bg-background border-b border-outline-variant z-40 justify-between">
+<h1 class="font-title-sm text-title-sm font-bold text-on-surface">Informe mensual propietario — EnergyOS</h1>
+<div class="flex items-center gap-6">
+<button class="bg-primary-container text-on-primary-container font-label-caps text-label-caps px-4 py-2 rounded-full hover:opacity-90 transition-opacity">Nueva Operación</button>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">calendar_today</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">notifications</span>
+<div class="w-8 h-8 rounded-full bg-outline-variant overflow-hidden">
+<img alt="Usuario Gestor" data-alt="A professional headshot of a middle-aged property manager in a crisp white shirt and navy blazer. The lighting is bright and clean, following a modern architectural office aesthetic. The background is a soft-focus interior with neutral tones of cream and gray, projecting competence and operational luxury. The mood is trustworthy and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBshMf-U6T6--JE8B6RikZ1LiNyfzmKdyW9meYJ-xYiG0f55Jzmmm0TIvOi4Gkr3BJVsKwX8jQBjl30vt3wxVoLSAebSw9V5sqhrHKoHhMjmEmQVS-wqaVKiPmk5FbvY7B0ORXsmXZVUo9ua3bRrME24YRsMHV-hhSvX5_onzt1I-LtPucN5TqRslFt73UWuK1_k5ayKm_zQ3h4E0i8UvzVg2q4gFVBUtG3FcKMkbuVNErMXFwCke8-DBHlpgTeMakSFm1_7plCbrP6"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-[80px] mt-16 p-margin-desktop">
+<div class="max-w-[1200px] mx-auto bg-surface-container-lowest border border-outline-variant rounded-[32px] p-container-padding shadow-[0_4px_20px_rgba(23,23,23,0.03)]">
+<!-- Report Header -->
+<div class="flex justify-between items-start mb-12 border-b border-outline-variant pb-8">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="font-headline-md text-headline-md font-bold text-primary-container">CNS</span>
+<div class="h-6 w-px bg-outline-variant mx-2"></div>
+<span class="font-label-caps text-label-caps tracking-widest text-on-surface-variant">COSTA NORTE STAYS</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-1">Informe de Gestión Energética y Operativa</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Abril 2026 · VGO-014 · Apartamento Areal · Vigo</p>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Propietaria</p>
+<p class="font-title-sm text-title-sm text-on-surface">Marta Lago</p>
+</div>
+</div>
+<!-- Executive Summary -->
+<section class="mb-12">
+<h3 class="font-label-caps text-label-caps text-primary mb-3">RESUMEN EJECUTIVO</h3>
+<div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed max-w-3xl">Durante el mes de abril, la gestión energética del Apartamento Areal se ha centrado en el control activo de los costes energéticos y la alineación contractual. Mediante EnergyOS, hemos mitigado sustancialmente los consumos fantasmas en periodos vacíos entre estancias. La proactividad en el control ha sido clave para evitar picos de demanda energética innecesarios, optimizando así la rentabilidad operativa y el gasto global de la propiedad.</p>
+</div>
+</section>
+<!-- Impact KPIs -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-12">
+<div class="p-6 border border-outline-variant rounded-2xl bg-surface-container-lowest">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">CONSUMO MENSUAL</p>
+<p class="font-number-data text-number-data text-on-surface">412 <span class="text-body-md">kWh</span></p>
+</div>
+<div class="p-6 border border-outline-variant rounded-2xl bg-surface-container-lowest">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">CONSUMO NO OPERATIVO</p>
+<p class="font-number-data text-number-data text-primary-container">18.4 <span class="text-body-md">kWh</span></p>
+</div>
+<div class="p-6 border border-outline-variant rounded-2xl bg-surface-container-lowest">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">ACCIONES DE GESTIÓN</p>
+<p class="font-number-data text-number-data text-on-surface">3 <span class="text-body-md">Acciones</span></p>
+</div>
+<div class="p-6 border border-outline-variant rounded-2xl bg-surface-container-lowest">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">AHORRO ESTIMADO</p>
+<p class="font-number-data text-number-data text-on-surface">42.50 <span class="text-body-md">€</span></p>
+</div>
+</div>
+<!-- Bento Layout for Chart & Timeline -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-12">
+<!-- Consumption Chart Placeholder -->
+<div class="lg:col-span-2 p-8 border border-outline-variant rounded-3xl bg-surface-container-lowest min-h-[360px] flex flex-col">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-title-sm text-title-sm text-on-surface">Consumo Real vs Proyectado</h3>
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Real</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full border border-primary-container border-dashed"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Proyectado (sin EnergyOS)</span>
+</div>
+</div>
+</div>
+<div class="flex-grow flex items-end gap-2 px-4">
+<!-- Simplified Visual Chart using Divs for Restro Style -->
+<div class="relative w-full h-48 flex items-end justify-between border-b border-outline-variant">
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 200">
+<path d="M0,180 Q100,160 200,170 T400,140 T600,150 T800,120 T1000,130" fill="none" stroke="#E6813A" stroke-width="2"></path>
+<path d="M0,170 Q100,140 200,150 T400,110 T600,120 T800,90 T1000,100" fill="none" stroke="#DBC1B3" stroke-dasharray="4" stroke-width="1.5"></path>
+</svg>
+</div>
+</div>
+<div class="flex justify-between mt-4 px-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Semana 1</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Semana 2</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Semana 3</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Semana 4</span>
+</div>
+</div>
+<!-- Incident Timeline -->
+<div class="p-8 border border-outline-variant rounded-3xl bg-surface-container-low flex flex-col">
+<h3 class="font-title-sm text-title-sm text-on-surface mb-6">Timeline de Hitos Operativos</h3>
+<div class="flex flex-col gap-6"><div class="flex gap-4"><div class="flex flex-col items-center"><div class="w-2 h-2 rounded-full bg-primary-container mt-2"></div><div class="w-px flex-grow bg-outline-variant my-1"></div></div><div><p class="font-label-caps text-label-caps text-primary mb-1">12 ABR</p><p class="font-body-md text-body-md text-on-surface">Ajuste de potencia contratada (Ahorro anual estimado).</p></div></div><div class="flex gap-4"><div class="flex flex-col items-center"><div class="w-2 h-2 rounded-full bg-primary-container mt-2"></div><div class="w-px flex-grow bg-outline-variant my-1"></div></div><div><p class="font-label-caps text-label-caps text-primary mb-1">18 ABR</p><p class="font-body-md text-body-md text-on-surface">Detección y mitigación de consumo fuera de reserva.</p></div></div><div class="flex gap-4"><div class="flex flex-col items-center"><div class="w-2 h-2 rounded-full bg-primary-container mt-2"></div></div><div><p class="font-label-caps text-label-caps text-primary mb-1">26 ABR</p><p class="font-body-md text-body-md text-on-surface">Validación de tarifa mercado indexado vs fijo.</p></div></div></div>
+</div>
+</div>
+<!-- Owner Copy Block -->
+<section class="mb-12">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-3 uppercase">Texto para Propietaria (Listo para copiar)</h3>
+<div class="bg-surface p-8 rounded-2xl border border-outline-variant border-dashed relative">
+<p class="font-body-md text-body-md text-on-surface-variant italic leading-relaxed">"Estimada Marta, te adjunto el informe de gestión operativa y financiera de tu apartamento en Areal correspondiente a abril. Hemos optimizado la gestión para reducir los consumos no operativos, lo que supone un ahorro directo de 42,50€ este mes. Todo sigue bajo parámetros de seguridad operativa y eficiencia. Un saludo, CNS Admin."</p>
+<button class="absolute top-4 right-4 text-primary-container hover:bg-surface-container-high p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">content_copy</span>
+</button>
+</div>
+</section>
+<!-- Actions Footer -->
+<div class="flex items-center justify-end gap-4 border-t border-outline-variant pt-8">
+<button class="flex items-center gap-2 px-8 py-3 rounded-full bg-surface-container-low border border-outline-variant text-on-surface font-label-caps text-label-caps hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+                    ENVIAR POR EMAIL
+                </button>
+<button class="flex items-center gap-2 px-8 py-3 rounded-full bg-primary-container text-white font-label-caps text-label-caps hover:opacity-90 shadow-sm transition-all scale-95 active:scale-90">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+                    EXPORTAR PDF
+                </button>
+</div>
+</div>
+</main>
+</body></html>

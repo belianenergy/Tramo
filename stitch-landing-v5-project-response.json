@@ -1,0 +1,19 @@
+{
+  "id": 1778929814673,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"name\":\"projects/18100011859047888360\",\"title\":\"EnergyOS Landing v5 — Restro Style\",\"visibility\":\"PRIVATE\",\"projectType\":\"PROJECT_DESIGN\",\"origin\":\"STITCH\"}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "name": "projects/18100011859047888360",
+      "origin": "STITCH",
+      "projectType": "PROJECT_DESIGN",
+      "title": "EnergyOS Landing v5 — Restro Style",
+      "visibility": "PRIVATE"
+    }
+  }
+}

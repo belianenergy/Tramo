@@ -1,0 +1,24 @@
+{
+  "key": "leads",
+  "requestedName": "leads-solicitudes-piloto",
+  "title": "Leads / solicitudes piloto — EnergyOS",
+  "projectId": "13332484261109626353",
+  "projectName": "projects/13332484261109626353",
+  "screenId": "cb23c2ef7def40988c9e7b4adf83a93a",
+  "screenName": "projects/13332484261109626353/screens/cb23c2ef7def40988c9e7b4adf83a93a",
+  "width": "2560",
+  "height": "2508",
+  "htmlCodeName": "projects/13332484261109626353/files/642109a1e0e6476cbb476d474c2e9511",
+  "screenshotName": "projects/13332484261109626353/files/5884f398767f459ea6db80d4cd0be729",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2ZkNjlkODIxYjRkNzQxZTI4N2QyODgyNTE5ZTk4M2E3EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMzMzMjQ4NDI2MTEwOTYyNjM1Mw&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uhC9DyBfrfZJ7zZWCGjQluUH9jFZ5l4WnS8SuLMEZeKbtkzutC3JYk8XbRw2V5DEpVCAwWFXE4-zHdXvl0mGU1ptJ3fC5mZB4o-2aPfaBEjPMSdKP_sZr5cS3tov_iGIEa5--nLRHxYbQYy-OaHtJrVFnBhhQ3DuWNLgOThHlyRdCoE2t-J5lYcsxubniaRxENsuknlP2m2l_9wtBnI4KEGWo6O9MSq-TSN-6AumNa2yusaXGXHEfxVc1rW",
+  "generatedAt": "2026-05-12T19:15:00.007Z",
+  "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_V1.md",
+  "localFiles": {
+    "response": "stitch-mvp-completo-v1-leads-response.json",
+    "meta": "stitch-mvp-completo-v1-leads-meta.json",
+    "html": "stitch-mvp-completo-v1-leads.html",
+    "stitchPng": "stitch-mvp-completo-v1-leads-stitch.png",
+    "previews": []
+  }
+}

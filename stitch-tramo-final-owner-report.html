@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Informe de energía — Mayo 2026 - Tramo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1b1c1b",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fcf9f8",
+                        "on-tertiary-container": "#003a35",
+                        "primary-fixed": "#ffdbc8",
+                        "inverse-primary": "#ffb68a",
+                        "on-secondary-container": "#785f52",
+                        "on-surface-variant": "#554338",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#321300",
+                        "secondary-container": "#fedccb",
+                        "surface": "#fcf9f8",
+                        "on-tertiary-fixed": "#00201d",
+                        "surface-tint": "#984700",
+                        "inverse-surface": "#303030",
+                        "outline-variant": "#dbc1b3",
+                        "tertiary-fixed-dim": "#80d5cb",
+                        "surface-variant": "#e4e2e1",
+                        "secondary-fixed": "#fedccb",
+                        "primary-fixed-dim": "#ffb68a",
+                        "background": "#fcf9f8",
+                        "on-secondary-fixed": "#29170e",
+                        "primary-container": "#e6813a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#984700",
+                        "surface-container": "#f0edec",
+                        "on-primary-fixed-variant": "#743500",
+                        "on-primary-container": "#562500",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "tertiary": "#006a63",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#72594c",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "outline": "#887367",
+                        "surface-container-high": "#eae7e7",
+                        "tertiary-container": "#52a9a0",
+                        "secondary-fixed-dim": "#e0c0b0",
+                        "tertiary-fixed": "#9cf2e8",
+                        "on-secondary-fixed-variant": "#584236",
+                        "surface-container-highest": "#e4e2e1",
+                        "surface-container-low": "#f6f3f2",
+                        "on-surface": "#1b1c1b",
+                        "surface-dim": "#dcd9d8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "section-gap": "64px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "data-md": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Inter"],
+                        "data-lg": ["JetBrains Mono"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "data-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "data-lg": ["20px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-white min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background text-primary dark:text-primary-fixed font-headline-md text-headline-md font-body-md text-body-md font-data-md text-data-md docked full-width top-0 border-b border-outline-variant dark:border-outline flat no shadows z-50 sticky">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto h-20">
+<div class="flex items-center gap-4">
+<img alt="Tramo Logo" class="h-8 w-8 object-contain rounded-sm" src="https://lh3.googleusercontent.com/aida/ADBb0uhJeRve3lS_iZ5wpV8G_ryloeDv_3JNgVC5jjIkJERJNakJrpG70AaYu4AKw62gY9NmK_HFEwLVP30bI3FGLQe428KTTk-T7AQ2vltkc4XMUBJJUQLppgzmLy-oFD4x4n-rLDEVLblRkKIDcydXRa0BUC9MTAFM3I5OBoXXsdrwRz-ju0D9jCqHv8PllpF50bkR85E3ak0D9NBzWHaHUwTzI64nBk7ZoSk1Xfo3z5PUFwNN3WbGj_v-rpoM"/>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight hidden md:block">Tramo</span>
+</div>
+<div class="flex-1 text-center hidden md:block">
+<h1 class="font-headline-md text-headline-md text-on-surface font-semibold">Informe de energía — Mayo 2026</h1>
+</div>
+<div class="flex items-center justify-end">
+<span class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low px-3 py-1.5 rounded-full border border-outline-variant">Propiedad ID: 48291</span>
+</div>
+</div>
+<!-- Mobile Title -->
+<div class="w-full px-margin-mobile pb-4 md:hidden text-center border-t border-outline-variant mt-2 pt-2">
+<h1 class="font-headline-md text-headline-md text-on-surface font-semibold text-lg">Informe de energía — Mayo 2026</h1>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-section-gap flex flex-col gap-section-gap">
+<!-- DOCUMENT HEADER / META -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-outline-variant pb-8">
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-lg text-headline-lg text-on-background font-bold tracking-tight">Reporte Operativo</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Resumen de consumo energético, análisis de costes y acciones automáticas de optimización para la propiedad VGO-014.</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] p-6 flex flex-col gap-3 min-w-[300px] shadow-sm">
+<div class="flex justify-between items-center border-b border-surface-variant pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Propiedad</span>
+<span class="font-data-md text-data-md text-on-surface font-semibold">VGO-014 — Apartamento Vigo Centro</span>
+</div>
+<div class="flex justify-between items-center border-b border-surface-variant pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Propietaria</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">María González</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Generado</span>
+<span class="font-data-md text-data-md text-on-surface font-medium">17 Mayo 2026</span>
+</div>
+</div>
+</section>
+<!-- SECTION 1: CONSUMPTION SUMMARY -->
+<section class="flex flex-col gap-8">
+<h3 class="font-headline-md text-headline-md text-on-background font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">bolt</span>
+                Resumen de Consumo
+            </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] p-8 flex flex-col justify-center items-start hover:border-primary-container transition-colors duration-200">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-2">Consumo total mensual</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-on-background font-bold font-data-md">412</span>
+<span class="font-body-lg text-body-lg text-on-surface-variant font-medium">kWh</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] p-8 flex flex-col justify-center items-start hover:border-primary-container transition-colors duration-200">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-2">Coste estimado</span>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-display-lg text-display-lg text-on-background font-bold font-data-md">68.40</span>
+<span class="font-body-lg text-body-lg text-on-surface-variant font-medium">EUR</span>
+</div>
+<span class="font-data-md text-data-md text-on-surface-variant bg-surface-container-low px-2 py-1 rounded border border-outline-variant inline-block mt-2">PVP medio 0.166 EUR/kWh</span>
+</div>
+</div>
+<!-- Stacked Bar Visual -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] p-8">
+<h4 class="font-body-sm text-body-sm text-on-surface-variant font-semibold mb-4 uppercase tracking-wider">Distribución del Consumo</h4>
+<!-- Bar -->
+<div class="w-full h-8 flex rounded-full overflow-hidden mb-4 border border-outline-variant">
+<div class="h-full bg-primary-container" style="width: 82%;" title="Estancia: 340 kWh"></div>
+<div class="h-full bg-surface-dim" style="width: 18%;" title="Fuera de reserva: 72 kWh"></div>
+</div>
+<!-- Legend -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div class="flex items-center gap-3">
+<div class="w-4 h-4 rounded-full bg-primary-container border border-outline-variant shrink-0"></div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-background font-semibold">Estancia</span>
+<span class="font-data-md text-data-md text-on-surface-variant">340 kWh (82%)</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-4 h-4 rounded-full bg-surface-dim border border-outline-variant shrink-0"></div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-background font-semibold">Fuera de reserva</span>
+<span class="font-data-md text-data-md text-on-surface-variant">72 kWh (18%)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: CONSUMPTION DETAIL TABLE -->
+<section class="flex flex-col gap-6">
+<h3 class="font-headline-md text-headline-md text-on-background font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">calendar_month</span>
+                Detalle por Periodo
+            </h3>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[600px]">
+<thead>
+<tr class="bg-surface-bright border-b border-outline-variant">
+<th class="py-4 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">Periodo</th>
+<th class="py-4 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold text-right">kWh</th>
+<th class="py-4 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold text-right">EUR</th>
+<th class="py-4 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">Notas</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="py-4 px-6 font-medium">Estancia 1-10 May</td>
+<td class="py-4 px-6 font-data-md text-data-md text-right">142 kWh</td>
+<td class="py-4 px-6 font-data-md text-data-md text-right">23.57 EUR</td>
+<td class="py-4 px-6 text-on-surface-variant">7 noches</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="py-4 px-6 font-medium">Estancia 12-16 May</td>
+<td class="py-4 px-6 font-data-md text-data-md text-right">98 kWh</td>
+<td class="py-4 px-6 font-data-md text-data-md text-right">16.27 EUR</td>
+<td class="py-4 px-6 text-on-surface-variant">4 noches</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="py-4 px-6 font-medium">Estancia 20-26 May</td>
+<td class="py-4 px-6 font-data-md text-data-md text-right">100 kWh</td>
+<td class="py-4 px-6 font-data-md text-data-md text-right">16.60 EUR</td>
+<td class="py-4 px-6 text-on-surface-variant">6 noches</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-4 px-6 font-medium text-on-secondary-container flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">warning</span>
+                                    Idle / fuera reserva
+                                </td>
+<td class="py-4 px-6 font-data-md text-data-md text-right text-on-secondary-container">72 kWh</td>
+<td class="py-4 px-6 font-data-md text-data-md text-right text-on-secondary-container">11.95 EUR</td>
+<td class="py-4 px-6 text-on-secondary-container font-medium">Sin ocupación</td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="bg-surface-bright border-t-2 border-outline-variant">
+<td class="py-4 px-6 font-body-md text-body-md font-bold text-on-background">Total</td>
+<td class="py-4 px-6 font-data-md text-data-md font-bold text-on-background text-right">412 kWh</td>
+<td class="py-4 px-6 font-data-md text-data-md font-bold text-on-background text-right">68.40 EUR</td>
+<td class="py-4 px-6"></td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+</section>
+<!-- SECTION 3: ACTIONS TAKEN & SECTION 4: COMPARISON -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Actions Taken -->
+<section class="lg:col-span-2 flex flex-col gap-6">
+<h3 class="font-headline-md text-headline-md text-on-background font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">manufacturing</span>
+                    Acciones de Optimización
+                </h3>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] p-6 lg:p-8 flex flex-col gap-6 h-full">
+<ul class="flex flex-col gap-4">
+<li class="flex items-start gap-4 pb-4 border-b border-outline-variant last:border-0 last:pb-0">
+<div class="bg-surface-container-low p-2 rounded-full border border-outline-variant shrink-0 mt-1">
+<span class="material-symbols-outlined text-on-surface-variant icon-fill">trending_down</span>
+</div>
+<div class="flex flex-col gap-1 w-full">
+<h4 class="font-body-md text-body-md font-semibold text-on-background">Revisión potencia contratada</h4>
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-data-md text-data-md bg-surface-bright border border-outline-variant px-2 py-0.5 rounded">4.60 → 3.30 kW P2</span>
+<span class="text-tertiary font-medium">· Ahorro estimado: 14.20 EUR/mes</span>
+</div>
+</div>
+</li>
+<li class="flex items-start gap-4 pb-4 border-b border-outline-variant last:border-0 last:pb-0">
+<div class="bg-surface-container-low p-2 rounded-full border border-outline-variant shrink-0 mt-1">
+<span class="material-symbols-outlined text-on-surface-variant icon-fill">thermostat</span>
+</div>
+<div class="flex flex-col gap-1 w-full">
+<h4 class="font-body-md text-body-md font-semibold text-on-background">Regla termo post-checkout</h4>
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-medium bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded text-xs uppercase tracking-wider">Activada</span>
+<span class="text-tertiary font-medium">· Ahorro estimado: 8.30 EUR/mes</span>
+</div>
+</div>
+</li>
+<li class="flex items-start gap-4 pb-4 border-b border-outline-variant last:border-0 last:pb-0">
+<div class="bg-error-container p-2 rounded-full border border-error/20 shrink-0 mt-1">
+<span class="material-symbols-outlined text-error icon-fill">search</span>
+</div>
+<div class="flex flex-col gap-1 w-full">
+<h4 class="font-body-md text-body-md font-semibold text-on-background">Detección consumo fuera de reserva</h4>
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-data-md text-data-md text-error font-medium">72 kWh identificados</span>
+<span class="text-on-surface-variant italic">· Investigando anomalía</span>
+</div>
+</div>
+</li>
+</ul>
+<div class="mt-auto pt-4 border-t border-outline-variant flex justify-end">
+<p class="font-body-md text-body-md font-bold text-tertiary bg-tertiary-fixed/30 px-4 py-2 rounded-lg border border-tertiary-fixed-dim">
+                            Total ahorro estimado: 22.50 EUR/mes
+                        </p>
+</div>
+</div>
+</section>
+<!-- Comparison -->
+<section class="lg:col-span-1 flex flex-col gap-6">
+<h3 class="font-headline-md text-headline-md text-on-background font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">insights</span>
+                    Comparativa
+                </h3>
+<div class="flex flex-col gap-4 h-full">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] p-6 flex flex-col gap-2 hover:bg-surface-bright transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">vs mes anterior</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg font-data-md text-on-background font-bold tracking-tighter">+8%</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">consumo</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 border-t border-outline-variant pt-2">Explicado por: <span class="font-medium text-on-background">más días ocupación</span></p>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-tertiary/5 border border-tertiary/20 rounded-[16px] p-6 flex flex-col gap-2 hover:bg-tertiary/10 transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">vs media portfolio</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg font-data-md text-tertiary font-bold tracking-tighter">-12%</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">kWh/estancia</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 border-t border-outline-variant pt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-tertiary">check_circle</span>
+                            Propiedad eficiente
+                        </p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest font-label-caps text-label-caps font-body-sm text-body-sm font-headline-sm text-headline-sm font-bold text-on-surface dark:text-inverse-on-surface full-width bottom-0 border-t border-outline-variant dark:border-outline flat no shadows text-secondary dark:text-secondary-fixed text-on-secondary-fixed-variant dark:text-on-secondary-fixed w-full py-base px-margin-desktop mt-section-gap flex flex-col md:flex-row justify-between items-center max-w-container-max-width mx-auto">
+<div class="w-full flex flex-col md:flex-row justify-between items-center gap-6 py-6 px-4 md:px-0">
+<div class="text-center md:text-left flex flex-col gap-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">© 2026 Tramo Energy Management.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Informe generado automáticamente por Tramo — kWh explicados por reserva. Los datos reflejan el consumo registrado en el periodo indicado.</span>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+<a class="font-body-sm text-body-sm font-medium text-primary hover:text-primary-container hover:underline transition-all flex items-center gap-1" href="#">
+                    Para más detalle: Tramo Dashboard
+                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+<span class="font-body-sm text-body-sm text-on-surface-variant border-l border-outline-variant pl-4 hidden md:block">Tu gestor de energía: Tramo</span>
+<!-- Links from JSON -->
+<nav class="flex flex-wrap justify-center gap-4 md:ml-4">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-all focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded" href="#">Soporte Técnico</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-all focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded" href="#">Privacidad de Datos</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline transition-all focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded" href="#">Términos de Servicio</a>
+</nav>
+</div>
+</div>
+</footer>
+</body></html>

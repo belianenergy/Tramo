@@ -1,0 +1,19 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"name\":\"projects/15913095808578827673\",\"title\":\"EnergyOS Landing MVP — Apartamentos Turísticos v8\",\"visibility\":\"PRIVATE\",\"projectType\":\"PROJECT_DESIGN\",\"origin\":\"STITCH\"}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "name": "projects/15913095808578827673",
+      "origin": "STITCH",
+      "projectType": "PROJECT_DESIGN",
+      "title": "EnergyOS Landing MVP — Apartamentos Turísticos v8",
+      "visibility": "PRIVATE"
+    }
+  }
+}

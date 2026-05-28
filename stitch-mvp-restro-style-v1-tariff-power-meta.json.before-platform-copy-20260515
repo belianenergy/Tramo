@@ -1,0 +1,24 @@
+{
+  "key": "tariff-power",
+  "requestedName": "optimizacion-tarifa-potencia",
+  "title": "Optimización tarifa/potencia — EnergyOS",
+  "projectId": "11820050226044719534",
+  "projectName": "projects/11820050226044719534",
+  "screenId": "463fae1ce04d477d8c7eefa1483faf33",
+  "screenName": "projects/11820050226044719534/screens/463fae1ce04d477d8c7eefa1483faf33",
+  "width": "2560",
+  "height": "3160",
+  "htmlCodeName": "projects/11820050226044719534/files/4b4c60ca48944ee496d1aaaa5cff5f6b",
+  "screenshotName": "projects/11820050226044719534/files/c38dd37907d841d49d921752bd235636",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzY3MjRlZTM3NTE0NDQyYTVhMDBhMDI1NGZhYWUxOGM1EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ujqR_Kc_dYcmGsuVGqKI6OK3xOoTAcuPITU5obZOYn0ryx1V2fnkE_FD5rkGFGM4ePYSilge__D-lYN45Hy8VBW_V4FZpRrYA8T-66gzzaPxaVIQKOodsGxWiFQHwMyPtYrfO3C_YTxcfBGWVlCAc1x-N5oPYHasYaUlauUFwayI5KJpBTFbxdADoPsjT7XzzK8lyJHtFLo3PdGQ0r6ms6SwMFe2-shy-gNLw1Wjqrwo0tS0uB_gQRsZPsr",
+  "generatedAt": "2026-05-12T19:41:34.513Z",
+  "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+  "localFiles": {
+    "response": "stitch-mvp-restro-style-v1-tariff-power-response.json",
+    "meta": "stitch-mvp-restro-style-v1-tariff-power-meta.json",
+    "html": "stitch-mvp-restro-style-v1-tariff-power.html",
+    "stitchPng": "stitch-mvp-restro-style-v1-tariff-power-stitch.png",
+    "previews": []
+  }
+}

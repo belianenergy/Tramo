@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html class="light" lang="gl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#006c49",
+                        "surface": "#f8f9ff",
+                        "surface-container": "#e5eeff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#711419",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-surface-variant": "#3c4a42",
+                        "outline": "#6c7a71",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-background": "#0b1c30",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-container": "#00422b",
+                        "secondary-fixed": "#dae2fd",
+                        "tertiary": "#a43a3a",
+                        "tertiary-container": "#fc7c78",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary-fixed-variant": "#842225",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#006c49",
+                        "on-primary-fixed-variant": "#005236",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-fixed-dim": "#4edea3",
+                        "surface-container-highest": "#d3e4fe",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#410005",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "outline-variant": "#bbcabf",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#213145",
+                        "error-container": "#ffdad6",
+                        "background": "#f8f9ff",
+                        "primary-fixed": "#6ffbbe",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-container": "#dae2fd",
+                        "on-primary-fixed": "#002113",
+                        "primary-container": "#10b981",
+                        "surface-bright": "#f8f9ff",
+                        "secondary": "#565e74",
+                        "inverse-primary": "#4edea3",
+                        "tertiary-fixed-dim": "#ffb3af",
+                        "on-secondary-container": "#5c647a",
+                        "tertiary-fixed": "#ffdad7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "xl": "48px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "gutter": "20px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "data-lg": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-base": ["Inter"],
+                        "data-md": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "data-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-base": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "data-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #FAFAFA;
+            color: #0b1c30;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border: 1px solid #E5E5E5;
+        }
+    </style>
+</head>
+<body class="font-body-base">
+<!-- Fixed Side Navigation Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col h-full py-lg bg-surface border-r border-outline-variant font-body-base text-body-base">
+<div class="px-lg mb-xl">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[32px]">bolt</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">EnergyOS</span>
+</div>
+<p class="text-on-surface-variant text-body-sm mt-xs">Technical Operations</p>
+</div>
+<nav class="flex-1 px-sm space-y-1">
+<a class="flex items-center gap-sm px-md py-sm transition-colors text-primary font-bold border-r-2 border-primary hover:bg-surface-container active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Panel</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">domain</span>
+<span>Propiedades</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">notifications_active</span>
+<span>Alertas</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary active:scale-95 duration-100" href="#">
+<div class="flex justify-between items-center w-full">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined">swap_horiz</span>
+<span>Arbitraxe</span>
+</div>
+<span class="text-[10px] bg-surface-container text-primary-container px-1.5 py-0.5 rounded font-bold uppercase tracking-wider">Soon</span>
+</div>
+</a>
+<a class="flex items-center gap-sm px-md py-sm transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span>Asesor IA</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm transition-colors text-on-surface-variant hover:bg-surface-container hover:text-primary active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Configuración</span>
+</a>
+</nav>
+<div class="mt-auto px-lg pt-lg border-t border-outline-variant">
+<div class="flex items-center gap-sm">
+<img alt="Mauro Profile" class="w-10 h-10 rounded-full" data-alt="A professional portrait of a tech executive in his 40s, minimalist background, soft professional lighting, clean aesthetic, high definition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQDmepy1Gf9YbMiSPZ3Ll7rTpZHJ4Y4KPqla5TwYj63x2xIZBW1Nd502GWRVXSrQ2j182OO94v09fLFKOxp8F_FBQrNTM_rsb-HBC5nqUVZEA5AQLNrC1K2K1gWlHTOvEp-vcqVUZXiN-mt9zTdn12I0_1OCrxckBkIQU_JC_odICLN5HougR4aImrT2HU83p2UStJ5561Pv_TOm4jYiaxgoTGLeCDllJQxEB2JLlxMrk1TQpMuD7_T6KacQbcdgISTFUbr0ku-N1u"/>
+<div class="overflow-hidden">
+<p class="text-body-base font-semibold truncate">Mauro Otero</p>
+<p class="text-body-sm text-on-surface-variant truncate">Premium Account</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Top Bar Navigation Shell -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-50 flex justify-between items-center h-16 px-lg bg-surface/80 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center w-1/3">
+<div class="relative w-full max-w-sm group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg pl-10 pr-4 py-2 text-body-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none" placeholder="Buscar propiedades..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-md">
+<button class="relative p-2 text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary/20 rounded-lg">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1.5 w-4 h-4 bg-tertiary text-white text-[10px] flex items-center justify-center rounded-full font-bold">2</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">apps</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-margin-desktop pb-xl min-h-screen">
+<!-- Welcome Header -->
+<div class="mb-lg">
+<h1 class="font-headline-md text-headline-md font-bold">Bos días, Mauro 👋</h1>
+<p class="text-on-surface-variant text-body-base">4 propiedades activas · 2 alertas esta semana</p>
+</div>
+<!-- KPI Section -->
+<div class="grid grid-cols-4 gap-gutter mb-xl">
+<div class="glass-card p-lg rounded-xl flex flex-col gap-sm">
+<div class="flex items-center justify-between">
+<span class="text-label-caps text-on-surface-variant uppercase tracking-wider">Propiedades</span>
+<span class="material-symbols-outlined text-primary-container">domain</span>
+</div>
+<div class="font-data-lg text-display-lg leading-tight">4</div>
+</div>
+<div class="glass-card p-lg rounded-xl flex flex-col gap-sm">
+<div class="flex items-center justify-between">
+<span class="text-label-caps text-on-surface-variant uppercase tracking-wider">Dispositivos</span>
+<span class="material-symbols-outlined text-primary-container">hub</span>
+</div>
+<div class="font-data-lg text-display-lg leading-tight">3<span class="text-on-surface-variant font-normal text-headline-md">/4</span></div>
+</div>
+<div class="glass-card p-lg rounded-xl flex flex-col gap-sm">
+<div class="flex items-center justify-between">
+<span class="text-label-caps text-on-surface-variant uppercase tracking-wider">Alertas Activas</span>
+<span class="material-symbols-outlined text-tertiary">error</span>
+</div>
+<div class="font-data-lg text-display-lg leading-tight text-tertiary">2</div>
+</div>
+<div class="glass-card p-lg rounded-xl flex flex-col gap-sm">
+<div class="flex items-center justify-between">
+<span class="text-label-caps text-on-surface-variant uppercase tracking-wider">Aforro estimado</span>
+<span class="material-symbols-outlined text-primary-container">savings</span>
+</div>
+<div class="font-data-lg text-display-lg leading-tight text-primary">180€<span class="text-on-surface-variant font-normal text-headline-md">/mes</span></div>
+</div>
+</div>
+<!-- Main Dashboard Bento Grid -->
+<div class="bento-grid">
+<!-- Properties Grid -->
+<div class="col-span-12 lg:col-span-8 grid grid-cols-2 gap-gutter">
+<!-- Prop 1 -->
+<div class="glass-card p-lg rounded-xl hover:shadow-sm transition-shadow group">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm">Apartamento Centro</h3>
+<p class="text-body-sm text-on-surface-variant">Airbnb · Vigo</p>
+</div>
+<span class="flex items-center gap-1 text-primary text-[12px] font-bold bg-primary/10 px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Normal
+                        </span>
+</div>
+<div class="flex items-end justify-between">
+<div class="font-data-lg text-data-lg text-on-surface">0.3 <span class="text-body-sm font-normal text-on-surface-variant">kWh/h</span></div>
+<button class="text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+<!-- Prop 2 -->
+<div class="glass-card p-lg rounded-xl border-tertiary/40 bg-tertiary/5 hover:shadow-sm transition-shadow group">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm">Apartamento Praia</h3>
+<p class="text-body-sm text-on-surface-variant">Airbnb · Sanxenxo</p>
+</div>
+<span class="flex items-center gap-1 text-tertiary text-[12px] font-bold bg-tertiary/10 px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> ANÓMALO
+                        </span>
+</div>
+<div class="flex items-end justify-between">
+<div class="font-data-lg text-data-lg text-tertiary">2.1 <span class="text-body-sm font-normal text-tertiary/70">kWh/h</span></div>
+<button class="bg-tertiary text-white px-3 py-1 rounded text-body-sm font-semibold hover:bg-tertiary-fixed-dim transition-colors">Ver alerta</button>
+</div>
+</div>
+<!-- Prop 3 -->
+<div class="glass-card p-lg rounded-xl hover:shadow-sm transition-shadow group">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm">Villa Montaña</h3>
+<p class="text-body-sm text-on-surface-variant">Airbnb · Ourense</p>
+</div>
+<span class="flex items-center gap-1 text-primary text-[12px] font-bold bg-primary/10 px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Normal
+                        </span>
+</div>
+<div class="flex items-end justify-between">
+<div class="font-data-lg text-data-lg text-on-surface">0.1 <span class="text-body-sm font-normal text-on-surface-variant">kWh/h</span></div>
+<button class="text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+<!-- Prop 4 -->
+<div class="glass-card p-lg rounded-xl opacity-80 hover:shadow-sm transition-shadow group bg-surface-container-low">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm">Casa Rural Río</h3>
+<p class="text-body-sm text-on-surface-variant">Rural · Lugo</p>
+</div>
+<span class="flex items-center gap-1 text-secondary text-[12px] font-bold bg-secondary/10 px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Sen sinal
+                        </span>
+</div>
+<div class="flex items-end justify-between">
+<div class="font-data-lg text-data-lg text-on-surface-variant">-- <span class="text-body-sm font-normal text-on-surface-variant">kWh/h</span></div>
+<button class="text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+</div>
+<!-- Main Chart -->
+<div class="col-span-2 glass-card rounded-xl p-lg h-[340px] flex flex-col">
+<div class="flex justify-between items-center mb-lg">
+<div>
+<h2 class="font-headline-sm text-headline-sm">Consumo últimas 24h</h2>
+<p class="text-body-sm text-on-surface-variant">Datos en tempo real de toda a rede</p>
+</div>
+<div class="flex gap-sm">
+<div class="flex items-center gap-xs text-body-sm font-medium">
+<span class="w-3 h-3 bg-primary rounded-full"></span> Estable
+                            </div>
+<div class="flex items-center gap-xs text-body-sm font-medium">
+<span class="w-3 h-3 bg-tertiary rounded-full"></span> Anomalia
+                            </div>
+</div>
+</div>
+<div class="flex-1 relative mt-auto border-l border-b border-outline-variant flex items-end">
+<!-- Simulated Chart Visualization -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 200">
+<path d="M0 180 Q 50 170, 100 175 T 200 160 T 300 170 T 400 165 T 500 150 T 600 170 T 700 40 T 750 170 T 800 160 T 900 175 T 1000 170 L 1000 200 L 0 200 Z" fill="url(#grad)"></path>
+<path d="M0 180 Q 50 170, 100 175 T 200 160 T 300 170 T 400 165 T 500 150 T 600 170 T 700 40 T 750 170 T 800 160 T 900 175 T 1000 170" fill="none" stroke="#10B981" stroke-width="2"></path>
+<circle cx="700" cy="40" fill="#ba1a1a" r="4"></circle>
+<line stroke="#ba1a1a" stroke-dasharray="4" x1="700" x2="700" y1="40" y2="200"></line>
+<defs>
+<lineargradient id="grad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#10B981;stop-opacity:0.2"></stop>
+<stop offset="100%" style="stop-color:#10B981;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Chart Labels -->
+<div class="absolute -bottom-6 w-full flex justify-between text-[10px] text-on-surface-variant font-mono">
+<span>00:00</span><span>04:00</span><span>08:00</span><span>12:00</span><span class="text-tertiary font-bold">16:42</span><span>20:00</span><span>23:59</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column Sidebar Card -->
+<div class="col-span-12 lg:col-span-4 space-y-gutter">
+<div class="glass-card rounded-xl border-l-4 border-l-tertiary overflow-hidden">
+<div class="p-lg bg-tertiary-container/10">
+<div class="flex items-center gap-sm text-tertiary mb-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="text-label-caps uppercase tracking-wider font-bold">Alerta crítica</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-xs">Apartamento Praia</h4>
+<p class="text-body-base text-on-surface">Leva 2h con consumo <span class="font-bold text-tertiary">7x superior</span> ao habitual. Posible fuga ou electrodoméstico esquecido.</p>
+</div>
+<div class="p-lg flex flex-col gap-sm">
+<button class="w-full bg-primary text-white py-3 rounded-lg font-bold flex items-center justify-center gap-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">send</span>
+                            Enviar mensaxe ao hóspede
+                        </button>
+<button class="w-full border border-outline-variant text-on-surface py-3 rounded-lg font-bold hover:bg-surface-container transition-colors">
+                            Marcar como resolto
+                        </button>
+</div>
+</div>
+<div class="glass-card rounded-xl p-lg">
+<div class="flex items-center justify-between mb-lg">
+<h4 class="font-headline-sm text-headline-sm">Información do clima</h4>
+<span class="material-symbols-outlined text-on-surface-variant">light_mode</span>
+</div>
+<div class="space-y-md">
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant">Radiación solar</span>
+<span class="font-bold">640 W/m²</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant">Vento medio</span>
+<span class="font-bold">12 km/h</span>
+</div>
+<div class="pt-sm">
+<img alt="Energy weather map" class="w-full h-32 object-cover rounded" data-alt="A clean, high-contrast digital weather radar map showing energy generation potential across the coastal Galicia region. The map uses a sophisticated color palette of deep emerald greens for high potential areas and cool blues for the ocean. Minimalist UI elements like temperature overlays and wind vector arrows are displayed with professional technical precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvpgn63dBJ3AvNO8QkvRpLNPLUq5z33UVHA6RNVqlbpkrozAzCnZl58rIqGc1z-gRirYtwmSoHL3uxjLp_H2TvFOdgrT7qQkfAcDrUvM7CeK007GKCNJP9YKVSWP4BjqTq8yfngtwp4fKijHtcgYtTk9p5aUrcB2V5hjyI50x2U_EO3RXsMECdumKcsEnzPTrIQbbWHz1B3Bzeq9hda1iITuT9vA42FEHqpP9mA7EVSdEcGuVsdZfbRvIBkXQ5IlejmXB3to0v32kq"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Section: Devices Table -->
+<div class="col-span-12 glass-card rounded-xl overflow-hidden">
+<div class="px-lg py-md border-b border-outline-variant flex justify-between items-center">
+<h2 class="font-headline-sm text-headline-sm">Estado dos Dispositivos</h2>
+<button class="text-body-sm text-primary font-bold hover:underline">Engadir dispositivo</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low text-label-caps text-on-surface-variant uppercase tracking-wider">
+<tr>
+<th class="px-lg py-3 font-semibold">ID Dispositivo</th>
+<th class="px-lg py-3 font-semibold">Localización</th>
+<th class="px-lg py-3 font-semibold">Rede</th>
+<th class="px-lg py-3 font-semibold">Estado</th>
+<th class="px-lg py-3 font-semibold"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-lg py-4 font-data-md">Shelly_EM_01</td>
+<td class="px-lg py-4 text-body-base">Apart. Centro</td>
+<td class="px-lg py-4">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">wifi</span> Wifi
+                                    </div>
+</td>
+<td class="px-lg py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[12px] font-bold bg-primary/10 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Conectado
+                                    </span>
+</td>
+<td class="px-lg py-4 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-lg py-4 font-data-md">Shelly_EM_02</td>
+<td class="px-lg py-4 text-body-base">Apart. Praia</td>
+<td class="px-lg py-4">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">wifi</span> Wifi
+                                    </div>
+</td>
+<td class="px-lg py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[12px] font-bold bg-primary/10 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Conectado
+                                    </span>
+</td>
+<td class="px-lg py-4 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-lg py-4 font-data-md">Shelly_EM_03</td>
+<td class="px-lg py-4 text-body-base">Villa Montaña</td>
+<td class="px-lg py-4">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">wifi</span> Wifi
+                                    </div>
+</td>
+<td class="px-lg py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[12px] font-bold bg-primary/10 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Conectado
+                                    </span>
+</td>
+<td class="px-lg py-4 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</body></html>

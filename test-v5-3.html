@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Asesor Energético - EnergyOS Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#88d982",
+                        "tertiary-fixed": "#9eefff",
+                        "surface-variant": "#e3e2e2",
+                        "on-background": "#1b1c1c",
+                        "on-primary-fixed": "#002204",
+                        "on-primary-container": "#cbffc2",
+                        "on-secondary-fixed": "#2e1500",
+                        "on-surface-variant": "#40493d",
+                        "secondary-fixed": "#ffdcc2",
+                        "error-container": "#ffdad6",
+                        "outline": "#707a6c",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#88d982",
+                        "primary": "#0d631b",
+                        "on-error": "#ffffff",
+                        "surface-container": "#efeded",
+                        "on-primary-fixed-variant": "#005312",
+                        "on-tertiary-fixed": "#001f24",
+                        "secondary-fixed-dim": "#ffb77a",
+                        "secondary": "#8f4e00",
+                        "background": "#fbf9f9",
+                        "surface": "#fbf9f9",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#303031",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-tint": "#1b6d24",
+                        "on-surface": "#1b1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f5f3f3",
+                        "on-secondary-fixed-variant": "#6d3a00",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#a3f69c",
+                        "on-secondary-container": "#623400",
+                        "primary-container": "#2e7d32",
+                        "tertiary-fixed-dim": "#55d7ed",
+                        "tertiary": "#005e6b",
+                        "surface-dim": "#dbdad9",
+                        "tertiary-container": "#007988",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e3e2e2",
+                        "surface-bright": "#fbf9f9",
+                        "on-tertiary-container": "#d4f7ff",
+                        "secondary-container": "#ff8f00",
+                        "outline-variant": "#bfcaba",
+                        "surface-container-high": "#e9e8e7",
+                        "on-tertiary-fixed-variant": "#004e59"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #FAFAFA;
+            color: #1b1c1c;
+        }
+    </style>
+</head>
+<body class="font-body">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full h-16 z-50 flex items-center justify-between px-6 bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline shadow-sm">
+<div class="flex items-center gap-4">
+<span class="text-xl font-headline font-bold text-primary dark:text-primary-fixed">EnergyOS Pro</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-body text-label-md">
+<span class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80 px-2 py-1">Panel</span>
+<span class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80 px-2 py-1">Fincas</span>
+<span class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary cursor-pointer px-2 py-1">Asesor</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">settings</span>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="User profile" data-alt="A professional headshot of a person with a friendly expression, captured with warm, natural lighting in a clean corporate environment. The aesthetic is modern and high-key, aligning with a reliable stewardship brand identity. Subtle depth of field blurs the minimalist office background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0HzuvLNOaGykLQBZwrjw-WoUPpnQjcNltLpXUu0Qkzl4lsZGjxsZzYFDMmmHINdoSliBLoG7GS4bwNteV4n-dzBrTlMYazKtLYxg-XVesbsMDF8i-4AmgZLWOk5h544IWTw3v80Ao4oNoH0eHE-gHWtPuOtXulJjj3q_CGTumOyGWawA_VfxOcfOWHqz_lUd3jWyzOXreyCHJZxrAtfKjvIpkDnlfGdABrSI3POfSCBWh6fGsAe3zYPKqUMBl8lX2fa5ZpijFI0w"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 bottom-0 w-[260px] flex flex-col p-4 z-40 overflow-y-auto bg-surface dark:bg-on-background border-r border-outline-variant dark:border-outline">
+<div class="flex flex-col gap-1 mb-8">
+<div class="flex items-center gap-3 px-4 py-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">bolt</span>
+</div>
+<div>
+<p class="font-headline font-bold text-primary">EnergyOS Pro</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Reliable Stewardship</p>
+</div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body text-label-lg">Panel</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="font-body text-label-lg">Fincas</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined" data-icon="apartment">apartment</span>
+<span class="font-body text-label-lg">Apartamentos</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined" data-icon="swap_horiz">swap_horiz</span>
+<span class="font-body text-label-lg">Arbitraje</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 bg-primary-fixed/10 dark:bg-primary-container/20 rounded-lg text-primary dark:text-primary-fixed font-bold">
+<span class="material-symbols-outlined" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-body text-label-lg">Asesor</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body text-label-lg">Configuración</span>
+</div>
+</div>
+<div class="mt-auto pt-8">
+<div class="bg-primary-container p-4 rounded-xl text-on-primary-container mb-4">
+<p class="text-sm font-bold mb-1">Lead Generation</p>
+<p class="text-xs opacity-90">Maximize your energy portfolio efficiency today.</p>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg text-error">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-body text-label-lg">Cerrar sesión</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-[260px] pt-16 min-h-screen">
+<div class="max-w-[1280px] mx-auto px-6 py-8">
+<!-- Header Section -->
+<header class="mb-8">
+<h1 class="text-3xl font-headline font-extrabold text-on-surface tracking-tight">Asesor Energético</h1>
+<p class="text-on-surface-variant text-lg">Encuentra la mejor tarifa para tus propiedades</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Datadis Authorization Section (Bento Card Large) -->
+<section class="lg:col-span-7 bg-white p-6 rounded-[12px] border border-outline-variant shadow-[0px_4px_12px_rgba(0,0,0,0.02)]">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-12 h-12 rounded-full bg-primary-fixed/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<h2 class="text-xl font-headline font-bold text-on-surface">Autorización Datadis</h2>
+<p class="text-sm text-on-surface-variant">Conéctate de forma segura para analizar tu consumo real.</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg mb-6 text-sm text-on-surface-variant leading-relaxed">
+                        Para ofrecerte la mejor comparativa, necesitamos acceder a tus datos históricos de consumo a través de Datadis. Este proceso es totalmente seguro y está regulado por la normativa vigente.
+                    </div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="md:col-span-2">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">CUPS</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:ring-primary focus:border-primary" placeholder="ES0000000000000000XX" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Nombre</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:ring-primary focus:border-primary" placeholder="Ej: Alberto" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Apellidos</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:ring-primary focus:border-primary" placeholder="Ej: García López" type="text"/>
+</div>
+<div class="md:col-span-2">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">DNI / NIE</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:ring-primary focus:border-primary" placeholder="00000000X" type="text"/>
+</div>
+<div class="md:col-span-2 flex items-start gap-3 mt-2">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" id="signature" type="checkbox"/>
+<label class="text-sm text-on-surface-variant" for="signature">
+                                Autorizo a EnergyOS Pro a solicitar mis datos de consumo a la plataforma Datadis en mi nombre para fines de asesoramiento energético.
+                            </label>
+</div>
+<div class="md:col-span-2 flex flex-col sm:flex-row gap-3 mt-4">
+<button class="flex-1 flex items-center justify-center gap-2 bg-white border border-primary text-primary font-bold py-3 px-6 rounded-lg hover:bg-primary-fixed/10 transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="draw">draw</span>
+                                Firmar Autorización
+                            </button>
+<button class="flex-1 flex items-center justify-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-lg hover:brightness-110 shadow-lg shadow-primary/20 transition-all" type="button">
+<span class="material-symbols-outlined" data-icon="cloud_sync">cloud_sync</span>
+                                Autorizar Acceso a Datadis
+                            </button>
+</div>
+</form>
+</section>
+<!-- Results Preview Section (Bento Card Tall) -->
+<section class="lg:col-span-5 flex flex-col gap-6">
+<div class="bg-white p-6 rounded-[12px] border border-outline-variant shadow-[0px_4px_12px_rgba(0,0,0,0.02)] flex-1">
+<div class="flex justify-between items-start mb-6">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-xs font-bold uppercase">Recomendado</span>
+<button class="text-primary hover:bg-primary-fixed/10 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+<div class="text-center mb-8">
+<h3 class="text-2xl font-headline font-extrabold text-on-surface mb-2">Tarifa Eco-Ahorro Pro</h3>
+<p class="text-on-surface-variant px-4">Basado en tu perfil de consumo nocturno en fincas y apartamentos.</p>
+</div>
+<div class="bg-primary-container/10 p-6 rounded-2xl border border-primary/20 text-center mb-8">
+<p class="text-on-surface-variant text-sm font-medium mb-1">Ahorro Anual Estimado</p>
+<div class="text-4xl font-headline font-extrabold text-primary">1.420€</div>
+<p class="text-primary-container text-xs font-bold mt-1">118,33€ / mes ahorrados</p>
+</div>
+<!-- Visual Comparison Bars -->
+<div class="space-y-6 mb-8">
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold text-on-surface-variant uppercase">
+<span>Tarifa Actual</span>
+<span>4.200€ / año</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold text-on-surface-variant uppercase">
+<span>Eco-Ahorro Pro</span>
+<span>2.780€ / año</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 66%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold text-on-surface-variant uppercase">
+<span>Media Mercado</span>
+<span>3.850€ / año</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-on-surface-variant/40 rounded-full" style="width: 91%"></div>
+</div>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 bg-on-surface text-white font-bold py-4 px-6 rounded-lg hover:bg-on-surface/90 transition-all">
+<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                            Exportar Informe Detallado
+                        </button>
+</div>
+<!-- Quick Insight (Small Card) -->
+<div class="bg-surface-container-low p-5 rounded-[12px] border border-outline-variant flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="lightbulb">lightbulb</span>
+</div>
+<p class="text-sm text-on-surface-variant italic">
+                            "Si instalas paneles en tu finca de Sevilla, el ahorro anual podría subir a <strong class="text-primary">2.100€</strong>."
+                        </p>
+</div>
+</section>
+</div>
+<!-- Footer Image Banner -->
+<section class="mt-12 relative h-[240px] rounded-2xl overflow-hidden shadow-xl">
+<img class="w-full h-full object-cover" data-alt="A cinematic, wide-angle shot of a serene countryside landscape at golden hour, featuring sleek modern wind turbines and solar panels integrated into the natural hills. The lighting is soft and warm, evoking a sense of calm stewardship. The color palette emphasizes lush forest greens and golden ambers, reflecting a future where renewable energy is seamlessly balanced with the environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqjkPoQ2-EYbLOPEIMqNEmldVBSMQRx2XVJrF2A-c5UiWbs9eP9tOJs8NZ0DI1AxZoali6hA5jwV-Y1opJA71HjsHOE-YTB_WzlKv2fD5UqmSFYt5uzhudy1oUoQ1EDOF8qibruiNFceTaWltvTSfD4pocwonipddQHjZrTyf0znu8_4Rg1w4I4cXfOAxj2s4Qq4XF7H3azklCCovtA4mgLYIoPQvrMon4dJAI9fjByP07tbMnxZ9fVS2yhvy1rSh3rYJI2NO6-4E"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent flex flex-col justify-center px-12 text-white">
+<h4 class="text-2xl font-headline font-extrabold mb-2">Impulsa tu Arbitraje</h4>
+<p class="max-w-md text-white/90">Optimiza la compra-venta de energía entre tus propiedades con nuestro motor de IA.</p>
+</div>
+</section>
+</div>
+</main>
+</body></html>

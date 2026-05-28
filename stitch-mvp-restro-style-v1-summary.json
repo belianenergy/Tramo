@@ -1,0 +1,252 @@
+{
+  "projectTitle": "EnergyOS MVP Completo — Restro Style",
+  "projectId": "11820050226044719534",
+  "projectName": "projects/11820050226044719534",
+  "promptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+  "generatedAt": "2026-05-15T22:47:50.410Z",
+  "screens": {
+    "landing": {
+      "key": "landing",
+      "requestedName": "landing-publica",
+      "title": "Landing pública - EnergyOS",
+      "projectId": "11820050226044719534",
+      "projectName": "projects/11820050226044719534",
+      "screenId": "003339286a854ba2899afcf878154e59",
+      "screenName": "projects/11820050226044719534/screens/003339286a854ba2899afcf878154e59",
+      "width": "2560",
+      "height": "5908",
+      "htmlCodeName": "projects/11820050226044719534/files/1158d400814943deacfceade1c8c2729",
+      "screenshotName": "projects/11820050226044719534/files/e553b6447a2840dfbcac2b816328ca9a",
+      "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzNmYzBmOWRjNzM0ZTQzN2ZiYjM0NjExOTY5MTI5MGIzEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+      "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uhcIA9toLJNylCpk7Yi6gz7gGjTZPVRnVXJc91MxuNBY-lCjilBvvQVoLMUdanjEmHit6-vVgCtQE_6ChLTsMDmoHof67OvTBaWMmNw1hDDh23ZhnhtXAXrFQsAKt3HAGBt4kdBxa1R-NVKSNaStKUpT5paeo6PyACmqXgsl7DeYwOk0TdgS1CfLU71QpAQ7NkW6gB6380aQm31FKxjIMZI7svlA52jN595yc4Ft4qMrNcPx6o0AmUzEn8",
+      "generatedAt": "2026-05-15T22:47:50.409Z",
+      "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+      "localFiles": {
+        "response": "stitch-mvp-restro-style-v1-landing-response.json",
+        "meta": "stitch-mvp-restro-style-v1-landing-meta.json",
+        "html": "stitch-mvp-restro-style-v1-landing.html",
+        "stitchPng": "stitch-mvp-restro-style-v1-landing-stitch.png",
+        "previews": [
+          "stitch-mvp-restro-style-v1-landing-preview-mobile-375.png",
+          "stitch-mvp-restro-style-v1-landing-preview-desktop-1440.png"
+        ]
+      },
+      "editedFromScreenId": "313b9c8e6a74439fa63d80cd659bee2f"
+    },
+    "dashboard": {
+      "key": "dashboard",
+      "requestedName": "dashboard-operativo",
+      "title": "Dashboard Operativo — EnergyOS",
+      "projectId": "11820050226044719534",
+      "projectName": "projects/11820050226044719534",
+      "screenId": "05b1041cc8f341c58aedc23f507211f7",
+      "screenName": "projects/11820050226044719534/screens/05b1041cc8f341c58aedc23f507211f7",
+      "width": "2560",
+      "height": "2530",
+      "htmlCodeName": "projects/11820050226044719534/files/e01ce3a6344d4a0faf74d8edb3cbebff",
+      "screenshotName": "projects/11820050226044719534/files/037c2e1b1bdc46358a2a7f09677c35a3",
+      "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzIyNDNhODc2YThkYjRhNDFhY2EzYmY1ZTc4NjBhZWRhEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+      "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ujK-P78d2LTL7rpHS2YfeaR_vI25Uslfc54mJ8v73Avohw8yRaAr2zJDDjCy8cO4Jd1IfhKg-MQvGL3Pt0R8ezcvb_nHUKWpfRpV5CGv_IneIu_H5DrXmiRkbMwb49RUwKi0u_z5taJRM3aj5AGOscgBY5gO5UrnR2BvKrEUL16Iuj4Cp-z0QgMbd3UG_nDaqiQTIF7wUlYprZ5Hjc51QBVXDi5-6bDC9xQtPReMWq1EYx-G5ELqLA27RyI",
+      "generatedAt": "2026-05-15T22:39:31.972Z",
+      "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+      "localFiles": {
+        "response": "stitch-mvp-restro-style-v1-dashboard-response.json",
+        "meta": "stitch-mvp-restro-style-v1-dashboard-meta.json",
+        "html": "stitch-mvp-restro-style-v1-dashboard.html",
+        "stitchPng": "stitch-mvp-restro-style-v1-dashboard-stitch.png",
+        "previews": [
+          "stitch-mvp-restro-style-v1-dashboard-preview-mobile-375.png",
+          "stitch-mvp-restro-style-v1-dashboard-preview-desktop-1440.png"
+        ]
+      },
+      "editedFromScreenId": "e84d05704de048c0a09ba94203823bb3"
+    },
+    "apartments": {
+      "key": "apartments",
+      "requestedName": "apartamentos-cartera",
+      "title": "Apartamentos / cartera — EnergyOS",
+      "projectId": "11820050226044719534",
+      "projectName": "projects/11820050226044719534",
+      "screenId": "948a2d4cd0c1404a9a1e0720220fe93f",
+      "screenName": "projects/11820050226044719534/screens/948a2d4cd0c1404a9a1e0720220fe93f",
+      "width": "2560",
+      "height": "2048",
+      "htmlCodeName": "projects/11820050226044719534/files/5505d7e2a43a407baf339dc9bb3da0ad",
+      "screenshotName": "projects/11820050226044719534/files/ababf216edaa4f5c88ddec3505b094b1",
+      "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzc3NTIwZDEyMTU1MjRhNDc5ODc5NTdkNzc1Nzg2YjU3EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+      "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uguTBViUfW1Tm4EjalHRRluB0iUAY_0c3Biuzq9kvQAcnWkTNZLJ5csU0CcZt878FBVhXZLj8uiFbquVW3plR_5UgR829S0eJtyikUeYkMA2v9_76LuyW4rB3p3-KLwws1JAAyZFznzkX7ZrzCsD8pXbD-_VZ38JuGjffzv38N__ifzRpOaEWeA0w8aec5joLeNix1qhXgyBzQVCcGTsPTU8G9wnWvavWB0CY7L9viJmtQQxwAPECFTojz1",
+      "generatedAt": "2026-05-12T19:37:49.725Z",
+      "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+      "localFiles": {
+        "response": "stitch-mvp-restro-style-v1-apartments-response.json",
+        "meta": "stitch-mvp-restro-style-v1-apartments-meta.json",
+        "html": "stitch-mvp-restro-style-v1-apartments.html",
+        "stitchPng": "stitch-mvp-restro-style-v1-apartments-stitch.png",
+        "previews": []
+      }
+    },
+    "operations": {
+      "key": "operations",
+      "requestedName": "operaciones-cola",
+      "title": "Operaciones — EnergyOS",
+      "projectId": "11820050226044719534",
+      "projectName": "projects/11820050226044719534",
+      "screenId": "5dd1030fe1724fda833714952f578581",
+      "screenName": "projects/11820050226044719534/screens/5dd1030fe1724fda833714952f578581",
+      "width": "2560",
+      "height": "2156",
+      "htmlCodeName": "projects/11820050226044719534/files/ffd07a08ea4e4bce9fbab52108841efa",
+      "screenshotName": "projects/11820050226044719534/files/a71e4d1425354c26a01c54e923c96512",
+      "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzVkMThhMTg2M2Y1OTQ4YTFhMWYyMDViNTJiMjg1NjRkEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+      "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ugGf6m9tksjLXUCiQEajCxcInUqwO22x5_4_im4uyJrdCeSbs4AqgRLhddtn3yD0spekLeBdJ9PDM3tMTLlfWw0U4gAaSGkNem0csdprcJ8LOD_O6kZuDnBF0ZNKGvJTn1zfeK-HjU-xNi0YqF1UDppSnnkLYXDqUCdOcXqDZPEpjUzn4SmH1ycUQuyoSyX5UhIA6yChUniZJpUWBVPtuzXJ4oDrPHcysg-soZLGzo-4G9DHG-B1U-BpaN7",
+      "generatedAt": "2026-05-15T22:17:41.079Z",
+      "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+      "localFiles": {
+        "response": "stitch-mvp-restro-style-v1-operations-response.json",
+        "meta": "stitch-mvp-restro-style-v1-operations-meta.json",
+        "html": "stitch-mvp-restro-style-v1-operations.html",
+        "stitchPng": "stitch-mvp-restro-style-v1-operations-stitch.png",
+        "previews": [
+          "stitch-mvp-restro-style-v1-operations-preview-mobile-375.png",
+          "stitch-mvp-restro-style-v1-operations-preview-desktop-1440.png"
+        ]
+      },
+      "editedFromScreenId": "8739610498ba4782a1c562a3ec1ad70c"
+    },
+    "apartment-detail": {
+      "key": "apartment-detail",
+      "requestedName": "detalle-apartamento",
+      "title": "Detalle apartamento — EnergyOS",
+      "projectId": "11820050226044719534",
+      "projectName": "projects/11820050226044719534",
+      "screenId": "76cf6d979c844aafa99138b3940db6e6",
+      "screenName": "projects/11820050226044719534/screens/76cf6d979c844aafa99138b3940db6e6",
+      "width": "2560",
+      "height": "2876",
+      "htmlCodeName": "projects/11820050226044719534/files/272129e6b21d468abf1c996f76950645",
+      "screenshotName": "projects/11820050226044719534/files/47b8b36bb7384cec9e634697d161c7e3",
+      "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzI3OTE2Mzk3MjMyNTRjY2NiYTFkNDFkOTFjYjI1ODRjEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+      "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uhlm3cfchukNJAiRFny6-j5vuE1f2SliuZpiy9LtJY45jPXXZO7_IKFdTqYzjg5Fw86GrCuNh8UGR2YZnQSCqo93khjIIvxRJIIxF54o49jbglrZlFNSYxGoDhUNqsmqPPUP1ncaumYioc2QhNeGhoaDiRbfz9f754yXexa_TKEsV-8LqGSRC76WTHsAWmHWz6mC1Wxbw9sen3gfm3Va0AqVZvZkG7Yv2TFUsai8MvqJ2qn-LmEZxSxy2HE",
+      "generatedAt": "2026-05-15T22:18:27.278Z",
+      "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+      "localFiles": {
+        "response": "stitch-mvp-restro-style-v1-apartment-detail-response.json",
+        "meta": "stitch-mvp-restro-style-v1-apartment-detail-meta.json",
+        "html": "stitch-mvp-restro-style-v1-apartment-detail.html",
+        "stitchPng": "stitch-mvp-restro-style-v1-apartment-detail-stitch.png",
+        "previews": []
+      },
+      "editedFromScreenId": "97fcd530680b4297a7994262f7bd15a9"
+    },
+    "tariff-power": {
+      "key": "tariff-power",
+      "requestedName": "optimizacion-tarifa-potencia",
+      "title": "Optimización tarifa/potencia — EnergyOS",
+      "projectId": "11820050226044719534",
+      "projectName": "projects/11820050226044719534",
+      "screenId": "5e439481a4184f89ad89e6cecf9cb6fc",
+      "screenName": "projects/11820050226044719534/screens/5e439481a4184f89ad89e6cecf9cb6fc",
+      "width": "2560",
+      "height": "3160",
+      "htmlCodeName": "projects/11820050226044719534/files/16c28358535a4527893cfa098dc53e13",
+      "screenshotName": "projects/11820050226044719534/files/c9f9e650a2b34e5eade3a1e08fa05fca",
+      "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2NiZDE0NzkxMDRhMTQwOWQ5NjVhOWFkMmYwZDg2OWViEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+      "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ujdsvfVIBsOHnnJHDoW0eAM9kL9s9f1Fshk-I1EuWeERbyh7rnnE8ytyyntj1vSZnzs283gylbkFOEZqrJQ5CZwkqJ7wTUupoJZPWyhCrwDN1sZHcVnycHT46drvYjz6R7FwWcbs7JM5jya_yIEuNKeLCNWyAZkd8hYYWatYbg0Ha9GrKnxFR-zH30l_cchejwAUMhZqxLBLOJmfoD7xjmsgmeqqbcDdd8VNXXwc5xKUxq1foHH8UWHYs0",
+      "generatedAt": "2026-05-15T22:20:12.155Z",
+      "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+      "localFiles": {
+        "response": "stitch-mvp-restro-style-v1-tariff-power-response.json",
+        "meta": "stitch-mvp-restro-style-v1-tariff-power-meta.json",
+        "html": "stitch-mvp-restro-style-v1-tariff-power.html",
+        "stitchPng": "stitch-mvp-restro-style-v1-tariff-power-stitch.png",
+        "previews": []
+      },
+      "editedFromScreenId": "463fae1ce04d477d8c7eefa1483faf33"
+    },
+    "leads": {
+      "key": "leads",
+      "requestedName": "leads-solicitudes-piloto",
+      "title": "Leads / solicitudes piloto",
+      "projectId": "11820050226044719534",
+      "projectName": "projects/11820050226044719534",
+      "screenId": "2d3390167005457db37e78c0d62dc32f",
+      "screenName": "projects/11820050226044719534/screens/2d3390167005457db37e78c0d62dc32f",
+      "width": "2560",
+      "height": "2378",
+      "htmlCodeName": "projects/11820050226044719534/files/8de04da0a60c43dbba57718542633231",
+      "screenshotName": "projects/11820050226044719534/files/bef10a7e57c344f8bf78bb065faf1c4a",
+      "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2NlZmJiZjIwNGJhZjQ4YWY5ZGUzN2M3NjlmZWU2Yjg1EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+      "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ugEUmxlJyQVNAoTuUx3Xp4SQG0jvkDChd-dqzASChBWDYAAesuaFdpNkon5d-FAeQ5yvnFE6b1bi_173iarf-AwIiVGvt2ifkSk-l92oAhRTVF0gsyN-SA21yeGkGQJqknXBTo0rIVY5DbemzA1yGSIyja8ZCp57jnCKpVXVmxqMEJWL-0hDq60P8J5dyyH0zpuaHZN2ReqlXlJ7336Qsa7_Y7Lqmc_7Fgv8iRl1rc_WhirESjprTIkcY4K",
+      "generatedAt": "2026-05-15T22:41:17.411Z",
+      "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+      "localFiles": {
+        "response": "stitch-mvp-restro-style-v1-leads-response.json",
+        "meta": "stitch-mvp-restro-style-v1-leads-meta.json",
+        "html": "stitch-mvp-restro-style-v1-leads.html",
+        "stitchPng": "stitch-mvp-restro-style-v1-leads-stitch.png",
+        "previews": []
+      },
+      "editedFromScreenId": "ed8299c25bb04fe590c352e6bf4d0a1d"
+    },
+    "pilot-settings": {
+      "key": "pilot-settings",
+      "requestedName": "configuracion-piloto",
+      "title": "Configuración piloto",
+      "projectId": "11820050226044719534",
+      "projectName": "projects/11820050226044719534",
+      "screenId": "15faea05908c423f98823f4dad0c2826",
+      "screenName": "projects/11820050226044719534/screens/15faea05908c423f98823f4dad0c2826",
+      "width": "2560",
+      "height": "3170",
+      "htmlCodeName": "projects/11820050226044719534/files/8c1e87592b9940a4b8c38ef08599b9fb",
+      "screenshotName": "projects/11820050226044719534/files/b140657960b84b968115a2b15e31465c",
+      "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2U0OTRkZTVkM2Q1MTQyZTViNjRhNTFiMTQ4ZTc3YTdlEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+      "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uioROHE_Fg23FTvGFsWSYFIVAS1OqyFW0RDo6_cfT5M-SJqG66awp5qKT85YN3TzDQNucpVkigPa36_vMkEY4fCKPz4dLJowupvNdqZaPFtNqFEHwxkkpWSOYNlWLyp6jH2U9PiVQjisXJG7lb_67pgw2jA4EXLIMDMSRJkgYSDgBobvcpJcTrAQ2fYtqzvXkM4M0GybR1nXyAgXNVYKNmMVTGygHvK3hDG-saG-vTU3gxauoSwqrs03co2",
+      "generatedAt": "2026-05-15T22:43:05.059Z",
+      "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+      "localFiles": {
+        "response": "stitch-mvp-restro-style-v1-pilot-settings-response.json",
+        "meta": "stitch-mvp-restro-style-v1-pilot-settings-meta.json",
+        "html": "stitch-mvp-restro-style-v1-pilot-settings.html",
+        "stitchPng": "stitch-mvp-restro-style-v1-pilot-settings-stitch.png",
+        "previews": []
+      },
+      "editedFromScreenId": "1774c077d6d64fbd9d078c83a15e4ce9"
+    },
+    "owner-report": {
+      "key": "owner-report",
+      "requestedName": "informe-mensual-propietario",
+      "title": "Informe mensual propietario — EnergyOS",
+      "projectId": "11820050226044719534",
+      "projectName": "projects/11820050226044719534",
+      "screenId": "1fac62c6fdf14682a37111c8bc185e41",
+      "screenName": "projects/11820050226044719534/screens/1fac62c6fdf14682a37111c8bc185e41",
+      "width": "2560",
+      "height": "3136",
+      "htmlCodeName": "projects/11820050226044719534/files/920d13349d4c43bb8134cc2227a53534",
+      "screenshotName": "projects/11820050226044719534/files/308cf3f67dbc44ae8f2ed9d22faf647f",
+      "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzA2MDg1MWU4MDU0NDRmMGU5ZTkwMzQ3NGVhYTkwMjEyEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+      "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ugz4HT44Y-LZeIRhxV6vik3vvQ2qBl5XWNagVND51oz7YcZs5QTPTfhZy4Di_SDCV_JuSjgiV9ZC_RHKKc-p9UvlUSmwh-mAD8MClX7lEikNpIShzRV95r0_hRPhFrNIRrBfsGHTeFkI5Z3OKQszvx7BBpBAF4IoA653SG59Tid7IH-qV6RrCQpRRgiAL-elzGYQtkwrT_UiFy9hNVAIpG7WxMu8oQHdrUtgICmsdNsGjx7ii5JtFKj3UAA",
+      "generatedAt": "2026-05-15T22:43:51.648Z",
+      "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+      "localFiles": {
+        "response": "stitch-mvp-restro-style-v1-owner-report-response.json",
+        "meta": "stitch-mvp-restro-style-v1-owner-report-meta.json",
+        "html": "stitch-mvp-restro-style-v1-owner-report.html",
+        "stitchPng": "stitch-mvp-restro-style-v1-owner-report-stitch.png",
+        "previews": []
+      },
+      "note": "Regenerated after transient Stitch unavailable error.",
+      "editedFromScreenId": "1ca53fd7161f48f7ba59a5eed8e685cf"
+    }
+  },
+  "errors": [],
+  "regenerated": [
+    {
+      "key": "owner-report",
+      "at": "2026-05-12T19:46:42.320Z",
+      "reason": "Regenerated after transient Stitch unavailable error."
+    }
+  ],
+  "note": "Partially updated by stitch-mvp-restro-style-v1-edit-platform-copy.mjs on 2026-05-15 for: landing."
+}

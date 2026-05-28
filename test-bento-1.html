@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EnergyOS Pro Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2f312f",
+                    "surface-dim": "#dadad7",
+                    "secondary-fixed": "#ffdcbc",
+                    "on-background": "#1a1c1a",
+                    "tertiary-fixed-dim": "#f5b7b4",
+                    "on-secondary-container": "#79542a",
+                    "secondary-fixed-dim": "#efbd8a",
+                    "surface-variant": "#e2e3e0",
+                    "on-secondary-fixed": "#2c1700",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#fecb97",
+                    "on-tertiary-fixed": "#331111",
+                    "primary-container": "#1b4332",
+                    "surface": "#f9faf6",
+                    "surface-container": "#eeeeeb",
+                    "on-secondary-fixed-variant": "#614018",
+                    "on-tertiary-fixed-variant": "#673a39",
+                    "tertiary-container": "#5a302f",
+                    "on-primary-fixed": "#002114",
+                    "primary-fixed": "#c1ecd4",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#d29895",
+                    "tertiary": "#401b1b",
+                    "outline": "#717973",
+                    "on-surface": "#1a1c1a",
+                    "on-primary-container": "#86af99",
+                    "on-surface-variant": "#414844",
+                    "inverse-on-surface": "#f0f1ee",
+                    "primary-fixed-dim": "#a5d0b9",
+                    "tertiary-fixed": "#ffdad8",
+                    "surface-container-low": "#f3f4f1",
+                    "primary": "#012d1d",
+                    "surface-container-high": "#e8e8e5",
+                    "surface-bright": "#f9faf6",
+                    "secondary": "#7c572d",
+                    "outline-variant": "#c1c8c2",
+                    "background": "#f9faf6",
+                    "surface-tint": "#3f6653",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#274e3d",
+                    "inverse-primary": "#a5d0b9",
+                    "surface-container-highest": "#e2e3e0",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "section-margin": "48px",
+                    "gutter": "20px",
+                    "card-gap": "16px",
+                    "container-padding": "32px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "hero": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-caps": ["11px", {"lineHeight": "1", "letterSpacing": "0.08em", "fontWeight": "700"}],
+                    "h1": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "hero": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h3": ["22px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-sm": ["13px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8F7F4; }
+        .bento-card {
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0px 4px 20px rgba(26, 26, 46, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-2px) scale(1.005);
+            box-shadow: 0px 8px 30px rgba(26, 26, 46, 0.08);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .status-badge {
+            @apply px-3 py-1 rounded-full text-label-caps inline-flex items-center gap-1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-screen w-[280px] bg-surface shadow-[0px_4px_20px_rgba(26,26,46,0.04)] flex flex-col justify-between py-12 z-50">
+<div class="px-6">
+<div class="mb-10">
+<span class="font-h2 text-h2 font-bold text-primary">EnergyOS</span>
+<p class="text-on-surface-variant text-body-sm">Pro Dashboard</p>
+</div>
+<nav class="space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-fixed-dim/30 text-primary border-l-4 border-primary rounded-r-lg font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body text-body">Panel</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="font-body text-body">Fincas</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="apartment">apartment</span>
+<span class="font-body text-body">Apartamentos</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="balance">balance</span>
+<span class="font-body text-body">Arbitraje</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-body text-body">Asesor</span>
+</a>
+</nav>
+</div>
+<div class="px-6 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body text-body">Configuración</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-body text-body">Ayuda</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/10 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-body text-body">Cerrar sesión</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-[280px] min-h-screen p-gutter md:p-container-padding">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center mb-8 sticky top-0 z-40 bg-surface/80 backdrop-blur-md py-4">
+<div>
+<h1 class="font-h1 text-h1 text-primary">Resumen de Energía</h1>
+<p class="text-on-surface-variant font-body">Bienvenido de nuevo, Administrador</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full w-[240px] focus:ring-2 focus:ring-primary text-body-sm transition-all" placeholder="Buscar comunidad..." type="text"/>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="flex items-center gap-2 pl-2 pr-4 py-1.5 bg-white shadow-sm rounded-full border border-outline-variant/30">
+<img alt="Profile" class="w-8 h-8 rounded-full" data-alt="A professional headshot of a Spanish property manager in his late 40s with a warm, confident expression. The lighting is soft and natural, reflecting a bright modern office environment. The style is clean, high-resolution photography with a shallow depth of field, aligning with the warm premium aesthetic of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo3L9E84quCLQlnx2-BwAD-c6HwZfzPwNbu5fGYxsWZd3qPn7wVsNfesC9zAYrzYhwEKLfQqEyPAt7XWGGuqqaeJoKzlgSX25VBQ7WG0I3HbU_4f8D25xTkGYhWaYpHtvaTJ9aNuu7PtyKXTrVMsMVOz8GrFr2LHl5zfHjEHkNG97NBhNvYpd21Jv5ObO3Oci6hAGSHaNdsX4u8b5FOJq6rfZZlnzgtYQG8LTPaxjTyYqqggQN2bV3XrA8u_T5YM6U--mBkXYBdjUO"/>
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Row 1: Full-width Hero Card -->
+<section class="col-span-12 bento-card p-8 relative overflow-hidden flex flex-col justify-center min-h-[320px]">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-primary"></div>
+<div class="relative z-10">
+<span class="font-label-caps text-label-caps text-primary uppercase mb-2 block">Coste Mensual</span>
+<h2 class="font-hero text-hero text-primary mb-2">8.420€</h2>
+<p class="font-h3 text-h3 text-on-surface-variant">Gasto total este mes</p>
+<div class="mt-6 flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined text-[20px]" data-icon="trending_up">trending_up</span>
+<span>+2.4% vs mes anterior</span>
+</div>
+</div>
+<!-- Background Decorative Element -->
+<div class="absolute right-0 top-0 h-full w-1/3 opacity-5 pointer-events-none">
+<svg class="h-full w-full" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<path d="M44.7,-76.4C58.1,-69.2,69.2,-58.1,76.4,-44.7C83.7,-31.3,87.1,-15.7,86.1,-0.6C85.1,14.5,79.7,29.1,71.5,42.1C63.3,55.1,52.3,66.6,39.2,74C26.1,81.4,13,84.7,-0.7,85.9C-14.4,87.1,-28.9,86.2,-42.2,80.1C-55.5,74,-67.6,62.8,-76.3,49.2C-85,35.6,-90.3,19.6,-89.4,4C-88.5,-11.6,-81.4,-26.8,-72.1,-40.4C-62.8,-54,-51.3,-66,-37.9,-73.2C-24.5,-80.4,-9.2,-82.8,3.5,-88.9C16.3,-95,31.3,-83.6,44.7,-76.4Z" fill="#1B4332" transform="translate(100 100)"></path>
+</svg>
+</div>
+</section>
+<!-- Row 2: KPI Cards -->
+<div class="col-span-12 lg:col-span-6 bento-card p-6 flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4 block">Total Comunidades</span>
+<h3 class="font-h1 text-h1 text-primary">12 Comunidades</h3>
+<div class="flex items-center gap-1 text-primary-container font-semibold text-body-sm mt-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+<span>5.1% este mes</span>
+</div>
+</div>
+<div class="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]" data-icon="domain">domain</span>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-6 bento-card p-6 flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4 block">Consumo Mensual</span>
+<h3 class="font-h1 text-h1 text-primary">45.2k kWh</h3>
+<div class="flex items-center gap-1 text-error font-semibold text-body-sm mt-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="trending_down">trending_down</span>
+<span>-1.2% optimización</span>
+</div>
+</div>
+<div class="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]" data-icon="bolt">bolt</span>
+</div>
+</div>
+<!-- Row 3: Full-width Wide Chart card -->
+<section class="col-span-12 bento-card p-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+<div>
+<h3 class="font-h2 text-h2 text-primary">Consumo Agregado</h3>
+<p class="text-on-surface-variant text-body-sm">Distribución de carga energética en tiempo real</p>
+</div>
+<div class="bg-surface-container-low p-1 rounded-xl flex">
+<button class="px-6 py-2 bg-white rounded-lg shadow-sm text-primary font-bold text-body-sm transition-all">24H</button>
+<button class="px-6 py-2 text-on-surface-variant hover:text-primary font-semibold text-body-sm transition-all">7D</button>
+<button class="px-6 py-2 text-on-surface-variant hover:text-primary font-semibold text-body-sm transition-all">30D</button>
+</div>
+</div>
+<!-- Mock High-Fidelity Area Chart -->
+<div class="relative w-full h-[300px] flex items-end gap-2 group">
+<!-- Baseline Grid -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+<div class="w-full border-b border-surface-container-high h-0"></div>
+<div class="w-full border-b border-surface-container-high h-0"></div>
+<div class="w-full border-b border-surface-container-high h-0"></div>
+<div class="w-full border-b border-surface-container-high h-0"></div>
+</div>
+<!-- Chart Path Mockup using a CSS Gradient and mask-like logic -->
+<div class="absolute inset-0 overflow-hidden rounded-lg">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 300">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#1B4332" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#1B4332" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,300 L0,220 C100,180 200,260 300,140 C400,20 500,100 600,180 C700,260 800,40 900,120 L1000,100 L1000,300 Z" fill="url(#chartGradient)"></path>
+<path d="M0,220 C100,180 200,260 300,140 C400,20 500,100 600,180 C700,260 800,40 900,120 L1000,100" fill="none" stroke="#1B4332" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+<!-- Tooltip Indicator -->
+<div class="absolute left-[300px] top-[140px] -translate-x-1/2 -translate-y-1/2 group-hover:scale-110 transition-transform">
+<div class="w-4 h-4 bg-primary border-4 border-white rounded-full shadow-md"></div>
+<div class="absolute top-[-50px] left-1/2 -translate-x-1/2 bg-primary text-white text-[11px] px-3 py-1.5 rounded-lg whitespace-nowrap shadow-xl">
+                            15:30 — 420 kWh
+                        </div>
+</div>
+</div>
+</section>
+<!-- Row 4: Action Cards -->
+<section class="col-span-12 lg:col-span-6 bento-card p-8 flex flex-col justify-between min-h-[220px] bg-primary text-white">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-label-caps text-label-caps uppercase text-primary-fixed">Asesor IA</span>
+</div>
+<h3 class="font-h2 text-h2 mb-2">Ahorro proyectado de 8.500€/año</h3>
+<p class="text-primary-fixed opacity-80 text-body">Basado en la optimización de los periodos de facturación en Edificio Aurora.</p>
+</div>
+<div class="mt-6">
+<button class="bg-white text-primary px-6 py-3 rounded-xl font-bold hover:bg-surface-container-low transition-colors">
+                        Ver Estrategia
+                    </button>
+</div>
+</section>
+<section class="col-span-12 lg:col-span-6 bento-card p-8 flex flex-col justify-between min-h-[220px] bg-secondary-container text-secondary">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+<span class="font-label-caps text-label-caps uppercase text-on-secondary-container">Monitorización</span>
+</div>
+<h3 class="font-h2 text-h2 mb-2">Optimiza tu instalación con Shelly</h3>
+<p class="text-on-secondary-container opacity-80 text-body">Obtén datos precisos cada segundo instalando sensores de última generación.</p>
+</div>
+<div class="mt-6">
+<button class="bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:opacity-90 transition-opacity">
+                        Solicitar Presupuesto
+                    </button>
+</div>
+</section>
+<!-- Row 5: Data Table Card -->
+<section class="col-span-12 bento-card overflow-hidden">
+<div class="p-8 border-b border-surface-container">
+<h3 class="font-h2 text-h2 text-primary">Listado de Comunidades</h3>
+<p class="text-on-surface-variant text-body-sm">Control detallado por unidad de negocio</p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-8 py-4 font-label-caps text-label-caps text-on-surface-variant">Nombre</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant">Unidades</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant">Consumo (kWh)</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant">Coste (€)</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant">Estado</th>
+<th class="px-8 py-4 font-label-caps text-label-caps text-on-surface-variant text-right">Acción</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5 font-semibold text-primary">Edificio Aurora</td>
+<td class="px-6 py-5 text-on-surface-variant">24</td>
+<td class="px-6 py-5 text-on-surface">1.240 kWh</td>
+<td class="px-6 py-5 text-on-surface">342,00€</td>
+<td class="px-6 py-5">
+<span class="status-badge bg-primary/10 text-primary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                                        Optimizado
+                                    </span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-primary hover:underline font-bold text-body-sm">Detalles</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5 font-semibold text-primary">Residencial Los Olivos</td>
+<td class="px-6 py-5 text-on-surface-variant">42</td>
+<td class="px-6 py-5 text-on-surface">2.810 kWh</td>
+<td class="px-6 py-5 text-on-surface">754,20€</td>
+<td class="px-6 py-5">
+<span class="status-badge bg-secondary-container/20 text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                                        Analizando
+                                    </span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-primary hover:underline font-bold text-body-sm">Detalles</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5 font-semibold text-primary">Torre Mirador</td>
+<td class="px-6 py-5 text-on-surface-variant">18</td>
+<td class="px-6 py-5 text-on-surface">4.120 kWh</td>
+<td class="px-6 py-5 text-on-surface">1.120,40€</td>
+<td class="px-6 py-5">
+<span class="status-badge bg-error-container/30 text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                                        Alerta
+                                    </span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-primary hover:underline font-bold text-body-sm">Detalles</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-5 font-semibold text-primary">Urbanización Sol</td>
+<td class="px-6 py-5 text-on-surface-variant">120</td>
+<td class="px-6 py-5 text-on-surface">12.450 kWh</td>
+<td class="px-6 py-5 text-on-surface">3.245,00€</td>
+<td class="px-6 py-5">
+<span class="status-badge bg-primary/10 text-primary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                                        Optimizado
+                                    </span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-primary hover:underline font-bold text-body-sm">Detalles</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+<!-- FAB (Suppressed based on context, but template placeholder for dashboard only) -->
+<button class="fixed bottom-10 right-10 w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-[32px]" data-icon="add">add</span>
+</button>
+</body></html>

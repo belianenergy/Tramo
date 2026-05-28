@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tramo | Control Energético por Reserva</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#364e00",
+                      "surface-container-high": "#ebe8df",
+                      "inverse-on-surface": "#f4f1e7",
+                      "tertiary-fixed-dim": "#51ddb7",
+                      "tertiary": "#000000",
+                      "on-surface": "#1c1c16",
+                      "outline-variant": "#c4c8bb",
+                      "secondary-container": "#b8f634",
+                      "on-secondary-fixed": "#131f00",
+                      "error": "#ba1a1a",
+                      "outline": "#74796e",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#afd09b",
+                      "surface-tint": "#4a663a",
+                      "background": "#fdf9f0",
+                      "secondary-fixed-dim": "#9dd906",
+                      "inverse-surface": "#31312b",
+                      "surface-variant": "#e5e2d9",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#f1eee4",
+                      "on-background": "#1c1c16",
+                      "tertiary-fixed": "#71fad3",
+                      "primary-container": "#082101",
+                      "secondary-fixed": "#b8f634",
+                      "inverse-primary": "#afd09b",
+                      "on-surface-variant": "#43483f",
+                      "surface-container-low": "#f7f3ea",
+                      "on-tertiary-fixed": "#002018",
+                      "on-secondary-container": "#4e6e00",
+                      "secondary": "#496800",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#dddad1",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-container": "#009578",
+                      "surface-container-highest": "#e5e2d9",
+                      "tertiary-container": "#002018",
+                      "surface": "#fdf9f0",
+                      "error-container": "#ffdad6",
+                      "on-error": "#ffffff",
+                      "primary": "#000000",
+                      "surface-bright": "#fdf9f0",
+                      "on-primary-container": "#6e8c5d",
+                      "on-primary-fixed": "#082101",
+                      "primary-fixed": "#cbedb5",
+                      "on-tertiary-fixed-variant": "#005140",
+                      "on-primary-fixed-variant": "#334e25",
+                      "brand-dark-green": "#061F00",
+                      "brand-lime": "#A5E119",
+                      "brand-orange": "#e6813a",
+                      "brand-paper": "#F9F8F5",
+                      "brand-surface": "#F4F2ED",
+                      "brand-border-soft": "#D8D5CC",
+                      "brand-border-strong": "#C4C0B6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "card": "22px",
+                      "input": "14px"
+              },
+              "spacing": {
+                      "section-gap": "64px",
+                      "unit": "8px",
+                      "container-margin": "40px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "data-metric-lg": [
+                              "JetBrains Mono"
+                      ],
+                      "data-label": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "15px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "data-metric-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "data-label": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              },
+              "boxShadow": {
+                  "subtle-float": "0px 4px 20px rgba(0,0,0,0.04)"
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #F9F8F5; /* Nivel 0 (Base): Color Paper */
+        }
+        
+        .card-shadow {
+            /* Rechazamos sombras proyectadas tradicionales. Usamos Nivel 2 y borde strong */
+            border: 1px solid #C4C0B6;
+        }
+        
+        .container-surface {
+            /* Nivel 1 */
+            background-color: #F4F2ED;
+            border: 1px solid #D8D5CC;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid #D8D5CC;
+        }
+    </style>
+</head>
+<body class="text-on-background antialiased selection:bg-brand-lime selection:text-brand-dark-green">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md dark:bg-background/80 border-b border-outline-variant/30">
+<div class="max-w-[1440px] mx-auto px-container-margin md:px-5 flex justify-between items-center h-20">
+<!-- Brand -->
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight">Tramo</span>
+</div>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-secondary pb-1" href="#producto">Producto</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200 pb-1 border-b-2 border-transparent hover:border-secondary/30" href="#dashboard">Dashboard</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200 pb-1 border-b-2 border-transparent hover:border-secondary/30" href="#confianza">Confianza</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200 pb-1 border-b-2 border-transparent hover:border-secondary/30" href="#contacto">Contacto</a>
+</div>
+<!-- Trailing Action -->
+<div class="hidden md:block">
+<a class="inline-flex items-center justify-center px-6 py-3 bg-brand-dark-green text-white rounded-full font-body-md text-body-md font-medium hover:bg-brand-dark-green/90 transition-colors" href="#diagnostico">
+                    Diagnosticar mi cartera
+                </a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-28 pb-section-gap">
+<!-- Hero Section -->
+<section class="max-w-[1440px] mx-auto px-container-margin md:px-5 pt-8 pb-section-gap" id="producto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<!-- Hero Left: Copy -->
+<div class="flex flex-col items-start gap-6">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-surface border border-brand-border-soft rounded-full">
+<div class="w-2 h-2 rounded-full bg-brand-lime"></div>
+<span class="font-data-label text-data-label text-on-surface-variant tracking-wider uppercase">Inteligencia Operativa Energética</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary max-w-xl">
+                        Control energético por reserva para carteras de apartamentos turísticos.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        Conectamos el contador inteligente (CUPS) con tu gestor de reservas (PMS) para aislar el consumo legítimo del derroche fuera de reserva. Sin hardware. Alta precisión editorial.
+                    </p>
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
+<a class="inline-flex items-center justify-center px-8 py-4 bg-brand-dark-green text-white rounded-full font-body-lg text-body-lg font-medium hover:bg-brand-dark-green/90 transition-colors shadow-none hover:ring-1 hover:ring-brand-lime" href="#diagnostico">
+                            Diagnosticar mi cartera
+                        </a>
+<a class="inline-flex items-center justify-center px-8 py-4 bg-transparent text-primary rounded-full font-body-lg text-body-lg font-medium border border-brand-border-strong hover:bg-brand-surface transition-colors" href="#demo">
+                            Ver ejemplo
+                        </a>
+</div>
+<div class="pt-4 flex items-center gap-2 text-on-surface-variant font-data-label text-data-label">
+<span class="material-symbols-outlined text-[16px]">mail</span>
+<span>hola@tramo.energy</span>
+</div>
+</div>
+<!-- Hero Right: Dashboard Card -->
+<div class="relative w-full aspect-[4/3] lg:aspect-square flex items-center justify-center">
+<!-- Decoración fondo sutil -->
+<div class="absolute inset-0 bg-brand-surface rounded-[32px] border border-brand-border-soft transform rotate-3 scale-95 opacity-50 z-0"></div>
+<!-- Tarjeta Principal (Nivel 2) -->
+<div class="relative z-10 w-full max-w-lg bg-white rounded-card card-shadow p-6 flex flex-col gap-6 transform -rotate-1 transition-transform hover:rotate-0 duration-500 shadow-subtle-float">
+<!-- Header Dashboard -->
+<div class="flex justify-between items-center border-b border-brand-border-soft pb-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-brand-dark-green">bolt</span>
+<span class="font-data-label text-data-label text-on-surface-variant uppercase">Portfolio_Alpha_Overview</span>
+</div>
+<div class="px-2 py-1 bg-[#F4F2ED] rounded text-[10px] font-data-label text-on-surface-variant border border-brand-border-soft">LIVE</div>
+</div>
+<!-- Metric Cards (3) -->
+<div class="grid grid-cols-3 gap-3">
+<div class="bg-brand-surface rounded-lg p-3 border border-brand-border-soft flex flex-col gap-1">
+<span class="font-data-label text-[10px] text-on-surface-variant uppercase">Total_kWh</span>
+<span class="font-data-metric-lg text-[24px] text-primary">12.4k</span>
+</div>
+<div class="bg-white rounded-lg p-3 border border-brand-lime/50 flex flex-col gap-1 shadow-sm">
+<span class="font-data-label text-[10px] text-on-surface-variant uppercase">En_Reserva</span>
+<span class="font-data-metric-lg text-[24px] text-brand-dark-green">8.1k</span>
+</div>
+<div class="bg-[#FFF5F0] rounded-lg p-3 border border-brand-orange/30 flex flex-col gap-1">
+<span class="font-data-label text-[10px] text-brand-orange uppercase">Fuga_kWh</span>
+<span class="font-data-metric-lg text-[24px] text-brand-orange">4.3k</span>
+</div>
+</div>
+<!-- Bar Chart Mock -->
+<div class="flex flex-col gap-2">
+<span class="font-data-label text-[10px] text-on-surface-variant uppercase">Consumo_por_estado_de_reserva_7D</span>
+<div class="h-24 w-full flex items-end gap-2 border-b border-l border-brand-border-soft p-2">
+<!-- Bars -->
+<div class="w-1/6 bg-brand-lime rounded-t-sm h-[40%]"></div>
+<div class="w-1/6 bg-brand-lime rounded-t-sm h-[60%]"></div>
+<div class="w-1/6 bg-brand-orange rounded-t-sm h-[80%]"></div>
+<div class="w-1/6 bg-brand-lime rounded-t-sm h-[45%]"></div>
+<div class="w-1/6 bg-brand-border-strong rounded-t-sm h-[20%]"></div>
+<div class="w-1/6 bg-brand-lime rounded-t-sm h-[55%]"></div>
+</div>
+</div>
+<!-- Alert Row -->
+<div class="mt-auto bg-brand-surface border border-brand-border-soft rounded-lg p-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-brand-orange text-[20px]">warning</span>
+<span class="font-data-label text-[11px] text-on-surface-variant truncate">
+<strong class="text-primary">VGO-014</strong> · 4.2 kWh consumidos fuera de reserva detectados hoy.
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-section-gap bg-surface-container-low dark:bg-surface-dim border-t border-outline-variant">
+<div class="max-w-[1440px] mx-auto px-container-margin md:px-5 grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Logo & Tagline -->
+<div class="flex flex-col gap-4 col-span-1 md:col-span-2">
+<span class="font-headline-md text-headline-md font-bold text-primary">Tramo</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Cada kWh, en su tramo correcto.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">© 2024 Tramo. Todos los derechos reservados.</p>
+</div>
+<!-- Links Column 1 -->
+<div class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Privacidad</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Términos</a>
+</div>
+<!-- Links Column 2 -->
+<div class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Soporte</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+</body></html>

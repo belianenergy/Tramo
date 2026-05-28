@@ -1,0 +1,218 @@
+{
+  "generatedAt": "2026-05-16T13:40:52.045Z",
+  "pages": [
+    {
+      "viewport": "desktop-1440",
+      "status": "fail",
+      "issues": [
+        "banned copy: IA, IA, ia, ia, ia, ia, ia, IA, ia, ia, ia, ia, ia, ia, IA"
+      ],
+      "metrics": {
+        "title": "EnergyOS - Autopiloto de Energía",
+        "h1s": [
+          "Controla aparatos, tarifas y baterías desde una sola capa inteligente."
+        ],
+        "h1Length": 70,
+        "textLength": 2558,
+        "scrollWidth": 1440,
+        "viewportWidth": 1440,
+        "documentHeight": 3404,
+        "overflow": false,
+        "firstText": "ENERGY AUTOPILOT PARA CARTERAS DE ALOJAMIENTOS\nControla aparatos, tarifas y baterías desde una sola capa inteligente.\n\nEnergyOS cruza reservas, Datadis/CUPS, facturas, precios horarios y dispositivos conectados para decidir cuándo consumir, cortar, cargar o reportar. Menos coste, más control y explicaciones claras para cada propietario.\n\nSOLICITAR DIAGNÓSTICO GRATUITO\nverified\nSin hardware obligatorio para empezar\ncalendar_month\nRESERVAS\nReglas de consumo\ndatabase\nDATADIS/CUPS\nDiagnóstico\nbolt\nTARIFAS\nPotencia y horarios\nbattery_charging_full\nBATERÍAS\nArbitraje avanzado\nLIVE: MONITORIZANDO CARTERA\nLa factura sube, pero nadie sabe qué la causó.\nsensor_door\nAparatos encendidos fuera de reserva\n\nDetecta consumo cuando no hay huéspedes y crea reglas de corte automático o avisos en tiempo real al equipo de limpieza.\n\n32% FUGAS DETECTADAS\nquery_stats\nPotencia y tarifa mal ajustadas\n\nCruza CUPS, facturas y curva horaria para priorizar cambios defendibles ante comercializadoras sin afectar la operativa.\n\nANÁLISIS DE MERCADO DIARIO\nsolar_power\nSolar y batería sin estrategia\n\nConvierte excedentes, precios horarios y ciclos de batería en decisiones operativas para maximizar el autoconsumo real.\n\nOPTIMIZACIÓN DE EXCEDENTES\nDel dato a la acción, sin perseguir hojas de cálculo.\nradar\nDETECTA\n\nCaptura datos de Datadis, inversores y reservas en tiempo real.\n\nmemory\nDECIDE\n\nEvalúa precios horarios y reglas de negocio dinámicas.\n\nsettings_input_component\nAUTOMATIZA\n\nEjecuta cortes o cargas sin intervención manual del staff.\n\nsummarize\nREPORTA\n\nGenera explicaciones automáticas para el propiet",
+        "requiredHits": {
+          "aparatos": [
+            "aparatos",
+            "dispositivos",
+            "cortar",
+            "consumo",
+            "Aparatos",
+            "consumo",
+            "consumo",
+            "CONSUMO"
+          ],
+          "tarifas": [
+            "Tarifa",
+            "tarifa",
+            "precios horarios",
+            "TARIFA",
+            "Potencia",
+            "Potencia",
+            "tarifa",
+            "precios horarios",
+            "precios horarios",
+            "Tarifa",
+            "Potencia"
+          ],
+          "baterias": [
+            "Arbitraje",
+            "batería",
+            "BATERÍA",
+            "Arbitraje",
+            "solar",
+            "Solar",
+            "batería",
+            "batería",
+            "ARBITRAJE",
+            "Solar",
+            "Batería",
+            "batería",
+            "solar",
+            "batería"
+          ],
+          "datadis": [
+            "Datadis",
+            "CUPS",
+            "facturas",
+            "DATADIS",
+            "CUPS",
+            "CUPS",
+            "facturas",
+            "Datadis",
+            "DATADIS",
+            "CUPS"
+          ],
+          "reporting": [
+            "Informe",
+            "reporta",
+            "propietario",
+            "REPORTA",
+            "propietario",
+            "propietario"
+          ]
+        },
+        "bannedHits": [
+          "IA",
+          "IA",
+          "ia",
+          "ia",
+          "ia",
+          "ia",
+          "ia",
+          "IA",
+          "ia",
+          "ia",
+          "ia",
+          "ia",
+          "ia",
+          "ia",
+          "IA"
+        ],
+        "fakeStats": [
+          "32%",
+          "22%",
+          "80%"
+        ]
+      },
+      "errors": [],
+      "warnings": [
+        "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+      ],
+      "screenshot": "desktop-1440.png"
+    },
+    {
+      "viewport": "mobile-375",
+      "status": "fail",
+      "issues": [
+        "banned copy: IA, IA, ia, ia, ia, ia, ia, IA, ia, ia, ia, ia, ia, ia, IA"
+      ],
+      "metrics": {
+        "title": "EnergyOS - Autopiloto de Energía",
+        "h1s": [
+          "Controla aparatos, tarifas y baterías desde una sola capa inteligente."
+        ],
+        "h1Length": 70,
+        "textLength": 2522,
+        "scrollWidth": 375,
+        "viewportWidth": 375,
+        "documentHeight": 5798,
+        "overflow": false,
+        "firstText": "ENERGY AUTOPILOT PARA CARTERAS DE ALOJAMIENTOS\nControla aparatos, tarifas y baterías desde una sola capa inteligente.\n\nEnergyOS cruza reservas, Datadis/CUPS, facturas, precios horarios y dispositivos conectados para decidir cuándo consumir, cortar, cargar o reportar. Menos coste, más control y explicaciones claras para cada propietario.\n\nSOLICITAR DIAGNÓSTICO GRATUITO\nverified\nSin hardware obligatorio para empezar\ncalendar_month\nRESERVAS\nReglas de consumo\ndatabase\nDATADIS/CUPS\nDiagnóstico\nbolt\nTARIFAS\nPotencia y horarios\nbattery_charging_full\nBATERÍAS\nArbitraje avanzado\nLIVE: MONITORIZANDO CARTERA\nLa factura sube, pero nadie sabe qué la causó.\nsensor_door\nAparatos encendidos fuera de reserva\n\nDetecta consumo cuando no hay huéspedes y crea reglas de corte automático o avisos en tiempo real al equipo de limpieza.\n\n32% FUGAS DETECTADAS\nquery_stats\nPotencia y tarifa mal ajustadas\n\nCruza CUPS, facturas y curva horaria para priorizar cambios defendibles ante comercializadoras sin afectar la operativa.\n\nANÁLISIS DE MERCADO DIARIO\nsolar_power\nSolar y batería sin estrategia\n\nConvierte excedentes, precios horarios y ciclos de batería en decisiones operativas para maximizar el autoconsumo real.\n\nOPTIMIZACIÓN DE EXCEDENTES\nDel dato a la acción, sin perseguir hojas de cálculo.\nradar\nDETECTA\n\nCaptura datos de Datadis, inversores y reservas en tiempo real.\n\nmemory\nDECIDE\n\nEvalúa precios horarios y reglas de negocio dinámicas.\n\nsettings_input_component\nAUTOMATIZA\n\nEjecuta cortes o cargas sin intervención manual del staff.\n\nsummarize\nREPORTA\n\nGenera explicaciones automáticas para el propiet",
+        "requiredHits": {
+          "aparatos": [
+            "aparatos",
+            "dispositivos",
+            "cortar",
+            "consumo",
+            "Aparatos",
+            "consumo",
+            "consumo",
+            "CONSUMO"
+          ],
+          "tarifas": [
+            "tarifa",
+            "precios horarios",
+            "TARIFA",
+            "Potencia",
+            "Potencia",
+            "tarifa",
+            "precios horarios",
+            "precios horarios",
+            "Tarifa",
+            "Potencia"
+          ],
+          "baterias": [
+            "batería",
+            "BATERÍA",
+            "Arbitraje",
+            "solar",
+            "Solar",
+            "batería",
+            "batería",
+            "ARBITRAJE",
+            "Solar",
+            "Batería",
+            "batería",
+            "solar",
+            "batería"
+          ],
+          "datadis": [
+            "Datadis",
+            "CUPS",
+            "facturas",
+            "DATADIS",
+            "CUPS",
+            "CUPS",
+            "facturas",
+            "Datadis",
+            "DATADIS",
+            "CUPS"
+          ],
+          "reporting": [
+            "reporta",
+            "propietario",
+            "REPORTA",
+            "propietario",
+            "propietario"
+          ]
+        },
+        "bannedHits": [
+          "IA",
+          "IA",
+          "ia",
+          "ia",
+          "ia",
+          "ia",
+          "ia",
+          "IA",
+          "ia",
+          "ia",
+          "ia",
+          "ia",
+          "ia",
+          "ia",
+          "IA"
+        ],
+        "fakeStats": [
+          "32%",
+          "22%",
+          "80%"
+        ]
+      },
+      "errors": [],
+      "warnings": [
+        "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+      ],
+      "screenshot": "mobile-375.png"
+    }
+  ]
+}

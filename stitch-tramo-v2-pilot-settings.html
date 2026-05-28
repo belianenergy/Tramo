@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tramo - Pilot / Configuración</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#ffffff",
+                      "primary-container": "#e6813a",
+                      "surface": "#fdf8f8",
+                      "on-surface": "#1c1b1b",
+                      "on-error": "#ffffff",
+                      "surface-container-highest": "#e6e1e1",
+                      "surface-dim": "#ddd9d8",
+                      "inverse-on-surface": "#f4f0ef",
+                      "surface-tint": "#984700",
+                      "inverse-surface": "#313030",
+                      "secondary-fixed": "#fedccb",
+                      "surface-bright": "#fdf8f8",
+                      "primary-fixed": "#ffdbc8",
+                      "on-surface-variant": "#554338",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#dbc1b3",
+                      "tertiary": "#006a63",
+                      "on-primary-container": "#562500",
+                      "on-secondary-container": "#785f52",
+                      "tertiary-fixed-dim": "#80d5cb",
+                      "on-tertiary-container": "#003a35",
+                      "secondary-container": "#fedccb",
+                      "secondary-fixed-dim": "#e0c0b0",
+                      "on-secondary": "#ffffff",
+                      "primary": "#984700",
+                      "tertiary-container": "#52a9a0",
+                      "on-primary-fixed": "#321300",
+                      "on-secondary-fixed": "#29170e",
+                      "surface-container-low": "#f7f2f2",
+                      "surface-variant": "#e6e1e1",
+                      "outline": "#887367",
+                      "on-primary-fixed-variant": "#743500",
+                      "error": "#ba1a1a",
+                      "error-container": "#ffdad6",
+                      "surface-container-high": "#ece7e7",
+                      "primary-fixed-dim": "#ffb68a",
+                      "secondary": "#72594c",
+                      "background": "#fdf8f8",
+                      "on-error-container": "#93000a",
+                      "on-background": "#1c1b1b",
+                      "surface-container": "#f1edec",
+                      "on-tertiary-fixed": "#00201d",
+                      "on-tertiary-fixed-variant": "#00504a",
+                      "on-secondary-fixed-variant": "#584236",
+                      "inverse-primary": "#ffb68a",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#9cf2e8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "64px",
+                      "base": "4px",
+                      "gutter": "24px",
+                      "md": "24px",
+                      "sm": "16px",
+                      "lg": "40px",
+                      "xs": "8px",
+                      "margin-desktop": "48px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "data-md": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "data-lg": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.03em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "data-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Status specific colors avoiding generic tailwind colors */
+        .status-teal-bg { background-color: #e0f2f1; }
+        .status-teal-text { color: #00695c; }
+        .status-orange-bg { background-color: #ffe0b2; }
+        .status-orange-text { color: #e65100; }
+        .status-yellow-bg { background-color: #fff9c4; }
+        .status-yellow-text { color: #f57f17; }
+        .status-gray-bg { background-color: #f5f5f5; }
+        .status-gray-text { color: #616161; }
+      </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pt-16">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-xs">
+<span class="text-headline-md font-headline-md font-bold text-primary">Tramo</span>
+<span class="text-on-surface-variant px-xs">/</span>
+<span class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md">Pilot / Configuración</span>
+</div>
+<div>
+<button class="bg-primary-container text-on-primary px-sm py-xs rounded hover:opacity-90 font-label-caps text-label-caps transition-opacity">
+                Guardar cambios
+            </button>
+</div>
+</nav>
+<main class="max-w-[1440px] mx-auto px-gutter py-lg grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Header Section -->
+<header class="col-span-1 md:col-span-12 mb-sm">
+<h1 class="text-headline-lg font-headline-lg md:hidden text-on-surface mb-xs">Configuración del piloto</h1>
+<h1 class="text-display-lg font-display-lg hidden md:block text-on-surface mb-xs">Configuración del piloto</h1>
+<p class="text-body-lg font-body-lg text-secondary">Define qué datos tienes disponibles y qué módulos activar para este cliente.</p>
+</header>
+<!-- Left Column: Data Sources -->
+<div class="col-span-1 md:col-span-8 flex flex-col gap-gutter">
+<section>
+<h2 class="text-headline-md font-headline-md text-on-surface mb-sm border-b border-outline-variant pb-xs">FUENTES DE DATOS</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<!-- Card 1: PMS -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] p-sm hover:border-secondary transition-colors">
+<div class="flex justify-between items-start mb-md">
+<h3 class="text-body-lg font-body-lg font-bold text-on-surface">PMS / Reservas</h3>
+<span class="status-teal-bg status-teal-text px-xs py-base rounded-sm font-label-caps text-label-caps">Conectado</span>
+</div>
+<div class="space-y-base mb-md">
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span> PMS: Beds24
+                            </p>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">sync</span> Last sync: Hace 2h
+                            </p>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">domain</span> Properties: 12 apartamentos
+                            </p>
+</div>
+<a class="text-primary-container font-label-caps text-label-caps hover:underline flex items-center gap-base" href="#">
+                            Configurar <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2: Datadis -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] p-sm hover:border-secondary transition-colors">
+<div class="flex justify-between items-start mb-md">
+<h3 class="text-body-lg font-body-lg font-bold text-on-surface">Datadis / CUPS</h3>
+<span class="status-orange-bg status-orange-text px-xs py-base rounded-sm font-label-caps text-label-caps">Pendiente</span>
+</div>
+<div class="space-y-base mb-md">
+<p class="text-body-md font-body-md text-on-surface font-medium">Acceso no configurado</p>
+<p class="text-body-sm font-body-sm text-secondary">Sin acceso Datadis no podemos separar consumo por reserva automáticamente</p>
+</div>
+<a class="text-primary-container font-label-caps text-label-caps hover:underline flex items-center gap-base mt-auto" href="#">
+                            Solicitar acceso Datadis <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3: Facturas -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] p-sm hover:border-secondary transition-colors">
+<div class="flex justify-between items-start mb-md">
+<h3 class="text-body-lg font-body-lg font-bold text-on-surface">Facturas / CSV</h3>
+<span class="status-yellow-bg status-yellow-text px-xs py-base rounded-sm font-label-caps text-label-caps">Parcial</span>
+</div>
+<div class="space-y-base mb-md">
+<p class="text-body-md font-body-md text-on-surface">5 facturas cargadas (Ene-Abr 2026)</p>
+<p class="text-body-md font-body-md text-on-surface-variant">Last invoice: Abril 2026</p>
+</div>
+<a class="text-primary-container font-label-caps text-label-caps hover:underline flex items-center gap-base" href="#">
+                            Subir facturas <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 4: Reglas -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] p-sm hover:border-secondary transition-colors">
+<div class="flex justify-between items-start mb-md">
+<h3 class="text-body-lg font-body-lg font-bold text-on-surface">Reglas de aparato</h3>
+<span class="status-gray-bg status-gray-text px-xs py-base rounded-sm font-label-caps text-label-caps">No configurado</span>
+</div>
+<div class="space-y-base mb-md">
+<p class="text-body-md font-body-md text-on-surface font-medium">0 reglas activas</p>
+<p class="text-body-sm font-body-sm text-secondary italic">Ej: Termo OFF 30min post-checkout</p>
+</div>
+<a class="text-primary-container font-label-caps text-label-caps hover:underline flex items-center gap-base" href="#">
+                            Crear regla <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Thresholds & Alerts -->
+<section class="mt-md">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-sm border-b border-outline-variant pb-xs">UMBRALES Y ALERTAS</h2>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] p-sm space-y-md">
+<div>
+<label class="block text-label-caps font-label-caps text-on-surface-variant mb-xs">kWh fuera de reserva threshold</label>
+<div class="flex items-center">
+<input class="w-24 text-data-md font-data-md bg-surface-container-lowest border border-outline-variant rounded px-sm py-xs focus:border-primary-container focus:ring-0 outline-none transition-colors" type="text" value="5"/>
+<span class="ml-sm text-body-md font-body-md text-on-surface">kWh/mes</span>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant pt-sm">
+<span class="text-body-md font-body-md text-on-surface">Potencia alert: &gt;10% sobre recomendación</span>
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-primary-container" role="switch" type="button">
+<span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-on-primary shadow ring-0 transition duration-200 ease-in-out translate-x-5"></span>
+</button>
+</div>
+<div class="border-t border-outline-variant pt-sm">
+<label class="block text-label-caps font-label-caps text-on-surface-variant mb-xs">Notificar a</label>
+<input class="w-full text-body-md font-body-md bg-surface-container-lowest border border-outline-variant rounded px-sm py-xs focus:border-primary-container focus:ring-0 outline-none transition-colors max-w-md" type="email" value="mauro@tramo.io"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Scope & Notes -->
+<div class="col-span-1 md:col-span-4 flex flex-col gap-gutter">
+<section>
+<h2 class="text-headline-md font-headline-md text-on-surface mb-sm border-b border-outline-variant pb-xs">ALCANCE DEL PILOTO</h2>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] p-sm mb-sm">
+<ul class="space-y-sm mb-md">
+<li class="flex items-center gap-sm">
+<input checked="" class="w-4 h-4 text-primary-container border-outline-variant rounded rounded-sm focus:ring-primary-container" type="checkbox"/>
+<span class="text-body-md font-body-md text-on-surface">Dashboard de portfolio</span>
+</li>
+<li class="flex items-center gap-sm">
+<input checked="" class="w-4 h-4 text-primary-container border-outline-variant rounded-sm focus:ring-primary-container" type="checkbox"/>
+<span class="text-body-md font-body-md text-on-surface">Cola de operaciones</span>
+</li>
+<li class="flex items-center gap-sm">
+<input checked="" class="w-4 h-4 text-primary-container border-outline-variant rounded-sm focus:ring-primary-container" type="checkbox"/>
+<span class="text-body-md font-body-md text-on-surface">Apartamentos</span>
+</li>
+<li class="flex items-center gap-sm">
+<input checked="" class="w-4 h-4 text-primary-container border-outline-variant rounded-sm focus:ring-primary-container" type="checkbox"/>
+<span class="text-body-md font-body-md text-on-surface">Tarifa y potencia</span>
+</li>
+<li class="flex items-center gap-sm opacity-50">
+<input class="w-4 h-4 text-primary-container border-outline-variant rounded-sm" disabled="" type="checkbox"/>
+<span class="text-body-md font-body-md text-on-surface-variant">Informes propietario <span class="text-body-sm font-body-sm">(requires Datadis)</span></span>
+</li>
+<li class="flex items-center gap-sm opacity-50">
+<input class="w-4 h-4 text-primary-container border-outline-variant rounded-sm" disabled="" type="checkbox"/>
+<span class="text-body-md font-body-md text-on-surface-variant">Evaluación batería/arbitraje <span class="text-body-sm font-body-sm">(requires 6+ meses datos)</span></span>
+</li>
+</ul>
+<div class="border-t border-outline-variant pt-sm bg-surface-container-low -mx-sm -mb-sm p-sm rounded-b-[15px]">
+<p class="text-body-sm font-body-sm text-secondary flex justify-between mb-xs">
+<span class="font-bold">Duración:</span> 4 semanas
+                        </p>
+<p class="text-body-sm font-body-sm text-secondary flex justify-between">
+<span class="font-bold">Inicio:</span> 17 Mayo 2026
+                        </p>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-headline-md font-headline-md text-on-surface mb-sm border-b border-outline-variant pb-xs">NOTAS INTERNAS</h2>
+<textarea class="w-full h-32 text-body-md font-body-md bg-surface-container-lowest border border-outline-variant rounded px-sm py-sm focus:border-primary-container focus:ring-0 outline-none transition-colors resize-none" placeholder="Añade notas aquí...">Cliente con 12 apartamentos en A Coruña. Acceso Datadis pendiente. Primer contacto: 20 Mayo. Pain principal: consumo fuera de reserva en temporada alta.</textarea>
+</section>
+</div>
+</main>
+</body></html>

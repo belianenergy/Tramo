@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "type": "warning",
+    "message": "Consumo anómalo detectado en Rúa Canceas 28, Ferrol — 45% sobre la media mensual",
+    "property": "Apartamento Costa",
+    "timestamp": "2026-05-11T10:00:00Z",
+    "read": false
+  },
+  {
+    "id": "2",
+    "type": "success",
+    "message": "Oportunidad de ahorro: cambio a tarifa indexada recomendado para Apartamento Centro Histórico",
+    "property": "Apartamento Centro Histórico",
+    "timestamp": "2026-05-11T08:00:00Z",
+    "read": false
+  },
+  {
+    "id": "3",
+    "type": "info",
+    "message": "Nuevos datos Datadis disponibles para 3 propiedades del CUPS ES003140...",
+    "property": "Comunidad Calle Mayor 15",
+    "timestamp": "2026-05-10T18:00:00Z",
+    "read": false
+  },
+  {
+    "id": "4",
+    "type": "danger",
+    "message": "Factura eléctrica superior al 150% de la previsión en Comunidad Plaza Mayor 1",
+    "property": "Comunidad Plaza Mayor 1",
+    "timestamp": "2026-05-10T14:30:00Z",
+    "read": true
+  },
+  {
+    "id": "5",
+    "type": "warning",
+    "message": "Contrato de Piso Beiro próximo a vencer en 15 días",
+    "property": "Piso Beiro",
+    "timestamp": "2026-05-09T09:00:00Z",
+    "read": true
+  }
+]

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EnergyOS - Autopilot Energético</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-primary": "#b6ccbb",
+                      "outline": "#737873",
+                      "secondary-fixed-dim": "#a8d292",
+                      "on-primary-fixed-variant": "#384b3e",
+                      "primary": "#010f06",
+                      "on-background": "#191c18",
+                      "on-primary-fixed": "#0d1f15",
+                      "on-primary": "#ffffff",
+                      "surface-variant": "#e1e3dc",
+                      "inverse-surface": "#2e312d",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#b6ccbb",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#c1eca9",
+                      "error-container": "#ffdad6",
+                      "surface-tint": "#4f6355",
+                      "surface": "#f8faf3",
+                      "on-tertiary-fixed": "#121f00",
+                      "on-secondary-fixed": "#052100",
+                      "surface-container-highest": "#e1e3dc",
+                      "surface-dim": "#d9dbd4",
+                      "outline-variant": "#c3c8c1",
+                      "secondary": "#436833",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#f2f4ed",
+                      "tertiary-fixed": "#c1f273",
+                      "on-tertiary-fixed-variant": "#334f00",
+                      "on-secondary-container": "#476c37",
+                      "surface-container-high": "#e7e9e2",
+                      "on-tertiary-container": "#6b9721",
+                      "surface-container": "#edefe8",
+                      "tertiary-fixed-dim": "#a6d65a",
+                      "on-tertiary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#d2e8d6",
+                      "on-surface-variant": "#434843",
+                      "secondary-fixed": "#c4efac",
+                      "background": "#f8faf3",
+                      "on-secondary": "#ffffff",
+                      "on-primary-container": "#7a8e7f",
+                      "on-secondary-fixed-variant": "#2c4f1d",
+                      "inverse-on-surface": "#eff2eb",
+                      "tertiary": "#070f00",
+                      "surface-bright": "#f8faf3",
+                      "tertiary-container": "#172700",
+                      "primary-container": "#14261b",
+                      "on-surface": "#191c18"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin-mobile": "16px",
+                      "lg": "48px",
+                      "md": "24px",
+                      "xs": "4px",
+                      "sm": "12px",
+                      "xl": "64px",
+                      "base": "8px",
+                      "margin-desktop": "48px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "label-mono-sm": ["Space Mono"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "label-mono": ["Space Mono"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-mono-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-bg { background-color: #1F3A2A; }
+        .paper-bg { background-color: #F5F7F0; }
+        .restro-card {
+            border: 1px solid #D2DED0;
+            border-radius: 24px;
+            background: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .restro-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .restro-input {
+            border: 1px solid #D2DED0;
+            border-radius: 12px;
+            background-color: #F8FAF3;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .restro-input:focus {
+            outline: none;
+            border-color: #436833;
+            box-shadow: 0 0 0 2px rgba(67, 104, 51, 0.1);
+        }
+        .btn-sage {
+            background-color: #7EA66A;
+            color: #14261B;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+        .btn-sage:hover {
+            background-color: #6a9256;
+        }
+        .btn-outline-sage {
+            border: 1px solid #D2DED0;
+            color: #14261B;
+            border-radius: 12px;
+            font-weight: 500;
+            background: transparent;
+            transition: background-color 0.2s ease;
+        }
+        .btn-outline-sage:hover {
+            background-color: #F2F4ED;
+        }
+        .chip-active {
+            background-color: #B7E86A;
+            color: #14261B;
+            border-radius: 9999px;
+            padding: 4px 12px;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pt-20">
+<!-- Header: TopNavBar -->
+<header class="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md border-b border-outline-variant dark:border-outline fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter py-sm max-w-screen-2xl mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight">EnergyOS</div>
+<nav class="hidden md:flex gap-md">
+<a class="text-label-mono font-label-mono text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest rounded-lg transition-all px-3 py-2" href="#">Plataforma</a>
+<a class="text-label-mono font-label-mono text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest rounded-lg transition-all px-3 py-2" href="#">Control</a>
+<a class="text-label-mono font-label-mono text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest rounded-lg transition-all px-3 py-2" href="#">Tarifas</a>
+<a class="text-label-mono font-label-mono text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest rounded-lg transition-all px-3 py-2" href="#">Arbitraje</a>
+<a class="text-label-mono font-label-mono text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest rounded-lg transition-all px-3 py-2" href="#">Informes</a>
+</nav>
+<button class="btn-sage px-4 py-2 text-label-mono font-label-mono hidden md:block">Solicitar diagnóstico</button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<!-- Hero Section -->
+<section class="hero-bg min-h-[650px] flex items-center pt-xl pb-xl relative overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-xl items-center relative z-10 w-full">
+<div class="flex flex-col gap-md text-on-primary max-w-xl">
+<div class="inline-flex">
+<span class="border border-[#7EA66A] text-[#B7E86A] px-3 py-1 rounded-full text-label-mono-sm font-label-mono-sm uppercase tracking-wider">Energy autopilot para carteras turisticas</span>
+</div>
+<h1 class="text-display-lg font-display-lg text-white">Convierte consumo, tarifas y baterias en decisiones operativas.</h1>
+<p class="text-body-lg font-body-lg text-[#b6ccbb]">
+                    EnergyOS cruza reservas, Datadis/CUPS, facturas, precios horarios y dispositivos conectados para detectar fugas, ajustar potencia, automatizar reglas y explicar cada decision al propietario.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-sm">
+<button class="btn-sage px-6 py-3 text-center">Solicitar diagnostico gratuito</button>
+<button class="border border-white/30 text-white hover:bg-white/10 rounded-xl px-6 py-3 font-semibold transition-colors text-center">Ver como funciona</button>
+</div>
+<p class="text-label-mono font-label-mono text-[#a8d292] mt-2 max-w-md">
+                    Empieza software-first. Anade control de aparatos, solar o bateria cuando la cartera lo justifique.
+                </p>
+<div class="flex flex-wrap gap-2 mt-md">
+<span class="chip-active bg-white/10 text-[#c1eca9] border border-white/20">Reservas -&gt; consumo esperado</span>
+<span class="chip-active bg-white/10 text-[#c1eca9] border border-white/20">Datadis/CUPS -&gt; diagnostico</span>
+<span class="chip-active bg-white/10 text-[#c1eca9] border border-white/20">Tarifa -&gt; potencia y horarios</span>
+<span class="chip-active bg-white/10 text-[#c1eca9] border border-white/20">Bateria -&gt; arbitraje avanzado</span>
+</div>
+</div>
+<div class="relative w-full h-[500px] lg:h-[600px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+<img alt="A premium product hero visual for EnergyOS. A cinematic operational command screen floating on a deep green background. The screen shows a sophisticated energy orchestration dashboard with a soft Restro-style card aesthetic (rounded corners, clean grid). The lighting is moody and professional, highlighting the high-ticket service feel without any neon or glassmorphism." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSOPHwhM9Sarrpn0vkur9MwgQDVwXyox4ECtoqvukIMZ-kznliOEPWFOEKOQ1B7osDxSHC7z22THUKZZsyEtaCzwAvQWr3FvEWbMflMp59IRbmKhvwB83FQDozf6mLYEWTUQOWhV5fpMPQ0zmXHQVbJEjbTCG6FaXCjceFnz19W1w-1IMcgZ7cYytZR1imh01mRjIUzqiprPQtiWF3YuQBMES-VJMXe_v8WT2YaQet3IE3V3gX3BZHCHMUGxRxebNzUrbEAoEnXXQ"/>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant dark:border-outline w-full py-xl px-gutter flex flex-col md:flex-row justify-between items-center gap-md mt-xl">
+<div class="text-body-lg font-headline-md font-bold text-primary dark:text-primary-fixed">EnergyOS</div>
+<div class="text-body-md font-body-md text-on-surface-variant dark:text-surface-variant text-center md:text-left">© 2024 EnergyOS. All rights reserved.</div>
+<nav class="flex flex-wrap justify-center gap-md">
+<a class="text-label-mono-sm font-label-mono-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:underline decoration-secondary decoration-2 underline-offset-4 transition-opacity duration-200" href="#">Privacidad</a>
+<a class="text-label-mono-sm font-label-mono-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:underline decoration-secondary decoration-2 underline-offset-4 transition-opacity duration-200" href="#">Términos</a>
+<a class="text-label-mono-sm font-label-mono-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:underline decoration-secondary decoration-2 underline-offset-4 transition-opacity duration-200" href="#">Contacto</a>
+<a class="text-label-mono-sm font-label-mono-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:underline decoration-secondary decoration-2 underline-offset-4 transition-opacity duration-200" href="#">Soporte</a>
+</nav>
+</footer>
+</body></html>

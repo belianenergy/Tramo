@@ -1,0 +1,19 @@
+{
+  "id": 1779040632546,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"name\":\"projects/500978887372057138\",\"title\":\"Tramo Fusion — Manager-Ready Energy Operations Landing\",\"visibility\":\"PRIVATE\",\"projectType\":\"PROJECT_DESIGN\",\"origin\":\"STITCH\"}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "name": "projects/500978887372057138",
+      "origin": "STITCH",
+      "projectType": "PROJECT_DESIGN",
+      "title": "Tramo Fusion — Manager-Ready Energy Operations Landing",
+      "visibility": "PRIVATE"
+    }
+  }
+}

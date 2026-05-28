@@ -1,0 +1,24 @@
+{
+  "key": "pilot-settings",
+  "requestedName": "configuracion-piloto",
+  "title": "Configuración piloto",
+  "projectId": "11820050226044719534",
+  "projectName": "projects/11820050226044719534",
+  "screenId": "3f1df7b010ae4266bb8e72219acb43e3",
+  "screenName": "projects/11820050226044719534/screens/3f1df7b010ae4266bb8e72219acb43e3",
+  "width": "2560",
+  "height": "3170",
+  "htmlCodeName": "projects/11820050226044719534/files/a2a4b557bc9e44c8b56cb1c2149c30f0",
+  "screenshotName": "projects/11820050226044719534/files/0cef546736bd4d91980973d8eda96e9d",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzliOTU1NjIyOGFjZDQxMDU4YTU0ODY4ODYyOWNjN2IxEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ujVXIMOklF1LsF23eKHk2n28FY8rExHNfUiKdQ2bPy3j8aVrUQrA0O8oem2SQMEUlSqCrIWhM5l7QnwI0J-X0gFpB4Uas3ooBdOI5k79MZqtJLhVmNOKySzbaUODN0I0aWXOyGXDwJ7ut966PXb_wOtuH-oTH8M9JzM3nrjr2Dr4qshim977F1ePSr7fkbvnPlkV3eeJDlRhvV0xeWSA6LkUGj6UsrqF5Sdjk_LPNi4ne1hEByPRRB6DRg",
+  "generatedAt": "2026-05-12T19:44:09.803Z",
+  "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+  "localFiles": {
+    "response": "stitch-mvp-restro-style-v1-pilot-settings-response.json",
+    "meta": "stitch-mvp-restro-style-v1-pilot-settings-meta.json",
+    "html": "stitch-mvp-restro-style-v1-pilot-settings.html",
+    "stitchPng": "stitch-mvp-restro-style-v1-pilot-settings-stitch.png",
+    "previews": []
+  }
+}

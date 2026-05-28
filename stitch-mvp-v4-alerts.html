@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="light" lang="gl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#213145",
+                    "on-primary-fixed": "#002113",
+                    "primary-fixed": "#6ffbbe",
+                    "inverse-primary": "#4edea3",
+                    "tertiary-fixed-dim": "#ffb3af",
+                    "on-tertiary-container": "#711419",
+                    "surface-variant": "#d3e4fe",
+                    "on-background": "#0b1c30",
+                    "error": "#ba1a1a",
+                    "surface": "#f8f9ff",
+                    "surface-tint": "#006c49",
+                    "secondary-container": "#dae2fd",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "background": "#f8f9ff",
+                    "tertiary": "#a43a3a",
+                    "on-tertiary-fixed-variant": "#842225",
+                    "tertiary-fixed": "#ffdad7",
+                    "on-surface": "#0b1c30",
+                    "surface-dim": "#cbdbf5",
+                    "primary": "#006c49",
+                    "on-surface-variant": "#3c4a42",
+                    "primary-fixed-dim": "#4edea3",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#00422b",
+                    "outline": "#6c7a71",
+                    "secondary-fixed": "#dae2fd",
+                    "on-secondary-container": "#5c647a",
+                    "tertiary-container": "#fc7c78",
+                    "surface-container-highest": "#d3e4fe",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container-high": "#dce9ff",
+                    "outline-variant": "#bbcabf",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-tertiary-fixed": "#410005",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "surface-container": "#e5eeff",
+                    "on-primary-fixed-variant": "#005236",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "secondary": "#565e74",
+                    "primary-container": "#10b981",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary-fixed": "#131b2e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "32px",
+                    "margin-mobile": "16px",
+                    "gutter": "20px",
+                    "xl": "48px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "unit": "4px",
+                    "md": "16px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "data-md": ["JetBrains Mono"],
+                    "body-base": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "data-lg": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "data-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "body-base": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "data-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .sidebar-item-active { background-color: #dae2fd; color: #131b2e; font-weight: 600; border-radius: 0.5rem; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- SideNavBar (Authority Source: JSON & Sidebar/Layout Mandate) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant flex flex-col p-md gap-sm z-30">
+<div class="flex items-center gap-sm mb-lg">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-black text-primary">EnergyOS</h1>
+<p class="text-[10px] font-label-caps text-on-surface-variant uppercase tracking-widest">Premium Operator</p>
+</div>
+</div>
+<nav class="flex flex-col gap-xs flex-grow">
+<!-- Panel -->
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-all group rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-base text-body-base">Panel</span>
+</a>
+<!-- Propiedades -->
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-all group rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="font-body-base text-body-base">Propiedades</span>
+</a>
+<!-- Alertas (ACTIVE) -->
+<a class="flex items-center gap-md p-md bg-secondary-container text-on-secondary-container font-semibold rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="notifications_active" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+<span class="font-body-base text-body-base">Alertas</span>
+</a>
+<!-- Arbitraxe -->
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-all group rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="font-body-base text-body-base">Arbitraxe</span>
+</a>
+<!-- Asesor IA -->
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-all group rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-body-base text-body-base">Asesor IA</span>
+</a>
+<!-- Configuración -->
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-all group rounded-lg mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-base text-body-base">Configuración</span>
+</a>
+</nav>
+<div class="mt-md p-md bg-primary-container/10 rounded-xl border border-primary/20">
+<p class="font-label-caps text-primary font-bold mb-xs">PRO PLAN</p>
+<p class="text-body-sm text-on-surface-variant mb-md">Accede a predicións avanzadas con IA.</p>
+<button class="w-full py-sm bg-primary text-on-primary font-bold rounded-lg text-body-sm hover:opacity-90 transition-opacity">Upgrade Plan</button>
+</div>
+</aside>
+<!-- Main Wrapper -->
+<div class="flex-grow ml-64 flex flex-col">
+<!-- TopNavBar (Authority Source: JSON) -->
+<header class="bg-surface sticky top-0 z-20 border-b border-outline-variant backdrop-blur-md shadow-sm flex justify-between items-center w-full px-margin-desktop py-xs h-16">
+<div class="flex items-center gap-lg">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 w-64" placeholder="Buscar alertas..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-2 hover:bg-surface-variant rounded-full transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-surface-variant rounded-full transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-px bg-outline-variant mx-xs"></div>
+<div class="flex items-center gap-sm cursor-pointer hover:bg-surface-variant p-1 rounded-lg transition-colors">
+<img alt="User profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT3xiZyotePVrqTZt18soJSXfvEBEaDHmI5s8WKeCy2e3TE-pE56a5TrdZJmKXF_y_p_O2PYVOIxdnuSVA7QHZYsxGQwGiIN7ddYs1LGrWh9NVAudnMwakQ2QSj6prz1NmhWGrcH9r4DuE1r9-SzIG12z7_kLwmrBVATXHiqJ6srEk20L_8KJ5LWdE2QI3Fo0tXJhHCOZVYlNX3uapJebgFIRqEo0_sV_0EwohlrAgQ1lMai3RHYzSomN1b1xxuM0EExdna3e2f4qL"/>
+<span class="font-body-base font-semibold text-on-surface">Alex Martíns</span>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<main class="p-margin-desktop grid grid-cols-12 gap-gutter max-w-[1440px] mx-auto w-full">
+<!-- Main Content Column -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-xl">
+<!-- Page Header -->
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md flex items-center gap-sm">
+<span class="text-2xl">🔔</span> Alertas
+                    </h2>
+<div class="flex gap-sm">
+<button class="px-md py-sm border border-outline-variant rounded-lg text-body-sm font-semibold flex items-center gap-xs hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span> Filtrar
+                        </button>
+<button class="px-md py-sm border border-outline-variant rounded-lg text-body-sm font-semibold flex items-center gap-xs hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span> Exportar
+                        </button>
+</div>
+</div>
+<!-- Section HOXE -->
+<section>
+<div class="flex items-center gap-sm mb-lg">
+<h3 class="font-label-caps text-on-surface-variant tracking-widest uppercase">Hoxe</h3>
+<div class="h-px flex-grow bg-outline-variant"></div>
+</div>
+<!-- Critical Alert Card -->
+<div class="bg-surface-container-lowest border border-error/30 rounded-xl p-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="priority_high">priority_high</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-error mb-xs">
+                                        🔴 14:32 Apart. Praia - Consumo 7x normal (2.1 kWh/h)
+                                    </h4>
+<p class="text-body-base text-on-surface-variant">
+                                        Explicação: <span class="font-semibold text-on-surface italic">posible aire acondicionado encendido</span>
+</p>
+</div>
+</div>
+<span class="font-data-md text-data-md text-on-surface-variant bg-surface-container-high px-sm py-xs rounded">Agora mesmo</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-md mb-lg border border-outline-variant/50">
+<div class="flex items-center gap-xl">
+<div>
+<p class="text-xs font-label-caps text-on-surface-variant mb-xs">CONSUMO ACTUAL</p>
+<p class="font-data-lg text-data-lg text-error">2.1 <span class="text-sm">kWh/h</span></p>
+</div>
+<div class="h-8 w-px bg-outline-variant"></div>
+<div>
+<p class="text-xs font-label-caps text-on-surface-variant mb-xs">MEDIA HISTÓRICA</p>
+<p class="font-data-lg text-data-lg text-on-surface">0.3 <span class="text-sm">kWh/h</span></p>
+</div>
+<div class="h-8 w-px bg-outline-variant"></div>
+<div class="flex-grow">
+<div class="flex justify-between items-end mb-xs">
+<p class="text-xs font-label-caps text-on-surface-variant">ANOMALÍA DETECTADA</p>
+<p class="text-xs font-bold text-error">+600%</p>
+</div>
+<div class="w-full bg-surface-variant h-1.5 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="px-lg py-md bg-primary-container text-on-primary-container font-bold rounded-lg text-body-base hover:opacity-90 transition-all flex items-center gap-sm shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="send">send</span>
+                                Enviar mensaxe ao hóspede
+                            </button>
+<button class="px-lg py-md border border-outline text-on-surface font-semibold rounded-lg text-body-base hover:bg-surface-container-high transition-all">
+                                Marcar resolto
+                            </button>
+</div>
+</div>
+</section>
+<!-- Section ONTE -->
+<section>
+<div class="flex items-center gap-sm mb-lg">
+<h3 class="font-label-caps text-on-surface-variant tracking-widest uppercase">Onte</h3>
+<div class="h-px flex-grow bg-outline-variant"></div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl divide-y divide-outline-variant overflow-hidden">
+<!-- Warning Row -->
+<div class="p-lg flex items-center justify-between hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<div>
+<p class="font-body-base font-semibold text-on-surface">⚠️ Apart. Centro - Consumo elevado</p>
+<p class="text-body-sm text-on-surface-variant">Detectado ás 18:45 • Potencial fuga térmica</p>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<span class="font-data-md text-data-md text-on-surface-variant">18:45</span>
+<button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Success Row -->
+<div class="p-lg flex items-center justify-between hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="font-body-base font-semibold text-on-surface">✅ Apart. Praia - Resolto automaticamente</p>
+<p class="text-body-sm text-on-surface-variant">Apagado remoto executado ás 10:20</p>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<span class="font-data-md text-data-md text-on-surface-variant">10:20</span>
+<button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Sidebar / Summary Card -->
+<aside class="col-span-12 lg:col-span-4 flex flex-col gap-lg">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg sticky top-24">
+<h3 class="font-headline-sm text-headline-sm mb-lg">Resumo de Estado</h3>
+<div class="flex flex-col gap-md">
+<!-- Stat 1 -->
+<div class="flex items-center justify-between p-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="notification_important">notification_important</span>
+</div>
+<span class="text-body-base font-medium">Alertas activas</span>
+</div>
+<span class="font-data-lg text-data-lg text-error">2</span>
+</div>
+<!-- Stat 2 -->
+<div class="flex items-center justify-between p-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="savings">savings</span>
+</div>
+<span class="text-body-base font-medium">Aforro potencial</span>
+</div>
+<span class="font-data-lg text-data-lg text-primary">180€</span>
+</div>
+<!-- Stat 3 -->
+<div class="flex items-center justify-between p-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="router">router</span>
+</div>
+<span class="text-body-base font-medium">Dispositivos</span>
+</div>
+<span class="font-data-lg text-data-lg text-on-surface">3</span>
+</div>
+</div>
+<div class="mt-xl">
+<p class="font-label-caps text-on-surface-variant mb-md uppercase tracking-wider">Actividade recente</p>
+<div class="relative pl-6 border-l border-outline-variant space-y-lg">
+<div class="relative">
+<div class="absolute -left-[29px] top-1 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-surface"></div>
+<p class="text-body-sm font-semibold">Sistema Optimizador activado</p>
+<p class="text-[11px] text-on-surface-variant">Hai 15 min</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[29px] top-1 w-2.5 h-2.5 rounded-full bg-outline ring-4 ring-surface"></div>
+<p class="text-body-sm font-semibold">Informe semanal xerado</p>
+<p class="text-[11px] text-on-surface-variant">Hai 2 horas</p>
+</div>
+</div>
+</div>
+<div class="mt-xl relative rounded-xl overflow-hidden aspect-video bg-surface-container-high">
+<img alt="Enerxía en tempo real" class="w-full h-full object-cover opacity-80 mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-700" data-alt="A high-tech monitoring dashboard showing clean energy data visualizations in a futuristic control room. Soft emerald green light illuminates a clean, minimalist interface with glowing charts and metrics against a dark technical background. The scene conveys professional precision, efficiency, and advanced infrastructure management in a modern, premium light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqLbQtmIPxDcLRBa5CLL7bktFvUEKAADRrFr2cFNexXkY4uTbFJTXGPlHz9fg9CXVJe2lTHHr6EymVAZoJd836_b0z8u-tVcp-yPtda8jJO2WdAHKNMqV72YT_xAxO5t6BfsptJb6mxJ3bFL23daWc8XNR9hv-P1y-X6vZ2y8VXqIgaqK1JARpTCIwcIE_Elo8F7GraNvQ17zOc81O14Ubwk1qy8-iGJSbMc1KGxi4081wjudYsZG1RISXwNyV2Opvbg7fxLfMQC6B"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent flex items-end p-md">
+<p class="text-xs font-bold text-on-surface">Vista en vivo: Central Térmica</p>
+</div>
+</div>
+</div>
+</aside>
+</main>
+</div>
+</body></html>

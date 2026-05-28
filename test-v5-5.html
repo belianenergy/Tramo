@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#88d982",
+                        "tertiary-fixed": "#9eefff",
+                        "surface-variant": "#e3e2e2",
+                        "on-background": "#1b1c1c",
+                        "on-primary-fixed": "#002204",
+                        "on-primary-container": "#cbffc2",
+                        "on-secondary-fixed": "#2e1500",
+                        "on-surface-variant": "#40493d",
+                        "secondary-fixed": "#ffdcc2",
+                        "error-container": "#ffdad6",
+                        "outline": "#707a6c",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#88d982",
+                        "primary": "#0d631b",
+                        "on-error": "#ffffff",
+                        "surface-container": "#efeded",
+                        "on-primary-fixed-variant": "#005312",
+                        "on-tertiary-fixed": "#001f24",
+                        "secondary-fixed-dim": "#ffb77a",
+                        "secondary": "#8f4e00",
+                        "background": "#fbf9f9",
+                        "surface": "#fbf9f9",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#303031",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-tint": "#1b6d24",
+                        "on-surface": "#1b1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f5f3f3",
+                        "on-secondary-fixed-variant": "#6d3a00",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#a3f69c",
+                        "on-secondary-container": "#623400",
+                        "primary-container": "#2e7d32",
+                        "tertiary-fixed-dim": "#55d7ed",
+                        "tertiary": "#005e6b",
+                        "surface-dim": "#dbdad9",
+                        "tertiary-container": "#007988",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e3e2e2",
+                        "surface-bright": "#fbf9f9",
+                        "on-tertiary-container": "#d4f7ff",
+                        "secondary-container": "#ff8f00",
+                        "outline-variant": "#bfcaba",
+                        "surface-container-high": "#e9e8e7",
+                        "on-tertiary-fixed-variant": "#004e59"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #FAFAFA;
+            color: #1b1c1c;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full h-16 z-50 flex items-center justify-between px-6 bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline shadow-sm">
+<div class="flex items-center gap-4">
+<span class="text-xl font-headline font-bold text-primary dark:text-primary-fixed">EnergyOS Pro</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6 font-body text-label-md">
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary cursor-pointer active:opacity-80" href="#">Panel</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80" href="#">Fincas</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80" href="#">Apartamentos</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">settings</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="User profile" data-alt="A professional headshot of a person with a warm, confident expression. The lighting is soft and corporate, set against a blurred office background with subtle green plants to emphasize an eco-friendly energy management environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt7gkq3SPv9TL7J6naPGv16qSSug6kjZ76VAEwDtthp7HT8-sA57RM-baDNRzGlFbtRUSISPf_R9tYrevRTC4t7UVKi8po-4NF2M03Zhuhk68-PFpnxsSVS_-k5uemznlG2Ex_-SXlNhP1sHJ1iJ13ce2u3VPF4bPPJ79m-Xgw-UfrJqb64E9o1fh0yxqNpPl2WbhRQlV-hs7ko3htu0Xx4o6IpK9_ducCf3Q-iOExWYNfc0gsyEQa3XvZjVpZnoMM_1kfh99gK2U"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Hidden on desktop for this specific Lead Gen landing flow, but structure kept per instructions) -->
+<div class="hidden"></div>
+<main class="pt-16 pb-24 max-w-[1280px] mx-auto px-6">
+<!-- Page Header -->
+<div class="py-12 text-center">
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tight text-on-surface">Monitorización en Tiempo Real</h1>
+<p class="mt-4 text-xl text-on-surface-variant max-w-2xl mx-auto">Instala un medidor de consumo y optimiza tu factura</p>
+</div>
+<!-- Hero Section: Bento Grid Layout -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-24">
+<div class="md:col-span-7 bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm flex flex-col justify-center">
+<h2 class="text-3xl md:text-4xl font-headline font-bold text-on-surface leading-tight">¿Cuánto estás perdiendo por no medir en tiempo real?</h2>
+<p class="mt-6 text-lg text-on-surface-variant">
+                    Visualiza cada vatio en tiempo real y detecta fugas de energía al instante. Nuestros clientes logran un <strong>ahorro de hasta el 30%</strong> en sus facturas desde el primer mes.
+                </p>
+<div class="mt-8">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-headline font-bold text-lg hover:opacity-90 transition-all shadow-md active:scale-95">
+                        Solicitar Presupuesto Gratis
+                    </button>
+</div>
+<div class="mt-8 flex items-center gap-4 text-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Sin permanencia</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Instalación rápida</span>
+</div>
+</div>
+<div class="md:col-span-5 relative h-[400px] md:h-auto rounded-xl overflow-hidden border border-outline-variant shadow-sm">
+<img alt="Shelly EM Device" class="w-full h-full object-cover" data-alt="A high-tech Shelly EM energy monitoring device mounted inside a clean, modern electrical panel. The lighting is crisp and bright, highlighting the professional installation and high-quality hardware. The overall atmosphere is technological and efficient, following a light-mode B2B aesthetic with clean surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkPChKvnzJwgfFUQnpoeQgOjS3aFlJ0ERAiLh5oz3SMsFIUfimLd89-Ch3Jom35dxFVHgb76ZoR0GHrj3hqQZHYpJ48Qf-kJ7baYq9JmgcgFcQ_3ifvhBZNmC9W4QOatzDiOMdEiOjpoas2OXfKbHYJYz6aTiDMn4MWvGX3oPiIVtjx_lEIee0tkoi9cA7NRr9SKT5xdAU75nwXolliQ95ylUKdhUavI7fXIrDL3f62xmgvlEwrIRQMsG_bMQErreHWaJxjHl15Uo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Tecnología Shelly EM</span>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="mb-24">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-headline font-bold">Beneficios del Sistema</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant hover:border-primary transition-colors group shadow-sm">
+<div class="w-12 h-12 bg-primary-fixed/20 rounded-lg flex items-center justify-center mb-6 text-primary transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl">error</span>
+</div>
+<h3 class="text-xl font-headline font-bold mb-3">Detección de Anomalías</h3>
+<p class="text-on-surface-variant leading-relaxed">Identifica consumos fantasma y picos de potencia que encarecen tu factura sin que te des cuenta.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant hover:border-primary transition-colors group shadow-sm">
+<div class="w-12 h-12 bg-primary-fixed/20 rounded-lg flex items-center justify-center mb-6 text-primary transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl">price_check</span>
+</div>
+<h3 class="text-xl font-headline font-bold mb-3">Optimización de Tarifas</h3>
+<p class="text-on-surface-variant leading-relaxed">Analizamos tus datos para recomendarte la potencia contratada exacta y el tramo horario más rentable.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant hover:border-primary transition-colors group shadow-sm">
+<div class="w-12 h-12 bg-primary-fixed/20 rounded-lg flex items-center justify-center mb-6 text-primary transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl">savings</span>
+</div>
+<h3 class="text-xl font-headline font-bold mb-3">Ahorro Garantizado</h3>
+<p class="text-on-surface-variant leading-relaxed">Reduce hasta un 30% tu gasto energético implementando las mejoras sugeridas por EnergyOS Pro.</p>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="mb-24 bg-surface-container-low rounded-3xl p-12">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-headline font-bold">Cómo Funciona</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+<div class="absolute hidden md:block top-1/2 left-0 w-full h-px bg-outline-variant -translate-y-1/2 z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-on-primary font-headline font-bold text-2xl mb-6 shadow-lg">1</div>
+<h3 class="text-lg font-headline font-bold mb-2">Solicitas Presupuesto</h3>
+<p class="text-on-surface-variant text-sm">Rellena el formulario y uno de nuestros asesores te contactará en menos de 24h.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-on-primary font-headline font-bold text-2xl mb-6 shadow-lg">2</div>
+<h3 class="text-lg font-headline font-bold mb-2">Instalamos el Medidor</h3>
+<p class="text-on-surface-variant text-sm">Un técnico certificado instala el Shelly EM en tu cuadro eléctrico de forma limpia y rápida.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-on-primary font-headline font-bold text-2xl mb-6 shadow-lg">3</div>
+<h3 class="text-lg font-headline font-bold mb-2">Empiezas a Ahorrar</h3>
+<p class="text-on-surface-variant text-sm">Accede a tu panel de EnergyOS Pro y empieza a tomar decisiones inteligentes con tus datos.</p>
+</div>
+</div>
+</section>
+<!-- Lead Capture Form & Image Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24 items-start">
+<div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant shadow-lg">
+<h2 class="text-2xl font-headline font-bold mb-8">Solicita tu presupuesto personalizado</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-bold text-on-surface mb-2">Nombre completo</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-outline" placeholder="Ej. Juan Pérez" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-bold text-on-surface mb-2">Email corporativo</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-outline" placeholder="juan@empresa.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-bold text-on-surface mb-2">Teléfono</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-outline" placeholder="+34 600 000 000" type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-bold text-on-surface mb-2">Tipo de propiedad</label>
+<select class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">
+<option>Finca</option>
+<option>Apartamento</option>
+<option>Otro</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-bold text-on-surface mb-2">Número de propiedades</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-outline" min="1" placeholder="1" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-bold text-on-surface mb-2">CUPS (Opcional)</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-outline" placeholder="ES000..." type="text"/>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 rounded text-primary focus:ring-primary h-4 w-4 border-outline-variant" type="checkbox"/>
+<p class="text-xs text-on-surface-variant">He leído y acepto la política de privacidad y el tratamiento de mis datos para fines comerciales.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline font-bold py-4 rounded-lg shadow-md hover:bg-on-primary-fixed-variant transition-all active:scale-[0.98]" type="submit">
+                        Solicitar Presupuesto
+                    </button>
+</form>
+</div>
+<div class="space-y-8">
+<div class="bg-primary-container/10 p-8 rounded-xl border border-primary-container/20">
+<h3 class="text-primary font-headline font-bold text-xl mb-4">¿Por qué EnergyOS Pro?</h3>
+<ul class="space-y-4">
+<li class="flex gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span>Expertos en gestión energética para comunidades y empresas.</span>
+</li>
+<li class="flex gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span>Soporte técnico dedicado y panel de control intuitivo.</span>
+</li>
+<li class="flex gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span>Integración directa con los principales comercializadores.</span>
+</li>
+</ul>
+</div>
+<div class="rounded-xl overflow-hidden shadow-sm h-64">
+<img alt="Data Analytics" class="w-full h-full object-cover" data-alt="A macro shot of a clean, minimalist energy dashboard on a tablet screen. The interface shows vibrant, soft-colored charts and figures representing real-time electricity usage. The background is a bright, modern office with soft-focus greenery, creating a sense of professional control and clarity in a light-mode B2B setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDftgWFJMqEpWsGhV-vlQaaMWEOFrkCdbG0WjD5sXkV1L4sO3A-cAXiiqKyFJiLRF5Pxyqre17c-DrU_HwOUAfFIH5j1KzsEYFExdS7z1vIKVF59F6tbYrsJkNQNQze2UdGgHMcSqwrUBjztnxh3UxaB28kcCVR0ThW9KfFDmsN-W9IEYd7TTytzHRdOvFWyVClm6S3uoax8HWLEBNFmDbGy4CTFSny8EVj4jFHi-Jy4mkJMgZnbXiG5yLkflA9qIRVf-md-xUKD5Y"/>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="mb-24">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-headline font-bold">Casos de Éxito</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-sm relative">
+<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-4 right-8">format_quote</span>
+<p class="text-on-surface-variant italic mb-6 leading-relaxed">"Desde que instalamos Shelly EM en nuestras fincas de Madrid, hemos reducido los gastos comunes un 22% gracias a la detección de fugas en la iluminación de garajes."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed/30 flex items-center justify-center font-bold text-primary">AM</div>
+<div>
+<h4 class="font-bold text-on-surface">Administrador de Fincas</h4>
+<p class="text-xs text-on-surface-variant">Madrid, España</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-sm relative">
+<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-4 right-8">format_quote</span>
+<p class="text-on-surface-variant italic mb-6 leading-relaxed">"Como propietario de varios apartamentos, la transparencia que me da EnergyOS Pro no tiene precio. Sé exactamente cuánto consume cada unidad en tiempo real."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed/30 flex items-center justify-center font-bold text-primary">RB</div>
+<div>
+<h4 class="font-bold text-on-surface">Propietario de Inmuebles</h4>
+<p class="text-xs text-on-surface-variant">Barcelona, España</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="mb-24 max-w-3xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-headline font-bold">Preguntas Frecuentes</h2>
+</div>
+<div class="space-y-4">
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-on-surface list-none">
+                        ¿Cuál es el precio de la instalación?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant pt-4">
+                        El precio base incluye el dispositivo Shelly EM y la mano de obra técnica. Ofrecemos paquetes personalizados según el número de propiedades, con descuentos significativos para carteras de inmuebles.
+                    </div>
+</details>
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-on-surface list-none">
+                        ¿Cuánto tiempo tarda la instalación?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant pt-4">
+                        Una instalación estándar en un cuadro eléctrico toma aproximadamente 45-60 minutos por punto de medición. No requiere cortes de luz prolongados ni obras de albañilería.
+                    </div>
+</details>
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-on-surface list-none">
+                        ¿Es compatible con mi cuadro eléctrico?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant pt-4">
+                        Shelly EM es compatible con la gran mayoría de instalaciones monofásicas y trifásicas estándar en España. Nuestros técnicos revisarán tu cuadro antes de proceder para garantizar la seguridad.
+                    </div>
+</details>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-on-background text-surface border-t border-outline-variant py-12">
+<div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<span class="text-2xl font-headline font-bold text-primary-fixed">EnergyOS Pro</span>
+<p class="mt-4 text-surface-variant text-sm">Reliable Stewardship para un futuro energético sostenible y eficiente.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="font-bold mb-2">Producto</h5>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors text-sm" href="#">Monitorización Shelly</a>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors text-sm" href="#">Gestión de Fincas</a>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors text-sm" href="#">Optimización Arbitraje</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="font-bold mb-2">Contacto</h5>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors text-sm" href="mailto:info@energyos.pro">info@energyos.pro</a>
+<p class="text-surface-variant text-sm">+34 900 123 456</p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed">share</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed">hub</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary-fixed">public</span>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-6 mt-12 pt-8 border-t border-surface-variant/10 text-center text-xs text-surface-variant">
+            © 2024 EnergyOS Pro. Todos los derechos reservados.
+        </div>
+</footer>
+</body></html>

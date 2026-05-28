@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tramo - Convierte cada kWh en margen operativo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#e0e3e4",
+                    "primary-container": "#f59e0b",
+                    "on-primary-fixed-variant": "#653e00",
+                    "on-secondary-fixed-variant": "#005048",
+                    "on-error": "#690005",
+                    "surface-container-high": "#262b2c",
+                    "on-tertiary-fixed": "#1f1b16",
+                    "tertiary-container": "#b8afa8",
+                    "tertiary-fixed": "#ebe1d9",
+                    "on-tertiary-fixed-variant": "#4c4640",
+                    "surface-tint": "#ffb95f",
+                    "background": "#101415",
+                    "surface-bright": "#363a3b",
+                    "outline-variant": "#534434",
+                    "on-primary-fixed": "#2a1700",
+                    "on-secondary": "#003731",
+                    "on-primary": "#472a00",
+                    "inverse-on-surface": "#2d3132",
+                    "primary-fixed": "#ffddb8",
+                    "surface": "#101415",
+                    "surface-container-low": "#181c1d",
+                    "outline": "#a08e7a",
+                    "on-secondary-fixed": "#00201c",
+                    "on-surface": "#e0e3e4",
+                    "error-container": "#93000a",
+                    "primary": "#ffc174",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#313537",
+                    "secondary-container": "#04b4a2",
+                    "tertiary": "#d4cac3",
+                    "error": "#ffb4ab",
+                    "surface-dim": "#101415",
+                    "surface-container-highest": "#313537",
+                    "secondary-fixed-dim": "#4fdbc8",
+                    "tertiary-fixed-dim": "#cec5bd",
+                    "surface-container": "#1c2021",
+                    "surface-container-lowest": "#0b0f10",
+                    "on-primary-container": "#613b00",
+                    "secondary-fixed": "#71f8e4",
+                    "on-surface-variant": "#d8c3ad",
+                    "inverse-primary": "#855300",
+                    "on-tertiary": "#352f2a",
+                    "inverse-surface": "#e0e3e4",
+                    "on-tertiary-container": "#48423d",
+                    "primary-fixed-dim": "#ffb95f",
+                    "on-secondary-container": "#003f38",
+                    "secondary": "#4fdbc8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-padding": "20px",
+                    "margin-mobile": "16px",
+                    "unit": "4px",
+                    "margin-desktop": "32px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-sm": [
+                            "Inter"
+                    ],
+                    "metric-lg": [
+                            "JetBrains Mono"
+                    ],
+                    "headline-md": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "title-sm": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Inter"
+                    ],
+                    "metric-md": [
+                            "JetBrains Mono"
+                    ],
+                    "label-caps": [
+                            "JetBrains Mono"
+                    ]
+            },
+            "fontSize": {
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "metric-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "title-sm": [
+                            "18px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "metric-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #080c0d; /* Enforced dark background */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center h-16 px-margin-desktop max-w-[1440px] mx-auto bg-background/95 backdrop-blur-sm border-b border-outline-variant/30">
+<div class="flex items-center gap-8">
+<span class="text-headline-md font-headline-md font-bold text-on-surface tracking-tight">Tramo</span>
+<div class="hidden md:flex gap-6">
+<a class="text-on-surface/70 font-body-md hover:text-primary-container transition-colors duration-200" href="#">Producto</a>
+<a class="text-on-surface/70 font-body-md hover:text-primary-container transition-colors duration-200" href="#">Demo</a>
+<a class="text-on-surface/70 font-body-md hover:text-primary-container transition-colors duration-200" href="#">Precio</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary-container text-black px-4 py-2 font-body-sm text-body-sm rounded flex items-center gap-2 hover:opacity-90 transition-opacity">
+                Solicitar diagnóstico
+            </button>
+</div>
+</nav>
+<main class="pt-24 pb-16">
+<!-- Hero Section -->
+<section class="px-margin-desktop max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[819px]">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 border border-outline-variant/50 rounded-full px-3 py-1 bg-surface-container">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">12 pilotos activos</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface">Convierte cada kWh de tu cartera turística en margen operativo.</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+                    Tramo instala sensores en tus alojamientos, cruza reservas, CUPS, Datadis y tarifas, y te da el control sobre aparatos, tarifas y baterías desde una sola plataforma inteligente.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-black px-6 py-3 font-body-md text-body-md rounded hover:opacity-90 transition-opacity whitespace-nowrap">
+                        Solicitar diagnóstico de cartera
+                    </button>
+<button class="border border-outline-variant text-on-surface px-6 py-3 font-body-md text-body-md rounded hover:bg-surface-container transition-colors whitespace-nowrap">
+                        Ver panel en vivo
+                    </button>
+</div>
+</div>
+<!-- Live Product Panel -->
+<div class="bg-surface-container-low border border-outline-variant/50 rounded-lg p-6 space-y-4">
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant">MONITOR GLOBAL</span>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-metric-md text-metric-md text-on-surface">Ahora: 2.4 kW</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between bg-error-container/10 border border-error/20 p-3 rounded">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error">warning</span>
+<span class="font-body-sm text-body-sm text-on-surface">VGO-014 · 4.2 kWh fuera de reserva</span>
+</div>
+<span class="font-label-caps text-label-caps text-error/80">hace 2h</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container p-3 rounded border border-outline-variant/30">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container">battery_charging_full</span>
+<span class="font-body-sm text-body-sm text-on-surface">Cargando Batería</span>
+</div>
+<span class="font-metric-md text-metric-md text-on-surface">0.08 €/kWh <span class="text-on-surface-variant font-label-caps text-label-caps ml-1">OMIE</span></span>
+</div>
+<div class="flex items-center justify-between bg-surface-container p-3 rounded border border-outline-variant/30">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">calendar_month</span>
+<span class="font-body-sm text-body-sm text-on-surface">3 reservas activas</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">próxima salida 11:00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Form Section -->
+<section class="py-24 px-margin-desktop bg-surface-container-lowest">
+<div class="max-w-2xl mx-auto space-y-8">
+<div class="text-center space-y-4">
+<h2 class="font-headline-md text-headline-md text-on-surface">Empieza a optimizar</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Solicita un diagnóstico de cartera y descubre tu potencial de ahorro.</p>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Nombre</label>
+<input class="w-full bg-[#080c0d] border border-outline-variant/50 rounded px-4 py-2 text-on-surface font-body-sm focus:border-primary-container focus:ring-0 transition-colors" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Empresa</label>
+<input class="w-full bg-[#080c0d] border border-outline-variant/50 rounded px-4 py-2 text-on-surface font-body-sm focus:border-primary-container focus:ring-0 transition-colors" type="text"/>
+</div>
+</div>
+<button class="w-full bg-primary-container text-black px-6 py-3 font-body-md text-body-md rounded hover:opacity-90 transition-opacity" type="button">
+                        Solicitar diagnóstico de cartera
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 px-margin-desktop flex justify-between items-center bg-surface-container-lowest border-t border-outline-variant/20">
+<span class="text-title-sm font-title-sm font-bold text-on-surface">Tramo · Madrid</span>
+<div class="flex gap-6">
+<a class="text-body-sm font-body-sm text-on-surface/50 hover:text-on-surface transition-colors" href="#">Producto</a>
+<a class="text-body-sm font-body-sm text-on-surface/50 hover:text-on-surface transition-colors" href="#">Demo</a>
+<a class="text-body-sm font-body-sm text-on-surface/50 hover:text-on-surface transition-colors" href="#">Precio</a>
+<a class="text-body-sm font-body-sm text-on-surface/50 hover:text-on-surface transition-colors" href="#">Aviso Legal</a>
+</div>
+</footer>
+</body></html>

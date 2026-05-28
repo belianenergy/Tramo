@@ -1,0 +1,26 @@
+{
+  "key": "landing",
+  "requestedName": "landing-publica",
+  "title": "Landing pública — EnergyOS (Restro Style)",
+  "projectId": "11820050226044719534",
+  "projectName": "projects/11820050226044719534",
+  "screenId": "c6c524df22de4881b6836684c3c1caf7",
+  "screenName": "projects/11820050226044719534/screens/c6c524df22de4881b6836684c3c1caf7",
+  "width": "2560",
+  "height": "5536",
+  "htmlCodeName": "projects/11820050226044719534/files/eb411275fbf249c0831407758125f1dc",
+  "screenshotName": "projects/11820050226044719534/files/dbdffaa5873e41df85d0d6cebb567b29",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzlmZWM0YTY0ZGIwNDQyNmViMTZiNmUwZmRiNDM5ZjU4EgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uii3vyURJHPLQhFpXhMvFsGW-sO-687UnDqWZCYM6UA29f9q0tT2m9bQxTkAm-acyjmyKKRw93gTui2elKFPHo_iN_L8An9Aa_pHUwItZupzhHBMX6IhiMHIhjd1vdw8fi0I8FTNEOopNDuAH3NhE1as0CpEC1Sqzcf__MfJqg0rWvyOKG3BN0SFvmV_qcKh14HakKzzkgtq-2VpyQdXeU1FK6EZMAl5YVzwv0rgq-8ZVOEqsy88Ruk18A",
+  "generatedAt": "2026-05-13T16:29:06.906Z",
+  "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+  "editedFromScreenId": "8604681591ca40379fa13c9607608621",
+  "localFiles": {
+    "response": "stitch-mvp-restro-style-v1-landing-edit-response.json",
+    "meta": "stitch-mvp-restro-style-v1-landing-meta.json",
+    "html": "stitch-mvp-restro-style-v1-landing.html",
+    "stitchPng": "stitch-mvp-restro-style-v1-landing-stitch.png",
+    "previews": []
+  },
+  "note": "Remote Stitch cleanup: broadened platform hero and removed narrow/problem-only copy remnants."
+}

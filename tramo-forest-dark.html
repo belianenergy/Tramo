@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tramo — Control energético para carteras turísticas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,350;8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Forest dark palette */
+    --forest-deep: #040E02;
+    --forest: #061F00;
+    --forest-mid: #0A2F06;
+    --forest-card: #0D3808;
+    --forest-border: #1A4A12;
+    --lime: #09CF58;
+    --lime-glow: #09CF5840;
+    --lime-soft: #B8F0C8;
+    --paper: #EDEDE1;
+    --paper-warm: #F4F1E8;
+    --surface: #FFFFFF;
+    --muted: #8A9A85;
+    --muted-light: #B0BBA8;
+    --warning: #F59E0B;
+    --danger: #DC2626;
+    --text-on-dark: #F0F4EE;
+    --text-on-dark-soft: #B0BBA8;
+  
+    /* Typography */
+    --font-display: 'Outfit', system-ui, sans-serif;
+    --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+    /* Spacing */
+    --section-gap: 136px;
+    --content-max: 1200px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--forest);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body { min-height: 100vh; }
+
+  /* Typography */
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: 0.005em;
+    line-height: 1.05;
+  }
+
+  .font-mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+  /* Sections */
+  .section-dark {
+    background: var(--forest-deep);
+    color: var(--text-on-dark);
+    padding: var(--section-gap) 24px;
+  }
+
+  .section-mid {
+    background: var(--forest);
+    color: var(--text-on-dark);
+    padding: var(--section-gap) 24px;
+  }
+
+  .section-light {
+    background: var(--paper);
+    color: var(--forest);
+    padding: var(--section-gap) 24px;
+  }
+
+  .section-white {
+    background: var(--surface);
+    color: var(--forest);
+    padding: var(--section-gap) 24px;
+  }
+
+  .container { max-width: var(--content-max); margin: 0 auto; }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--lime); color: var(--forest-deep);
+    font-family: var(--font-display); font-size: 15px; font-weight: 600;
+    padding: 12px 28px; border-radius: 8px; border: none; cursor: pointer;
+    text-decoration: none; white-space: nowrap;
+    transition: all .3s cubic-bezier(0.36,0,0.114,0.92);
+    position: relative; overflow: hidden;
+  }
+  .btn-primary:hover { background: #0BE068; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(9,207,88,0.35); }
+  .btn-primary:active { transform: scale(0.975); }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--lime);
+    font-family: var(--font-display); font-size: 15px; font-weight: 600;
+    padding: 11px 27px; border-radius: 8px; border: 1px solid var(--lime);
+    cursor: pointer; text-decoration: none; white-space: nowrap;
+    transition: all .3s cubic-bezier(0.36,0,0.114,0.92);
+  }
+  .btn-outline:hover { background: rgba(9,207,88,0.08); }
+
+  .btn-outline-light {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--text-on-dark);
+    font-family: var(--font-display); font-size: 15px; font-weight: 600;
+    padding: 11px 27px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.25);
+    cursor: pointer; text-decoration: none; white-space: nowrap;
+    transition: all .3s;
+  }
+  .btn-outline-light:hover { border-color: var(--lime); color: var(--lime); background: rgba(9,207,88,0.06); }
+
+  /* Nav */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 64px; display: flex; align-items: center;
+    background: rgba(4,14,2,0.85); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 0 24px;
+  }
+  .nav-inner { max-width: var(--content-max); margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--lime); text-decoration: none; }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a { color: var(--text-on-dark-soft); text-decoration: none; font-family: var(--font-display); font-size: 14px; font-weight: 500; letter-spacing: 0.01em; transition: color .2s; }
+  .nav-links a:hover { color: var(--lime); }
+
+  /* Hero */
+  .hero { padding: 140px 24px 100px; background: linear-gradient(180deg, var(--forest-deep) 0%, var(--forest) 60%, var(--forest-mid) 100%); color: var(--text-on-dark); text-align: center; position: relative; overflow: hidden; }
+  .hero::before {
+    content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+    width: 800px; height: 800px; background: radial-gradient(circle, rgba(9,207,88,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(9,207,88,0.08); border: 1px solid rgba(9,207,88,0.2);
+    border-radius: 100px; padding: 6px 16px;
+    font-family: var(--font-mono); font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--lime);
+    margin-bottom: 28px;
+  }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--lime); border-radius: 50%; animation: pulse-dot 2s ease-in-out infinite; }
+  @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.35} }
+
+  .hero h1 {
+    font-family: var(--font-display); font-weight: 600; font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1.02; letter-spacing: -0.005em; color: var(--text-on-dark);
+    max-width: 900px; margin: 0 auto 24px;
+  }
+  .hero h1 span { color: var(--lime); }
+  .hero p { font-size: clamp(1rem, 1.8vw, 1.2rem); color: var(--text-on-dark-soft); max-width: 650px; margin: 0 auto 36px; }
+
+  /* Interactive Demo Panel */
+  .demo-panel {
+    max-width: 1000px; margin: 0 auto;
+    background: var(--forest-card); border: 1px solid var(--forest-border);
+    border-radius: 16px; padding: 28px 32px;
+    position: relative; z-index: 1;
+  }
+  .demo-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+  .demo-live { display: flex; align-items: center; gap: 8px; }
+  .demo-live-dot { width: 8px; height: 8px; background: var(--lime); border-radius: 50%; animation: pulse-dot 2s ease-in-out infinite; }
+  .demo-live-label { font-family: var(--font-mono); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--lime); }
+  .demo-totals { display: flex; gap: 24px; }
+  .demo-total-metric { text-align: right; }
+  .demo-total-label { font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-on-dark-soft); margin-bottom: 2px; }
+  .demo-total-value { font-family: var(--font-mono); font-size: 20px; font-weight: 600; color: var(--text-on-dark); }
+
+  /* Property cards */
+  .demo-properties { display: flex; flex-direction: column; gap: 6px; }
+  .demo-row {
+    display: grid; grid-template-columns: 1fr 2fr 100px; align-items: center; gap: 16px;
+    padding: 14px 16px; border-radius: 10px;
+    border: 1px solid transparent;
+    background: rgba(255,255,255,0.02);
+    transition: all .3s;
+  }
+  .demo-row:hover { border-color: var(--forest-border); background: rgba(9,207,88,0.04); box-shadow: 0 0 20px rgba(9,207,88,0.06); }
+  .demo-prop-name { font-family: var(--font-display); font-size: 14px; font-weight: 500; color: var(--text-on-dark); }
+  .demo-prop-id { font-family: var(--font-mono); font-size: 10px; color: var(--text-on-dark-soft); margin-top: 2px; }
+  .demo-status {
+    display: inline-block; font-family: var(--font-mono); font-size: 9px; font-weight: 600;
+    padding: 2px 8px; border-radius: 100px; margin-top: 4px;
+  }
+  .demo-status.ocupado { color: var(--lime); background: rgba(9,207,88,0.12); }
+  .demo-status.vacio { color: var(--warning); background: rgba(245,158,11,0.12); }
+  .demo-status.limpieza { color: var(--muted-light); background: rgba(176,187,168,0.12); }
+
+  /* Bars */
+  .demo-bars { display: flex; align-items: end; gap: 3px; height: 56px; }
+  .demo-bar {
+    flex: 1; border-radius: 3px 3px 0 0;
+    transition: background .3s, box-shadow .3s, height 1.2s ease-in-out;
+    cursor: pointer; min-width: 4px;
+  }
+  .demo-bar:hover { box-shadow: 0 0 14px currentColor; filter: brightness(1.4); }
+  .demo-bar-vigo { background: #0D9488; }
+  .demo-bar-coruna { background: #0EA5E9; }
+  .demo-bar-sanxenxo { background: #8B5CF6; }
+  .demo-bar-madrid { background: #F59E0B; }
+  .demo-bar-vigo:hover, .demo-bar-coruna:hover, .demo-bar-sanxenxo:hover, .demo-bar-madrid:hover { background: var(--lime) !important; }
+
+  .demo-value { text-align: right; font-family: var(--font-mono); font-size: 18px; font-weight: 600; color: var(--text-on-dark); }
+  .demo-unit { font-family: var(--font-mono); font-size: 10px; color: var(--text-on-dark-soft); }
+
+  .demo-footer { text-align: center; margin-top: 16px; font-family: var(--font-mono); font-size: 10px; color: var(--text-on-dark-soft); }
+
+  /* Metrics strip */
+  .metrics-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    max-width: var(--content-max); margin: 0 auto;
+    background: var(--forest-border); border-radius: 12px; overflow: hidden;
+  }
+  .metric-card {
+    background: var(--forest-card); padding: 28px 24px; text-align: center;
+    transition: background .3s;
+  }
+  .metric-card:hover { background: var(--forest-mid); }
+  .metric-value { font-family: var(--font-display); font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 600; color: var(--lime); line-height: 1.1; }
+  .metric-label { font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-on-dark-soft); margin-top: 8px; }
+
+  /* Problem cards */
+  .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card { background: var(--surface); border: 1px solid #D9D7C8; border-radius: 12px; padding: 28px; transition: all .3s; }
+  .card:hover { border-color: var(--lime); box-shadow: 0 4px 20px rgba(9,207,88,0.08); transform: translateY(-2px); }
+  .card-num { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--lime); letter-spacing: 0.1em; margin-bottom: 12px; }
+  .card h3 { font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--forest); margin-bottom: 8px; }
+  .card p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+  .card-data { font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--lime); margin-top: 12px; padding-top: 12px; border-top: 1px solid #D9D7C8; }
+
+  /* Section labels */
+  .section-label { font-family: var(--font-mono); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--lime); margin-bottom: 16px; }
+  .section-heading { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; line-height: 1.05; max-width: 700px; }
+  .section-sub { font-size: clamp(1rem, 1.5vw, 1.1rem); color: var(--muted); max-width: 550px; margin-top: 16px; line-height: 1.5; }
+  .section-sub-light { font-size: clamp(1rem, 1.5vw, 1.1rem); color: var(--text-on-dark-soft); max-width: 550px; margin-top: 16px; line-height: 1.5; }
+
+  /* Modules */
+  .module-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
+  .module-card {
+    background: var(--surface); border: 1px solid #D9D7C8; border-radius: 14px; padding: 32px;
+    transition: all .3s; position: relative; overflow: hidden;
+  }
+  .module-card:hover { border-color: var(--lime); box-shadow: 0 6px 28px rgba(9,207,88,0.06); }
+  .module-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--lime), var(--forest-mid));
+    opacity: 0; transition: opacity .3s;
+  }
+  .module-card:hover::before { opacity: 1; }
+  .module-label { font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--lime); margin-bottom: 12px; }
+  .module-card h3 { font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--forest); margin-bottom: 8px; }
+  .module-card p { font-size: 14px; color: var(--muted); line-height: 1.5; margin-bottom: 16px; }
+  .module-stat { display: flex; align-items: baseline; gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #D9D7C8; }
+  .module-stat-value { font-family: var(--font-mono); font-size: 32px; font-weight: 600; color: var(--lime); }
+  .module-stat-label { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+  /* Trust section */
+  .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
+  .trust-item { text-align: center; padding: 24px; }
+  .trust-icon { font-size: 32px; margin-bottom: 12px; }
+  .trust-item h4 { font-family: var(--font-display); font-size: 16px; font-weight: 500; color: var(--text-on-dark); margin-bottom: 6px; }
+  .trust-item p { font-size: 13px; color: var(--text-on-dark-soft); }
+
+  /* CTA section */
+  .cta-section { text-align: center; padding: 100px 24px; background: linear-gradient(180deg, var(--forest-mid) 0%, var(--forest) 100%); color: var(--text-on-dark); }
+  .cta-section h2 { margin-bottom: 16px; color: var(--text-on-dark); }
+  .cta-section p { color: var(--text-on-dark-soft); max-width: 500px; margin: 0 auto 32px; }
+  .cta-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+  /* Footer */
+  .footer { background: var(--forest-deep); color: var(--text-on-dark-soft); padding: 64px 24px; border-top: 1px solid var(--forest-border); }
+  .footer-grid { max-width: var(--content-max); margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; }
+  .footer h5 { font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--lime); margin-bottom: 16px; }
+  .footer a { display: block; color: var(--text-on-dark-soft); text-decoration: none; font-size: 13px; padding: 4px 0; transition: color .2s; }
+  .footer a:hover { color: var(--lime); }
+
+  /* Animations */
+  @keyframes rv { from { opacity: 0; translate: 0 28px; } to { opacity: 1; translate: 0 0; } }
+  .rv { animation: rv .7s cubic-bezier(0.36,0,0.114,0.92) both; }
+  .rv-d1 { animation-delay: .1s; }
+  .rv-d2 { animation-delay: .2s; }
+  .rv-d3 { animation-delay: .3s; }
+  .rv-d4 { animation-delay: .4s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rv { animation: none !important; opacity: 1 !important; }
+    .demo-bar { transition: none !important; }
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    :root { --section-gap: 80px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 20px 60px; }
+    .demo-row { grid-template-columns: 1fr; gap: 8px; }
+    .metrics-strip { grid-template-columns: repeat(2, 1fr); }
+    .cards-grid { grid-template-columns: 1fr; }
+    .module-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .demo-panel { padding: 20px; }
+    .demo-totals { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Tramo</a>
+    <div class="nav-links">
+      <a href="#problema">Problema</a>
+      <a href="#sistema">Sistema</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#diagnostico" class="btn-primary" style="padding:8px 18px;font-size:13px;">Diagnosticar mi cartera</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="rv hero-badge">Capa operativa para carteras turísticas</div>
+    <h1 class="rv">Convierte la energía de tu cartera en <span>margen operativo</span>.</h1>
+    <p class="rv">Tramo cruza reservas, CUPS/Datadis, facturas y tarifas para detectar consumo fuera de estancia, activar reglas y preparar informes por propietario.</p>
+    <div class="rv cta-buttons" style="margin-bottom:40px;">
+      <a href="#diagnostico" class="btn-primary">Diagnosticar mi cartera</a>
+      <a href="#dashboard" class="btn-outline-light">Ver dashboard demo</a>
+    </div>
+  </div>
+
+  <!-- Interactive Demo -->
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="rv demo-panel" id="demoPanel">
+      <div class="demo-header">
+        <div class="demo-live">
+          <span class="demo-live-dot"></span>
+          <span class="demo-live-label">Monitorización en tiempo real</span>
+        </div>
+        <div class="demo-totals">
+          <div class="demo-total-metric">
+            <div class="demo-total-label">Total activo</div>
+            <div class="demo-total-value" id="totalActive">27.8 kWh</div>
+          </div>
+          <div class="demo-total-metric">
+            <div class="demo-total-label">Pico conjunto</div>
+            <div class="demo-total-value" id="totalPeak">35.5 kW</div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-properties" id="propertyRows"></div>
+      <div class="demo-footer">Pasa el ratón sobre las barras — se iluminan en verde · datos cada 2,5s</div>
+    </div>
+  </div>
+</section>
+
+<!-- Metrics Strip -->
+<section class="section-mid">
+  <div class="container">
+    <div class="metrics-strip">
+      <div class="metric-card">
+        <div class="metric-value" id="metric1" style="opacity:0.87">—</div>
+        <div class="metric-label">kWh fuera de reserva detectados</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value" style="color:#0EA5E9">3,3 kW</div>
+        <div class="metric-label">P2 recomendada por CUPS</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value" style="color:#8B5CF6">18</div>
+        <div class="metric-label">reglas automáticas activas</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value" style="color:#F59E0B">412 kWh</div>
+        <div class="metric-label">informados en abril</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Problema -->
+<section class="section-light" id="problema">
+  <div class="container">
+    <div class="rv section-label">Problema</div>
+    <h2 class="rv section-heading">Tres dolores que toda gestora conoce y nadie resuelve.</h2>
+    <p class="rv section-sub">Sin una capa que cruce reservas, CUPS y tarifas, el consumo fuera de estancia se descubre semanas después, cuando ya no hay margen.</p>
+    <div class="cards-grid" style="margin-top:44px;">
+      <div class="rv card">
+        <div class="card-num">01</div>
+        <h3>La factura llega tarde</h3>
+        <p>El consumo fuera de estancia se descubre semanas después, cuando ya no hay margen operativo para actuar sobre el termo, AC o climatización.</p>
+        <div class="card-data">4,2 kWh fuera de reserva</div>
+      </div>
+      <div class="rv card rv-d1">
+        <div class="card-num">02</div>
+        <h3>Potencia y tarifa heredadas</h3>
+        <p>Cada CUPS arrastra una potencia que rara vez se revisa con los picos reales. El sobrecoste se acumula factura tras factura.</p>
+        <div class="card-data">P2 4,6 kW → 3,3 kW</div>
+      </div>
+      <div class="rv card rv-d2">
+        <div class="card-num">03</div>
+        <h3>Propietarios sin explicación</h3>
+        <p>El propietario ve coste. La gestora necesita evidencia, acciones y contexto para defender cada liquidación.</p>
+        <div class="card-data">Informe abril listo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sistema -->
+<section class="section-dark" id="sistema">
+  <div class="container">
+    <div class="rv section-label">Sistema</div>
+    <h2 class="rv section-heading" style="color:var(--text-on-dark);">La capa que une reservas, energía y acciones.</h2>
+    <p class="rv section-sub-light">Datadis explica la factura; los medidores inteligentes detectan el problema cuando aún puedes actuar. Tramo junta ambas capas para atribuir cada kWh a la reserva que lo generó.</p>
+    
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px;">
+      <div class="rv card" style="background:var(--forest-card);border-color:var(--forest-border);">
+        <span style="font-size:24px;">📅</span>
+        <h3 style="color:var(--text-on-dark);margin-top:12px;">Reservas/PMS</h3>
+        <p style="color:var(--text-on-dark-soft);">Check-in y check-out como límites reales de cada ventana de consumo.</p>
+      </div>
+      <div class="rv card rv-d1" style="background:var(--forest-card);border-color:var(--forest-border);">
+        <span style="font-size:24px;">⚡</span>
+        <h3 style="color:var(--text-on-dark);margin-top:12px;">CUPS/Datadis</h3>
+        <p style="color:var(--text-on-dark-soft);">Lecturas horarias vinculadas a cada propiedad y su contrato.</p>
+      </div>
+      <div class="rv card rv-d2" style="background:var(--forest-card);border-color:var(--forest-border);">
+        <span style="font-size:24px;">📊</span>
+        <h3 style="color:var(--text-on-dark);margin-top:12px;">Tarifas P1/P2</h3>
+        <p style="color:var(--text-on-dark-soft);">Potencia contratada y precios por periodo para cada CUPS.</p>
+      </div>
+      <div class="rv card rv-d3" style="background:var(--forest-card);border-color:var(--forest-border);">
+        <span style="font-size:24px;">📡</span>
+        <h3 style="color:var(--text-on-dark);margin-top:12px;">Medición real</h3>
+        <p style="color:var(--text-on-dark-soft);">Sensores y contadores inteligentes con datos cada 15 minutos.</p>
+      </div>
+    </div>
+
+    <div class="rv" style="margin-top:32px;background:var(--forest-card);border:1px solid var(--forest-border);border-radius:12px;padding:24px;text-align:center;">
+      <p style="font-family:var(--font-mono);font-size:11px;color:var(--lime);margin-bottom:12px;">TRAMO ATRIBUYE</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+        <div style="padding:16px;border:1px solid var(--forest-border);border-radius:8px;">
+          <div style="font-size:16px;margin-bottom:8px;color:var(--lime);">✓</div>
+          <div style="font-family:var(--font-display);font-size:16px;color:var(--text-on-dark);">Detecta</div>
+        </div>
+        <div style="padding:16px;border:1px solid var(--forest-border);border-radius:8px;">
+          <div style="font-size:16px;margin-bottom:8px;color:var(--lime);">✓</div>
+          <div style="font-family:var(--font-display);font-size:16px;color:var(--text-on-dark);">Decide</div>
+        </div>
+        <div style="padding:16px;border:1px solid var(--forest-border);border-radius:8px;">
+          <div style="font-size:16px;margin-bottom:8px;color:var(--lime);">✓</div>
+          <div style="font-family:var(--font-display);font-size:16px;color:var(--text-on-dark);">Actúa</div>
+        </div>
+        <div style="padding:16px;border:1px solid var(--forest-border);border-radius:8px;">
+          <div style="font-size:16px;margin-bottom:8px;color:var(--lime);">✓</div>
+          <div style="font-family:var(--font-display);font-size:16px;color:var(--text-on-dark);">Informa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Módulos -->
+<section class="section-white" id="modulos">
+  <div class="container">
+    <div class="rv section-label">Módulos core</div>
+    <h2 class="rv section-heading">Cuatro módulos que convierten señales en margen.</h2>
+    <p class="rv section-sub">Cada módulo opera sobre una capa distinta del problema, desde la detección hasta el informe al propietario.</p>
+    <div class="module-grid">
+      <div class="rv module-card">
+        <div class="module-label">Fuera de reserva</div>
+        <h3>Detecta kWh que no pertenecen a ninguna estancia</h3>
+        <p>Tramo cruza reservas, ventanas de limpieza y lecturas disponibles para separar estancia, operativo e incidencia.</p>
+        <div class="module-stat">
+          <span class="module-stat-value">4,2 kWh</span>
+          <span class="module-stat-label">detectados tras checkout</span>
+        </div>
+      </div>
+      <div class="rv module-card rv-d1">
+        <div class="module-label">Tarifa y potencia</div>
+        <h3>Revisa P1/P2 con datos reales de cada CUPS</h3>
+        <p>La potencia contratada deja de ser una decisión heredada: se compara con picos, facturas y periodos tarifarios.</p>
+        <div class="module-stat">
+          <span class="module-stat-value">3,3 kW</span>
+          <span class="module-stat-label">P2 recomendada</span>
+        </div>
+      </div>
+      <div class="rv module-card rv-d2">
+        <div class="module-label">Reglas por reserva</div>
+        <h3>Convierte señales en acciones alrededor de la estancia</h3>
+        <p>Incidencias traducidas en reglas operativas para termo, AC, climatización y avisos al equipo.</p>
+        <div class="module-stat">
+          <span class="module-stat-value">18</span>
+          <span class="module-stat-label">reglas activas</span>
+        </div>
+      </div>
+      <div class="rv module-card rv-d3">
+        <div class="module-label">Informes propietarios</div>
+        <h3>Transforma evidencia técnica en explicación defendible</h3>
+        <p>Cada propietario recibe un resumen mensual con consumo atribuido, incidencias y acciones.</p>
+        <div class="module-stat">
+          <span class="module-stat-value">412 kWh</span>
+          <span class="module-stat-label">informados en abril</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust -->
+<section class="section-mid">
+  <div class="container">
+    <div class="rv section-label">Confianza</div>
+    <h2 class="rv section-heading" style="color:var(--text-on-dark);">Construido para la operativa real de una gestora.</h2>
+    <p class="rv section-sub-light">No somos una IA generativa. Somos una capa de datos que cruza lo que ya tienes — reservas, CUPS, facturas — y produce acciones.</p>
+    <div class="trust-grid">
+      <div class="rv trust-item">
+        <div class="trust-icon">🔒</div>
+        <h4>Datos encriptados</h4>
+        <p>Cifrado en tránsito y reposo. Sin acceso a credenciales de CUPS.</p>
+      </div>
+      <div class="rv trust-item rv-d1">
+        <div class="trust-icon">🇪🇸</div>
+        <h4>Datadis nativo</h4>
+        <p>Integración directa con el sistema de distribución español.</p>
+      </div>
+      <div class="rv trust-item rv-d2">
+        <div class="trust-icon">📋</div>
+        <h4>Auditable</h4>
+        <p>Cada atribución trazable. Cada regla, documentada.</p>
+      </div>
+      <div class="rv trust-item rv-d3">
+        <div class="trust-icon">⚡</div>
+        <h4>Tiempo real</h4>
+        <p>Alertas en minutos, no en semanas. Acción antes de la factura.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="diagnostico">
+  <div class="container">
+    <h2 class="section-heading" style="color:var(--text-on-dark);margin:0 auto 16px;">¿Listo para controlar tu cartera?</h2>
+    <p>Solicita un diagnóstico gratuito de tus CUPS y te mostramos el margen operativo que estás dejando escapar.</p>
+    <div class="cta-buttons">
+      <a href="mailto:hola@tramo.energy" class="btn-primary">Solicitar diagnóstico</a>
+      <a href="mailto:hola@tramo.energy" class="btn-outline">Hablar con ventas</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <p style="font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--lime);margin-bottom:12px;">Tramo</p>
+      <p style="font-size:13px;">Consumo atribuido por reserva y propietario.</p>
+    </div>
+    <div><h5>Producto</h5><a href="#">Fuera de reserva</a><a href="#">Tarifa y potencia</a><a href="#">Reglas por reserva</a><a href="#">Informes propietarios</a></div>
+    <div><h5>Avanzado</h5><a href="#">Medición en tiempo real</a><a href="#">Batería y arbitraje OMIE</a><a href="#">Dashboard</a></div>
+    <div><h5>Legal</h5><a href="#">Privacidad</a><a href="#">Términos</a><a href="#">Contacto</a></div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  const colors = [[13,148,136], [14,165,233], [139,92,246], [245,158,11]];
+  const properties = [
+    { id: 'VGO-014', name: 'Vigo Centro', status: 'vacio', statusLabel: 'Vacío', bars: [0.3,0.2,0.1,0.1,0.2,0.4,0.6,0.8,0.7,0.5,0.3,0.2] },
+    { id: 'COR-007', name: 'A Coruña Marina', status: 'ocupado', statusLabel: 'Ocupado', bars: [0.5,0.4,0.6,0.7,0.9,1.0,0.8,0.6,0.7,0.8,0.9,0.7] },
+    { id: 'SJO-021', name: 'Sanxenxo Playa', status: 'limpieza', statusLabel: 'Limpieza', bars: [0.2,0.1,0.3,0.5,0.4,0.3,0.2,0.1,0.2,0.3,0.4,0.3] },
+    { id: 'MDR-003', name: 'Madrid Letras', status: 'ocupado', statusLabel: 'Ocupado', bars: [0.8,0.7,0.9,1.0,0.8,0.6,0.7,0.9,1.1,1.2,1.0,0.9] }
+  ];
+
+  function perturb(bars) {
+    return bars.map(v => Math.max(0.05, Math.min(1.3, v + (Math.random()-0.5)*0.25)));
+  }
+
+  function renderRows(data) {
+    const container = document.getElementById('propertyRows');
+    let totalActive = 0;
+    let totalPeak = 0;
+    container.innerHTML = data.map((p, i) => {
+      const consumption = Math.round(p.bars.reduce((a,b)=>a+b,0) * 2 * 10) / 10;
+      const peak = Math.round(Math.max(...p.bars) * 8 * 10) / 10;
+      totalActive += consumption;
+      totalPeak += peak;
+      const [r,g,b] = colors[i];
+      const barsHTML = p.bars.map((v, j) => {
+        const h = Math.round(v * 100);
+        return `<div class="demo-bar" style="height:${h}%;background:rgb(${r},${g},${b})" 
+          onmouseenter="this.style.background='#09CF58';this.style.boxShadow='0 0 14px #09CF5880'"
+          onmouseleave="this.style.background='rgb(${r},${g},${b})';this.style.boxShadow='none'"></div>`;
+      }).join('');
+      return `<div class="demo-row">
+        <div>
+          <div class="demo-prop-name">${p.name}</div>
+          <div class="demo-prop-id">${p.id}</div>
+          <span class="demo-status ${p.status}">${p.statusLabel}</span>
+        </div>
+        <div class="demo-bars">${barsHTML}</div>
+        <div>
+          <div class="demo-value">${consumption.toFixed(1)}</div>
+          <div class="demo-unit">kWh</div>
+        </div>
+      </div>`;
+    }).join('');
+    document.getElementById('totalActive').textContent = totalActive.toFixed(1) + ' kWh';
+    document.getElementById('totalPeak').textContent = totalPeak.toFixed(1) + ' kW';
+    return { totalActive, totalPeak };
+  }
+
+  renderRows(properties);
+
+  setInterval(() => {
+    properties.forEach(p => { p.bars = perturb(p.bars); });
+    renderRows(properties);
+  }, 2500);
+
+  // Animate first metric
+  let metricVal = 0;
+  const target = 27.8;
+  const metricEl = document.getElementById('metric1');
+  const metricInterval = setInterval(() => {
+    metricVal += 0.35;
+    if (metricVal >= target) { metricVal = target; clearInterval(metricInterval); }
+    metricEl.textContent = metricVal.toFixed(1) + ' kWh';
+    metricEl.style.opacity = Math.min(1, metricVal / target * 0.87 + 0.13);
+  }, 40);
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  
+  document.querySelectorAll('.rv').forEach(el => {
+    observer.observe(el);
+  });
+})();
+</script>
+</body>
+</html>

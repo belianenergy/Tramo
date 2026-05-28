@@ -1,0 +1,12 @@
+[
+  {
+    "listingId": 1,
+    "month": "2026-04",
+    "forecastKwh": 570,
+    "costBefore": 77.463,
+    "costAfter": 80.8203,
+    "savings": -2.182245000000006,
+    "id": 1,
+    "createdAt": "2026-04-22T18:31:35.216Z"
+  }
+]

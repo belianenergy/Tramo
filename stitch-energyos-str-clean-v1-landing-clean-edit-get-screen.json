@@ -1,0 +1,28 @@
+{
+  "id": 1778891765393,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"name\":\"projects/3511007415582919208/screens/ff565465af4f48d38a504cacf3b7a619\",\"title\":\"EnergyOS - Landing Page\",\"screenshot\":{\"name\":\"projects/3511007415582919208/files/1753159b32954f2b843701191d35daeb\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/ADBb0ug83FKnrl0mVgoGIe3-ereZEVd51Ys3h3271say-71vJO5XkSvRuof2IgmgAT454qyVEM9cq4auBOvuxFEWHjJaJ3zt5oZqLbM0PHwKXhbsX0teAYnKRx3YPf-dco_5mvZ69_Jv1v4nww_JkWTsp5kJ5mjp38WXIO9UUC5loyqF3jrPj1f_4RhEjpNpDC1cJdlQmaFXDvpa7Z5T4OY5wEONKgy0QIdHaZbpIfflpDxAP1ft0vsJJccoPSI\"},\"htmlCode\":{\"name\":\"projects/3511007415582919208/files/69ddaf4b39ce46de90e1247a2a4a0466\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2NmM2FmNTQ0YzZmMTRiMGVhMDA0YWMyYmQ0MDc3MmNlEgsSBxCg9KiWmAMYAZIBIwoKcHJvamVjdF9pZBIVQhMzNTExMDA3NDE1NTgyOTE5MjA4&filename=&opi=96797242\",\"mimeType\":\"text/html\"},\"width\":\"2560\",\"height\":\"5504\",\"deviceType\":\"DESKTOP\"}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "deviceType": "DESKTOP",
+      "height": "5504",
+      "htmlCode": {
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2NmM2FmNTQ0YzZmMTRiMGVhMDA0YWMyYmQ0MDc3MmNlEgsSBxCg9KiWmAMYAZIBIwoKcHJvamVjdF9pZBIVQhMzNTExMDA3NDE1NTgyOTE5MjA4&filename=&opi=96797242",
+        "mimeType": "text/html",
+        "name": "projects/3511007415582919208/files/69ddaf4b39ce46de90e1247a2a4a0466"
+      },
+      "name": "projects/3511007415582919208/screens/ff565465af4f48d38a504cacf3b7a619",
+      "screenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ug83FKnrl0mVgoGIe3-ereZEVd51Ys3h3271say-71vJO5XkSvRuof2IgmgAT454qyVEM9cq4auBOvuxFEWHjJaJ3zt5oZqLbM0PHwKXhbsX0teAYnKRx3YPf-dco_5mvZ69_Jv1v4nww_JkWTsp5kJ5mjp38WXIO9UUC5loyqF3jrPj1f_4RhEjpNpDC1cJdlQmaFXDvpa7Z5T4OY5wEONKgy0QIdHaZbpIfflpDxAP1ft0vsJJccoPSI",
+        "name": "projects/3511007415582919208/files/1753159b32954f2b843701191d35daeb"
+      },
+      "title": "EnergyOS - Landing Page",
+      "width": "2560"
+    }
+  }
+}

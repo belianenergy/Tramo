@@ -1,0 +1,24 @@
+{
+  "key": "leads",
+  "requestedName": "leads-solicitudes-piloto",
+  "title": "Leads / solicitudes piloto",
+  "projectId": "11820050226044719534",
+  "projectName": "projects/11820050226044719534",
+  "screenId": "28f4d726bbc24d6b87611cd394bbdb91",
+  "screenName": "projects/11820050226044719534/screens/28f4d726bbc24d6b87611cd394bbdb91",
+  "width": "2560",
+  "height": "2378",
+  "htmlCodeName": "projects/11820050226044719534/files/3679890193d8461090b28b875db04b4a",
+  "screenshotName": "projects/11820050226044719534/files/1d7efafa97fe4d789c2146d95cc3dffe",
+  "htmlDownloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2JkMDI0MTQ5ZTc5MTRhNmQ5NGFjNjliNTMwYTFkODAwEgsSBxCg9KiWmAMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTgyMDA1MDIyNjA0NDcxOTUzNA&filename=&opi=96797242",
+  "screenshotDownloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ug0mpIvnCPPxHuutJxScUU0w0hC2HFXZcNOpaqYjWO0lyyyYspv-IBzViqZw-DYSAlYTe08qVWyc9bb6fB4Hn1WMdOSrRwFTle0ux6NWJyCnS_xhVAZ5ULP9J8hHQXhhVgOyReJvoRebTd8T24CxDb9e4KKwZp8slrJCN40Cm-f4lA5XgCWasaxykEkwVc7wRPXCfwS36NqDHcz2FP_eBnOBsEfbxZ5L9FFhNloJjrb6xAWOy2TKOLnwbo",
+  "generatedAt": "2026-05-12T19:42:42.293Z",
+  "sourcePromptFile": "STITCH_PROMPT_MVP_COMPLETO_RESTRO_STYLE_V1.md",
+  "localFiles": {
+    "response": "stitch-mvp-restro-style-v1-leads-response.json",
+    "meta": "stitch-mvp-restro-style-v1-leads-meta.json",
+    "html": "stitch-mvp-restro-style-v1-leads.html",
+    "stitchPng": "stitch-mvp-restro-style-v1-leads-stitch.png",
+    "previews": []
+  }
+}

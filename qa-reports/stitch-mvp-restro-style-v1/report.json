@@ -1,0 +1,1013 @@
+{
+  "suite": "EnergyOS MVP Completo — Restro Style",
+  "source": "stitch-mvp-restro-style-v1-summary.json",
+  "generatedAt": "2026-05-15T22:49:00.242Z",
+  "pages": [
+    {
+      "key": "landing",
+      "title": "Landing pública - EnergyOS",
+      "htmlFile": "stitch-mvp-restro-style-v1-landing.html",
+      "status": "pass",
+      "checks": [
+        "SEO/aesthetic: title=\"EnergyOS para gestoras de apartamentos turísticos\", h1=\"Controla el coste energético de tu cartera turística.\", metaDescriptionLength=159"
+      ],
+      "issues": [],
+      "viewports": {
+        "desktop-1440": {
+          "title": "EnergyOS para gestoras de apartamentos turísticos",
+          "textLength": 2482,
+          "visibleElementCount": 134,
+          "documentHeight": 2889,
+          "bodyWidth": 1440,
+          "viewportWidth": 1440,
+          "hasHorizontalOverflow": false,
+          "overflowing": [],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "Operaciones",
+            "cartera",
+            "reservas",
+            "operaciones",
+            "consumo",
+            "reservas",
+            "reserva",
+            "potencia",
+            "tarifa",
+            "consumo",
+            "operaciones",
+            "reserva",
+            "reservas",
+            "consumo",
+            "reserva",
+            "reserva",
+            "reserva"
+          ],
+          "h1": "Controla el coste energético de tu cartera turística.",
+          "h1Length": 53,
+          "hasSingleH1": true,
+          "metaDescription": "Sistema operativo energético para gestoras de apartamentos turísticos: gestión de consumo, reservas, tarifas, Datadis e informes automáticos para propietarios.",
+          "metaDescriptionLength": 159,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "landing-desktop-1440.png"
+        },
+        "mobile-375": {
+          "title": "EnergyOS para gestoras de apartamentos turísticos",
+          "textLength": 2430,
+          "visibleElementCount": 126,
+          "documentHeight": 5496,
+          "bodyWidth": 375,
+          "viewportWidth": 375,
+          "hasHorizontalOverflow": false,
+          "overflowing": [],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "cartera",
+            "reservas",
+            "operaciones",
+            "consumo",
+            "reservas",
+            "reserva",
+            "potencia",
+            "tarifa",
+            "consumo",
+            "operaciones",
+            "reserva",
+            "reservas",
+            "consumo",
+            "reserva",
+            "reserva",
+            "reserva"
+          ],
+          "h1": "Controla el coste energético de tu cartera turística.",
+          "h1Length": 53,
+          "hasSingleH1": true,
+          "metaDescription": "Sistema operativo energético para gestoras de apartamentos turísticos: gestión de consumo, reservas, tarifas, Datadis e informes automáticos para propietarios.",
+          "metaDescriptionLength": 159,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "landing-mobile-375.png"
+        }
+      }
+    },
+    {
+      "key": "dashboard",
+      "title": "Dashboard Operativo — EnergyOS",
+      "htmlFile": "stitch-mvp-restro-style-v1-dashboard.html",
+      "status": "pass",
+      "checks": [
+        "SEO/aesthetic: title=\"EnergyOS - Dashboard Operativo\", h1=\"Control energético de cartera\", metaDescriptionLength=0"
+      ],
+      "issues": [],
+      "viewports": {
+        "desktop-1440": {
+          "title": "EnergyOS - Dashboard Operativo",
+          "textLength": 1209,
+          "visibleElementCount": 163,
+          "documentHeight": 1329,
+          "bodyWidth": 1440,
+          "viewportWidth": 1440,
+          "hasHorizontalOverflow": false,
+          "overflowing": [],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "cartera",
+            "CONSUMO",
+            "RESERVA",
+            "POTENCIA",
+            "Consumo",
+            "reserva",
+            "Consumo",
+            "reserva",
+            "consumo",
+            "Operaciones",
+            "Consumo",
+            "reserva",
+            "potencia",
+            "tarifa",
+            "Informe",
+            "Consumo",
+            "consumo"
+          ],
+          "h1": "Control energético de cartera",
+          "h1Length": 29,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "dashboard-desktop-1440.png"
+        },
+        "mobile-375": {
+          "title": "EnergyOS - Dashboard Operativo",
+          "textLength": 1185,
+          "visibleElementCount": 160,
+          "documentHeight": 3839,
+          "bodyWidth": 375,
+          "viewportWidth": 459,
+          "hasHorizontalOverflow": false,
+          "overflowing": [
+            {
+              "tag": "div",
+              "text": "calendar_today notifications Nueva Operación Usuario Gestor Admin",
+              "left": 279,
+              "right": 564
+            },
+            {
+              "tag": "button",
+              "text": "Nueva Operación",
+              "left": 367,
+              "right": 483
+            },
+            {
+              "tag": "div",
+              "text": "Usuario Gestor Admin",
+              "left": 507,
+              "right": 564
+            },
+            {
+              "tag": "div",
+              "text": "",
+              "left": 524,
+              "right": 564
+            },
+            {
+              "tag": "img",
+              "text": "",
+              "left": 524,
+              "right": 564
+            }
+          ],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "cartera",
+            "CONSUMO",
+            "RESERVA",
+            "POTENCIA",
+            "Consumo",
+            "reserva",
+            "Consumo",
+            "reserva",
+            "consumo",
+            "Operaciones",
+            "Consumo",
+            "reserva",
+            "potencia",
+            "tarifa",
+            "Informe",
+            "Consumo",
+            "consumo"
+          ],
+          "h1": "Control energético de cartera",
+          "h1Length": 29,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "dashboard-mobile-375.png"
+        }
+      }
+    },
+    {
+      "key": "apartments",
+      "title": "Apartamentos / cartera — EnergyOS",
+      "htmlFile": "stitch-mvp-restro-style-v1-apartments.html",
+      "status": "pass",
+      "checks": [
+        "SEO/aesthetic: title=\"Costa Norte Stays - Cartera de Apartamentos\", h1=\"Cartera de apartamentos\", metaDescriptionLength=0"
+      ],
+      "issues": [],
+      "viewports": {
+        "desktop-1440": {
+          "title": "Costa Norte Stays - Cartera de Apartamentos",
+          "textLength": 1167,
+          "visibleElementCount": 190,
+          "documentHeight": 1000,
+          "bodyWidth": 1440,
+          "viewportWidth": 1440,
+          "hasHorizontalOverflow": false,
+          "overflowing": [],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "Cartera",
+            "Consumo",
+            "reserva",
+            "consumo",
+            "Consumo",
+            "tarifa",
+            "Consumo",
+            "reserva",
+            "consumo",
+            "Consumo"
+          ],
+          "h1": "Cartera de apartamentos",
+          "h1Length": 23,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "apartments-desktop-1440.png"
+        },
+        "mobile-375": {
+          "title": "Costa Norte Stays - Cartera de Apartamentos",
+          "textLength": 1167,
+          "visibleElementCount": 190,
+          "documentHeight": 1826,
+          "bodyWidth": 375,
+          "viewportWidth": 843,
+          "hasHorizontalOverflow": false,
+          "overflowing": [],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "Cartera",
+            "Consumo",
+            "reserva",
+            "consumo",
+            "Consumo",
+            "tarifa",
+            "Consumo",
+            "reserva",
+            "consumo",
+            "Consumo"
+          ],
+          "h1": "Cartera de apartamentos",
+          "h1Length": 23,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "apartments-mobile-375.png"
+        }
+      }
+    },
+    {
+      "key": "operations",
+      "title": "Operaciones — EnergyOS",
+      "htmlFile": "stitch-mvp-restro-style-v1-operations.html",
+      "status": "pass",
+      "checks": [
+        "SEO/aesthetic: title=\"EnergyOS - Operaciones\", h1=\"Cola de operaciones\", metaDescriptionLength=0"
+      ],
+      "issues": [],
+      "viewports": {
+        "desktop-1440": {
+          "title": "EnergyOS - Operaciones",
+          "textLength": 1197,
+          "visibleElementCount": 187,
+          "documentHeight": 1072,
+          "bodyWidth": 1440,
+          "viewportWidth": 1440,
+          "hasHorizontalOverflow": false,
+          "overflowing": [],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "operaciones",
+            "Informe",
+            "propietario",
+            "Consumo",
+            "reserva",
+            "potencia",
+            "POTENCIA",
+            "Solar",
+            "Informe",
+            "propietario",
+            "tarifa",
+            "CONTRATO",
+            "Consumo",
+            "reserva",
+            "CONSUMO",
+            "Consumo"
+          ],
+          "h1": "Cola de operaciones",
+          "h1Length": 19,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "operations-desktop-1440.png"
+        },
+        "mobile-375": {
+          "title": "EnergyOS - Operaciones",
+          "textLength": 1197,
+          "visibleElementCount": 187,
+          "documentHeight": 2385,
+          "bodyWidth": 375,
+          "viewportWidth": 564,
+          "hasHorizontalOverflow": false,
+          "overflowing": [
+            {
+              "tag": "button",
+              "text": "Anomalía",
+              "left": 500,
+              "right": 590
+            },
+            {
+              "tag": "button",
+              "text": "Informe propietario",
+              "left": 598,
+              "right": 754
+            }
+          ],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "operaciones",
+            "Informe",
+            "propietario",
+            "Consumo",
+            "reserva",
+            "potencia",
+            "POTENCIA",
+            "Solar",
+            "Informe",
+            "propietario",
+            "tarifa",
+            "CONTRATO",
+            "Consumo",
+            "reserva",
+            "CONSUMO",
+            "Consumo"
+          ],
+          "h1": "Cola de operaciones",
+          "h1Length": 19,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "operations-mobile-375.png"
+        }
+      }
+    },
+    {
+      "key": "apartment-detail",
+      "title": "Detalle apartamento — EnergyOS",
+      "htmlFile": "stitch-mvp-restro-style-v1-apartment-detail.html",
+      "status": "pass",
+      "checks": [
+        "SEO/aesthetic: title=\"\", h1=\"VGO-014 · Apartamento Areal\", metaDescriptionLength=0"
+      ],
+      "issues": [],
+      "viewports": {
+        "desktop-1440": {
+          "title": "",
+          "textLength": 1404,
+          "visibleElementCount": 158,
+          "documentHeight": 1438,
+          "bodyWidth": 1440,
+          "viewportWidth": 1440,
+          "hasHorizontalOverflow": false,
+          "overflowing": [],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "CONSUMO",
+            "Consumo",
+            "reserva",
+            "consumo",
+            "reserva",
+            "consumo",
+            "consumo",
+            "Tarifa",
+            "Potencia",
+            "POTENCIA",
+            "Consumo",
+            "Potencia",
+            "Informe"
+          ],
+          "h1": "VGO-014 · Apartamento Areal",
+          "h1Length": 27,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "apartment-detail-desktop-1440.png"
+        },
+        "mobile-375": {
+          "title": "",
+          "textLength": 1404,
+          "visibleElementCount": 158,
+          "documentHeight": 3813,
+          "bodyWidth": 375,
+          "viewportWidth": 375,
+          "hasHorizontalOverflow": false,
+          "overflowing": [
+            {
+              "tag": "div",
+              "text": "calendar_today notifications Nueva Operación",
+              "left": 264,
+              "right": 503
+            },
+            {
+              "tag": "button",
+              "text": "Nueva Operación",
+              "left": 348,
+              "right": 456
+            },
+            {
+              "tag": "div",
+              "text": "",
+              "left": 480,
+              "right": 503
+            },
+            {
+              "tag": "img",
+              "text": "",
+              "left": 481,
+              "right": 502
+            }
+          ],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "CONSUMO",
+            "Consumo",
+            "reserva",
+            "consumo",
+            "reserva",
+            "consumo",
+            "consumo",
+            "Tarifa",
+            "Potencia",
+            "POTENCIA",
+            "Consumo",
+            "Potencia",
+            "Informe"
+          ],
+          "h1": "VGO-014 · Apartamento Areal",
+          "h1Length": 27,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "apartment-detail-mobile-375.png"
+        }
+      }
+    },
+    {
+      "key": "tariff-power",
+      "title": "Optimización tarifa/potencia — EnergyOS",
+      "htmlFile": "stitch-mvp-restro-style-v1-tariff-power.html",
+      "status": "pass",
+      "checks": [
+        "SEO/aesthetic: title=\"Optimización Tarifa/Potencia | EnergyOS\", h1=\"Costa Norte Stays\", metaDescriptionLength=0"
+      ],
+      "issues": [],
+      "viewports": {
+        "desktop-1440": {
+          "title": "Optimización Tarifa/Potencia | EnergyOS",
+          "textLength": 1528,
+          "visibleElementCount": 200,
+          "documentHeight": 1568,
+          "bodyWidth": 1440,
+          "viewportWidth": 1440,
+          "hasHorizontalOverflow": false,
+          "overflowing": [
+            {
+              "tag": "polyline",
+              "text": "",
+              "left": 588,
+              "right": 1588
+            },
+            {
+              "tag": "line",
+              "text": "",
+              "left": 588,
+              "right": 1588
+            }
+          ],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "Tarifa",
+            "Potencia",
+            "POTENCIA",
+            "CONTRATO",
+            "Tarifa",
+            "TARIFA",
+            "Potencia",
+            "CONSUMO",
+            "POTENCIA",
+            "Potencia",
+            "contrato",
+            "POTENCIA",
+            "CONTRATO",
+            "POTENCIA",
+            "consumo",
+            "contrato"
+          ],
+          "h1": "Costa Norte Stays",
+          "h1Length": 17,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "tariff-power-desktop-1440.png"
+        },
+        "mobile-375": {
+          "title": "Optimización Tarifa/Potencia | EnergyOS",
+          "textLength": 1528,
+          "visibleElementCount": 191,
+          "documentHeight": 3577,
+          "bodyWidth": 375,
+          "viewportWidth": 424,
+          "hasHorizontalOverflow": false,
+          "overflowing": [
+            {
+              "tag": "div",
+              "text": "Nueva Operación calendar_today notifications",
+              "left": 413,
+              "right": 677
+            },
+            {
+              "tag": "button",
+              "text": "Nueva Operación",
+              "left": 413,
+              "right": 541
+            },
+            {
+              "tag": "div",
+              "text": "calendar_today notifications",
+              "left": 565,
+              "right": 677
+            },
+            {
+              "tag": "span",
+              "text": "calendar_today",
+              "left": 565,
+              "right": 589
+            },
+            {
+              "tag": "span",
+              "text": "notifications",
+              "left": 605,
+              "right": 629
+            },
+            {
+              "tag": "div",
+              "text": "",
+              "left": 645,
+              "right": 677
+            },
+            {
+              "tag": "img",
+              "text": "",
+              "left": 646,
+              "right": 676
+            },
+            {
+              "tag": "polyline",
+              "text": "",
+              "left": 153,
+              "right": 1153
+            },
+            {
+              "tag": "line",
+              "text": "",
+              "left": 153,
+              "right": 1153
+            },
+            {
+              "tag": "table",
+              "text": "Apartamento Ubicación Comparativa de Potencia (Actual vs Rec.) Estado de Contrat",
+              "left": 121,
+              "right": 869
+            }
+          ],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "Tarifa",
+            "Potencia",
+            "POTENCIA",
+            "CONTRATO",
+            "Tarifa",
+            "TARIFA",
+            "Potencia",
+            "CONSUMO",
+            "POTENCIA",
+            "Potencia",
+            "contrato",
+            "POTENCIA",
+            "CONTRATO",
+            "POTENCIA",
+            "consumo",
+            "contrato"
+          ],
+          "h1": "Costa Norte Stays",
+          "h1Length": 17,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "tariff-power-mobile-375.png"
+        }
+      }
+    },
+    {
+      "key": "leads",
+      "title": "Leads / solicitudes piloto",
+      "htmlFile": "stitch-mvp-restro-style-v1-leads.html",
+      "status": "pass",
+      "checks": [
+        "SEO/aesthetic: title=\"EnergyOS - Leads y Solicitudes Piloto\", h1=\"Leads y Solicitudes Piloto\", metaDescriptionLength=0"
+      ],
+      "issues": [],
+      "viewports": {
+        "desktop-1440": {
+          "title": "EnergyOS - Leads y Solicitudes Piloto",
+          "textLength": 1325,
+          "visibleElementCount": 180,
+          "documentHeight": 1415,
+          "bodyWidth": 1440,
+          "viewportWidth": 1440,
+          "hasHorizontalOverflow": false,
+          "overflowing": [],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "propietario",
+            "potencia",
+            "CONSUMO",
+            "RESERVAS",
+            "TARIFA",
+            "POTENCIA",
+            "CONTRATO",
+            "OPERACIONES",
+            "PROPIETARIO",
+            "INFORME",
+            "CARTERA",
+            "SOLAR",
+            "BATERÍA",
+            "ARBITRAJE",
+            "potencia"
+          ],
+          "h1": "Leads y Solicitudes Piloto",
+          "h1Length": 26,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "leads-desktop-1440.png"
+        },
+        "mobile-375": {
+          "title": "EnergyOS - Leads y Solicitudes Piloto",
+          "textLength": 1325,
+          "visibleElementCount": 172,
+          "documentHeight": 3019,
+          "bodyWidth": 375,
+          "viewportWidth": 1394,
+          "hasHorizontalOverflow": false,
+          "overflowing": [],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "propietario",
+            "potencia",
+            "CONSUMO",
+            "RESERVAS",
+            "TARIFA",
+            "POTENCIA",
+            "CONTRATO",
+            "OPERACIONES",
+            "PROPIETARIO",
+            "INFORME",
+            "CARTERA",
+            "SOLAR",
+            "BATERÍA",
+            "ARBITRAJE",
+            "potencia"
+          ],
+          "h1": "Leads y Solicitudes Piloto",
+          "h1Length": 26,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "leads-mobile-375.png"
+        }
+      }
+    },
+    {
+      "key": "pilot-settings",
+      "title": "Configuración piloto",
+      "htmlFile": "stitch-mvp-restro-style-v1-pilot-settings.html",
+      "status": "pass",
+      "checks": [
+        "SEO/aesthetic: title=\"Configuración del Sistema Operativo - EnergyOS\", h1=\"Costa Norte Stays\", metaDescriptionLength=0"
+      ],
+      "issues": [],
+      "viewports": {
+        "desktop-1440": {
+          "title": "Configuración del Sistema Operativo - EnergyOS",
+          "textLength": 1945,
+          "visibleElementCount": 192,
+          "documentHeight": 1705,
+          "bodyWidth": 1440,
+          "viewportWidth": 1440,
+          "hasHorizontalOverflow": false,
+          "overflowing": [],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "cartera",
+            "reservas",
+            "consumo",
+            "Consumo",
+            "reserva",
+            "consumo",
+            "reserva",
+            "Potencia",
+            "POTENCIA",
+            "Tarifa",
+            "contrato",
+            "tarifa",
+            "consumo",
+            "Solar",
+            "solar",
+            "arbitraje",
+            "potencia",
+            "consumo",
+            "contrato",
+            "tarifa"
+          ],
+          "h1": "Costa Norte Stays",
+          "h1Length": 17,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "pilot-settings-desktop-1440.png"
+        },
+        "mobile-375": {
+          "title": "Configuración del Sistema Operativo - EnergyOS",
+          "textLength": 1945,
+          "visibleElementCount": 192,
+          "documentHeight": 4325,
+          "bodyWidth": 375,
+          "viewportWidth": 415,
+          "hasHorizontalOverflow": false,
+          "overflowing": [],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "cartera",
+            "reservas",
+            "consumo",
+            "Consumo",
+            "reserva",
+            "consumo",
+            "reserva",
+            "Potencia",
+            "POTENCIA",
+            "Tarifa",
+            "contrato",
+            "tarifa",
+            "consumo",
+            "Solar",
+            "solar",
+            "arbitraje",
+            "potencia",
+            "consumo",
+            "contrato",
+            "tarifa"
+          ],
+          "h1": "Costa Norte Stays",
+          "h1Length": 17,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "pilot-settings-mobile-375.png"
+        }
+      }
+    },
+    {
+      "key": "owner-report",
+      "title": "Informe mensual propietario — EnergyOS",
+      "htmlFile": "stitch-mvp-restro-style-v1-owner-report.html",
+      "status": "pass",
+      "checks": [
+        "SEO/aesthetic: title=\"Informe Mensual Propietario — Costa Norte Stays\", h1=\"Informe mensual propietario — EnergyOS\", metaDescriptionLength=0"
+      ],
+      "issues": [],
+      "viewports": {
+        "desktop-1440": {
+          "title": "Informe Mensual Propietario — Costa Norte Stays",
+          "textLength": 1624,
+          "visibleElementCount": 117,
+          "documentHeight": 1544,
+          "bodyWidth": 1440,
+          "viewportWidth": 1440,
+          "hasHorizontalOverflow": false,
+          "overflowing": [],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "Informe",
+            "propietario",
+            "Informe",
+            "CONSUMO",
+            "CONSUMO",
+            "Consumo",
+            "potencia",
+            "consumo",
+            "reserva",
+            "tarifa",
+            "informe"
+          ],
+          "h1": "Informe mensual propietario — EnergyOS",
+          "h1Length": 38,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "owner-report-desktop-1440.png"
+        },
+        "mobile-375": {
+          "title": "Informe Mensual Propietario — Costa Norte Stays",
+          "textLength": 1624,
+          "visibleElementCount": 117,
+          "documentHeight": 5106,
+          "bodyWidth": 375,
+          "viewportWidth": 447,
+          "hasHorizontalOverflow": false,
+          "overflowing": [
+            {
+              "tag": "div",
+              "text": "Nueva Operación calendar_today notifications",
+              "left": 220,
+              "right": 455
+            },
+            {
+              "tag": "div",
+              "text": "calendar_today notifications",
+              "left": 343,
+              "right": 455
+            },
+            {
+              "tag": "div",
+              "text": "",
+              "left": 423,
+              "right": 455
+            },
+            {
+              "tag": "img",
+              "text": "",
+              "left": 423,
+              "right": 455
+            },
+            {
+              "tag": "button",
+              "text": "mail ENVIAR POR EMAIL",
+              "left": -10,
+              "right": 128
+            }
+          ],
+          "fixedOverlaps": [],
+          "placeholderHits": [],
+          "bannedCopyHits": [],
+          "platformConceptHits": [
+            "Informe",
+            "propietario",
+            "Informe",
+            "CONSUMO",
+            "CONSUMO",
+            "Consumo",
+            "potencia",
+            "consumo",
+            "reserva",
+            "tarifa",
+            "informe"
+          ],
+          "h1": "Informe mensual propietario — EnergyOS",
+          "h1Length": 38,
+          "hasSingleH1": true,
+          "metaDescription": "",
+          "metaDescriptionLength": 0,
+          "consoleMessages": [
+            "warning: cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
+          ],
+          "pageErrors": [],
+          "screenshot": "owner-report-mobile-375.png"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "passed": 9,
+    "failed": 0
+  }
+}

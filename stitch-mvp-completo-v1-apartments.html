@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#fefcff",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#bec6e0",
+                    "secondary-container": "#316bf3",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fcf8fa",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#131b2e",
+                    "surface-container": "#f0edef",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#c6c6cd",
+                    "tertiary-fixed-dim": "#dec29a",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#7c839b",
+                    "secondary": "#0051d5",
+                    "surface-container-highest": "#e4e2e4",
+                    "on-tertiary-fixed-variant": "#574425",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "on-secondary-fixed": "#00174b",
+                    "surface-tint": "#565e74",
+                    "on-secondary-fixed-variant": "#003ea8",
+                    "secondary-fixed": "#dbe1ff",
+                    "primary-fixed-dim": "#bec6e0",
+                    "on-surface": "#1b1b1d",
+                    "surface-container-high": "#eae7e9",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#271901",
+                    "surface-container-low": "#f6f3f5",
+                    "surface-variant": "#e4e2e4",
+                    "primary-fixed": "#dae2fd",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#fcf8fa",
+                    "primary": "#000000",
+                    "outline": "#76777d",
+                    "on-tertiary-fixed": "#271901",
+                    "inverse-surface": "#303032",
+                    "primary-container": "#131b2e",
+                    "tertiary-fixed": "#fcdeb5",
+                    "surface-dim": "#dcd9db",
+                    "on-secondary": "#ffffff",
+                    "background": "#fcf8fa",
+                    "on-tertiary-container": "#98805d",
+                    "inverse-on-surface": "#f3f0f2",
+                    "tertiary": "#000000",
+                    "on-surface-variant": "#45464d",
+                    "on-background": "#1b1b1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "lg": "1.5rem",
+                    "sidebar-width": "260px",
+                    "xl": "2rem",
+                    "xs": "0.25rem",
+                    "md": "1rem",
+                    "gutter": "1rem",
+                    "sm": "0.5rem",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "display": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full w-[260px] bg-primary-container text-on-primary-container flex flex-col py-lg border-r border-outline-variant">
+<div class="px-lg mb-xl">
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary-container">EnergyOS</h1>
+<p class="font-label-md text-label-md text-on-primary-container opacity-70">Gestión Energética</p>
+</div>
+<nav class="flex-1 px-md space-y-xs">
+<a class="flex items-center gap-3 px-4 py-2 text-on-primary-fixed-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 bg-secondary-container text-on-secondary-container rounded-lg border-l-4 border-primary" href="#">
+<span class="material-symbols-outlined">apartment</span>
+<span class="font-body-md text-body-md">Apartamentos</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-primary-fixed-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">engineering</span>
+<span class="font-body-md text-body-md">Operaciones</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-primary-fixed-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-body-md text-body-md">Informes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-primary-fixed-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<span class="font-body-md text-body-md">Tarifa/Potencia</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-primary-fixed-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">group_add</span>
+<span class="font-body-md text-body-md">Leads</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-primary-fixed-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Configuración</span>
+</a>
+</nav>
+<div class="px-lg pt-lg border-t border-outline-variant opacity-50">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a corporate manager in a clean, modern office environment. The lighting is soft and professional, emphasizing a light-mode aesthetic. The individual has a confident, reliable expression suitable for an energy management platform executive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6D-wMH-331OXnXgsq3lsH9SQ4gPIYod5fRZOODOgx3gDd9j0F9Fm8twkO7JryLhfrlr-dd_AVMqZgZhnHMyPMcHDZT-VCMVHaSf84iQ__AEfbQuTo412hySg7Xr_V3_HgGW9dhlTEOmvzdds2Ey58TXax_hfDIiy4dURLjbcHnGyLR-PwpJjFDp-6kOV-rVfuu8BAGgDxJ23ybjpL78reqpOSbLsuZeH0y3xqw9kVIRIUZuTGqmaEQHPReJ7Guv45ZFmwlaxcN85r"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold">Admin</span>
+<span class="text-[10px] uppercase tracking-wider">Premium Access</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-sidebar-width min-h-screen">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 right-0 w-[calc(100%-260px)] h-16 bg-surface flex justify-between items-center px-lg z-10">
+<div class="flex items-center gap-md">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-xl text-body-sm focus:ring-2 focus:ring-secondary outline-none w-64" placeholder="Buscar apartamento o ID..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-md">
+<button class="relative text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary px-lg py-2 rounded-xl font-label-md text-label-md flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Nueva regla
+                </button>
+</div>
+</header>
+<!-- Content Area -->
+<section class="pt-24 px-lg pb-xl max-w-container-max mx-auto">
+<!-- Page Header -->
+<div class="mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Gestión de Apartamentos</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Vistazo detallado de los 48 apartamentos en cartera</p>
+</div>
+<!-- Filters Bar -->
+<div class="bg-white border border-outline-variant rounded-xl p-md mb-lg flex flex-wrap items-center gap-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-outline px-1">Ciudad</label>
+<select class="bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 text-body-sm outline-none focus:border-secondary">
+<option>Todas las ciudades</option>
+<option>Vigo</option>
+<option>Santiago</option>
+<option>A Coruña</option>
+<option>Sanxenxo</option>
+<option>Baiona</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-outline px-1">Estado Reserva</label>
+<select class="bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 text-body-sm outline-none focus:border-secondary">
+<option>Cualquier estado</option>
+<option>Sin estancia</option>
+<option>Check-in hoy</option>
+<option>Check-out realizado</option>
+<option>Estancia activa</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-outline px-1">Alerta</label>
+<select class="bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 text-body-sm outline-none focus:border-secondary">
+<option>Todas</option>
+<option>Crítica</option>
+<option>Leve</option>
+<option>Ninguna</option>
+</select>
+</div>
+<div class="ml-auto self-end pb-1">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary px-3 py-2 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filtros Avanzados
+                    </button>
+</div>
+</div>
+<!-- Main Data Table -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="px-lg py-4 text-left font-label-sm text-label-sm text-outline uppercase tracking-wider">Apartamento</th>
+<th class="px-lg py-4 text-left font-label-sm text-label-sm text-outline uppercase tracking-wider">Ciudad</th>
+<th class="px-lg py-4 text-left font-label-sm text-label-sm text-outline uppercase tracking-wider">Estado Reserva</th>
+<th class="px-lg py-4 text-left font-label-sm text-label-sm text-outline uppercase tracking-wider">Clima</th>
+<th class="px-lg py-4 text-left font-label-sm text-label-sm text-outline uppercase tracking-wider">Consumo</th>
+<th class="px-lg py-4 text-left font-label-sm text-label-sm text-outline uppercase tracking-wider">Estado/Acción</th>
+<th class="px-lg py-4 text-right font-label-sm text-label-sm text-outline uppercase tracking-wider">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1: VGO-014 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">VGO-014</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Apartamento Areal</span>
+</div>
+</td>
+<td class="px-lg py-4">
+<span class="bg-surface-container-high px-2 py-1 rounded text-[11px] font-bold text-on-surface-variant">VIGO</span>
+</td>
+<td class="px-lg py-4">
+<span class="text-body-sm px-3 py-1 rounded-full border border-outline-variant text-outline">Sin estancia</span>
+</td>
+<td class="px-lg py-4">
+<div class="flex items-center gap-2 text-body-sm text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[18px]">ac_unit</span>
+                                    A/C 22ºC
+                                </div>
+</td>
+<td class="px-lg py-4">
+<div class="flex flex-col gap-1 w-24">
+<div class="flex justify-between font-label-md text-[11px]">
+<span>1.84 kW</span>
+<span class="text-error font-bold">ALTO</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-error h-full" style="width: 85%"></div>
+</div>
+</div>
+</td>
+<td class="px-lg py-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-error font-bold text-[11px]">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                                        ALERTA CRÍTICA
+                                    </div>
+<span class="text-[11px] text-on-surface-variant italic">Apagar A/C y avisar mantenimiento.</span>
+</div>
+</td>
+<td class="px-lg py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="bg-error text-on-error px-3 py-1.5 rounded-lg text-[11px] font-bold hover:opacity-90">Resolver</button>
+<button class="border border-outline-variant text-on-surface px-3 py-1.5 rounded-lg text-[11px] font-bold hover:bg-surface-container-high">Ver detalle</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: SCQ-022 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">SCQ-022</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Loft Catedral</span>
+</div>
+</td>
+<td class="px-lg py-4">
+<span class="bg-surface-container-high px-2 py-1 rounded text-[11px] font-bold text-on-surface-variant uppercase">Santiago</span>
+</td>
+<td class="px-lg py-4">
+<span class="text-body-sm px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant border border-on-secondary-fixed-variant/20">Check-in hoy 17:30</span>
+</td>
+<td class="px-lg py-4">
+<div class="flex items-center gap-2 text-body-sm text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[18px]">cyclone</span>
+                                    Pre-enfriando 23ºC
+                                </div>
+</td>
+<td class="px-lg py-4">
+<div class="flex flex-col gap-1 w-24">
+<div class="flex justify-between font-label-md text-[11px]">
+<span>0.92 kW</span>
+<span class="text-secondary font-bold">MED</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 45%"></div>
+</div>
+</div>
+</td>
+<td class="px-lg py-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-secondary font-bold text-[11px]">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+                                        PRE-CHECK-IN
+                                    </div>
+<span class="text-[11px] text-on-surface-variant italic">Validar confort 30 min antes.</span>
+</div>
+</td>
+<td class="px-lg py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="border border-outline-variant text-on-surface px-3 py-1.5 rounded-lg text-[11px] font-bold hover:bg-surface-container-high">Ver detalle</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: LCG-008 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">LCG-008</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Marina Centro</span>
+</div>
+</td>
+<td class="px-lg py-4">
+<span class="bg-surface-container-high px-2 py-1 rounded text-[11px] font-bold text-on-surface-variant uppercase">A Coruña</span>
+</td>
+<td class="px-lg py-4">
+<span class="text-body-sm px-3 py-1 rounded-full bg-surface-variant text-on-surface-variant border border-outline-variant">Check-out 11:00</span>
+</td>
+<td class="px-lg py-4">
+<div class="flex items-center gap-2 text-body-sm text-outline">
+<span class="material-symbols-outlined text-[18px]">power_off</span>
+                                    Apagado
+                                </div>
+</td>
+<td class="px-lg py-4">
+<div class="flex flex-col gap-1 w-24">
+<div class="flex justify-between font-label-md text-[11px]">
+<span>0.21 kW</span>
+<span class="text-outline font-bold">BAJO</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-outline h-full" style="width: 15%"></div>
+</div>
+</div>
+</td>
+<td class="px-lg py-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-bold text-[11px]">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+                                        POST-CHECK-OUT
+                                    </div>
+<span class="text-[11px] text-on-surface-variant italic">Revisar consumo residual.</span>
+</div>
+</td>
+<td class="px-lg py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="border border-outline-variant text-on-surface px-3 py-1.5 rounded-lg text-[11px] font-bold hover:bg-surface-container-high">Ver detalle</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: SNX-031 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">SNX-031</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Playa Silgar</span>
+</div>
+</td>
+<td class="px-lg py-4">
+<span class="bg-surface-container-high px-2 py-1 rounded text-[11px] font-bold text-on-surface-variant uppercase">Sanxenxo</span>
+</td>
+<td class="px-lg py-4">
+<span class="text-body-sm px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant border border-on-tertiary-fixed-variant/20">Estancia activa</span>
+</td>
+<td class="px-lg py-4">
+<div class="flex items-center gap-2 text-body-sm text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[18px]">person</span>
+                                    Huésped 24ºC
+                                </div>
+</td>
+<td class="px-lg py-4">
+<div class="flex flex-col gap-1 w-24">
+<div class="flex justify-between font-label-md text-[11px]">
+<span>1.26 kW</span>
+<span class="text-tertiary font-bold">NORM</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full" style="width: 60%"></div>
+</div>
+</div>
+</td>
+<td class="px-lg py-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-on-tertiary-container font-bold text-[11px]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                        NORMAL
+                                    </div>
+<span class="text-[11px] text-on-surface-variant italic">Ninguna.</span>
+</div>
+</td>
+<td class="px-lg py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="border border-outline-variant text-on-surface px-3 py-1.5 rounded-lg text-[11px] font-bold hover:bg-surface-container-high">Ver detalle</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: BAI-006 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">BAI-006</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Mirador Atlántico</span>
+</div>
+</td>
+<td class="px-lg py-4">
+<span class="bg-surface-container-high px-2 py-1 rounded text-[11px] font-bold text-on-surface-variant uppercase">Baiona</span>
+</td>
+<td class="px-lg py-4">
+<span class="text-body-sm px-3 py-1 rounded-full border border-outline-variant text-outline">Sin reserva</span>
+</td>
+<td class="px-lg py-4">
+<div class="flex items-center gap-2 text-body-sm text-outline">
+<span class="material-symbols-outlined text-[18px]">thermostat</span>
+                                    Calefacción off
+                                </div>
+</td>
+<td class="px-lg py-4">
+<div class="flex flex-col gap-1 w-24">
+<div class="flex justify-between font-label-md text-[11px]">
+<span>0.48 kW</span>
+<span class="text-on-tertiary-fixed-variant font-bold">LEV</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary-fixed-dim h-full" style="width: 30%"></div>
+</div>
+</div>
+</td>
+<td class="px-lg py-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-on-tertiary-fixed-variant font-bold text-[11px]">
+<span class="material-symbols-outlined text-[14px]">report_problem</span>
+                                        ANOMALÍA LEVE
+                                    </div>
+<span class="text-[11px] text-on-surface-variant italic">Comprobar termo y standby.</span>
+</div>
+</td>
+<td class="px-lg py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="bg-surface-container-highest text-on-surface px-3 py-1.5 rounded-lg text-[11px] font-bold hover:bg-outline-variant">Resolver</button>
+<button class="border border-outline-variant text-on-surface px-3 py-1.5 rounded-lg text-[11px] font-bold hover:bg-surface-container-high">Ver detalle</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination Placeholder -->
+<div class="px-lg py-4 bg-surface-container-low border-t border-outline-variant flex justify-between items-center">
+<span class="text-body-sm text-on-surface-variant">Mostrando 5 de 48 apartamentos</span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center text-outline hover:text-primary"><span class="material-symbols-outlined text-[18px]">chevron_left</span></button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary flex items-center justify-center text-body-sm">1</button>
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center text-body-sm hover:bg-surface-container-high">2</button>
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center text-body-sm hover:bg-surface-container-high">3</button>
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center text-outline hover:text-primary"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+</div>
+</div>
+</div>
+<!-- Contextual Stats Cards -->
+<div class="mt-lg grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="bg-white p-lg rounded-xl border border-outline-variant shadow-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-2">Total Consumo Actual</span>
+<div class="flex items-end gap-2">
+<span class="text-display font-display leading-none">42.8</span>
+<span class="text-body-lg text-outline pb-1 font-bold">kW</span>
+</div>
+<span class="mt-2 text-[11px] text-error flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12% vs ayer
+                    </span>
+</div>
+<div class="bg-white p-lg rounded-xl border border-outline-variant shadow-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-2">Alertas Activas</span>
+<div class="flex items-end gap-2">
+<span class="text-display font-display leading-none text-error">3</span>
+<span class="text-body-lg text-outline pb-1 font-bold">Críticas</span>
+</div>
+<span class="mt-2 text-[11px] text-on-surface-variant flex items-center gap-1">
+                        8 alertas leves pendientes
+                    </span>
+</div>
+<div class="bg-white p-lg rounded-xl border border-outline-variant shadow-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-2">Ocupación Hoy</span>
+<div class="flex items-end gap-2">
+<span class="text-display font-display leading-none">78</span>
+<span class="text-body-lg text-outline pb-1 font-bold">%</span>
+</div>
+<div class="mt-2 w-full bg-surface-container-highest h-1 rounded-full">
+<div class="bg-secondary h-full" style="width: 78%"></div>
+</div>
+</div>
+<div class="bg-white p-lg rounded-xl border border-outline-variant shadow-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-2">Ahorro Estimado</span>
+<div class="flex items-end gap-2">
+<span class="text-display font-display leading-none text-tertiary">245</span>
+<span class="text-body-lg text-outline pb-1 font-bold">€</span>
+</div>
+<span class="mt-2 text-[11px] text-tertiary flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-[14px]">energy_savings_leaf</span> Meta mensual: 80%
+                    </span>
+</div>
+</div>
+</section>
+</main>
+</body></html>

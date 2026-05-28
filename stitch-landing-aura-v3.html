@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EnergyOS | Gestión Energética para Alquiler Vacacional</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;family=JetBrains+Mono:wght@500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-tertiary-fixed": "#291618",
+                "on-secondary-container": "#616363",
+                "on-tertiary-container": "#b89a9a",
+                "primary": "#17251c",
+                "on-surface": "#1b1c1b",
+                "on-secondary": "#ffffff",
+                "on-error-container": "#93000a",
+                "inverse-surface": "#30302f",
+                "surface-container": "#efedeb",
+                "tertiary-container": "#483233",
+                "tertiary-fixed": "#fddadb",
+                "error": "#ba1a1a",
+                "on-secondary-fixed-variant": "#454747",
+                "surface-container-high": "#eae8e6",
+                "surface-bright": "#fbf9f7",
+                "on-error": "#ffffff",
+                "secondary-fixed-dim": "#c6c6c7",
+                "outline-variant": "#c3c8c2",
+                "surface-variant": "#e4e2e0",
+                "surface-tint": "#526257",
+                "surface": "#fbf9f7",
+                "on-secondary-fixed": "#1a1c1c",
+                "secondary-fixed": "#e2e2e2",
+                "on-primary-container": "#94a598",
+                "secondary": "#5d5f5f",
+                "outline": "#737873",
+                "on-tertiary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-low": "#f5f3f1",
+                "inverse-primary": "#bacbbd",
+                "inverse-on-surface": "#f2f0ee",
+                "primary-container": "#2c3b31",
+                "on-surface-variant": "#434844",
+                "on-primary": "#ffffff",
+                "tertiary-fixed-dim": "#e0bfbf",
+                "background": "#fbf9f7",
+                "primary-fixed": "#d5e7d8",
+                "surface-dim": "#dbdad8",
+                "secondary-container": "#dfe0e0",
+                "on-tertiary-fixed-variant": "#584142",
+                "on-primary-fixed-variant": "#3b4a40",
+                "on-primary-fixed": "#101f16",
+                "error-container": "#ffdad6",
+                "tertiary": "#311d1e",
+                "surface-container-highest": "#e4e2e0",
+                "primary-fixed-dim": "#bacbbd",
+                "on-background": "#1b1c1b",
+                "sage-accent": "#7A9E7E"
+            },
+            "borderRadius": {
+                "DEFAULT": "12px",
+                "lg": "12px",
+                "xl": "20px",
+                "full": "9999px"
+            },
+            "spacing": {
+                "section-padding": "80px",
+                "gap": "16px",
+                "card-padding": "24px",
+                "container-max-width": "1280px",
+                "base": "8px"
+            },
+            "fontFamily": {
+                "body-md": ["Inter"],
+                "data-display": ["JetBrains Mono"],
+                "label-md": ["JetBrains Mono"],
+                "headline-lg": ["Playfair Display"],
+                "display-md": ["Playfair Display"],
+                "display-lg": ["Playfair Display"],
+                "label-sm": ["JetBrains Mono"],
+                "body-sm": ["Inter"],
+                "headline-lg-mobile": ["Playfair Display"],
+                "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "data-display": ["24px", {"lineHeight": "1", "letterSpacing": "-0.05em", "fontWeight": "600"}],
+                "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "headline-lg": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "display-md": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            },
+            "boxShadow": {
+                "soft": "0 10px 30px -10px rgba(0, 0, 0, 0.08)"
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+        .bento-card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Header (Section 1) -->
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md">
+<nav class="flex justify-between items-center w-full px-8 py-4 max-w-container-max-width mx-auto">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-sage-accent rounded-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<span class="font-display-md text-display-md font-bold text-primary-container">EnergyOS</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-secondary font-body-md text-body-md hover:text-primary-container transition-colors" href="#">Producto</a>
+<a class="text-secondary font-body-md text-body-md hover:text-primary-container transition-colors" href="#">Operaciones</a>
+<a class="text-secondary font-body-md text-body-md hover:text-primary-container transition-colors" href="#">Informes</a>
+<a class="text-secondary font-body-md text-body-md hover:text-primary-container transition-colors" href="#">Precios</a>
+</div>
+<button class="bg-primary-container text-on-primary font-label-md px-6 py-2.5 rounded-full hover:opacity-90 transition-all">
+                Solicitar piloto
+            </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section (Section 2) -->
+<section class="max-w-container-max-width mx-auto px-8 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<span class="inline-block px-4 py-1.5 rounded-full bg-sage-accent/15 text-sage-accent font-label-md">
+                    Gestión energética para alquiler vacacional
+                </span>
+<h1 class="font-display-lg text-display-lg text-primary-container">
+                    Controla el coste energético de tu cartera turística
+                </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-lg">
+                    Automatiza aparatos por reservas. Optimiza tarifas. Gestiona baterías. Sin hardware adicional.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container text-on-primary font-label-md px-8 py-4 rounded-lg hover:opacity-95 transition-all">
+                        Solicitar piloto
+                    </button>
+<button class="border border-primary-container text-primary-container font-label-md px-8 py-4 rounded-lg hover:bg-primary-container hover:text-on-primary transition-all">
+                        Ver demostración
+                    </button>
+</div>
+</div>
+<div class="bento-card p-card-padding border border-outline-variant/30">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary-container">Villa Maritima</h3>
+<p class="font-label-sm text-label-sm text-secondary">Costa del Sol, ES</p>
+</div>
+<span class="flex items-center gap-1.5 px-3 py-1 bg-sage-accent/10 text-sage-accent rounded-full font-label-sm">
+<span class="w-2 h-2 rounded-full bg-sage-accent animate-pulse"></span>
+                        Optimizando
+                    </span>
+</div>
+<div class="grid grid-cols-3 gap-4 mb-10">
+<div class="bg-surface-container-low p-4 rounded-xl">
+<p class="font-label-sm text-label-sm text-secondary mb-1">AHORRO</p>
+<p class="font-data-display text-data-display text-sage-accent">24%</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl">
+<p class="font-label-sm text-label-sm text-secondary mb-1">TARIFA</p>
+<p class="font-data-display text-data-display text-primary-container">-9%</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl">
+<p class="font-label-sm text-label-sm text-secondary mb-1">ALERTA</p>
+<p class="font-data-display text-data-display text-error">1</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-primary-container">Arbitraje de Batería</span>
+<span class="font-label-sm text-label-sm text-secondary">Carga nocturna activa</span>
+</div>
+<div class="flex items-end gap-2 h-32">
+<div class="flex-1 bg-surface-container rounded-full h-1/2"></div>
+<div class="flex-1 bg-surface-container rounded-full h-2/3"></div>
+<div class="flex-1 bg-sage-accent rounded-full h-5/6"></div>
+<div class="flex-1 bg-sage-accent rounded-full h-full"></div>
+<div class="flex-1 bg-sage-accent rounded-full h-4/5"></div>
+<div class="flex-1 bg-surface-container rounded-full h-1/2"></div>
+<div class="flex-1 bg-surface-container rounded-full h-1/3"></div>
+<div class="flex-1 bg-surface-container rounded-full h-1/4"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Proof Bar (Section 3) -->
+<section class="bg-primary-container py-12">
+<div class="max-w-container-max-width mx-auto px-8 grid grid-cols-2 lg:grid-cols-4 gap-gap">
+<div class="text-center md:text-left">
+<p class="font-data-display text-[40px] text-white">120+</p>
+<p class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-widest">Propiedades</p>
+</div>
+<div class="text-center md:text-left">
+<p class="font-data-display text-[40px] text-white">24%</p>
+<p class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-widest">Ahorro Medio</p>
+</div>
+<div class="text-center md:text-left">
+<p class="font-data-display text-[40px] text-white">1.400+</p>
+<p class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-widest">Facturas Auditadas</p>
+</div>
+<div class="text-center md:text-left">
+<p class="font-data-display text-[40px] text-white">SYNC</p>
+<p class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-widest">Datadis Directo</p>
+</div>
+</div>
+</section>
+<!-- Problemas (Section 4) -->
+<section class="max-w-container-max-width mx-auto px-8 py-section-padding">
+<h2 class="font-display-md text-display-md text-center text-primary-container mb-16">Transparencia contra la ineficiencia</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bento-card p-card-padding">
+<div class="w-12 h-12 flex items-center justify-center rounded-xl bg-surface-container-low text-primary-container mb-6">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Facturas sin explicación</h3>
+<p class="text-secondary">Eliminamos las sorpresas a fin de mes desglosando cada kWh consumido por reserva o estancia.</p>
+</div>
+<div class="bento-card p-card-padding">
+<div class="w-12 h-12 flex items-center justify-center rounded-xl bg-surface-container-low text-primary-container mb-6">
+<span class="material-symbols-outlined">trending_down</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Tarifas mal optimizadas</h3>
+<p class="text-secondary">Analizamos tu perfil de consumo real para sugerirte el cambio de comercializadora que maximice tu ahorro.</p>
+</div>
+<div class="bento-card p-card-padding">
+<div class="w-12 h-12 flex items-center justify-center rounded-xl bg-surface-container-low text-primary-container mb-6">
+<span class="material-symbols-outlined">battery_charging_full</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Baterías sin rentabilizar</h3>
+<p class="text-secondary">Inteligencia algorítmica para cargar tus sistemas de almacenamiento cuando la luz es más barata.</p>
+</div>
+</div>
+</section>
+<!-- Cómo funciona (Section 5) -->
+<section class="bg-surface-container-low py-section-padding">
+<div class="max-w-container-max-width mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<h2 class="font-display-md text-display-md text-primary-container">Implementación en 4 pasos</h2>
+<p class="text-secondary font-label-md">SIN INSTALACIONES FÍSICAS REQUERIDAS</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bento-card p-8 relative overflow-hidden group">
+<span class="font-data-display text-[64px] opacity-10 absolute -right-2 -bottom-4 text-primary-container">01</span>
+<h4 class="font-label-md text-label-md text-sage-accent mb-2">CONEXIÓN</h4>
+<p class="font-body-md text-primary-container font-medium">Vincula tus credenciales de Datadis.</p>
+</div>
+<div class="bento-card p-8 relative overflow-hidden group">
+<span class="font-data-display text-[64px] opacity-10 absolute -right-2 -bottom-4 text-primary-container">02</span>
+<h4 class="font-label-md text-label-md text-sage-accent mb-2">AUDITORÍA</h4>
+<p class="font-body-md text-primary-container font-medium">Análisis histórico de los últimos 24 meses.</p>
+</div>
+<div class="bento-card p-8 relative overflow-hidden group">
+<span class="font-data-display text-[64px] opacity-10 absolute -right-2 -bottom-4 text-primary-container">03</span>
+<h4 class="font-label-md text-label-md text-sage-accent mb-2">CONFIGURACIÓN</h4>
+<p class="font-body-md text-primary-container font-medium">Define reglas de automatización por reserva.</p>
+</div>
+<div class="bento-card p-8 relative overflow-hidden group">
+<span class="font-data-display text-[64px] opacity-10 absolute -right-2 -bottom-4 text-primary-container">04</span>
+<h4 class="font-label-md text-label-md text-sage-accent mb-2">MONITORIZACIÓN</h4>
+<p class="font-body-md text-primary-container font-medium">Panel de control en tiempo real.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Características (Section 6) - Bento Grid -->
+<section class="max-w-container-max-width mx-auto px-8 py-section-padding">
+<h2 class="font-display-md text-display-md text-primary-container mb-16 text-center">La suite energética definitiva</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Large Feature 1 -->
+<div class="md:col-span-2 bento-card p-8 bg-primary-container text-white border-none flex flex-col justify-between min-h-[320px]">
+<div>
+<span class="material-symbols-outlined text-sage-accent text-4xl mb-6">smart_toy</span>
+<h3 class="font-headline-lg text-headline-lg mb-4">Automatización basada en reservas</h3>
+<p class="text-on-primary-container font-body-md max-w-md">Encendido y apagado inteligente sincronizado con tu motor de reservas. Evita que el aire acondicionado funcione en propiedades vacías.</p>
+</div>
+<div class="mt-8 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-white/10 text-white font-label-sm border border-white/20">PMS Sync</span>
+<span class="px-3 py-1 rounded-full bg-white/10 text-white font-label-sm border border-white/20">Zero Hardware</span>
+</div>
+</div>
+<!-- Small Feature 1 -->
+<div class="bento-card p-8 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary-container text-3xl">notifications_active</span>
+<div>
+<h3 class="font-headline-lg text-headline-lg mb-2">Alertas</h3>
+<p class="text-secondary text-sm">Notificaciones push inmediatas ante consumos anómalos o potencias excesivas.</p>
+</div>
+</div>
+<!-- Small Feature 2 -->
+<div class="bento-card p-8 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary-container text-3xl">price_check</span>
+<div>
+<h3 class="font-headline-lg text-headline-lg mb-2">Tarifas</h3>
+<p class="text-secondary text-sm">Cambio dinámico y optimización de potencia contratada automática.</p>
+</div>
+</div>
+<!-- Large Feature 2 -->
+<div class="md:col-span-2 bento-card p-8 bg-surface-container-high flex flex-col justify-between min-h-[320px]">
+<div>
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6">analytics</span>
+<h3 class="font-headline-lg text-headline-lg text-primary-container mb-4">Reporting Profesional</h3>
+<p class="text-secondary font-body-md max-w-lg">Informes mensuales detallados para propietarios con desglose de costes y ahorro de CO2 para tus sellos de sostenibilidad.</p>
+</div>
+<div class="mt-8">
+<img class="w-full h-24 object-cover rounded-xl" data-alt="A professional energy management dashboard with sophisticated line charts, bar graphs, and numerical metrics displayed on a clean interface. The design uses a refined palette of dark greens and sage, conveying a sense of institutional reliability and technical precision. The lighting is bright and modern, suggesting a high-end software solution for property managers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNh9fsiB_0SgT9Jfz387Yb2uRnoCySo6mqC73fjxdeTYSMB369N_2k3Wypa0rnXF0VFqQ_pPArrevG7QXjxQmckptscXT9jkzs6D3buanNOviNYF0uSeIdGwxAY2Ol4NGwjfPvr3bg4KbYlQT9jN_jgGhnWF6z2ngkmvo76CeBgYSDhZRLs1zY6UAcfBLvzBrJsfqG2zPtRNGmYsvOjFZTaz6mo5CvEvcMUWrQ7UH5S36-d6CAe2Hz_244JhZcHfonjMwIC1uKm2M"/>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Piloto (Section 7) -->
+<section class="max-w-container-max-width mx-auto px-8 py-section-padding" id="piloto">
+<div class="bg-primary-container rounded-[20px] p-8 md:p-16 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="text-white">
+<h2 class="font-display-md text-display-md mb-8">Empieza tu piloto hoy</h2>
+<p class="text-on-primary-container mb-12 text-body-lg">Únete a los gestores líderes en España que ya han reducido su huella operativa y económica.</p>
+<ul class="space-y-6">
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-sage-accent">check_circle</span>
+<span class="font-body-md">Primer mes sin compromiso de permanencia.</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-sage-accent">check_circle</span>
+<span class="font-body-md">Sincronización con tu PMS en menos de 48h.</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-sage-accent">check_circle</span>
+<span class="font-body-md">Auditoría gratuita de tus facturas actuales.</span>
+</li>
+</ul>
+</div>
+<div class="bg-white p-8 rounded-[20px]">
+<form class="space-y-4">
+<div>
+<label class="block font-label-sm text-secondary mb-1 uppercase tracking-wider">Nombre Completo</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-sage-accent text-primary-container font-body-md" placeholder="Ej. Juan Pérez" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-secondary mb-1 uppercase tracking-wider">Email Corporativo</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-sage-accent text-primary-container font-body-md" placeholder="juan@gestora.com" type="email"/>
+</div>
+<div>
+<label class="block font-label-sm text-secondary mb-1 uppercase tracking-wider">Número de Propiedades</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-sage-accent text-primary-container font-label-md">
+<option>1-10 propiedades</option>
+<option>11-50 propiedades</option>
+<option>50+ propiedades</option>
+</select>
+</div>
+<button class="w-full bg-sage-accent text-white font-label-md py-4 rounded-xl hover:opacity-90 transition-all mt-4">
+                            Enviar solicitud
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Section 8) -->
+<footer class="bg-primary-container border-t border-primary-fixed-dim">
+<div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center max-w-container-max-width mx-auto gap-gap">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 bg-white/20 rounded-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<span class="font-display-md text-display-md text-white">EnergyOS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container max-w-xs">
+                    © 2024 EnergyOS. Gestión Energética Profesional para el Sector Turístico.
+                </p>
+</div>
+<div class="flex gap-8 mt-8 md:mt-0">
+<a class="text-on-primary-container font-label-sm text-label-sm hover:text-white transition-colors" href="#">Privacidad</a>
+<a class="text-on-primary-container font-label-sm text-label-sm hover:text-white transition-colors" href="#">Términos de Uso</a>
+<a class="text-on-primary-container font-label-sm text-label-sm hover:text-white transition-colors" href="#">Contacto</a>
+<a class="text-on-primary-container font-label-sm text-label-sm hover:text-white transition-colors" href="#">Linkedin</a>
+</div>
+</div>
+</footer>
+</body></html>

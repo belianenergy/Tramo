@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="light" lang="gl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fbf0;
+        }
+        .chart-gradient {
+            background: linear-gradient(180deg, rgba(46, 125, 50, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f1f5eb",
+                      "on-surface": "#181d17",
+                      "surface-bright": "#f7fbf0",
+                      "inverse-on-surface": "#eef2e8",
+                      "on-secondary-fixed-variant": "#6d3a00",
+                      "secondary": "#8f4e00",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#3f001c",
+                      "surface-dim": "#d7dbd2",
+                      "tertiary-fixed-dim": "#ffb1c7",
+                      "tertiary-fixed": "#ffd9e2",
+                      "surface-variant": "#e0e4da",
+                      "on-error-container": "#93000a",
+                      "secondary-container": "#ff8f00",
+                      "on-secondary-container": "#623400",
+                      "tertiary-container": "#b14b6f",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed-variant": "#7f2448",
+                      "on-primary-fixed-variant": "#005312",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed": "#002204",
+                      "surface-container": "#ebefe5",
+                      "inverse-primary": "#88d982",
+                      "outline": "#707a6c",
+                      "outline-variant": "#bfcaba",
+                      "on-tertiary-container": "#ffedf0",
+                      "tertiary": "#923357",
+                      "on-primary-container": "#cbffc2",
+                      "on-surface-variant": "#40493d",
+                      "surface-container-highest": "#e0e4da",
+                      "surface-container-high": "#e5eadf",
+                      "on-secondary": "#ffffff",
+                      "background": "#f7fbf0",
+                      "primary-container": "#2e7d32",
+                      "primary": "#0d631b",
+                      "surface-tint": "#1b6d24",
+                      "primary-fixed-dim": "#88d982",
+                      "on-secondary-fixed": "#2e1500",
+                      "surface": "#f7fbf0",
+                      "primary-fixed": "#a3f69c",
+                      "error": "#ba1a1a",
+                      "secondary-fixed": "#ffdcc2",
+                      "inverse-surface": "#2d322b",
+                      "on-background": "#181d17",
+                      "on-error": "#ffffff",
+                      "secondary-fixed-dim": "#ffb77a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "page_padding": "24px",
+                      "stack_xs": "4px",
+                      "container_max": "1280px",
+                      "gap_md": "16px",
+                      "stack_sm": "8px",
+                      "gap_lg": "24px"
+              },
+              "fontFamily": {
+                      "h3": ["Plus Jakarta Sans"],
+                      "body-lg": ["Inter"],
+                      "data-lg": ["Space Grotesk"],
+                      "data-md": ["Space Grotesk"],
+                      "body-md": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "h2": ["Plus Jakarta Sans"],
+                      "h1": ["Plus Jakarta Sans"],
+                      "label": ["Inter"]
+              },
+              "fontSize": {
+                      "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+                      "data-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "data-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "h1": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label": ["11px", {"lineHeight": "12px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar Implementation -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-page_padding h-16 bg-surface-bright dark:bg-surface-dim border-b border-outline-variant shadow-sm">
+<div class="flex items-center gap-md">
+<span class="font-h2 text-h2 font-bold text-primary dark:text-primary-fixed">EnergyOS</span>
+<div class="hidden md:flex ml-8 items-center gap-6">
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed border-b-2 border-primary py-5" href="#">Panel</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors px-3 py-2 rounded-lg" href="#">Fincas</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors px-3 py-2 rounded-lg" href="#">Apartamentos</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="bg-surface-container-high px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-48" placeholder="Buscar foscas..." type="text"/>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors relative">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User avatar" data-alt="A professional headshot avatar of a modern energy manager with a friendly expression. The background is a soft, solid mint green, matching a corporate light-mode design system. The character has clean lines and a minimalist aesthetic typical of high-quality UI design placeholders." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBecwqj0sj-xVxM_Ks2qEJUNZ6D1ctouQji4VRWPJ45Rz6DB92nMDOk3z6MGgNBgdaMq-lmxtwu8cjr7KSWgPVqNLcgvDtLnXFDh4U2c9HG7VbiPyQ6GDg4tzJaYIqwNsB1GSv238hs61dt_w6o0eOxA6aZNghAVXfDbTutmgB9rzh1m2ygsZ6j8Xw_FCv1uTAX_aKvp-kWdHt7LDTUV3ijt5FzrwcG0t8nJXOJOXt4E6qqtIyYjRKnJALEmYzgPBbGyRTX0J5iOCVy"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar Implementation -->
+<aside class="fixed left-0 top-0 h-full w-64 pt-20 pb-8 flex flex-col z-40 bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant shadow-sm hidden md:flex">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="bolt" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<p class="font-h3 text-h3 font-bold text-primary dark:text-primary-fixed leading-none">EnergyOS Pro</p>
+<p class="text-[10px] uppercase tracking-widest text-outline mt-1">Xestión Enerxética</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-md bg-primary-container dark:bg-primary-fixed-variant text-on-primary-container dark:text-on-primary-fixed-variant rounded-lg px-4 py-2 font-bold shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-sm text-body-sm">Panel</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-4 py-2 hover:bg-surface-container-high transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="font-body-sm text-body-sm">Fincas</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-4 py-2 hover:bg-surface-container-high transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="apartment">apartment</span>
+<span class="font-body-sm text-body-sm">Apartamentos</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-4 py-2 hover:bg-surface-container-high transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="balance">balance</span>
+<span class="font-body-sm text-body-sm">Arbitraxe</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-4 py-2 hover:bg-surface-container-high transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="font-body-sm text-body-sm">Asesor</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-1 border-t border-outline-variant pt-6">
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-4 py-2 hover:bg-surface-container-high transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-sm text-body-sm">Configuración</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-surface-variant px-4 py-2 hover:bg-surface-container-high transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-body-sm text-body-sm">Axuda</span>
+</a>
+<a class="flex items-center gap-md text-error px-4 py-2 hover:bg-error-container/20 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-body-sm text-body-sm">Pechar sesión</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-24 px-page_padding pb-12 max-w-container_max mx-auto">
+<!-- Dashboard Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<h1 class="font-h1 text-h1 text-on-surface">Panel Principal</h1>
+<p class="text-on-surface-variant font-body-lg">Visión xeral do rendemento enerxético das túas comunidades.</p>
+</div>
+<div class="flex gap-stack_sm">
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-body-md flex items-center gap-2 hover:opacity-90 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+                    Nova Comunidade
+                </button>
+</div>
+</div>
+<!-- KPI Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg mb-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<p class="text-label text-outline uppercase tracking-wider">Total Comunidades</p>
+<div class="p-2 bg-secondary-fixed text-on-secondary-fixed rounded-lg">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-[48px] font-bold text-on-surface leading-none font-h1">12</span>
+<span class="text-primary font-body-sm flex items-center">+1 este mes</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<p class="text-label text-outline uppercase tracking-wider">kWh Mensual</p>
+<div class="p-2 bg-primary-fixed text-on-primary-fixed rounded-lg">
+<span class="material-symbols-outlined" data-icon="electric_bolt">electric_bolt</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-[48px] font-bold text-on-surface leading-none font-h1">45.2k</span>
+<span class="text-error font-body-sm flex items-center">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+                        4.2%
+                    </span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<p class="text-label text-outline uppercase tracking-wider">Costo Mensual</p>
+<div class="p-2 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-[48px] font-bold text-on-surface leading-none font-h1">8.420€</span>
+<span class="text-primary font-body-sm flex items-center">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_down">trending_down</span>
+                        1.5%
+                    </span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<p class="text-label text-outline uppercase tracking-wider">Alertas Activas</p>
+<div class="p-2 bg-secondary-container text-on-secondary-container rounded-lg">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-[48px] font-bold text-on-surface leading-none font-h1">3</span>
+<span class="text-outline font-body-sm">Prioridade alta</span>
+</div>
+</div>
+</div>
+<!-- Main Content Area: Bento Style -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Consumo Agregado Chart -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Consumo Agregado</h3>
+<p class="text-on-surface-variant text-body-sm">Distribución de enerxía en toda a rede</p>
+</div>
+<div class="flex bg-surface-container rounded-lg p-1">
+<button class="px-4 py-1.5 rounded-md text-body-sm font-medium transition-all">24H</button>
+<button class="px-4 py-1.5 rounded-md text-body-sm font-medium transition-all">7D</button>
+<button class="px-4 py-1.5 rounded-md text-body-sm font-medium bg-surface-container-lowest shadow-sm">30D</button>
+</div>
+</div>
+<div class="h-64 w-full relative mb-4">
+<div class="absolute inset-0 flex items-end justify-between gap-2">
+<!-- Simplified Visualization Bars for Illustration -->
+<div class="w-full h-[40%] bg-primary/20 rounded-t-sm"></div>
+<div class="w-full h-[55%] bg-primary/20 rounded-t-sm"></div>
+<div class="w-full h-[45%] bg-primary/20 rounded-t-sm"></div>
+<div class="w-full h-[70%] bg-primary/20 rounded-t-sm"></div>
+<div class="w-full h-[85%] bg-primary rounded-t-sm"></div>
+<div class="w-full h-[60%] bg-primary/20 rounded-t-sm"></div>
+<div class="w-full h-[50%] bg-primary/20 rounded-t-sm"></div>
+<div class="w-full h-[65%] bg-primary/20 rounded-t-sm"></div>
+<div class="w-full h-[40%] bg-primary/20 rounded-t-sm"></div>
+<div class="w-full h-[30%] bg-primary/20 rounded-t-sm"></div>
+<div class="w-full h-[55%] bg-primary/20 rounded-t-sm"></div>
+<div class="w-full h-[75%] bg-primary/20 rounded-t-sm"></div>
+</div>
+</div>
+<div class="flex justify-between text-label text-outline px-2">
+<span>1 Ago</span>
+<span>7 Ago</span>
+<span>14 Ago</span>
+<span>21 Ago</span>
+<span>28 Ago</span>
+</div>
+</div>
+<!-- Right Sidebar: AI Asesor & Arbitraxe -->
+<div class="lg:col-span-4 flex flex-col gap-lg">
+<!-- AI Asesor Card -->
+<div class="bg-primary-container text-on-primary-container p-6 rounded-xl shadow-lg relative overflow-hidden group">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-on-primary-container/10 rounded-full blur-2xl"></div>
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 bg-on-primary-container/20 rounded-full flex items-center justify-center backdrop-blur-md">
+<span class="material-symbols-outlined text-white" data-icon="auto_awesome" data-weight="fill" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<h4 class="font-h3 text-h3 text-white">AI Asesor</h4>
+</div>
+<p class="text-primary-fixed font-body-md mb-6 leading-relaxed">
+                        Detectou unha oportunidade de optimización na comunidade 'Vigo Centro'.
+                    </p>
+<div class="bg-on-primary-container/20 rounded-lg p-4 mb-6 backdrop-blur-sm border border-on-primary-container/10">
+<p class="text-label uppercase tracking-widest text-primary-fixed/80 mb-1">Aforro Estimado</p>
+<p class="text-[28px] font-bold text-white font-data-lg">8.500€<span class="text-lg font-normal opacity-80">/ano</span></p>
+</div>
+<button class="w-full bg-white text-primary font-bold py-3 rounded-lg hover:bg-primary-fixed transition-colors">
+                        Revisar Estratexia
+                    </button>
+</div>
+<!-- Arbitraxe & Status -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-h3 text-h3 text-on-surface">Arbitraxe</h4>
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full uppercase">Activo</span>
+</div>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-body-sm mb-2">
+<span class="text-on-surface-variant">Ciclo de mercado</span>
+<span class="font-bold text-on-surface">75%</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[75%] rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+<span class="text-body-sm text-on-surface-variant">Hub: 8 comunidades online</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="hub">hub</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Table: Listado de Comunidades -->
+<div class="lg:col-span-12 bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-on-surface">Listado de Comunidades</h3>
+<button class="text-primary font-body-md flex items-center gap-1 hover:underline">
+                        Ver todo
+                        <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-label text-outline uppercase tracking-wider">
+<tr>
+<th class="px-6 py-4">Nome</th>
+<th class="px-6 py-4">Unidades</th>
+<th class="px-6 py-4">Consumo (kWh)</th>
+<th class="px-6 py-4">Custo (€)</th>
+<th class="px-6 py-4">Estado</th>
+<th class="px-6 py-4 text-right">Accións</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4 font-body-md text-on-surface font-bold">Vigo Centro - Res. Aurora</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">124</td>
+<td class="px-6 py-4 text-body-md font-medium">12,450</td>
+<td class="px-6 py-4 text-body-md font-medium">2,150.00</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase">
+                                        Optimizado
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-surface-container-high rounded-full"><span class="material-symbols-outlined text-outline" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4 font-body-md text-on-surface font-bold">Edificio Camiño Real</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">45</td>
+<td class="px-6 py-4 text-body-md font-medium">4,210</td>
+<td class="px-6 py-4 text-body-md font-medium">845.20</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/10 text-secondary-container text-xs font-bold uppercase">
+                                        Analizando
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-surface-container-high rounded-full"><span class="material-symbols-outlined text-outline" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4 font-body-md text-on-surface font-bold">Urbanización Os Tilos</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">210</td>
+<td class="px-6 py-4 text-body-md font-medium">28,900</td>
+<td class="px-6 py-4 text-body-md font-medium">5,424.80</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-error/10 text-error text-xs font-bold uppercase">
+                                        Alerta
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-surface-container-high rounded-full"><span class="material-symbols-outlined text-outline" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-[32px]" data-icon="bolt">bolt</span>
+</button>
+</body></html>

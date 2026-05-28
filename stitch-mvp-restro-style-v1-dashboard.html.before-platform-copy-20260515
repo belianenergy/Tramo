@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EnergyOS - Dashboard Operativo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffdcc3",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary-fixed": "#b6ebff",
+                        "secondary-container": "#fe932c",
+                        "inverse-surface": "#313030",
+                        "tertiary-container": "#00a9ce",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "on-background": "#1c1b1b",
+                        "surface-variant": "#e5e2e1",
+                        "background": "#fcf9f8",
+                        "secondary": "#904d00",
+                        "surface-container-highest": "#e5e2e1",
+                        "primary-fixed-dim": "#ffb68a",
+                        "outline-variant": "#dbc1b3",
+                        "on-tertiary-container": "#003846",
+                        "on-secondary-container": "#663500",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "outline": "#887367",
+                        "inverse-primary": "#ffb68a",
+                        "on-tertiary-fixed-variant": "#004e60",
+                        "tertiary-fixed-dim": "#57d5fc",
+                        "on-surface": "#1c1b1b",
+                        "inverse-on-surface": "#f3f0ef",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container": "#f0eded",
+                        "on-surface-variant": "#554338",
+                        "surface-tint": "#984700",
+                        "primary": "#984700",
+                        "on-tertiary-fixed": "#001f28",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fcf9f8",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "on-secondary-fixed": "#2f1500",
+                        "on-primary-fixed": "#321300",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#e6813a",
+                        "tertiary": "#00677f",
+                        "primary-fixed": "#ffdbc8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#743500",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#562500",
+                        "surface-container-high": "#eae7e7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "restro": "32px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-padding": "32px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "title-sm": ["Plus Jakarta Sans"],
+                        "number-data": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "500"}],
+                        "number-data": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F4F1EA;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .restro-card {
+            background-color: #ffffff;
+            border: 1px solid #E8E2D8;
+            border-radius: 32px;
+            padding: 32px;
+            transition: all 0.2s ease;
+        }
+        .restro-card:hover {
+            border-color: #E6813A;
+            background-color: #fcf9f8;
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[80px] flex flex-col border-r border-outline-variant bg-surface dark:bg-inverse-surface py-8 gap-y-6 items-center">
+<div class="mb-8">
+<span class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface">CNS</span>
+</div>
+<nav class="flex flex-col gap-y-4">
+<a class="bg-primary-container text-on-primary-container rounded-full p-3 transition-transform scale-95 active:scale-90" href="#" title="Dashboard">
+<span class="material-symbols-outlined">dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all p-3 rounded-full" href="#" title="Apartamentos">
+<span class="material-symbols-outlined">apartment</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all p-3 rounded-full" href="#" title="Operaciones">
+<span class="material-symbols-outlined">handyman</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all p-3 rounded-full" href="#" title="Informes">
+<span class="material-symbols-outlined">analytics</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all p-3 rounded-full" href="#" title="Tarifa">
+<span class="material-symbols-outlined">payments</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all p-3 rounded-full" href="#" title="Leads">
+<span class="material-symbols-outlined">person_search</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all p-3 rounded-full" href="#" title="Configuración">
+<span class="material-symbols-outlined">settings</span>
+</a>
+</nav>
+<div class="mt-auto">
+<a class="text-on-surface-variant hover:text-primary transition-colors p-3" href="#" title="Ayuda">
+<span class="material-symbols-outlined">help_outline</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-[80px] h-16 flex items-center px-margin-desktop bg-background border-b border-outline-variant z-10">
+<div class="flex justify-between items-center w-full max-w-[1440px] mx-auto">
+<div class="flex items-center gap-4">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Costa Norte Stays</span>
+<span class="h-4 w-[1px] bg-outline-variant"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">PANEL OPERATIVO</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">calendar_today</span>
+<div class="relative">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-caps text-label-caps hover:bg-primary-container transition-colors">
+                    Nueva Operación
+                </button>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant">
+<div class="text-right hidden lg:block">
+<p class="font-label-caps text-label-caps leading-none">Usuario Gestor</p>
+<p class="text-[10px] text-on-surface-variant">Admin</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Usuario Gestor" class="w-full h-full object-cover" data-alt="A professional headshot of a mid-40s male property manager with a friendly expression. He is wearing a clean linen shirt in a brightly lit, modern architectural office space. The lighting is soft and natural, emphasizing a high-end, clean light-mode aesthetic with a professional and trustworthy mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUXjcFqorhjicDm33gKQxmvidnH_ZPsH11AO2gytXSp7DtSlhXF7naCyP0qL6TXya-V_9p4Bq7Khla6heneTkNCIhJ1oBoQ6sow9fPKJqxH94vyo0_wyNhkwmIEXgiPedIfRDms2Wy5yiHgzUpcMg_KNR6BikO1UbIDGTngs5X9Cw0ZuqjcMmu4qH0JXsgjX2qSUMGM2LMCwpY9m08u_3Ht77gmCevXHUTiGjBZLC39Nptg1R_hu7m1Bki5sHrO9i5ApfHbF4bdHNN"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-[80px] pt-24 px-margin-desktop pb-12 max-w-[1440px] mx-auto">
+<!-- KPI Row -->
+<section class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-gutter mb-8">
+<div class="restro-card p-6 flex flex-col justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4">A/C ACTIVO SIN RESERVA</span>
+<div class="flex items-baseline gap-2">
+<span class="font-number-data text-number-data text-primary">3</span>
+<span class="text-on-surface-variant font-label-caps text-[10px]">UNIDADES</span>
+</div>
+</div>
+<div class="restro-card p-6 flex flex-col justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4">PRE-CHECK-INS HOY</span>
+<div class="flex items-baseline gap-2">
+<span class="font-number-data text-number-data text-on-surface">12</span>
+<span class="text-on-surface-variant font-label-caps text-[10px]">HUESPEDES</span>
+</div>
+</div>
+<div class="restro-card p-6 flex flex-col justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4">POST-CHECK-OUTS</span>
+<div class="flex items-baseline gap-2">
+<span class="font-number-data text-number-data text-on-surface">8</span>
+<span class="text-on-surface-variant font-label-caps text-[10px]">PENDIENTES</span>
+</div>
+</div>
+<div class="restro-card p-6 flex flex-col justify-between border-error/20">
+<span class="font-label-caps text-label-caps text-error mb-4">ALERTAS ABIERTAS</span>
+<div class="flex items-baseline gap-2">
+<span class="font-number-data text-number-data text-error">7</span>
+<span class="material-symbols-outlined text-error text-lg" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+</div>
+<div class="restro-card p-6 flex flex-col justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4">CONSUMO FUERA ESTANCIA</span>
+<div class="flex items-baseline gap-2">
+<span class="font-number-data text-number-data text-primary">3,8</span>
+<span class="text-on-surface-variant font-label-caps text-[12px]">kW</span>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Priority Module -->
+<section class="lg:col-span-7 flex flex-col gap-gutter">
+<div class="restro-card bg-surface-container-low border-primary/30">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-caps text-[10px] mb-2 inline-block">PRIORIDAD AHORA</span>
+<h2 class="font-headline-md text-headline-md">VGO-014 · Apartamento Areal</h2>
+<p class="text-on-surface-variant font-body-md mt-1">Vigo, Pontevedra</p>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl">hvac</span>
+</div>
+<div class="bg-white/80 rounded-2xl p-6 mb-6 flex items-center justify-between border border-outline-variant">
+<div class="flex items-center gap-4">
+<div class="bg-error/10 p-3 rounded-full">
+<span class="material-symbols-outlined text-error">priority_high</span>
+</div>
+<div>
+<p class="font-title-sm text-title-sm text-error">A/C encendido sin estancia</p>
+<p class="text-on-surface-variant text-body-md">Consumo actual: 1,84 kW · Siguiente reserva: Mañana</p>
+</div>
+</div>
+<button class="bg-on-surface text-surface px-6 py-3 rounded-full font-label-caps text-label-caps hover:bg-primary transition-all active:scale-95">
+                            Resolver
+                        </button>
+</div>
+<div class="w-full h-48 rounded-2xl overflow-hidden grayscale contrast-125 opacity-80 border border-outline-variant">
+<img alt="VGO-014 Apartment" class="w-full h-full object-cover" data-alt="A luxurious minimalist living room with high ceilings, large industrial windows overlooking a city harbor, and designer mid-century furniture. The interior uses a neutral color palette of creams and light woods, reflecting a high-end architectural photography style. The lighting is crisp afternoon sun casting long, soft shadows, creating a clean and premium operational atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVZ8Dhp99xArMvx68gVe7Sq8yKsrKBFgyLuUoM1gHNFT1qLkbjjAE2kow_Fx9MFZGED-QgG5k09wo7lcaYGJuRg4fZVW1-T0CNjtD-Qc0_Zdz_CctNJ4rg3Vaw7ZzdhbXy0Hy6Ge9bixYncSL9G4kNxHOrxFf5quFdV2g-G3rb1tix9IZHQsPyf7nKfZh3lLQS4Ddgb-Nt18p-EaMSVmKh-wXvtjSOYtH1bN8Cn3GgD2qOEl8teSUzbUkPFlP-0OV2AkPrh8MZxrsG"/>
+</div>
+</div>
+<!-- Recent Operations -->
+<div class="restro-card">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-title-sm text-title-sm">Operaciones recientes</h3>
+<button class="text-primary font-label-caps text-label-caps hover:underline">Ver todas</button>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<div class="flex items-center gap-4">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div>
+<p class="font-body-md font-medium">A/C detectado sin reserva en VGO-014</p>
+<p class="text-on-surface-variant text-xs">Sistema automático</p>
+</div>
+</div>
+<span class="text-on-surface-variant font-label-caps text-[11px]">Hace 46 min</span>
+</div>
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<div class="flex items-center gap-4">
+<div class="w-2 h-2 rounded-full bg-secondary-container"></div>
+<div>
+<p class="font-body-md font-medium">Pre-enfriado activado para SCQ-022</p>
+<p class="text-on-surface-variant text-xs">Programado</p>
+</div>
+</div>
+<span class="text-on-surface-variant font-label-caps text-[11px]">Hace 1h</span>
+</div>
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<div class="flex items-center gap-4">
+<div class="w-2 h-2 rounded-full bg-on-surface-variant"></div>
+<div>
+<p class="font-body-md font-medium">Check-out cerrado en LCG-008</p>
+<p class="text-on-surface-variant text-xs">Marta Lago</p>
+</div>
+</div>
+<span class="text-on-surface-variant font-label-caps text-[11px]">Hace 2h</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-2 h-2 rounded-full bg-tertiary-container"></div>
+<div>
+<p class="font-body-md font-medium">Informe enviado a Marta Lago</p>
+<p class="text-on-surface-variant text-xs">Automatización semanal</p>
+</div>
+</div>
+<span class="text-on-surface-variant font-label-caps text-[11px]">Hoy 10:00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Charts Column -->
+<section class="lg:col-span-5 flex flex-col gap-gutter">
+<!-- Line Chart Module -->
+<div class="restro-card">
+<div class="mb-8">
+<h3 class="font-title-sm text-title-sm mb-1">Consumo fuera de estancia</h3>
+<p class="text-on-surface-variant text-xs font-label-caps">ÚLTIMAS 24 HORAS (kW)</p>
+</div>
+<div class="h-48 flex items-end justify-between gap-1 relative pt-4">
+<!-- Simulated fine-line chart -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 400 100">
+<path d="M0,80 Q50,75 80,60 T140,70 T200,40 T260,85 T320,30 T400,50" fill="none" stroke="#E6813A" stroke-width="1.5"></path>
+<circle cx="320" cy="30" fill="#E6813A" r="3"></circle>
+</svg>
+<div class="absolute bottom-0 w-full flex justify-between px-2 text-[10px] text-on-surface-variant font-label-caps">
+<span>00:00</span>
+<span>06:00</span>
+<span>12:00</span>
+<span>18:00</span>
+<span>23:59</span>
+</div>
+</div>
+</div>
+<!-- Bar Chart Module -->
+<div class="restro-card flex-grow">
+<div class="mb-8">
+<h3 class="font-title-sm text-title-sm mb-1">Consumo por ciudad</h3>
+<p class="text-on-surface-variant text-xs font-label-caps">DISTRIBUCIÓN AGREGADA (MWh)</p>
+</div>
+<div class="space-y-8">
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-body-md font-medium">Vigo</span>
+<span class="font-label-caps text-label-caps">1.24 MWh</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-body-md font-medium">Santiago</span>
+<span class="font-label-caps text-label-caps">0.86 MWh</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 52%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-body-md font-medium">A Coruña</span>
+<span class="font-label-caps text-label-caps">0.98 MWh</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 60%"></div>
+</div>
+</div>
+</div>
+<div class="mt-12 p-6 bg-surface-container-lowest rounded-2xl border border-outline-variant text-center">
+<span class="material-symbols-outlined text-primary-container mb-2 block text-3xl">insights</span>
+<p class="font-body-md text-on-surface-variant">El consumo en Vigo es un 22% superior a la media de red debido a la incidencia en VGO-014.</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>
