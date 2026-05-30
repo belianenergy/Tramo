@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@frontman-ai/nextjs": "^0.6.5",
     "@gsap/react": "^2.1.2",
     "@number-flow/react": "^0.6.0",
     "@phosphor-icons/react": "^2.1.10",
@@ -43,6 +44,7 @@
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
+    "@opentelemetry/sdk-node": "^0.218.0",
     "@tailwindcss/postcss": "^4.2.4",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
