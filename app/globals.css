@@ -1,133 +1,104 @@
-/* Tramo · Workbench + ReflexAI DNA
- * paper: #f9f8f5 · ink: #061F00 (forest) · accent: #A5E119 (lime) · forest: #061F00
- * fonts: Plus Jakarta Sans (display) + Inter (body) + JetBrains Mono (data)
- * motion: GSAP ScrollTrigger + CSS only · reduced-motion: opacity crossfade
+/* Tramo — Dia Browser Style Reference
+ * Prism on white stationery — light refracts color from a nearly monochrome surface.
+ * Single typeface: Inter (300 light, 400 regular, 500 medium)
+ * Frosted glass cards, spectrum gradient signature, neutral buttons
  */
 
 @import "tailwindcss";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
-
-/* ═══════════════════════════════════════════════════
-   REFLEXAI-INSPIRED EDITORIAL — Design Tokens
-   ═══════════════════════════════════════════════════ */
-
 :root {
-  /* Paper — warm editorial */
-  --color-paper: #f9f8f5;
-  --color-surface: #FFFFFF;
-  --color-surface-alt: #f4f3ef;
+  /* Dia palette */
+  --ink: #000000;
+  --snow: #ffffff;
+  --canvas: #f8f8f8;
+  --fog: #efefef;
+  --pebble: #d9d9d9;
+  --graphite: #636363;
+  --slate: #959595;
+  --steel: #aeaeae;
+  --ash: #7c7c7c;
 
-  /* Ink — ReflexAI forest #061F00 (≈ lab(9.2, -15, 13.3)) */
-  --color-ink: #061F00;
-  --color-ink-soft: #0F2E08;
-  --color-muted: #5B6B5F;
-  --color-soft: #748276;
+  /* Spectrum gradient — THE brand color */
+  --gradient-spectrum: linear-gradient(90deg, #c679c4 0%, #fa3d1d 25%, #ffb005 50%, #e1e1fe 75%, #0358f7 100%);
+  --color-rose: #c679c4;
+  --color-crimson: #fa3d1d;
+  --color-amber: #ffb005;
+  --color-lavender: #e1e1fe;
+  --color-blue: #0358f7;
 
-  /* Borders — ReflexAI beige-50 */
-  --color-border: #D9D7C8;
-  --color-border-strong: #C8C5B4;
+  /* Backward compat aliases */
+  --color-paper: var(--canvas);
+  --color-surface: var(--snow);
+  --color-surface-alt: var(--fog);
+  --color-ink: var(--ink);
+  --color-border: var(--fog);
+  --color-border-strong: #d4d4d4;
+  --color-muted: var(--graphite);
+  --color-soft: var(--slate);
+  --color-lime: var(--color-blue);
+  --color-warning: var(--color-amber);
+  --color-success: var(--color-blue);
+  --color-accent-ink: var(--color-crimson);
 
-  /* Accent — lime #A5E119 · Forest #061F00 */
-  --color-accent: #A5E119;
-  --color-accent-ink: #7BAF0A;
-  --color-accent-soft: #eef7d3;
-  --color-forest: #061F00;
-  --color-lime: #A5E119;
+  /* Typography */
+  --font-display: var(--font-display), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 
-  /* Data sections — dark mode */
-  --color-data-bg: #111827;
-  --color-data-surface: #1f2937;
-  --color-data-border: #374151;
-  --color-data-ink: #f9fafb;
-  --color-data-muted: #9ca3af;
+  /* Shadows */
+  --shadow-card: rgba(0, 0, 0, 0.08) 0px 0px 8px 0px;
 
-  /* Data viz — sen laranxa */
-  --color-viz-in-reserva: #A5E119;
-  --color-viz-fuera-reserva: #dc2626;
-  --color-viz-idle: #c4c0b6;
-  --color-viz-ahorro: #5ee8c2;
-  --color-viz-carga-bateria: #061F00;
-  --color-viz-descarga: #fca5a5;
+  /* Radii */
+  --radius-cards: 30px;
+  --radius-buttons: 30px;
+  --radius-images: 10px;
+  --radius-nav: 16px;
+  --radius-pill: 9999px;
 
-  /* States — warning en vermello, sen laranxa */
-  --color-success: #059669;
-  --color-warning: #b91c1c;
-  --color-danger: #dc2626;
-
-  /* Typography — Plus Jakarta Sans display · Inter body */
-  --font-display: var(--font-jakarta), system-ui, sans-serif;
-  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-jetbrains), 'Fira Code', ui-monospace, monospace;
-
-  /* Radius — industriais */
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
-
-  /* Shadows — só funcionais */
-  --shadow-focus: 0 0 0 3px rgba(9, 207, 88, 0.25);
+  /* Layout */
+  --page-max: 1200px;
 }
 
-/* ── Tailwind CSS variable mappings ── */
 @theme inline {
-  --color-background: var(--color-paper);
-  --color-foreground: var(--color-ink);
+  --color-background: var(--canvas);
+  --color-foreground: var(--ink);
   --font-sans: var(--font-body);
   --font-mono: var(--font-mono);
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
+  --color-card: var(--snow);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--snow);
+  --color-popover-foreground: var(--ink);
+  --color-primary: var(--pebble);
+  --color-primary-foreground: var(--ink);
+  --color-secondary: var(--fog);
+  --color-secondary-foreground: var(--ink);
+  --color-muted: var(--fog);
+  --color-muted-foreground: var(--slate);
+  --color-accent-shadcn: var(--fog);
+  --color-accent-shadcn-foreground: var(--ink);
+  --color-destructive: #fa3d1d;
+  --color-destructive-foreground: var(--snow);
+  --color-border: var(--fog);
+  --color-input: var(--ash);
+  --color-ring: var(--ink);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
 }
 
-/* ── Base ── */
-* { border-color: var(--color-border); }
-
-html {
-  font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.45;
-  color: var(--color-ink);
-  background: var(--color-paper);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
-}
+* { border-color: transparent; }
 
 body {
-  min-height: 100vh;
-  background: var(--color-paper);
-  overflow-x: clip;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ── Typography — ReflexAI-inspired: positive tracking ~0.01em, weight ~450 */
-h1, h2, h3, h4, .font-display {
-  font-family: var(--font-display);
-  font-weight: 500;
-  letter-spacing: 0.005em;
-  line-height: 1.05;
-}
+html { scroll-behavior: smooth; }
 
-.font-mono, .tabular-nums { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
-
-/* ── Focus ── */
-:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
-/* ── Scrollbar ── */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--color-soft); }
-
-/* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }

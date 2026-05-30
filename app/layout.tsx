@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono, Plus_Jakarta_Sans } from 'next/font/google'
+import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Geist } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
-const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-jakarta', display: 'swap' })
+const geist = Geist({ subsets: ['latin'], variable: '--font-display', display: 'swap' })
 const jetbrains = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains', display: 'swap' })
 
 export const metadata: Metadata = {
@@ -58,7 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className={`${inter.variable} ${jakarta.variable} ${jetbrains.variable} antialiased min-h-screen bg-background`}>{children}</body>
+      <body className={`${inter.variable} ${geist.variable} ${jetbrains.variable} antialiased min-h-screen bg-background`}>{children}</body>
     </html>
   )
 }
