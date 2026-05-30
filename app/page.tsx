@@ -1,403 +1,411 @@
-/* Hallmark · redesign · pre-emit critique: P5 H5 E5 S4 R5 V4 */
-
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
-import { gsap } from 'gsap';
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import {
-  Activity,
-  ArrowRight,
-  BatteryCharging,
-  BellRing,
-  Building2,
-  CalendarClock,
-  CheckCircle2,
-  Database,
-  FileText,
-  Gauge,
-  LockKeyhole,
-  Menu,
-  PlugZap,
-  ShieldCheck,
-  SlidersHorizontal,
-  X,
-  Zap,
+  ArrowRight, BatteryCharging, BellRing, Building2, CalendarClock,
+  CheckCircle2, Database, FileText, Gauge, Layers3, LockKeyhole,
+  Menu, PlugZap, ReceiptText, ShieldCheck, SlidersHorizontal,
+  Sparkles, X, Zap, TrendingUp, BarChart3, Activity,
+  type LucideIcon,
 } from 'lucide-react';
-import { useEffect, useRef, useState, type ReactNode } from 'react';
-import SystemFlowScroll from './components/SystemFlowScroll';
-import HeroInteractiveDemo from './components/HeroInteractiveDemo';
-import { BatteryArbitrageSVG, SmartHomeSVG } from './components/TramoIllustrations';
+import { useRef, useState, type FormEvent, type ReactNode } from 'react';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const BAR_DELAYS = [20, 25, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 160, 170, 190, 200, 220];
+// ── Data ──
 
 const navItems = [
-  ['Problema', '#problema'],
-  ['Sistema', '#sistema'],
-  ['Módulos', '#modulos'],
-  ['Dashboard', '#dashboard'],
-  ['Diagnóstico', '#diagnostico'],
-] as const;
-
-const painCards = [
-  {
-    number: '01',
-    title: 'La factura llega tarde',
-    body: 'El consumo fuera de estancia se descubre semanas después, cuando ya no hay margen operativo para actuar.',
-    data: '4,2 kWh fuera de reserva',
-  },
-  {
-    number: '02',
-    title: 'Potencia y tarifa heredadas',
-    body: 'Cada CUPS arrastra una potencia y una tarifa que rara vez se revisan con los picos reales de la propiedad.',
-    data: 'P2 4,6 kW → 3,3 kW',
-  },
-  {
-    number: '03',
-    title: 'Propietarios sin explicación',
-    body: 'El propietario ve coste. La gestora necesita evidencias, acciones y contexto para defender cada liquidación.',
-    data: 'Informe abril listo',
-  },
+  ['Producto', '#producto'],
+  ['Operación', '#accion'],
+  ['Precios', '#precios'],
+  ['Contacto', '#diagnostico'],
 ];
 
-const coreModules = [
-  {
-    id: 'fuera',
-    label: 'Fuera de reserva',
-    title: 'Detecta kWh que no pertenecen a ninguna estancia',
-    description:
-      'Tramo cruza reservas, ventanas de limpieza y lecturas disponibles para separar estancia, operativo e incidencia.',
-    bullets: ['Checkout y check-in como límites reales', 'Alertas por consumo constante sin reserva', 'Evidencia preparada para la cola operativa'],
-    stat: '4,2 kWh',
-    statLabel: 'detectados tras checkout',
-  },
-  {
-    id: 'tarifa',
-    label: 'Tarifa y potencia',
-    title: 'Revisa P1/P2 con datos reales de cada CUPS',
-    description:
-      'La potencia contratada deja de ser una decisión heredada: se compara con picos, facturas y periodos tarifarios.',
-    bullets: ['CUPS y factura vinculados a cada propiedad', 'Recomendaciones prudentes por periodo', 'Historial para justificar cambios'],
-    stat: '3,3 kW',
-    statLabel: 'P2 recomendada',
-  },
-  {
-    id: 'reglas',
-    label: 'Reglas por reserva',
-    title: 'Convierte señales en acciones alrededor de la estancia',
-    description:
-      'Las incidencias se traducen en reglas operativas para termo, AC, climatización, modo ahorro y avisos al equipo.',
-    bullets: ['Regla post-checkout 45 min', 'Pre-check-in con confort limitado', 'Escalado si el consumo persiste'],
-    stat: '18',
-    statLabel: 'reglas activas',
-  },
-  {
-    id: 'informes',
-    label: 'Informes propietarios',
-    title: 'Transforma evidencia técnica en explicación defendible',
-    description:
-      'Cada propietario recibe un resumen mensual claro: consumo atribuido, incidencias, acciones y estimaciones prudentes.',
-    bullets: ['kWh por estancia y fuera de reserva', 'Acciones ejecutadas por la gestora', 'Resumen listo para liquidación'],
-    stat: '412 kWh',
-    statLabel: 'informados en abril',
-  },
+const stats = [
+  ['+30%', 'reducción en standby', '#fa3d1d'],
+  ['14 días', 'detección de fuga', '#ffb005'],
+  ['2.400 kWh', 'ahorro anual medio', '#0358f7'],
 ];
 
-const actionRows = [
-  ['VGO-014', 'Fuera de reserva', 'checkout 11:00 · consumo 13:10-16:40', 'Revisar termo/AC'],
-  ['COR-007', 'Tarifa/Potencia', 'P2 actual 4,6 kW · pico real 2,8 kW', 'Preparar cambio P2'],
-  ['SJO-021', 'Reglas', 'termo activo tras salida 10:30', 'Aplicar post-checkout'],
-  ['BCN-055', 'Informe', '17 kWh fuera reserva · Costa Rentals', 'Validar informe'],
+const problems = [
+  { title: 'Energía fantasma', body: 'El 40% del consumo ocurre fuera de estancia. Nevera, WiFi, termostato. No se atribuye.', metric: '01 · Detección', icon: Zap, accent: '#fa3d1d', accentSoft: 'rgba(250, 61, 29, 0.08)' },
+  { title: 'Potencia contratada errónea', body: 'La mayoría paga de más por potencia contratada. Otros saltan el ICP cada semana.', metric: '02 · Optimización', icon: Gauge, accent: '#ffb005', accentSoft: 'rgba(255, 176, 5, 0.08)' },
+  { title: 'Informes manuales', body: 'Excel con datos de Datadis copiados a mano. Cada propietario recibe versiones distintas.', metric: '03 · Atribución', icon: FileText, accent: '#0358f7', accentSoft: 'rgba(3, 88, 247, 0.08)' },
+  { title: 'Sin visibilidad operativa', body: 'Las alarmas de Shelly no se correlacionan con reservas. No hay priorización real.', metric: '04 · Loop cerrado', icon: Activity, accent: '#c679c4', accentSoft: 'rgba(198, 121, 196, 0.08)' },
 ];
 
-const properties = [
-  ['VGO-014', 'Vigo Centro', 'Vacío', '4,2 kWh', 'Alerta'],
-  ['COR-007', 'A Coruña Marina', 'Ocupado', '386 kWh', 'P1/P2'],
-  ['SJO-021', 'Sanxenxo Playa', 'Limpieza', '33 kWh', 'Regla'],
-  ['MDR-003', 'Madrid Letras', 'Ocupado', '512 kWh', 'Correcto'],
+const modules = [
+  { title: 'Monitorización en tiempo real', body: 'Consumo por CUPS, por reserva, por estancia. Atribución granular.', icon: Gauge, tags: ['Shelly', 'Datadis'], accent: '#0358f7', accentSoft: 'rgba(3, 88, 247, 0.08)' },
+  { title: 'Atribución por reserva', body: 'Cada kWh se asigna a una reserva, zona común o standby estructural.', icon: Database, tags: ['Algoritmo', 'Trazable'], accent: '#c679c4', accentSoft: 'rgba(198, 121, 196, 0.08)' },
+  { title: 'Recomendación de potencia', body: 'Análisis histórico de picos. Potencia óptima sin riesgo de corte.', icon: SlidersHorizontal, tags: ['IA', 'Histórico'], accent: '#ffb005', accentSoft: 'rgba(255, 176, 5, 0.08)' },
+  { title: 'Informes por propietario', body: 'PDFs automáticos con consumo, coste y acciones.', icon: FileText, tags: ['PDF', 'Automático'], accent: '#fa3d1d', accentSoft: 'rgba(250, 61, 29, 0.08)' },
+  { title: 'Control de electrodomésticos', body: 'ACS, climatización y VE. Reglas por tarifa.', icon: BatteryCharging, tags: ['Shelly', 'Relay'], accent: '#c679c4', accentSoft: 'rgba(198, 121, 196, 0.08)' },
+  { title: 'Batería y arbitraje', body: 'Carga en horas valle, descarga en punta. Maximiza autoconsumo.', icon: PlugZap, tags: ['Huawei', 'Arbitraje'], accent: '#0358f7', accentSoft: 'rgba(3, 88, 247, 0.08)' },
 ];
 
-function cssVar(name: string) {
-  return `var(${name})`;
+const pricingTiers = [
+  { name: 'Starter', price: '150-250', aptos: '5-15', features: ['Monitorización', 'Informes mensuales', 'Atribución por reserva', 'Soporte email'], recommended: false, accent: '#c679c4' },
+  { name: 'Pro', price: '300-500', aptos: '15-50', features: ['Todo Starter', 'Recomendación potencia', 'Control remoto', 'Informes propietarios', 'Soporte prioritario'], recommended: true, accent: '#fa3d1d' },
+  { name: 'Business', price: '500-750', aptos: '50-100', features: ['Todo Pro', 'Batería y arbitraje', 'API abierta', 'Multi-PMS', 'Gestor dedicado'], recommended: false, accent: '#ffb005' },
+  { name: 'Scale', price: '750-1.250', aptos: '100+', features: ['Todo Business', 'White-label', 'SLA 99.9%', 'Integración a medida', 'Onboarding dedicado'], recommended: false, accent: '#0358f7' },
+];
+
+const diagnosticSelects = [
+  { label: 'Tipo de gestor', name: 'manager_type', options: ['Seleccionar…', 'Gestor profesional', 'Propietario múltiple', 'Plataforma turística', 'Otro'] },
+  { label: 'Factura mensual', name: 'bill_range', options: ['Seleccionar…', '< 500 €', '500-1.500 €', '1.500-5.000 €', '> 5.000 €'] },
+  { label: '¿Tiene sensores?', name: 'sensors', options: ['Seleccionar…', 'Sí, Shelly', 'Sí, otro', 'No, pero quiero'] },
+];
+
+const compliance = [
+  { icon: ShieldCheck, text: 'Datos en UE. Sin transferencia a terceros países.', accent: '#0358f7', accentSoft: 'rgba(3, 88, 247, 0.08)' },
+  { icon: LockKeyhole, text: 'Cifrado en tránsito (TLS 1.3) y en reposo (AES-256).', accent: '#fa3d1d', accentSoft: 'rgba(250, 61, 29, 0.08)' },
+  { icon: CalendarClock, text: 'Retención configurable. Borrado a petición (RGPD art. 17).', accent: '#c679c4', accentSoft: 'rgba(198, 121, 196, 0.08)' },
+];
+
+// ── Spectrum Gradient decorative elements ──
+
+function SpectrumStrip({ className = '' }: { className?: string }) {
+  return <div className={`h-[3px] w-full rounded-full ${className}`} style={{ background: 'var(--gradient-spectrum)' }} />;
 }
 
-function ScaleBarBtn({
-  href,
-  variant = 'solid',
-  className = '',
-  children,
-}: {
-  href: string;
-  variant?: 'solid' | 'outline' | 'darkOutline';
-  className?: string;
-  children: ReactNode;
-}) {
-  const solid = variant === 'solid';
-  const darkOutline = variant === 'darkOutline';
-
+function MarqueeStrip() {
+  const items = [
+    { text: '+30% reducción standby', color: '#fa3d1d' },
+    { text: '14 días detección fuga', color: '#ffb005' },
+    { text: '2.400 kWh ahorro/año', color: '#0358f7' },
+    { text: '5-100+ apartamentos', color: '#c679c4' },
+    { text: 'Shelly + Datadis + PMS', color: '#fa3d1d' },
+    { text: 'RGPD compliant', color: '#0358f7' },
+  ];
+  const doubled = [...items, ...items];
   return (
-    <a
-      href={href}
-      className={`group relative inline-flex min-h-11 items-center justify-center gap-2 overflow-hidden rounded-lg px-6 py-2.5 font-display text-sm font-semibold leading-none tracking-[0.01em] transition-[background-color,border-color,color,transform] duration-300 active:translate-y-px ${className}`}
+    <div className="overflow-hidden py-3" style={{ background: 'var(--fog)' }}>
+      <div
+        className="flex gap-8 whitespace-nowrap"
+        style={{ animation: 'marquee-scroll 40s linear infinite' }}
+      >
+        {doubled.map((item, i) => (
+          <span key={i} className="font-mono text-[12px] font-medium" style={{ color: item.color }}>
+            {item.text}
+          </span>
+        ))}
+      </div>
+      <style>{`
+        @keyframes marquee-scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+function SpectrumGlow({ className = '', style }: { className?: string; style?: React.CSSProperties }) {
+  return (
+    <div
+      className={`pointer-events-none absolute ${className}`}
       style={{
-        background: solid ? cssVar('--color-ink') : 'transparent',
-        color: solid || darkOutline ? cssVar('--color-surface') : cssVar('--color-ink'),
-        border: solid ? '1px solid transparent' : `1px solid ${darkOutline ? 'rgba(255,255,255,0.28)' : cssVar('--color-ink')}`,
+        background: 'var(--gradient-spectrum)',
+        filter: 'blur(100px)',
+        opacity: 0.20,
+        borderRadius: '50%',
+        ...style,
+      }}
+    />
+  );
+}
+
+// ── Frosted Card component ──
+
+function FrostedCard({ children, className = '', style }: { children: ReactNode; className?: string; style?: React.CSSProperties }) {
+  return (
+    <div
+      className={`rounded-[30px] p-8 ${className}`}
+      style={{
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        backdropFilter: 'blur(24px)',
+        WebkitBackdropFilter: 'blur(24px)',
+        boxShadow: 'rgba(0, 0, 0, 0.08) 0px 0px 8px 0px',
+        ...style,
       }}
     >
-      <span className="pointer-events-none absolute inset-x-0 -inset-y-4 flex items-center justify-center">
-        {BAR_DELAYS.map((delay, index) => (
-          <span
-            key={index}
-            className="h-full flex-[0_0_3px] origin-bottom scale-y-0 rounded-sm transition-transform duration-300 group-hover:scale-y-100"
-            style={{
-              background: solid ? cssVar('--color-accent') : cssVar('--color-border-strong'),
-              transitionDelay: `${delay}ms`,
-            }}
-          />
-        ))}
-      </span>
-      <span className="relative z-10 inline-flex items-center gap-2 whitespace-nowrap">{children}</span>
-    </a>
+      {children}
+    </div>
   );
 }
 
-function ArrowSwap({ className = '' }: { className?: string }) {
-  return (
-    <span className={`relative inline-flex h-3 w-4 items-center justify-center ${className}`} aria-hidden="true">
-      <ArrowRight className="absolute h-4 w-4 translate-x-0 scale-100 opacity-100 transition-[opacity,translate,scale] duration-500 ease-[cubic-bezier(0.36,0,0.114,0.92)] group-hover:translate-x-2 group-hover:scale-0 group-hover:opacity-0" />
-      <ArrowRight className="absolute h-4 w-4 -translate-x-2 scale-0 opacity-0 transition-[opacity,translate,scale] duration-500 ease-[cubic-bezier(0.36,0,0.114,0.92)] group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100" />
-    </span>
-  );
-}
+// ── CTA button (Dia neutral button) ──
 
-function TextCta({ href, children }: { href: string; children: ReactNode }) {
+function DiaButton({
+  href, children, variant = 'neutral', className = '',
+}: {
+  href: string; children: ReactNode; variant?: 'neutral' | 'ghost' | 'outline'; className?: string;
+}) {
+  const base = 'inline-flex items-center justify-center gap-2 font-display text-[15px] font-medium transition-all duration-200 active:translate-y-px';
+  const size = 'min-h-[48px] px-6';
+  const styles = {
+    neutral: `${size} rounded-[30px] bg-[var(--pebble)] text-[var(--ink)] hover:bg-[var(--ink)] hover:text-[var(--snow)]`,
+    ghost: `${size} rounded-[9999px] bg-transparent text-[var(--ink)] hover:bg-[var(--fog)]`,
+    outline: `${size} rounded-[30px] bg-transparent text-[var(--ink)] hover:bg-[var(--fog)]`,
+  };
   return (
-    <a href={href} className="group inline-flex items-center gap-2 font-display text-sm font-semibold tracking-[0.01em] text-[var(--color-accent)]">
+    <a href={href} className={`${base} ${styles[variant]} ${className}`}>
       <span>{children}</span>
-      <ArrowSwap />
+      {variant === 'neutral' && <ArrowRight className="h-4 w-4" />}
     </a>
   );
 }
 
-function useCounter(ref: React.RefObject<HTMLElement | null>, target: number, suffix: string) {
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    el.textContent = `${target}${suffix}`;
+// ── Section heading (Dia style: 54px, weight 300, -0.04em tracking) ──
 
-    const number = { value: 0 };
-    const ctx = gsap.context(() => {
-      gsap.to(number, {
-        value: target,
-        duration: 1.8,
-        ease: 'power1.out',
-        scrollTrigger: { trigger: el, start: 'top 88%', once: true },
-        onUpdate: () => {
-          el.textContent = `${Math.round(number.value)}${suffix}`;
-        },
-        onComplete: () => {
-          el.textContent = `${target}${suffix}`;
-        },
-      });
-    });
-
-    return () => ctx.revert();
-  }, [ref, target, suffix]);
+function DiaHeading({ children, className = '' }: { children: ReactNode; className?: string }) {
+  return (
+    <h2
+      className={`font-display text-[clamp(2.5rem,5vw,3.5rem)] font-light leading-[1.1] text-[var(--ink)] ${className}`}
+      style={{ letterSpacing: '-0.04em' }}
+    >
+      {children}
+    </h2>
+  );
 }
 
-function useShrinkHeader() {
-  useEffect(() => {
-    const style = document.createElement('style');
-    style.textContent =
-      '@keyframes tramoHeaderShrink{to{height:56px}}@supports(animation-timeline:scroll()){.tramo-hdr{animation:tramoHeaderShrink auto linear both;animation-timeline:scroll(block root);animation-range:0px 100px}}';
-    document.head.appendChild(style);
+function DiaEyebrow({ children }: { children: ReactNode }) {
+  return (
+    <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--slate)]">
+      {children}
+    </p>
+  );
+}
 
-    if (typeof CSS !== 'undefined' && !CSS.supports('animation-timeline:scroll()')) {
-      const header = document.querySelector('.tramo-hdr') as HTMLElement | null;
-      const onScroll = () => {
-        if (!header) return;
-        header.style.height = `${72 - Math.min(1, window.scrollY / 100) * 16}px`;
-      };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-      return () => {
-        window.removeEventListener('scroll', onScroll);
-        style.remove();
-      };
+// ── Sections ──
+
+function Hero() {
+  const ref = useRef<HTMLElement>(null);
+  const mockupRef = useRef<HTMLDivElement>(null);
+  const chartBarsRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    if (!ref.current) return;
+    const elements = ref.current.querySelectorAll('.anim-up');
+    gsap.fromTo(elements, { y: 40, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.12, duration: 1, ease: 'power3.out' });
+
+    // Laptop mockup: gentle float
+    const mockup = mockupRef.current;
+    if (mockup) {
+      gsap.to(mockup, { y: -8, duration: 3, repeat: -1, yoyo: true, ease: 'sine.inOut' });
     }
 
-    return () => style.remove();
-  }, []);
-}
+    // Chart bars: staggered grow animation
+    const chartBars = chartBarsRef.current;
+    if (chartBars) {
+      const bars = chartBars.querySelectorAll('.chart-bar');
+      gsap.fromTo(bars, { scaleY: 0 }, {
+        scaleY: 1, stagger: 0.04, duration: 0.6, ease: 'power2.out',
+        delay: 0.8, transformOrigin: 'bottom center',
+      });
+    }
 
-function MobileNav({ open, close }: { open: boolean; close: () => void }) {
+    // Stats: counting animation
+    const statItems = ref.current.querySelectorAll('.stat-item');
+    if (statItems.length) {
+      gsap.fromTo(statItems, { y: 20, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.15, duration: 0.8, ease: 'power2.out', delay: 0.5 });
+    }
+  }, { scope: ref });
+
+  // Alert pulse animation
+  const alertDotKeyframes = `@keyframes alert-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.5); } }`;
+
   return (
-    <AnimatePresence>
-      {open && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex flex-col bg-[var(--color-paper)]"
-        >
-          <div className="flex h-[72px] items-center justify-between border-b border-[var(--color-border)] px-5">
-            <span className="font-display text-xl font-semibold text-[var(--color-ink)]">Tramo</span>
-            <button type="button" onClick={close} className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-[var(--color-ink)]">
-              <X className="h-5 w-5" />
-              <span className="sr-only">Cerrar navegación</span>
-            </button>
-          </div>
-          <nav className="flex flex-col gap-1 px-5 pt-6">
-            {navItems.map(([label, href]) => (
-              <a key={href} href={href} onClick={close} className="border-b border-[var(--color-border)] py-4 font-display text-xl text-[var(--color-ink)]">
-                {label}
-              </a>
-            ))}
-              <div className="mt-8">
-              <ScaleBarBtn href="#diagnostico">Diagnosticar mi cartera</ScaleBarBtn>
-            </div>
-          </nav>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-}
-
-function HeroProductPanel() {
-  return (
-    <div className="rv mx-auto mt-14 max-w-5xl rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 shadow-sm md:p-6">
-      <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-4 md:p-5">
-          <div className="mb-5 flex flex-wrap items-start justify-between gap-3">
-            <div>
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-accent)]">VGO-014 · Vigo Centro</p>
-              <h2 className="mt-2 font-display text-2xl font-semibold leading-tight text-[var(--color-ink)]">Consumo fuera de reserva</h2>
-            </div>
-            <span className="rounded-full border border-[var(--color-warning)] bg-[color-mix(in_srgb,var(--color-warning)_14%,transparent)] px-3 py-1 font-mono text-xs font-semibold text-[var(--color-warning)]">
-              activo
-            </span>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-3">
-            {[
-              ['Checkout', '11:00'],
-              ['Consumo', '13:10-16:40'],
-              ['Acumulado', '4,2 kWh'],
-            ].map(([label, value]) => (
-              <div key={label} className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-3">
-                <p className="text-xs font-medium text-[var(--color-muted)]">{label}</p>
-                <p className="mt-1 font-mono text-lg font-semibold text-[var(--color-ink)]">{value}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-5 h-28 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4" aria-label="Consumo por ventana de reserva">
-            <div className="flex h-full items-end gap-2">
-              {[18, 22, 16, 20, 26, 18, 15, 55, 72, 68, 61, 45].map((height, index) => (
-                <div key={index} className="flex min-w-0 flex-1 flex-col items-center gap-2">
-                  <span
-                    className={`w-full rounded-sm ${index > 6 && index < 11 ? 'bg-[var(--color-warning)]' : 'bg-[var(--color-accent-soft)]'}`}
-                    style={{ height: `${height}%` }}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-4 flex flex-wrap gap-2">
-            <button type="button" className="rounded-lg bg-[var(--color-ink)] px-4 py-2 font-display text-sm font-semibold text-[var(--color-surface)]">
-              Revisar termo/AC
-            </button>
-            <button type="button" className="rounded-lg border border-[var(--color-border-strong)] px-4 py-2 font-display text-sm font-semibold text-[var(--color-ink)]">
-              Aplicar regla post-checkout
-            </button>
-          </div>
-        </div>
-
-        <div className="grid gap-4">
-          <div className="rounded-xl border border-[var(--color-border)] p-4">
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-muted)]">Impacto estimado</p>
-            <p className="mt-2 font-mono text-5xl font-semibold tracking-tight text-[var(--color-ink)]">34,20 €</p>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">Estimación si el patrón se repite cada semana. No es ahorro garantizado.</p>
-          </div>
-          <div className="rounded-xl border border-[var(--color-border)] p-4">
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-muted)]">Potencia P2</p>
-            <div className="mt-4 space-y-3">
-              <Meter label="Actual" value="4,6 kW" width="88%" />
-              <Meter label="Recomendada" value="3,3 kW" width="62%" accent />
-            </div>
-          </div>
-          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-accent-soft)] p-4">
-            <p className="font-display text-base font-semibold text-[var(--color-ink)]">Informe abril listo</p>
-            <p className="mt-1 text-sm text-[var(--color-muted)]">3 acciones · 412 kWh atribuidos · Costa Rentals</p>
-          </div>
-        </div>
+    <section ref={ref} className="relative overflow-hidden px-5 pt-28 pb-20 md:pt-36 md:pb-28">
+      {/* Animated spectrum gradient background */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div
+          className="absolute h-[600px] w-[800px] -top-40 -left-40"
+          style={{
+            background: 'var(--gradient-spectrum)',
+            filter: 'blur(120px)',
+            opacity: 0.15,
+            borderRadius: '50%',
+            animation: 'gradient-drift 8s ease-in-out infinite',
+          }}
+        />
+        <div
+          className="absolute h-[500px] w-[600px] -bottom-20 -right-20"
+          style={{
+            background: 'var(--gradient-spectrum)',
+            filter: 'blur(100px)',
+            opacity: 0.10,
+            borderRadius: '50%',
+            animation: 'gradient-drift 6s ease-in-out infinite reverse',
+          }}
+        />
       </div>
-    </div>
-  );
-}
 
-function Meter({ label, value, width, accent = false }: { label: string; value: string; width: string; accent?: boolean }) {
-  return (
-    <div>
-      <div className="mb-1 flex justify-between gap-4 font-mono text-xs text-[var(--color-muted)]">
-        <span>{label}</span>
-        <span>{value}</span>
+      {/* Animated gradient sweep strip */}
+      <div className="pointer-events-none absolute left-0 right-0 top-0 h-[1px]" style={{ overflow: 'hidden' }}>
+        <div
+          className="absolute h-full w-[40%]"
+          style={{
+            background: 'var(--gradient-spectrum)',
+            animation: 'sweep-x 4s ease-in-out infinite',
+          }}
+        />
       </div>
-      <div className="h-2 rounded-full bg-[var(--color-surface-alt)]">
-        <div className={`h-2 rounded-full ${accent ? 'bg-[var(--color-accent)]' : 'bg-[var(--color-border-strong)]'}`} style={{ width }} />
-      </div>
-    </div>
-  );
-}
 
-function SystemFlow() {
-  const sources = [
-    ['Reservas/PMS', CalendarClock],
-    ['CUPS/Datadis', Database],
-    ['Tarifas/P1-P2', SlidersHorizontal],
-    ['Medición real', Activity],
-  ] as const;
-  const outputs = ['Detecta', 'Decide', 'Actúa', 'Informa'];
+      <style>{`
+        @keyframes gradient-drift {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(30px, 20px) scale(1.1); }
+          66% { transform: translate(-20px, -15px) scale(0.95); }
+        }
+        @keyframes sweep-x {
+          0% { left: -40%; opacity: 0; }
+          20% { opacity: 1; }
+          80% { opacity: 1; }
+          100% { left: 100%; opacity: 0; }
+        }
+        @keyframes alert-pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.4; transform: scale(1.5); }
+        }
+      `}</style>
 
-  return (
-    <section id="sistema" className="px-5 py-24 md:py-32">
-      <div className="mx-auto max-w-7xl">
-        <div className="rv mb-10 grid gap-5 md:grid-cols-[0.8fr_1.2fr] md:items-end">
+      <div className="relative mx-auto max-w-[1200px]">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          {/* LEFT: Headline */}
           <div>
-            <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.05] text-[var(--color-ink)]">
-              La capa que une reservas, energía y acciones.
-            </h2>
-          </div>
-          <p className="max-w-2xl text-base leading-relaxed text-[var(--color-muted)]">
-            Datadis explica la factura; los medidores inteligentes detectan el problema cuando aún puedes actuar. Tramo junta ambas capas para atribuir cada kWh.
-          </p>
-        </div>
+            <p className="anim-up mb-5 text-lg text-[var(--graphite)]">
+              Control energético para carteras turísticas
+            </p>
 
-        <div className="rv rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 md:p-6">
-          <div className="grid gap-4 lg:grid-cols-[1fr_auto_1fr] lg:items-center">
-            <div className="grid gap-3 sm:grid-cols-2">
-              {sources.map(([label, Icon]) => (
-                <div key={label} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-4">
-                  <Icon className="h-5 w-5 text-[var(--color-accent)]" />
-                  <p className="mt-4 font-display text-base font-semibold text-[var(--color-ink)]">{label}</p>
+            <h1
+              className="anim-up font-display text-[clamp(2.5rem,5vw,4rem)] font-light leading-[1.08] text-[var(--ink)]"
+              style={{ letterSpacing: '-0.04em' }}
+            >
+              Tu energía, atribuida<br />
+              <span className="text-[var(--graphite)]">a cada reserva.</span>
+            </h1>
+
+            <p className="anim-up mt-6 max-w-md text-lg leading-relaxed text-[var(--graphite)]">
+              Detecta consumos fuera de estancia, optimiza la potencia contratada e informa a propietarios con datos reales.
+            </p>
+
+            <div className="anim-up mt-10 flex flex-col items-start gap-4 sm:flex-row">
+              <DiaButton href="#diagnostico">Solicitar diagnóstico</DiaButton>
+              <DiaButton href="/app/dashboard" variant="ghost">Ver dashboard demo</DiaButton>
+            </div>
+
+            {/* Stats row */}
+            <div ref={statsRef} className="stat-grid mt-12 grid grid-cols-3 gap-6">
+              {stats.map(([value, label, accent]) => (
+                <div key={label as string} className="stat-item">
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full" style={{ background: accent as string }} />
+                    <p className="font-display text-2xl font-light text-[var(--ink)]" style={{ letterSpacing: '-0.03em' }}>
+                      {value}
+                    </p>
+                  </div>
+                  <p className="mt-1 text-[13px] text-[var(--slate)]">{label}</p>
                 </div>
               ))}
             </div>
-            <div className="hidden h-px w-14 bg-[var(--color-border-strong)] lg:block" />
-            <div className="rounded-xl bg-[var(--color-ink)] p-5 text-[var(--color-surface)]">
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-accent-soft)]">Tramo atribuye</p>
-              <div className="mt-5 grid grid-cols-2 gap-3">
-                {outputs.map((item) => (
-                  <div key={item} className="rounded-lg border border-[rgba(255,255,255,0.16)] p-3">
-                    <CheckCircle2 className="h-4 w-4 text-[var(--color-accent-soft)]" />
-                    <p className="mt-3 font-display text-lg font-semibold">{item}</p>
+          </div>
+
+          {/* RIGHT: Animated laptop mockup */}
+          <div ref={mockupRef} className="anim-up relative">
+            <SpectrumGlow className="-right-20 top-10 h-[350px] w-[400px] opacity-40" />
+            <div className="relative">
+              {/* Laptop screen frame */}
+              <div className="rounded-[20px] p-1" style={{ background: 'var(--fog)', boxShadow: 'rgba(0, 0, 0, 0.08) 0px 0px 8px 0px' }}>
+                {/* macOS-style window bar */}
+                <div className="flex items-center gap-2 rounded-t-[16px] px-4 py-3" style={{ background: 'var(--fog)' }}>
+                  <div className="flex gap-1.5">
+                    <div className="h-3 w-3 rounded-full bg-[var(--steel)]" />
+                    <div className="h-3 w-3 rounded-full bg-[var(--pebble)]" />
+                    <div className="h-3 w-3 rounded-full bg-[var(--graphite)]" />
                   </div>
-                ))}
+                  <span className="ml-2 font-mono text-[10px] text-[var(--slate)]">tramo.energy/dashboard</span>
+                </div>
+
+                {/* Dashboard content */}
+                <div className="rounded-b-[16px] p-5" style={{ background: 'var(--snow)' }}>
+                  {/* Header */}
+                  <div className="mb-4 flex items-center justify-between">
+                    <div>
+                      <p className="font-display text-sm font-medium text-[var(--ink)]" style={{ letterSpacing: '-0.02em' }}>Dashboard</p>
+                      <p className="text-[11px] text-[var(--slate)]">5 propiedades · Últimas 24h</p>
+                    </div>
+                    <div className="flex gap-1">
+                      <span className="rounded-[9999px] bg-[var(--ink)] px-2 py-1 font-mono text-[9px] font-medium text-[var(--snow)]">Hoy</span>
+                      <span className="rounded-[9999px] px-2 py-1 font-mono text-[9px] text-[var(--slate)]">7d</span>
+                    </div>
+                  </div>
+
+                  {/* Stats cards */}
+                  <div className="mb-4 grid grid-cols-3 gap-2">
+                    {[
+                      ['12.4 kWh', 'Consumo', '#000000'],
+                      ['€3.80', 'Coste', '#636363'],
+                      ['32%', 'Fuera', '#fa3d1d'],
+                    ].map(([val, label, color]) => (
+                      <div key={label as string} className="rounded-[12px] p-3 transition-all duration-200 hover:bg-[var(--fog)]" style={{ background: 'var(--fog)' }}>
+                        <p className="font-display text-[15px] font-light" style={{ letterSpacing: '-0.02em', color: color as string }}>{val}</p>
+                        <p className="mt-0.5 text-[9px] text-[var(--slate)]">{label}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Animated chart */}
+                  <div className="mb-4 rounded-[12px] p-3" style={{ background: 'var(--fog)' }}>
+                    <p className="mb-2 text-[10px] font-medium text-[var(--graphite)]">Consumo por franja horaria</p>
+                    <div ref={chartBarsRef} className="flex items-end gap-[3px]" style={{ height: '64px' }}>
+                      {[15, 8, 6, 4, 5, 12, 28, 45, 42, 38, 35, 30, 22, 18, 20, 25, 40, 52, 48, 44, 38, 30, 22, 18].map((h, i) => {
+                        // Map each bar to a spectrum color based on intensity
+                        const spectrumColors = ['#c679c4', '#c679c4', '#fa3d1d', '#fa3d1d', '#ffb005', '#ffb005', '#e1e1fe', '#0358f7'];
+                        const intensityIdx = h >= 45 ? 7 : h >= 35 ? 6 : h >= 25 ? 5 : h >= 15 ? 3 : 1;
+                        return (
+                          <div
+                            key={i}
+                            className="chart-bar flex-1 rounded-[2px]"
+                            style={{
+                              height: `${h}%`,
+                              background: spectrumColors[intensityIdx],
+                              opacity: 0.6 + (h / 100) * 0.4,
+                              transform: 'scaleY(0)',
+                              transformOrigin: 'bottom center',
+                            }}
+                          />
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Alerts with pulsing dots */}
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-medium text-[var(--graphite)]">Alertas activas</p>
+                    {[
+                      ['Standby excesivo', 'Casa Norte — 2.4 kWh', '#fa3d1d'],
+                      ['Potencia > contratada', 'Ático Playa — 5.2 kW', '#ffb005'],
+                      ['Fuera de estancia', 'Calle Mayor 3 — nevera', '#0358f7'],
+                    ].map(([title, detail, color]) => (
+                      <div key={title as string} className="flex items-start gap-2.5 rounded-[12px] p-2.5 transition-all duration-200 hover:bg-[var(--fog)]" style={{ background: 'var(--fog)' }}>
+                        <div className="mt-1 h-2 w-2 shrink-0 rounded-full" style={{ background: color as string, animation: 'alert-pulse 2s ease-in-out infinite' }} />
+                        <div>
+                          <p className="text-[11px] font-medium text-[var(--ink)]">{title}</p>
+                          <p className="text-[9px] text-[var(--slate)]">{detail}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
+
+              {/* Laptop base */}
+              <div className="mx-auto mt-[-2px] h-[8px] w-[110%] -translate-x-[5%] rounded-b-[12px]" style={{ background: 'var(--fog)' }} />
+              <div className="mx-auto mt-0 h-[4px] w-[120%] -translate-x-[10%] rounded-b-[8px]" style={{ background: 'var(--pebble)' }} />
             </div>
           </div>
         </div>
@@ -406,606 +414,540 @@ function SystemFlow() {
   );
 }
 
-function ModuleScreenshot({ module }: { module: (typeof coreModules)[number] }) {
+function Problems() {
+  const ref = useRef<HTMLElement>(null);
+
+  useGSAP(() => {
+    if (!ref.current) return;
+    const cards = ref.current.querySelectorAll('.problem-card');
+    gsap.fromTo(cards, { y: 50, opacity: 0 }, {
+      y: 0, opacity: 1, stagger: 0.1, duration: 0.8, ease: 'power2.out',
+      scrollTrigger: { trigger: ref.current, start: 'top 80%' },
+    });
+  }, { scope: ref });
+
   return (
-    <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 shadow-sm">
-      <div className="mb-4 flex items-center justify-between gap-3">
-        <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-muted)]">{module.label}</p>
-        <span className="rounded-full bg-[var(--color-accent-soft)] px-2.5 py-1 font-mono text-xs font-semibold text-[var(--color-accent-ink)]">sincronizado</span>
-      </div>
-      <div className="grid gap-4 md:grid-cols-[0.8fr_1.2fr]">
-        <div className="rounded-xl bg-[var(--color-surface-alt)] p-4">
-          <p className="font-mono text-4xl font-semibold text-[var(--color-ink)]">{module.stat}</p>
-          <p className="mt-2 text-sm text-[var(--color-muted)]">{module.statLabel}</p>
+    <section ref={ref} className="relative overflow-hidden px-5 py-24 md:py-32">
+      <div className="relative mx-auto max-w-[1200px]">
+        <div className="text-center">
+          <DiaEyebrow>El problema</DiaEyebrow>
+          <DiaHeading className="mt-4">
+            Pagas energía que no sabes quién consume.
+          </DiaHeading>
+          <p className="mx-auto mt-4 max-w-lg text-lg text-[var(--graphite)]">
+            Las gestoras de apartamentos turísticos no tienen visibilidad real del consumo por reserva.
+          </p>
         </div>
-        <div className="space-y-2">
-          {module.bullets.map((bullet) => (
-            <div key={bullet} className="flex items-start gap-3 rounded-lg border border-[var(--color-border)] p-3">
-              <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-[var(--color-accent)]" />
-              <span className="text-sm leading-relaxed text-[var(--color-ink)]">{bullet}</span>
+
+        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {problems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <FrostedCard key={item.title} className="problem-card group transition-all duration-200 hover:shadow-[rgba(0,0,0,0.12)_0px_0px_12px_0px]">
+                <div
+                  className="mb-4 flex h-10 w-10 items-center justify-center rounded-[20px] transition-all duration-300 group-hover:scale-110"
+                  style={{ background: item.accentSoft, color: item.accent }}
+                >
+                  <Icon className="h-5 w-5" />
+                </div>
+                <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em]" style={{ color: item.accent }}>{item.metric}</p>
+                <h3
+                  className="mt-3 font-display text-xl font-light text-[var(--ink)]"
+                  style={{ letterSpacing: '-0.02em' }}
+                >
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-[var(--graphite)]">{item.body}</p>
+              </FrostedCard>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function OperationalFlow() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const progressRef = useRef<HTMLDivElement>(null);
+
+  const loop = [
+    { title: 'Detectar', body: 'El sistema cruza consumo (Shelly), reservas (PMS) y datos de red (Datadis). Identifica fugas, standby innecesario y desviaciones de potencia.', tag: 'Entrada', detail: 'Lecturas cada 5 min', icon: BellRing, accent: '#0358f7', accentSoft: 'rgba(3, 88, 247, 0.08)' },
+    { title: 'Priorizar', body: 'Motor de reglas clasifica alertas por impacto económico y urgencia. Lo que no cuesta, no molesta.', tag: 'Motor', detail: 'Score de prioridad 0-100', icon: Layers3, accent: '#c679c4', accentSoft: 'rgba(198, 121, 196, 0.08)' },
+    { title: 'Aprobar', body: 'El usuario recibe una acción concreta: "Bajar potencia de 4.6 a 3.45 kW. Ahorro: 18 €/mes." Un clic para aprobar.', tag: 'Acción', detail: 'Requiere confirmación humana', icon: CheckCircle2, accent: '#ffb005', accentSoft: 'rgba(255, 176, 5, 0.08)' },
+    { title: 'Informar', body: 'Informe mensual por propietario: consumo atribuido, acciones tomadas, ahorro acumulado. PDF listo para enviar.', tag: 'Salida', detail: 'PDF + dashboard', icon: ReceiptText, accent: '#fa3d1d', accentSoft: 'rgba(250, 61, 29, 0.08)' },
+  ];
+
+  useGSAP(() => {
+    const section = sectionRef.current;
+    const viewport = viewportRef.current;
+    const track = trackRef.current;
+    const progress = progressRef.current;
+    if (!section || !viewport || !track || !progress) return;
+
+    const getDistance = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
+    const mm = gsap.matchMedia();
+
+    mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', () => {
+      gsap.set(track, { x: 0 });
+      gsap.set(progress, { scaleX: 0, transformOrigin: 'left center' });
+
+      const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(() => ScrollTrigger.refresh()) : null;
+      ro?.observe(viewport);
+      ro?.observe(track);
+
+      const tween = gsap.to(track, {
+        x: () => -getDistance(),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section, pin: true, scrub: 0.45, anticipatePin: 1,
+          invalidateOnRefresh: true,
+          end: () => `+=${Math.max(window.innerHeight * 0.85, getDistance())}`,
+          onUpdate: (s) => gsap.set(progress, { scaleX: s.progress }),
+        },
+      });
+
+      return () => { ro?.disconnect(); tween.scrollTrigger?.kill(); tween.kill(); gsap.set([track, progress], { clearProps: 'all' }); };
+    });
+
+    return () => mm.revert();
+  }, { scope: sectionRef });
+
+  return (
+    <section ref={sectionRef} id="accion" className="relative overflow-hidden px-5 py-24 md:py-32">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="grid gap-8 md:grid-cols-[1fr_1fr] md:items-end">
+          <div>
+            <DiaEyebrow>Loop operativo</DiaEyebrow>
+            <DiaHeading className="mt-4">Detectar, priorizar, aprobar e informar.</DiaHeading>
+            <p className="mt-4 max-w-md text-lg text-[var(--graphite)]">El producto no termina en una alerta. Termina cuando la gestora puede aprobar una acción.</p>
+          </div>
+          <div className="hidden md:block">
+            <div className="mb-3 flex items-center justify-between font-mono text-[11px] font-semibold tracking-[0.14em] text-[var(--slate)]">
+              <span>Scroll operativo</span><span>4 pasos</span>
             </div>
+            <div className="h-1 overflow-hidden rounded-full bg-[var(--fog)]">
+              <div ref={progressRef} className="h-full origin-left rounded-full" style={{ background: 'var(--gradient-spectrum)' }} />
+            </div>
+          </div>
+        </div>
+
+        <div ref={viewportRef} className="mt-10 md:-mr-[calc((100vw-100%)/2)] md:overflow-hidden md:pr-5">
+          <div ref={trackRef} className="grid gap-5 md:flex md:w-max md:gap-5">
+            {loop.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <article key={item.title} className="min-w-0 md:flex md:h-[20rem] md:w-[min(24rem,72vw)] md:flex-col md:justify-between">
+                  <FrostedCard className="h-full">
+                    <div className="flex items-start justify-between gap-4">
+                      <div
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[20px] transition-all duration-300"
+                        style={{ background: item.accentSoft, color: item.accent }}
+                      >
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <span className="rounded-[9999px] px-3 py-1 font-mono text-[10px] font-semibold tracking-[0.12em]" style={{ color: item.accent, background: item.accentSoft }}>{item.tag}</span>
+                    </div>
+                    <h3
+                      className="mt-6 font-display text-[clamp(1.8rem,3vw,2.5rem)] font-light leading-[1.08] text-[var(--ink)]"
+                      style={{ letterSpacing: '-0.03em' }}
+                    >
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 max-w-sm text-[15px] leading-relaxed text-[var(--graphite)]">{item.body}</p>
+                  </FrostedCard>
+                  <div className="mt-4 flex items-center justify-between font-mono text-xs" style={{ color: item.accent }}>
+                    <span>Paso {i + 1}</span>
+                    <span>{item.detail}</span>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Modules() {
+  const ref = useRef<HTMLElement>(null);
+
+  useGSAP(() => {
+    if (!ref.current) return;
+    const cards = ref.current.querySelectorAll('.module-card');
+    gsap.fromTo(cards, { y: 40, opacity: 0, scale: 0.95 }, {
+      y: 0, opacity: 1, scale: 1, stagger: 0.08, duration: 0.7, ease: 'power2.out',
+      scrollTrigger: { trigger: ref.current, start: 'top 75%' },
+    });
+  }, { scope: ref });
+
+  return (
+    <section id="producto" ref={ref} className="relative overflow-hidden px-5 py-24 md:py-32">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="text-center">
+          <DiaEyebrow>Producto</DiaEyebrow>
+          <DiaHeading className="mt-4">Todo lo que necesita una gestora profesional.</DiaHeading>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-[var(--graphite)]">Seis módulos que cubren desde la detección hasta el arbitraje con batería.</p>
+        </div>
+
+        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {modules.map((m) => {
+            const Icon = m.icon;
+            return (
+              <FrostedCard key={m.title} className="module-card group transition-all duration-200 hover:shadow-[rgba(0,0,0,0.12)_0px_0px_12px_0px]">
+                <div
+                  className="mb-4 flex h-10 w-10 items-center justify-center rounded-[20px] transition-all duration-300 group-hover:scale-110"
+                  style={{ background: m.accentSoft, color: m.accent }}
+                >
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3
+                  className="font-display text-xl font-light text-[var(--ink)]"
+                  style={{ letterSpacing: '-0.02em' }}
+                >
+                  {m.title}
+                </h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-[var(--graphite)]">{m.body}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {m.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-[9999px] px-3 py-1 font-mono text-[11px] font-medium transition-colors duration-200"
+                      style={{ background: m.accentSoft, color: m.accent }}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </FrostedCard>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Pricing() {
+  return (
+    <section id="precios" className="relative overflow-hidden px-5 py-24 md:py-32">
+      <SpectrumGlow className="bottom-0 right-1/4 h-[300px] w-[400px]" />
+
+      <div className="relative mx-auto max-w-[1200px]">
+        <div className="text-center">
+          <DiaEyebrow>Precios</DiaEyebrow>
+          <DiaHeading className="mt-4">Piloto accesible. Escala con tu cartera.</DiaHeading>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-[var(--graphite)]">Precios orientativos. El diagnóstico gratuito define el plan exacto.</p>
+        </div>
+
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {pricingTiers.map((tier) => (
+            <FrostedCard key={tier.name} className={`relative flex flex-col transition-all duration-200 ${tier.recommended ? 'ring-[var(--fog)]' : ''}`} style={tier.recommended ? { boxShadow: 'rgba(0, 0, 0, 0.12) 0px 0px 12px 0px' } : undefined}>
+              {tier.recommended && <SpectrumStrip className="absolute left-6 right-6 top-0" />}
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--slate)]">{tier.name}</p>
+              <p className="mt-2 font-display text-3xl font-light text-[var(--ink)]" style={{ letterSpacing: '-0.02em' }}>
+                {tier.price} <span className="text-base text-[var(--slate)]">€/mes</span>
+              </p>
+              <p className="mt-1 text-sm text-[var(--slate)]">{tier.aptos} aptos.</p>
+              <hr className="my-5" style={{ borderColor: tier.recommended ? tier.accent + '30' : 'var(--fog)' }} />
+              <ul className="flex-1 space-y-3">
+                {tier.features.map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-[14px] text-[var(--graphite)]">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" style={{ color: tier.accent }} />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <DiaButton href="#diagnostico" variant={tier.recommended ? 'neutral' : 'ghost'} className="mt-6 w-full justify-center">
+                Solicitar
+              </DiaButton>
+            </FrostedCard>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-function CoreModules() {
-  const [active, setActive] = useState(0);
-  const module = coreModules[active];
-
+function Compliance() {
   return (
-    <section id="modulos" className="border-y border-[var(--color-border)] bg-[var(--color-surface-alt)] px-5 py-24 md:py-32">
-      <div className="mx-auto max-w-7xl">
-        <div className="rv mb-10 max-w-3xl">
-          <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.05] text-[var(--color-ink)]">
-            Cuatro superficies para operar la cartera.
-          </h2>
+    <section className="relative overflow-hidden px-5 py-24 md:py-32">
+      <div className="mx-auto max-w-[1200px] text-center">
+        <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-[20px] bg-[var(--fog)] text-[var(--ink)]">
+          <LockKeyhole className="h-6 w-6" />
         </div>
-        <div className="rv grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
-          <div className="flex flex-col gap-2">
-            {coreModules.map((item, index) => (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => setActive(index)}
-                className="rounded-xl border p-4 text-left transition-[background-color,border-color,color] duration-300"
-                style={{
-                  background: active === index ? cssVar('--color-ink') : cssVar('--color-surface'),
-                  borderColor: active === index ? cssVar('--color-ink') : cssVar('--color-border'),
-                  color: active === index ? cssVar('--color-surface') : cssVar('--color-ink'),
-                }}
-              >
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] opacity-70">0{index + 1}</p>
-                <p className="mt-2 font-display text-lg font-semibold">{item.label}</p>
-              </button>
-            ))}
-          </div>
-
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={module.id}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.25 }}
-            >
-              <h3 className="font-display text-3xl font-semibold leading-tight text-[var(--color-ink)]">{module.title}</h3>
-              <p className="mt-3 max-w-2xl text-base leading-relaxed text-[var(--color-muted)]">{module.description}</p>
-              <div className="mt-6">
-                <ModuleScreenshot module={module} />
-              </div>
-            </motion.div>
-          </AnimatePresence>
+        <DiaHeading>Tus datos, bajo tu control.</DiaHeading>
+        <p className="mx-auto mt-4 max-w-xl text-lg text-[var(--graphite)]">Diseñado para cumplir RGPD. Sin compromisos.</p>
+        <div className="mx-auto mt-10 max-w-2xl space-y-4 text-left">
+          {compliance.map((c) => {
+            const Icon = c.icon;
+            return (
+              <FrostedCard key={c.text} className="flex items-start gap-4 py-5">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[16px]" style={{ background: c.accentSoft, color: c.accent }}>
+                  <Icon className="h-4 w-4" />
+                </div>
+                <p className="text-[15px] leading-relaxed text-[var(--graphite)]">{c.text}</p>
+              </FrostedCard>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
 
-function DashboardProof() {
+function DiagnosticForm() {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus('sending');
+    const data = Object.fromEntries(new FormData(e.currentTarget));
+    try {
+      const res = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      if (!res.ok) throw new Error(String(res.status));
+      setStatus('sent');
+      (e.target as HTMLFormElement).reset();
+    } catch {
+      setStatus('error');
+    }
+  }
+
   return (
-    <section id="dashboard" className="px-5 py-24 md:py-32">
-      <div className="mx-auto max-w-7xl">
-        <div className="rv mb-10 grid gap-5 md:grid-cols-[0.8fr_1.2fr] md:items-end">
-          <div>
-            <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.05] text-[var(--color-ink)]">
-              Una mesa de operaciones, no un gráfico bonito.
-            </h2>
-          </div>
-          <p className="max-w-2xl text-base leading-relaxed text-[var(--color-muted)]">
-            Cada fila conserva propiedad, estado de reserva, evidencia energética, acción recomendada y salida para propietario.
-          </p>
+    <section id="diagnostico" className="relative overflow-hidden px-5 py-24 md:py-32">
+      <SpectrumGlow className="-top-20 left-1/3 h-[300px] w-[400px]" />
+
+      <div className="relative mx-auto max-w-[640px]">
+        <div className="text-center">
+          <DiaEyebrow>Diagnóstico gratuito</DiaEyebrow>
+          <DiaHeading className="mt-4">¿Cuánta energía desperdicia tu cartera?</DiaHeading>
+          <p className="mx-auto mt-4 max-w-lg text-lg text-[var(--graphite)]">Analizamos tus datos de consumo y reservas. Sin compromiso, sin credenciales.</p>
         </div>
 
-        <div className="rv rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 shadow-sm md:p-6">
-          <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-            <div>
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-muted)]">Cartera piloto · Mayo 2026</p>
-              <h3 className="mt-2 font-display text-2xl font-semibold text-[var(--color-ink)]">Operaciones energéticas</h3>
-            </div>
-            <span className="rounded-full border border-[var(--color-border)] px-3 py-1 font-mono text-xs font-semibold text-[var(--color-muted)]">Actualizado 19:10</span>
-          </div>
+        <FrostedCard className="mt-12">
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {[
+              ['Nombre', 'name', 'text', 'name'],
+              ['Empresa', 'company', 'text', 'organization'],
+              ['Email', 'email', 'email', 'email'],
+              ['Nº alojamientos', 'units', 'number', 'off'],
+              ['Ciudad', 'region', 'text', 'address-level2'],
+              ['PMS utilizado', 'pms', 'text', 'off'],
+            ].map(([label, name, type, autocomplete]) => (
+              <div key={name}>
+                <label htmlFor={name} className="mb-2 block font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--slate)]">{label}</label>
+                <input
+                  id={name} name={name} type={type} autoComplete={autocomplete}
+                  required={name === 'name' || name === 'email' || name === 'units'}
+                  min={name === 'units' ? 1 : undefined}
+                  className="h-12 w-full rounded-[16px] border px-4 text-[15px] text-[var(--ink)] outline-none transition-all duration-200 placeholder:text-[var(--steel)] focus:border-[var(--ink)]"
+                  style={{ borderColor: 'var(--fog)', background: 'var(--snow)' }}
+                />
+              </div>
+            ))}
 
-          <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="grid gap-4">
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  ['32', 'propiedades'],
-                  ['184 kWh', 'fuera reserva'],
-                  ['7', 'alertas activas'],
-                  ['12/14', 'propietarios'],
-                ].map(([value, label]) => (
-                  <div key={label} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-4">
-                    <p className="font-mono text-2xl font-semibold text-[var(--color-ink)]">{value}</p>
-                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-muted)]">{label}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="rounded-xl border border-[var(--color-border)] p-4">
-                <p className="mb-4 font-display text-base font-semibold text-[var(--color-ink)]">Cola de acciones</p>
-                <div className="space-y-2">
-                  {actionRows.map(([code, type, evidence, action]) => (
-                    <div key={`${code}-${type}`} className="grid gap-3 rounded-lg border border-[var(--color-border)] p-3 text-sm md:grid-cols-[90px_1fr]">
-                      <div>
-                        <p className="font-mono font-semibold text-[var(--color-ink)]">{code}</p>
-                        <p className="text-xs text-[var(--color-muted)]">{type}</p>
-                      </div>
-                      <div>
-                        <p className="text-[var(--color-muted)]">{evidence}</p>
-                        <p className="mt-1 font-display font-semibold text-[var(--color-accent)]">{action}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="overflow-hidden rounded-xl border border-[var(--color-border)]">
-              <div className="grid grid-cols-[92px_1fr_90px_80px_84px] border-b border-[var(--color-border)] bg-[var(--color-surface-alt)] px-3 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-muted)] max-md:hidden">
-                <span>Código</span>
-                <span>Propiedad</span>
-                <span>Estado</span>
-                <span>kWh</span>
-                <span>Señal</span>
-              </div>
-              {properties.map(([code, name, state, kwh, signal]) => (
-                <div key={code} className="grid gap-2 border-b border-[var(--color-border)] px-3 py-4 last:border-b-0 md:grid-cols-[92px_1fr_90px_80px_84px] md:items-center">
-                  <p className="font-mono text-sm font-semibold text-[var(--color-ink)]">{code}</p>
-                  <p className="text-sm text-[var(--color-ink)]">{name}</p>
-                  <p className="text-sm text-[var(--color-muted)]">{state}</p>
-                  <p className="font-mono text-sm text-[var(--color-ink)]">{kwh}</p>
-                  <p className={`w-fit rounded-full px-2 py-1 font-mono text-[11px] font-semibold ${signal === 'Alerta' ? 'bg-[color-mix(in_srgb,var(--color-warning)_14%,transparent)] text-[var(--color-warning)]' : 'bg-[var(--color-accent-soft)] text-[var(--color-accent-ink)]'}`}>
-                    {signal}
-                  </p>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {diagnosticSelects.map(({ label, name, options }) => (
+                <div key={label}>
+                  <label htmlFor={name} className="mb-2 block font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--slate)]">{label}</label>
+                  <select
+                    id={name} name={name}
+                    className="h-12 w-full rounded-[16px] border px-4 text-[15px] text-[var(--ink)] outline-none"
+                    style={{ borderColor: 'var(--fog)', background: 'var(--snow)' }}
+                  >
+                    {options.map((o) => <option key={o}>{o}</option>)}
+                  </select>
                 </div>
               ))}
-              <div className="border-t border-[var(--color-border)] bg-[var(--color-surface-alt)] p-4">
-                <p className="font-display text-base font-semibold text-[var(--color-ink)]">Informe propietario</p>
-                <p className="mt-1 text-sm text-[var(--color-muted)]">Abril · 412 kWh · 3 acciones ejecutadas · resumen listo para liquidación.</p>
-              </div>
             </div>
-          </div>
-        </div>
+
+            <p className="rounded-[16px] p-3 text-[14px] text-[var(--slate)]" style={{ border: '1px solid var(--fog)' }}>
+              No envíes credenciales ni facturas por este formulario. Primero definimos un piloto seguro.
+            </p>
+
+            {status === 'sent' && (
+              <p className="rounded-[16px] p-3 text-[14px] font-medium text-[var(--graphite)]" style={{ border: '1px solid var(--fog)' }}>
+                Solicitud recibida. Te responderemos con una propuesta de diagnóstico.
+              </p>
+            )}
+            {status === 'error' && (
+              <p className="rounded-[16px] p-3 text-[14px] font-medium" style={{ border: '1px solid var(--fog)', color: 'var(--crimson, #fa3d1d)' }}>
+                No se pudo enviar. Revisa nombre, email y número de alojamientos.
+              </p>
+            )}
+
+            <button
+              type="submit" disabled={status === 'sending'}
+              className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-[30px] bg-[var(--pebble)] px-6 text-[15px] font-medium text-[var(--ink)] transition-all duration-200 hover:bg-[var(--ink)] hover:text-[var(--snow)] disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {status === 'sending' ? 'Enviando...' : 'Enviar solicitud'}
+              <Sparkles className="h-4 w-4" />
+            </button>
+          </form>
+        </FrostedCard>
       </div>
     </section>
   );
 }
+
+// ── Page ──
 
 export default function Page() {
-  useShrinkHeader();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const counterRefs = [useRef<HTMLSpanElement>(null), useRef<HTMLSpanElement>(null), useRef<HTMLSpanElement>(null)];
-  useCounter(counterRefs[0], 32, '');
-  useCounter(counterRefs[1], 184, ' kWh');
-  useCounter(counterRefs[2], 180, ' €/año');
 
   return (
-    <>
-      <style>{`
-        @keyframes rv{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
-        .rv{animation:rv .7s cubic-bezier(0.36,0,0.114,0.92) both}
-        @media(prefers-reduced-motion:reduce){.rv{animation:none!important;opacity:1!important}}
-      `}</style>
+    <main className="overflow-x-hidden" style={{ background: 'var(--canvas)', color: 'var(--ink)' }}>
+      {/* Sticky header — #EFEFEF, backdrop-blur(24px), height ~52px */}
+      <header
+        className="sticky top-0 z-40"
+        style={{ background: 'var(--fog)', backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
+      >
+        <div className="mx-auto flex h-[52px] max-w-[1200px] items-center justify-between px-5">
+          <a href="#" className="font-display text-lg font-light text-[var(--ink)]" aria-label="Tramo inicio">
+            Tram<span style={{ color: 'var(--graphite)' }}>o</span>
+          </a>
 
-      <main className="min-h-screen bg-[var(--color-paper)] text-[var(--color-ink)]">
-        <header className="tramo-hdr fixed inset-x-0 top-0 z-40 flex h-[72px] items-center">
-          <div className="absolute inset-0 bg-[var(--color-paper)]/80 backdrop-blur-sm" />
-          <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 relative">
-            <a href="#" className="font-display text-xl font-semibold text-[var(--color-ink)]">
-              Tramo
+          <nav className="hidden items-center gap-8 md:flex" aria-label="Navegación principal">
+            {navItems.map(([label, href]) => (
+              <a key={href} href={href} className="text-[14px] font-normal text-[var(--ink)] transition-all duration-200 hover:opacity-60">{label}</a>
+            ))}
+          </nav>
+
+          <div className="hidden items-center gap-3 md:flex">
+            <a href="/app/dashboard" className="rounded-[9999px] px-4 py-2 text-[14px] font-medium text-[var(--ink)] transition-all duration-200 hover:bg-[var(--pebble)]">
+              Ver demo
             </a>
-            <nav className="hidden items-center gap-5 md:flex">
-              {navItems.map(([label, href]) => (
-                <a key={href} href={href} className="inline-flex min-h-6 items-center py-1 font-display text-sm font-medium tracking-[0.01em] text-[var(--color-muted)] transition-colors hover:text-[var(--color-ink)]">
-                  {label}
-                </a>
-              ))}
-              <ScaleBarBtn href="#diagnostico">Diagnosticar mi cartera</ScaleBarBtn>
-            </nav>
-            <button type="button" onClick={() => setMobileOpen(true)} className="inline-flex h-11 w-11 items-center justify-center rounded-lg md:hidden">
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Abrir navegación</span>
+            <a href="#diagnostico" className="rounded-[30px] bg-[var(--pebble)] px-5 py-2 text-[14px] font-medium text-[var(--ink)] transition-all duration-200 hover:bg-[var(--ink)] hover:text-[var(--snow)]">
+              Diagnosticar
+            </a>
+          </div>
+
+          <button type="button" onClick={() => setMobileOpen(true)} className="inline-flex h-11 w-11 items-center justify-center rounded-[16px] md:hidden" aria-label="Abrir navegación">
+            <Menu className="h-5 w-5" />
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="fixed inset-0 z-50" style={{ background: 'var(--canvas)' }}>
+          <div className="flex h-16 items-center justify-between px-5">
+            <a href="#" className="font-display text-xl font-light text-[var(--ink)]">Tramo</a>
+            <button type="button" onClick={() => setMobileOpen(false)} aria-label="Cerrar">
+              <X className="h-6 w-6" />
             </button>
           </div>
-        </header>
-        <MobileNav open={mobileOpen} close={() => setMobileOpen(false)} />
-        <div className="h-[72px]" />
+          <nav className="flex flex-col gap-1 px-5">
+            {navItems.map(([label, href]) => (
+              <a key={href} href={href} onClick={() => setMobileOpen(false)} className="rounded-[16px] px-4 py-3 font-display text-lg text-[var(--ink)] hover:bg-[var(--fog)]">{label}</a>
+            ))}
+          </nav>
+        </div>
+      )}
 
-        <section className="px-5 pb-24 pt-20 text-center md:pb-32 md:pt-28">
-          <div className="mx-auto max-w-5xl">
-            <div className="rv mx-auto mb-5 flex flex-wrap items-center justify-center gap-3">
-              <p className="w-fit rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-muted)]">
-                Para gestores de carteras turísticas
-              </p>
-              <p className="w-fit rounded-full border border-[var(--color-accent)] bg-[var(--color-accent-soft)] px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-accent-ink)]">
-                ~180&nbsp;€/año por CUPS
-              </p>
-            </div>
-            <h1 className="rv mx-auto max-w-5xl font-display text-[clamp(3rem,7vw,5.7rem)] font-semibold leading-[0.98] tracking-[-0.02em] text-[var(--color-ink)]">
-              Convierte la energía de tu cartera turística en margen operativo.
-            </h1>
-            <p className="rv mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-[var(--color-muted)]">
-              Cruza reservas con CUPS y Datadis para detectar consumo fuera de estancia, activar reglas y preparar informes por propietario.
-            </p>
-            <div className="rv mt-9 flex flex-col items-center gap-4">
-              <ScaleBarBtn href="#diagnostico">Diagnosticar mi cartera</ScaleBarBtn>
-              <TextCta href="#dashboard">Ver dashboard demo</TextCta>
-            </div>
-            <HeroInteractiveDemo />
-          </div>
-        </section>
+      <Hero />
+      <MarqueeStrip />
+      {/* Unified continuous background — 4 blobs covering full page flow */}
+      <div className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0">
+          {/* Top-left: rose */}
+          <div
+            className="absolute"
+            style={{
+              background: 'radial-gradient(circle, #c679c4 0%, transparent 60%)',
+              width: '900px',
+              height: '900px',
+              top: '-300px',
+              left: '-200px',
+              filter: 'blur(100px)',
+              opacity: 0.10,
+              animation: 'gradient-drift 14s ease-in-out infinite',
+            }}
+          />
+          {/* Mid-upper: blue */}
+          <div
+            className="absolute"
+            style={{
+              background: 'radial-gradient(circle, #0358f7 0%, transparent 60%)',
+              width: '800px',
+              height: '800px',
+              top: '800px',
+              right: '-150px',
+              filter: 'blur(120px)',
+              opacity: 0.09,
+              animation: 'gradient-drift 11s ease-in-out infinite reverse',
+            }}
+          />
+          {/* Mid-lower: amber (covers modules, pricing, compliance) */}
+          <div
+            className="absolute"
+            style={{
+              background: 'radial-gradient(circle, #ffb005 0%, transparent 60%)',
+              width: '900px',
+              height: '900px',
+              top: '2000px',
+              left: '-100px',
+              filter: 'blur(130px)',
+              opacity: 0.08,
+              animation: 'gradient-drift 13s ease-in-out infinite',
+            }}
+          />
+          {/* Bottom: crimson (covers diagnostic + footer) */}
+          <div
+            className="absolute"
+            style={{
+              background: 'radial-gradient(circle, #fa3d1d 0%, transparent 60%)',
+              width: '950px',
+              height: '950px',
+              bottom: '-200px',
+              right: '-100px',
+              filter: 'blur(140px)',
+              opacity: 0.09,
+              animation: 'gradient-drift 12s ease-in-out infinite reverse',
+            }}
+          />
+        </div>
+        <Problems />
+        <SpectrumStrip className="mx-auto max-w-[1200px]" />
+        <OperationalFlow />
+        <Modules />
+        <Pricing />
+        <Compliance />
+        <DiagnosticForm />
+      </div>
 
-        <section id="problema" className="border-y border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-20 md:py-28">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-10 max-w-3xl rv">
-              <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.05] text-[var(--color-ink)]">
-                La factura llega tarde; la fuga ocurre hoy.
-              </h2>
+      {/* Footer */}
+      <footer className="px-5 py-16" style={{ borderTop: '1px solid var(--fog)' }}>
+        <div className="mx-auto max-w-[1200px]">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <p className="font-display text-lg font-light text-[var(--ink)]">Tramo</p>
+              <p className="mt-3 text-[14px] text-[var(--graphite)]">Control energético para carteras turísticas en España.</p>
             </div>
-            <div className="grid gap-4 md:grid-cols-3">
-              {painCards.map((card) => (
-                <article key={card.number} className="rv rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-6">
-                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-accent)]">{card.number}</p>
-                  <h3 className="mt-5 font-display text-2xl font-semibold leading-tight text-[var(--color-ink)]">{card.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">{card.body}</p>
-                  <p className="mt-8 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-3 font-mono text-sm font-semibold text-[var(--color-ink)]">{card.data}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <SystemFlowScroll />
-        <CoreModules />
-
-        <section className="px-5 py-24 md:py-32">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-10 max-w-3xl rv">
-              <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.05] text-[var(--color-ink)]">
-                Más negocio cuando la cartera ya tiene datos.
-              </h2>
-            </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              {[
-                {
-                  icon: PlugZap,
-                  visual: SmartHomeSVG,
-                  title: 'Medición en tiempo real',
-                  body: 'Medidores inteligentes opcionales para detectar el consumo mientras ocurre y activar reglas operativas.',
-                  note: 'No obligatorio para el diagnóstico inicial',
-                },
-                {
-                  icon: BatteryCharging,
-                  visual: BatteryArbitrageSVG,
-                  title: 'Batería y arbitraje OMIE',
-                  body: 'Simulación avanzada para carteras con solar, baterías o potencial de arbitraje horario.',
-                  note: 'Escenarios y sensibilidad de payback',
-                },
-              ].map(({ icon: Icon, visual: Visual, title, body, note }) => (
-                <article key={title} className="rv grid min-h-[320px] gap-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 md:grid-cols-[1fr_150px] md:items-center">
-                  <div>
-                    <Icon className="h-6 w-6 text-[var(--color-accent)]" />
-                    <h3 className="mt-6 font-display text-2xl font-semibold text-[var(--color-ink)]">{title}</h3>
-                    <p className="mt-3 text-base leading-relaxed text-[var(--color-muted)]">{body}</p>
-                    <p className="mt-8 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-muted)]">{note}</p>
-                  </div>
-                  <div className="flex h-36 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-alt)]">
-                    <Visual className="h-32 w-32" />
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── SENSORS & HARDWARE ── */}
-        <section id="sensores" className="border-y border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-24 md:py-32">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-10 max-w-3xl rv">
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-accent)]">Hardware Inteligente</p>
-              <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.05] text-[var(--color-ink)]">
-                No solo software. Instalamos sensores Shelly en cada apartamento.
-              </h2>
-              <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-muted)]">
-                Los medidores inteligentes detectan el consumo mientras ocurre y permiten actuar antes de que el kWh se convierta en factura.
-              </p>
-            </div>
-            <div className="rv grid gap-4 md:grid-cols-3">
-              {[
-                { name: 'Shelly EM', func: 'Medición consumo total', price: '~60 €', desc: 'Instalado en la entrada general del cuadro eléctrico. Mide kWh totales, voltaje, corriente y factor de potencia en tiempo real.', tag: 'Medición' },
-                { name: 'Shelly Pro 4PM', func: 'Control 4 circuitos', price: '~80 €', desc: 'Controla y mide 4 circuitos independientes: termo, AC, lavadora, cocina. Permite activar/desactivar remotamente cada línea.', tag: 'Control' },
-                { name: 'Shelly H&T', func: 'Temperatura y humedad', price: '~18 €', desc: 'Sensor ambiental para salón o zona común. Monitoriza confort, detecta presencia por variación térmica y ayuda a validar reglas de climatización.', tag: 'Ambiente' },
-              ].map((sensor) => (
-                <article key={sensor.name} className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-6">
-                  <span className="inline-block rounded-full border border-[var(--color-accent)] bg-[var(--color-accent-soft)] px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-accent-ink)]">{sensor.tag}</span>
-                  <h3 className="mt-5 font-display text-xl font-semibold text-[var(--color-ink)]">{sensor.name}</h3>
-                  <p className="mt-1 font-mono text-sm font-semibold text-[var(--color-muted)]">{sensor.func}</p>
-                  <p className="mt-4 text-sm leading-relaxed text-[var(--color-muted)]">{sensor.desc}</p>
-                  <p className="mt-6 font-mono text-2xl font-semibold text-[var(--color-ink)]">{sensor.price}</p>
-                  <p className="text-xs text-[var(--color-muted)]">por unidad</p>
-                </article>
-              ))}
-            </div>
-            <div className="rv mt-8 rounded-2xl border border-[var(--color-border)] bg-[var(--color-ink)] p-6 text-[var(--color-surface)] md:p-8">
-              <div className="flex flex-wrap items-baseline justify-between gap-4">
-                <div>
-                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-accent-soft)]">Kit por apartamento</p>
-                  <p className="mt-2 font-mono text-[clamp(2.5rem,5vw,4rem)] font-semibold leading-none">158 €</p>
-                  <p className="mt-2 text-sm text-[var(--color-data-muted)]">+ 120-200 € instalación profesional</p>
-                </div>
-                <div className="text-right">
-                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-data-muted)]">Inversión total</p>
-                  <p className="mt-2 font-mono text-3xl font-semibold">~300 €</p>
-                  <p className="text-sm text-[var(--color-data-muted)]">por apartamento</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── BATERÍAS & ARBITRAJE ── */}
-        <section id="baterias" className="px-5 py-24 md:py-32">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-10 max-w-3xl rv">
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-accent)]">Arbitraje Energético</p>
-              <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.05] text-[var(--color-ink)]">
-                Convertimos las diferencias de precio entre periodos tarifarios en margen.
-              </h2>
-              <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-muted)]">
-                Carga baterías cuando la energía es barata (P3) y descarga cuando es cara (P1). El diferencial de precio se convierte en ahorro operativo recurrente.
-              </p>
-            </div>
-            <div className="rv grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-muted)]">Sin batería</p>
-                <div className="mt-6 space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-[var(--color-muted)]">Precio P1 (punta)</span>
-                    <span className="font-mono font-semibold text-[var(--color-ink)]">0,20 €/kWh</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-[var(--color-muted)]">Precio P3 (valle)</span>
-                    <span className="font-mono font-semibold text-[var(--color-ink)]">0,08 €/kWh</span>
-                  </div>
-                  <div className="border-t border-[var(--color-border)] pt-4">
-                    <p className="text-sm text-[var(--color-muted)]">Margen no aprovechado</p>
-                    <p className="mt-1 font-mono text-3xl font-semibold text-[var(--color-viz-fuera-reserva)]">0,12 €/kWh</p>
-                  </div>
-                </div>
-              </div>
-              <div className="rounded-2xl border-2 border-[var(--color-accent)] bg-[var(--color-accent-soft)] p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-accent-ink)]">Con batería</p>
-                <div className="mt-6 space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-[var(--color-ink)]">Carga en P3</span>
-                    <span className="font-mono font-semibold text-[var(--color-accent-ink)]">0,08 €/kWh</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-[var(--color-ink)]">Descarga en P1</span>
-                    <span className="font-mono font-semibold text-[var(--color-accent-ink)]">0,20 €/kWh</span>
-                  </div>
-                  <div className="border-t border-[var(--color-accent-soft)] pt-4">
-                    <p className="text-sm text-[var(--color-ink)]">Margen capturado</p>
-                    <p className="mt-1 font-mono text-3xl font-semibold text-[var(--color-accent-ink)]">+0,12 €/kWh</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="rv mt-6 grid gap-4 md:grid-cols-[1fr_auto]">
-              <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
-                <div className="flex items-center gap-3">
-                  <BatteryCharging className="h-8 w-8 text-[var(--color-accent)]" />
-                  <div>
-                    <p className="font-display text-lg font-semibold text-[var(--color-ink)]">Huawei Luna 2000</p>
-                    <p className="font-mono text-sm text-[var(--color-muted)]">10 kWh · expandible a 30 kWh</p>
-                  </div>
-                </div>
-                <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                  {[
-                    ['5.500 €', 'instalada'],
-                    ['350-700 €/año', 'ahorro adicional'],
-                    ['5-7 años', 'ROI estimado'],
-                  ].map(([value, label]) => (
-                    <div key={label} className="rounded-xl bg-[var(--color-surface-alt)] p-4 text-center">
-                      <p className="font-mono text-2xl font-semibold text-[var(--color-ink)]">{value}</p>
-                      <p className="mt-1 text-xs text-[var(--color-muted)]">{label}</p>
-                    </div>
-                  ))}
-                </div>
-                <p className="mt-4 text-xs text-[var(--color-muted)]">10 años de garantía · Instalación profesional incluida · Monitorización en Tramo</p>
-              </div>
-            </div>
-            <div className="rv mt-6">
-              <TextCta href="mailto:hola@tramo.energy">Solicitar estudio de arbitraje</TextCta>
-            </div>
-          </div>
-        </section>
-
-        <DashboardProof />
-
-        <section className="border-y border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-20 md:py-28">
-          <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-3">
             {[
-              [counterRefs[0], '32', '', 'propiedades monitorizadas'],
-              [counterRefs[1], '184', ' kWh', 'detectados fuera de estancia'],
-              [counterRefs[2], '180', ' €/año', 'estimación media por CUPS'],
-            ].map(([ref, initial, suffix, label], index) => (
-              <div key={label as string} className="rv rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-8 text-center">
-                <p className="font-mono text-[clamp(3rem,7vw,5rem)] font-semibold leading-none text-[var(--color-ink)]">
-                  <span ref={ref as React.RefObject<HTMLSpanElement>}>{initial as string}{suffix as string}</span>
-                </p>
-                <p className="mt-4 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-muted)]">{label as string}</p>
-                {index === 2 && <p className="mt-3 text-xs text-[var(--color-muted)]">Estimación prudente, no garantía de ahorro.</p>}
+              ['Producto', ['Monitorización', 'Atribución', 'Potencia', 'Informes', 'Batería']],
+              ['Empresa', ['Sobre nosotros', 'Blog', 'Contacto', 'Privacidad']],
+              ['Legal', ['Términos', 'Privacidad', 'Cookies', 'RGPD']],
+            ].map(([h, links]) => (
+              <div key={h as string}>
+                <p className="mb-3 text-[14px] font-medium text-[var(--ink)]">{h}</p>
+                <ul className="space-y-2">
+                  {(links as string[]).map((link) => (
+                    <li key={link}>
+                      <a href="#" className="text-[14px] text-[var(--graphite)] underline decoration-transparent transition-all duration-200 hover:decoration-[var(--ink)]">{link}</a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
-        </section>
-
-        <section className="px-5 py-24 md:py-32">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-10 max-w-3xl rv">
-              <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.05] text-[var(--color-ink)]">
-                Diagnóstico sin credenciales ni promesas infladas.
-              </h2>
-            </div>
-            <div className="grid gap-4 md:grid-cols-3">
-              {[
-                [ShieldCheck, 'Datos en la UE', 'Servidores europeos con cifrado en reposo y en tránsito. Datos segregados por cartera, acceso limitado al equipo autorizado.'],
-                [LockKeyhole, 'Sin scraping ni credenciales', 'Tú decides qué datos compartir. Sin acceso automatizado a PMS, facturas ni CUPS sin tu autorización explícita.'],
-                [Gauge, 'Sin lock-in ni permanencia', 'Piloto con datos reales y sin configuración técnica. Si decides parar, los datos son tuyos y la baja es inmediata.'],
-              ].map(([Icon, title, body], index) => {
-                const TypedIcon = Icon as typeof ShieldCheck;
-                return (
-                  <article key={title as string} className="rv rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
-                    <TypedIcon className="h-6 w-6 text-[var(--color-accent)]" />
-                    <h3 className="mt-6 font-display text-xl font-semibold text-[var(--color-ink)]">{title as string}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">{body as string}</p>
-                    {index === 0 && <p className="mt-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-3 font-mono text-xs font-semibold text-[var(--color-ink)]">Certificado ISO 27001 del proveedor cloud</p>}
-                    {index === 2 && <p className="mt-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-3 font-mono text-xs font-semibold text-[var(--color-accent-ink)]">Piloto sin coste · sin tarjeta</p>}
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* ── PRICING ── */}
-        <section id="precios" className="px-5 py-24 md:py-32">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-10 max-w-3xl rv">
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-accent)]">Precios</p>
-              <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.05] text-[var(--color-ink)]">
-                Inversión que se recupera con el ahorro operativo.
-              </h2>
-              <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-muted)]">
-                Todos los planes incluyen piloto gratuito, sin permanencia ni tarjeta. El ahorro estimado supera el coste en todos los tramos.
-              </p>
-            </div>
-            <div className="rv grid gap-4 md:grid-cols-4">
-              {[
-                { name: 'Starter', range: '10-24', price: '150-250 €/mes', saving: '1.200 €/año', cta: 'Diagnosticar' },
-                { name: 'Professional', range: '25-49', price: '300-500 €/mes', saving: '3.000 €/año', cta: 'Diagnosticar', highlight: true },
-                { name: 'Enterprise', range: '50-99', price: '500-750 €/mes', saving: '6.000 €/año', cta: 'Diagnosticar' },
-                { name: 'Scale', range: '100+', price: '750-1.250 €/mes', saving: '12.000 €/año', cta: 'Hablar con ventas' },
-              ].map((plan) => (
-                <article key={plan.name} className={`rounded-2xl border p-6 ${plan.highlight ? 'border-[var(--color-accent)] bg-[var(--color-accent-soft)]' : 'border-[var(--color-border)] bg-[var(--color-surface)]'}`}>
-                  <p className="font-display text-lg font-semibold text-[var(--color-ink)]">{plan.name}</p>
-                  <p className="mt-1 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-muted)]">{plan.range} apartamentos</p>
-                  <p className="mt-6 font-mono text-sm font-semibold text-[var(--color-muted)]">Desde</p>
-                  <p className="font-mono text-2xl font-semibold text-[var(--color-ink)]">{plan.price}</p>
-                  <div className="mt-4 rounded-xl bg-[var(--color-accent-soft)] p-3">
-                    <p className="text-center font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent-ink)]">Ahorro estimado</p>
-                    <p className="mt-1 text-center font-mono text-xl font-semibold text-[var(--color-accent-ink)]">{plan.saving}</p>
-                  </div>
-                  <div className="mt-6">
-                    <ScaleBarBtn href="#diagnostico" variant={plan.highlight ? 'solid' : 'outline'} className="w-full justify-center">{plan.cta}</ScaleBarBtn>
-                  </div>
-                  <div className="mt-4 space-y-2">
-                    <div className="flex items-center gap-2 text-xs text-[var(--color-muted)]"><CheckCircle2 className="h-3.5 w-3.5 text-[var(--color-accent)]" /> Piloto gratuito</div>
-                    <div className="flex items-center gap-2 text-xs text-[var(--color-muted)]"><CheckCircle2 className="h-3.5 w-3.5 text-[var(--color-accent)]" /> Sin tarjeta</div>
-                    <div className="flex items-center gap-2 text-xs text-[var(--color-muted)]"><CheckCircle2 className="h-3.5 w-3.5 text-[var(--color-accent)]" /> Sin permanencia</div>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <div className="rv mt-8 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-6">
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-muted)]">Add-ons opcionales</p>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                <div className="flex items-center justify-between rounded-xl bg-[var(--color-surface)] p-4">
-                  <div>
-                    <p className="font-display text-sm font-semibold text-[var(--color-ink)]">+ Sensores Shelly</p>
-                    <p className="text-xs text-[var(--color-muted)]">Instalación y configuración por apartamento</p>
-                  </div>
-                  <p className="font-mono text-lg font-semibold text-[var(--color-ink)]">+300 €/apt</p>
-                </div>
-                <div className="flex items-center justify-between rounded-xl bg-[var(--color-surface)] p-4">
-                  <div>
-                    <p className="font-display text-sm font-semibold text-[var(--color-ink)]">+ Batería</p>
-                    <p className="text-xs text-[var(--color-muted)]">Huawei Luna 2000 · estudio personalizado</p>
-                  </div>
-                  <p className="font-mono text-lg font-semibold text-[var(--color-ink)]">Consultar</p>
-                </div>
-              </div>
-              <div className="mt-4">
-                <TextCta href="/precios">Calcula tu ahorro con nuestra calculadora</TextCta>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="diagnostico" className="border-t border-[var(--color-border)] bg-[var(--color-ink)] px-5 py-24 text-[var(--color-surface)] md:py-32">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div className="rv">
-              <h2 className="font-display text-[clamp(2.4rem,5vw,4rem)] font-semibold leading-[1.02]">¿Listo para controlar tu cartera?</h2>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-[var(--color-data-muted)]">
-                Revisamos cuántas propiedades tienes, qué datos están disponibles y dónde puede haber kWh sin explicación antes de plantear un piloto.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <ScaleBarBtn href="mailto:hola@tramo.energy">Solicitar diagnóstico</ScaleBarBtn>
-                <ScaleBarBtn href="mailto:hola@tramo.energy" variant="darkOutline">
-                  Hablar con ventas
-                </ScaleBarBtn>
-              </div>
-            </div>
-            <form className="rv rounded-2xl border border-[rgba(255,255,255,0.16)] bg-[rgba(255,255,255,0.04)] p-4 md:p-6">
-              <div className="grid gap-4 sm:grid-cols-2">
-                {['Nombre', 'Empresa / gestora', 'Email corporativo', 'Nº alojamientos', 'Ciudad / región', 'PMS utilizado'].map((label) => (
-                  <label key={label} className="block">
-                    <span className="mb-2 block font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-data-muted)]">{label}</span>
-                    <input
-                      suppressHydrationWarning
-                      className="h-11 w-full rounded-lg border border-[rgba(255,255,255,0.16)] bg-[rgba(255,255,255,0.06)] px-3 text-sm text-[var(--color-surface)] outline-offset-2 placeholder:text-[var(--color-data-muted)]"
-                    />
-                  </label>
-                ))}
-              </div>
-              <div className="mt-4 grid gap-4 sm:grid-cols-3">
-                {['Datadis/CUPS', 'Facturas recientes', 'Dolor principal'].map((label) => (
-                  <label key={label} className="block">
-                    <span className="mb-2 block font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-data-muted)]">{label}</span>
-                    <select
-                      suppressHydrationWarning
-                      className="h-11 w-full rounded-lg border border-[rgba(255,255,255,0.16)] bg-[rgba(255,255,255,0.06)] px-3 text-sm text-[var(--color-surface)] outline-offset-2"
-                    >
-                      <option>Sí</option>
-                      <option>No</option>
-                      <option>No lo sé</option>
-                    </select>
-                  </label>
-                ))}
-              </div>
-              <p className="mt-5 rounded-lg border border-[rgba(255,255,255,0.16)] p-3 text-sm leading-relaxed text-[var(--color-data-muted)]">
-                No envíes credenciales ni facturas por este formulario. En la llamada revisamos qué datos tienes disponibles y cómo preparar un piloto seguro.
-              </p>
-            </form>
-          </div>
-        </section>
-
-        <footer className="border-t border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-12">
-          <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2">
-            <div>
-              <p className="font-display text-xl font-semibold text-[var(--color-ink)]">Tramo</p>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">Consumo atribuido por reserva y propietario.</p>
-            </div>
-            <div className="grid grid-cols-2 gap-6">
-              <div>
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-ink)]">Producto</p>
-                <ul className="mt-4 space-y-2">
-                  {['Fuera de reserva','Tarifa y potencia','Reglas por reserva','Informes propietarios'].map(l => <li key={l}><a href="#" className="inline-flex min-h-6 items-center py-1 text-sm text-[var(--color-muted)] hover:text-[var(--color-ink)]">{l}</a></li>)}
-                </ul>
-              </div>
-              <div>
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-ink)]">Legal</p>
-                <ul className="mt-4 space-y-2">
-                  {['Privacidad','Términos','Contacto'].map(l => <li key={l}><a href="#" className="inline-flex min-h-6 items-center py-1 text-sm text-[var(--color-muted)] hover:text-[var(--color-ink)]">{l}</a></li>)}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </main>
-    </>
+          <hr className="my-10 border-[var(--fog)]" />
+          <p className="text-center text-[13px] text-[var(--slate)]">© {new Date().getFullYear()} Tramo Energy.</p>
+        </div>
+      </footer>
+    </main>
   );
 }
