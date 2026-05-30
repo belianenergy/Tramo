@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tramo — Gestión Energética Carteras Turísticas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#FAFAF8;color:#1A1A1A;font-family:'Inter',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden}
+.font-serif{font-family:'DM Serif Display',serif;font-weight:400}
+.font-mono{font-family:'JetBrains Mono',monospace;font-weight:400}
+a{color:inherit;text-decoration:none}
+
+/* Nav */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;position:sticky;top:0;background:#FAFAF8;z-index:100}
+.nav-logo{font-size:1.1rem;font-weight:600;letter-spacing:0.02em;color:#1A1A1A}
+.nav-logo span{color:#0D9488}
+.nav-links{display:flex;gap:32px;font-size:0.8rem;color:#6B7280;font-weight:400}
+.nav-links a:hover{color:#1A1A1A}
+.nav-cta{display:flex;gap:12px}
+.btn{padding:10px 22px;border-radius:8px;font-size:0.85rem;font-weight:500;cursor:pointer;border:none;transition:all 0.2s;font-family:'Inter',sans-serif}
+.btn-primary{background:#0D9488;color:#fff}
+.btn-primary:hover{background:#0F766E}
+.btn-outline{border:1px solid #D1D5DB;color:#1A1A1A;background:transparent}
+.btn-outline:hover{border-color:#0D9488;color:#0D9488}
+
+/* Sections */
+section{padding:96px 48px}
+.container{max-width:1200px;margin:0 auto}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.18em;color:#0D9488;margin-bottom:16px;font-weight:500}
+h1{font-size:clamp(2.25rem,5vw,4rem);line-height:1.08;margin-bottom:24px;font-weight:400}
+h2{font-size:clamp(1.75rem,4vw,3rem);line-height:1.12;margin-bottom:20px;font-weight:400}
+h3{font-size:1.15rem;font-weight:500;margin-bottom:8px}
+.subtitle{font-size:1.1rem;color:#6B7280;max-width:580px;line-height:1.75;font-weight:300}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:120px 48px 96px}
+.hero-badges{display:flex;gap:8px;margin-bottom:24px}
+.badge{font-family:'JetBrains Mono',monospace;font-size:0.65rem;padding:6px 14px;border:1px solid #E5E7EB;border-radius:100px;color:#6B7280;background:#fff}
+.badge-accent{border-color:#CCFBF1;color:#0D9488}
+.hero-ctas{display:flex;gap:14px;margin-top:36px}
+
+/* Data Card */
+.data-card{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 8px 24px rgba(0,0,0,0.04)}
+.data-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.data-card-title{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#6B7280}
+.data-card-status{font-family:'JetBrains Mono',monospace;font-size:0.65rem;padding:4px 10px;background:#F0FDF4;color:#16A34A;border-radius:100px}
+.data-row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #F3F4F6}
+.data-row:last-child{border-bottom:none}
+.data-label{font-size:0.85rem;color:#6B7280}
+.data-value{font-family:'JetBrains Mono',monospace;font-size:0.85rem;font-weight:500}
+.data-value.accent{color:#0D9488;font-weight:600}
+.bar-chart{display:flex;align-items:end;gap:4px;height:50px;margin-top:16px}
+.bar{width:100%;background:#F3F4F6;border-radius:2px 2px 0 0}
+.bar.highlight{background:#0D9488}
+
+/* Problems */
+.problems{border-top:1px solid #F3F4F6}
+.problems-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+.problem-card{background:#fff;border-radius:12px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.problem-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.08)}
+.problem-num{font-family:'DM Serif Display',serif;font-size:2rem;color:#0D9488;margin-bottom:16px;line-height:1}
+.problem-metric{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:#0D9488;margin-top:16px;padding:6px 12px;background:#CCFBF1;border-radius:6px;display:inline-block}
+
+/* Sistema */
+.sistema-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:48px}
+.source-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.source-card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.04);display:flex;align-items:center;gap:14px}
+.source-icon{width:36px;height:36px;background:#CCFBF1;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+
+/* Flow */
+.flow-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+.flow-card{background:#fff;border-radius:12px;padding:36px 28px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.flow-num{font-family:'DM Serif Display',serif;font-size:2.5rem;color:#0D948833;margin-bottom:16px;line-height:1}
+.flow-arrow{color:#0D9488;font-size:1.5rem;display:block;margin-top:24px}
+
+/* Modules */
+.modules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.module-card{background:#fff;border-radius:12px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.module-icon{width:44px;height:44px;background:#CCFBF1;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:20px}
+.module-signal{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#16A34A;padding:4px 10px;background:#F0FDF4;border-radius:100px;margin-top:16px;display:inline-block}
+
+/* Pricing */
+.pricing{border-top:1px solid #F3F4F6}
+.pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
+.pricing-card{background:#fff;border-radius:12px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.pricing-card.featured{box-shadow:0 0 0 2px #0D9488,0 4px 16px rgba(13,148,136,0.1)}
+.pricing-name{font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:4px}
+.pricing-range{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:20px}
+.pricing-price{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:500;color:#0D9488}
+
+/* Trust */
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.trust-card{background:#fff;border-radius:12px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.trust-icon{color:#0D9488;font-size:1.5rem;margin-bottom:16px}
+
+/* Diagnostic */
+.diagnostic{background:#1A1A1A}
+.diagnostic .eyebrow{color:#5EEAD4}
+.diagnostic h2{color:#fff}
+.diagnostic-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center}
+.diagnostic p{color:#D1D5DB}
+.diagnostic-form{background:#262626;border-radius:16px;padding:36px}
+.diagnostic-form h3{color:#fff;margin-bottom:24px;font-family:'Inter',sans-serif}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:0.8rem;color:#9CA3AF;margin-bottom:6px;font-weight:500}
+.form-group input,.form-group select{width:100%;padding:12px 16px;background:#404040;border:1px solid #525252;border-radius:8px;color:#fff;font-size:0.9rem}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:#0D9488}
+.form-group input::placeholder{color:#78716C}
+
+/* Footer */
+.footer{border-top:1px solid #F3F4F6;padding:48px;text-align:center;font-size:0.8rem;color:#9CA3AF}
+.footer-links{display:flex;justify-content:center;gap:32px;margin-bottom:16px}
+.footer-links a:hover{color:#1A1A1A}
+
+@media(max-width:768px){
+.hero,.sistema-grid,.diagnostic-grid{grid-template-columns:1fr}
+.problems-grid,.flow-cards,.modules-grid,.pricing-grid,.trust-grid{grid-template-columns:1fr}
+.nav-links{display:none}
+section{padding:64px 24px}
+.nav{padding:16px 24px}
+.hero{padding:80px 24px 64px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+<div class="nav-logo">tram<span>o</span></div>
+<div class="nav-links">
+<a href="#problema">Problema</a>
+<a href="#sistema">Sistema</a>
+<a href="#modulos">Módulos</a>
+<a href="#pricing">Precios</a>
+</div>
+<div class="nav-cta">
+<button class="btn btn-outline">Login</button>
+<button class="btn btn-primary">Diagnóstico</button>
+</div>
+</nav>
+
+<section class="hero">
+<div>
+<div class="hero-badges">
+<span class="badge">B2B Energy</span>
+<span class="badge badge-accent">Portfolio Management</span>
+</div>
+<h1 class="font-serif">Convierte la energía de tu cartera turística en margen operativo.</h1>
+<p class="subtitle">Tramo cruza reservas, CUPS, Datadis, facturas y tarifas para detectar pérdidas, aprobar acciones e informar a propietarios con evidencia.</p>
+<div class="hero-ctas">
+<button class="btn btn-primary">Diagnosticar cartera →</button>
+<button class="btn btn-outline">Ver dashboard demo</button>
+</div>
+</div>
+<div>
+<div class="data-card">
+<div class="data-card-header">
+<span class="data-card-title">Unidad VGO-014</span>
+<span class="data-card-status">Vacía</span>
+</div>
+<div class="data-row">
+<span class="data-label">Checkout</span>
+<span class="data-value">11:00</span>
+</div>
+<div class="data-row">
+<span class="data-label">Consumo detectado</span>
+<span class="data-value accent">13:10 – 16:40</span>
+</div>
+<div class="data-row">
+<span class="data-label">Fuera de reserva</span>
+<span class="data-value accent">4,2 kWh</span>
+</div>
+<div class="data-row">
+<span class="data-label">Estimación mensual</span>
+<span class="data-value">184 kWh</span>
+</div>
+<div class="bar-chart">
+<div class="bar" style="height:30%"></div>
+<div class="bar" style="height:25%"></div>
+<div class="bar" style="height:45%"></div>
+<div class="bar" style="height:60%"></div>
+<div class="bar" style="height:35%"></div>
+<div class="bar highlight" style="height:80%"></div>
+<div class="bar highlight" style="height:95%"></div>
+<div class="bar highlight" style="height:85%"></div>
+<div class="bar" style="height:40%"></div>
+<div class="bar" style="height:20%"></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="problema" class="problems">
+<div class="container">
+<p class="eyebrow">Problema</p>
+<h2 class="font-serif">La energía no espera al checkout.</h2>
+<p class="subtitle">El consumo invisible entre reservas se acumula en facturas que nadie entiende hasta que el propietario pregunta.</p>
+<div class="problems-grid">
+<div class="problem-card">
+<p class="problem-num">01</p>
+<h3>Consumo sin reserva</h3>
+<p style="color:#6B7280;font-size:0.9rem">Termo, AC o climatización siguen activos después del checkout y la factura no lo cuenta hasta semanas después.</p>
+<span class="problem-metric">4,2 kWh fuera de estancia</span>
+</div>
+<div class="problem-card">
+<p class="problem-num">02</p>
+<h3>CUPS y facturas opacas</h3>
+<p style="color:#6B7280;font-size:0.9rem">La gestora tiene apartamentos, propietarios y reservas; la energía llega en otro idioma: CUPS, potencia y periodos.</p>
+<span class="problem-metric">P1/P2/P3 sin contexto PMS</span>
+</div>
+<div class="problem-card">
+<p class="problem-num">03</p>
+<h3>Tarifa heredada</h3>
+<p style="color:#6B7280;font-size:0.9rem">Potencias contratadas y tarifas antiguas se mantienen por inercia aunque la ocupación real ya cuente otra historia.</p>
+<span class="problem-metric">P2 4,6 kW → 3,3 kW</span>
+</div>
+<div class="problem-card">
+<p class="problem-num">04</p>
+<h3>Propietario pide explicación</h3>
+<p style="color:#6B7280;font-size:0.9rem">El coste energético termina en la liquidación. Sin evidencia, la conversación se vuelve reactiva.</p>
+<span class="problem-metric">Informe abril listo</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="sistema">
+<div class="container">
+<div class="sistema-grid">
+<div>
+<p class="eyebrow">Sistema</p>
+<h2 class="font-serif">Datos cruzados, decisiones claras.</h2>
+<p class="subtitle">Tramo conecta fuentes de energía y operación para convertir datos crudos en acciones aprobables y evidencias para propietarios.</p>
+</div>
+<div class="source-cards">
+<div class="source-card"><div class="source-icon">📅</div><div><p style="font-weight:500;font-size:0.9rem">Reservas / PMS</p><p style="font-size:0.75rem;color:#9CA3AF">Check-in/out, ocupación</p></div></div>
+<div class="source-card"><div class="source-icon">🔌</div><div><p style="font-weight:500;font-size:0.9rem">CUPS / Datadis</p><p style="font-size:0.75rem;color:#9CA3AF">Consumo horario real</p></div></div>
+<div class="source-card"><div class="source-icon">📄</div><div><p style="font-weight:500;font-size:0.9rem">Facturas</p><p style="font-size:0.75rem;color:#9CA3AF">Importes y periodos</p></div></div>
+<div class="source-card"><div class="source-icon">⚡</div><div><p style="font-weight:500;font-size:0.9rem">Tarifas P1/P2/P3</p><p style="font-size:0.75rem;color:#9CA3AF">Potencia y energía</p></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<p class="eyebrow">Flujo operativo</p>
+<h2 class="font-serif">De la detección al informe.</h2>
+<div class="flow-cards">
+<div class="flow-card">
+<p class="flow-num">01</p>
+<h3>Detectar</h3>
+<p style="color:#6B7280;font-size:0.9rem">Consumo fuera de reserva cruzado con PMS</p>
+</div>
+<div class="flow-card">
+<p class="flow-num">02</p>
+<h3>Priorizar</h3>
+<p style="color:#6B7280;font-size:0.9rem">Impacto económico estimado por unidad</p>
+</div>
+<div class="flow-card">
+<p class="flow-num">03</p>
+<h3>Aprobar</h3>
+<p style="color:#6B7280;font-size:0.9rem">Acciones con evidencia, un clic</p>
+</div>
+<div class="flow-card">
+<p class="flow-num">04</p>
+<h3>Informar</h3>
+<p style="color:#6B7280;font-size:0.9rem">Reporte al propietario con datos crudos</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="modulos">
+<div class="container">
+<p class="eyebrow">Módulos</p>
+<h2 class="font-serif">Todo lo operativo en un panel.</h2>
+<div class="modules-grid">
+<div class="module-card"><div class="module-icon">🖥</div><h3>Command Center</h3><p style="color:#6B7280;font-size:0.9rem">Visibilidad en tiempo real de la cartera completa.</p><span class="module-signal">32 unidades · 2 alertas</span></div>
+<div class="module-card"><div class="module-icon">🏢</div><h3>Portfolio / Unidades</h3><p style="color:#6B7280;font-size:0.9rem">CUPS, potencia, ocupación y consumo por unidad.</p><span class="module-signal">180 EUR/año/CUPS</span></div>
+<div class="module-card"><div class="module-icon">💰</div><h3>Tarifas y Facturación</h3><p style="color:#6B7280;font-size:0.9rem">Optimización 2.0TD, potencias y comparación de facturas.</p><span class="module-signal">P1/P2/P3</span></div>
+<div class="module-card"><div class="module-icon">🔔</div><h3>Alertas / Operaciones</h3><p style="color:#6B7280;font-size:0.9rem">Consumo anómalo, reglas automáticas, notificaciones.</p><span class="module-signal">2 activas</span></div>
+<div class="module-card"><div class="module-icon">📋</div><h3>Informe Propietario</h3><p style="color:#6B7280;font-size:0.9rem">Generación de PDF con datos, gráficas y explicaciones.</p><span class="module-signal">Abril listo</span></div>
+<div class="module-card"><div class="module-icon">⚙️</div><h3>Automatizaciones</h3><p style="color:#6B7280;font-size:0.9rem">Reglas basadas en consumo, reserva y precio.</p><span class="module-signal">3 reglas</span></div>
+<div class="module-card"><div class="module-icon">🔋</div><h3>Batería / OMIE</h3><p style="color:#6B7280;font-size:0.9rem">Arbitraje, carga/descarga y optimización horaria.</p><span class="module-signal">10 kWh</span></div>
+</div>
+</div>
+</section>
+
+<section id="pricing" class="pricing">
+<div class="container">
+<p class="eyebrow">Precios</p>
+<h2 class="font-serif">Planes por escala de cartera.</h2>
+<p class="subtitle" style="margin-bottom:48px">Hardware como capa opcional. El diagnóstico empieza con datos disponibles.</p>
+<div class="pricing-grid">
+<div class="pricing-card"><p class="pricing-name">Starter</p><p class="pricing-range">10 – 24 unidades</p><p class="pricing-price">150 – 250 EUR/mes</p></div>
+<div class="pricing-card featured"><p class="pricing-name">Professional</p><p class="pricing-range">25 – 49 unidades</p><p class="pricing-price">300 – 500 EUR/mes</p></div>
+<div class="pricing-card"><p class="pricing-name">Enterprise</p><p class="pricing-range">50 – 99 unidades</p><p class="pricing-price">500 – 750 EUR/mes</p></div>
+<div class="pricing-card"><p class="pricing-name">Scale</p><p class="pricing-range">100+ unidades</p><p class="pricing-price">750 – 1.250 EUR/mes</p></div>
+</div>
+<div style="margin-top:24px;background:#fff;border-radius:12px;padding:24px;box-shadow:0 1px 3px rgba(0,0,0,0.04);display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<div><p style="font-size:0.8rem;color:#9CA3AF">Sensores opcionales</p><p class="font-mono" style="font-size:1.1rem;font-weight:500;color:#1A1A1A">~300 EUR/apt instalado</p></div>
+<div><p style="font-size:0.8rem;color:#9CA3AF">Batería premium</p><p class="font-mono" style="font-size:1.1rem;font-weight:500;color:#1A1A1A">Huawei Luna 10 kWh ~5.500 EUR</p></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<p class="eyebrow">Confianza</p>
+<h2 class="font-serif">Preparado para datos reales.</h2>
+<div class="trust-grid">
+<div class="trust-card"><p class="trust-icon">🛡</p><h3>GDPR y datos segregados</h3><p style="color:#6B7280;font-size:0.9rem">Accesos por cartera, roles y permisos para separar gestora, propietario y equipo operativo.</p></div>
+<div class="trust-card"><p class="trust-icon">🔒</p><h3>Sin credenciales en el formulario</h3><p style="color:#6B7280;font-size:0.9rem">El diagnóstico inicial no pide facturas ni claves. Primero se valida disponibilidad y alcance.</p></div>
+<div class="trust-card"><p class="trust-icon">📊</p><h3>Estimaciones prudentes</h3><p style="color:#6B7280;font-size:0.9rem">El ahorro se presenta como escenario, no como promesa. Cada cifra conserva hipótesis y fuente.</p></div>
+</div>
+</div>
+</section>
+
+<section class="diagnostic">
+<div class="container">
+<div class="diagnostic-grid">
+<div>
+<p class="eyebrow">Diagnóstico de cartera</p>
+<h2 class="font-serif">En 30 minutos sabrás si tienes kWh sin explicar.</h2>
+<p style="font-size:1rem;line-height:1.75;margin-top:16px">Sin facturas ni claves. Solo número de unidades, tipo de gestión y disponibilidad de datos.</p>
+</div>
+<div class="diagnostic-form">
+<h3 style="margin-bottom:20px">Empezar diagnóstico</h3>
+<div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+<div class="form-group"><label>Email</label><input type="email" placeholder="tu@empresa.com"></div>
+<div class="form-group"><label>Unidades gestionadas</label><select><option>10 – 24</option><option>25 – 49</option><option>50 – 99</option><option>100+</option></select></div>
+<div class="form-group"><label>Tipo de gestión</label><select><option>Turístico / Airbnb</option><option>Residencial</option><option>Mixto</option></select></div>
+<button class="btn btn-primary" style="width:100%;padding:14px;font-size:1rem;margin-top:8px">Solicitar diagnóstico →</button>
+<p style="font-size:0.75rem;color:#9CA3AF;margin-top:12px;text-align:center">No se piden credenciales ni facturas. Solo datos de contacto y escala.</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-links"><a href="#">Privacidad</a><a href="#">Términos</a><a href="#">Contacto</a></div>
+<p>© 2026 Tramo — Gestión energética para carteras turísticas.</p>
+</footer>
+
+</body>
+</html>

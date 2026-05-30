@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tramo — Análise de Consumos, Custos e Pricing</title>
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --paper: #f9f8f5;
+      --olive: #4a6741;
+      --olive-light: #e8f0e5;
+      --stone: #8a8a7a;
+      --coral: #c05746;
+      --amber: #b8860b;
+      --blue-night: #1e3a5f;
+      --border: #d4d4c8;
+      --mono: 'IBM Plex Mono', 'Courier New', monospace;
+      --sans: 'Inter', 'Helvetica Neue', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--ink);
+      border-bottom: 3px solid var(--olive);
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      color: var(--stone);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--olive);
+      margin: 2.5rem 0 1rem;
+      padding-left: 0.75rem;
+      border-left: 4px solid var(--olive);
+    }
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.9rem;
+    }
+    th {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0.6rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    td {
+      padding: 0.55rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:nth-child(even) { background: rgba(0,0,0,0.02); }
+    tr:hover { background: var(--olive-light); }
+    .mono { font-family: var(--mono); font-size: 0.85rem; }
+    .highlight { font-weight: 700; color: var(--olive); }
+    .alert { color: var(--coral); font-weight: 600; }
+    .note {
+      background: var(--olive-light);
+      border-left: 4px solid var(--olive);
+      padding: 0.75rem 1rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      border-radius: 0 4px 4px 0;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+    .card .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--stone);
+      margin-bottom: 0.25rem;
+    }
+    .card .value {
+      font-family: var(--mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .card .desc {
+      font-size: 0.85rem;
+      color: var(--stone);
+      margin-top: 0.25rem;
+    }
+    .tier-table th { background: var(--blue-night); }
+    .roi-table th { background: var(--olive); }
+    .comp-table th { background: #3a3a3a; }
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--stone);
+    }
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.6rem; }
+      .card .value { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Tramo — Análise de Consumos, Custos e Pricing</h1>
+<p class="subtitle">Documento de referencia para establecer prezos da plataforma · Fontes: REE, IDAE, CNMC, Shelly, Huawei · Maio 2026</p>
+
+<!-- ─── KPIs ─── -->
+<div class="card-grid">
+  <div class="card">
+    <div class="label">Consumo medio anual</div>
+    <div class="value">4.200 kWh</div>
+    <div class="desc">Apartamento turístico tipo (~60 m², ~70% ocupación)</div>
+  </div>
+  <div class="card">
+    <div class="label">Factura anual tipo</div>
+    <div class="value">588 – 714 €</div>
+    <div class="desc">Segundo tarifa: optimizada (0,14 €/kWh) vs. plana mala (0,17 €/kWh)</div>
+  </div>
+  <div class="card">
+    <div class="label">HW + Instalación / apt</div>
+    <div class="value">~300 – 350 €</div>
+    <div class="desc">Kit Shelly completo + electricista (2-4h)</div>
+  </div>
+  <div class="card">
+    <div class="label">Diferencia P1↔P3</div>
+    <div class="value">~0,12 €/kWh</div>
+    <div class="desc">Marxe media para arbitraxe tarifaria</div>
+  </div>
+</div>
+
+<!-- ─── 1.1 Consumo ─── -->
+<h2>1.1 Consumo Eléctrico — Apartamentos Turísticos en España</h2>
+<table>
+  <thead>
+    <tr><th>Tipo</th><th>m²</th><th>Ocupación</th><th>Consumo anual (kWh)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Estudio (2 prazas)</td><td class="mono">35–45</td><td class="mono">60–75%</td><td class="mono">2.800 – 3.500</td></tr>
+    <tr><td>1 dormitorio (4 prazas)</td><td class="mono">50–65</td><td class="mono">65–80%</td><td class="mono">3.500 – 5.000</td></tr>
+    <tr><td>2 dormitorios (6 prazas)</td><td class="mono">70–90</td><td class="mono">55–75%</td><td class="mono">4.500 – 6.500</td></tr>
+    <tr class="highlight"><td><strong>Media ponderada</strong></td><td class="mono"><strong>~60</strong></td><td class="mono"><strong>~70%</strong></td><td class="mono"><strong>~4.200</strong></td></tr>
+  </tbody>
+</table>
+<div class="note">Un apartamento turístico consume un 30–50% máis que un residencial equivalente debido ao maior uso de AC, calefacción, lavadora/lavavajillas e electrodomésticos. Fonte: IDAE.</div>
+
+<!-- ─── 1.2 Prezos electricidade ─── -->
+<h2>1.2 Prezos Electricidade España (2026)</h2>
+<table>
+  <thead>
+    <tr><th>Período</th><th>Horario</th><th>Prezo medio (€/kWh)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>P1 (Punta)</strong></td><td>10–14h / 18–22h</td><td class="mono alert">0,18 – 0,22</td></tr>
+    <tr><td><strong>P2 (Llano)</strong></td><td>8–10h / 14–18h / 22–24h</td><td class="mono">0,11 – 0,14</td></tr>
+    <tr><td><strong>P3 (Valle)</strong></td><td>0–8h / fins de semana</td><td class="mono highlight">0,07 – 0,09</td></tr>
+  </tbody>
+</table>
+<div class="note">Tarifa PVPC con impostos. Fonte: REE/ESIOS. A diferenza P1–P3 de ~0,12 €/kWh é a base da arbitraxe tarifaria.</div>
+
+<!-- ─── 1.3 Sensores ─── -->
+<h2>1.3 Custos de Sensores Shelly</h2>
+<table>
+  <thead>
+    <tr><th>Modelo</th><th>Función</th><th>Prezo unitario (€)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Shelly Pro 4PM</td><td>Control 4 circuítos, medición individual</td><td class="mono">75 – 85</td></tr>
+    <tr><td>Shelly EM</td><td>Medición consumo total + 1 circuíto</td><td class="mono">55 – 70</td></tr>
+    <tr><td>Shelly Plus 1PM</td><td>Control 1 circuíto + medición</td><td class="mono">20 – 25</td></tr>
+    <tr><td>Shelly Plus 2PM</td><td>Control 2 circuítos + medición</td><td class="mono">30 – 40</td></tr>
+    <tr><td>Shelly H&T</td><td>Temperatura e humidade</td><td class="mono">15 – 20</td></tr>
+  </tbody>
+</table>
+
+<h3>Kit recomendado por apartamento</h3>
+<table>
+  <thead>
+    <tr><th>Componente</th><th>Prezo</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1× Shelly Pro 4PM (4 circuítos principais)</td><td class="mono">~80 €</td></tr>
+    <tr><td>1× Shelly EM (medición total entrada)</td><td class="mono">~60 €</td></tr>
+    <tr><td>1× Shelly H&T (ambiental)</td><td class="mono">~18 €</td></tr>
+    <tr class="highlight"><td><strong>Total sensores / apartamento</strong></td><td class="mono"><strong>~158 €</strong></td></tr>
+    <tr><td>Instalación (electricista 2–4h)</td><td class="mono">120 – 200 €</td></tr>
+    <tr class="highlight"><td><strong>HW + instalación / apartamento</strong></td><td class="mono"><strong>~300 – 350 €</strong></td></tr>
+  </tbody>
+</table>
+
+<!-- ─── 1.4 Baterías ─── -->
+<h2>1.4 Custos de Baterías para Arbitraxe</h2>
+<table>
+  <thead>
+    <tr><th>Modelo</th><th>Capacidade</th><th>Equipo (€)</th><th>Instalación (€)</th><th>Total (€)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>🥇 Huawei Luna 2000</td><td class="mono">10 kWh</td><td class="mono">4.200–5.000</td><td class="mono">900–1.200</td><td class="mono">5.100–6.200</td></tr>
+    <tr><td>🥈 BYD Battery-Box HVS</td><td class="mono">10,2 kWh</td><td class="mono">3.800–4.500</td><td class="mono">900–1.200</td><td class="mono">4.700–5.700</td></tr>
+    <tr><td>Tesla Powerwall 3</td><td class="mono">13,5 kWh</td><td class="mono">5.500–6.500</td><td class="mono">1.200–1.800</td><td class="mono">6.700–8.300</td></tr>
+  </tbody>
+</table>
+<div class="note"><strong>Recomendación Tramo:</strong> Huawei Luna 2000 como opción principal. BYD como alternativa económica. Custo medio: ~500–600 €/kWh instalado.</div>
+
+<!-- ─── 1.5 Aforro ─── -->
+<h2>1.5 Aforro Potencial</h2>
+<table>
+  <thead>
+    <tr><th>Estratexia</th><th>Aforro %</th><th>Aforro €/apt/ano</th><th>Como se consegue</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>SW só (Tramo Basic)</strong></td><td class="mono">10–15%</td><td class="mono highlight">60 – 90 €</td><td>Detección consumo fóra de estancia, optimización potencia, informes</td></tr>
+    <tr><td><strong>SW + Sensores</strong></td><td class="mono">20–30%</td><td class="mono highlight">120 – 175 €</td><td>Control activo, regras automáticas, desconexión en horas valle</td></tr>
+    <tr><td><strong>SW + Sensores + Batería</strong></td><td class="mono">30–40%</td><td class="mono highlight">175 – 235 €</td><td>Arbitraxe tarifaria, desprazamento a P3, excedentes</td></tr>
+  </tbody>
+</table>
+
+<!-- ─── 1.6 Aforro por carteira ─── -->
+<h2>1.6 Aforro por Carteira</h2>
+<table>
+  <thead>
+    <tr><th>Nº Apartamentos</th><th>SW só (€/ano)</th><th>SW+Sensores (€/ano)</th><th>SW+Sensores+Batería (€/ano)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>10</td><td class="mono">600 – 900</td><td class="mono">1.200 – 1.750</td><td class="mono">1.750 – 2.350</td></tr>
+    <tr><td>25</td><td class="mono">1.500 – 2.250</td><td class="mono">3.000 – 4.375</td><td class="mono">4.375 – 5.875</td></tr>
+    <tr><td>50</td><td class="mono">3.000 – 4.500</td><td class="mono">6.000 – 8.750</td><td class="mono">8.750 – 11.750</td></tr>
+    <tr><td>100</td><td class="mono">6.000 – 9.000</td><td class="mono">12.000 – 17.500</td><td class="mono">17.500 – 23.500</td></tr>
+  </tbody>
+</table>
+<div class="note">O aforro con batería escala mellor en carteiras grandes porque se pode compartir infraestrutura entre varios apartamentos do mesmo edificio.</div>
+
+<!-- ─── 1.7 ROI ─── -->
+<h2>1.7 ROI para o Cliente</h2>
+<table class="roi-table">
+  <thead>
+    <tr><th>Tier</th><th>Custo HW+Inst (€)</th><th>Custo Tramo/ano (€)</th><th>Aforro est. (€/ano)</th><th>ROI</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>10 apts (SW+Sensores)</td><td class="mono">3.000 – 3.500</td><td class="mono">1.800 – 3.000</td><td class="mono">1.200 – 1.750</td><td class="mono alert">30 – 42 meses</td></tr>
+    <tr><td>25 apts (SW+Sensores)</td><td class="mono">7.500 – 8.750</td><td class="mono">3.600 – 6.000</td><td class="mono">3.000 – 4.375</td><td class="mono">24 – 35 meses</td></tr>
+    <tr><td>50 apts (SW+Sensores+Bat)</td><td class="mono">15.000 + 5.500</td><td class="mono">6.000 – 9.000</td><td class="mono">8.750 – 11.750</td><td class="mono highlight">18 – 24 meses</td></tr>
+    <tr><td>100 apts (SW+Sensores+Bat)</td><td class="mono">30.000 + 11.000</td><td class="mono">9.000 – 15.000</td><td class="mono">17.500 – 23.500</td><td class="mono highlight">14 – 18 meses</td></tr>
+  </tbody>
+</table>
+
+<!-- ─── 1.8 Competencia ─── -->
+<h2>1.8 Competencia</h2>
+<table class="comp-table">
+  <thead>
+    <tr><th>Plataforma</th><th>Enfoque</th><th>Prezo orientativo</th><th>Diferencial Tramo</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Smappee</td><td>Monitorización enerxética xeral</td><td class="mono">~10 €/mes/punto</td><td>Tramo integra PMS + CUPS + reservas</td></tr>
+    <tr><td>Wattiio</td><td>Xestión enerxética PEMEs</td><td class="mono">~15–30 €/mes</td><td>Tramo enfocado a turístico, non xenérico</td></tr>
+    <tr><td>Dexma (Spacewell)</td><td>Grandes edificios</td><td class="mono">&gt;100 €/mes</td><td>Tramo é para carteiras 10–100 apts</td></tr>
+    <tr style="background: var(--olive-light);"><td><strong>Tramo</strong></td><td><strong>Turístico + sensores + arbitraxe</strong></td><td class="mono"><strong>Ver táboa pricing</strong></td><td><strong>Único con atribución por reserva</strong></td></tr>
+  </tbody>
+</table>
+<div class="note"><strong>Conclusión:</strong> Non existe un competidor directo que faga a combinación de PMS + CUPS + sensores + arbitraxe para o sector turístico español.</div>
+
+<!-- ─── Pricing ─── -->
+<h2>4. Pricing Strategy</h2>
+<div class="note" style="font-style: italic;">"Demostramos o aforro antes de cobrar. O cliente paga unha fracción do que aforra."</div>
+
+<h3>4.2 Táboa de Prezos</h3>
+<table class="tier-table">
+  <thead>
+    <tr><th>Plan</th><th>Apartamentos</th><th>SW Tramo (€/mes)</th><th>Sensores (one-time)</th><th>Batería (one-time)</th><th>Aforro est. (€/ano)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Starter</strong></td><td class="mono">10–24</td><td class="mono">150 – 250</td><td class="mono">300 €/apt</td><td class="mono">—</td><td class="mono">1.200 – 1.750</td></tr>
+    <tr><td><strong>Professional</strong></td><td class="mono">25–49</td><td class="mono">300 – 500</td><td class="mono">300 €/apt</td><td class="mono">Opcional</td><td class="mono">3.000 – 4.375</td></tr>
+    <tr><td><strong>Enterprise</strong></td><td class="mono">50–99</td><td class="mono">500 – 750</td><td class="mono">280 €/apt</td><td class="mono">5.500 €/ud</td><td class="mono">6.000 – 8.750</td></tr>
+    <tr><td><strong>Scale</strong></td><td class="mono">100+</td><td class="mono">750 – 1.250</td><td class="mono">250 €/apt</td><td class="mono">5.000 €/ud</td><td class="mono">12.000 – 17.500</td></tr>
+  </tbody>
+</table>
+
+<h3>Prezo por apartamento/mes implícito</h3>
+<div class="card-grid">
+  <div class="card">
+    <div class="label">Starter</div>
+    <div class="value">15 – 20 €/mes/apt</div>
+    <div class="desc">10–24 apartamentos</div>
+  </div>
+  <div class="card">
+    <div class="label">Professional</div>
+    <div class="value">12 – 16 €/mes/apt</div>
+    <div class="desc">25–49 apartamentos</div>
+  </div>
+  <div class="card">
+    <div class="label">Enterprise</div>
+    <div class="value">10 – 12 €/mes/apt</div>
+    <div class="desc">50–99 apartamentos</div>
+  </div>
+  <div class="card">
+    <div class="label">Scale</div>
+    <div class="value">7,5 – 10 €/mes/apt</div>
+    <div class="desc">100+ apartamentos</div>
+  </div>
+</div>
+
+<!-- ─── Arbitraxe ─── -->
+<h2>3. Estratexia de Arbitraxe con Baterías</h2>
+<h3>Ciclo diario típico</h3>
+<table>
+  <thead>
+    <tr><th>Fase</th><th>Horario</th><th>Prezo</th><th>Acción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Carga</strong></td><td class="mono">0–8h (P3)</td><td class="mono highlight">~0,08 €/kWh</td><td>A batería carga en valle</td></tr>
+    <tr><td><strong>Descarga</strong></td><td class="mono">10–14h / 18–22h (P1)</td><td class="mono alert">~0,20 €/kWh</td><td>A batería descarga en punta</td></tr>
+    <tr class="highlight"><td><strong>Marxe capturada</strong></td><td class="mono">—</td><td class="mono">~0,12 €/kWh</td><td>Arbitraxe diaria</td></tr>
+  </tbody>
+</table>
+
+<h3>Cálculo anual (1 batería 10kWh, 1 apartamento)</h3>
+<table>
+  <thead>
+    <tr><th>Concepto</th><th>Valor</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Ciclo diario útil (80% DoD)</td><td class="mono">8 kWh</td></tr>
+    <tr><td>Marxe diaria</td><td class="mono">8 × 0,12 € = 0,96 €</td></tr>
+    <tr><td>Marxe anual</td><td class="mono highlight">~350 €/ano</td></tr>
+  </tbody>
+</table>
+
+<h3>Cálculo anual (10 apartamentos + 1 batería 10kWh)</h3>
+<table>
+  <thead>
+    <tr><th>Concepto</th><th>Valor</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Consumo desprazable (60%)</td><td class="mono">10 × 4.200 × 0,6 / 10 = 3.024 kWh</td></tr>
+    <tr><td>Capacidade necesaria</td><td class="mono">20–30 kWh</td></tr>
+    <tr><td>Marxe estimada (só arbitraxe)</td><td class="mono highlight">700 – 1.000 €/ano</td></tr>
+    <tr><td>+ aforro SW+Sensores</td><td class="mono">1.200 – 1.750 €/ano</td></tr>
+    <tr class="highlight"><td><strong>Total combinado</strong></td><td class="mono"><strong>1.900 – 2.750 €/ano</strong></td></tr>
+  </tbody>
+</table>
+
+<div class="footer">
+  <p><strong>Fontes:</strong> REE (Red Eléctrica de España), ESIOS, IDAE, CNMC, tarifasgasluz.com, Shelly (Amazon España), Huawei, BYD.</p>
+  <p><strong>Documento orixe:</strong> <code>docs/tramo-ui-definitive-spec.md</code> — Seccións 1.1–1.8, 3 e 4.</p>
+  <p><strong>Data:</strong> Maio 2026 · Estimacións prudentes; cifras reais poden variar.</p>
+</div>
+
+</body>
+</html>
