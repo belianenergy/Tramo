@@ -127,7 +127,7 @@ export const actions = [
 export const dailyLoad = [42, 48, 51, 63, 58, 76, 71, 52, 38, 44, 67, 73, 69, 59, 47, 56, 61, 75, 82, 64, 55, 49, 62, 58]
 
 export const tariffBands = [
-  { label: 'P1 punta', price: '0,20 EUR/kWh', kwh: 612, color: 'var(--color-warning)' },
-  { label: 'P2 llano', price: '0,12 EUR/kWh', kwh: 784, color: 'var(--color-ink)' },
-  { label: 'P3 valle', price: '0,08 EUR/kWh', kwh: 451, color: 'var(--color-lime)' },
+  { label: 'P1 punta', price: '0,20 EUR/kWh', kwh: 612, color: 'var(--color-crimson)' },
+  { label: 'P2 llano', price: '0,12 EUR/kWh', kwh: 784, color: 'var(--color-amber)' },
+  { label: 'P3 valle', price: '0,08 EUR/kWh', kwh: 451, color: 'var(--color-blue)' },
 ]

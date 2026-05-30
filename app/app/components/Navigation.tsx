@@ -36,17 +36,17 @@ export default function Sidebar({ expanded }: { expanded: boolean }) {
 
   return (
     <aside
-      className="fixed left-0 top-0 z-50 hidden h-dvh flex-col border-r border-[var(--color-border)] bg-[var(--color-ink)] text-[var(--color-paper)] transition-[width] duration-300 md:flex"
-      style={{ width: expanded ? 292 : 76 }}
+      className="fixed left-0 top-0 z-50 hidden h-dvh flex-col transition-[width] duration-300 md:flex"
+      style={{ width: expanded ? 292 : 76, background: 'var(--snow)', borderRight: '1px solid var(--fog)' }}
     >
-      <div className="flex h-16 items-center gap-3 border-b border-white/10 px-4">
-        <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-[var(--color-lime)]/45 bg-[var(--color-lime)] text-sm font-black text-[var(--color-ink)]">
+      <div className="flex h-[52px] items-center gap-3 px-4" style={{ borderBottom: '1px solid var(--fog)' }}>
+        <div className="grid h-8 w-8 shrink-0 place-items-center rounded-[12px] text-sm font-medium" style={{ background: 'var(--fog)', color: 'var(--ink)' }}>
           T
         </div>
         {expanded && (
           <div className="min-w-0">
-            <p className="font-display text-base font-semibold leading-none">Tramo</p>
-            <p className="mt-1 font-mono text-[0.64rem] uppercase tracking-[0.16em] text-white/45">Energy desk</p>
+            <p className="font-display text-base font-light text-[var(--ink)]">Tramo</p>
+            <p className="mt-0.5 font-mono text-[0.6rem] uppercase tracking-[0.16em]" style={{ color: 'var(--slate)' }}>Energy desk</p>
           </div>
         )}
       </div>
@@ -59,17 +59,17 @@ export default function Sidebar({ expanded }: { expanded: boolean }) {
             <Link
               key={item.href}
               href={item.href}
-              className={`group flex min-h-12 items-center gap-3 rounded-lg border px-3 py-2 text-sm no-underline transition ${
-                active
-                  ? 'border-[var(--color-lime)]/35 bg-[var(--color-lime)] text-[var(--color-ink)]'
-                  : 'border-transparent text-white/68 hover:border-white/12 hover:bg-white/7 hover:text-white'
-              }`}
+              className={`group flex min-h-11 items-center gap-3 rounded-[16px] px-3 py-2 text-sm no-underline transition-all duration-200 ${expanded ? '' : 'justify-center px-1'}`}
+              style={{
+                background: active ? 'var(--ink)' : 'transparent',
+                color: active ? 'var(--snow)' : 'var(--ink)',
+              }}
             >
-              <Icon className="h-5 w-5 shrink-0" />
+              <Icon className="h-4 w-4 shrink-0" />
               {expanded && (
                 <span className="min-w-0 flex-1">
-                  <span className="block truncate font-semibold">{item.label}</span>
-                  <span className={`block truncate font-mono text-[0.65rem] uppercase tracking-[0.12em] ${active ? 'text-[var(--color-ink)]/65' : 'text-white/35'}`}>
+                  <span className="block truncate text-sm font-medium">{item.label}</span>
+                  <span className="block truncate font-mono text-[0.6rem] uppercase tracking-[0.12em]" style={{ opacity: active ? 0.6 : 0.35 }}>
                     {item.meta}
                   </span>
                 </span>
@@ -79,25 +79,25 @@ export default function Sidebar({ expanded }: { expanded: boolean }) {
         })}
       </nav>
 
-      <div className="border-t border-white/10 p-3">
-        <div className="rounded-lg border border-white/10 bg-white/[0.04] p-3">
-          <div className="flex items-center gap-3">
-            <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/10 font-mono text-xs font-semibold">MG</div>
-            {expanded && (
-              <div className="min-w-0">
-                <p className="truncate text-sm font-semibold">Mauro · Admin</p>
-                <p className="truncate font-mono text-[0.65rem] uppercase tracking-[0.12em] text-white/42">124 unidades · España</p>
+      {expanded && (
+        <div className="p-3" style={{ borderTop: '1px solid var(--fog)' }}>
+          <div className="rounded-[16px] p-3" style={{ background: 'var(--fog)' }}>
+            <div className="flex items-center gap-3">
+              <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full font-mono text-xs font-medium" style={{ background: 'var(--snow)', color: 'var(--ink)' }}>
+                MG
               </div>
-            )}
-          </div>
-          {expanded && (
-            <div className="mt-3 flex items-center gap-2 rounded-md border border-[var(--color-lime)]/25 bg-[var(--color-lime)]/10 px-2 py-1.5 text-[0.72rem] text-[var(--color-lime)]">
+              <div className="min-w-0">
+                <p className="truncate text-sm font-medium text-[var(--ink)]">Mauro · Admin</p>
+                <p className="truncate font-mono text-[0.6rem] uppercase tracking-[0.12em]" style={{ color: 'var(--slate)' }}>124 unidades · España</p>
+              </div>
+            </div>
+            <div className="mt-3 flex items-center gap-2 rounded-[12px] px-2.5 py-2 text-[0.7rem]" style={{ background: 'var(--snow)', color: 'var(--color-blue)' }}>
               <Layers3 className="h-3.5 w-3.5" />
               <span>Datadis, PMS y facturas sincronizados</span>
             </div>
-          )}
+          </div>
         </div>
-      </div>
+      )}
     </aside>
   )
 }
