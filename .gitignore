@@ -5,3 +5,10 @@ node_modules
 data/leads.json
 graphify-out/
 tsconfig.tsbuildinfo
+
+# Stitch project files (contain project IDs and Google download tokens)
+.stitch_project_id
+*.project-id
+stitch-*-response.json
+stitch-*.json
+!stitch-output.log
