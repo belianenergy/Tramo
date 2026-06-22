@@ -22,8 +22,8 @@
 
   /* Text */
   --color-dark:          #1A1A2E;   /* headlines, body */
-  --color-gray:          #4B5563;   /* secondary text — AA-safe */
-  --color-gray-light:    #6B7280;   /* tertiary text — improved contrast */
+  --color-gray:          #374151;   /* secondary text — AA-safe */
+  --color-gray-light:    #4B5563;   /* tertiary text — improved contrast */
 
   /* Borders */
   --color-border:        #E5E7EB;   /* main border */
@@ -177,6 +177,36 @@
   --grid-columns: 12;
   --grid-gutter: clamp(1rem, 2vw, 1.5rem);
   --grid-baseline: 8px;
+}
+
+
+/* ── Tramo verification grid ── */
+.tramo-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  column-gap: var(--grid-gutter);
+}
+
+.tramo-grid > * {
+  grid-column: 1 / -1;
+}
+
+.tramo-grid-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  opacity: 0;
+  transition: opacity var(--dur-short) var(--ease-out);
+  background-image:
+    linear-gradient(to right, rgba(15, 123, 90, 0.13) 0, rgba(15, 123, 90, 0.13) calc((100% - (var(--grid-columns) - 1) * var(--grid-gutter)) / var(--grid-columns)), transparent calc((100% - (var(--grid-columns) - 1) * var(--grid-gutter)) / var(--grid-columns))),
+    repeating-linear-gradient(to bottom, rgba(15, 123, 90, 0.10) 0, rgba(15, 123, 90, 0.10) 1px, transparent 1px, transparent var(--grid-baseline));
+  background-size: calc((100% - (2 * var(--grid-gutter))) / var(--grid-columns) + var(--grid-gutter)) 100%, 100% var(--grid-baseline);
+  background-position: var(--grid-gutter) 0, 0 0;
+}
+
+.tramo-grid-overlay[data-active="true"] {
+  opacity: 1;
 }
 
 /* ── shadcn/ui theme mapping ── */

@@ -24,13 +24,43 @@ const accents = {
 
 /* ── Helpers ── */
 
+function GridOverlay() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement | null;
+      const tag = target?.tagName?.toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || target?.isContentEditable) return;
+      if (event.key.toLowerCase() === 'g') setVisible((current) => !current);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
+
+  return (
+    <>
+      <div className="tramo-grid-overlay" data-active={visible ? 'true' : 'false'} aria-hidden="true" />
+      <button
+        type="button"
+        onClick={() => setVisible((current) => !current)}
+        className="fixed bottom-24 left-4 z-[9999] hidden min-h-11 min-w-11 rounded-[8px] border border-[var(--color-border)] bg-white/90 px-3 font-mono text-[11px] font-semibold text-[var(--color-gray)] backdrop-blur transition-colors hover:text-[var(--color-primary)] md:inline-flex md:items-center md:justify-center"
+        aria-pressed={visible}
+        aria-label="Mostrar u ocultar retícula de 12 columnas y baseline"
+      >
+        G
+      </button>
+    </>
+  );
+}
+
 function Section({ children, className = '', id, refProp, style }: {
   children: ReactNode; className?: string; id?: string;
   refProp?: React.Ref<HTMLElement>; style?: React.CSSProperties;
 }) {
   return (
     <section ref={refProp} id={id} data-gsap-section className={`relative px-[var(--grid-gutter)] py-10 md:py-20 ${className}`} style={style}>
-      <div className="relative mx-auto" style={{ maxWidth: 'var(--page-max)' }}>{children}</div>
+      <div className="relative mx-auto tramo-grid" style={{ maxWidth: 'var(--page-max)' }}>{children}</div>
     </section>
   );
 }
@@ -46,7 +76,7 @@ function SectionHeading({ children, className = '', eyebrow }: {
         </p>
       )}
       <h2 className="font-display text-[clamp(1.8rem,3.5vw,2.6rem)] font-light leading-[1.12] text-[var(--color-dark)]"
-        style={{ letterSpacing: '-0.025em', overflowWrap: 'anywhere', minWidth: 0 }}>
+        style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0 }}>
         {children}
       </h2>
     </div>
@@ -58,7 +88,7 @@ function CtaButton({ href, children, variant = 'primary', className = '' }: {
 }) {
   const base = variant === 'primary'
     ? 'bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)] active:bg-[var(--color-primary-active)]'
-    : 'border border-[var(--color-border)] bg-white/70 text-[var(--color-dark)] shadow-[0_14px_34px_-30px_rgba(15,23,42,0.6)] hover:border-[var(--color-primary)] hover:bg-white hover:text-[var(--color-primary)]';
+    : 'border border-[var(--color-border)] bg-white/70 text-[var(--color-dark)] hover:border-[var(--color-primary)] hover:bg-white hover:text-[var(--color-primary)]';
   return (
     <a href={href}
       className={`inline-flex items-center justify-center gap-2 min-h-[48px] px-6 rounded-[8px] font-display text-[15px] font-medium transition-all duration-200 active:translate-y-px ${base} ${className}`}>
@@ -218,7 +248,8 @@ function PlatformHeroVisual() {
             height={1086}
             sizes="(min-width: 1024px) 660px, 100vw"
             priority
-            className="block aspect-[4/3] w-full object-cover"
+            className="block object-cover"
+            style={{ width: '100%', height: 'auto', aspectRatio: '4 / 3', objectFit: 'cover' }}
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0)_44%,rgba(255,255,255,0.28)_100%)]" />
         </div>
@@ -239,19 +270,19 @@ function PlatformHeroVisual() {
               aria-label={`${item.label}: ${item.note}`}
             >
               <span
-                className="grid h-11 w-11 place-items-center rounded-full border border-white/75 bg-white/84 shadow-[0_10px_24px_-18px_rgba(15,23,42,0.58)] backdrop-blur-md transition-all duration-300 group-hover:scale-105 md:h-12 md:w-12"
+                className="grid h-11 w-11 place-items-center rounded-full border border-white/75 bg-white/84 backdrop-blur-md transition-all duration-300 group-hover:scale-105 md:h-12 md:w-12"
                 style={{ color, boxShadow: isActive ? `0 0 0 6px ${color}22, 0 18px 42px -20px rgba(15,23,42,0.8)` : undefined }}
               >
                 <Icon className="h-5 w-5" strokeWidth={2.2} />
               </span>
-              <span className="absolute left-1/2 top-full mt-1 hidden -translate-x-1/2 rounded-full bg-white/82 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.08em] text-[var(--color-dark)] shadow-[0_10px_28px_-20px_rgba(15,23,42,0.8)] backdrop-blur-md lg:block">
+              <span className="absolute left-1/2 top-full mt-1 hidden -translate-x-1/2 rounded-full bg-white/82 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.08em] text-[var(--color-dark)] backdrop-blur-md lg:block">
                 {item.label}
               </span>
             </button>
           );
         })}
 
-        <div data-platform-overlay className="absolute -bottom-[76px] left-4 z-20 w-[34%] min-w-[132px] rounded-[12px] border border-white/75 bg-white/78 p-2 shadow-[0_14px_30px_-26px_rgba(15,23,42,0.72)] backdrop-blur-xl sm:-bottom-[82px] sm:left-5 sm:w-[28%] sm:min-w-[148px] sm:rounded-[14px] sm:bg-white/82 sm:p-3">
+        <div data-platform-overlay className="absolute -bottom-[76px] left-4 z-20 w-[34%] min-w-[132px] rounded-[12px] border border-white/75 bg-white/78 p-2 backdrop-blur-xl sm:-bottom-[82px] sm:left-5 sm:w-[28%] sm:min-w-[148px] sm:rounded-[14px] sm:bg-white/82 sm:p-3">
           <div className="flex items-start justify-between gap-2 sm:gap-3">
             <div>
               <p className="font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-[var(--color-gray)]">Tramo live</p>
@@ -281,7 +312,7 @@ function PlatformHeroVisual() {
           </div>
         </div>
 
-        <div data-platform-overlay className="absolute -top-[56px] right-4 z-20 hidden max-w-[198px] rounded-[14px] border border-white/70 bg-[var(--color-dark)]/84 px-3 py-2.5 text-white shadow-[0_18px_38px_-32px_rgba(15,23,42,0.9)] backdrop-blur-xl sm:block md:right-5">
+        <div data-platform-overlay className="absolute -top-[56px] right-4 z-20 hidden max-w-[198px] rounded-[14px] border border-white/70 bg-[var(--color-dark)]/84 px-3 py-2.5 text-white backdrop-blur-xl sm:block md:right-5">
           <p className="font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-white/55">Decisión sugerida</p>
           <div className="mt-1 flex items-end justify-between gap-4">
             <p className="max-w-[130px] text-[12px] font-semibold leading-tight md:text-[13px]">Automatizar {selected.label.toLowerCase()}</p>
@@ -291,7 +322,7 @@ function PlatformHeroVisual() {
             </div>
           </div>
         </div>
-        <div data-platform-overlay className="absolute -top-[36px] right-3 z-20 flex w-[34%] min-w-[118px] items-center justify-between gap-2 rounded-[12px] border border-white/70 bg-[var(--color-dark)]/82 px-2.5 py-1.5 text-white shadow-[0_14px_30px_-26px_rgba(15,23,42,0.88)] backdrop-blur-xl sm:hidden">
+        <div data-platform-overlay className="absolute -top-[36px] right-3 z-20 flex w-[34%] min-w-[118px] items-center justify-between gap-2 rounded-[12px] border border-white/70 bg-[var(--color-dark)]/82 px-2.5 py-1.5 text-white backdrop-blur-xl sm:hidden">
           <div>
             <p className="font-mono text-[8px] font-semibold uppercase tracking-[0.12em] text-white/50">Acción Tramo</p>
             <p className="text-[11px] font-semibold leading-tight">{selected.label}</p>
@@ -328,10 +359,10 @@ function Hero() {
           <div>
             <h1 data-anim="hero-up"
               className="font-display text-[clamp(2.4rem,5vw,3.8rem)] font-light leading-[1.06] text-[var(--color-dark)]"
-              style={{ letterSpacing: '-0.04em', overflowWrap: 'anywhere', minWidth: 0 }}>
+              style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0 }}>
               Convierte la energía de tu cartera turística en margen operativo.
             </h1>
-            <p data-anim="hero-up" className="mt-5 max-w-md text-[15px] sm:text-[17px] leading-relaxed text-[var(--color-gray)]">
+            <p data-anim="hero-up" className="mt-6 max-w-md text-[15px] sm:text-[17px] leading-relaxed text-[var(--color-gray)]">
               Cruza reservas con CUPS y Datadis para detectar consumo fuera de estancia, activar reglas y preparar informes por propietario.
             </p>
             <div data-anim="hero-up" className="mt-7 flex flex-wrap items-center gap-3">
@@ -416,7 +447,7 @@ function HowItWorks() {
         <div className="relative mx-auto max-w-5xl">
           <div className="grid gap-4 lg:grid-cols-3">
             {howSteps.map((s, i) => (
-              <div key={s.step} className="how-step group relative rounded-[22px] border border-white/70 bg-white/58 p-4 text-left shadow-[0_24px_70px_-52px_rgba(15,23,42,0.45)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:bg-white/72 md:p-5">
+              <div key={s.step} className="how-step group relative rounded-[22px] border border-white/70 bg-white/58 p-4 text-left backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:bg-white/72 md:p-5">
                 <div className="flex items-start gap-4">
                   <div className="relative flex h-[94px] w-[94px] shrink-0 items-center justify-center md:h-[108px] md:w-[108px]">
                     <svg className="how-orbit absolute inset-0 h-full w-full" viewBox="0 0 120 120" aria-hidden="true">
@@ -438,7 +469,7 @@ function HowItWorks() {
                   <span className="how-rail-fill block h-full w-full rounded-full" style={{ background: `linear-gradient(90deg, ${s.color}, rgba(15,23,42,0.08))` }} />
                 </div>
                 {i < howSteps.length - 1 && (
-                  <div className="hidden md:grid absolute -right-4 top-1/2 z-10 h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-white/90 shadow-[0_14px_44px_-28px_rgba(15,23,42,0.55)] backdrop-blur" style={{ color: s.color }}>
+                  <div className="hidden md:grid absolute -right-4 top-1/2 z-10 h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-white/90 backdrop-blur" style={{ color: s.color }}>
                     <ArrowRight className="h-4 w-4" />
                   </div>
                 )}
@@ -563,7 +594,7 @@ function Pricing() {
 
   return (
     <Section refProp={ref} id="precios" className="bg-[var(--color-bg)] pb-8 md:pb-12" style={{ scrollMarginTop: '80px' }}>
-      <div className="relative z-10 mx-auto mb-8 max-w-2xl rounded-[24px] bg-white/46 px-4 py-5 text-center shadow-[0_24px_70px_-62px_rgba(15,23,42,0.45)] backdrop-blur-sm md:mb-10 md:bg-white/18 md:p-0 md:shadow-none md:backdrop-blur-0">
+      <div className="relative z-10 mx-auto mb-8 max-w-2xl rounded-[24px] bg-white/46 px-4 py-5 text-center backdrop-blur-sm md:mb-10 md:bg-white/18 md:p-0 md:shadow-none md:backdrop-blur-0">
         <SectionHeading className="text-center">
           Diagnóstico primero. Plan después.
         </SectionHeading>
@@ -575,7 +606,7 @@ function Pricing() {
         {pricingTiers.map((tier) => (
           <div key={tier.name}
             className={`pricing-card relative flex flex-col rounded-[14px] p-5 bg-white transition-all duration-300 hover:scale-[1.02] ${
-              tier.recommended ? 'border-2 border-[var(--color-primary)] shadow-[0_0_24px_-6px_rgba(15,123,90,0.18)] hover:shadow-[0_0_32px_-4px_rgba(15,123,90,0.25)]' : 'border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:shadow-md'
+              tier.recommended ? 'border-2 border-[var(--color-primary)] hover:shadow-[0_0_32px_-4px_rgba(15,123,90,0.25)]' : 'border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:shadow-md'
             }`}>
             {tier.recommended && (
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-[6px] px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.1em] bg-[var(--color-primary)] text-white">
@@ -599,7 +630,7 @@ function Pricing() {
               ))}
             </ul>
             <a href="#diagnostico"
-              className={`mt-5 inline-flex min-h-[42px] w-full items-center justify-center rounded-[8px] px-3 text-[14px] font-medium transition-colors duration-200 ${
+              className={`mt-6 inline-flex min-h-[42px] w-full items-center justify-center rounded-[8px] px-3 text-[14px] font-medium transition-colors duration-200 ${
                 tier.recommended
                   ? 'bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)]'
                   : 'border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white'
@@ -813,20 +844,20 @@ function HardwareSection() {
 
       <div ref={ref} className="relative z-10 mx-auto max-w-5xl">
         {/* Sensor → Rule → Ahorro flow */}
-        <div className="mb-8 overflow-hidden rounded-[24px] border border-[var(--color-border)] bg-white p-4 shadow-[0_22px_66px_-58px_rgba(15,23,42,0.48)] backdrop-blur-sm md:p-6 lg:p-8">
+        <div className="mb-8 overflow-hidden rounded-[24px] border border-[var(--color-border)] bg-white p-4 backdrop-blur-sm md:p-6 lg:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-primary)]">Flujo técnico · demo</p>
               <h3 className="mt-3 font-display text-[clamp(1.15rem,3.5vw,1.55rem)] md:text-[clamp(1.5rem,3vw,2.35rem)] font-light leading-tight text-[var(--color-dark)]" style={{ letterSpacing: '-0.03em' }}>
                 Medir primero. Automatizar después. Financiar hardware solo si el margen lo pide.
               </h3>
-              <div className="mt-5 grid gap-3 lg:grid-cols-3">
+              <div className="mt-6 grid gap-3 lg:grid-cols-3">
                 {[
                   ['Sensor de cuadro', 'ACS · clima · standby', accents.teal],
                   ['Regla Tramo', 'horario + reserva + tarifa', accents.amber],
                   ['Informe', 'ahorro y payback estimado', 'var(--color-primary)'],
                 ].map(([title, body, color]) => (
-                  <div key={title} className="hw-card rounded-[16px] bg-white/86 p-4 shadow-[0_16px_45px_-32px_rgba(15,23,42,0.5)] ring-1 ring-white/70 backdrop-blur">
+                  <div key={title} className="hw-card rounded-[16px] bg-white/86 p-4 ring-1 ring-white/70 backdrop-blur">
                     <span className="block h-2 w-10 rounded-full" style={{ background: color }} />
                     <p className="mt-3 text-[13px] font-medium text-[var(--color-dark)]">{title}</p>
                     <p className="mt-1 text-[11px] leading-snug text-[var(--color-gray)]">{body}</p>
@@ -835,7 +866,7 @@ function HardwareSection() {
               </div>
             </div>
             <div
-              className="hw-visual group relative overflow-hidden rounded-[22px] border border-white/90 bg-[linear-gradient(145deg,rgba(255,255,255,0.84)_0%,rgba(236,253,245,0.78)_52%,rgba(219,234,254,0.74)_100%)] shadow-[0_32px_90px_-52px_rgba(15,23,42,0.62)] outline-none ring-1 ring-[#0f7b5a]/10 backdrop-blur-sm"
+              className="hw-visual group relative overflow-hidden rounded-[22px] border border-white/90 bg-[linear-gradient(145deg,rgba(255,255,255,0.84)_0%,rgba(236,253,245,0.78)_52%,rgba(219,234,254,0.74)_100%)] outline-none ring-1 ring-[#0f7b5a]/10 backdrop-blur-sm"
               role="button"
               tabIndex={0}
               aria-label="Animación de flujo energético: pasa el ratón para cargar la batería"
@@ -938,7 +969,7 @@ function HardwareSection() {
           </div>
         </div>
 
-        <div className="mb-5 flex flex-col items-start justify-between gap-3 rounded-[18px] border border-white/70 bg-white/58 p-4 shadow-[0_22px_70px_-58px_rgba(15,23,42,0.45)] backdrop-blur-sm sm:flex-row sm:items-center sm:p-5">
+        <div className="mb-5 flex flex-col items-start justify-between gap-3 rounded-[18px] border border-white/70 bg-white/58 p-4 backdrop-blur-sm sm:flex-row sm:items-center sm:p-5">
           <div>
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--color-primary)]">Decisión con datos</p>
             <p className="mt-1 text-[14px] leading-relaxed text-[var(--color-gray)]">Si el diagnóstico no encuentra margen accionable, no recomendamos hardware.</p>
@@ -950,13 +981,13 @@ function HardwareSection() {
 
         {/* Hardware cards */}
         <div className="grid gap-4 pb-48 lg:grid-cols-2 lg:pb-0">
-          <div className="hw-card rounded-[18px] border border-white/20 bg-[var(--color-primary)] p-5 sm:p-6 text-white shadow-[0_18px_44px_-36px_rgba(10,82,56,0.58)]">
+          <div className="hw-card rounded-[18px] border border-white/20 bg-[var(--color-primary)] p-5 sm:p-6 text-white">
             <h3 className="font-display text-[18px] sm:text-[19px] font-medium text-white">Sensores opcionales</h3>
             <p className="mt-2 text-[13px] sm:text-[14px] leading-relaxed text-white/78">Medición por circuito para ACS, climatización y standby. Visibilidad completa del consumo fantasma.</p>
             <p className="mt-4 inline-flex rounded-full bg-white/16 px-3 py-1.5 font-mono text-[11px] sm:text-[12px] font-semibold text-white">desde ~300 €/apto instalado</p>
             <p className="mt-3 text-[11px] leading-relaxed text-white/62">Retorno estimado solo si el diagnóstico detecta consumo accionable. Sin ROI garantizado.</p>
           </div>
-          <div className="hw-card rounded-[18px] border border-white/20 bg-[var(--color-primary-hover)] p-5 sm:p-6 text-white shadow-[0_18px_44px_-36px_rgba(15,23,42,0.58)]">
+          <div className="hw-card rounded-[18px] border border-white/20 bg-[var(--color-primary-hover)] p-5 sm:p-6 text-white">
             <h3 className="font-display text-[18px] sm:text-[19px] font-medium text-white">Batería opcional</h3>
             <p className="mt-2 text-[13px] sm:text-[14px] leading-relaxed text-white/78">Almacenamiento para arbitraje OMIE: carga en valle (P3), descarga en punta (P1). Solo simulación.</p>
             <p className="mt-4 inline-flex rounded-full bg-white/16 px-3 py-1.5 font-mono text-[11px] sm:text-[12px] font-semibold text-white">~5.500 € / 10 kWh</p>
@@ -987,7 +1018,7 @@ function Footer() {
               Tramo · Energy margin operations
             </p>
             <p className="mt-4 font-display text-[clamp(1.6rem,3.5vw,2.8rem)] font-light leading-[1.08] max-w-[18ch]"
-              style={{ letterSpacing: '-0.03em', overflowWrap: 'anywhere', minWidth: 0 }}>
+              style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0 }}>
               Energía controlada. Cartera más rentable.
             </p>
           </div>
@@ -1038,7 +1069,7 @@ function MobileCTA() {
       <div className="pointer-events-none absolute -top-8 inset-x-0 bottom-0 bg-gradient-to-t from-white via-white/70 to-transparent" />
       <div className="relative px-5 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-2">
         <a href="#diagnostico"
-          className="flex w-full items-center justify-center gap-2 min-h-[52px] rounded-[12px] border border-[var(--color-primary-hover)] font-display text-[15px] font-medium bg-[var(--color-primary)] text-white shadow-[0_12px_28px_-22px_rgba(15,23,42,0.7)] pointer-events-auto">
+          className="flex w-full items-center justify-center gap-2 min-h-[52px] rounded-[12px] border border-[var(--color-primary-hover)] font-display text-[15px] font-medium bg-[var(--color-primary)] text-white pointer-events-auto">
           Diagnosticar mi cartera <ArrowRight className="h-4 w-4" />
         </a>
       </div>
