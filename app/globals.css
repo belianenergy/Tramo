@@ -22,8 +22,8 @@
 
   /* Text */
   --color-dark:          #1A1A2E;   /* headlines, body */
-  --color-gray:          #374151;   /* secondary text — AA-safe */
-  --color-gray-light:    #4B5563;   /* tertiary text — improved contrast */
+  --color-gray:          #1F2937;   /* secondary text — AAA-target */
+  --color-gray-light:    #374151;   /* tertiary text — improved contrast */
 
   /* Borders */
   --color-border:        #E5E7EB;   /* main border */
@@ -316,3 +316,4 @@ textarea:focus:not(:focus-visible) {
   }
   [data-animate] { opacity: 1 !important; transform: none !important; }
 }
+/* Hallmark · macrostructure: Marquee Hero · genre: editorial-industrial · theme: custom Tramo B2B · grid: 12-col + 8px baseline */

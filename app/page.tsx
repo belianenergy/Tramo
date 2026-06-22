@@ -44,7 +44,7 @@ function GridOverlay() {
       <button
         type="button"
         onClick={() => setVisible((current) => !current)}
-        className="fixed bottom-24 left-4 z-[9999] hidden min-h-11 min-w-11 rounded-[8px] border border-[var(--color-border)] bg-white/90 px-3 font-mono text-[11px] font-semibold text-[var(--color-gray)] backdrop-blur transition-colors hover:text-[var(--color-primary)] md:inline-flex md:items-center md:justify-center"
+        className="fixed bottom-3 right-3 z-[9999] inline-flex min-h-11 min-w-11 rounded-[8px] border border-[var(--color-border)] bg-white/80 px-3 font-mono text-[14px] font-semibold text-[var(--color-gray)] opacity-25 backdrop-blur transition-colors hover:text-[var(--color-primary)] focus:opacity-100 active:opacity-100 md:bottom-24 md:left-4 md:right-auto md:bg-white/90 md:opacity-100 items-center justify-center"
         aria-pressed={visible}
         aria-label="Mostrar u ocultar retícula de 12 columnas y baseline"
       >
@@ -71,7 +71,7 @@ function SectionHeading({ children, className = '', eyebrow }: {
   return (
     <div className={className}>
       {eyebrow && (
-        <p className="font-mono text-[12px] font-semibold uppercase tracking-[0.12em] mb-3 text-[var(--color-primary)]">
+        <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.12em] mb-3 text-[var(--color-primary)]">
           {eyebrow}
         </p>
       )}
@@ -108,7 +108,7 @@ function Nav() {
         aria-label="Navegación principal">
         <div className="mx-auto flex w-full items-center justify-between" style={{ maxWidth: 'var(--page-max)' }}>
           <a href="/" className="font-display text-[20px] font-medium text-[var(--color-primary)]">Tramo</a>
-          <div className="hidden items-center gap-5 lg:flex lg:gap-6">
+          <div className="hidden items-center gap-6 lg:flex lg:gap-6">
             {[
               ['Cómo funciona', '#como-funciona'],
               ['Problema', '#producto'],
@@ -122,13 +122,13 @@ function Nav() {
               </a>
             ))}
           </div>
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-4 lg:flex">
             <a href="/app/dashboard"
               className="inline-flex min-h-[44px] items-center justify-center rounded-[8px] px-4 text-[14px] font-medium border border-[var(--color-border)] text-[var(--color-dark)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-all duration-200">
               Demo
             </a>
             <a href="#diagnostico"
-              className="inline-flex min-h-[44px] items-center justify-center rounded-[8px] px-5 text-[14px] font-medium bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)] active:bg-[var(--color-primary-active)] transition-colors duration-200">
+              className="inline-flex min-h-[44px] items-center justify-center rounded-[8px] px-6 text-[14px] font-medium bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)] active:bg-[var(--color-primary-active)] transition-colors duration-200">
               Diagnosticar
             </a>
           </div>
@@ -275,7 +275,7 @@ function PlatformHeroVisual() {
               >
                 <Icon className="h-5 w-5" strokeWidth={2.2} />
               </span>
-              <span className="absolute left-1/2 top-full mt-1 hidden -translate-x-1/2 rounded-full bg-white/82 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.08em] text-[var(--color-dark)] backdrop-blur-md lg:block">
+              <span className="absolute left-1/2 top-full mt-1 hidden -translate-x-1/2 rounded-full bg-white/82 px-2 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-[var(--color-dark)] backdrop-blur-md lg:block">
                 {item.label}
               </span>
             </button>
@@ -283,18 +283,18 @@ function PlatformHeroVisual() {
         })}
 
         <div data-platform-overlay className="absolute -bottom-[76px] left-4 z-20 w-[34%] min-w-[132px] rounded-[12px] border border-white/75 bg-white/78 p-2 backdrop-blur-xl sm:-bottom-[82px] sm:left-5 sm:w-[28%] sm:min-w-[148px] sm:rounded-[14px] sm:bg-white/82 sm:p-3">
-          <div className="flex items-start justify-between gap-2 sm:gap-3">
+          <div className="flex items-start justify-between gap-2 sm:gap-4">
             <div>
-              <p className="font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-[var(--color-gray)]">Tramo live</p>
+              <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.12em] text-[var(--color-gray)]">Tramo live</p>
               <p className="mt-1 whitespace-nowrap font-display text-[18px] font-light leading-none text-[var(--color-dark)] tabular-nums md:text-[24px]">{selected.cost}</p>
             </div>
-            <span className="hidden rounded-full px-2 py-1 font-mono text-[8px] font-semibold uppercase tracking-[0.08em] text-white sm:inline-flex sm:text-[9px]" style={{ background: selected.hover }}>
+            <span className="hidden rounded-full px-2 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-white sm:inline-flex sm:text-[9px]" style={{ background: selected.hover }}>
               {selected.label}
             </span>
           </div>
-          <p className="relative z-10 mt-2 inline-flex rounded-full bg-white/72 px-1.5 py-0.5 font-mono text-[8px] font-semibold uppercase tracking-[0.08em] sm:hidden" style={{ color: selected.hover }}>{selected.label}</p>
-          <p className="mt-2 hidden text-[11px] font-medium leading-snug text-[var(--color-dark)] md:block md:text-[12px]">{selected.note}</p>
-          <div className="mt-2 flex h-11 items-end gap-1 overflow-hidden sm:mt-3 sm:h-12 sm:gap-1.5" aria-hidden="true">
+          <p className="relative z-10 mt-2 inline-flex rounded-full bg-white/72 px-1.5 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.08em] sm:hidden" style={{ color: selected.hover }}>{selected.label}</p>
+          <p className="mt-2 hidden text-[14px] font-medium leading-snug text-[var(--color-dark)] md:block md:text-[14px]">{selected.note}</p>
+          <div className="mt-2 flex h-11 items-end gap-1 overflow-hidden sm:mt-3 sm:h-12 sm:gap-2" aria-hidden="true">
             {heroAppliances.map((bar, i) => (
               <div
                 key={bar.key}
@@ -313,23 +313,23 @@ function PlatformHeroVisual() {
         </div>
 
         <div data-platform-overlay className="absolute -top-[56px] right-4 z-20 hidden max-w-[198px] rounded-[14px] border border-white/70 bg-[var(--color-dark)]/84 px-3 py-2.5 text-white backdrop-blur-xl sm:block md:right-5">
-          <p className="font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-white/55">Decisión sugerida</p>
+          <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.12em] text-white/55">Decisión sugerida</p>
           <div className="mt-1 flex items-end justify-between gap-4">
-            <p className="max-w-[130px] text-[12px] font-semibold leading-tight md:text-[13px]">Automatizar {selected.label.toLowerCase()}</p>
+            <p className="max-w-[130px] text-[14px] font-semibold leading-tight md:text-[14px]">Automatizar {selected.label.toLowerCase()}</p>
             <div className="text-right">
               <p className="whitespace-nowrap font-display text-[20px] font-light leading-none tabular-nums" style={{ color: selected.hover }}>{selected.cost}</p>
-              <p className="font-mono text-[8px] text-white/45">{selected.value} kWh</p>
+              <p className="font-mono text-[14px] text-white/45">{selected.value} kWh</p>
             </div>
           </div>
         </div>
-        <div data-platform-overlay className="absolute -top-[36px] right-3 z-20 flex w-[34%] min-w-[118px] items-center justify-between gap-2 rounded-[12px] border border-white/70 bg-[var(--color-dark)]/82 px-2.5 py-1.5 text-white backdrop-blur-xl sm:hidden">
+        <div data-platform-overlay className="absolute -top-[36px] right-3 z-20 flex w-[34%] min-w-[118px] items-center justify-between gap-2 rounded-[12px] border border-white/70 bg-[var(--color-dark)]/82 px-3 py-1.5 text-white backdrop-blur-xl sm:hidden">
           <div>
-            <p className="font-mono text-[8px] font-semibold uppercase tracking-[0.12em] text-white/50">Acción Tramo</p>
-            <p className="text-[11px] font-semibold leading-tight">{selected.label}</p>
+            <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.12em] text-white/50">Acción Tramo</p>
+            <p className="text-[14px] font-semibold leading-tight">{selected.label}</p>
           </div>
           <div className="text-right">
             <p className="whitespace-nowrap font-display text-[20px] font-light leading-none tabular-nums" style={{ color: selected.hover }}>{selected.cost}</p>
-            <p className="font-mono text-[8px] text-white/45">{selected.value} kWh</p>
+            <p className="font-mono text-[14px] text-white/45">{selected.value} kWh</p>
           </div>
         </div>
       </div>
@@ -353,10 +353,10 @@ function Hero() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} id="hero" data-gsap-section className="relative overflow-hidden px-5 pt-6 pb-6 md:pt-10 md:pb-10 bg-[var(--color-bg)]">
-      <div className="relative mx-auto max-w-full overflow-x-clip" style={{ maxWidth: 'var(--page-max)', columnGap: 'var(--grid-gutter)' }}>
-        <div className="grid items-center gap-8 lg:grid-cols-[1fr_1fr]">
-          <div>
+    <section ref={ref} id="hero" data-gsap-section className="relative overflow-hidden px-[var(--grid-gutter)] pt-6 pb-6 md:pt-10 md:pb-10 bg-[var(--color-bg)]">
+      <div className="relative mx-auto max-w-full overflow-x-clip tramo-grid" style={{ maxWidth: 'var(--page-max)' }}>
+        <div className="col-span-full grid items-center gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-6 lg:pr-6">
             <h1 data-anim="hero-up"
               className="font-display text-[clamp(2.4rem,5vw,3.8rem)] font-light leading-[1.06] text-[var(--color-dark)]"
               style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0 }}>
@@ -365,33 +365,33 @@ function Hero() {
             <p data-anim="hero-up" className="mt-6 max-w-md text-[15px] sm:text-[17px] leading-relaxed text-[var(--color-gray)]">
               Cruza reservas con CUPS y Datadis para detectar consumo fuera de estancia, activar reglas y preparar informes por propietario.
             </p>
-            <div data-anim="hero-up" className="mt-7 flex flex-wrap items-center gap-3">
+            <div data-anim="hero-up" className="mt-8 flex flex-wrap items-center gap-4">
               <CtaButton href="#diagnostico">Diagnosticar mi cartera</CtaButton>
               <CtaButton href="/app/dashboard" variant="ghost">Ver demo</CtaButton>
             </div>
           </div>
-          <div data-anim="hero-img" className="relative flex items-center justify-center">
+          <div data-anim="hero-img" className="relative flex items-center justify-center lg:col-span-6">
             <PlatformHeroVisual />
           </div>
         </div>
 
         {/* Stats row — demo examples, labelled */}
-        <div className="mt-6 grid grid-cols-1 gap-3 lg:grid-cols-3 md:mt-8">
+        <div className="col-span-full mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3 md:mt-8">
           {[
             { value: 'Consumo fantasma', label: 'Detecta qué apartamento sigue gastando cuando no hay reserva.', bg: '#fef3c7', color: accents.amber, icon: TrendingDown },
             { value: 'Ahorro priorizado', label: 'Ordena cada acción por impacto estimado antes de tocar nada.', bg: '#dbeafe', color: accents.blue, icon: Clock },
             { value: 'Informe claro', label: 'Explica cada coste por apartamento, reserva y propietario.', bg: '#dcfce7', color: 'var(--color-primary)', icon: BatteryCharging },
           ].map((stat, i) => { const Icon = stat.icon; return (
             <div key={i}
-              className="stat-card flex items-center gap-3 rounded-[16px] p-4 md:gap-4 md:p-5"
+              className="stat-card flex items-center gap-4 rounded-[16px] p-4 md:gap-4 md:p-6"
               style={{ background: stat.bg }}>
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[12px] bg-white">
                 <Icon className="h-5 w-5" style={{ color: stat.color }} />
               </div>
               <div className="min-w-0">
                 <p className="font-display text-[clamp(1.4rem,2.5vw,1.8rem)] font-light leading-none tabular-nums text-[var(--color-dark)]">{stat.value}</p>
-                <p className="mt-1 text-[12px] leading-snug text-[var(--color-gray)]">{stat.label}</p>
-                <p className="mt-2 inline-flex rounded-full bg-white/85 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.08em] text-[var(--color-gray)]">En el diagnóstico inicial</p>
+                <p className="mt-1 text-[14px] leading-snug text-[var(--color-gray)]">{stat.label}</p>
+                <p className="mt-2 inline-flex rounded-full bg-white/85 px-3 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-[var(--color-gray)]">En el diagnóstico inicial</p>
               </div>
             </div>
           ); })}
@@ -432,11 +432,11 @@ function HowItWorks() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} id="como-funciona" data-gsap-section className="relative overflow-hidden px-5 py-14 md:py-24 md:pb-28" style={{ background: 'linear-gradient(180deg, var(--color-bg) 0%, #ecfdf5 38%, #eff6ff 72%, var(--color-bg) 100%)', scrollMarginTop: '80px' }}>
+    <section ref={ref} id="como-funciona" data-gsap-section className="relative overflow-hidden px-6 py-14 md:py-24 md:pb-28" style={{ background: 'linear-gradient(180deg, var(--color-bg) 0%, #ecfdf5 38%, #eff6ff 72%, var(--color-bg) 100%)', scrollMarginTop: '80px' }}>
       <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-[var(--color-primary-subtle)] blur-3xl" />
       <div className="pointer-events-none absolute -right-20 bottom-12 h-80 w-80 rounded-full bg-[#dbeafe] blur-3xl" />
       <div className="mx-auto" style={{ maxWidth: 'var(--page-max)' }}>
-        <div className="gsap-reveal mx-auto mb-12 max-w-2xl rounded-[24px] bg-white/55 px-4 py-5 text-center backdrop-blur-sm md:bg-transparent md:p-0 md:backdrop-blur-0">
+        <div className="gsap-reveal mx-auto mb-12 max-w-2xl rounded-[24px] bg-white/55 px-4 py-6 text-center backdrop-blur-sm md:bg-transparent md:p-0 md:backdrop-blur-0">
           <SectionHeading className="text-center" eyebrow="Cómo funciona">
             Del contador a la decisión, sin perderte en facturas.
           </SectionHeading>
@@ -447,7 +447,7 @@ function HowItWorks() {
         <div className="relative mx-auto max-w-5xl">
           <div className="grid gap-4 lg:grid-cols-3">
             {howSteps.map((s, i) => (
-              <div key={s.step} className="how-step group relative rounded-[22px] border border-white/70 bg-white/58 p-4 text-left backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:bg-white/72 md:p-5">
+              <div key={s.step} className="how-step group relative rounded-[22px] border border-white/70 bg-white/58 p-4 text-left backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:bg-white/72 md:p-6">
                 <div className="flex items-start gap-4">
                   <div className="relative flex h-[94px] w-[94px] shrink-0 items-center justify-center md:h-[108px] md:w-[108px]">
                     <svg className="how-orbit absolute inset-0 h-full w-full" viewBox="0 0 120 120" aria-hidden="true">
@@ -458,8 +458,8 @@ function HowItWorks() {
                   </div>
                   <div className="min-w-0 pt-2">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="rounded-full px-2.5 py-1 font-mono text-[8px] font-semibold uppercase tracking-[0.1em]" style={{ background: s.chipBg, color: s.color }}>{s.tag}</span>
-                      <span className="font-mono text-[11px] font-semibold" style={{ color: s.color }}>{s.metric}</span>
+                      <span className="rounded-full px-3 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.1em]" style={{ background: s.chipBg, color: s.color }}>{s.tag}</span>
+                      <span className="font-mono text-[14px] font-semibold" style={{ color: s.color }}>{s.metric}</span>
                     </div>
                     <h3 className="mt-3 font-display text-[18px] font-medium leading-snug text-[var(--color-dark)]">{s.title}</h3>
                     <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-gray)]">{s.body}</p>
@@ -525,7 +525,7 @@ function ProblemsDecisions() {
       <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
         {problems.map((item) => { const Icon = item.icon; return (
           <div key={item.title}
-            className="reveal-card rounded-[14px] p-5 border-0 hover:scale-[1.01] transition-all duration-200"
+            className="reveal-card rounded-[14px] p-6 border-0 hover:scale-[1.01] transition-all duration-200"
             style={{ background: item.bg }}>
             <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-[10px]" style={{ background: item.iconBg }}>
               <Icon className="h-4 w-4" style={{ color: item.color }} />
@@ -551,7 +551,7 @@ function ProblemsDecisions() {
       <div className="grid gap-4 lg:grid-cols-3">
         {decisions.map((m) => { const Icon = m.icon; return (
           <div key={m.title}
-            className="reveal-card rounded-[14px] p-5 border-0 hover:scale-[1.01] transition-all duration-200"
+            className="reveal-card rounded-[14px] p-6 border-0 hover:scale-[1.01] transition-all duration-200"
             style={{ background: m.bg }}>
             <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-[10px]" style={{ background: m.iconBg }}>
               <Icon className="h-4 w-4" style={{ color: m.color }} />
@@ -560,7 +560,7 @@ function ProblemsDecisions() {
             <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-gray)]">{m.body}</p>
             <div className="mt-3 flex flex-wrap gap-2">
               {m.tags.map(t => (
-                <span key={t} className="rounded-[6px] px-2 py-0.5 font-mono text-[10px] font-medium" style={{ background: m.iconBg, color: m.color }}>{t}</span>
+                <span key={t} className="rounded-[6px] px-2 py-1 font-mono text-[14px] font-medium" style={{ background: m.iconBg, color: m.color }}>{t}</span>
               ))}
             </div>
           </div>
@@ -594,7 +594,7 @@ function Pricing() {
 
   return (
     <Section refProp={ref} id="precios" className="bg-[var(--color-bg)] pb-8 md:pb-12" style={{ scrollMarginTop: '80px' }}>
-      <div className="relative z-10 mx-auto mb-8 max-w-2xl rounded-[24px] bg-white/46 px-4 py-5 text-center backdrop-blur-sm md:mb-10 md:bg-white/18 md:p-0 md:shadow-none md:backdrop-blur-0">
+      <div className="relative z-10 mx-auto mb-8 max-w-2xl rounded-[24px] bg-white/46 px-4 py-6 text-center backdrop-blur-sm md:mb-10 md:bg-white/18 md:p-0 md:shadow-none md:backdrop-blur-0">
         <SectionHeading className="text-center">
           Diagnóstico primero. Plan después.
         </SectionHeading>
@@ -605,26 +605,26 @@ function Pricing() {
       <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
         {pricingTiers.map((tier) => (
           <div key={tier.name}
-            className={`pricing-card relative flex flex-col rounded-[14px] p-5 bg-white transition-all duration-300 hover:scale-[1.02] ${
+            className={`pricing-card relative flex flex-col rounded-[14px] p-6 bg-white transition-all duration-300 hover:scale-[1.02] ${
               tier.recommended ? 'border-2 border-[var(--color-primary)] hover:shadow-[0_0_32px_-4px_rgba(15,123,90,0.25)]' : 'border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:shadow-md'
             }`}>
             {tier.recommended && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-[6px] px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.1em] bg-[var(--color-primary)] text-white">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-[6px] px-3 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.1em] bg-[var(--color-primary)] text-white">
                 Recomendado
               </div>
             )}
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--color-gray-light)]">{tier.name}</p>
-            <div className="mt-3 flex items-baseline gap-1.5">
+            <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.12em] text-[var(--color-gray-light)]">{tier.name}</p>
+            <div className="mt-3 flex items-baseline gap-2">
               <span className="whitespace-nowrap font-display text-[2rem] font-light text-[var(--color-dark)] tabular-nums">{tier.price}</span>
-              <span className="font-mono text-[10px] text-[var(--color-gray-light)]">€/apt/mes</span>
+              <span className="font-mono text-[14px] text-[var(--color-gray-light)]">€/apt/mes</span>
             </div>
-            <p className="mt-1 text-[12px] text-[var(--color-gray-light)]"><span className="whitespace-nowrap">{tier.aptos} aptos</span> · <span className="whitespace-nowrap tabular-nums">{tier.monthly}</span></p>
-            <p className="mt-0.5 text-[11px] text-[var(--color-gray-light)]">Piloto gratuito</p>
+            <p className="mt-1 text-[14px] text-[var(--color-gray-light)]"><span className="whitespace-nowrap">{tier.aptos} aptos</span> · <span className="whitespace-nowrap tabular-nums">{tier.monthly}</span></p>
+            <p className="mt-1 text-[14px] text-[var(--color-gray-light)]">Piloto gratuito</p>
             <hr className="my-4 border-[var(--color-border)]" />
-            <ul className="flex-1 space-y-2.5">
+            <ul className="flex-1 space-y-2">
               {tier.features.map(f => (
-                <li key={f} className="flex items-start gap-2 text-[13px] text-[var(--color-gray)]">
-                  <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--color-primary)]" />
+                <li key={f} className="flex items-start gap-2 text-[14px] text-[var(--color-gray)]">
+                  <CheckCircle2 className="mt-1 h-3.5 w-3.5 shrink-0 text-[var(--color-primary)]" />
                   <span>{f}</span>
                 </li>
               ))}
@@ -663,11 +663,11 @@ function FAQ() {
           {faqs.map((faq) => (
             <details key={faq.q} name="tramo-faq"
               className="group rounded-[12px] overflow-hidden border border-[var(--color-border)] bg-white">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left hover:bg-[var(--color-primary-subtle)] transition-colors duration-200">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 text-left hover:bg-[var(--color-primary-subtle)] transition-colors duration-200">
                 <span className="font-display text-[15px] font-medium text-[var(--color-dark)]">{faq.q}</span>
                 <span aria-hidden="true" className="text-lg text-[var(--color-gray-light)] transition-transform duration-200 group-open:rotate-45">+</span>
               </summary>
-              <div className="px-5 pb-4 text-[14px] leading-relaxed text-[var(--color-gray)]">{faq.a}</div>
+              <div className="px-6 pb-4 text-[14px] leading-relaxed text-[var(--color-gray)]">{faq.a}</div>
             </details>
           ))}
         </div>
@@ -723,7 +723,7 @@ Apartamentos: ${data.apartments || ''}`,
   }
 
   return (
-    <section id="diagnostico" data-gsap-section className="relative px-5 py-12 md:py-20 bg-[var(--color-primary)] text-white" style={{ scrollMarginTop: '80px' }}>
+    <section id="diagnostico" data-gsap-section className="relative px-6 py-12 md:py-20 bg-[var(--color-primary)] text-white" style={{ scrollMarginTop: '80px' }}>
       <div className="relative mx-auto" style={{ maxWidth: '36rem' }}>
         <div className="text-center">
           <SectionHeading className="text-center" eyebrow="Diagnóstico gratuito">
@@ -774,7 +774,7 @@ Apartamentos: ${data.apartments || ''}`,
             {status === 'sending' ? 'Enviando...' : 'Solicitar diagnóstico'}
             <ArrowRight className="h-4 w-4" />
           </button>
-          <p className="text-center text-[12px]" style={{ color: 'rgba(255,255,255,0.82)' }}>
+          <p className="text-center text-[14px]" style={{ color: 'rgba(255,255,255,0.82)' }}>
             Sin compromiso. Tus datos solo se usan para preparar el diagnóstico.
           </p>
         </form>
@@ -833,7 +833,7 @@ function HardwareSection() {
 
   return (
     <Section id="hardware" className="relative -mt-16 overflow-hidden bg-[linear-gradient(180deg,var(--color-bg)_0%,#f2efff_10%,#e8fbf2_28%,#dcfce7_46%,#ecfeff_70%,#dbeafe_92%,var(--color-bg)_100%)] !pt-20 !pb-20 before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-36 before:bg-[linear-gradient(180deg,rgba(250,250,250,0.96)_0%,rgba(242,239,255,0.72)_38%,rgba(209,250,229,0)_100%)] md:-mt-20 md:!pt-28 md:!pb-16" style={{ scrollMarginTop: '80px' }}>
-      <div className="mx-auto mb-6 max-w-2xl rounded-[24px] bg-white/38 px-4 py-5 text-center backdrop-blur-sm md:mb-10 md:bg-transparent md:p-0 md:backdrop-blur-0">
+      <div className="mx-auto mb-6 max-w-2xl rounded-[24px] bg-white/38 px-4 py-6 text-center backdrop-blur-sm md:mb-10 md:bg-transparent md:p-0 md:backdrop-blur-0">
         <SectionHeading className="text-center">
           Sensores y baterías solo donde el diagnóstico las justifica.
         </SectionHeading>
@@ -847,11 +847,11 @@ function HardwareSection() {
         <div className="mb-8 overflow-hidden rounded-[24px] border border-[var(--color-border)] bg-white p-4 backdrop-blur-sm md:p-6 lg:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
-              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-primary)]">Flujo técnico · demo</p>
-              <h3 className="mt-3 font-display text-[clamp(1.15rem,3.5vw,1.55rem)] md:text-[clamp(1.5rem,3vw,2.35rem)] font-light leading-tight text-[var(--color-dark)]" style={{ letterSpacing: '-0.03em' }}>
+              <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.14em] text-[var(--color-primary)]">Flujo técnico · demo</p>
+              <h3 className="mt-3 font-display text-[clamp(1.35rem,3vw,2.15rem)] font-light leading-tight text-[var(--color-dark)]" style={{ letterSpacing: '-0.03em' }}>
                 Medir primero. Automatizar después. Financiar hardware solo si el margen lo pide.
               </h3>
-              <div className="mt-6 grid gap-3 lg:grid-cols-3">
+              <div className="mt-6 grid gap-4 lg:grid-cols-3">
                 {[
                   ['Sensor de cuadro', 'ACS · clima · standby', accents.teal],
                   ['Regla Tramo', 'horario + reserva + tarifa', accents.amber],
@@ -859,8 +859,8 @@ function HardwareSection() {
                 ].map(([title, body, color]) => (
                   <div key={title} className="hw-card rounded-[16px] bg-white/86 p-4 ring-1 ring-white/70 backdrop-blur">
                     <span className="block h-2 w-10 rounded-full" style={{ background: color }} />
-                    <p className="mt-3 text-[13px] font-medium text-[var(--color-dark)]">{title}</p>
-                    <p className="mt-1 text-[11px] leading-snug text-[var(--color-gray)]">{body}</p>
+                    <p className="mt-3 text-[14px] font-medium text-[var(--color-dark)]">{title}</p>
+                    <p className="mt-1 text-[14px] leading-snug text-[var(--color-gray)]">{body}</p>
                   </div>
                 ))}
               </div>
@@ -969,9 +969,9 @@ function HardwareSection() {
           </div>
         </div>
 
-        <div className="mb-5 flex flex-col items-start justify-between gap-3 rounded-[18px] border border-white/70 bg-white/58 p-4 backdrop-blur-sm sm:flex-row sm:items-center sm:p-5">
+        <div className="mb-5 flex flex-col items-start justify-between gap-4 rounded-[18px] border border-white/70 bg-white/58 p-4 backdrop-blur-sm sm:flex-row sm:items-center sm:p-6">
           <div>
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--color-primary)]">Decisión con datos</p>
+            <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.12em] text-[var(--color-primary)]">Decisión con datos</p>
             <p className="mt-1 text-[14px] leading-relaxed text-[var(--color-gray)]">Si el diagnóstico no encuentra margen accionable, no recomendamos hardware.</p>
           </div>
           <a href="#diagnostico" className="inline-flex min-h-[42px] items-center justify-center rounded-[10px] bg-[var(--color-primary)] px-4 text-[14px] font-medium text-white hover:bg-[var(--color-primary-hover)]">
@@ -981,17 +981,17 @@ function HardwareSection() {
 
         {/* Hardware cards */}
         <div className="grid gap-4 pb-48 lg:grid-cols-2 lg:pb-0">
-          <div className="hw-card rounded-[18px] border border-white/20 bg-[var(--color-primary)] p-5 sm:p-6 text-white">
+          <div className="hw-card rounded-[18px] border border-white/20 bg-[var(--color-primary)] p-6 sm:p-6 text-white">
             <h3 className="font-display text-[18px] sm:text-[19px] font-medium text-white">Sensores opcionales</h3>
-            <p className="mt-2 text-[13px] sm:text-[14px] leading-relaxed text-white/78">Medición por circuito para ACS, climatización y standby. Visibilidad completa del consumo fantasma.</p>
-            <p className="mt-4 inline-flex rounded-full bg-white/16 px-3 py-1.5 font-mono text-[11px] sm:text-[12px] font-semibold text-white">desde ~300 €/apto instalado</p>
-            <p className="mt-3 text-[11px] leading-relaxed text-white/62">Retorno estimado solo si el diagnóstico detecta consumo accionable. Sin ROI garantizado.</p>
+            <p className="mt-2 text-[14px] sm:text-[14px] leading-relaxed text-white/78">Medición por circuito para ACS, climatización y standby. Visibilidad completa del consumo fantasma.</p>
+            <p className="mt-4 inline-flex rounded-full bg-white/16 px-3 py-1.5 font-mono text-[14px] sm:text-[14px] font-semibold text-white">desde ~300 €/apto instalado</p>
+            <p className="mt-3 text-[14px] leading-relaxed text-white/62">Retorno estimado solo si el diagnóstico detecta consumo accionable. Sin ROI garantizado.</p>
           </div>
-          <div className="hw-card rounded-[18px] border border-white/20 bg-[var(--color-primary-hover)] p-5 sm:p-6 text-white">
+          <div className="hw-card rounded-[18px] border border-white/20 bg-[var(--color-primary-hover)] p-6 sm:p-6 text-white">
             <h3 className="font-display text-[18px] sm:text-[19px] font-medium text-white">Batería opcional</h3>
-            <p className="mt-2 text-[13px] sm:text-[14px] leading-relaxed text-white/78">Almacenamiento para arbitraje OMIE: carga en valle (P3), descarga en punta (P1). Solo simulación.</p>
-            <p className="mt-4 inline-flex rounded-full bg-white/16 px-3 py-1.5 font-mono text-[11px] sm:text-[12px] font-semibold text-white">~5.500 € / 10 kWh</p>
-            <p className="mt-3 text-[11px] leading-relaxed text-white/62">Simulación con curva real de carga. Payback orientativo: 4-7 años según ocupación y tarifa.</p>
+            <p className="mt-2 text-[14px] sm:text-[14px] leading-relaxed text-white/78">Almacenamiento para arbitraje OMIE: carga en valle (P3), descarga en punta (P1). Solo simulación.</p>
+            <p className="mt-4 inline-flex rounded-full bg-white/16 px-3 py-1.5 font-mono text-[14px] sm:text-[14px] font-semibold text-white">~5.500 € / 10 kWh</p>
+            <p className="mt-3 text-[14px] leading-relaxed text-white/62">Simulación con curva real de carga. Payback orientativo: 4-7 años según ocupación y tarifa.</p>
           </div>
         </div>
       </div>
@@ -1010,11 +1010,11 @@ function Footer() {
     ['FAQ', '#faq'],
   ];
   return (
-    <footer data-gsap-section className="px-5 py-12 bg-[var(--color-primary-hover)] text-white">
+    <footer data-gsap-section className="px-6 py-12 bg-[var(--color-primary-hover)] text-white">
       <div className="mx-auto" style={{ maxWidth: 'var(--page-max)' }}>
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end">
           <div>
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em]" style={{ color: 'rgba(255,255,255,0.76)' }}>
+            <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.15em]" style={{ color: 'rgba(255,255,255,0.76)' }}>
               Tramo · Energy margin operations
             </p>
             <p className="mt-4 font-display text-[clamp(1.6rem,3.5vw,2.8rem)] font-light leading-[1.08] max-w-[18ch]"
@@ -1022,16 +1022,16 @@ function Footer() {
               Energía controlada. Cartera más rentable.
             </p>
           </div>
-          <p className="text-[14px] leading-relaxed lg:text-right" style={{ color: 'rgba(255,255,255,0.55)' }}>
+          <p className="text-[14px] leading-relaxed lg:text-right" style={{ color: 'rgba(255,255,255,0.82)' }}>
             Diagnóstico, decisiones e informes para gestores de apartamentos turísticos en España.
           </p>
         </div>
 
         <div className="mt-10 pt-6 border-t border-white/15">
-          <p className="text-[13px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.82)' }}>
+          <p className="text-[14px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.82)' }}>
             Tramo es una herramienta de diagnóstico y recomendación. Las cifras de ahorro son estimaciones basadas en datos de consumo y tarifas reales durante el piloto. El ahorro efectivo depende de la ocupación, tarifa contratada y capacidad de actuación del gestor. No se garantizan resultados específicos. Los precios son orientativos antes de impuestos y pueden variar según el tamaño de cartera y necesidades de integración.
           </p>
-          <p className="mt-3 text-[13px]" style={{ color: 'rgba(255,255,255,0.82)' }}>
+          <p className="mt-3 text-[14px]" style={{ color: 'rgba(255,255,255,0.82)' }}>
             Los sensores y baterías son capacidades opcionales recomendadas solo cuando el diagnóstico previo lo justifica. Las cifras de coste de hardware (~300 €/apto para sensores, ~5.500 € para batería de 10 kWh) son referencias de mercado sujetas a disponibilidad y configuración.
           </p>
         </div>
@@ -1040,10 +1040,10 @@ function Footer() {
           <nav aria-label="Enlaces secundarios" className="flex flex-wrap items-center gap-x-5 gap-y-2">
             {links.map(([label, href]) => (
               <a key={href} href={href}
-                className="inline-flex min-h-[44px] items-center text-[13px] hover:opacity-80 transition-opacity duration-200">{label}</a>
+                className="inline-flex min-h-[44px] items-center text-[14px] hover:opacity-80 transition-opacity duration-200">{label}</a>
             ))}
           </nav>
-          <p className="text-[12px]" style={{ color: 'rgba(255,255,255,0.70)' }}>
+          <p className="text-[14px]" style={{ color: 'rgba(255,255,255,0.82)' }}>
             © {new Date().getFullYear()} Tramo
           </p>
         </div>
@@ -1067,7 +1067,7 @@ function MobileCTA() {
   return (
     <div className={`fixed bottom-0 left-0 right-0 z-40 md:hidden transition-all duration-300 ${visible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-full opacity-0'}`}>
       <div className="pointer-events-none absolute -top-8 inset-x-0 bottom-0 bg-gradient-to-t from-white via-white/70 to-transparent" />
-      <div className="relative px-5 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-2">
+      <div className="relative px-6 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-2">
         <a href="#diagnostico"
           className="flex w-full items-center justify-center gap-2 min-h-[52px] rounded-[12px] border border-[var(--color-primary-hover)] font-display text-[15px] font-medium bg-[var(--color-primary)] text-white pointer-events-auto">
           Diagnosticar mi cartera <ArrowRight className="h-4 w-4" />
@@ -1081,7 +1081,9 @@ function MobileCTA() {
 
 export default function Page() {
   return (
-    <main id="main-content" className="bg-[var(--color-bg)] text-[var(--color-dark)] pb-40 md:pb-0">
+    <>
+      <GridOverlay />
+      <main id="main-content" className="bg-[var(--color-bg)] text-[var(--color-dark)] pb-40 md:pb-0">
       <Nav />
       <Hero />
       <HowItWorks />
@@ -1091,7 +1093,8 @@ export default function Page() {
       <Pricing />
       <FAQ />
       <Footer />
-      <MobileCTA />
-    </main>
+        <MobileCTA />
+      </main>
+    </>
   );
 }
