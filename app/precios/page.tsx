@@ -11,7 +11,7 @@ function cssVar(n: string) { return `var(${n})`; }
 function ArrowSwap() {
   return (
     <span className="relative inline-flex h-3 w-4 items-center justify-center" aria-hidden="true">
-      <ArrowRight className="absolute h-4 w-4 translate-x-0 scale-100 opacity-100 transition-[opacity,translate,scale] duration-500 ease-[cubic-bezier(0.36,0,0.114,0.92)] group-hover:translate-x-2 group-hover:scale-0 group-hover:opacity-0" />
+      <ArrowRight className="absolute h-4 w-4 translate-x-0 scale-100 opacity-100 transition-[opacity,translate,scale] duration-500 ease-[cubic-bezier(0.36,0,0.114,0.92)] group-hover:translate-x-2 group-hover:scale-0 group-hover:opacity-100" />
       <ArrowRight className="absolute h-4 w-4 -translate-x-2 scale-0 opacity-0 transition-[opacity,translate,scale] duration-500 ease-[cubic-bezier(0.36,0,0.114,0.92)] group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100" />
     </span>
   );
@@ -20,10 +20,10 @@ function ArrowSwap() {
 function ScaleBarBtn({ href, variant = 'solid', className = '', children }: { href: string; variant?: 'solid' | 'outline'; className?: string; children: React.ReactNode }) {
   return (
     <a href={href} className={`group relative inline-flex min-h-11 items-center justify-center gap-2 overflow-hidden rounded-lg px-6 py-2.5 font-display text-sm font-semibold leading-none tracking-[0.01em] transition-[background-color,border-color,color,transform] duration-300 active:translate-y-px ${className}`}
-      style={{ background: variant === 'solid' ? cssVar('--color-ink') : 'transparent', color: variant === 'solid' ? cssVar('--color-surface') : cssVar('--color-ink'), border: variant === 'solid' ? '1px solid transparent' : `1px solid ${cssVar('--color-ink')}` }}>
+      style={{ background: variant === 'solid' ? cssVar('--color-bark') : 'transparent', color: variant === 'solid' ? cssVar('--color-sheet-white') : cssVar('--color-bark'), border: variant === 'solid' ? '1px solid transparent' : `1px solid ${cssVar('--color-bark')}` }}>
       <span className="pointer-events-none absolute inset-x-0 -inset-y-4 flex items-center justify-center">
         {BAR_DELAYS.map((delay, i) => (<span key={i} className="h-full flex-[0_0_3px] origin-bottom scale-y-0 rounded-sm transition-transform duration-300 group-hover:scale-y-100"
-          style={{ background: variant === 'solid' ? cssVar('--color-accent') : cssVar('--color-border-strong'), transitionDelay: `${delay}ms` }} />))}
+          style={{ background: variant === 'solid' ? cssVar('--color-mint-pulse') : cssVar('--color-sage-mist'), transitionDelay: `${delay}ms` }} />))}
       </span>
       <span className="relative z-10 inline-flex items-center gap-2 whitespace-nowrap">{children}</span>
     </a>
@@ -31,22 +31,22 @@ function ScaleBarBtn({ href, variant = 'solid', className = '', children }: { hr
 }
 
 function TextCta({ href, children }: { href: string; children: React.ReactNode }) {
-  return <a href={href} className="group inline-flex items-center gap-2 font-display text-sm font-semibold tracking-[0.01em] text-[var(--color-accent)]"><span>{children}</span><ArrowSwap /></a>;
+  return <a href={href} className="group inline-flex items-center gap-2 font-display text-sm font-semibold tracking-[0.01em] text-[var(--color-canopy)]"><span>{children}</span><ArrowSwap /></a>;
 }
 
 gsap.registerPlugin(ScrollTrigger);
 
 const tiers = [
-  { name: 'Starter', range: [10, 24], priceMin: 150, priceMax: 250, savingPer: 1200, cta: 'Diagnosticar mi cartera' },
-  { name: 'Professional', range: [25, 49], priceMin: 300, priceMax: 500, savingPer: 3000, cta: 'Diagnosticar mi cartera', highlight: true },
-  { name: 'Enterprise', range: [50, 99], priceMin: 500, priceMax: 750, savingPer: 6000, cta: 'Diagnosticar mi cartera' },
-  { name: 'Scale', range: [100, Infinity], priceMin: 750, priceMax: 1250, savingPer: 12000, cta: 'Hablar con ventas' },
+  { name: 'Starter', range: [5, 15], pricePerApartment: 15, savingPer: null as number | null, cta: 'Diagnosticar' },
+  { name: 'Pro', range: [16, 50], pricePerApartment: 12, savingPer: null as number | null, cta: 'Diagnosticar', highlight: true },
+  { name: 'Business', range: [51, 99], pricePerApartment: 10, savingPer: null as number | null, cta: 'Diagnosticar' },
+  { name: 'Scale', range: [100, Infinity], pricePerApartment: 7.5, savingPer: null as number | null, cta: 'Ventas' },
 ];
 
 const faqs = [
   ['¿Hay permanencia?', 'No. Todos los planes son mensuales sin compromiso de permanencia.'],
   ['¿Qué incluye el piloto gratuito?', 'Diagnóstico completo de tu cartera con datos reales, sin configuración técnica y sin necesidad de tarjeta.'],
-  ['¿Los sensores son obligatorios?', 'No. El diagnóstico inicial funciona sin hardware. Los sensores Shelly son opcionales para control en tiempo real.'],
+  ['¿Los sensores son obligatorios?', 'No. El diagnóstico inicial funciona sin hardware. Los sensores opcionales permiten medición y control en tiempo real.'],
   ['¿Cómo se calcula el ahorro?', 'Basado en datos reales de consumo, tarifas y patrones de reserva. La estimación es prudente y se revisa en el piloto.'],
 ];
 
@@ -76,21 +76,21 @@ export default function PreciosPage() {
   const [withBattery, setWithBattery] = useState(false);
 
   const tier = tiers.find(t => apts >= t.range[0] && apts <= (t.range[1] === Infinity ? 99999 : t.range[1])) ?? tiers[0];
-  const ratio = (apts - tier.range[0]) / ((tier.range[1] === Infinity ? 200 : tier.range[1]) - tier.range[0]);
-  const monthlyPrice = Math.round((tier.priceMin + ratio * (tier.priceMax - tier.priceMin)) / 5) * 5;
+  const monthlyPrice = Math.round((apts * tier.pricePerApartment) / 5) * 5;
 
-  const baseSaving = Math.round(apts * 60);
-  const sensorSaving = withSensors ? Math.round(apts * 80) : 0;
-  const batterySaving = withBattery ? Math.round(apts * 35) : 0;
-  const totalSaving = baseSaving + sensorSaving + batterySaving;
+  // Savings estimation based on real parameters, using conservative industry averages
+  const baseSavingPerAptYear = 120; // monitoring + power adjustment: ~10€/mo per apartment
+  const sensorSavingPerAptYear = withSensors ? 80 : 0; // Optional sensors: reduced standby
+  const batterySavingPerYear = withBattery ? 500 : 0; // Optional battery: OMIE arbitrage scenario midpoint, not guaranteed
+  const totalSaving = (baseSavingPerAptYear + sensorSavingPerAptYear) * apts + batterySavingPerYear;
 
   const sensorCost = withSensors ? apts * 300 : 0;
   const batteryCost = withBattery ? 5500 : 0;
   const totalUpfront = sensorCost + batteryCost;
-  const roiMonths = totalSaving > 0 ? Math.round((totalUpfront / (totalSaving / 12)) * 10) / 10 : 0;
+  const roiMonths = totalSaving > 0 && totalUpfront > 0 ? Math.ceil(totalUpfront / (totalSaving / 12)) : null;
 
   const savingRef = useRef<HTMLSpanElement>(null);
-  useCountUp(savingRef, totalSaving);
+  useCountUp(savingRef, totalSaving ?? 0);
 
   return (
     <>
@@ -100,97 +100,117 @@ export default function PreciosPage() {
         @media(prefers-reduced-motion:reduce){.rv{animation:none!important;opacity:1!important}}
       `}</style>
 
-      <main className="min-h-screen bg-[var(--color-paper)] text-[var(--color-ink)]">
+      <main className="min-h-screen" style={{ background: 'var(--color-cream-paper)', color: 'var(--color-bark)' }}>
         {/* Hero */}
-        <section className="px-5 pb-20 pt-24 text-center md:pb-28 md:pt-32">
+        <section className="px-5 pb-12 pt-18 md:pb-16 md:pt-24">
           <div className="mx-auto max-w-4xl">
-            <p className="rv mb-4 inline-block rounded-full border border-[var(--color-accent)] bg-[var(--color-accent-soft)] px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-accent-ink)]">
+            <div className="rv mb-8 h-[3px] w-full rounded-full" style={{ background: 'var(--color-canopy)' }} />
+            <p className="rv mb-4 inline-block rounded-full px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.15em]" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)', color: 'var(--color-muted-slate)' }}>
               Precios transparentes
             </p>
-            <h1 className="rv mx-auto max-w-4xl font-display text-[clamp(2.6rem,6vw,5rem)] font-semibold leading-[1.02] tracking-[-0.02em]">
-              Calcula tu ahorro antes de decidir.
+            <h1 className="rv max-w-4xl [text-wrap:balance] font-display text-[clamp(2.25rem,4.6vw,3.75rem)] font-light leading-[1.06] tracking-[-0.02em]" style={{ color: 'var(--color-ink)' }}>
+              Diagnóstico primero. Plan por apartamento después.
             </h1>
-            <p className="rv mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-muted)]">
-              Todos los planes incluyen piloto gratuito, sin permanencia ni tarjeta. El ahorro estimado supera el coste en todos los tramos.
+            <p className="rv mt-5 max-w-2xl text-[17px] leading-relaxed" style={{ color: 'var(--color-slate)' }}>
+              Estimamos el margen energético perdido cruzando consumo, reservas y tarifa. Después proponemos un plan por apartamento con piloto gratuito, sin permanencia ni tarjeta.
             </p>
           </div>
         </section>
 
         {/* Calculator */}
-        <section className="border-y border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-16 md:py-24">
-          <div className="mx-auto max-w-4xl">
-            <div className="rv rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-6 md:p-8">
-              <h2 className="font-display text-2xl font-semibold text-[var(--color-ink)]">Calculadora de ahorro</h2>
-              <p className="mt-2 text-sm text-[var(--color-muted)]">Ajusta los parámetros de tu cartera para ver el ahorro estimado anual.</p>
+        <section id="calculadora" className="border-y px-5 py-10 md:py-14" style={{ borderColor: 'var(--color-sage-mist)', background: 'var(--color-cream-paper)', scrollMarginTop: '80px' }}>
+          <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
+            <div className="rv">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em]" style={{ color: 'var(--color-muted-slate)' }}>Escenario</p>
+              <h2 className="mt-3 font-display text-[clamp(1.9rem,3vw,2.7rem)] font-light leading-[1.06]" style={{ color: 'var(--color-ink)' }}>
+                Calculadora de ahorro prudente.
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed" style={{ color: 'var(--color-slate)' }}>
+                No vende un ROI garantizado. Ordena el piloto: coste actual, hardware opcional y plan mensual por apartamento.
+              </p>
+            </div>
+            <div className="rv rounded-[16px] p-5 md:p-6" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
+              <div className="flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <h2 className="font-display text-xl font-medium" style={{ color: 'var(--color-ink)' }}>Calculadora</h2>
+                  <p className="mt-1 text-sm" style={{ color: 'var(--color-slate)' }}>Ajusta los parámetros de tu cartera.</p>
+                </div>
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.12em]" style={{ color: 'var(--color-muted-slate)' }}>Piloto gratuito</p>
+              </div>
 
-              <div className="mt-8 space-y-6">
+              <div className="mt-6 space-y-5">
                 {/* Slider */}
                 <div>
                   <div className="flex items-baseline justify-between">
-                    <label className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-muted)]">Nº de apartamentos</label>
-                    <span className="font-mono text-2xl font-semibold text-[var(--color-ink)]">{apts}</span>
+                    <label className="font-mono text-xs font-semibold uppercase tracking-[0.15em]" style={{ color: 'var(--color-muted-slate)' }}>Nº de apartamentos</label>
+                    <span className="font-mono text-2xl font-semibold" style={{ color: 'var(--color-ink)' }}>{apts}</span>
                   </div>
                   <input
                     type="range"
+                    suppressHydrationWarning
                     min={5}
                     max={200}
                     value={apts}
                     onChange={e => setApts(Number(e.target.value))}
-                    className="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-[var(--color-surface-alt)] accent-[var(--color-accent)]"
+                    className="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full accent-[var(--color-canopy)]"
+                    style={{ background: 'var(--color-cream-paper)' }}
                   />
-                  <div className="mt-1 flex justify-between font-mono text-xs text-[var(--color-muted)]">
+                  <div className="mt-1 flex justify-between font-mono text-xs" style={{ color: 'var(--color-muted-slate)' }}>
                     <span>5</span><span>200</span>
                   </div>
                 </div>
 
                 {/* Toggles */}
-                <div className="grid gap-3 sm:grid-cols-2">
+                <div className="grid gap-3 md:grid-cols-2">
                   <button
+                    type="button"
                     onClick={() => setWithSensors(!withSensors)}
-                    className={`flex items-center gap-3 rounded-xl border p-4 text-left transition-all ${withSensors ? 'border-[var(--color-accent)] bg-[var(--color-accent-soft)]' : 'border-[var(--color-border)] bg-[var(--color-surface)]'}`}
+                    className={`flex min-w-0 items-center gap-3 rounded-[8px] border p-3 text-left transition-[border-color,background-color] duration-200 ${withSensors ? 'border-[var(--color-canopy)] bg-[color-mix(in oklch, var(--color-canopy) 6%, transparent)]' : 'border-[var(--color-sage-mist)] bg-[var(--color-cream-paper)]'}`}
                   >
-                    <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${withSensors ? 'bg-[var(--color-accent)]' : 'bg-[var(--color-surface-alt)]'}`}>
-                      <PlugZap className={`h-5 w-5 ${withSensors ? 'text-[var(--color-ink)]' : 'text-[var(--color-muted)]'}`} />
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-[8px] ${withSensors ? 'bg-[var(--color-canopy)]' : 'bg-[var(--color-cream-paper)]'}`}>
+                      <PlugZap className={`h-5 w-5 ${withSensors ? 'text-[var(--color-sheet-white)]' : 'text-[var(--color-muted-slate)]'}`} />
                     </div>
                     <div>
-                      <p className="font-display text-sm font-semibold text-[var(--color-ink)]">Sensores Shelly</p>
-                      <p className="text-xs text-[var(--color-muted)]">+300 €/apt · +80 €/año ahorro</p>
+                      <p className="font-display text-sm font-semibold" style={{ color: 'var(--color-ink)' }}>Sensores opcionales</p>
+                      <p className="text-xs" style={{ color: 'var(--color-slate)' }}>+300 €/apt · escenario +80 €/año</p>
                     </div>
-                    <span className={`ml-auto font-mono text-sm font-semibold ${withSensors ? 'text-[var(--color-accent-ink)]' : 'text-[var(--color-muted)]'}`}>{withSensors ? 'ON' : 'OFF'}</span>
+                    <span className={`ml-auto font-mono text-sm font-semibold ${withSensors ? 'text-[var(--color-canopy)]' : 'text-[var(--color-muted-slate)]'}`}>{withSensors ? 'ON' : 'OFF'}</span>
                   </button>
                   <button
+                    type="button"
                     onClick={() => setWithBattery(!withBattery)}
-                    className={`flex items-center gap-3 rounded-xl border p-4 text-left transition-all ${withBattery ? 'border-[var(--color-accent)] bg-[var(--color-accent-soft)]' : 'border-[var(--color-border)] bg-[var(--color-surface)]'}`}
+                    className={`flex min-w-0 items-center gap-3 rounded-[8px] border p-3 text-left transition-[border-color,background-color] duration-200 ${withBattery ? 'border-[var(--color-canopy)] bg-[color-mix(in oklch, var(--color-canopy) 6%, transparent)]' : 'border-[var(--color-sage-mist)] bg-[var(--color-cream-paper)]'}`}
                   >
-                    <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${withBattery ? 'bg-[var(--color-accent)]' : 'bg-[var(--color-surface-alt)]'}`}>
-                      <BatteryCharging className={`h-5 w-5 ${withBattery ? 'text-[var(--color-ink)]' : 'text-[var(--color-muted)]'}`} />
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-[8px] ${withBattery ? 'bg-[var(--color-canopy)]' : 'bg-[var(--color-cream-paper)]'}`}>
+                      <BatteryCharging className={`h-5 w-5 ${withBattery ? 'text-[var(--color-sheet-white)]' : 'text-[var(--color-muted-slate)]'}`} />
                     </div>
                     <div>
-                      <p className="font-display text-sm font-semibold text-[var(--color-ink)]">Batería Huawei Luna</p>
-                      <p className="text-xs text-[var(--color-muted)]">5.500 € · 350-700 €/año ahorro</p>
+                      <p className="font-display text-sm font-semibold" style={{ color: 'var(--color-ink)' }}>Batería opcional</p>
+                      <p className="text-xs" style={{ color: 'var(--color-slate)' }}>5.500 € · escenario 350-700 €/año</p>
                     </div>
-                    <span className={`ml-auto font-mono text-sm font-semibold ${withBattery ? 'text-[var(--color-accent-ink)]' : 'text-[var(--color-muted)]'}`}>{withBattery ? 'ON' : 'OFF'}</span>
+                    <span className={`ml-auto font-mono text-sm font-semibold ${withBattery ? 'text-[var(--color-canopy)]' : 'text-[var(--color-muted-slate)]'}`}>{withBattery ? 'ON' : 'OFF'}</span>
                   </button>
                 </div>
 
                 {/* Results */}
-                <div className="grid gap-4 sm:grid-cols-3">
-                  <div className="rounded-xl bg-[var(--color-surface)] p-4 text-center border border-[var(--color-border)]">
-                    <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-muted)]">Plan</p>
-                    <p className="mt-2 font-display text-xl font-semibold text-[var(--color-ink)]">{tier.name}</p>
-                    <p className="mt-2 font-mono text-sm text-[var(--color-muted)]">{monthlyPrice} €/mes</p>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  <div className="rounded-[8px] p-4 text-center" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
+                    <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em]" style={{ color: 'var(--color-muted-slate)' }}>Plan</p>
+                    <p className="mt-2 font-display text-xl font-semibold" style={{ color: 'var(--color-ink)' }}>{tier.name}</p>
+                    <p className="mt-2 font-mono text-sm" style={{ color: 'var(--color-slate)' }}>{tier.pricePerApartment.toLocaleString('es-ES')} €/apto/mes</p>
+                    <p className="mt-1 text-xs" style={{ color: 'var(--color-slate)' }}>{monthlyPrice} €/mes estimados</p>
                   </div>
-                  <div className="rounded-xl bg-[var(--color-ink)] p-4 text-center">
-                    <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-accent-soft)]">Ahorro anual</p>
-                    <p className="mt-2 font-mono text-3xl font-semibold text-[var(--color-accent)]">
-                      <span ref={savingRef}>{totalSaving.toLocaleString('es-ES')}</span>
+                  <div className="rounded-[8px] p-4 text-center" style={{ background: 'var(--color-bark)' }}>
+                    <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em]" style={{ color: 'var(--color-mint-pulse)' }}>Ahorro anual</p>
+                    <p className="mt-2 font-mono text-3xl font-semibold" style={{ color: 'var(--color-mint-pulse)' }}>
+                      <span ref={savingRef}>{totalSaving !== null ? totalSaving.toLocaleString('es-ES') : '—'}</span>
                       <span className="text-lg"> €</span>
                     </p>
                   </div>
-                  <div className="rounded-xl bg-[var(--color-surface)] p-4 text-center border border-[var(--color-border)]">
-                    <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-muted)]">Inversión inicial</p>
-                    <p className="mt-2 font-mono text-xl font-semibold text-[var(--color-ink)]">{totalUpfront > 0 ? `${totalUpfront.toLocaleString('es-ES')} €` : '0 €'}</p>
-                    {roiMonths > 0 && <p className="mt-1 text-xs text-[var(--color-muted)]">ROI: {roiMonths} meses</p>}
+                  <div className="rounded-[8px] p-4 text-center" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
+                    <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em]" style={{ color: 'var(--color-muted-slate)' }}>Inversión inicial</p>
+                    <p className="mt-2 font-mono text-xl font-semibold" style={{ color: 'var(--color-ink)' }}>{totalUpfront > 0 ? `${totalUpfront.toLocaleString('es-ES')} €` : '0 €'}</p>
+                    {roiMonths !== null && roiMonths > 0 && <p className="mt-1 text-xs" style={{ color: 'var(--color-slate)' }}>Retorno orientativo hardware: {roiMonths} meses</p>}
                   </div>
                 </div>
               </div>
@@ -202,37 +222,47 @@ export default function PreciosPage() {
         <section className="px-5 py-24 md:py-32">
           <div className="mx-auto max-w-7xl">
             <div className="mb-10 max-w-3xl rv">
-              <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.05] text-[var(--color-ink)]">
-                Planes para cada tamaño de cartera.
+              <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-light leading-[1.05]" style={{ color: 'var(--color-ink)' }}>
+                Planes para cada tamaño de cartera turística.
               </h2>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed" style={{ color: 'var(--color-slate)' }}>
+                Los importes públicos son puntos de partida. La propuesta final se calcula con ocupación, factura, potencia y capacidad real de actuación.
+              </p>
             </div>
-            <div className="rv grid gap-4 md:grid-cols-4">
+            <div className="rv grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
               {tiers.map((plan) => (
                 <article
                   key={plan.name}
-                  className={`rounded-2xl border p-6 ${plan.highlight ? 'border-[var(--color-accent)] bg-[var(--color-accent-soft)]' : 'border-[var(--color-border)] bg-[var(--color-surface)]'}`}
+                  className={`flex min-w-0 flex-col rounded-[16px] border p-5 ${plan.highlight ? 'border-[var(--color-bark)] bg-[var(--color-cream-paper)]' : 'border-[var(--color-sage-mist)] bg-[var(--color-cream-paper)]'}`}
                 >
-                  <p className="font-display text-lg font-semibold text-[var(--color-ink)]">{plan.name}</p>
-                  <p className="mt-1 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-muted)]">
+                  <p className="font-display text-lg font-semibold" style={{ color: 'var(--color-ink)' }}>{plan.name}</p>
+                  <p className="mt-1 font-mono text-xs font-semibold uppercase tracking-[0.15em]" style={{ color: 'var(--color-muted-slate)' }}>
                     {plan.range[1] === Infinity ? `${plan.range[0]}+` : `${plan.range[0]}-${plan.range[1]}`} apartamentos
                   </p>
-                  <p className="mt-5 font-mono text-sm text-[var(--color-muted)]">Desde</p>
-                  <p className="font-mono text-2xl font-semibold text-[var(--color-ink)]">{plan.priceMin}-{plan.priceMax} €/mes</p>
-                  <div className="mt-4 rounded-xl bg-[var(--color-accent-soft)] p-3">
-                    <p className="text-center font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent-ink)]">Ahorro estimado</p>
-                    <p className="mt-1 text-center font-mono text-xl font-semibold text-[var(--color-accent-ink)]">{plan.savingPer.toLocaleString('es-ES')} €/año</p>
+                  <p className="mt-5 font-mono text-sm" style={{ color: 'var(--color-slate)' }}>Desde</p>
+                  <div className="mt-2 flex min-w-0 items-baseline gap-2">
+                    <span className="font-mono text-4xl font-semibold leading-none" style={{ color: 'var(--color-ink)' }}>
+                      {plan.pricePerApartment.toLocaleString('es-ES')}
+                    </span>
+                    <span className="min-w-0 font-mono text-[10px] font-semibold leading-tight" style={{ color: 'var(--color-slate)' }}>
+                      €/apt/mes
+                    </span>
+                  </div>
+                  <div className="mt-5 rounded-[8px] p-3" style={{ background: 'var(--color-cream-paper)' }}>
+                    <p className="text-center font-mono text-xs font-semibold uppercase tracking-[0.12em]" style={{ color: 'var(--color-muted-slate)' }}>Ahorro estimado</p>
+                    <p className="mt-1 text-center font-mono text-xl font-semibold" style={{ color: 'var(--color-ink)' }}>{plan.savingPer !== null ? plan.savingPer.toLocaleString('es-ES') + ' €/año' : '— pendiente de piloto'}</p>
                   </div>
                   <div className="mt-6">
                     <a
                       href="#calculadora"
-                      className={`inline-flex h-10 w-full items-center justify-center rounded-lg font-display text-sm font-semibold tracking-[0.01em] transition-colors ${plan.highlight ? 'bg-[var(--color-ink)] text-[var(--color-accent)]' : 'border border-[var(--color-ink)] text-[var(--color-ink)]'}`}
+                      className={`inline-flex min-h-10 w-full items-center justify-center whitespace-nowrap rounded-[8px] px-3 text-center font-display text-sm font-semibold tracking-[0.01em] transition-colors ${plan.highlight ? 'bg-[var(--color-bark)] text-[var(--color-sheet-white)]' : 'border border-[var(--color-bark)] text-[var(--color-bark)]'}`}
                     >
                       {plan.cta}
                     </a>
                   </div>
                   <ul className="mt-5 space-y-2">
                     {['Piloto gratuito', 'Sin tarjeta', 'Sin permanencia', 'Dashboard completo', 'Informes por propietario', 'Alertas y reglas'].map(f => (
-                      <li key={f} className="flex items-center gap-2 text-xs text-[var(--color-muted)]"><CheckCircle2 className="h-3.5 w-3.5 text-[var(--color-accent)]" />{f}</li>
+                      <li key={f} className="flex items-center gap-2 text-xs" style={{ color: 'var(--color-slate)' }}><CheckCircle2 className="h-3.5 w-3.5" style={{ color: 'var(--color-canopy)' }} />{f}</li>
                     ))}
                   </ul>
                 </article>
@@ -241,17 +271,42 @@ export default function PreciosPage() {
           </div>
         </section>
 
+        {/* Method */}
+        <section className="border-y px-5 py-20" style={{ borderColor: 'var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
+          <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.8fr_1.2fr]">
+            <div>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em]" style={{ color: 'var(--color-muted-slate)' }}>Método</p>
+              <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3rem)] font-light leading-[1.08]" style={{ color: 'var(--color-ink)' }}>
+                Cómo defendemos el ahorro.
+              </h2>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {[
+                ['Consumo horario', 'Curva CUPS y, si existe, medición por circuito.'],
+                ['Reserva y ocupación', 'Separación entre estancia, limpieza, vacío y standby.'],
+                ['Tarifa y potencia', 'P1/P2/P3, término fijo y picos reales.'],
+                ['Acción aprobable', 'Ahorro, riesgo, responsable y estado de revisión.'],
+              ].map(([title, body]) => (
+                <div key={title} className="rounded-[16px] p-5" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
+                  <h3 className="font-display text-lg font-semibold" style={{ color: 'var(--color-ink)' }}>{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--color-slate)' }}>{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FAQ */}
-        <section className="border-t border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-24 md:py-32">
+        <section className="px-5 py-24 md:py-32" style={{ borderTop: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
           <div className="mx-auto max-w-3xl">
-            <h2 className="rv mb-10 text-center font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.05] text-[var(--color-ink)]">
+            <h2 className="rv mb-10 text-center font-display text-[clamp(2rem,4vw,3rem)] font-light leading-[1.05]" style={{ color: 'var(--color-ink)' }}>
               Preguntas frecuentes
             </h2>
             <dl className="rv space-y-6">
               {faqs.map(([q, a]) => (
-                <div key={q} className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-6">
-                  <dt className="font-display text-lg font-semibold text-[var(--color-ink)]">{q}</dt>
-                  <dd className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">{a}</dd>
+                <div key={q} className="rounded-[16px] p-6" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
+                  <dt className="font-display text-lg font-semibold" style={{ color: 'var(--color-ink)' }}>{q}</dt>
+                  <dd className="mt-3 text-sm leading-relaxed" style={{ color: 'var(--color-slate)' }}>{a}</dd>
                 </div>
               ))}
             </dl>
@@ -259,25 +314,25 @@ export default function PreciosPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="bg-[var(--color-ink)] px-5 py-24 text-center text-[var(--color-surface)] md:py-32">
+        <section className="px-5 py-24 text-center md:py-32" style={{ background: 'var(--color-bark)', color: 'var(--color-sheet-white)' }}>
           <div className="mx-auto max-w-3xl">
-            <h2 className="rv font-display text-[clamp(2.4rem,5vw,4rem)] font-semibold leading-[1.02]">¿Listo para calcular tu ahorro real?</h2>
-            <p className="rv mt-5 text-base leading-relaxed text-[var(--color-data-muted)]">Solicita un diagnóstico gratuito de tu cartera. Sin compromiso, sin tarjeta.</p>
+            <h2 className="rv font-display text-[clamp(2.4rem,5vw,4rem)] font-light leading-[1.02]">¿Listo para calcular tu ahorro real?</h2>
+            <p className="rv mt-5 text-base leading-relaxed" style={{ color: 'var(--color-muted-slate)' }}>Solicita un diagnóstico gratuito de tu cartera. Sin compromiso, sin tarjeta ni promesas de ahorro garantizado.</p>
             <div className="rv mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <a href="mailto:hola@tramo.energy" className="inline-flex h-12 items-center gap-2 rounded-lg bg-[var(--color-accent)] px-8 font-display text-sm font-semibold tracking-[0.01em] text-[var(--color-ink)]">Solicitar diagnóstico <ArrowRight className="h-4 w-4" /></a>
-              <a href="/#dashboard" className="inline-flex h-12 items-center gap-2 rounded-lg border border-[rgba(255,255,255,0.2)] px-8 font-display text-sm font-semibold tracking-[0.01em] text-[var(--color-surface)]">Ver dashboard demo <ArrowRight className="h-4 w-4" /></a>
+              <a href="mailto:hola@tramo.energy" className="inline-flex h-12 items-center gap-2 rounded-[8px] px-8 font-display text-sm font-semibold tracking-[0.01em]" style={{ background: 'var(--color-cream-paper)', color: 'var(--color-bark)' }}>Solicitar diagnóstico <ArrowRight className="h-4 w-4" /></a>
+              <a href="/app/dashboard" className="inline-flex h-12 items-center gap-2 rounded-[8px] border px-8 font-display text-sm font-semibold tracking-[0.01em]" style={{ borderColor: 'var(--color-canopy-border)', color: 'var(--color-sheet-white)' }}>Ver dashboard demo <ArrowRight className="h-4 w-4" /></a>
             </div>
           </div>
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-12">
+        <footer className="px-5 py-12" style={{ borderTop: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
           <div className="mx-auto flex max-w-7xl items-center justify-between">
-            <a href="/" className="font-display text-lg font-semibold text-[var(--color-ink)]">Tramo</a>
-            <div className="flex gap-6 text-xs text-[var(--color-muted)]">
-              <a href="/" className="hover:text-[var(--color-ink)]">Landing</a>
-              <a href="/#precios" className="hover:text-[var(--color-ink)]">Precios</a>
-              <a href="mailto:hola@tramo.energy" className="hover:text-[var(--color-ink)]">Contacto</a>
+            <a href="/" className="font-display text-lg font-semibold" style={{ color: 'var(--color-bark)' }}>Tramo</a>
+            <div className="flex gap-6 text-xs" style={{ color: 'var(--color-muted-slate)' }}>
+              <a href="/" className="hover:text-[var(--color-bark)]">Landing</a>
+              <a href="/#precios" className="hover:text-[var(--color-bark)]">Precios</a>
+              <a href="mailto:hola@tramo.energy" className="hover:text-[var(--color-bark)]">Contacto</a>
             </div>
           </div>
         </footer>

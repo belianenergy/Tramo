@@ -5,6 +5,9 @@ import path from 'path';
 export const dynamic = 'force-dynamic';
 
 const MAX_BODY_BYTES = 10_000;
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX_REQUESTS = 5;
+const rateLimit = new Map<string, { count: number; resetAt: number }>();
 
 type LeadPayload = {
   name?: string;
@@ -12,6 +15,11 @@ type LeadPayload = {
   email?: string;
   phone?: string;
   units?: string;
+  region?: string;
+  pms?: string;
+  manager_type?: string;
+  bill_range?: string;
+  sensors?: string;
   segment?: string;
   mainPain?: string;
   interests?: string[];
@@ -95,6 +103,22 @@ function parsePositiveInteger(value: string) {
   return parsed;
 }
 
+function getClientKey(request: NextRequest) {
+  const forwarded = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
+  return forwarded || request.headers.get('x-real-ip') || 'unknown';
+}
+
+function isRateLimited(key: string) {
+  const now = Date.now();
+  const entry = rateLimit.get(key);
+  if (!entry || entry.resetAt <= now) {
+    rateLimit.set(key, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+  entry.count += 1;
+  return entry.count > RATE_LIMIT_MAX_REQUESTS;
+}
+
 function qualifyLead(payload: LeadPayload) {
   const units = parsePositiveInteger(clampText(payload.units, 20));
   const interests = normalizeInterests(payload.interests);
@@ -141,6 +165,15 @@ function qualifyLead(payload: LeadPayload) {
 
 export async function POST(request: NextRequest) {
   try {
+    if (isRateLimited(getClientKey(request))) {
+      return NextResponse.json({ error: 'Demasiados intentos. Prueba de nuevo en un minuto.' }, { status: 429 });
+    }
+
+    const contentType = request.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) {
+      return NextResponse.json({ error: 'Content-Type debe ser application/json.' }, { status: 415 });
+    }
+
     const contentLength = Number(request.headers.get('content-length') || '0');
     if (contentLength > MAX_BODY_BYTES) {
       return NextResponse.json({ error: 'Solicitud demasiado grande.' }, { status: 413 });
@@ -188,6 +221,11 @@ export async function POST(request: NextRequest) {
       company: clampText(payload.company, 160),
       phone: clampText(payload.phone, 60),
       units,
+      region: clampText(payload.region, 120),
+      pms: clampText(payload.pms, 120),
+      manager_type: clampText(payload.manager_type, 120),
+      bill_range: clampText(payload.bill_range, 120),
+      sensors: clampText(payload.sensors, 120),
       segment,
       mainPain,
       interests,

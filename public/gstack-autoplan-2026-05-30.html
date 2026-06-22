@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoPlan: Tramo — Análise Estratéxica 2026-05-30</title>
+<style>
+  :root {
+    --ink: #000;
+    --canvas: #f8f8f8;
+    --fog: #efefef;
+    --graphite: #636363;
+    --slate: #959595;
+    --rose: #c679c4;
+    --crimson: #fa3d1d;
+    --amber: #ffb005;
+    --blue: #0358f7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--canvas); color: var(--ink); font-family: Inter, system-ui, sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+  .container { max-width: 860px; margin: 0 auto; padding: 64px 24px 96px; }
+  h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 4px; }
+  h2 { font-size: 1.5rem; font-weight: 300; letter-spacing: -0.02em; margin: 48px 0 16px; padding-top: 16px; border-top: 1px solid var(--fog); }
+  h3 { font-size: 1.1rem; font-weight: 400; margin: 32px 0 8px; }
+  p { font-size: 15px; line-height: 1.7; color: var(--graphite); margin-bottom: 12px; }
+  .subtitle { font-size: 16px; color: var(--slate); margin-bottom: 32px; }
+  .score { display: flex; gap: 16px; margin: 24px 0 40px; flex-wrap: wrap; }
+  .score-item { flex: 1; min-width: 140px; padding: 20px; border-radius: 20px; background: rgba(255,255,255,0.9); backdrop-filter: blur(24px); box-shadow: rgba(0,0,0,0.08) 0 0 8px 0; text-align: center; }
+  .score-num { font-size: 2.5rem; font-weight: 300; letter-spacing: -0.03em; }
+  .score-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--slate); margin-top: 4px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+  th { text-align: left; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--slate); padding: 10px 12px; background: var(--fog); }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--fog); color: var(--graphite); }
+  tr:hover td { background: var(--fog); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 11px; font-weight: 500; }
+  .badge-p0 { background: rgba(250,61,29,0.08); color: var(--crimson); }
+  .badge-p1 { background: rgba(255,176,5,0.08); color: var(--amber); }
+  .badge-p2 { background: rgba(3,88,247,0.08); color: var(--blue); }
+  .recommendation { padding: 20px 24px; border-radius: 20px; background: rgba(3,88,247,0.04); border-left: 3px solid var(--blue); margin: 24px 0; }
+  .challenge { padding: 20px 24px; border-radius: 20px; background: rgba(250,61,29,0.04); border-left: 3px solid var(--crimson); margin: 24px 0; }
+  .spec { background: rgba(0,0,0,0.02); padding: 16px 20px; border-radius: 16px; margin: 16px 0; overflow-x: auto; }
+  .spec pre { font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.6; }
+  ul, ol { margin: 8px 0 16px 20px; }
+  li { margin-bottom: 6px; font-size: 14px; color: var(--graphite); line-height: 1.6; }
+  hr { border: none; border-top: 1px solid var(--fog); margin: 40px 0; }
+  .footer { text-align: center; color: var(--slate); font-size: 12px; margin-top: 64px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>AutoPlan: Tramo (EnergyOS)</h1>
+<p class="subtitle">Análise Estratéxica de Produto · 2026-05-30 · Pipeline: CEO → Design → Eng</p>
+
+<div class="score">
+  <div class="score-item"><div class="score-num" style="color: var(--amber)">6.5</div><div class="score-label">CEO Review</div></div>
+  <div class="score-item"><div class="score-num" style="color: var(--blue)">7.0</div><div class="score-label">Design Review</div></div>
+  <div class="score-item"><div class="score-num" style="color: var(--crimson)">5.0</div><div class="score-label">Eng Review</div></div>
+  <div class="score-item"><div class="score-num" style="color: var(--slate)">40%</div><div class="score-label">Completitude</div></div>
+</div>
+
+<h2>🏥 Diagnóstico</h2>
+<table>
+  <tr><th>Capa</th><th>Estado</th></tr>
+  <tr><td>Landing page</td><td>✅ Dia Browser (953 liñas)</td></tr>
+  <tr><td>Dashboard</td><td>✅ Dia light + Recharts</td></tr>
+  <tr><td>Páxinas app (6)</td><td>🔴 Esqueletos baleiros (68-114 liñas)</td></tr>
+  <tr><td>DESIGN.md</td><td>🔴 Obsoleto — describe Emerald Green</td></tr>
+  <tr><td>Compoñentes</td><td>🔴 Duplicados en 3 directorios</td></tr>
+  <tr><td>Datos</td><td>🔴 100% mock</td></tr>
+  <tr><td>Tests</td><td>🔴 0</td></tr>
+  <tr><td>Clientes</td><td>🔴 0</td></tr>
+</table>
+
+<div class="recommendation">
+  <p><strong>🧭 CEO Recommendation: SELECTIVE EXPANSION</strong><br>
+  Completar Operacións + Informes (2-3 semanas). Hold no resto. Outbound a 5-10 xestoras para piloto en paralelo.</p>
+</div>
+
+<h2>🔴 P0 — Bloqueantes</h2>
+<table>
+  <tr><th>#</th><th>Tarefa</th><th>Esforzo</th><th>Impacto</th></tr>
+  <tr><td>1</td><td>Actualizar DESIGN.md ao sistema Dia</td><td>1h</td><td>Elimina confusión entre doc e código</td></tr>
+  <tr><td>2</td><td>Eliminar compoñentes duplicados</td><td>2h</td><td>3 directorios → 1 fonte de verdade</td></tr>
+</table>
+
+<h2>🟡 P1 — Próximos</h2>
+<table>
+  <tr><th>#</th><th>Tarefa</th><th>Esforzo</th></tr>
+  <tr><td>3</td><td>Completar páxina de Operacións</td><td>2-3 días</td></tr>
+  <tr><td>4</td><td>Completar páxina de Informes propietario</td><td>2-3 días</td></tr>
+  <tr><td>5</td><td>Integrar Shelly API (datos reais)</td><td>3-5 días</td></tr>
+  <tr><td>6</td><td>Engadir loading/empty/error states</td><td>1 día</td></tr>
+</table>
+
+<div class="challenge">
+  <p><strong>⚠️ User Challenge — Mauro decide:</strong><br>
+  O pricing actual (150-1250€/mes) é correcto para o mercado español de xestoras?<br>
+  Recomendación: validar con 3 xestoras antes de publicalo.</p>
+</div>
+
+<h2>📐 Design Review</h2>
+<h3>User Journey — Onde rompe</h3>
+<ol>
+  <li>Landing → Entende o valor ✅</li>
+  <li>Landing → Solicita diagnóstico ✅</li>
+  <li>Dashboard → Ve métricas e alertas ✅</li>
+  <li>Dashboard → Accede a <strong>Operacións</strong> 🔴 (páxina baleira)</li>
+  <li>Dashboard → Ve <strong>Informe propietario</strong> 🔴 (páxina baleira)</li>
+</ol>
+
+<h3>Estados ausentes</h3>
+<ul>
+  <li>🔴 Loading states: non implementados nas páxinas app</li>
+  <li>🔴 Empty states: que ve o usuario cando non hai datos?</li>
+  <li>🔴 Focus states e keyboard nav: 0 accesibilidade</li>
+  <li>🟡 Só o formulario de leads ten estados idle/sending/sent/error</li>
+</ul>
+
+<h2>⚙️ Eng Review</h2>
+<h3>Arquitectura: duplicación crítica</h3>
+<div class="spec"><pre>app/components/           ← Copia A (estado descoñecido)
+app/app/components/       ← Copia B (actualizada a Dia) ✅
+app/app/dashboard/components/ ← Copia C (desactualizada) 🔴</pre></div>
+<p><strong>Solución:</strong> Eliminar A e C. Manter só <code>app/app/components/</code> como fonte de verdade.</p>
+
+<h3>Que rompe ás 2am?</h3>
+<ul>
+  <li>✅ API de leads falla → formulario mostra erro xenérico</li>
+  <li>✅ Dashboard sen datos → métricas a 0</li>
+  <li>✅ GSAP non carga → landing sen animacións pero lexible</li>
+  <li>🔴 Shelly API falla → sen fallback nin retry</li>
+</ul>
+
+<h2>🗺️ Dream State</h2>
+<div class="spec"><pre>CURRENT (MVP)              →  THIS PLAN           →  12-MONTH IDEAL
+────────────────────────────────────────────────────────────────────
+Landing Dia Browser        →  Landing optimizada   →  Landing multi-idioma
+Dashboard con mock data    →  Dashboard con datos  →  Dashboard real-time
+                              reais (Shelly API)
+6 páxinas baleiras         →  2 páxinas completas  →  6 módulos completos
+                              (Operacións + Informes)
+0 clientes                 →  Piloto con 1 xestora →  50+ xestoras activas</pre></div>
+
+<h2>📋 Tasks Prioritizadas</h2>
+<table>
+  <tr><th>#</th><th>Tarefa</th><th>Prioridade</th><th>Esforzo</th></tr>
+  <tr><td>1</td><td>Actualizar DESIGN.md ao sistema Dia</td><td><span class="badge badge-p0">P0</span></td><td>1h</td></tr>
+  <tr><td>2</td><td>Eliminar compoñentes duplicados</td><td><span class="badge badge-p0">P0</span></td><td>2h</td></tr>
+  <tr><td>3</td><td>Completar páxina de Operacións</td><td><span class="badge badge-p1">P1</span></td><td>2-3d</td></tr>
+  <tr><td>4</td><td>Completar páxina de Informes</td><td><span class="badge badge-p1">P1</span></td><td>2-3d</td></tr>
+  <tr><td>5</td><td>Integrar Shelly API</td><td><span class="badge badge-p1">P1</span></td><td>3-5d</td></tr>
+  <tr><td>6</td><td>Engadir loading/empty/error states</td><td><span class="badge badge-p1">P1</span></td><td>1d</td></tr>
+  <tr><td>7</td><td>Eliminar dark mode toggle</td><td><span class="badge badge-p2">P2</span></td><td>30min</td></tr>
+  <tr><td>8</td><td>Validar pricing con 3 xestoras</td><td><span class="badge badge-p1">P1</span></td><td>1sem</td></tr>
+  <tr><td>9</td><td>Tests básicos (dashboard + API)</td><td><span class="badge badge-p2">P2</span></td><td>2d</td></tr>
+  <tr><td>10</td><td>Lazy loading de páxinas app</td><td><span class="badge badge-p2">P2</span></td><td>1h</td></tr>
+</table>
+
+<hr>
+<p class="footer">Xerado por gstack-autoplan v1.0.0 · <strong>Tramo Energy</strong> · 2026-05-30</p>
+
+</div>
+</body>
+</html>

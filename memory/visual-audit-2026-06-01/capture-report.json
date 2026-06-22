@@ -1,0 +1,1765 @@
+[
+  {
+    "slug": "home",
+    "route": "/",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleErrors": [
+      "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 11441,
+    "width": 1440,
+    "viewportWidth": 1440,
+    "overflows": [
+      {
+        "tag": "DIV",
+        "text": "hasta +30% reducción standby14 días detección fugahasta 2.400 kWh ahorro/año5-100+ apartamentosSensores + Datadis + PMSR",
+        "clientWidth": 1440,
+        "scrollWidth": 1990,
+        "className": "marquee-wrapper overflow-hidden py-3"
+      },
+      {
+        "tag": "DIV",
+        "text": "hasta +30% reducción standby14 días detección fugahasta 2.400 kWh ahorro/año5-100+ apartamentosSensores + Datadis + PMSR",
+        "clientWidth": 1440,
+        "scrollWidth": 2067,
+        "className": "marquee-track flex gap-10 whitespace-nowrap"
+      },
+      {
+        "tag": "DIV",
+        "text": "Detectar, priorizar, aprobar y informar.Tramo no termina en una alerta. Termina cuando la gestora puede aprobar una acci",
+        "clientWidth": 1200,
+        "scrollWidth": 1320,
+        "className": "mx-auto"
+      },
+      {
+        "tag": "DIV",
+        "text": "EntradaDetectarEl sistema cruza consumo (sensores), reservas (PMS) y datos de red (Datadis). Identifica fugas, standby i",
+        "clientWidth": 1320,
+        "scrollWidth": 1488,
+        "className": "md:-mr-[calc((100vw-100%)/2)] md:overflow-hidden md:pr-5"
+      },
+      {
+        "tag": "DIV",
+        "text": "ProDesde12 €/apto/mes16-50 aptos.Ahorro estimado: 700-1.300 €/mesTodo StarterRecomendación de potenciaControl remoto de ",
+        "clientWidth": 286,
+        "scrollWidth": 310,
+        "className": "relative flex flex-col rounded-[16px] p-6 transition-all duration-200 ring-1"
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Convierte la energía de tu cartera turísticaen margen operativo."
+      },
+      {
+        "tag": "H2",
+        "text": "Pagas energía que nadie te atribuye."
+      },
+      {
+        "tag": "H3",
+        "text": "Energía fantasma"
+      },
+      {
+        "tag": "H3",
+        "text": "Potencia mal contratada"
+      },
+      {
+        "tag": "H3",
+        "text": "Informes sin atribuir"
+      },
+      {
+        "tag": "H3",
+        "text": "Sin priorización operativa"
+      },
+      {
+        "tag": "H2",
+        "text": "Detectar, priorizar, aprobar y informar."
+      },
+      {
+        "tag": "H3",
+        "text": "Detectar"
+      },
+      {
+        "tag": "H3",
+        "text": "Priorizar"
+      },
+      {
+        "tag": "H3",
+        "text": "Aprobar"
+      },
+      {
+        "tag": "H3",
+        "text": "Informar"
+      },
+      {
+        "tag": "H2",
+        "text": "Todo lo que necesita una gestora profesional."
+      },
+      {
+        "tag": "H3",
+        "text": "Monitorización en tiempo real"
+      },
+      {
+        "tag": "H3",
+        "text": "Atribución por reserva"
+      },
+      {
+        "tag": "H3",
+        "text": "Recomendación de potencia"
+      },
+      {
+        "tag": "H3",
+        "text": "Informes por propietario"
+      },
+      {
+        "tag": "H3",
+        "text": "Control de cargas"
+      },
+      {
+        "tag": "H3",
+        "text": "Batería y arbitraje"
+      },
+      {
+        "tag": "H3",
+        "text": "Sensores de consumo"
+      },
+      {
+        "tag": "H3",
+        "text": "Baterías de almacenamiento"
+      },
+      {
+        "tag": "H2",
+        "text": "Conecta con tu ecosistema actual."
+      },
+      {
+        "tag": "H2",
+        "text": "Diseñado para pilotos medibles, no para promesas vagas."
+      },
+      {
+        "tag": "H2",
+        "text": "Tu diagnóstico define el plan exacto."
+      },
+      {
+        "tag": "H2",
+        "text": "Respuestas directas, sin jerga."
+      },
+      {
+        "tag": "H2",
+        "text": "Tus datos, bajo tu control. Sin excepciones."
+      },
+      {
+        "tag": "H2",
+        "text": "Calcula cuánto puedes ahorrar."
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "Carteras turísticas · De 5 a 100+ aptosConvierte la energía de tu cartera turísticaen margen operativo.Tramo cruza tus reservas PMS con los "
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "El problema realPagas energía que nadie te atribuye.Las gestoras de apartamentos turísticos no tienen visibilidad del consumo por reserva. Y"
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "Detectar, priorizar, aprobar y informar.Tramo no termina en una alerta. Termina cuando la gestora puede aprobar una acción con un clic.Desli"
+      },
+      {
+        "index": 3,
+        "id": "",
+        "text": "EntradaDetectarEl sistema cruza consumo (sensores), reservas (PMS) y datos de red (Datadis). Identifica fugas, standby innecesario y desviac"
+      },
+      {
+        "index": 4,
+        "id": "",
+        "text": "MotorPriorizarMotor de reglas clasifica alertas por impacto económico y urgencia. Lo que no cuesta dinero no aparece en tu dashboard.Paso 2S"
+      },
+      {
+        "index": 5,
+        "id": "",
+        "text": "AcciónAprobarRecibes una acción concreta: \"Bajar potencia de 4,6 a 3,45 kW. Ahorro: 18 €/mes.\" Un clic y está hecho.Paso 3Confirmación human"
+      },
+      {
+        "index": 6,
+        "id": "",
+        "text": "SalidaInformarInforme mensual por propietario: consumo atribuido, acciones tomadas, ahorro acumulado. Tu gestoría lo recibe sin tocar nada.P"
+      },
+      {
+        "index": 7,
+        "id": "",
+        "text": "Todo lo que necesita una gestora profesional.Seis módulos que cubren desde la detección hasta el arbitraje con batería.Monitorización en tie"
+      },
+      {
+        "index": 8,
+        "id": "",
+        "text": "Hardware real · no futuribleSensores de consumoControl de consumo por circuito~300€por apto instaladoDetectan consumo por circuito y lo cruz"
+      },
+      {
+        "index": 9,
+        "id": "",
+        "text": "Conecta con tu ecosistema actual.PMSBookingSuite, Lodgify, Ubidreams, RenttSensores WiFiMonitorización por circuitoDatadisContadores digital"
+      },
+      {
+        "index": 10,
+        "id": "",
+        "text": "Diseñado para pilotos medibles, no para promesas vagas.Antes de usar nombres de clientes, Tramo prioriza evidencia verificable: lectura de s"
+      },
+      {
+        "index": 11,
+        "id": "",
+        "text": "Tu diagnóstico define el plan exacto.Gastas ~2.000 €/mes en electricidad. Plan Pro desde 12 €/apartamento/mes con ahorro estimado de 700-1.3"
+      },
+      {
+        "index": 12,
+        "id": "",
+        "text": "Respuestas directas, sin jerga.¿Qué necesito para empezar?+Acceso de solo lectura a tu contador (Datadis) y una integración con tu PMS. No i"
+      },
+      {
+        "index": 13,
+        "id": "",
+        "text": "Tus datos, bajo tu control. Sin excepciones.Cumplimiento RGPD desde el día uno. No pedimos perdón por proteger tus datos.Pilotos preparados "
+      },
+      {
+        "index": 14,
+        "id": "diagnostico",
+        "text": "Calcula cuánto puedes ahorrar.Analizamos tus datos de consumo y reservas. Sin compromiso, sin credenciales.NombreEmpresaEmailNº alojamientos"
+      }
+    ]
+  },
+  {
+    "slug": "home",
+    "route": "/",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 15329,
+    "width": 393,
+    "viewportWidth": 390,
+    "overflows": [
+      {
+        "tag": "MAIN",
+        "text": "TramoProductoHardwarePreciosContactoDemoDiagnosticarCarteras turísticas · De 5 a 100+ aptosConvierte la energía de tu ca",
+        "clientWidth": 390,
+        "scrollWidth": 393,
+        "className": ""
+      },
+      {
+        "tag": "DIV",
+        "text": "hasta +30% reducción standby14 días detección fugahasta 2.400 kWh ahorro/año5-100+ apartamentosSensores + Datadis + PMSR",
+        "clientWidth": 390,
+        "scrollWidth": 2056,
+        "className": "marquee-wrapper overflow-hidden py-3"
+      },
+      {
+        "tag": "DIV",
+        "text": "hasta +30% reducción standby14 días detección fugahasta 2.400 kWh ahorro/año5-100+ apartamentosSensores + Datadis + PMSR",
+        "clientWidth": 390,
+        "scrollWidth": 2067,
+        "className": "marquee-track flex gap-10 whitespace-nowrap"
+      },
+      {
+        "tag": "DIV",
+        "text": "El problema realPagas energía que nadie te atribuye.Las gestoras de apartamentos turísticos no tienen visibilidad del co",
+        "clientWidth": 390,
+        "scrollWidth": 393,
+        "className": "relative z-[2]"
+      },
+      {
+        "tag": "DIV",
+        "text": "Hardware real · no futuribleSensores de consumoControl de consumo por circuito~300€por apto instaladoDetectan consumo po",
+        "clientWidth": 350,
+        "scrollWidth": 420,
+        "className": "relative mx-auto"
+      },
+      {
+        "tag": "DIV",
+        "text": "Hardware real · no futuribleSensores de consumoControl de consumo por circuito~300€por apto instaladoDetectan consumo po",
+        "clientWidth": 350,
+        "scrollWidth": 420,
+        "className": "grid gap-10 lg:grid-cols-[1fr_1fr]"
+      },
+      {
+        "tag": "DIV",
+        "text": "Tu diagnóstico define el plan exacto.Gastas ~2.000 €/mes en electricidad. Plan Pro desde 12 €/apartamento/mes con ahorro",
+        "clientWidth": 390,
+        "scrollWidth": 393,
+        "className": ""
+      },
+      {
+        "tag": "SECTION",
+        "text": "Tu diagnóstico define el plan exacto.Gastas ~2.000 €/mes en electricidad. Plan Pro desde 12 €/apartamento/mes con ahorro",
+        "clientWidth": 390,
+        "scrollWidth": 393,
+        "className": "relative px-5 py-24 md:py-32 "
+      },
+      {
+        "tag": "DIV",
+        "text": "Tu diagnóstico define el plan exacto.Gastas ~2.000 €/mes en electricidad. Plan Pro desde 12 €/apartamento/mes con ahorro",
+        "clientWidth": 350,
+        "scrollWidth": 373,
+        "className": "relative mx-auto"
+      },
+      {
+        "tag": "DIV",
+        "text": "StarterDesde15 €/apto/mes5-15 aptos.Ahorro estimado: 300-400 €/mesMonitorización en tiempo realInformes mensualesAtribuc",
+        "clientWidth": 350,
+        "scrollWidth": 373,
+        "className": "mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+      },
+      {
+        "tag": "DIV",
+        "text": "ProDesde12 €/apto/mes16-50 aptos.Ahorro estimado: 700-1.300 €/mesTodo StarterRecomendación de potenciaControl remoto de ",
+        "clientWidth": 348,
+        "scrollWidth": 372,
+        "className": "relative flex flex-col rounded-[16px] p-6 transition-all duration-200 ring-1"
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Convierte la energía de tu cartera turísticaen margen operativo."
+      },
+      {
+        "tag": "H2",
+        "text": "Pagas energía que nadie te atribuye."
+      },
+      {
+        "tag": "H3",
+        "text": "Energía fantasma"
+      },
+      {
+        "tag": "H3",
+        "text": "Potencia mal contratada"
+      },
+      {
+        "tag": "H3",
+        "text": "Informes sin atribuir"
+      },
+      {
+        "tag": "H3",
+        "text": "Sin priorización operativa"
+      },
+      {
+        "tag": "H2",
+        "text": "Detectar, priorizar, aprobar y informar."
+      },
+      {
+        "tag": "H3",
+        "text": "Detectar"
+      },
+      {
+        "tag": "H3",
+        "text": "Priorizar"
+      },
+      {
+        "tag": "H3",
+        "text": "Aprobar"
+      },
+      {
+        "tag": "H3",
+        "text": "Informar"
+      },
+      {
+        "tag": "H2",
+        "text": "Todo lo que necesita una gestora profesional."
+      },
+      {
+        "tag": "H3",
+        "text": "Monitorización en tiempo real"
+      },
+      {
+        "tag": "H3",
+        "text": "Atribución por reserva"
+      },
+      {
+        "tag": "H3",
+        "text": "Recomendación de potencia"
+      },
+      {
+        "tag": "H3",
+        "text": "Informes por propietario"
+      },
+      {
+        "tag": "H3",
+        "text": "Control de cargas"
+      },
+      {
+        "tag": "H3",
+        "text": "Batería y arbitraje"
+      },
+      {
+        "tag": "H3",
+        "text": "Sensores de consumo"
+      },
+      {
+        "tag": "H3",
+        "text": "Baterías de almacenamiento"
+      },
+      {
+        "tag": "H2",
+        "text": "Conecta con tu ecosistema actual."
+      },
+      {
+        "tag": "H2",
+        "text": "Diseñado para pilotos medibles, no para promesas vagas."
+      },
+      {
+        "tag": "H2",
+        "text": "Tu diagnóstico define el plan exacto."
+      },
+      {
+        "tag": "H2",
+        "text": "Respuestas directas, sin jerga."
+      },
+      {
+        "tag": "H2",
+        "text": "Tus datos, bajo tu control. Sin excepciones."
+      },
+      {
+        "tag": "H2",
+        "text": "Calcula cuánto puedes ahorrar."
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "Carteras turísticas · De 5 a 100+ aptosConvierte la energía de tu cartera turísticaen margen operativo.Tramo cruza tus reservas PMS con los "
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "El problema realPagas energía que nadie te atribuye.Las gestoras de apartamentos turísticos no tienen visibilidad del consumo por reserva. Y"
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "Detectar, priorizar, aprobar y informar.Tramo no termina en una alerta. Termina cuando la gestora puede aprobar una acción con un clic.Desli"
+      },
+      {
+        "index": 3,
+        "id": "",
+        "text": "EntradaDetectarEl sistema cruza consumo (sensores), reservas (PMS) y datos de red (Datadis). Identifica fugas, standby innecesario y desviac"
+      },
+      {
+        "index": 4,
+        "id": "",
+        "text": "MotorPriorizarMotor de reglas clasifica alertas por impacto económico y urgencia. Lo que no cuesta dinero no aparece en tu dashboard.Paso 2S"
+      },
+      {
+        "index": 5,
+        "id": "",
+        "text": "AcciónAprobarRecibes una acción concreta: \"Bajar potencia de 4,6 a 3,45 kW. Ahorro: 18 €/mes.\" Un clic y está hecho.Paso 3Confirmación human"
+      },
+      {
+        "index": 6,
+        "id": "",
+        "text": "SalidaInformarInforme mensual por propietario: consumo atribuido, acciones tomadas, ahorro acumulado. Tu gestoría lo recibe sin tocar nada.P"
+      },
+      {
+        "index": 7,
+        "id": "",
+        "text": "Todo lo que necesita una gestora profesional.Seis módulos que cubren desde la detección hasta el arbitraje con batería.Monitorización en tie"
+      },
+      {
+        "index": 8,
+        "id": "",
+        "text": "Hardware real · no futuribleSensores de consumoControl de consumo por circuito~300€por apto instaladoDetectan consumo por circuito y lo cruz"
+      },
+      {
+        "index": 9,
+        "id": "",
+        "text": "Conecta con tu ecosistema actual.PMSBookingSuite, Lodgify, Ubidreams, RenttSensores WiFiMonitorización por circuitoDatadisContadores digital"
+      },
+      {
+        "index": 10,
+        "id": "",
+        "text": "Diseñado para pilotos medibles, no para promesas vagas.Antes de usar nombres de clientes, Tramo prioriza evidencia verificable: lectura de s"
+      },
+      {
+        "index": 11,
+        "id": "",
+        "text": "Tu diagnóstico define el plan exacto.Gastas ~2.000 €/mes en electricidad. Plan Pro desde 12 €/apartamento/mes con ahorro estimado de 700-1.3"
+      },
+      {
+        "index": 12,
+        "id": "",
+        "text": "Respuestas directas, sin jerga.¿Qué necesito para empezar?+Acceso de solo lectura a tu contador (Datadis) y una integración con tu PMS. No i"
+      },
+      {
+        "index": 13,
+        "id": "",
+        "text": "Tus datos, bajo tu control. Sin excepciones.Cumplimiento RGPD desde el día uno. No pedimos perdón por proteger tus datos.Pilotos preparados "
+      },
+      {
+        "index": 14,
+        "id": "diagnostico",
+        "text": "Calcula cuánto puedes ahorrar.Analizamos tus datos de consumo y reservas. Sin compromiso, sin credenciales.NombreEmpresaEmailNº alojamientos"
+      }
+    ]
+  },
+  {
+    "slug": "precios",
+    "route": "/precios",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 3826,
+    "width": 1440,
+    "viewportWidth": 1440,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Calcula tu ahorro antes de decidir."
+      },
+      {
+        "tag": "H2",
+        "text": "Calculadora de ahorro"
+      },
+      {
+        "tag": "H2",
+        "text": "Planes para cada tamaño de cartera."
+      },
+      {
+        "tag": "H2",
+        "text": "Preguntas frecuentes"
+      },
+      {
+        "tag": "H2",
+        "text": "¿Listo para calcular tu ahorro real?"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "Precios transparentesCalcula tu ahorro antes de decidir.Todos los planes parten de un precio por apartamento, con piloto gratuito, sin perma"
+      },
+      {
+        "index": 1,
+        "id": "calculadora",
+        "text": "Calculadora de ahorroAjusta los parámetros de tu cartera para ver el ahorro estimado anual.Nº de apartamentos255200Sensores Shelly+300 €/apt"
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "Planes para cada tamaño de cartera.Starter5-15 apartamentosDesde15€/apartamento/mesAhorro estimado1200 €/añoDiagnosticar mi carteraPiloto gr"
+      },
+      {
+        "index": 3,
+        "id": "",
+        "text": "Starter5-15 apartamentosDesde15€/apartamento/mesAhorro estimado1200 €/añoDiagnosticar mi carteraPiloto gratuitoSin tarjetaSin permanenciaDas"
+      },
+      {
+        "index": 4,
+        "id": "",
+        "text": "Pro16-50 apartamentosDesde12€/apartamento/mesAhorro estimado3000 €/añoDiagnosticar mi carteraPiloto gratuitoSin tarjetaSin permanenciaDashbo"
+      },
+      {
+        "index": 5,
+        "id": "",
+        "text": "Business51-99 apartamentosDesde10€/apartamento/mesAhorro estimado6000 €/añoDiagnosticar mi carteraPiloto gratuitoSin tarjetaSin permanenciaD"
+      },
+      {
+        "index": 6,
+        "id": "",
+        "text": "Scale100+ apartamentosDesde7,5€/apartamento/mesAhorro estimado12.000 €/añoHablar con ventasPiloto gratuitoSin tarjetaSin permanenciaDashboar"
+      },
+      {
+        "index": 7,
+        "id": "",
+        "text": "Preguntas frecuentes¿Hay permanencia?No. Todos los planes son mensuales sin compromiso de permanencia.¿Qué incluye el piloto gratuito?Diagnó"
+      },
+      {
+        "index": 8,
+        "id": "",
+        "text": "¿Listo para calcular tu ahorro real?Solicita un diagnóstico gratuito de tu cartera. Sin compromiso, sin tarjeta.Solicitar diagnóstico Ver da"
+      }
+    ]
+  },
+  {
+    "slug": "precios",
+    "route": "/precios",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 5710,
+    "width": 390,
+    "viewportWidth": 390,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Calcula tu ahorro antes de decidir."
+      },
+      {
+        "tag": "H2",
+        "text": "Calculadora de ahorro"
+      },
+      {
+        "tag": "H2",
+        "text": "Planes para cada tamaño de cartera."
+      },
+      {
+        "tag": "H2",
+        "text": "Preguntas frecuentes"
+      },
+      {
+        "tag": "H2",
+        "text": "¿Listo para calcular tu ahorro real?"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "Precios transparentesCalcula tu ahorro antes de decidir.Todos los planes parten de un precio por apartamento, con piloto gratuito, sin perma"
+      },
+      {
+        "index": 1,
+        "id": "calculadora",
+        "text": "Calculadora de ahorroAjusta los parámetros de tu cartera para ver el ahorro estimado anual.Nº de apartamentos255200Sensores Shelly+300 €/apt"
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "Planes para cada tamaño de cartera.Starter5-15 apartamentosDesde15€/apartamento/mesAhorro estimado1200 €/añoDiagnosticar mi carteraPiloto gr"
+      },
+      {
+        "index": 3,
+        "id": "",
+        "text": "Starter5-15 apartamentosDesde15€/apartamento/mesAhorro estimado1200 €/añoDiagnosticar mi carteraPiloto gratuitoSin tarjetaSin permanenciaDas"
+      },
+      {
+        "index": 4,
+        "id": "",
+        "text": "Pro16-50 apartamentosDesde12€/apartamento/mesAhorro estimado3000 €/añoDiagnosticar mi carteraPiloto gratuitoSin tarjetaSin permanenciaDashbo"
+      },
+      {
+        "index": 5,
+        "id": "",
+        "text": "Business51-99 apartamentosDesde10€/apartamento/mesAhorro estimado6000 €/añoDiagnosticar mi carteraPiloto gratuitoSin tarjetaSin permanenciaD"
+      },
+      {
+        "index": 6,
+        "id": "",
+        "text": "Scale100+ apartamentosDesde7,5€/apartamento/mesAhorro estimado12.000 €/añoHablar con ventasPiloto gratuitoSin tarjetaSin permanenciaDashboar"
+      },
+      {
+        "index": 7,
+        "id": "",
+        "text": "Preguntas frecuentes¿Hay permanencia?No. Todos los planes son mensuales sin compromiso de permanencia.¿Qué incluye el piloto gratuito?Diagnó"
+      },
+      {
+        "index": 8,
+        "id": "",
+        "text": "¿Listo para calcular tu ahorro real?Solicita un diagnóstico gratuito de tu cartera. Sin compromiso, sin tarjeta.Solicitar diagnóstico Ver da"
+      }
+    ]
+  },
+  {
+    "slug": "dashboard",
+    "route": "/app/dashboard",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 1832,
+    "width": 1440,
+    "viewportWidth": 1440,
+    "overflows": [
+      {
+        "tag": "DIV",
+        "text": "Centro de control · Mayo 2026Sala de control para decidir qué coste energético se aprueba hoy.Cartera profesional de apa",
+        "clientWidth": 1100,
+        "scrollWidth": 1116,
+        "className": "mx-auto"
+      },
+      {
+        "tag": "DIV",
+        "text": "Ahorro pendiente322EUR/mes · Acciones aprobables con evidenciaFuera de reserva121kWh · Separado de estancia y limpiezaCo",
+        "clientWidth": 1100,
+        "scrollWidth": 1116,
+        "className": "grid gap-5 xl:grid-cols-[1fr_300px]"
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Sala de control para decidir qué coste energético se aprueba hoy."
+      },
+      {
+        "tag": "H2",
+        "text": "Carga de la cartera"
+      },
+      {
+        "tag": "H2",
+        "text": "Distribución por período"
+      },
+      {
+        "tag": "H2",
+        "text": "Revisión diaria"
+      },
+      {
+        "tag": "H2",
+        "text": "VGO-014 · Vigo Centro"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "Ahorro pendiente322EUR/mes · Acciones aprobables con evidenciaFuera de reserva121kWh · Separado de estancia y limpiezaCoste previsto384EUR ·"
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "Carga de la cartera¿Qué días concentran coste accionable?24 días1234567810121416182022240255075100P1 punta612 kWh0,20 EUR/kWhP2 llano784 kWh"
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "Carga de la cartera¿Qué días concentran coste accionable?24 días1234567810121416182022240255075100P1 punta612 kWh0,20 EUR/kWhP2 llano784 kWh"
+      },
+      {
+        "index": 3,
+        "id": "",
+        "text": "Distribución por períodoP1 PuntaP2 LlanoP3 ValleRevisión diariaACT-118 · VGO-014Consumo 4,2 kWh tras checkout sin reserva activa52 €Apagar t"
+      },
+      {
+        "index": 4,
+        "id": "",
+        "text": "CódigoUnidadPropietarioCUPS / ContratoTotalFueraEstadoVGO-014Vigo CentroVigo · GuestyMartinez FamilyES0021000009347621TR2.0TD · P1 0,20 / P2"
+      }
+    ]
+  },
+  {
+    "slug": "dashboard",
+    "route": "/app/dashboard",
+    "viewport": "mobile",
+    "status": 500,
+    "consoleErrors": [
+      "error: Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    ],
+    "title": "",
+    "height": 844,
+    "width": 390,
+    "viewportWidth": 390,
+    "overflows": [],
+    "headings": [],
+    "sections": []
+  },
+  {
+    "slug": "apartments",
+    "route": "/app/apartments",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 1457,
+    "width": 1440,
+    "viewportWidth": 1440,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Una cartera navegable por ciudad, propietario, CUPS, reserva y riesgo."
+      },
+      {
+        "tag": "H2",
+        "text": "VGO-014 · Vigo Centro"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "Unidades5activasPMS, CUPS y propietario.Ocupacion media76%Reservas actuales y futuras.Coste trazado384EURMayo hasta ultima lectura.Sensores6"
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "CodigoUnidadPropietarioCUPSLecturaEstadoVGO-014Vigo CentroVigo · 78% ocupacion · GuestyMartinez FamilyES0021000009347621TR19:10CríticaCOR-00"
+      }
+    ]
+  },
+  {
+    "slug": "apartments",
+    "route": "/app/apartments",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 3227,
+    "width": 390,
+    "viewportWidth": 390,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Una cartera navegable por ciudad, propietario, CUPS, reserva y riesgo."
+      },
+      {
+        "tag": "H2",
+        "text": "VGO-014 · Vigo Centro"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "Unidades5activasPMS, CUPS y propietario.Ocupacion media76%Reservas actuales y futuras.Coste trazado384EURMayo hasta ultima lectura.Sensores6"
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "CodigoUnidadPropietarioCUPSLecturaEstadoVGO-014Vigo CentroVigo · 78% ocupacion · GuestyMartinez FamilyES0021000009347621TR19:10CríticaCOR-00"
+      }
+    ]
+  },
+  {
+    "slug": "operations",
+    "route": "/app/operations",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 1652,
+    "width": 1440,
+    "viewportWidth": 1440,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "De anomalia energetica a decision aprobable con impacto economico."
+      },
+      {
+        "tag": "H2",
+        "text": "Consumo 4,2 kWh tras checkout sin reserva activa"
+      },
+      {
+        "tag": "H2",
+        "text": "P2 sobredimensionada: 4,6 kW contratados"
+      },
+      {
+        "tag": "H2",
+        "text": "Regla post-checkout no ejecuto termo"
+      },
+      {
+        "tag": "H2",
+        "text": "Resumen propietario listo para Costa Rentals"
+      },
+      {
+        "tag": "H2",
+        "text": "VGO-014 · Vigo Centro"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "Acciones abiertas4hoyPriorizadas por euros.Impacto estimado322EURMensual recurrente.Fuera reserva2alertasCon ventana PMS validada.SLA lectur"
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "ACT-118 · VGO-014AltaConsumo 4,2 kWh tras checkout sin reserva activacheckout 11:00 · consumo estable 13:10-16:40 · coste estimado 0,71 EUR "
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "ACT-118 · VGO-014AltaConsumo 4,2 kWh tras checkout sin reserva activacheckout 11:00 · consumo estable 13:10-16:40 · coste estimado 0,71 EUR "
+      },
+      {
+        "index": 3,
+        "id": "",
+        "text": "ACT-119 · COR-007MediaP2 sobredimensionada: 4,6 kW contratadospico mensual P2 2,8 kW · recomendacion prudente 3,3 kW Impacto138 EURAprobarAs"
+      },
+      {
+        "index": 4,
+        "id": "",
+        "text": "ACT-120 · SJO-021AltaRegla post-checkout no ejecuto termosalida 10:30 · termo activo hasta 12:06 · Shelly Pro 4PM online Impacto74 EURAproba"
+      },
+      {
+        "index": 5,
+        "id": "",
+        "text": "ACT-121 · BCN-055BajaResumen propietario listo para Costa Rentals201 kWh estancia · 17 kWh fuera reserva · 58,40 EUR trazados Impacto58 EURA"
+      }
+    ]
+  },
+  {
+    "slug": "operations",
+    "route": "/app/operations",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 3887,
+    "width": 390,
+    "viewportWidth": 390,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "De anomalia energetica a decision aprobable con impacto economico."
+      },
+      {
+        "tag": "H2",
+        "text": "Consumo 4,2 kWh tras checkout sin reserva activa"
+      },
+      {
+        "tag": "H2",
+        "text": "P2 sobredimensionada: 4,6 kW contratados"
+      },
+      {
+        "tag": "H2",
+        "text": "Regla post-checkout no ejecuto termo"
+      },
+      {
+        "tag": "H2",
+        "text": "Resumen propietario listo para Costa Rentals"
+      },
+      {
+        "tag": "H2",
+        "text": "VGO-014 · Vigo Centro"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "Acciones abiertas4hoyPriorizadas por euros.Impacto estimado322EURMensual recurrente.Fuera reserva2alertasCon ventana PMS validada.SLA lectur"
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "ACT-118 · VGO-014AltaConsumo 4,2 kWh tras checkout sin reserva activacheckout 11:00 · consumo estable 13:10-16:40 · coste estimado 0,71 EUR "
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "ACT-118 · VGO-014AltaConsumo 4,2 kWh tras checkout sin reserva activacheckout 11:00 · consumo estable 13:10-16:40 · coste estimado 0,71 EUR "
+      },
+      {
+        "index": 3,
+        "id": "",
+        "text": "ACT-119 · COR-007MediaP2 sobredimensionada: 4,6 kW contratadospico mensual P2 2,8 kW · recomendacion prudente 3,3 kW Impacto138 EURAprobarAs"
+      },
+      {
+        "index": 4,
+        "id": "",
+        "text": "ACT-120 · SJO-021AltaRegla post-checkout no ejecuto termosalida 10:30 · termo activo hasta 12:06 · Shelly Pro 4PM online Impacto74 EURAproba"
+      },
+      {
+        "index": 5,
+        "id": "",
+        "text": "ACT-121 · BCN-055BajaResumen propietario listo para Costa Rentals201 kWh estancia · 17 kWh fuera reserva · 58,40 EUR trazados Impacto58 EURA"
+      }
+    ]
+  },
+  {
+    "slug": "informe",
+    "route": "/app/informe",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 1093,
+    "width": 1440,
+    "viewportWidth": 1440,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Informes defendibles para propietarios, no dashboards exportados."
+      },
+      {
+        "tag": "H2",
+        "text": "Martínez Family"
+      },
+      {
+        "tag": "H3",
+        "text": "Detalle incluido"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "PropietarioMartínez FamilyLópez GestiónCosta RentalsIberhome PartnersMesMayo 2026Abril 2026Marzo 2026 Enviar"
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "kWh totales428kWhkWh fuera reserva42kWhAcciones5ejecutadasEUR estimados31,80EUR"
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "Informe listo para propietarioMartínez FamilyVGO-014 · Vigo Centro · ES0021000009347621TREn Mayo 2026 se registraron 428 kWh. Tramo separó 4"
+      }
+    ]
+  },
+  {
+    "slug": "informe",
+    "route": "/app/informe",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 2430,
+    "width": 390,
+    "viewportWidth": 390,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Informes defendibles para propietarios, no dashboards exportados."
+      },
+      {
+        "tag": "H2",
+        "text": "Martínez Family"
+      },
+      {
+        "tag": "H3",
+        "text": "Detalle incluido"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "PropietarioMartínez FamilyLópez GestiónCosta RentalsIberhome PartnersMesMayo 2026Abril 2026Marzo 2026 Enviar"
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "kWh totales428kWhkWh fuera reserva42kWhAcciones5ejecutadasEUR estimados31,80EUR"
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "Informe listo para propietarioMartínez FamilyVGO-014 · Vigo Centro · ES0021000009347621TREn Mayo 2026 se registraron 428 kWh. Tramo separó 4"
+      }
+    ]
+  },
+  {
+    "slug": "leads",
+    "route": "/app/leads",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 1093,
+    "width": 1440,
+    "viewportWidth": 1440,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "CRM Piloto"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "NombreEmpresaUnidadesPMSDatadisDolorStatus Ana MartínezMartínez Family18GuestySíConsumo sin reservaNuevo Carlos LópezLópez Gestión42AvantioP"
+      }
+    ]
+  },
+  {
+    "slug": "leads",
+    "route": "/app/leads",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 2611,
+    "width": 390,
+    "viewportWidth": 390,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "CRM Piloto"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "NombreEmpresaUnidadesPMSDatadisDolorStatus Ana MartínezMartínez Family18GuestySíConsumo sin reservaNuevo Carlos LópezLópez Gestión42AvantioP"
+      }
+    ]
+  },
+  {
+    "slug": "advisor",
+    "route": "/app/advisor",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 1346,
+    "width": 1440,
+    "viewportWidth": 1440,
+    "overflows": [
+      {
+        "tag": "SELECT",
+        "text": "VGO-014 · ES0021000009347621TRCOR-007 · ES0022000001187309YASJO-021 · ES0031400008274510VXMDR-003 · ES0021000017721033KV",
+        "clientWidth": 289,
+        "scrollWidth": 294,
+        "className": "mt-2 min-h-11 w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface-alt)] px-3 font-mono text-sm"
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Contratos, facturas y periodos P1/P2/P3 revisados con datos reales."
+      },
+      {
+        "tag": "H2",
+        "text": "Ficha contrato"
+      },
+      {
+        "tag": "H2",
+        "text": "Periodos tarifarios"
+      },
+      {
+        "tag": "H2",
+        "text": "VGO-014 · Vigo Centro"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "CUPS auditados124activosDatadis + factura + PMS.Ahorro tarifa412EUR/mesCambios pendientes de aprobar.Facturas faltantes7PDFBloquean cierre p"
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "Ficha contratoSelecciona un CUPS para revisar potencia y factura.UnidadVGO-014 · ES0021000009347621TRCOR-007 · ES0022000001187309YASJO-021 ·"
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "Ficha contratoSelecciona un CUPS para revisar potencia y factura.UnidadVGO-014 · ES0021000009347621TRCOR-007 · ES0022000001187309YASJO-021 ·"
+      },
+      {
+        "index": 3,
+        "id": "",
+        "text": "Periodos tarifariosPregunta: donde se concentra el coste que si se puede mover?P1 punta0,20 EUR/kWhP2 llano0,12 EUR/kWhP3 valle0,08 EUR/kWh"
+      },
+      {
+        "index": 4,
+        "id": "",
+        "text": "UnidadRecomendacionEvidenciaImpactoAccionCOR-007P2 4,6 kW -> 3,3 kWPico real P2 2,8 kW · margen prudente 0,5 kW138 EUR/añoPreparar cambioVGO"
+      }
+    ]
+  },
+  {
+    "slug": "advisor",
+    "route": "/app/advisor",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 3227,
+    "width": 390,
+    "viewportWidth": 390,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Contratos, facturas y periodos P1/P2/P3 revisados con datos reales."
+      },
+      {
+        "tag": "H2",
+        "text": "Ficha contrato"
+      },
+      {
+        "tag": "H2",
+        "text": "Periodos tarifarios"
+      },
+      {
+        "tag": "H2",
+        "text": "VGO-014 · Vigo Centro"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "CUPS auditados124activosDatadis + factura + PMS.Ahorro tarifa412EUR/mesCambios pendientes de aprobar.Facturas faltantes7PDFBloquean cierre p"
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "Ficha contratoSelecciona un CUPS para revisar potencia y factura.UnidadVGO-014 · ES0021000009347621TRCOR-007 · ES0022000001187309YASJO-021 ·"
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "Ficha contratoSelecciona un CUPS para revisar potencia y factura.UnidadVGO-014 · ES0021000009347621TRCOR-007 · ES0022000001187309YASJO-021 ·"
+      },
+      {
+        "index": 3,
+        "id": "",
+        "text": "Periodos tarifariosPregunta: donde se concentra el coste que si se puede mover?P1 punta0,20 EUR/kWhP2 llano0,12 EUR/kWhP3 valle0,08 EUR/kWh"
+      },
+      {
+        "index": 4,
+        "id": "",
+        "text": "UnidadRecomendacionEvidenciaImpactoAccionCOR-007P2 4,6 kW -> 3,3 kWPico real P2 2,8 kW · margen prudente 0,5 kW138 EUR/añoPreparar cambioVGO"
+      }
+    ]
+  },
+  {
+    "slug": "arbitrage",
+    "route": "/app/arbitrage",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 1203,
+    "width": 1440,
+    "viewportWidth": 1440,
+    "overflows": [
+      {
+        "tag": "DIV",
+        "text": "0.139EUR/kWh",
+        "clientWidth": 147,
+        "scrollWidth": 154,
+        "className": "mt-2 flex items-end gap-2"
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Bateria y OMIE como capa avanzada para edificios con masa critica."
+      },
+      {
+        "tag": "H2",
+        "text": "Curva OMIE 24h"
+      },
+      {
+        "tag": "H2",
+        "text": "Escenario"
+      },
+      {
+        "tag": "H2",
+        "text": "Regla de carga"
+      },
+      {
+        "tag": "H2",
+        "text": "Regla de descarga"
+      },
+      {
+        "tag": "H2",
+        "text": "Gobernanza"
+      },
+      {
+        "tag": "H2",
+        "text": "VGO-014 · Vigo Centro"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "Spread OMIE0.139EUR/kWhDiferencia valle-punta hoy.Bateria base10kWhHuawei Luna como referencia.Unidades servidas18aptEdificio o cluster cerc"
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "Curva OMIE 24hPregunta: hay spread suficiente para plantear arbitraje?PremiumValle0.074EUR/kWhPunta0.213EUR/kWhDia1.22EUR margenEscenarioCap"
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "Curva OMIE 24hPregunta: hay spread suficiente para plantear arbitraje?PremiumValle0.074EUR/kWhPunta0.213EUR/kWhDia1.22EUR margen"
+      },
+      {
+        "index": 3,
+        "id": "",
+        "text": "EscenarioCapacidad10 kWhUnidades compartidas18Capex estimado5500 EURIncluye referencia Huawei Luna 10kWh desde 5.500 EUR, sin cerrar instala"
+      },
+      {
+        "index": 4,
+        "id": "",
+        "text": "Regla de cargaCargar en P3/OMIE valle cuando el spread supera umbral definido.Regla de descargaDescargar en P1 para cubrir termo, climatizac"
+      },
+      {
+        "index": 5,
+        "id": "",
+        "text": "Regla de cargaCargar en P3/OMIE valle cuando el spread supera umbral definido."
+      },
+      {
+        "index": 6,
+        "id": "",
+        "text": "Regla de descargaDescargar en P1 para cubrir termo, climatizacion o cargas comunes."
+      },
+      {
+        "index": 7,
+        "id": "",
+        "text": "GobernanzaSolo edificios con datos estables, permisos y ROI defendible ante propietario."
+      }
+    ]
+  },
+  {
+    "slug": "arbitrage",
+    "route": "/app/arbitrage",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 3201,
+    "width": 390,
+    "viewportWidth": 390,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Bateria y OMIE como capa avanzada para edificios con masa critica."
+      },
+      {
+        "tag": "H2",
+        "text": "Curva OMIE 24h"
+      },
+      {
+        "tag": "H2",
+        "text": "Escenario"
+      },
+      {
+        "tag": "H2",
+        "text": "Regla de carga"
+      },
+      {
+        "tag": "H2",
+        "text": "Regla de descarga"
+      },
+      {
+        "tag": "H2",
+        "text": "Gobernanza"
+      },
+      {
+        "tag": "H2",
+        "text": "VGO-014 · Vigo Centro"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "Spread OMIE0.139EUR/kWhDiferencia valle-punta hoy.Bateria base10kWhHuawei Luna como referencia.Unidades servidas18aptEdificio o cluster cerc"
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "Curva OMIE 24hPregunta: hay spread suficiente para plantear arbitraje?PremiumValle0.074EUR/kWhPunta0.213EUR/kWhDia1.22EUR margenEscenarioCap"
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "Curva OMIE 24hPregunta: hay spread suficiente para plantear arbitraje?PremiumValle0.074EUR/kWhPunta0.213EUR/kWhDia1.22EUR margen"
+      },
+      {
+        "index": 3,
+        "id": "",
+        "text": "EscenarioCapacidad10 kWhUnidades compartidas18Capex estimado5500 EURIncluye referencia Huawei Luna 10kWh desde 5.500 EUR, sin cerrar instala"
+      },
+      {
+        "index": 4,
+        "id": "",
+        "text": "Regla de cargaCargar en P3/OMIE valle cuando el spread supera umbral definido.Regla de descargaDescargar en P1 para cubrir termo, climatizac"
+      },
+      {
+        "index": 5,
+        "id": "",
+        "text": "Regla de cargaCargar en P3/OMIE valle cuando el spread supera umbral definido."
+      },
+      {
+        "index": 6,
+        "id": "",
+        "text": "Regla de descargaDescargar en P1 para cubrir termo, climatizacion o cargas comunes."
+      },
+      {
+        "index": 7,
+        "id": "",
+        "text": "GobernanzaSolo edificios con datos estables, permisos y ROI defendible ante propietario."
+      }
+    ]
+  },
+  {
+    "slug": "fincas",
+    "route": "/app/fincas",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 1000,
+    "width": 1440,
+    "viewportWidth": 1440,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Fincas — Comunidades de Vecinos"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "slug": "fincas",
+    "route": "/app/fincas",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 1594,
+    "width": 390,
+    "viewportWidth": 390,
+    "overflows": [
+      {
+        "tag": "DIV",
+        "text": "ComunidadCiudadUnidadesConsumoCosteEstadoComunidad de Vecinos Calle Mayor 15Calle Mayor 15Madrid242400 kWh408,00 €Optimi",
+        "clientWidth": 356,
+        "scrollWidth": 702,
+        "className": "bg-white rounded-xl border overflow-hidden"
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Fincas — Comunidades de Vecinos"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "slug": "config",
+    "route": "/app/config",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 1000,
+    "width": 1440,
+    "viewportWidth": 1440,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Configuracion operacional para datos, roles, integraciones y reglas."
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "FuenteFuncionEstadoDetalle DatadisCUPS y curvas horariasCorrectaUltima sync 19:10 PMS GuestyReservas y ventanas operativasCorrecta124 unidad"
+      }
+    ]
+  },
+  {
+    "slug": "config",
+    "route": "/app/config",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 1530,
+    "width": 390,
+    "viewportWidth": 390,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Configuracion operacional para datos, roles, integraciones y reglas."
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "FuenteFuncionEstadoDetalle DatadisCUPS y curvas horariasCorrectaUltima sync 19:10 PMS GuestyReservas y ventanas operativasCorrecta124 unidad"
+      }
+    ]
+  },
+  {
+    "slug": "privacy",
+    "route": "/privacidad",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 1294,
+    "width": 1440,
+    "viewportWidth": 1440,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Política de privacidad"
+      },
+      {
+        "tag": "H2",
+        "text": "Responsable"
+      },
+      {
+        "tag": "H2",
+        "text": "Datos que tratamos"
+      },
+      {
+        "tag": "H2",
+        "text": "Finalidad"
+      },
+      {
+        "tag": "H2",
+        "text": "Base jurídica"
+      },
+      {
+        "tag": "H2",
+        "text": "Conservación"
+      },
+      {
+        "tag": "H2",
+        "text": "Derechos"
+      },
+      {
+        "tag": "H2",
+        "text": "Cookies"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "ResponsableTramo es un producto en fase piloto para diagnóstico energético de carteras turísticas. Los datos de contacto del responsable se "
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "Datos que tratamosDatos de contacto enviados por formulario, información básica de empresa, número de alojamientos, ciudad, PMS indicado y r"
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "FinalidadResponder a solicitudes de diagnóstico, valorar encaje del piloto y preparar una propuesta comercial basada en datos facilitados vo"
+      },
+      {
+        "index": 3,
+        "id": "",
+        "text": "Base jurídicaConsentimiento del interesado al enviar el formulario y aplicación de medidas precontractuales solicitadas por la persona inter"
+      },
+      {
+        "index": 4,
+        "id": "",
+        "text": "ConservaciónLos leads se conservan durante el tiempo necesario para gestionar la solicitud y, como máximo, durante 12 meses si no existe rel"
+      },
+      {
+        "index": 5,
+        "id": "",
+        "text": "DerechosPuedes solicitar acceso, rectificación, supresión, oposición, limitación o portabilidad escribiendo al canal de contacto que se publ"
+      },
+      {
+        "index": 6,
+        "id": "",
+        "text": "CookiesEsta versión no instala cookies analíticas ni publicitarias propias. Si se añaden analíticas o píxeles, se incorporará un mecanismo d"
+      }
+    ]
+  },
+  {
+    "slug": "privacy",
+    "route": "/privacidad",
+    "viewport": "mobile",
+    "status": 500,
+    "consoleErrors": [
+      "error: Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    ],
+    "title": "",
+    "height": 844,
+    "width": 390,
+    "viewportWidth": 390,
+    "overflows": [],
+    "headings": [],
+    "sections": []
+  },
+  {
+    "slug": "legal",
+    "route": "/aviso-legal",
+    "viewport": "desktop",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 1294,
+    "width": 1440,
+    "viewportWidth": 1440,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Aviso legal"
+      },
+      {
+        "tag": "H2",
+        "text": "Titularidad"
+      },
+      {
+        "tag": "H2",
+        "text": "Objeto del sitio"
+      },
+      {
+        "tag": "H2",
+        "text": "Uso permitido"
+      },
+      {
+        "tag": "H2",
+        "text": "Estimaciones de ahorro"
+      },
+      {
+        "tag": "H2",
+        "text": "Propiedad intelectual"
+      },
+      {
+        "tag": "H2",
+        "text": "Responsabilidad"
+      },
+      {
+        "tag": "H2",
+        "text": "Contacto"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "TitularidadTramo es una plataforma en fase piloto. Los datos mercantiles, domicilio y NIF del titular se completarán antes de activar captac"
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "Objeto del sitioEste sitio presenta una solución SaaS B2B para diagnóstico, atribución y optimización de consumo energético en carteras de a"
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "Uso permitidoEl contenido se ofrece con finalidad informativa y comercial. No debe interpretarse como auditoría energética certificada, ases"
+      },
+      {
+        "index": 3,
+        "id": "",
+        "text": "Estimaciones de ahorroLas cifras de ahorro, retorno de inversión y arbitraje son estimaciones orientativas basadas en escenarios de piloto. "
+      },
+      {
+        "index": 4,
+        "id": "",
+        "text": "Propiedad intelectualLos textos, interfaces, gráficos y elementos visuales de Tramo pertenecen a sus titulares o licenciantes. No se autoriz"
+      },
+      {
+        "index": 5,
+        "id": "",
+        "text": "ResponsabilidadTramo no responde por decisiones tomadas únicamente a partir de esta web sin análisis individualizado de datos de consumo, co"
+      },
+      {
+        "index": 6,
+        "id": "",
+        "text": "ContactoEl canal de contacto legal definitivo se publicará antes del lanzamiento comercial. Durante la fase piloto, las solicitudes se gesti"
+      }
+    ]
+  },
+  {
+    "slug": "legal",
+    "route": "/aviso-legal",
+    "viewport": "mobile",
+    "status": 200,
+    "consoleErrors": [],
+    "title": "Tramo — Control energético para carteras turísticas",
+    "height": 1674,
+    "width": 390,
+    "viewportWidth": 390,
+    "overflows": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "Aviso legal"
+      },
+      {
+        "tag": "H2",
+        "text": "Titularidad"
+      },
+      {
+        "tag": "H2",
+        "text": "Objeto del sitio"
+      },
+      {
+        "tag": "H2",
+        "text": "Uso permitido"
+      },
+      {
+        "tag": "H2",
+        "text": "Estimaciones de ahorro"
+      },
+      {
+        "tag": "H2",
+        "text": "Propiedad intelectual"
+      },
+      {
+        "tag": "H2",
+        "text": "Responsabilidad"
+      },
+      {
+        "tag": "H2",
+        "text": "Contacto"
+      }
+    ],
+    "sections": [
+      {
+        "index": 0,
+        "id": "",
+        "text": "TitularidadTramo es una plataforma en fase piloto. Los datos mercantiles, domicilio y NIF del titular se completarán antes de activar captac"
+      },
+      {
+        "index": 1,
+        "id": "",
+        "text": "Objeto del sitioEste sitio presenta una solución SaaS B2B para diagnóstico, atribución y optimización de consumo energético en carteras de a"
+      },
+      {
+        "index": 2,
+        "id": "",
+        "text": "Uso permitidoEl contenido se ofrece con finalidad informativa y comercial. No debe interpretarse como auditoría energética certificada, ases"
+      },
+      {
+        "index": 3,
+        "id": "",
+        "text": "Estimaciones de ahorroLas cifras de ahorro, retorno de inversión y arbitraje son estimaciones orientativas basadas en escenarios de piloto. "
+      },
+      {
+        "index": 4,
+        "id": "",
+        "text": "Propiedad intelectualLos textos, interfaces, gráficos y elementos visuales de Tramo pertenecen a sus titulares o licenciantes. No se autoriz"
+      },
+      {
+        "index": 5,
+        "id": "",
+        "text": "ResponsabilidadTramo no responde por decisiones tomadas únicamente a partir de esta web sin análisis individualizado de datos de consumo, co"
+      },
+      {
+        "index": 6,
+        "id": "",
+        "text": "ContactoEl canal de contacto legal definitivo se publicará antes del lanzamiento comercial. Durante la fase piloto, las solicitudes se gesti"
+      }
+    ]
+  }
+]

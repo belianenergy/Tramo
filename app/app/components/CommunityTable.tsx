@@ -9,47 +9,68 @@ interface CommunityTableProps {
 
 export default function CommunityTable({ communities, onSelect }: CommunityTableProps) {
   return (
-    <div className="bg-white rounded-xl border overflow-hidden" style={{ borderColor: 'var(--border)' }}>
+    <div className="rounded-[8px] overflow-hidden" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
       <table className="w-full">
         <thead>
-          <tr className="border-b" style={{ borderColor: 'var(--border)', background: '#F5F5F5' }}>
-            <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Comunidad</th>
-            <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Ciudad</th>
-            <th className="text-right px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Unidades</th>
-            <th className="text-right px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Consumo</th>
-            <th className="text-right px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Coste</th>
-            <th className="text-center px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Estado</th>
+          <tr style={{ borderBottom: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
+            <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-muted-slate)' }}>Comunidad</th>
+            <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-muted-slate)' }}>Ciudad</th>
+            <th className="text-right px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-muted-slate)' }}>Unidades</th>
+            <th className="text-right px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-muted-slate)' }}>Consumo</th>
+            <th className="text-right px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-muted-slate)' }}>Coste</th>
+            <th className="text-center px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-muted-slate)' }}>Estado</th>
           </tr>
         </thead>
         <tbody>
-          {communities.map((c) => (
+          {communities.map((c, i) => (
             <tr
               key={c.id}
-              className="border-b hover:bg-gray-50 cursor-pointer transition-colors"
-              style={{ borderColor: '#F0F0F0' }}
+              className="cursor-pointer"
+              role="button"
+              tabIndex={0}
+              style={{
+                borderBottom: i < communities.length - 1 ? '1px solid var(--color-sage-mist)' : 'none',
+                transition: 'background-color var(--dur-short) var(--ease-out)',
+              }}
               onClick={() => onSelect?.(c)}
+              onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--color-cream-paper)')}
+              onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSelect?.(c) } }}
             >
               <td className="px-5 py-3.5">
-                <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>{c.name}</p>
-                <p className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>{c.address}</p>
+                <p className="text-sm font-medium" style={{ color: 'var(--color-ink)' }}>{c.name}</p>
+                <p className="text-xs mt-0.5" style={{ color: 'var(--color-slate)' }}>{c.address}</p>
               </td>
-              <td className="px-5 py-3.5 text-sm" style={{ color: 'var(--text-secondary)' }}>{c.city}</td>
-              <td className="px-5 py-3.5 text-sm text-right font-mono" style={{ color: 'var(--text-primary)' }}>{c.units}</td>
-              <td className="px-5 py-3.5 text-sm text-right font-mono" style={{ color: 'var(--text-primary)' }}>{c.totalKwh.toLocaleString('es-ES')} kWh</td>
-              <td className="px-5 py-3.5 text-sm text-right font-mono" style={{ color: 'var(--text-primary)' }}>{c.totalCost.toLocaleString('es-ES', { minimumFractionDigits: 2 })} €</td>
+              <td className="px-5 py-3.5 text-sm" style={{ color: 'var(--color-slate)' }}>{c.city}</td>
+              <td className="px-5 py-3.5 text-sm text-right font-mono tabular-nums" style={{ color: 'var(--color-ink)' }}>{c.units}</td>
+              <td className="px-5 py-3.5 text-sm text-right font-mono tabular-nums" style={{ color: 'var(--color-ink)' }}>{c.totalKwh.toLocaleString('es-ES')} kWh</td>
+              <td className="px-5 py-3.5 text-sm text-right font-mono tabular-nums" style={{ color: 'var(--color-ink)' }}>{c.totalCost.toLocaleString('es-ES', { minimumFractionDigits: 2 })} €</td>
               <td className="px-5 py-3.5 text-center">
-                <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                  c.status === 'optimized' ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' :
-                  c.status === 'warning' ? 'bg-amber-50 text-amber-700 border border-amber-200' :
-                  'bg-red-50 text-red-700 border border-red-200'
-                }`}>
-                  {c.status === 'optimized' ? 'Optimizado' : c.status === 'warning' ? 'Atención' : 'Alerta'}
-                </span>
+                <StatusBadge status={c.status} />
               </td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
+  )
+}
+
+function StatusBadge({ status }: { status: string }) {
+  const config = status === 'optimized'
+    ? { bg: 'var(--color-status-success-bg)', text: 'var(--color-status-success)', border: 'var(--color-status-success-border)' }
+    : status === 'warning'
+      ? { bg: 'var(--color-status-warning-bg)', text: 'var(--color-status-warning)', border: 'var(--color-status-warning-border)' }
+      : { bg: 'var(--color-status-danger-bg)', text: 'var(--color-canopy)', border: 'var(--color-status-danger-border)' }
+
+  const label = status === 'optimized' ? 'Optimizado' : status === 'warning' ? 'Atención' : 'Alerta'
+
+  return (
+    <span
+      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
+      style={{ background: config.bg, color: config.text, border: `1px solid ${config.border}` }}
+    >
+      {label}
+    </span>
   )
 }

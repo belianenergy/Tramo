@@ -12,7 +12,7 @@ export default function CommunityTable({ communities, onSelect }: CommunityTable
     <div className="bg-white rounded-xl border overflow-hidden" style={{ borderColor: 'var(--border)' }}>
       <table className="w-full">
         <thead>
-          <tr className="border-b" style={{ borderColor: 'var(--border)', background: '#F5F5F5' }}>
+          <tr className="border-b" style={{ borderColor: 'var(--border)', background: 'var(--color-cream-paper)' }}>
             <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Comunidad</th>
             <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Ciudad</th>
             <th className="text-right px-5 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Unidades</th>
@@ -26,7 +26,7 @@ export default function CommunityTable({ communities, onSelect }: CommunityTable
             <tr
               key={c.id}
               className="border-b hover:bg-gray-50 cursor-pointer transition-colors"
-              style={{ borderColor: '#F0F0F0' }}
+              style={{ borderColor: 'var(--color-pale-sage)' }}
               onClick={() => onSelect?.(c)}
             >
               <td className="px-5 py-3.5">

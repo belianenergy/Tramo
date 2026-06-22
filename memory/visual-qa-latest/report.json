@@ -1,0 +1,331 @@
+{
+  "baseUrl": "http://127.0.0.1:3001",
+  "results": [
+    {
+      "slug": "home",
+      "route": "/",
+      "viewport": "desktop",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "home",
+      "route": "/",
+      "viewport": "tablet",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "home",
+      "route": "/",
+      "viewport": "mobile",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "precios",
+      "route": "/precios",
+      "viewport": "desktop",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/precios\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "precios",
+      "route": "/precios",
+      "viewport": "tablet",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/precios\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "precios",
+      "route": "/precios",
+      "viewport": "mobile",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/precios\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "dashboard",
+      "route": "/app/dashboard",
+      "viewport": "desktop",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/dashboard\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "dashboard",
+      "route": "/app/dashboard",
+      "viewport": "tablet",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/dashboard\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "dashboard",
+      "route": "/app/dashboard",
+      "viewport": "mobile",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/dashboard\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "operations",
+      "route": "/app/operations",
+      "viewport": "desktop",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/operations\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "operations",
+      "route": "/app/operations",
+      "viewport": "tablet",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/operations\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "operations",
+      "route": "/app/operations",
+      "viewport": "mobile",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/operations\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "informe",
+      "route": "/app/informe",
+      "viewport": "desktop",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/informe\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "informe",
+      "route": "/app/informe",
+      "viewport": "tablet",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/informe\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "informe",
+      "route": "/app/informe",
+      "viewport": "mobile",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/informe\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "advisor",
+      "route": "/app/advisor",
+      "viewport": "desktop",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/advisor\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "advisor",
+      "route": "/app/advisor",
+      "viewport": "tablet",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/advisor\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "advisor",
+      "route": "/app/advisor",
+      "viewport": "mobile",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/advisor\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    }
+  ],
+  "failures": [
+    {
+      "slug": "home",
+      "route": "/",
+      "viewport": "desktop",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "home",
+      "route": "/",
+      "viewport": "tablet",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "home",
+      "route": "/",
+      "viewport": "mobile",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "precios",
+      "route": "/precios",
+      "viewport": "desktop",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/precios\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "precios",
+      "route": "/precios",
+      "viewport": "tablet",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/precios\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "precios",
+      "route": "/precios",
+      "viewport": "mobile",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/precios\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "dashboard",
+      "route": "/app/dashboard",
+      "viewport": "desktop",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/dashboard\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "dashboard",
+      "route": "/app/dashboard",
+      "viewport": "tablet",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/dashboard\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "dashboard",
+      "route": "/app/dashboard",
+      "viewport": "mobile",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/dashboard\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "operations",
+      "route": "/app/operations",
+      "viewport": "desktop",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/operations\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "operations",
+      "route": "/app/operations",
+      "viewport": "tablet",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/operations\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "operations",
+      "route": "/app/operations",
+      "viewport": "mobile",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/operations\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "informe",
+      "route": "/app/informe",
+      "viewport": "desktop",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/informe\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "informe",
+      "route": "/app/informe",
+      "viewport": "tablet",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/informe\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "informe",
+      "route": "/app/informe",
+      "viewport": "mobile",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/informe\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "advisor",
+      "route": "/app/advisor",
+      "viewport": "desktop",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/advisor\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "advisor",
+      "route": "/app/advisor",
+      "viewport": "tablet",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/advisor\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    },
+    {
+      "slug": "advisor",
+      "route": "/app/advisor",
+      "viewport": "mobile",
+      "status": null,
+      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/advisor\", waiting until \"domcontentloaded\"\n",
+      "consoleErrors": [],
+      "overflows": []
+    }
+  ]
+}

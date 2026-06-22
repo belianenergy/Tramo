@@ -1,53 +1,74 @@
 'use client'
 
 import type { Alert } from '@/lib/types'
+import { AlertTriangle, AlertCircle, CheckCircle, Info, FileText } from 'lucide-react'
+import type { ComponentType } from 'react'
 
 interface AlertPanelProps {
   alerts: Alert[]
 }
 
-export default function AlertPanel({ alerts }: AlertPanelProps) {
-  const getIcon = (type: string) => {
-    switch (type) {
-      case 'warning': return '⚠️'
-      case 'danger': return '🔴'
-      case 'success': return '✅'
-      case 'info': return 'ℹ️'
-      default: return '📋'
-    }
-  }
+const iconMap: Record<string, ComponentType<{ className?: string; style?: React.CSSProperties }>> = {
+  warning: AlertTriangle,
+  danger: AlertCircle,
+  success: CheckCircle,
+  info: Info,
+}
 
-  const getColors = (type: string) => {
-    switch (type) {
-      case 'warning': return { bg: 'bg-amber-50', border: 'border-amber-200', text: 'text-amber-700' }
-      case 'danger': return { bg: 'bg-red-50', border: 'border-red-200', text: 'text-red-700' }
-      case 'success': return { bg: 'bg-emerald-50', border: 'border-emerald-200', text: 'text-emerald-700' }
-      case 'info': return { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-700' }
-      default: return { bg: 'bg-gray-50', border: 'border-gray-200', text: 'text-gray-700' }
-    }
-  }
+const defaultIcon = FileText as ComponentType<{ className?: string; style?: React.CSSProperties }>
+
+const colorTokens: Record<string, { bg: string; text: string; border: string }> = {
+  warning: { bg: 'var(--color-status-warning-bg)', text: 'var(--color-status-warning)', border: 'var(--color-status-warning-border)' },
+  danger: { bg: 'var(--color-status-danger-bg)', text: 'var(--color-canopy)', border: 'var(--color-status-danger-border)' },
+  success: { bg: 'var(--color-status-success-bg)', text: 'var(--color-status-success)', border: 'var(--color-status-success-border)' },
+  info: { bg: 'var(--color-status-info-bg)', text: 'var(--color-canopy)', border: 'var(--color-status-info-border)' },
+}
+
+const defaultColors = { bg: 'var(--color-cream-paper)', text: 'var(--color-slate)', border: 'var(--color-sage-mist)' }
+
+export default function AlertPanel({ alerts }: AlertPanelProps) {
+  const unread = alerts.filter(a => !a.read).length
 
   return (
-    <div className="bg-white rounded-xl border p-5" style={{ borderColor: 'var(--border)' }}>
+    <div className="rounded-[16px] p-5" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="font-display text-base font-semibold" style={{ color: 'var(--text-primary)' }}>Alertas</h3>
-        <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
-          {alerts.filter(a => !a.read).length} nuevas
-        </span>
+        <h3 className="font-display text-base font-semibold" style={{ color: 'var(--color-ink)' }}>Alertas</h3>
+        {unread > 0 && (
+          <span
+            className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium"
+            style={{
+              background: 'var(--color-status-warning-bg)',
+              color: 'var(--color-status-warning)',
+              border: '1px solid var(--color-status-warning-border)',
+            }}
+          >
+            {unread} nuevas
+          </span>
+        )}
       </div>
       <div className="space-y-2">
         {alerts.slice(0, 4).map((alert) => {
-          const colors = getColors(alert.type)
+          const colors = colorTokens[alert.type] ?? defaultColors
+          const Icon = iconMap[alert.type] ?? defaultIcon
           return (
             <div
               key={alert.id}
-              className={`p-3 rounded-lg border ${colors.bg} ${colors.border} transition-colors hover:brightness-95 cursor-pointer`}
+              className="p-3 rounded-lg cursor-pointer"
+              role="button"
+              tabIndex={0}
+              style={{
+                border: `1px solid ${colors.border}`,
+                background: colors.bg,
+                transition: 'background-color var(--dur-short) var(--ease-out)',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--color-cream-paper)')}
+              onMouseLeave={(e) => (e.currentTarget.style.background = colors.bg)}
             >
               <div className="flex items-start gap-2.5">
-                <span className="text-sm shrink-0 mt-0.5">{getIcon(alert.type)}</span>
+                <Icon className="h-4 w-4 shrink-0 mt-0.5" style={{ color: colors.text }} />
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs leading-relaxed" style={{ color: 'var(--text-primary)' }}>{alert.message}</p>
-                  <p className="text-[10px] mt-1" style={{ color: 'var(--text-secondary)' }}>{alert.property} · {new Date(alert.timestamp).toLocaleDateString('es-ES')}</p>
+                  <p className="text-xs leading-relaxed" style={{ color: 'var(--color-ink)' }}>{alert.message}</p>
+                  <p className="text-[10px] mt-1" style={{ color: 'var(--color-muted-slate)' }}>{alert.property} · {new Date(alert.timestamp).toLocaleDateString('es-ES')}</p>
                 </div>
               </div>
             </div>

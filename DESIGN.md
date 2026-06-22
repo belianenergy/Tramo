@@ -1,219 +1,110 @@
-# EnergyOS Design System — Complete
+# Tramo — Design System
 
-## 🎯 Visión
+A clean B2B visual system. White canvas + charcoal data + single green accent. ReflexAI/Linear-inspired editorial-industrial.
 
-**EnergyOS Pro** é unha plataforma B2B de xestión enerxética para profesionais inmobiliarios en España.
+## Colours
 
-**Referencias visuais:** Linear.app + Bloomberg + Stripe + Guesty
+### Core palette
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--color-bg` | `#FAFAFA` | Page background |
+| `--color-white` | `#FFFFFF` | Card surface |
+| `--color-dark` | `#1A1A2E` | Headlines, body text |
+| `--color-gray` | `#6B7280` | Secondary text |
+| `--color-gray-light` | `#9CA3AF` | Tertiary / muted text |
+| `--color-border` | `#E5E7EB` | Main border |
+| `--color-border-light` | `#F3F4F6` | Subtle border |
 
-**Filosofía:** Premium, denso en datos, inmediatamente accionable. NON parece startup IA xenérica. Profesión como Stripe.
+### Primary accent
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--color-primary` | `#0F7B5A` | Primary green |
+| `--color-primary-hover` | `#0C6348` | Button hover |
+| `--color-primary-active` | `#0A5238` | Active state |
+| `--color-primary-subtle` | `#EBF5F0` | Subtle background |
 
----
+### Status
+| Token | Value |
+|-------|-------|
+| Success | `oklch(58% 0.16 155)` |
+| Warning | `oklch(52% 0.13 64)` |
+| Danger | `oklch(58% 0.22 29)` |
+| Info | `oklch(58% 0.16 260)` |
+| Teal | `oklch(66% 0.13 190)` |
 
-## 🎨 Sistema de Cores
+### Gradients
+- Hero wash: `linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 100%)`
+- Isometric: same wash
 
-### Modo CLARO (OBRIGATORIO)
+## Typography
 
-| Token | Hex | Uso |
-|-------|-----|-----|
-| **Background** | `#FAFAFA` | Fondo principal |
-| **Card BG** | `#FFFFFF` | Tarxetas |
-| **Border** | `#E5E5E5` | Bordes suaves |
-| **Text Primary** | `#18181B` | Texto principal |
-| **Text Secondary** | `#71717A` | Texto secundario |
-| **Text Muted** | `#A1A1AA` | Labels |
+| Role | Font |
+|------|------|
+| Display | `DM Sans`, ui-sans-serif, system-ui |
+| Body | `system-ui`, "Segoe UI", "Aptos", sans-serif |
+| Mono / data | `JetBrains Mono`, "Cascadia Mono", ui-monospace |
 
-### Cores de Módulo
+**DO NOT USE:** Inter, Plus Jakarta Sans, Poppins, or any decorative display font outside DM Sans.
 
-| Módulo | Hex | Uso |
-|--------|-----|-----|
-| **Primary** | `#10B981` | Emerald — aforro, enerxía |
-| **Primary Hover** | `#059669` | Botóns hover |
-| **Fincas** | `#1565C0` | Azul corporativo |
-| **Apartments** | `#F57C00` | Laranxa cálido |
-| **Arbitraxe** | `#7B1FA2` | Violeta |
-| **Advisor** | `#2E7D32` | Verde bosque |
-| **Success** | `#4CAF50` | Éxito |
-| **Warning** | `#F59E0B` | Alertas |
-| **Danger** | `#EF4444` | Erros |
-| **Info** | `#0EA5E9` | Información |
-
-### Sombras
-
-```css
---shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
---shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
---shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.05);
-```
-
----
-
-## 📝 Tipografía
-
-### Fontes
-
-- **Display:** Plus Jakarta Sans (600, 700) — títulos
-- **Body:** Inter (400, 500, 600) — corpo
-- **Mono:** JetBrains Mono (400, 500) — números, métricas
-
-### Escala
-
-| Style | Size | Weight | Uso |
+### Type scale
+| Token | Size | Weight | Use |
 |-------|------|--------|-----|
-| Display | 48px | 700 | Hero |
-| H1 | 32px | 700 | Páxinas |
-| H2 | 24px | 600 | Seccións |
-| H3 | 18px | 600 | Subseccións |
-| Body | 14px | 400 | Texto |
-| Caption | 12px | 500 | Labels |
-| Metric | 36px | 700 | Números grandes |
-| Metric Small | 24px | 600 | Números medianos |
+| `--text-display` | `clamp(2.75rem, 5vw+1rem, 4.75rem)` | 700 | Hero heading |
+| `--text-4xl` | 3.75rem | 700 | Section headings |
+| `--text-3xl` | 3rem | 600 | Sub-sections |
+| `--text-2xl` | 2.25rem | 600 | Feature titles |
+| `--text-xl` | 1.5rem | 600 | Card headings |
+| `--text-lg` | 1.25rem | 500 | Sub-headings |
+| `--text-base` | 1rem | 400 | Body |
+| `--text-sm` | 0.875rem | 400 | Caption |
+| `--text-xs` | 0.8125rem | 500 | Labels |
+| `--text-md` | 1.125rem | 400 | Lead body |
 
----
+## Radii
 
-## 📐 Layout
+| Token | Value |
+|-------|-------|
+| `--radius-sm` | 4px |
+| `--radius-md` | 8px |
+| `--radius-lg` | 16px |
+| `--radius-pill` | 9999px |
 
-### Navegación Lateral (260px)
+All radii are tight and industrial. No decorative border-radius > 16px.
 
-```
-┌─────────────────────────┐
-│ 🦎 EnergyOS             │
-├─────────────────────────┤
-│ 📊 Panel                │ ← activo
-│ 🏢 Fincas               │
-│ 🏠 Apartamentos         │
-│ ⚡ Arbitraxe            │
-│ 🤖 Asesor IA            │
-├─────────────────────────┤
-│ ⚙️ Configuración        │
-└─────────────────────────┘
-```
+## Shadows
+All shadows are explicitly `none`. Tramo does not use box-shadows. Elevation is communicated through border weight and background tint.
 
-### Navegación Superior (64px)
+## Spacing scale
+| Token | Rem |
+|-------|-----|
+| `--space-3xs` | 0.5rem |
+| `--space-2xs` | 1rem |
+| `--space-xs` | 1.5rem |
+| `--space-sm` | 2rem |
+| `--space-md` | 2.5rem |
+| `--space-lg` | 3rem |
+| `--space-xl` | 4rem |
+| `--space-2xl` | 5.5rem |
+| `--space-3xl` | 7.5rem |
 
-```
-┌──────────────────────────────────────────────┐
-│ [🔍 Buscar...]     [🔔 3] [Avatar MG]      │
-└──────────────────────────────────────────────┘
-```
+## Motion
+| Token | Value |
+|-------|-------|
+| `--ease-out` | `cubic-bezier(0.16, 1, 0.3, 1)` |
+| `--ease-in` | `cubic-bezier(0.7, 0, 0.84, 0)` |
+| `--ease-in-out` | `cubic-bezier(0.65, 0, 0.35, 1)` |
+| `--dur-micro` | 120ms |
+| `--dur-short` | 220ms |
+| `--dur-long` | 420ms |
 
-### Contedor Principal
+## Layout
+- Page max width: 1200px (`--page-max`)
+- No box-shadows on cards; use 1px solid `--color-border`
+- Narrow gutters, dense data presentation when appropriate
+- Tabular numbers for all KPI/metric displays
 
-- Max-width: 1280px centrado
-- Padding: 24px
-- Gap tarxetas: 16px
-
----
-
-## 🧩 Compoñentes
-
-### MetricCard
-
-```tsx
-// Estado: default
-bg: white, border: #E5E5E5, rounded-12px
-
-// Estado: hover
-shadow-md, border: primary/20
-
-// Contido
-- Label: caption, text-secondary
-- Valor: metric, text-primary, font-mono
-- Icon: emoji ou Lucide
-- Trend: badge verde/vermello
-```
-
-### DataTable
-
-```tsx
-// Header
-bg: #F4F4F5, text: caption, uppercase
-
-// Row
-border-bottom: #E5E5E5, hover: bg: #FAFAFA
-
-// Cell
-text: body, font-mono para números
-```
-
-### Button
-
-```tsx
-// Primary
-bg: primary (#10B981), text: white, rounded-8px
-hover: primary-hover (#059669)
-
-// Secondary
-bg: transparent, border: #E5E5E5, text: text-primary
-hover: bg: #FAFAFA
-
-// Ghost
-bg: transparent, text: text-secondary
-hover: bg: #F4F4F5
-```
-
-### Badge/Status
-
-```tsx
-// Optimized (verde)
-bg: #ECFDF5, text: #059669, border: #A7F3D0
-
-// Warning (ámbar)
-bg: #FFFBEB, text: #B45309, border: #FDE68A
-
-// Alert (vermello)
-bg: #FEF2F2, text: #DC2626, border: #FECACA
-```
-
----
-
-## 📊 Dashboard
-
-### KPIs (4 cards)
-
-```
-┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐
-│ Total      │ │ Consumo    │ │ Coste      │ │ Alertas    │
-│ Comunidades│ │ Mensual    │ │ Mensual    │ │ Activas    │
-│     12     │ │   45.2    │ │  8.420     │ │     3      │
-│ 🏢        │ │   MWh ↑   │ │    € ↓     │ │    🔔     │
-└────────────┘ └────────────┘ └────────────┘ └────────────┘
-```
-
-### Gráfico
-
-- Tipo: Area chart con gradiente
-- Datos: Consumo histórico 12 meses
-- Selector: 24H | 7D | 30D
-- Cor: Primary con opacidade
-
-### Táboa
-
-- Comunidades con datos
-- Ordenable por columnas
-- Semáforo de estado
-
----
-
-## 🚨 Regras Críticas
-
-1. **MODO CLARO** — nunca dark mode
-2. **BORDES REAIS** — non glows de IA
-3. **NÚMEROS CONTEXTUALIZADOS** — sempre con unidades (kWh, €)
-4. **PREMIUM** — parece Stripe/Guesty, non startup xenérica
-5. **TEXTOS** — en español/galego
-
----
-
-## 📱 Responsive
-
-| Breakpoint | Layout |
-|------------|--------|
-| Desktop (1280px+) | Sidebar visible, 4 KPIs |
-| Tablet (768px-1279px) | Sidebar colapsable, 2 KPIs |
-| Mobile (<768px) | Sidebar como drawer, 1 KPI |
-
----
-
-**Versión:** 4.0  
-**Última actualización:** 2026-05-11
+## Components (tokens only — see code for implementation)
+- **Status badges**: Soft background + coloured border + text, small radius
+- **CTA buttons**: Primary `#0F7B5A` fill, white text, `--radius-sm`
+- **Metric cards**: White surface, 1px border, DM Sans heading
+- **Charts**: Grid lines in `oklch(88% 0.005 30)`, tick labels in `oklch(55% 0.005 30)`

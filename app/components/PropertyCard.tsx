@@ -17,7 +17,7 @@ export default function PropertyCard({ listing, onView }: PropertyCardProps) {
 
   return (
     <div
-      className="bg-white rounded-xl border p-5 transition-all hover:shadow-md cursor-pointer"
+      className="bg-white rounded-xl border p-5 transition-[border-color,box-shadow] hover:border-[var(--color-accent)] cursor-pointer"
       style={{ borderColor: 'var(--border)', borderRadius: 12 }}
       onClick={onView}
     >
@@ -45,7 +45,7 @@ export default function PropertyCard({ listing, onView }: PropertyCardProps) {
         </div>
       </div>
 
-      <div className="flex items-center justify-between pt-3 border-t" style={{ borderColor: '#F0F0F0' }}>
+      <div className="flex items-center justify-between pt-3 border-t" style={{ borderColor: 'var(--color-pale-sage)' }}>
         <div className="flex items-center gap-2">
           {listing.tenant ? (
             <>

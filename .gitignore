@@ -1,6 +1,6 @@
 .env
 .env.local
-.next
+.next*
 node_modules
 data/leads.json
 graphify-out/
@@ -12,3 +12,6 @@ tsconfig.tsbuildinfo
 stitch-*-response.json
 stitch-*.json
 !stitch-output.log
+.next.bak-*
+.next.stale-*
+.tmp/

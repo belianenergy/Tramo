@@ -45,7 +45,7 @@ export async function POST(request: Request) {
         : ['Mantener tarifa actual', 'Diferencias mínimas en el coste']
     });
   } catch {
-    return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
+    return NextResponse.json({ error: 'Error interno del servidor' }, { status: 500 });
   }
 }
 

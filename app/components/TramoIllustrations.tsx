@@ -16,12 +16,12 @@ export function BatteryArbitrageSVG({ className }: { className?: string }) {
 
       // Battery fill level
       tl.fromTo('#batt-fill', { scaleY: 0.15, transformOrigin: 'bottom center' }, { scaleY: 1, duration: 2, ease: 'power2.inOut' })
-        .to('#batt-fill', { fill: '#22c55e', duration: 0.5 }, '-=0.5')
+        .to('#batt-fill', { fill: 'var(--color-status-success-bright)', duration: 0.5 }, '-=0.5')
         // Lightning bolt appears
         .fromTo('#batt-lightning', { opacity: 0, y: -8 }, { opacity: 1, y: 0, duration: 0.5 }, '-=1.5')
         .to('#batt-lightning', { opacity: 0, duration: 0.5 }, '+=1')
         // Full → discharge
-        .to('#batt-fill', { scaleY: 0.15, duration: 1.5, ease: 'power2.inOut', fill: '#14b8a6' }, '+=0.5')
+        .to('#batt-fill', { scaleY: 0.15, duration: 1.5, ease: 'power2.inOut', fill: 'var(--color-status-teal)' }, '+=0.5')
         // Euro symbols fly out
         .fromTo('#batt-euro1', { opacity: 0, y: 0, x: 0 }, { opacity: 1, y: -30, x: 15, duration: 0.6, ease: 'power2.out' }, '-=1')
         .fromTo('#batt-euro2', { opacity: 0, y: 0, x: 0 }, { opacity: 1, y: -22, x: -15, duration: 0.6, ease: 'power2.out' }, '-=0.5')
@@ -35,24 +35,24 @@ export function BatteryArbitrageSVG({ className }: { className?: string }) {
   }, []);
 
   return (
-    <svg ref={svgRef} className={className} viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg ref={svgRef} className={className} viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       {/* Glow */}
-      <rect id="batt-glow" x="22" y="20" width="76" height="90" rx="16" fill="#0d9488" opacity="0.06" />
+      <rect id="batt-glow" x="22" y="20" width="76" height="90" rx="16" fill="var(--color-status-teal-dark)" opacity="0.06" />
       {/* Battery body */}
-      <rect x="24" y="20" width="72" height="90" rx="12" stroke="#0d9488" strokeWidth="2.5" fill="none" />
+      <rect x="24" y="20" width="72" height="90" rx="12" stroke="var(--color-status-teal-dark)" strokeWidth="2.5" fill="none" />
       {/* Battery cap */}
-      <rect x="43" y="12" width="34" height="8" rx="3" fill="#0d9488" />
+      <rect x="43" y="12" width="34" height="8" rx="3" fill="var(--color-status-teal-dark)" />
       {/* Fill level */}
-      <rect id="batt-fill" x="29" y="115" width="62" height="0" rx="6" fill="#0d9488" style={{ transformOrigin: 'bottom center' }} />
+      <rect id="batt-fill" x="29" y="115" width="62" height="0" rx="6" fill="var(--color-status-teal-dark)" style={{ transformOrigin: 'bottom center' }} />
       {/* Lightning bolt */}
       <g id="batt-lightning" opacity="0">
-        <path d="M55 50 L60 65 H52 L65 82" stroke="#1a1a2e" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M55 50 L60 65 H52 L65 82" stroke="var(--color-bark)" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
       </g>
       {/* Euro symbols that fly out */}
-      <text id="batt-euro1" x="80" y="40" fill="#0d9488" fontSize="18" fontWeight="700" fontFamily="system-ui" opacity="0">+€</text>
-      <text id="batt-euro2" x="10" y="35" fill="#0d9488" fontSize="14" fontWeight="700" fontFamily="system-ui" opacity="0">+€</text>
+      <text id="batt-euro1" x="80" y="40" fill="var(--color-status-teal-dark)" fontSize="18" fontWeight="700" fontFamily="system-ui" opacity="0">+€</text>
+      <text id="batt-euro2" x="10" y="35" fill="var(--color-status-teal-dark)" fontSize="14" fontWeight="700" fontFamily="system-ui" opacity="0">+€</text>
       {/* Labels */}
-      <text x="60" y="132" fill="#0d9488" fontSize="9" textAnchor="middle" fontFamily="system-ui" fontWeight="600">CARGA</text>
+      <text x="60" y="132" fill="var(--color-status-teal-dark)" fontSize="9" textAnchor="middle" fontFamily="system-ui" fontWeight="600">CARGA</text>
     </svg>
   );
 }
@@ -79,25 +79,25 @@ export function SmartHomeSVG({ className }: { className?: string }) {
   }, []);
 
   return (
-    <svg ref={svgRef} className={className} viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg ref={svgRef} className={className} viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       {/* Energy waves */}
-      <circle cx="90" cy="65" r="20" fill="#0d9488" id="home-wave1" opacity="0.15" />
-      <circle cx="90" cy="65" r="16" fill="#0d9488" id="home-wave2" opacity="0.1" />
-      <circle cx="90" cy="65" r="12" fill="#0d9488" id="home-wave3" opacity="0.07" />
+      <circle cx="90" cy="65" r="20" fill="var(--color-status-teal-dark)" id="home-wave1" opacity="0.15" />
+      <circle cx="90" cy="65" r="16" fill="var(--color-status-teal-dark)" id="home-wave2" opacity="0.1" />
+      <circle cx="90" cy="65" r="12" fill="var(--color-status-teal-dark)" id="home-wave3" opacity="0.07" />
       {/* House body */}
-      <path d="M25 100 V60 L55 38 L85 60 V100 Z" stroke="#0d9488" strokeWidth="2" fill="none" />
+      <path d="M25 100 V60 L55 38 L85 60 V100 Z" stroke="var(--color-status-teal-dark)" strokeWidth="2" fill="none" />
       {/* Roof */}
-      <path d="M18 62 L55 35 L92 62" stroke="#0d9488" strokeWidth="2.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M18 62 L55 35 L92 62" stroke="var(--color-status-teal-dark)" strokeWidth="2.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
       {/* Door */}
-      <rect x="48" y="70" width="14" height="20" rx="2" stroke="#0d9488" strokeWidth="1.5" fill="none" />
+      <rect x="48" y="70" width="14" height="20" rx="2" stroke="var(--color-status-teal-dark)" strokeWidth="1.5" fill="none" />
       {/* Connected dots */}
-      <circle id="home-dot1" cx="90" cy="55" r="4" fill="#22c55e" opacity="0.3" />
-      <circle id="home-dot2" cx="100" cy="75" r="4" fill="#0d9488" opacity="0.3" />
-      <circle id="home-dot3" cx="82" cy="85" r="4" fill="#14b8a6" opacity="0.3" />
+      <circle id="home-dot1" cx="90" cy="55" r="4" fill="var(--color-status-success-bright)" opacity="0.3" />
+      <circle id="home-dot2" cx="100" cy="75" r="4" fill="var(--color-status-teal-dark)" opacity="0.3" />
+      <circle id="home-dot3" cx="82" cy="85" r="4" fill="var(--color-status-teal)" opacity="0.3" />
       {/* Connection lines */ }
-      <line x1="55" y1="62" x2="88" y2="56" stroke="#0d9488" strokeWidth="0.8" opacity="0.25" strokeDasharray="3 3" />
-      <line x1="55" y1="80" x2="98" y2="76" stroke="#0d9488" strokeWidth="0.8" opacity="0.25" strokeDasharray="3 3" />
-      <line x1="55" y1="90" x2="80" y2="86" stroke="#0d9488" strokeWidth="0.8" opacity="0.25" strokeDasharray="3 3" />
+      <line x1="55" y1="62" x2="88" y2="56" stroke="var(--color-status-teal-dark)" strokeWidth="0.8" opacity="0.25" strokeDasharray="3 3" />
+      <line x1="55" y1="80" x2="98" y2="76" stroke="var(--color-status-teal-dark)" strokeWidth="0.8" opacity="0.25" strokeDasharray="3 3" />
+      <line x1="55" y1="90" x2="80" y2="86" stroke="var(--color-status-teal-dark)" strokeWidth="0.8" opacity="0.25" strokeDasharray="3 3" />
     </svg>
   );
 }
@@ -122,22 +122,22 @@ export function DeviceControlSVG({ className }: { className?: string }) {
   }, []);
 
   return (
-    <svg ref={svgRef} className={className} viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg ref={svgRef} className={className} viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       {/* Device body */}
-      <rect x="25" y="35" width="55" height="55" rx="10" stroke="#0d9488" strokeWidth="2" fill="none" />
+      <rect x="25" y="35" width="55" height="55" rx="10" stroke="var(--color-status-teal-dark)" strokeWidth="2" fill="none" />
       {/* Screen */}
-      <rect x="33" y="42" width="39" height="22" rx="3" fill="#0d9488" fillOpacity="0.06" />
+      <rect x="33" y="42" width="39" height="22" rx="3" fill="var(--color-status-teal-dark)" fillOpacity="0.06" />
       {/* Temperature text */}
-      <text x="52" y="57" fill="#0d9488" fontSize="12" fontWeight="700" textAnchor="middle" fontFamily="monospace">24°</text>
+      <text x="52" y="57" fill="var(--color-status-teal-dark)" fontSize="12" fontWeight="700" textAnchor="middle" fontFamily="monospace">24°</text>
       {/* Dial */}
       <g id="ctrl-dial" transform="translate(52, 85)" style={{ transformOrigin: 'center' }}>
-        <circle cx="0" cy="0" r="12" stroke="#0d9488" strokeWidth="1.5" fill="none" />
-        <line x1="0" y1="0" x2="0" y2="-8" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="0" cy="0" r="12" stroke="var(--color-status-teal-dark)" strokeWidth="1.5" fill="none" />
+        <line x1="0" y1="0" x2="0" y2="-8" stroke="var(--color-status-danger)" strokeWidth="2" strokeLinecap="round" />
       </g>
       {/* Status dot */}
-      <circle id="ctrl-status" cx="78" cy="42" r="3.5" fill="#22c55e" />
+      <circle id="ctrl-status" cx="78" cy="42" r="3.5" fill="var(--color-status-success-bright)" />
       {/* Power wave */}
-      <path id="ctrl-wave" d="M10 90 Q20 78 30 90 Q40 102 50 90 Q60 78 70 90" stroke="#0d9488" strokeWidth="1.5" fill="none" strokeDasharray="8 4" opacity="0.3" />
+      <path id="ctrl-wave" d="M10 90 Q20 78 30 90 Q40 102 50 90 Q60 78 70 90" stroke="var(--color-status-teal-dark)" strokeWidth="1.5" fill="none" strokeDasharray="8 4" opacity="0.3" />
     </svg>
   );
 }

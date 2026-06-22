@@ -1,0 +1,7 @@
+{
+  "hook": {
+    "enabled": true,
+    "quiet": false,
+    "auditLog": ".impeccable/hook.ndjson"
+  }
+}

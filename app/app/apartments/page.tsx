@@ -22,7 +22,7 @@ export default function ApartmentsPage() {
         eyebrow="Portfolio · unidades"
         title="Una cartera navegable por ciudad, propietario, CUPS, reserva y riesgo."
         description="Vista densa para carteras grandes: filtros guardados, seleccion multiple, trazabilidad por propietario y estado de lectura."
-        action={<button className="min-h-11 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-5 text-sm font-semibold">Importar CUPS / facturas</button>}
+        action={<button className="min-h-11 rounded-[8px] px-5 text-sm font-semibold" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)', color: 'var(--color-slate)' }}>Importar CUPS / facturas</button>}
       />
 
       <div className="grid gap-5 xl:grid-cols-[1fr_320px]">
@@ -31,44 +31,44 @@ export default function ApartmentsPage() {
             <MetricTile label="Unidades" value={`${units.length}`} unit="activas" note="PMS, CUPS y propietario." />
             <MetricTile label="Ocupacion media" value="76" unit="%" note="Reservas actuales y futuras." />
             <MetricTile label="Coste trazado" value="384" unit="EUR" note="Mayo hasta ultima lectura." />
-            <MetricTile label="Sensores" value="68" unit="%" note="Shelly opcional por unidad." />
+            <MetricTile label="Sensores" value="68" unit="%" note="Sensor opcional por unidad." />
           </section>
 
-          <div className="flex flex-wrap gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-2">
+          <div className="flex flex-wrap gap-2 rounded-[8px] p-2" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
             {views.map((item) => (
               <button
                 key={item}
                 onClick={() => setView(item)}
-                className={`min-h-10 rounded-md px-3 text-sm font-semibold transition ${view === item ? 'bg-[var(--color-ink)] text-[var(--color-lime)]' : 'text-[var(--color-muted)] hover:bg-[var(--color-surface-alt)]'}`}
+                className={`min-h-10 rounded-[8px] px-3 text-sm font-semibold transition ${view === item ? 'bg-[var(--color-bark)] text-[var(--color-sheet-white)]' : 'text-[var(--color-muted-slate)] hover:bg-[var(--color-sheet-white)]'}`}
               >
                 {item}
               </button>
             ))}
           </div>
 
-          <section className="overflow-hidden rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]">
-            <div className="grid grid-cols-[36px_110px_1.2fr_1fr_1.35fr_90px_110px] gap-4 border-b border-[var(--color-border)] bg-[var(--color-surface-alt)] px-4 py-3 text-xs font-semibold uppercase text-[var(--color-muted)] max-lg:hidden">
+          <section className="overflow-hidden rounded-[16px]" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
+            <div className="grid grid-cols-[36px_110px_1.2fr_1fr_1.35fr_90px_110px] gap-4 px-4 py-3 text-xs font-semibold uppercase max-lg:hidden" style={{ borderBottom: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)', color: 'var(--color-muted-slate)' }}>
               <span></span><span>Codigo</span><span>Unidad</span><span>Propietario</span><span>CUPS</span><span>Lectura</span><span>Estado</span>
             </div>
             {filtered.map((unit) => (
-              <div key={unit.code} className="grid gap-3 border-b border-[var(--color-border)] px-4 py-4 last:border-b-0 lg:grid-cols-[36px_110px_1.2fr_1fr_1.35fr_90px_110px] lg:items-center">
-                <input type="checkbox" aria-label={`Seleccionar ${unit.code}`} className="h-4 w-4 accent-[var(--color-ink)]" />
-                <span className="font-mono text-sm font-semibold">{unit.code}</span>
+              <div key={unit.code} className="grid gap-3 px-4 py-4 last:border-b-0 lg:grid-cols-[36px_110px_1.2fr_1fr_1.35fr_90px_110px] lg:items-center" style={{ borderBottom: '1px solid var(--color-sage-mist)' }}>
+                <input type="checkbox" aria-label={`Seleccionar ${unit.code}`} className="h-4 w-4 accent-[var(--color-canopy)]" />
+                <span className="font-mono text-sm font-semibold" style={{ color: 'var(--color-bark)' }}>{unit.code}</span>
                 <div>
-                  <p className="text-sm font-semibold">{unit.name}</p>
-                  <p className="text-xs text-[var(--color-muted)]">{unit.city} · {unit.occupancy}% ocupacion · {unit.pms}</p>
+                  <p className="text-sm font-semibold" style={{ color: 'var(--color-bark)' }}>{unit.name}</p>
+                  <p className="text-xs" style={{ color: 'var(--color-muted-slate)' }}>{unit.city} · {unit.occupancy}% ocupacion · {unit.pms}</p>
                 </div>
-                <span className="text-sm text-[var(--color-muted)]">{unit.owner}</span>
-                <span className="font-mono text-xs text-[var(--color-muted)]">{unit.cups}</span>
-                <span className="font-mono text-xs text-[var(--color-muted)]">{unit.reading}</span>
+                <span className="text-sm" style={{ color: 'var(--color-slate)' }}>{unit.owner}</span>
+                <span className="font-mono text-xs" style={{ color: 'var(--color-muted-slate)' }}>{unit.cups}</span>
+                <span className="font-mono text-xs" style={{ color: 'var(--color-muted-slate)' }}>{unit.reading}</span>
                 <StatusBadge status={unit.status} />
               </div>
             ))}
           </section>
 
-          <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
-            <p className="text-sm text-[var(--color-muted)]">Bulk actions para {filtered.length} unidades visibles: asignar responsable, pedir factura, cambiar vista, exportar CSV.</p>
-            <button className="min-h-10 rounded-lg bg-[var(--color-ink)] px-4 text-sm font-semibold text-[var(--color-lime)]">Aplicar accion masiva</button>
+          <div className="flex flex-wrap items-center justify-between gap-3 rounded-[16px] p-4" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
+            <p className="text-sm" style={{ color: 'var(--color-muted-slate)' }}>Bulk actions para {filtered.length} unidades visibles: asignar responsable, pedir factura, cambiar vista, exportar CSV.</p>
+            <button className="min-h-10 rounded-[8px] px-4 text-sm font-semibold" style={{ background: 'var(--color-bark)', color: 'var(--color-sheet-white)' }}>Aplicar accion masiva</button>
           </div>
         </div>
         <ContextPanel />

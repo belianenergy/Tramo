@@ -13,22 +13,22 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { id: 'dashboard', label: 'Panel', href: '/app/dashboard', icon: '📊', color: 'var(--primary)' },
+  { id: 'dashboard', label: 'Panel', href: '/app/dashboard', icon: 'PA', color: 'var(--primary)' },
   {
-    id: 'fincas', label: 'Fincas', href: '/app/fincas', icon: '🏢', color: 'var(--fincas)',
+    id: 'fincas', label: 'Fincas', href: '/app/fincas', icon: 'FI', color: 'var(--fincas)',
     children: [
       { label: 'Comunidades', href: '/app/fincas' },
     ],
   },
   {
-    id: 'apartments', label: 'Apartamentos', href: '/app/apartments', icon: '🏠', color: 'var(--apartments)',
+    id: 'apartments', label: 'Apartamentos', href: '/app/apartments', icon: 'AP', color: 'var(--apartments)',
     children: [
       { label: 'Propiedades', href: '/app/apartments' },
     ],
   },
-  { id: 'arbitrage', label: 'Arbitraje', href: '/app/arbitrage', icon: '⚡', color: 'var(--arbitrage)' },
-  { id: 'advisor', label: 'Asesor IA', href: '/app/advisor', icon: '🤖', color: 'var(--advisor)' },
-  { id: 'config', label: 'Configuración', href: '/app/config', icon: '⚙️', color: 'var(--text-secondary)' },
+  { id: 'arbitrage', label: 'Arbitraje', href: '/app/arbitrage', icon: 'AR', color: 'var(--arbitrage)' },
+  { id: 'advisor', label: 'Asesor IA', href: '/app/advisor', icon: 'IA', color: 'var(--advisor)' },
+  { id: 'config', label: 'Configuración', href: '/app/config', icon: 'CF', color: 'var(--text-secondary)' },
 ]
 
 export default function Sidebar({ expanded }: { expanded: boolean }) {
@@ -41,7 +41,7 @@ export default function Sidebar({ expanded }: { expanded: boolean }) {
 
   return (
     <aside
-      className="fixed left-0 top-0 h-full z-50 flex flex-col bg-white border-r transition-all duration-300"
+      className="fixed left-0 top-0 h-full z-50 flex flex-col bg-white border-r transition-[width] duration-300"
       style={{
         width: expanded ? 260 : 64,
         borderColor: 'var(--border)',
@@ -51,7 +51,7 @@ export default function Sidebar({ expanded }: { expanded: boolean }) {
       <div className="h-16 flex items-center px-4 border-b" style={{ borderColor: 'var(--border)' }}>
         <div className="flex items-center gap-3">
           <div
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm font-bold shrink-0"
+            className="w-8 h-8 rounded-lg flex items-center justify-center text-[var(--color-sheet-white)] text-sm font-bold shrink-0"
             style={{ background: 'var(--primary)' }}
           >
             T

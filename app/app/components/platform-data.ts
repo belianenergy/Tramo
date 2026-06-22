@@ -10,16 +10,16 @@ export const units = [
     totalKwh: 428,
     outsideKwh: 42,
     cost: 87.4,
-    status: 'Critica',
+    status: 'Crítica',
     reading: '19:10',
     pms: 'Guesty',
     tariff: '2.0TD · P1 0,20 / P2 0,12 / P3 0,08',
   },
   {
     code: 'COR-007',
-    name: 'A Coruna Marina',
-    city: 'A Coruna',
-    owner: 'Lopez Gestion',
+    name: 'A Coruña Marina',
+    city: 'A Coruña',
+    owner: 'López Gestión',
     segment: 'Propietarios premium',
     cups: 'ES0022000001187309YA',
     occupancy: 71,
@@ -107,8 +107,8 @@ export const actions = [
     unit: 'SJO-021',
     type: 'Regla',
     priority: 'Alta',
-    title: 'Regla post-checkout no ejecuto termo',
-    evidence: 'salida 10:30 · termo activo hasta 12:06 · Shelly Pro 4PM online',
+    title: 'Regla post-checkout no ejecutó termo',
+    evidence: 'salida 10:30 · termo activo hasta 12:06 · sensor de circuito online',
     impact: 74,
     approval: 'Reintentar automatizacion y dejar aviso',
   },
@@ -127,7 +127,7 @@ export const actions = [
 export const dailyLoad = [42, 48, 51, 63, 58, 76, 71, 52, 38, 44, 67, 73, 69, 59, 47, 56, 61, 75, 82, 64, 55, 49, 62, 58]
 
 export const tariffBands = [
-  { label: 'P1 punta', price: '0,20 EUR/kWh', kwh: 612, color: 'var(--color-crimson)' },
-  { label: 'P2 llano', price: '0,12 EUR/kWh', kwh: 784, color: 'var(--color-amber)' },
-  { label: 'P3 valle', price: '0,08 EUR/kWh', kwh: 451, color: 'var(--color-blue)' },
+  { label: 'P1 punta', price: '0,20 EUR/kWh', kwh: 612, color: 'var(--color-canopy)' },
+  { label: 'P2 llano', price: '0,12 EUR/kWh', kwh: 784, color: 'var(--color-mint-dark)' },
+  { label: 'P3 valle', price: '0,08 EUR/kWh', kwh: 451, color: 'var(--color-canopy)' },
 ]

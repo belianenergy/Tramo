@@ -50,7 +50,7 @@ export default function BklitTestPage() {
   return (
     <div
       className="min-h-screen p-8"
-      style={{ background: "var(--color-paper, #EDEDE1)" }}
+      style={{ background: "var(--color-cream-paper, var(--color-cream-paper))" }}
     >
       <div className="mx-auto max-w-4xl space-y-8">
         <div>
@@ -77,7 +77,7 @@ export default function BklitTestPage() {
               maximumFractionDigits: 0,
             }}
             suffix=" kWh"
-            chartColor="#09CF58"
+            chartColor="var(--color-mint-pulse)"
           />
 
           <StatCard
@@ -91,7 +91,7 @@ export default function BklitTestPage() {
               currency: "EUR",
               maximumFractionDigits: 0,
             }}
-            chartColor="#5266eb"
+            chartColor="var(--color-orb-violet)"
           />
 
           <StatCard
@@ -105,7 +105,7 @@ export default function BklitTestPage() {
               maximumFractionDigits: 1,
             }}
             suffix=" kWh"
-            chartColor="#f59e0b"
+            chartColor="var(--color-status-warning-bright)"
           />
         </div>
 
@@ -115,14 +115,14 @@ export default function BklitTestPage() {
             <code>motion</code> (instaladas)
           </p>
           <p>
-            📊 Charts: <code>recharts</code> (xa no proxecto)
+            Charts: <code>recharts</code> (xa no proxecto)
           </p>
           <p>
-            🎨 Estilo: Tramo tokens — accent #09CF58, paper #EDEDE1, ink
-            #061F00
+            🎨 Estilo: Tramo tokens — accent var(--color-mint-pulse), paper var(--color-cream-paper), ink
+            var(--color-canopy-active)
           </p>
           <p>
-            ⚡ Componente: <code>components/stat-card.tsx</code> (autocontido,
+            Componente: <code>components/stat-card.tsx</code> (autocontido,
             sen dependencias de Bklit)
           </p>
         </div>

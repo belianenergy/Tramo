@@ -9,11 +9,11 @@ interface AlertPanelProps {
 export default function AlertPanel({ alerts }: AlertPanelProps) {
   const getIcon = (type: string) => {
     switch (type) {
-      case 'warning': return '⚠️'
-      case 'danger': return '🔴'
-      case 'success': return '✅'
-      case 'info': return 'ℹ️'
-      default: return '📋'
+      case 'warning': return '!'
+      case 'danger': return '×'
+      case 'success': return '✓'
+      case 'info': return 'i'
+      default: return '·'
     }
   }
 

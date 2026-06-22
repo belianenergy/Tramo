@@ -22,6 +22,39 @@
 - Fai commits despois de cada feature completada
 - Non toca ficheiros fora de `energyos/`
 
+## ⚙️ Regras de Control de Versións (OBRIGATORIO)
+
+### Regra de Ouro
+**ANTES de editar calquera ficheiro crítico** (`app/page.tsx`, `app/globals.css`, `app/app/*.tsx`, compoñentes compartidos):
+1. Executar `./scripts/git-backup.sh "backup pre-edit"`
+2. Ou manualmente: `git add -A && git commit -m "backup pre-edit YYYY-MM-DD HH:mm"`
+3. Só DESPOIS editar
+
+### Branches de experimentación
+- **Experimentos/alternativas visuais** → branch separada: `git checkout -b feature/<nome>`
+- **Non modificar `main`** con cambios experimentais
+- A landing principal (`app/page.tsx`) sempre reflicte a versión aprobada por Mauro
+
+### Frecuencia de commit
+- **Cada cambio funcional** → commit + push
+- **Cada sesión de traballo** → `./scripts/git-backup.sh "resumo do que se fixo"`
+- **Non acumular cambios** — repo pequeno, commits frecuentes
+
+### Push seguro
+- Usar `./scripts/git-backup.sh` que fai push con 3 reintentos
+- Se o push falla, o commit local está seguro — notificar a Mauro
+
+### Subagents
+- Cando se delega a Lura (codex-dev), incluír no task:
+  ```
+  Regras: 1) fai backup antes de editar (git commit), 2) non elimines capas visuais,
+  3) reporta que ficheiros tocaches
+  ```
+- Todo subagent debe documentar:
+  - Que ficheiros editou
+  - Que cambios fixo (engadiu/eliminou)
+  - Se fixo commit
+
 ### gstack-openclaw-ceo-review
 **Rol:** Revisor Estráxico
 **Cando se usa:** Antes de cada sprint ou cando Mauro presente unha idea nova para EnergyOS

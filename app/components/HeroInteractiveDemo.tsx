@@ -23,6 +23,10 @@ function cssVar(name: string) {
   return `var(${name})`;
 }
 
+function shouldReduceMotion() {
+  return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
 function perturb(bars: number[]): number[] {
   return bars.map(v => {
     const delta = (Math.random() - 0.5) * 0.25;
@@ -35,16 +39,20 @@ function PropertyBars({ bars, color }: { bars: number[]; color: string }) {
   const prevBars = useRef(bars);
 
   useEffect(() => {
-    bars.forEach((h, i) => {
-      const el = refs.current[i];
-      if (!el) return;
-      gsap.to(el, {
-        height: `${h * 100}%`,
-        duration: 1.2,
-        ease: 'power1.inOut',
+    const ctx = gsap.context(() => {
+      bars.forEach((h, i) => {
+        const el = refs.current[i];
+        if (!el) return;
+        gsap.to(el, {
+          scaleY: h,
+          transformOrigin: 'bottom center',
+          duration: shouldReduceMotion() ? 0 : 1.2,
+          ease: 'power1.inOut',
+        });
       });
     });
     prevBars.current = bars;
+    return () => ctx.revert();
   }, [bars]);
 
   return (
@@ -55,7 +63,8 @@ function PropertyBars({ bars, color }: { bars: number[]; color: string }) {
           ref={el => { refs.current[i] = el; }}
           className="flex-1 rounded-t-sm transition-[background-color,box-shadow] duration-300 cursor-pointer"
           style={{
-            height: '0%',
+            transform: 'scaleY(0)',
+            transformOrigin: 'bottom center',
             background: color,
           }}
           onMouseEnter={e => {
@@ -82,25 +91,30 @@ export default function HeroInteractiveDemo() {
   // Pulse the live indicator
   useEffect(() => {
     const dot = liveDotRef.current;
-    if (!dot) return;
-    gsap.to(dot, {
+    if (!dot || shouldReduceMotion()) return;
+    const tween = gsap.to(dot, {
       opacity: 0.3,
       duration: 0.8,
       repeat: -1,
       yoyo: true,
       ease: 'power1.inOut',
     });
+    return () => { tween.kill(); };
   }, []);
 
   // Simulate live data updates
   useEffect(() => {
+    if (shouldReduceMotion()) return;
     const interval = setInterval(() => {
       setProperties(prev =>
-        prev.map(p => ({
-          ...p,
-          bars: perturb(p.bars),
-          consumption: Math.round((p.bars.reduce((a, b) => a + b, 0) * 2 + (Math.random() - 0.5) * 0.5) * 10) / 10,
-        }))
+        prev.map(p => {
+          const nextBars = perturb(p.bars);
+          return {
+            ...p,
+            bars: nextBars,
+            consumption: Math.round((nextBars.reduce((a, b) => a + b, 0) * 2 + (Math.random() - 0.5) * 0.5) * 10) / 10,
+          };
+        })
       );
     }, 2500);
     return () => clearInterval(interval);
@@ -109,32 +123,35 @@ export default function HeroInteractiveDemo() {
   // Entrance animation
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
-    gsap.from(container.querySelectorAll('.demo-row'), {
-      opacity: 0,
-      x: -20,
-      duration: 0.5,
-      stagger: 0.1,
-      delay: 0.3,
-      ease: 'power2.out',
-    });
+    if (!container || shouldReduceMotion()) return;
+    const ctx = gsap.context(() => {
+      gsap.from(container.querySelectorAll('.demo-row'), {
+        opacity: 0,
+        x: -20,
+        duration: 0.5,
+        stagger: 0.1,
+        delay: 0.3,
+        ease: 'power2.out',
+      });
+    }, container);
+    return () => ctx.revert();
   }, []);
 
   const statusColor = (status: string) => {
     switch (status) {
       case 'Ocupado': return cssVar('--color-accent');
-      case 'Vacío': return cssVar('--color-warning');
-      case 'Limpieza': return cssVar('--color-muted');
-      default: return cssVar('--color-muted');
+      case 'Vacío': return cssVar('--color-muted-slate');
+      case 'Limpieza': return cssVar('--color-slate');
+      default: return cssVar('--color-slate');
     }
   };
 
   const barColor = (index: number) => {
     const colors = [
       cssVar('--color-accent-soft'),
-      '#B8E6C8',
-      '#8DD9A8',
-      cssVar('--color-accent'),
+      cssVar('--color-canopy'),
+      cssVar('--color-mint-dark'),
+      cssVar('--color-orb-violet'),
     ];
     return colors[index % colors.length];
   };
@@ -145,7 +162,7 @@ export default function HeroInteractiveDemo() {
   return (
     <div
       ref={containerRef}
-      className="rv mx-auto mt-12 max-w-5xl rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 shadow-sm md:p-7"
+      className="rv mx-auto mt-12 max-w-5xl rounded-2xl border border-[var(--color-sage-mist)] bg-[var(--color-cream-paper)] p-5 md:p-7"
     >
       {/* Header */}
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
@@ -161,11 +178,11 @@ export default function HeroInteractiveDemo() {
         </div>
         <div className="flex items-center gap-4">
           <div className="text-right">
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--color-muted)]">Total activo</p>
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--color-muted-slate)]">Total activo</p>
             <p className="font-mono text-lg font-semibold text-[var(--color-ink)] tabular-nums">{totalConsumption.toFixed(1)} kWh</p>
           </div>
           <div className="text-right">
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--color-muted)]">Pico conjunto</p>
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--color-muted-slate)]">Pico conjunto</p>
             <p className="font-mono text-lg font-semibold text-[var(--color-ink)] tabular-nums">{totalPeak.toFixed(1)} kW</p>
           </div>
         </div>
@@ -176,13 +193,13 @@ export default function HeroInteractiveDemo() {
         {properties.map((prop, index) => (
           <div
             key={prop.id}
-            className="demo-row grid grid-cols-[1fr_1.5fr_80px] items-center gap-4 rounded-xl border border-[var(--color-border)] px-4 py-3 transition-[border-color,box-shadow] duration-300 hover:border-[var(--color-accent)] hover:shadow-[0_0_14px_rgba(9,207,88,0.12)] md:grid-cols-[1fr_2fr_90px]"
+            className="demo-row grid grid-cols-[1fr_1.5fr_80px] items-center gap-4 rounded-[16px] border border-[var(--color-sage-mist)] px-4 py-3 transition-[border-color,box-shadow] duration-300 hover:border-[var(--color-canopy)] md:grid-cols-[1fr_2fr_90px]"
           >
             {/* Property info */}
             <div className="min-w-0">
               <p className="truncate font-display text-sm font-semibold text-[var(--color-ink)]">{prop.name}</p>
               <div className="mt-1 flex items-center gap-2">
-                <span className="font-mono text-[10px] font-semibold text-[var(--color-muted)]">{prop.id}</span>
+                <span className="font-mono text-[10px] font-semibold text-[var(--color-muted-slate)]">{prop.id}</span>
                 <span
                   className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 font-mono text-[10px] font-semibold"
                   style={{
@@ -201,15 +218,15 @@ export default function HeroInteractiveDemo() {
             {/* Current consumption */}
             <div className="text-right">
               <p className="font-mono text-sm font-semibold tabular-nums text-[var(--color-ink)]">{prop.consumption.toFixed(1)}</p>
-              <p className="font-mono text-[10px] text-[var(--color-muted)]">kWh</p>
+              <p className="font-mono text-[10px] text-[var(--color-muted-slate)]">kWh</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* Footer hint */}
-      <p className="mt-4 text-center font-mono text-[10px] text-[var(--color-muted)]">
-        Pasa el ratón sobre las barras — datos simulados actualizados cada 2,5 s
+      <p className="mt-4 text-center font-mono text-[10px] text-[var(--color-muted-slate)]">
+        Datos simulados del piloto — pasa el ratón sobre las barras para inspeccionar actividad
       </p>
     </div>
   );

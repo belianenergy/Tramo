@@ -14,9 +14,15 @@ interface ConsumptionChartProps {
   label?: string
 }
 
-export default function ConsumptionChart({ data, height = 300, color = '#10b981', label = 'kWh' }: ConsumptionChartProps) {
+const TOKEN_GRID = 'var(--color-chart-grid)'
+const TOKEN_TICK = 'var(--color-chart-tick)'
+const TOKEN_PAPER = 'var(--color-cream-paper)'
+const TOKEN_RULE = 'var(--color-sage-mist)'
+const TOKEN_INK = 'var(--color-ink)'
+
+export default function ConsumptionChart({ data, height = 300, color = 'var(--color-canopy)', label = 'kWh' }: ConsumptionChartProps) {
   return (
-    <div className="bg-white rounded-xl border p-5" style={{ borderColor: 'var(--border)' }}>
+    <div className="rounded-xl p-5" style={{ borderColor: TOKEN_RULE, background: TOKEN_PAPER, border: `1px solid ${TOKEN_RULE}` }}>
       <ResponsiveContainer width="100%" height={height}>
         <AreaChart data={data} margin={{ top: 5, right: 10, left: 10, bottom: 5 }}>
           <defs>
@@ -25,28 +31,29 @@ export default function ConsumptionChart({ data, height = 300, color = '#10b981'
               <stop offset="95%" stopColor={color} stopOpacity={0} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#E0E0E0" />
+          <CartesianGrid strokeDasharray="3 3" stroke={TOKEN_GRID} />
           <XAxis
             dataKey="label"
-            tick={{ fontSize: 12, fill: '#757575' }}
-            axisLine={{ stroke: '#E0E0E0' }}
+            tick={{ fontSize: 12, fill: TOKEN_TICK }}
+            axisLine={{ stroke: TOKEN_GRID }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 12, fill: '#757575', fontFamily: 'JetBrains Mono' }}
+            tick={{ fontSize: 12, fill: TOKEN_TICK, fontFamily: 'var(--font-mono)' }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) => `${(v / 1000).toFixed(0)}k`}
           />
           <Tooltip
             contentStyle={{
-              background: '#FFFFFF',
-              border: '1px solid #E0E0E0',
+              background: TOKEN_PAPER,
+              border: `1px solid ${TOKEN_RULE}`,
               borderRadius: 8,
               fontSize: 13,
-              boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+              color: TOKEN_INK,
             }}
             formatter={(value: number) => [`${value.toLocaleString('es-ES')} ${label}`, label]}
+            labelStyle={{ fontWeight: 500, color: TOKEN_INK }}
           />
           <Area
             type="monotone"
@@ -55,7 +62,7 @@ export default function ConsumptionChart({ data, height = 300, color = '#10b981'
             strokeWidth={2}
             fill="url(#colorValue)"
             dot={{ r: 3, fill: color, strokeWidth: 0 }}
-            activeDot={{ r: 5, fill: color, stroke: '#fff', strokeWidth: 2 }}
+            activeDot={{ r: 5, fill: color, stroke: TOKEN_PAPER, strokeWidth: 2 }}
           />
         </AreaChart>
       </ResponsiveContainer>

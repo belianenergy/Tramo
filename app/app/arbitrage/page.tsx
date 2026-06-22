@@ -32,26 +32,26 @@ export default function ArbitragePage() {
     <AppShell>
       <PageHeader
         eyebrow="Arbitrage · premium line"
-        title="Bateria y OMIE como capa avanzada para edificios con masa critica."
-        description="Simulacion prudente de Huawei Luna 10kWh: cargar en valle, descargar en punta y repartir el beneficio entre unidades del mismo edificio."
-        action={<button className="min-h-11 rounded-lg bg-[var(--color-ink)] px-5 text-sm font-semibold text-[var(--color-lime)]">Crear escenario premium</button>}
+        title="Batería y OMIE como capa avanzada para edificios con masa crítica."
+        description="Simulación prudente de una batería opcional de 10 kWh: cargar en valle, descargar en punta y repartir el beneficio entre unidades del mismo edificio."
+        action={<button className="min-h-11 rounded-[8px] px-5 text-sm font-semibold" style={{ background: 'var(--color-bark)', color: 'var(--color-sheet-white)' }}>Crear escenario premium</button>}
       />
 
       <div className="grid gap-5 xl:grid-cols-[1fr_320px]">
         <div className="space-y-5">
           <section className="grid gap-3 md:grid-cols-4">
             <MetricTile label="Spread OMIE" value={simulation.spread.toFixed(3)} unit="EUR/kWh" note="Diferencia valle-punta hoy." />
-            <MetricTile label="Bateria base" value={`${capacity}`} unit="kWh" note="Huawei Luna como referencia." />
+            <MetricTile label="Batería base" value={`${capacity}`} unit="kWh" note="Batería opcional como referencia." />
             <MetricTile label="Unidades servidas" value={`${sharedUnits}`} unit="apt" note="Edificio o cluster cercano." />
             <MetricTile label="Retorno prudente" value={`${roi}`} unit="años" note="Sin prometer ahorro garantizado." />
           </section>
 
           <section className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
-            <article className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+            <article className="rounded-[16px] p-5" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h2 className="font-display text-xl font-semibold">Curva OMIE 24h</h2>
-                  <p className="mt-1 text-sm text-[var(--color-muted)]">Pregunta: hay spread suficiente para plantear arbitraje?</p>
+                  <h2 className="font-display text-xl font-light" style={{ letterSpacing: '-0.02em', color: 'var(--color-ink)' }}>Curva OMIE 24h</h2>
+                  <p className="mt-1 text-sm" style={{ color: 'var(--color-slate)' }}>Pregunta: hay spread suficiente para plantear arbitraje?</p>
                 </div>
                 <StatusBadge status="Premium" />
               </div>
@@ -64,31 +64,31 @@ export default function ArbitragePage() {
                   ['Punta', simulation.high.toFixed(3), 'EUR/kWh'],
                   ['Dia', simulation.daily.toFixed(2), 'EUR margen'],
                 ].map(([label, value, unit]) => (
-                  <div key={label} className="rounded-md border border-[var(--color-border)] bg-[var(--color-surface-alt)] p-3">
-                    <p className="text-xs font-semibold text-[var(--color-muted)]">{label}</p>
-                    <p className="mt-2 font-mono text-xl font-semibold">{value}</p>
-                    <p className="font-mono text-[0.68rem] text-[var(--color-soft)]">{unit}</p>
+                  <div key={label} className="rounded-[8px] p-3" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-sheet-white)' }}>
+                    <p className="text-xs font-semibold" style={{ color: 'var(--color-muted-slate)' }}>{label}</p>
+                    <p className="mt-2 font-mono text-xl font-semibold" style={{ color: 'var(--color-bark)' }}>{value}</p>
+                    <p className="font-mono text-[0.68rem]" style={{ color: 'var(--color-muted-slate)' }}>{unit}</p>
                   </div>
                 ))}
               </div>
             </article>
 
-            <article className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
-              <h2 className="font-display text-xl font-semibold">Escenario</h2>
+            <article className="rounded-[16px] p-5" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
+              <h2 className="font-display text-xl font-light" style={{ letterSpacing: '-0.02em', color: 'var(--color-ink)' }}>Escenario</h2>
               <div className="mt-5 space-y-6">
                 <label className="block">
                   <span className="flex justify-between text-sm font-semibold"><span>Capacidad</span><span className="font-mono">{capacity} kWh</span></span>
-                  <input className="mt-3 w-full accent-[var(--color-ink)]" type="range" min="10" max="40" value={capacity} onChange={(event) => setCapacity(Number(event.target.value))} />
+                  <input className="mt-3 w-full accent-[var(--color-canopy)]" type="range" min="10" max="40" value={capacity} onChange={(event) => setCapacity(Number(event.target.value))} />
                 </label>
                 <label className="block">
                   <span className="flex justify-between text-sm font-semibold"><span>Unidades compartidas</span><span className="font-mono">{sharedUnits}</span></span>
-                  <input className="mt-3 w-full accent-[var(--color-ink)]" type="range" min="8" max="60" value={sharedUnits} onChange={(event) => setSharedUnits(Number(event.target.value))} />
+                  <input className="mt-3 w-full accent-[var(--color-canopy)]" type="range" min="8" max="60" value={sharedUnits} onChange={(event) => setSharedUnits(Number(event.target.value))} />
                 </label>
               </div>
-              <div className="mt-6 rounded-lg bg-[var(--color-ink)] p-4 text-[var(--color-paper)]">
-                <p className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-lime)]">Capex estimado</p>
-                <p className="mt-2 font-mono text-3xl font-semibold">{simulation.capex.toLocaleString('es-ES')} EUR</p>
-                <p className="mt-2 text-xs leading-5 text-white/55">Incluye referencia Huawei Luna 10kWh desde 5.500 EUR, sin cerrar instalacion real.</p>
+              <div className="mt-6 rounded-[8px] p-4" style={{ background: 'var(--color-bark)' }}>
+                <p className="font-mono text-xs uppercase tracking-[0.14em]" style={{ color: 'var(--color-mint-pulse)' }}>Capex estimado</p>
+                <p className="mt-2 font-mono text-3xl font-semibold" style={{ color: 'var(--color-sheet-white)' }}>{simulation.capex.toLocaleString('es-ES')} EUR</p>
+                <p className="mt-2 text-xs leading-5" style={{ color: 'var(--color-canopy-border)' }}>Incluye referencia genérica de batería 10 kWh desde 5.500 EUR, sin cerrar instalación real.</p>
               </div>
             </article>
           </section>
@@ -99,10 +99,10 @@ export default function ArbitragePage() {
               [TrendingUp, 'Regla de descarga', 'Descargar en P1 para cubrir termo, climatizacion o cargas comunes.'],
               [Factory, 'Gobernanza', 'Solo edificios con datos estables, permisos y ROI defendible ante propietario.'],
             ].map(([Icon, title, copy]) => (
-              <article key={title as string} className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
-                <Icon className="h-5 w-5 text-[var(--color-accent-ink)]" />
-                <h2 className="mt-4 font-display text-lg font-semibold">{title as string}</h2>
-                <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">{copy as string}</p>
+              <article key={title as string} className="rounded-[16px] p-5" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
+                <Icon className="h-5 w-5" style={{ color: 'var(--color-canopy)' }} />
+                <h2 className="mt-4 font-display text-lg font-light" style={{ letterSpacing: '-0.02em', color: 'var(--color-bark)' }}>{title as string}</h2>
+                <p className="mt-2 text-sm leading-6" style={{ color: 'var(--color-slate)' }}>{copy as string}</p>
               </article>
             ))}
           </section>

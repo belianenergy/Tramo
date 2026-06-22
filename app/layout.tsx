@@ -1,16 +1,16 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
-import { Geist } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
-const geist = Geist({ subsets: ['latin'], variable: '--font-display', display: 'swap' })
-const jetbrains = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains', display: 'swap' })
-
 export const metadata: Metadata = {
+  metadataBase: new URL('https://tramo.energy'),
   title: 'Tramo — Control energético para carteras turísticas',
   description:
     'Sistema de atribución de consumo por reserva para gestores profesionales de apartamentos turísticos. Detección fuera de estancia, recomendación de potencia e informes por propietario.',
+  icons: {
+    icon: [{ url: '/favicon.ico', sizes: 'any' }, { url: '/favicon.svg', type: 'image/svg+xml' }],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/manifest.webmanifest',
   keywords: [
     'gestión energética alojamientos turísticos',
     'software energía apartamentos turísticos',
@@ -29,9 +29,16 @@ export const metadata: Metadata = {
       'Atribuye cada kWh a la reserva que lo generó. Detecta consumo fuera de estancia, recomienda ajustes de potencia y genera informes por propietario.',
     type: 'website',
     locale: 'es_ES',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Tramo — Control energético para carteras turísticas' }],
   },
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://tramo.energy' },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tramo — Control energético para carteras turísticas',
+    description: 'Sistema de atribución de consumo por reserva para gestores de apartamentos turísticos.',
+    images: ['/opengraph-image'],
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -59,7 +66,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className={`${inter.variable} ${geist.variable} ${jetbrains.variable} antialiased min-h-screen bg-background`}>{children}</body>
+      <body className="antialiased min-h-screen" style={{ background: 'var(--color-cream-paper)' }}>
+        <a href="#main-content" className="skip-link">Ir al contenido</a>
+        {children}
+      </body>
     </html>
   )
 }
