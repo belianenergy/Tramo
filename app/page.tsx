@@ -29,7 +29,7 @@ function Section({ children, className = '', id, refProp, style }: {
   refProp?: React.Ref<HTMLElement>; style?: React.CSSProperties;
 }) {
   return (
-    <section ref={refProp} id={id} data-gsap-section className={`relative px-5 py-10 md:py-20 ${className}`} style={style}>
+    <section ref={refProp} id={id} data-gsap-section className={`relative px-[var(--grid-gutter)] py-10 md:py-20 ${className}`} style={style}>
       <div className="relative mx-auto" style={{ maxWidth: 'var(--page-max)' }}>{children}</div>
     </section>
   );
@@ -74,7 +74,7 @@ function Nav() {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <nav className="sticky top-0 z-50 h-[64px] flex items-center px-5 bg-[var(--color-bg)] border-b border-[var(--color-border)]"
+      <nav className="sticky top-0 z-50 h-[64px] flex items-center px-[var(--grid-gutter)] bg-[var(--color-bg)] border-b border-[var(--color-border)]"
         aria-label="Navegación principal">
         <div className="mx-auto flex w-full items-center justify-between" style={{ maxWidth: 'var(--page-max)' }}>
           <a href="/" className="font-display text-[20px] font-medium text-[var(--color-primary)]">Tramo</a>
@@ -103,7 +103,7 @@ function Nav() {
             </a>
           </div>
           <button type="button" onClick={() => setOpen(true)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-[8px] border border-[var(--color-border)] lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-[8px] border border-[var(--color-border)] lg:hidden"
             aria-label="Abrir menú">
             <Menu className="h-5 w-5 text-[var(--color-dark)]" />
           </button>
@@ -212,7 +212,7 @@ function PlatformHeroVisual() {
       <div data-hero-scene className="relative rounded-[32px] bg-transparent">
         <div className="relative overflow-hidden rounded-[32px]">
           <Image
-            src="/images/hero-apartment-energy.png"
+            src="/images/hero-apartment-energy.webp"
             alt="Apartamento turístico 3D con dispositivos de consumo conectados a Tramo"
             width={1449}
             height={1086}
@@ -263,22 +263,20 @@ function PlatformHeroVisual() {
           </div>
           <p className="relative z-10 mt-2 inline-flex rounded-full bg-white/72 px-1.5 py-0.5 font-mono text-[8px] font-semibold uppercase tracking-[0.08em] sm:hidden" style={{ color: selected.hover }}>{selected.label}</p>
           <p className="mt-2 hidden text-[11px] font-medium leading-snug text-[var(--color-dark)] md:block md:text-[12px]">{selected.note}</p>
-          <div className="mt-2 flex h-9 items-end gap-1 overflow-hidden sm:mt-3 sm:h-12 sm:gap-1.5" aria-hidden="true">
+          <div className="mt-2 flex h-11 items-end gap-1 overflow-hidden sm:mt-3 sm:h-12 sm:gap-1.5" aria-hidden="true">
             {heroAppliances.map((bar, i) => (
-              <button
+              <div
                 key={bar.key}
-                type="button"
+                role="presentation"
                 onMouseEnter={() => setActive(i)}
-                onFocus={() => setActive(i)}
                 onPointerDown={(event) => { event.preventDefault(); setActive(i); }}
-                className="hero-platform-bar flex flex-1 items-end rounded-t-[8px] outline-none transition-transform duration-200 hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
-                aria-label={`${bar.label}: ${bar.value} kWh accionables`}
+                className="hero-platform-bar flex min-h-11 flex-1 items-end rounded-t-[8px] transition-transform duration-200 hover:-translate-y-1"
               >
                 <span
                   className="hero-mini-bar block w-full rounded-t-[8px] rounded-b-[3px] transition-colors duration-300"
                   style={{ height: `${Math.min(36, Math.max(10, bar.value * 0.68))}px`, background: i === active ? bar.hover : 'rgba(15,123,90,0.32)' }}
                 />
-              </button>
+              </div>
             ))}
           </div>
         </div>
@@ -325,7 +323,7 @@ function Hero() {
 
   return (
     <section ref={ref} id="hero" data-gsap-section className="relative overflow-hidden px-5 pt-6 pb-6 md:pt-10 md:pb-10 bg-[var(--color-bg)]">
-      <div className="relative mx-auto max-w-full overflow-x-clip" style={{ maxWidth: 'var(--page-max)' }}>
+      <div className="relative mx-auto max-w-full overflow-x-clip" style={{ maxWidth: 'var(--page-max)', columnGap: 'var(--grid-gutter)' }}>
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_1fr]">
           <div>
             <h1 data-anim="hero-up"
@@ -745,7 +743,7 @@ Apartamentos: ${data.apartments || ''}`,
             {status === 'sending' ? 'Enviando...' : 'Solicitar diagnóstico'}
             <ArrowRight className="h-4 w-4" />
           </button>
-          <p className="text-center text-[12px]" style={{ color: 'rgba(255,255,255,0.55)' }}>
+          <p className="text-center text-[12px]" style={{ color: 'rgba(255,255,255,0.82)' }}>
             Sin compromiso. Tus datos solo se usan para preparar el diagnóstico.
           </p>
         </form>
@@ -981,11 +979,11 @@ function Footer() {
     ['FAQ', '#faq'],
   ];
   return (
-    <footer data-gsap-section className="px-5 py-12" style={{ background: '#0a5e45', color: 'white' }}>
+    <footer data-gsap-section className="px-5 py-12 bg-[var(--color-primary-hover)] text-white">
       <div className="mx-auto" style={{ maxWidth: 'var(--page-max)' }}>
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end">
           <div>
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em]" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em]" style={{ color: 'rgba(255,255,255,0.76)' }}>
               Tramo · Energy margin operations
             </p>
             <p className="mt-4 font-display text-[clamp(1.6rem,3.5vw,2.8rem)] font-light leading-[1.08] max-w-[18ch]"
@@ -999,10 +997,10 @@ function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-white/15">
-          <p className="text-[13px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <p className="text-[13px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.82)' }}>
             Tramo es una herramienta de diagnóstico y recomendación. Las cifras de ahorro son estimaciones basadas en datos de consumo y tarifas reales durante el piloto. El ahorro efectivo depende de la ocupación, tarifa contratada y capacidad de actuación del gestor. No se garantizan resultados específicos. Los precios son orientativos antes de impuestos y pueden variar según el tamaño de cartera y necesidades de integración.
           </p>
-          <p className="mt-3 text-[13px]" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <p className="mt-3 text-[13px]" style={{ color: 'rgba(255,255,255,0.82)' }}>
             Los sensores y baterías son capacidades opcionales recomendadas solo cuando el diagnóstico previo lo justifica. Las cifras de coste de hardware (~300 €/apto para sensores, ~5.500 € para batería de 10 kWh) son referencias de mercado sujetas a disponibilidad y configuración.
           </p>
         </div>
@@ -1011,10 +1009,10 @@ function Footer() {
           <nav aria-label="Enlaces secundarios" className="flex flex-wrap items-center gap-x-5 gap-y-2">
             {links.map(([label, href]) => (
               <a key={href} href={href}
-                className="text-[13px] hover:opacity-70 transition-opacity duration-200">{label}</a>
+                className="inline-flex min-h-[44px] items-center text-[13px] hover:opacity-80 transition-opacity duration-200">{label}</a>
             ))}
           </nav>
-          <p className="text-[12px]" style={{ color: 'rgba(255,255,255,0.4)' }}>
+          <p className="text-[12px]" style={{ color: 'rgba(255,255,255,0.70)' }}>
             © {new Date().getFullYear()} Tramo
           </p>
         </div>

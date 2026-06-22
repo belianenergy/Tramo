@@ -1,5 +1,18 @@
 import type { Metadata } from 'next'
+import { DM_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+})
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://tramo.energy'),
@@ -66,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className="antialiased min-h-screen" style={{ background: 'var(--color-cream-paper)' }}>
+      <body className={`${dmSans.variable} ${jetBrainsMono.variable} antialiased min-h-screen`} style={{ background: 'var(--color-cream-paper)' }}>
         <a href="#main-content" className="skip-link">Ir al contenido</a>
         {children}
       </body>

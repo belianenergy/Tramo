@@ -16,3 +16,4 @@ stitch-*.json
 .next.stale-*
 .tmp/
 test-results/
+backups/

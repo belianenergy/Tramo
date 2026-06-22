@@ -3,9 +3,7 @@
  * ReflexAI/Linear-inspired editorial-industrial
  */
 
-/* Font loading — DM Sans (display) + JetBrains Mono (data) */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@100..800&display=swap');
-
+/* Font loading handled by next/font in app/layout.tsx */
 @import "tailwindcss";
 @import "shadcn/tailwind.css";
 
@@ -126,9 +124,9 @@
   --gradient-isometric: linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 100%);
 
   /* ── Typography ── */
-  --font-display: "DM Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-dm-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-body:    system-ui, "Segoe UI", "Aptos", sans-serif;
-  --font-mono:    "JetBrains Mono", "Cascadia Mono", ui-monospace, monospace;
+  --font-mono:    var(--font-jetbrains-mono), "Cascadia Mono", ui-monospace, monospace;
 
   /* ── Spacing ── */
   --space-3xs: 0.5rem;
