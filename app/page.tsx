@@ -44,7 +44,7 @@ function GridOverlay() {
       <button
         type="button"
         onClick={() => setVisible((current) => !current)}
-        className="fixed bottom-3 right-3 z-[9999] inline-flex min-h-11 min-w-11 rounded-[8px] border border-[var(--color-border)] bg-white/80 px-3 font-mono text-[14px] font-semibold text-[var(--color-gray)] opacity-25 backdrop-blur transition-colors hover:text-[var(--color-primary)] focus:opacity-100 active:opacity-100 md:bottom-24 md:left-4 md:right-auto md:bg-white/90 md:opacity-100 items-center justify-center"
+        className="fixed bottom-3 right-3 z-[9999] hidden min-h-11 min-w-11 rounded-[8px] border border-[var(--color-border)] bg-white/80 px-3 font-mono text-[14px] font-semibold text-[var(--color-gray)] opacity-25 backdrop-blur transition-colors hover:text-[var(--color-primary)] focus:opacity-100 active:opacity-100 md:bottom-24 md:left-4 md:right-auto md:inline-flex md:bg-white/90 md:opacity-100 items-center justify-center"
         aria-pressed={visible}
         aria-label="Mostrar u ocultar retícula de 12 columnas y baseline"
       >
@@ -76,7 +76,7 @@ function SectionHeading({ children, className = '', eyebrow }: {
         </p>
       )}
       <h2 className="font-display text-[clamp(1.8rem,3.5vw,2.6rem)] font-light leading-[1.12] text-[var(--color-dark)]"
-        style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0 }}>
+        style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0, overflowWrap: 'anywhere' }}>
         {children}
       </h2>
     </div>
@@ -220,116 +220,119 @@ function PlatformHeroVisual() {
     if (!ref.current) return;
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-      tl.from('[data-hero-scene]', { scale: 0.985, opacity: 0.92, duration: 0.9 });
-      tl.from('[data-consumption-symbol]', { y: 16, scale: 0.72, opacity: 0, stagger: 0.07, duration: 0.55 }, '-=0.45');
-      tl.from('[data-platform-overlay]', { y: 18, opacity: 0, stagger: 0.08, duration: 0.6 }, '-=0.35');
-      tl.from('.hero-mini-bar', { scaleY: 0, transformOrigin: 'bottom', stagger: 0.05, duration: 0.45 }, '-=0.4');
-      gsap.to('[data-consumption-symbol]', {
-        y: -5,
-        duration: 1.8,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-        stagger: { each: 0.16, from: 'random' },
-      });
+      tl.from('[data-hero-scene]', { y: 14, scale: 0.985, duration: 0.75 });
+      tl.from('[data-consumption-symbol]', { y: 12, scale: 0.8, stagger: 0.06, duration: 0.45 }, '-=0.35');
+      tl.from('[data-platform-overlay]', { y: 14, duration: 0.5 }, '-=0.25');
     }, ref);
     return () => ctx.revert();
   }, { scope: ref });
 
+  const loopSteps = [
+    ['01', 'Reserva', 'Checkout A-14 confirmado'],
+    ['02', 'Datadis', `${selected.value} kWh sin estancia`],
+    ['03', 'Regla', `Acción: ${selected.label.toLowerCase()}`],
+    ['04', 'Informe', 'Explicación para propietario'],
+  ];
+
   return (
-    <div ref={ref} className="relative w-full max-w-[660px] pt-4 pb-16 sm:pt-10 sm:pb-20">
-      <div className="absolute -inset-6 -z-10 rounded-[42px] border border-[var(--color-border-light)] bg-white/55" />
-      <div data-hero-scene className="relative rounded-[32px] bg-transparent">
-        <div className="relative overflow-hidden rounded-[32px]">
-          <Image
-            src="/images/hero-apartment-energy.webp"
-            alt="Apartamento turístico 3D con dispositivos de consumo conectados a Tramo"
-            width={1449}
-            height={1086}
-            sizes="(min-width: 1024px) 660px, 100vw"
-            priority
-            className="block object-cover"
-            style={{ width: '100%', height: 'auto', aspectRatio: '4 / 3', objectFit: 'cover' }}
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0)_44%,rgba(255,255,255,0.28)_100%)]" />
+    <div ref={ref} className="relative mx-auto w-full min-w-0" style={{ maxWidth: 'min(700px, calc(100vw - 32px))' }}>
+      <div data-hero-scene className="min-w-0 overflow-hidden rounded-[24px] border border-[var(--color-border)] bg-[var(--color-dark)] p-3 shadow-[0_26px_80px_-42px_rgba(15,23,42,0.85)] md:rounded-[28px] md:p-4">
+        <div className="flex min-w-0 items-center justify-between gap-3 border-b border-white/14 pb-3 text-white">
+          <div className="min-w-0">
+            <p className="max-w-[24ch] font-mono text-[14px] font-semibold uppercase tracking-[0.06em] text-white/70">Demo operativa · cartera real</p>
+            <p className="mt-1 max-w-[24ch] font-display text-[19px] font-light leading-tight text-white md:text-[24px]">Apto A-14 · checkout terminado</p>
+          </div>
+          <div className="hidden shrink-0 rounded-full bg-white px-3 py-2 font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-[var(--color-dark)] sm:inline-flex">
+            11:42 · P1
+          </div>
         </div>
 
-        {heroAppliances.map((item, i) => {
-          const Icon = item.icon;
-          const isActive = i === active;
-          const color = isActive ? item.hover : item.color;
-          return (
-            <button
-              key={item.key}
-              type="button"
-              data-consumption-symbol
-              onMouseEnter={() => setActive(i)}
-              onFocus={() => setActive(i)}
-              className="group absolute z-30 -translate-x-1/2 -translate-y-1/2 rounded-full outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-primary)]"
-              style={{ left: `${item.x}%`, top: `${item.y}%` }}
-              aria-label={`${item.label}: ${item.note}`}
-            >
-              <span
-                className="grid h-11 w-11 place-items-center rounded-full border border-white/75 bg-white/84 backdrop-blur-md transition-all duration-300 group-hover:scale-105 md:h-12 md:w-12"
-                style={{ color, boxShadow: isActive ? `0 0 0 6px ${color}22, 0 18px 42px -20px rgba(15,23,42,0.8)` : undefined }}
-              >
-                <Icon className="h-5 w-5" strokeWidth={2.2} />
-              </span>
-              <span className="absolute left-1/2 top-full mt-1 hidden -translate-x-1/2 rounded-full bg-white/82 px-2 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-[var(--color-dark)] backdrop-blur-md lg:block">
-                {item.label}
-              </span>
-            </button>
-          );
-        })}
-
-        <div data-platform-overlay className="absolute -bottom-[76px] left-4 z-20 w-[34%] min-w-[132px] rounded-[12px] border border-white/75 bg-white/78 p-2 backdrop-blur-xl sm:-bottom-[82px] sm:left-5 sm:w-[28%] sm:min-w-[148px] sm:rounded-[14px] sm:bg-white/82 sm:p-3">
-          <div className="flex items-start justify-between gap-2 sm:gap-4">
-            <div>
-              <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.12em] text-[var(--color-gray)]">Tramo live</p>
-              <p className="mt-1 whitespace-nowrap font-display text-[18px] font-light leading-none text-[var(--color-dark)] tabular-nums md:text-[24px]">{selected.cost}</p>
+        <div className="mt-3 grid min-w-0 gap-3 lg:grid-cols-[0.88fr_1.12fr]">
+          <div className="relative min-h-[220px] overflow-hidden rounded-[18px] border border-white/12 bg-white sm:min-h-[260px] md:min-h-[340px] md:rounded-[22px]">
+            <Image
+              src="/images/hero-apartment-energy.webp"
+              alt="Apartamento turístico con puntos de consumo detectados por Tramo"
+              width={1449}
+              height={1086}
+              sizes="(min-width: 1024px) 360px, 100vw"
+              priority
+              className="h-full w-full object-cover"
+              style={{ opacity: 0.82 }}
+            />
+            <div className="absolute left-3 top-3 max-w-[calc(100%-24px)] rounded-[12px] bg-white px-3 py-2 shadow-[0_16px_34px_-24px_rgba(15,23,42,0.75)]">
+              <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-[var(--color-gray)]">Consumo fuera</p>
+              <p className="mt-1 font-display text-[24px] font-light leading-none text-[var(--color-dark)] tabular-nums">51 kWh</p>
             </div>
-            <span className="hidden rounded-full px-2 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-white sm:inline-flex sm:text-[9px]" style={{ background: selected.hover }}>
-              {selected.label}
-            </span>
+
+            {heroAppliances.map((item, i) => {
+              const Icon = item.icon;
+              const isActive = i === active;
+              const color = isActive ? item.hover : 'var(--color-dark)';
+              return (
+                <button
+                  key={item.key}
+                  type="button"
+                  data-consumption-symbol
+                  onMouseEnter={() => setActive(i)}
+                  onFocus={() => setActive(i)}
+                  className="group absolute z-20 -translate-x-1/2 -translate-y-1/2 rounded-full outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-primary)]"
+                  style={{ left: `${item.x}%`, top: `${item.y}%` }}
+                  aria-label={`${item.label}: ${item.note}`}
+                >
+                  <span
+                    className="grid h-10 w-10 place-items-center rounded-full border border-[var(--color-dark)]/10 bg-white text-[var(--color-dark)] shadow-[0_16px_30px_-20px_rgba(15,23,42,0.85)] transition-transform duration-200 group-hover:scale-105 md:h-11 md:w-11"
+                    style={{ color, boxShadow: isActive ? `0 0 0 5px rgba(15,123,90,0.18), 0 18px 38px -22px rgba(15,23,42,0.9)` : undefined }}
+                  >
+                    <Icon className="h-5 w-5" strokeWidth={2.2} />
+                  </span>
+                </button>
+              );
+            })}
           </div>
-          <p className="relative z-10 mt-2 inline-flex rounded-full bg-white/72 px-1.5 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.08em] sm:hidden" style={{ color: selected.hover }}>{selected.label}</p>
-          <p className="mt-2 hidden text-[14px] font-medium leading-snug text-[var(--color-dark)] md:block md:text-[14px]">{selected.note}</p>
-          <div className="mt-2 flex h-11 items-end gap-1 overflow-hidden sm:mt-3 sm:h-12 sm:gap-2" aria-hidden="true">
-            {heroAppliances.map((bar, i) => (
-              <div
-                key={bar.key}
-                role="presentation"
-                onMouseEnter={() => setActive(i)}
-                onPointerDown={(event) => { event.preventDefault(); setActive(i); }}
-                className="hero-platform-bar flex min-h-11 flex-1 items-end rounded-t-[8px] transition-transform duration-200 hover:-translate-y-1"
-              >
-                <span
-                  className="hero-mini-bar block w-full rounded-t-[8px] rounded-b-[3px] transition-colors duration-300"
-                  style={{ height: `${Math.min(36, Math.max(10, bar.value * 0.68))}px`, background: i === active ? bar.hover : 'rgba(15,123,90,0.32)' }}
-                />
+
+          <div data-platform-overlay className="min-w-0 rounded-[18px] bg-white p-4 text-[var(--color-dark)] md:rounded-[22px] md:p-5">
+            <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-start">
+              <div className="min-w-0">
+                <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.10em] text-[var(--color-gray)]">Decisión Tramo</p>
+                <h2 className="mt-2 font-display text-[26px] font-light leading-[1.05] text-[var(--color-dark)] md:text-[34px]">
+                  Automatizar {selected.label.toLowerCase()}
+                </h2>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div data-platform-overlay className="absolute -top-[56px] right-4 z-20 hidden max-w-[198px] rounded-[14px] border border-white/70 bg-[var(--color-dark)]/84 px-3 py-2.5 text-white backdrop-blur-xl sm:block md:right-5">
-          <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.12em] text-white/55">Decisión sugerida</p>
-          <div className="mt-1 flex items-end justify-between gap-4">
-            <p className="max-w-[130px] text-[14px] font-semibold leading-tight md:text-[14px]">Automatizar {selected.label.toLowerCase()}</p>
-            <div className="text-right">
-              <p className="whitespace-nowrap font-display text-[20px] font-light leading-none tabular-nums" style={{ color: selected.hover }}>{selected.cost}</p>
-              <p className="font-mono text-[14px] text-white/45">{selected.value} kWh</p>
+              <span className="w-fit rounded-full px-3 py-2 font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-white" style={{ background: selected.hover }}>
+                Prioridad alta
+              </span>
             </div>
-          </div>
-        </div>
-        <div data-platform-overlay className="absolute -top-[36px] right-3 z-20 flex w-[34%] min-w-[118px] items-center justify-between gap-2 rounded-[12px] border border-white/70 bg-[var(--color-dark)]/82 px-3 py-1.5 text-white backdrop-blur-xl sm:hidden">
-          <div>
-            <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.12em] text-white/50">Acción Tramo</p>
-            <p className="text-[14px] font-semibold leading-tight">{selected.label}</p>
-          </div>
-          <div className="text-right">
-            <p className="whitespace-nowrap font-display text-[20px] font-light leading-none tabular-nums" style={{ color: selected.hover }}>{selected.cost}</p>
-            <p className="font-mono text-[14px] text-white/45">{selected.value} kWh</p>
+
+            <div className="mt-4 grid grid-cols-2 gap-3">
+              <div className="rounded-[14px] border border-[var(--color-border)] bg-[var(--color-bg-muted)] p-3">
+                <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-[var(--color-gray)]">Impacto</p>
+                <p className="mt-2 font-display text-[28px] font-light leading-none tabular-nums" style={{ color: selected.hover }}>{selected.cost}</p>
+              </div>
+              <div className="rounded-[14px] border border-[var(--color-border)] bg-[var(--color-bg-muted)] p-3">
+                <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-[var(--color-gray)]">Energía</p>
+                <p className="mt-2 font-display text-[28px] font-light leading-none text-[var(--color-dark)] tabular-nums">{selected.value} kWh</p>
+              </div>
+            </div>
+
+            <p className="mt-4 text-[15px] font-medium leading-relaxed text-[var(--color-gray)]">
+              {selected.note}. Se cruza la curva Datadis con reservas y se propone la regla antes de instalar hardware.
+            </p>
+
+            <div className="mt-4 rounded-[14px] border border-[var(--color-border)] p-3">
+              <div className="flex items-center justify-between gap-3">
+                <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-[var(--color-gray)]">Loop operativo</p>
+                <p className="font-mono text-[14px] font-semibold text-[var(--color-dark)]">4 pasos</p>
+              </div>
+              <div className="mt-3 grid gap-2">
+                {loopSteps.map(([step, title, detail]) => (
+                  <div key={step} className="grid min-w-0 grid-cols-[28px_minmax(56px,68px)_minmax(0,1fr)] items-center gap-2 rounded-[10px] bg-[var(--color-bg-muted)] px-3 py-2">
+                    <p className="font-mono text-[14px] font-semibold text-[var(--color-gray)]">{step}</p>
+                    <p className="font-display text-[15px] font-medium leading-tight text-[var(--color-dark)]">{title}</p>
+                    <p className="min-w-0 text-[14px] leading-tight text-[var(--color-gray)]">{detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -358,8 +361,8 @@ function Hero() {
         <div className="col-span-full grid items-center gap-8 lg:grid-cols-12">
           <div className="lg:col-span-6 lg:pr-6">
             <h1 data-anim="hero-up"
-              className="font-display text-[clamp(2.4rem,5vw,3.8rem)] font-light leading-[1.06] text-[var(--color-dark)]"
-              style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0 }}>
+              className="font-display text-[clamp(2.1rem,5vw,3.8rem)] font-light leading-[1.06] text-[var(--color-dark)]"
+              style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0, maxWidth: '100%', overflowWrap: 'anywhere' }}>
               Convierte la energía de tu cartera turística en margen operativo.
             </h1>
             <p data-anim="hero-up" className="mt-6 max-w-md text-[15px] sm:text-[17px] leading-relaxed text-[var(--color-gray)]">
@@ -370,7 +373,7 @@ function Hero() {
               <CtaButton href="/app/dashboard" variant="ghost">Ver demo</CtaButton>
             </div>
           </div>
-          <div data-anim="hero-img" className="relative flex items-center justify-center lg:col-span-6">
+          <div data-anim="hero-img" className="relative flex min-w-0 items-center justify-center lg:col-span-6">
             <PlatformHeroVisual />
           </div>
         </div>
