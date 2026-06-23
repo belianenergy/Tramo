@@ -494,7 +494,7 @@ function HowItWorks() {
 /* ── Problem & Decision cards with visual variety ── */
 
 const problems = [
-  { icon: Zap, title: 'Checkout terminado, consumo sigue', body: 'ACS, climatización o standby encendidos tras la salida. El coste se mezcla en la factura mensual.', bg: 'var(--color-status-warning-soft)', iconBg: '#ffedd5', color: accents.orange },
+  { icon: Zap, title: 'Checkout terminado, consumo sigue', body: 'ACS, climatización o standby encendidos tras la salida. El coste se mezcla en la factura mensual.', bg: '#f0e5d0', iconBg: '#ffedd5', color: accents.orange },
   { icon: Gauge, title: 'Misma potencia todo el año', body: 'La potencia contratada no se ajusta a ocupación real. Pagas de más en meses tranquilos.', bg: '#fef3c7', iconBg: '#fde68a', color: accents.amber },
   { icon: FileText, title: 'Propietarios sin explicación', body: 'La factura agregada no distingue apartamento, reserva ni acción tomada.', bg: '#ede9fe', iconBg: '#ddd6fe', color: accents.violet },
   { icon: Activity, title: 'Alertas sin prioridad económica', body: 'Tramo ordena por lo que cuesta dinero: estancia, limpieza, standby y anomalía real.', bg: '#ffe4e6', iconBg: '#fecdd3', color: accents.rose },
@@ -537,10 +537,10 @@ function ProblemsDecisions() {
       <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
         {problems.map((item, index) => { const Icon = item.icon; return (
           <div key={item.title}
-            className={`reveal-card rounded-[14px] border-0 p-6 transition-all duration-200 hover:scale-[1.01] ${index === 0 ? 'xl:row-span-2 xl:min-h-[250px]' : ''}`}
+            className={`reveal-card rounded-[18px] p-6 ring-1 ring-black/[0.04] transition-all duration-200 hover:scale-[1.01] md:p-8 ${index === 0 ? 'xl:col-span-2 xl:row-span-2 xl:min-h-[380px]' : ''}`}
             style={{ background: item.bg }}>
             {index === 0 ? (
-              <p className="mb-8 font-display text-[clamp(2rem,4vw,3rem)] font-light leading-none tabular-nums text-[var(--color-dark)]">post-checkout</p>
+              <p className="mb-10 max-w-[8ch] font-display text-[clamp(3rem,5.6vw,5.8rem)] font-light leading-[0.9] tracking-[-0.045em] tabular-nums text-[var(--color-dark)]">post-checkout</p>
             ) : (
               <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-[10px]" style={{ background: item.iconBg }}>
                 <Icon className="h-4 w-4" style={{ color: item.color }} />
@@ -548,7 +548,7 @@ function ProblemsDecisions() {
             )}
             <h3 className="font-display text-[15px] font-medium text-[var(--color-dark)]">{item.title}</h3>
             <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-gray)]">{item.body}</p>
-            {index === 0 && <p className="mt-5 rounded-[10px] bg-white/74 p-3 font-mono text-[14px] font-semibold uppercase tracking-[0.06em] text-[var(--color-gray)]">Lo primero que busca Tramo en cada cartera.</p>}
+            {index === 0 && <p className="mt-8 max-w-sm rounded-[14px] bg-white/78 p-5 font-mono text-[14px] font-semibold uppercase leading-relaxed tracking-[0.06em] text-[var(--color-gray)]">Lo primero que busca Tramo en cada cartera.</p>}
           </div>
         ); })}
       </div>
@@ -1113,7 +1113,7 @@ function MobileCTA() {
 export default function Page() {
   return (
     <>
-      <GridOverlay />
+      {process.env.NODE_ENV !== 'production' && <GridOverlay />}
       <main id="main-content" className="bg-[var(--color-bg)] text-[var(--color-dark)] pb-40 md:pb-0">
       <Nav />
       <Hero />
