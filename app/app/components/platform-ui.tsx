@@ -80,7 +80,7 @@ export function ContextPanel() {
         <p className="mt-1 font-mono text-xs" style={{ color: 'var(--color-slate)' }}>ES0021000009347621TR</p>
       </div>
       {[
-        ['Ocupación', 'Vacío · checkout 11:00'],
+        ['Ocupación', 'Vacío · salida 11:00'],
         ['Última lectura', '19:10 · Datadis + sensores'],
         ['Responsable', 'Operaciones Norte'],
         ['Contrato', '2.0TD · P1/P2/P3'],
@@ -91,7 +91,7 @@ export function ContextPanel() {
         </div>
       ))}
       <button className="mt-4 min-h-10 w-full rounded-[8px] px-4 text-sm font-medium transition-[background-color] duration-200" style={{ border: '1px solid var(--color-sage-mist)', color: 'var(--color-slate)' }}>
-        Abrir ficha de unidad (demo)
+        Abrir ficha de unidad
       </button>
     </aside>
   )

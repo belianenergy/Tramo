@@ -70,7 +70,7 @@ export default function DashboardPage() {
         action={
           <a href="/#diagnostico" className="min-h-11 rounded-[8px] px-5 text-[13px] font-medium inline-flex items-center gap-2 transition-[background-color,transform] duration-200 active:translate-y-px"
             style={{ background: 'var(--color-bark)', color: 'var(--color-sheet-white)' }}>
-            <TrendingUp className="h-3.5 w-3.5" /> Revisar ahora (demo)
+            <TrendingUp className="h-3.5 w-3.5" /> Revisar ahora
           </a>
         }
       />
@@ -95,8 +95,8 @@ export default function DashboardPage() {
         ); })}
       </div>
 
-      <div className="grid gap-5 xl:grid-cols-[1fr_300px]">
-        <div className="space-y-5">
+      <div className="grid gap-5 2xl:grid-cols-[minmax(0,1fr)_280px]">
+        <div className="min-w-0 space-y-5">
           {/* Metrics: 4 operational tiles with accent labels */}
           <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             <div className="rounded-[12px] p-5" style={{ border: '1px solid var(--color-sage-mist)', background: 'var(--color-cream-paper)' }}>
@@ -294,7 +294,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Context panel — operational insights */}
-        <ContextPanel />
+        <div className="min-w-0"><ContextPanel /></div>
       </div>
       </>
       )}
