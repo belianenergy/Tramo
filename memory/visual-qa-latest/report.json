@@ -1,331 +1,464 @@
 {
-  "baseUrl": "http://127.0.0.1:3001",
+  "baseUrl": "http://localhost:3001",
   "results": [
     {
       "slug": "home",
       "route": "/",
       "viewport": "desktop",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
+      "status": 200,
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "pageOverflow": null,
+      "overflows": [
+        {
+          "tag": "SECTION",
+          "text": "Del contador a la decisión, sin perderte en facturas.Tres capas conectadas: lectura, análisis y acci",
+          "clientWidth": 1440,
+          "scrollWidth": 1520,
+          "className": "relative overflow-hidden px-6 py-14 md:py-24 md:pb-28"
+        },
+        {
+          "tag": "DIV",
+          "text": "01",
+          "clientWidth": 108,
+          "scrollWidth": 124,
+          "className": "relative flex h-[94px] w-[94px] shrink-0 items-center justify-center md:h-[108px] md:w-[108px]"
+        },
+        {
+          "tag": "DIV",
+          "text": "02",
+          "clientWidth": 108,
+          "scrollWidth": 124,
+          "className": "relative flex h-[94px] w-[94px] shrink-0 items-center justify-center md:h-[108px] md:w-[108px]"
+        },
+        {
+          "tag": "DIV",
+          "text": "03",
+          "clientWidth": 108,
+          "scrollWidth": 124,
+          "className": "relative flex h-[94px] w-[94px] shrink-0 items-center justify-center md:h-[108px] md:w-[108px]"
+        }
+      ]
     },
     {
       "slug": "home",
       "route": "/",
       "viewport": "tablet",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
-      "overflows": []
+      "pageOverflow": null,
+      "overflows": [
+        {
+          "tag": "SECTION",
+          "text": "Del contador a la decisión, sin perderte en facturas.Tres capas conectadas: lectura, análisis y acci",
+          "clientWidth": 768,
+          "scrollWidth": 848,
+          "className": "relative overflow-hidden px-6 py-14 md:py-24 md:pb-28"
+        },
+        {
+          "tag": "DIV",
+          "text": "01",
+          "clientWidth": 108,
+          "scrollWidth": 123,
+          "className": "relative flex h-[94px] w-[94px] shrink-0 items-center justify-center md:h-[108px] md:w-[108px]"
+        },
+        {
+          "tag": "DIV",
+          "text": "02",
+          "clientWidth": 108,
+          "scrollWidth": 123,
+          "className": "relative flex h-[94px] w-[94px] shrink-0 items-center justify-center md:h-[108px] md:w-[108px]"
+        },
+        {
+          "tag": "DIV",
+          "text": "03",
+          "clientWidth": 108,
+          "scrollWidth": 123,
+          "className": "relative flex h-[94px] w-[94px] shrink-0 items-center justify-center md:h-[108px] md:w-[108px]"
+        }
+      ]
     },
     {
       "slug": "home",
       "route": "/",
       "viewport": "mobile",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
-      "overflows": []
+      "pageOverflow": null,
+      "overflows": [
+        {
+          "tag": "SECTION",
+          "text": "Del contador a la decisión, sin perderte en facturas.Tres capas conectadas: lectura, análisis y acci",
+          "clientWidth": 390,
+          "scrollWidth": 470,
+          "className": "relative overflow-hidden px-6 py-14 md:py-24 md:pb-28"
+        },
+        {
+          "tag": "DIV",
+          "text": "01",
+          "clientWidth": 94,
+          "scrollWidth": 107,
+          "className": "relative flex h-[94px] w-[94px] shrink-0 items-center justify-center md:h-[108px] md:w-[108px]"
+        },
+        {
+          "tag": "DIV",
+          "text": "02",
+          "clientWidth": 94,
+          "scrollWidth": 107,
+          "className": "relative flex h-[94px] w-[94px] shrink-0 items-center justify-center md:h-[108px] md:w-[108px]"
+        },
+        {
+          "tag": "DIV",
+          "text": "03",
+          "clientWidth": 94,
+          "scrollWidth": 107,
+          "className": "relative flex h-[94px] w-[94px] shrink-0 items-center justify-center md:h-[108px] md:w-[108px]"
+        }
+      ]
     },
     {
       "slug": "precios",
       "route": "/precios",
       "viewport": "desktop",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/precios\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
+      "pageOverflow": null,
       "overflows": []
     },
     {
       "slug": "precios",
       "route": "/precios",
       "viewport": "tablet",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/precios\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
+      "pageOverflow": null,
       "overflows": []
     },
     {
       "slug": "precios",
       "route": "/precios",
       "viewport": "mobile",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/precios\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
+      "pageOverflow": null,
       "overflows": []
     },
     {
       "slug": "dashboard",
       "route": "/app/dashboard",
       "viewport": "desktop",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/dashboard\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
-      "overflows": []
+      "pageOverflow": null,
+      "overflows": [
+        {
+          "tag": "DIV",
+          "text": "TTramoEnergy deskCentro de controlDecisionesCarteraUnidadesOperacionesAlertasContratosCUPSInformesPr",
+          "clientWidth": 1440,
+          "scrollWidth": 1567,
+          "className": "min-h-dvh"
+        },
+        {
+          "tag": "DIV",
+          "text": "TramoBuscar apartamento, CUPS, factura o alerta KCosta alta ocupaciónPropietarios premiumAlertas >50",
+          "clientWidth": 1440,
+          "scrollWidth": 1567,
+          "className": "min-h-dvh transition-[padding] duration-300 md:pl-[var(--sidebar-width)]"
+        },
+        {
+          "tag": "MAIN",
+          "text": "Sala de control · Mayo 2026Sala de control para decidir qué coste energético se aprueba hoy.Cartera ",
+          "clientWidth": 1148,
+          "scrollWidth": 1275,
+          "className": "px-4 py-5 md:px-6"
+        },
+        {
+          "tag": "DIV",
+          "text": "Sala de control · Mayo 2026Sala de control para decidir qué coste energético se aprueba hoy.Cartera ",
+          "clientWidth": 1100,
+          "scrollWidth": 1251,
+          "className": "mx-auto"
+        },
+        {
+          "tag": "DIV",
+          "text": "Ahorro pendiente322 € +12% vs mes anteriorFuera de reserva121 kWh -8% vs mes anteriorCoste previsto3",
+          "clientWidth": 1100,
+          "scrollWidth": 1251,
+          "className": "grid gap-5 xl:grid-cols-[1fr_300px]"
+        }
+      ]
     },
     {
       "slug": "dashboard",
       "route": "/app/dashboard",
       "viewport": "tablet",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/dashboard\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
-      "overflows": []
+      "pageOverflow": null,
+      "overflows": [
+        {
+          "tag": "DIV",
+          "text": "TTramoEnergy deskCentro de controlDecisionesCarteraUnidadesOperacionesAlertasContratosCUPSInformesPr",
+          "clientWidth": 768,
+          "scrollWidth": 1247,
+          "className": "min-h-dvh"
+        },
+        {
+          "tag": "DIV",
+          "text": "TramoBuscar apartamento, CUPS, factura o alerta KCosta alta ocupaciónPropietarios premiumAlertas >50",
+          "clientWidth": 768,
+          "scrollWidth": 1247,
+          "className": "min-h-dvh transition-[padding] duration-300 md:pl-[var(--sidebar-width)]"
+        },
+        {
+          "tag": "MAIN",
+          "text": "Sala de control · Mayo 2026Sala de control para decidir qué coste energético se aprueba hoy.Cartera ",
+          "clientWidth": 476,
+          "scrollWidth": 955,
+          "className": "px-4 py-5 md:px-6"
+        },
+        {
+          "tag": "DIV",
+          "text": "Sala de control · Mayo 2026Sala de control para decidir qué coste energético se aprueba hoy.Cartera ",
+          "clientWidth": 428,
+          "scrollWidth": 931,
+          "className": "mx-auto"
+        },
+        {
+          "tag": "DIV",
+          "text": "Aprobar hoy3 acciones·+322 €/mesRevisar potencia2 contratos·Posible sobrecosteEnviar informe4 propie",
+          "clientWidth": 428,
+          "scrollWidth": 464,
+          "className": "mb-6 grid gap-3 sm:grid-cols-3"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Aprobar hoy3 acciones·+322 €/mes",
+          "clientWidth": 135,
+          "scrollWidth": 162,
+          "className": "flex items-center gap-3 rounded-[14px] p-4 text-left transition-all duration-200 hover:scale-[1.01] border-0"
+        },
+        {
+          "tag": "DIV",
+          "text": "Aprobar hoy3 acciones·+322 €/mes",
+          "clientWidth": 23,
+          "scrollWidth": 94,
+          "className": "min-w-0"
+        },
+        {
+          "tag": "P",
+          "text": "Aprobar hoy",
+          "clientWidth": 23,
+          "scrollWidth": 52,
+          "className": "font-display text-[13px] font-medium text-[var(--color-dark)]"
+        },
+        {
+          "tag": "P",
+          "text": "3 acciones·+322 €/mes",
+          "clientWidth": 23,
+          "scrollWidth": 94,
+          "className": "text-[11px] text-[var(--color-gray)]"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Revisar potencia2 contratos·Posible sobrecoste",
+          "clientWidth": 135,
+          "scrollWidth": 174,
+          "className": "flex items-center gap-3 rounded-[14px] p-4 text-left transition-all duration-200 hover:scale-[1.01] border-0"
+        },
+        {
+          "tag": "DIV",
+          "text": "Revisar potencia2 contratos·Posible sobrecoste",
+          "clientWidth": 23,
+          "scrollWidth": 106,
+          "className": "min-w-0"
+        },
+        {
+          "tag": "P",
+          "text": "Revisar potencia",
+          "clientWidth": 23,
+          "scrollWidth": 56,
+          "className": "font-display text-[13px] font-medium text-[var(--color-dark)]"
+        },
+        {
+          "tag": "P",
+          "text": "2 contratos·Posible sobrecoste",
+          "clientWidth": 23,
+          "scrollWidth": 106,
+          "className": "text-[11px] text-[var(--color-gray)]"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Enviar informe4 propietarios·PDF listo",
+          "clientWidth": 135,
+          "scrollWidth": 171,
+          "className": "flex items-center gap-3 rounded-[14px] p-4 text-left transition-all duration-200 hover:scale-[1.01] border-0"
+        },
+        {
+          "tag": "DIV",
+          "text": "Enviar informe4 propietarios·PDF listo",
+          "clientWidth": 23,
+          "scrollWidth": 103,
+          "className": "min-w-0"
+        },
+        {
+          "tag": "P",
+          "text": "Enviar informe",
+          "clientWidth": 23,
+          "scrollWidth": 50,
+          "className": "font-display text-[13px] font-medium text-[var(--color-dark)]"
+        },
+        {
+          "tag": "P",
+          "text": "4 propietarios·PDF listo",
+          "clientWidth": 23,
+          "scrollWidth": 103,
+          "className": "text-[11px] text-[var(--color-gray)]"
+        },
+        {
+          "tag": "DIV",
+          "text": "Ahorro pendiente322 € +12% vs mes anteriorFuera de reserva121 kWh -8% vs mes anteriorCoste previsto3",
+          "clientWidth": 428,
+          "scrollWidth": 931,
+          "className": "grid gap-5 xl:grid-cols-[1fr_300px]"
+        }
+      ]
     },
     {
       "slug": "dashboard",
       "route": "/app/dashboard",
       "viewport": "mobile",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/dashboard\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
-      "overflows": []
+      "pageOverflow": null,
+      "overflows": [
+        {
+          "tag": "DIV",
+          "text": "TTramoEnergy deskCentro de controlDecisionesCarteraUnidadesOperacionesAlertasContratosCUPSInformesPr",
+          "clientWidth": 390,
+          "scrollWidth": 947,
+          "className": "min-h-dvh"
+        },
+        {
+          "tag": "DIV",
+          "text": "TramoBuscar apartamento, CUPS, factura o alerta KCosta alta ocupaciónPropietarios premiumAlertas >50",
+          "clientWidth": 390,
+          "scrollWidth": 947,
+          "className": "min-h-dvh transition-[padding] duration-300 md:pl-[var(--sidebar-width)]"
+        },
+        {
+          "tag": "MAIN",
+          "text": "Sala de control · Mayo 2026Sala de control para decidir qué coste energético se aprueba hoy.Cartera ",
+          "clientWidth": 390,
+          "scrollWidth": 947,
+          "className": "px-4 py-5 md:px-6"
+        },
+        {
+          "tag": "DIV",
+          "text": "Sala de control · Mayo 2026Sala de control para decidir qué coste energético se aprueba hoy.Cartera ",
+          "clientWidth": 358,
+          "scrollWidth": 931,
+          "className": "mx-auto"
+        },
+        {
+          "tag": "DIV",
+          "text": "Ahorro pendiente322 € +12% vs mes anteriorFuera de reserva121 kWh -8% vs mes anteriorCoste previsto3",
+          "clientWidth": 358,
+          "scrollWidth": 931,
+          "className": "grid gap-5 xl:grid-cols-[1fr_300px]"
+        }
+      ]
     },
     {
       "slug": "operations",
       "route": "/app/operations",
       "viewport": "desktop",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/operations\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
+      "pageOverflow": null,
       "overflows": []
     },
     {
       "slug": "operations",
       "route": "/app/operations",
       "viewport": "tablet",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/operations\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
+      "pageOverflow": null,
       "overflows": []
     },
     {
       "slug": "operations",
       "route": "/app/operations",
       "viewport": "mobile",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/operations\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
+      "pageOverflow": null,
       "overflows": []
     },
     {
       "slug": "informe",
       "route": "/app/informe",
       "viewport": "desktop",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/informe\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
+      "pageOverflow": null,
       "overflows": []
     },
     {
       "slug": "informe",
       "route": "/app/informe",
       "viewport": "tablet",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/informe\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
-      "overflows": []
+      "pageOverflow": null,
+      "overflows": [
+        {
+          "tag": "DIV",
+          "text": "31,80EUR",
+          "clientWidth": 166,
+          "scrollWidth": 189,
+          "className": "mt-2 flex items-baseline gap-2"
+        }
+      ]
     },
     {
       "slug": "informe",
       "route": "/app/informe",
       "viewport": "mobile",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/informe\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
+      "pageOverflow": null,
       "overflows": []
     },
     {
       "slug": "advisor",
       "route": "/app/advisor",
       "viewport": "desktop",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/advisor\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
+      "pageOverflow": null,
       "overflows": []
     },
     {
       "slug": "advisor",
       "route": "/app/advisor",
       "viewport": "tablet",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/advisor\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
+      "pageOverflow": null,
       "overflows": []
     },
     {
       "slug": "advisor",
       "route": "/app/advisor",
       "viewport": "mobile",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/advisor\", waiting until \"domcontentloaded\"\n",
+      "status": 200,
       "consoleErrors": [],
+      "pageOverflow": null,
       "overflows": []
     }
   ],
-  "failures": [
-    {
-      "slug": "home",
-      "route": "/",
-      "viewport": "desktop",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "home",
-      "route": "/",
-      "viewport": "tablet",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "home",
-      "route": "/",
-      "viewport": "mobile",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "precios",
-      "route": "/precios",
-      "viewport": "desktop",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/precios\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "precios",
-      "route": "/precios",
-      "viewport": "tablet",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/precios\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "precios",
-      "route": "/precios",
-      "viewport": "mobile",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/precios\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "dashboard",
-      "route": "/app/dashboard",
-      "viewport": "desktop",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/dashboard\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "dashboard",
-      "route": "/app/dashboard",
-      "viewport": "tablet",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/dashboard\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "dashboard",
-      "route": "/app/dashboard",
-      "viewport": "mobile",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/dashboard\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "operations",
-      "route": "/app/operations",
-      "viewport": "desktop",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/operations\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "operations",
-      "route": "/app/operations",
-      "viewport": "tablet",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/operations\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "operations",
-      "route": "/app/operations",
-      "viewport": "mobile",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/operations\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "informe",
-      "route": "/app/informe",
-      "viewport": "desktop",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/informe\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "informe",
-      "route": "/app/informe",
-      "viewport": "tablet",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/informe\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "informe",
-      "route": "/app/informe",
-      "viewport": "mobile",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/informe\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "advisor",
-      "route": "/app/advisor",
-      "viewport": "desktop",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/advisor\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "advisor",
-      "route": "/app/advisor",
-      "viewport": "tablet",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/advisor\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    },
-    {
-      "slug": "advisor",
-      "route": "/app/advisor",
-      "viewport": "mobile",
-      "status": null,
-      "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3001/app/advisor\", waiting until \"domcontentloaded\"\n",
-      "consoleErrors": [],
-      "overflows": []
-    }
-  ]
+  "failures": []
 }

@@ -44,7 +44,7 @@ function GridOverlay() {
       <button
         type="button"
         onClick={() => setVisible((current) => !current)}
-        className="fixed bottom-3 right-3 z-[9999] hidden min-h-11 min-w-11 rounded-[8px] border border-[var(--color-border)] bg-white/80 px-3 font-mono text-[14px] font-semibold text-[var(--color-gray)] opacity-25 backdrop-blur transition-colors hover:text-[var(--color-primary)] focus:opacity-100 active:opacity-100 md:bottom-24 md:left-4 md:right-auto md:inline-flex md:bg-white/90 md:opacity-100 items-center justify-center"
+        className="fixed bottom-3 right-3 z-[900] hidden min-h-11 min-w-11 rounded-[8px] border border-[var(--color-border)] bg-white/80 px-3 font-mono text-[14px] font-semibold text-[var(--color-gray)] opacity-25 backdrop-blur transition-colors hover:text-[var(--color-primary)] focus:opacity-100 active:opacity-100 md:bottom-24 md:left-4 md:right-auto md:inline-flex md:bg-white/90 md:opacity-100 items-center justify-center"
         aria-pressed={visible}
         aria-label="Mostrar u ocultar retícula de 12 columnas y baseline"
       >
@@ -76,7 +76,7 @@ function SectionHeading({ children, className = '', eyebrow }: {
         </p>
       )}
       <h2 className="font-display text-[clamp(1.8rem,3.5vw,2.6rem)] font-light leading-[1.12] text-[var(--color-dark)]"
-        style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0, overflowWrap: 'anywhere' }}>
+        style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0, overflowWrap: 'break-word' }}>
         {children}
       </h2>
     </div>
@@ -139,7 +139,7 @@ function Nav() {
           </button>
         </div>
       </nav>
-      <div className={`fixed inset-0 z-50 bg-[var(--color-bg)] transition-all duration-300 ${
+      <div role="dialog" aria-modal="true" aria-label="Menú de navegación" className={`fixed inset-0 z-50 bg-[var(--color-bg)] transition-all duration-300 ${
         open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
       }`}>
         <div className="flex h-[64px] items-center justify-between px-6 border-b border-[var(--color-border)]">
@@ -179,7 +179,7 @@ function LandingGSAP() {
         const targets = section.querySelectorAll('.gsap-reveal, h1, h2, h3, .stat-card, .pricing-card, details, form, [data-gsap-item]');
         gsap.from(targets, {
           y: 26,
-          opacity: 0.88,
+          opacity: 0,
           duration: 0.7,
           stagger: 0.07,
           ease: 'power2.out',
@@ -257,9 +257,9 @@ function PlatformHeroVisual() {
               sizes="(min-width: 1024px) 360px, 100vw"
               priority
               className="h-full w-full object-cover"
-              style={{ opacity: 0.82 }}
+              style={{ opacity: 0.92 }}
             />
-            <div className="absolute left-3 top-3 max-w-[calc(100%-24px)] rounded-[12px] bg-white px-3 py-2 shadow-[0_16px_34px_-24px_rgba(15,23,42,0.75)]">
+            <div className="absolute left-3 top-3 z-30 max-w-[calc(100%-24px)] rounded-[12px] bg-white px-3 py-2 shadow-[0_16px_34px_-24px_rgba(15,23,42,0.75)]">
               <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-[var(--color-gray)]">Consumo fuera</p>
               <p className="mt-1 font-display text-[24px] font-light leading-none text-[var(--color-dark)] tabular-nums">51 kWh</p>
             </div>
@@ -275,7 +275,7 @@ function PlatformHeroVisual() {
                   data-consumption-symbol
                   onMouseEnter={() => setActive(i)}
                   onFocus={() => setActive(i)}
-                  className="group absolute z-20 -translate-x-1/2 -translate-y-1/2 rounded-full outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-primary)]"
+                  className="group absolute z-20 hidden -translate-x-1/2 -translate-y-1/2 rounded-full outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-primary)] sm:block"
                   style={{ left: `${item.x}%`, top: `${item.y}%` }}
                   aria-label={`${item.label}: ${item.note}`}
                 >
@@ -294,7 +294,7 @@ function PlatformHeroVisual() {
             <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-start">
               <div className="min-w-0">
                 <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.10em] text-[var(--color-gray)]">Decisión Tramo</p>
-                <h2 className="mt-2 font-display text-[26px] font-light leading-[1.05] text-[var(--color-dark)] md:text-[34px]">
+                <h2 className="mt-2 max-w-full font-display text-[24px] font-light leading-[1.05] text-[var(--color-dark)] md:text-[30px]" style={{ overflowWrap: 'break-word', textWrap: 'balance' }}>
                   Automatizar {selected.label.toLowerCase()}
                 </h2>
               </div>
@@ -362,14 +362,14 @@ function Hero() {
           <div className="lg:col-span-6 lg:pr-6">
             <h1 data-anim="hero-up"
               className="font-display text-[clamp(2.1rem,5vw,3.8rem)] font-light leading-[1.06] text-[var(--color-dark)]"
-              style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0, maxWidth: '100%', overflowWrap: 'anywhere' }}>
+              style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0, maxWidth: '100%', overflowWrap: 'break-word' }}>
               Convierte la energía de tu cartera turística en margen operativo.
             </h1>
             <p data-anim="hero-up" className="mt-6 max-w-md text-[15px] sm:text-[17px] leading-relaxed text-[var(--color-gray)]">
               Cruza reservas con CUPS y Datadis para detectar consumo fuera de estancia, activar reglas y preparar informes por propietario.
             </p>
             <div data-anim="hero-up" className="mt-8 flex flex-wrap items-center gap-4">
-              <CtaButton href="#diagnostico">Diagnosticar mi cartera</CtaButton>
+              <CtaButton href="#diagnostico">Calcular margen perdido</CtaButton>
               <CtaButton href="/app/dashboard" variant="ghost">Ver demo</CtaButton>
             </div>
           </div>
@@ -439,8 +439,9 @@ function HowItWorks() {
       <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-[var(--color-primary-subtle)] blur-3xl" />
       <div className="pointer-events-none absolute -right-20 bottom-12 h-80 w-80 rounded-full bg-[#dbeafe] blur-3xl" />
       <div className="mx-auto" style={{ maxWidth: 'var(--page-max)' }}>
-        <div className="gsap-reveal mx-auto mb-12 max-w-2xl rounded-[24px] bg-white/55 px-4 py-6 text-center backdrop-blur-sm md:bg-transparent md:p-0 md:backdrop-blur-0">
-          <SectionHeading className="text-center" eyebrow="Cómo funciona">
+        <div className="gsap-reveal mx-auto mb-12 max-w-2xl rounded-[24px] bg-white px-4 py-6 text-center ring-1 ring-[var(--color-border)] md:bg-transparent md:p-0 md:ring-0">
+          <p className="mx-auto mb-4 h-px w-16 bg-[var(--color-primary)]" aria-hidden="true" />
+          <SectionHeading className="text-center">
             Del contador a la decisión, sin perderte en facturas.
           </SectionHeading>
           <p className="mt-4 text-[17px] font-medium leading-relaxed text-[var(--color-dark)] md:font-normal md:text-[var(--color-gray)]">
@@ -450,14 +451,14 @@ function HowItWorks() {
         <div className="relative mx-auto max-w-5xl">
           <div className="grid gap-4 lg:grid-cols-3">
             {howSteps.map((s, i) => (
-              <div key={s.step} className="how-step group relative rounded-[22px] border border-white/70 bg-white/58 p-4 text-left backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:bg-white/72 md:p-6">
+              <div key={s.step} className="how-step group relative overflow-hidden rounded-[22px] border border-white/80 bg-white p-4 text-left ring-1 ring-[var(--color-border-light)] transition-all duration-300 hover:-translate-y-1 hover:ring-[var(--color-border)] md:p-6">
                 <div className="flex items-start gap-4">
                   <div className="relative flex h-[94px] w-[94px] shrink-0 items-center justify-center md:h-[108px] md:w-[108px]">
                     <svg className="how-orbit absolute inset-0 h-full w-full" viewBox="0 0 120 120" aria-hidden="true">
                       <circle cx="60" cy="60" r="43" fill="none" stroke={s.color} strokeWidth="1.4" strokeDasharray="7 9" opacity="0.44" />
                       <circle cx="60" cy="17" r="4.8" fill={s.color} />
                     </svg>
-                    <p className="relative z-10 font-display text-[38px] font-light leading-none tracking-[-0.06em] tabular-nums md:text-[44px]" style={{ color: s.color }}>{s.step}</p>
+                    <p className="relative z-10 font-display text-[38px] font-light leading-none tracking-[-0.035em] tabular-nums md:text-[44px]" style={{ color: s.color }}>{s.step}</p>
                   </div>
                   <div className="min-w-0 pt-2">
                     <div className="flex flex-wrap items-center gap-2">
@@ -472,13 +473,18 @@ function HowItWorks() {
                   <span className="how-rail-fill block h-full w-full rounded-full" style={{ background: `linear-gradient(90deg, ${s.color}, rgba(15,23,42,0.08))` }} />
                 </div>
                 {i < howSteps.length - 1 && (
-                  <div className="hidden md:grid absolute -right-4 top-1/2 z-10 h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-white/90 backdrop-blur" style={{ color: s.color }}>
+                  <div className="hidden lg:grid absolute right-2 top-1/2 z-10 h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-white ring-1 ring-[var(--color-border)]" style={{ color: s.color }}>
                     <ArrowRight className="h-4 w-4" />
                   </div>
                 )}
               </div>
             ))}
           </div>
+        </div>
+        <div className="mt-8 text-center">
+          <a href="#diagnostico" className="inline-flex min-h-[44px] items-center justify-center rounded-[8px] border border-[var(--color-primary)] bg-white px-5 text-[14px] font-medium text-[var(--color-primary)] transition-colors hover:bg-[var(--color-primary)] hover:text-white">
+            Ver mi margen perdido
+          </a>
         </div>
       </div>
     </section>
@@ -516,7 +522,10 @@ function ProblemsDecisions() {
   return (
     <Section refProp={ref} id="producto" style={{ scrollMarginTop: '80px' }}>
       <div className="mx-auto max-w-2xl text-center mb-12">
-        <SectionHeading className="text-center" eyebrow="El problema">
+        <p className="mx-auto mb-4 inline-flex rounded-full border border-[var(--color-border)] bg-white px-3 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-[var(--color-primary)]">
+          4 fugas típicas
+        </p>
+        <SectionHeading className="text-center">
           No es la factura. Es no saber qué apartamento o reserva dispara el coste.
         </SectionHeading>
         <p className="mt-4 text-[17px] text-[var(--color-gray)]">
@@ -526,15 +535,20 @@ function ProblemsDecisions() {
 
       {/* Problem cards — 4 col */}
       <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
-        {problems.map((item) => { const Icon = item.icon; return (
+        {problems.map((item, index) => { const Icon = item.icon; return (
           <div key={item.title}
-            className="reveal-card rounded-[14px] p-6 border-0 hover:scale-[1.01] transition-all duration-200"
+            className={`reveal-card rounded-[14px] border-0 p-6 transition-all duration-200 hover:scale-[1.01] ${index === 0 ? 'xl:row-span-2 xl:min-h-[250px]' : ''}`}
             style={{ background: item.bg }}>
-            <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-[10px]" style={{ background: item.iconBg }}>
-              <Icon className="h-4 w-4" style={{ color: item.color }} />
-            </div>
+            {index === 0 ? (
+              <p className="mb-8 font-display text-[clamp(2rem,4vw,3rem)] font-light leading-none tabular-nums text-[var(--color-dark)]">post-checkout</p>
+            ) : (
+              <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-[10px]" style={{ background: item.iconBg }}>
+                <Icon className="h-4 w-4" style={{ color: item.color }} />
+              </div>
+            )}
             <h3 className="font-display text-[15px] font-medium text-[var(--color-dark)]">{item.title}</h3>
             <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-gray)]">{item.body}</p>
+            {index === 0 && <p className="mt-5 rounded-[10px] bg-white/74 p-3 font-mono text-[14px] font-semibold uppercase tracking-[0.06em] text-[var(--color-gray)]">Lo primero que busca Tramo en cada cartera.</p>}
           </div>
         ); })}
       </div>
@@ -552,13 +566,19 @@ function ProblemsDecisions() {
 
       {/* Decision cards — 3 col */}
       <div className="grid gap-4 lg:grid-cols-3">
-        {decisions.map((m) => { const Icon = m.icon; return (
+        {decisions.map((m, index) => { const Icon = m.icon; return (
           <div key={m.title}
             className="reveal-card rounded-[14px] p-6 border-0 hover:scale-[1.01] transition-all duration-200"
             style={{ background: m.bg }}>
-            <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-[10px]" style={{ background: m.iconBg }}>
-              <Icon className="h-4 w-4" style={{ color: m.color }} />
-            </div>
+            {index === 1 ? (
+              <div className="mb-4 grid grid-cols-3 gap-1 rounded-[10px] bg-white/70 p-2" aria-hidden="true">
+                {[42, 64, 31].map((height, barIndex) => <span key={barIndex} className="self-end rounded-[4px]" style={{ height, background: m.color, opacity: 0.32 + barIndex * 0.18 }} />)}
+              </div>
+            ) : (
+              <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-[10px]" style={{ background: m.iconBg }}>
+                <Icon className="h-4 w-4" style={{ color: m.color }} />
+              </div>
+            )}
             <h3 className="font-display text-[15px] font-medium text-[var(--color-dark)]">{m.title}</h3>
             <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-gray)]">{m.body}</p>
             <div className="mt-3 flex flex-wrap gap-2">
@@ -597,7 +617,7 @@ function Pricing() {
 
   return (
     <Section refProp={ref} id="precios" className="bg-[var(--color-bg)] pb-8 md:pb-12" style={{ scrollMarginTop: '80px' }}>
-      <div className="relative z-10 mx-auto mb-8 max-w-2xl rounded-[24px] bg-white/46 px-4 py-6 text-center backdrop-blur-sm md:mb-10 md:bg-white/18 md:p-0 md:shadow-none md:backdrop-blur-0">
+      <div className="relative z-10 mx-auto mb-8 max-w-2xl rounded-[24px] bg-white px-4 py-6 text-center ring-1 ring-[var(--color-border-light)] md:mb-10 md:bg-transparent md:p-0 md:shadow-none md:ring-0">
         <SectionHeading className="text-center">
           Diagnóstico primero. Plan después.
         </SectionHeading>
@@ -612,7 +632,7 @@ function Pricing() {
               tier.recommended ? 'border-2 border-[var(--color-primary)] hover:shadow-[0_0_32px_-4px_rgba(15,123,90,0.25)]' : 'border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:shadow-md'
             }`}>
             {tier.recommended && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-[6px] px-3 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.1em] bg-[var(--color-primary)] text-white">
+              <div className="mb-4 w-fit rounded-[6px] px-3 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.08em] bg-[var(--color-primary)] text-white">
                 Recomendado
               </div>
             )}
@@ -622,7 +642,7 @@ function Pricing() {
               <span className="font-mono text-[14px] text-[var(--color-gray-light)]">€/apt/mes</span>
             </div>
             <p className="mt-1 text-[14px] text-[var(--color-gray-light)]"><span className="whitespace-nowrap">{tier.aptos} aptos</span> · <span className="whitespace-nowrap tabular-nums">{tier.monthly}</span></p>
-            <p className="mt-1 text-[14px] text-[var(--color-gray-light)]">Piloto gratuito</p>
+            <p className="mt-3 inline-flex w-fit rounded-full bg-[var(--color-primary-subtle)] px-3 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.06em] text-[var(--color-primary)]">Piloto gratuito · sin permanencia</p>
             <hr className="my-4 border-[var(--color-border)]" />
             <ul className="flex-1 space-y-2">
               {tier.features.map(f => (
@@ -633,7 +653,7 @@ function Pricing() {
               ))}
             </ul>
             <a href="#diagnostico"
-              className={`mt-6 inline-flex min-h-[42px] w-full items-center justify-center rounded-[8px] px-3 text-[14px] font-medium transition-colors duration-200 ${
+              className={`mt-auto inline-flex min-h-[42px] w-full items-center justify-center rounded-[8px] px-3 text-[14px] font-medium transition-colors duration-200 ${
                 tier.recommended
                   ? 'bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)]'
                   : 'border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white'
@@ -699,7 +719,8 @@ function DiagnosticForm() {
 Nombre: ${data.name || ''}
 Email: ${data.email || ''}
 Gestora: ${data.company || ''}
-Apartamentos: ${data.apartments || ''}`,
+Apartamentos: ${data.units || ''}
+PMS: ${data.pms || ''}`,
     );
     setFallbackHref(`mailto:hola@tramo.energy?subject=${subject}&body=${body}`);
 
@@ -738,30 +759,35 @@ Apartamentos: ${data.apartments || ''}`,
         </div>
         <form onSubmit={handleSubmit} className="mt-10 space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="block">
-              <span className="sr-only">Nombre</span>
-              <input name="name" required autoComplete="name" placeholder="Nombre" aria-label="Nombre"
-                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white/[0.18] border border-white/30 text-white placeholder:text-white/70 focus:outline-none focus:border-white/70 transition-colors" />
+            <label className="block" htmlFor="lead-name">
+              <span className="mb-1 block text-left text-[14px] font-medium text-white/86">Nombre</span>
+              <input id="lead-name" name="name" required autoComplete="name" placeholder="Marta López"
+                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white/[0.18] border border-white/30 text-white placeholder:text-white/72 focus:outline-none focus:border-white/70 transition-colors" />
             </label>
-            <label className="block">
-              <span className="sr-only">Email profesional</span>
-              <input name="email" type="email" required autoComplete="email" placeholder="Email profesional" aria-label="Email profesional"
-                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white/[0.18] border border-white/30 text-white placeholder:text-white/70 focus:outline-none focus:border-white/70 transition-colors" />
+            <label className="block" htmlFor="lead-email">
+              <span className="mb-1 block text-left text-[14px] font-medium text-white/86">Email profesional</span>
+              <input id="lead-email" name="email" type="email" required autoComplete="email" placeholder="marta@gestora.com"
+                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white/[0.18] border border-white/30 text-white placeholder:text-white/72 focus:outline-none focus:border-white/70 transition-colors" />
             </label>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="block">
-              <span className="sr-only">Nombre de la gestora</span>
-              <input name="company" autoComplete="organization" placeholder="Nombre de la gestora" aria-label="Nombre de la gestora"
-                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white/[0.18] border border-white/30 text-white placeholder:text-white/70 focus:outline-none focus:border-white/70 transition-colors" />
+            <label className="block" htmlFor="lead-company">
+              <span className="mb-1 block text-left text-[14px] font-medium text-white/86">Nombre de la gestora</span>
+              <input id="lead-company" name="company" autoComplete="organization" placeholder="Costa Norte Rentals"
+                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white/[0.18] border border-white/30 text-white placeholder:text-white/72 focus:outline-none focus:border-white/70 transition-colors" />
             </label>
-            <label className="block">
-              <span className="sr-only">Número de apartamentos</span>
-              <input name="apartments" type="number" min="1" inputMode="numeric" placeholder="Nº de apartamentos" aria-label="Número de apartamentos"
-                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white/[0.18] border border-white/30 text-white placeholder:text-white/70 focus:outline-none focus:border-white/70 transition-colors" />
+            <label className="block" htmlFor="lead-units">
+              <span className="mb-1 block text-left text-[14px] font-medium text-white/86">Número de apartamentos</span>
+              <input id="lead-units" name="units" type="number" min="1" inputMode="numeric" placeholder="42"
+                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white/[0.18] border border-white/30 text-white placeholder:text-white/72 focus:outline-none focus:border-white/70 transition-colors" />
             </label>
           </div>
-          <div aria-live="polite" role="status" className="min-h-[3lh]">
+          <label className="block" htmlFor="lead-pms">
+            <span className="mb-1 block text-left text-[14px] font-medium text-white/86">PMS o sistema de reservas</span>
+            <input id="lead-pms" name="pms" autoComplete="off" placeholder="Avantio, Guesty, Smoobu…"
+              className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white/[0.18] border border-white/30 text-white placeholder:text-white/72 focus:outline-none focus:border-white/70 transition-colors" />
+          </label>
+          <div aria-live="polite" role="status" className="min-h-[2lh]">
             {status === 'sent' && <p className="rounded-[8px] p-3 text-[14px] font-medium bg-white/10">✅ Solicitud recibida. Te respondemos con una propuesta de diagnóstico.</p>}
             {status === 'error' && (
               <div className="rounded-[8px] p-3 text-[14px] font-medium bg-white/10">
@@ -836,7 +862,7 @@ function HardwareSection() {
 
   return (
     <Section id="hardware" className="relative -mt-16 overflow-hidden bg-[linear-gradient(180deg,var(--color-bg)_0%,#f2efff_10%,#e8fbf2_28%,#dcfce7_46%,#ecfeff_70%,#dbeafe_92%,var(--color-bg)_100%)] !pt-20 !pb-20 before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-36 before:bg-[linear-gradient(180deg,rgba(250,250,250,0.96)_0%,rgba(242,239,255,0.72)_38%,rgba(209,250,229,0)_100%)] md:-mt-20 md:!pt-28 md:!pb-16" style={{ scrollMarginTop: '80px' }}>
-      <div className="mx-auto mb-6 max-w-2xl rounded-[24px] bg-white/38 px-4 py-6 text-center backdrop-blur-sm md:mb-10 md:bg-transparent md:p-0 md:backdrop-blur-0">
+      <div className="mx-auto mb-6 max-w-2xl rounded-[24px] bg-white px-4 py-6 text-center ring-1 ring-[var(--color-border-light)] md:mb-10 md:bg-transparent md:p-0 md:ring-0">
         <SectionHeading className="text-center">
           Sensores y baterías solo donde el diagnóstico las justifica.
         </SectionHeading>
@@ -847,7 +873,7 @@ function HardwareSection() {
 
       <div ref={ref} className="relative z-10 mx-auto max-w-5xl">
         {/* Sensor → Rule → Ahorro flow */}
-        <div className="mb-8 overflow-hidden rounded-[24px] border border-[var(--color-border)] bg-white p-4 backdrop-blur-sm md:p-6 lg:p-8">
+        <div className="mb-8 overflow-hidden rounded-[24px] border border-[var(--color-border)] bg-white p-4 md:p-6 lg:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.14em] text-[var(--color-primary)]">Flujo técnico · demo</p>
@@ -869,7 +895,7 @@ function HardwareSection() {
               </div>
             </div>
             <div
-              className="hw-visual group relative overflow-hidden rounded-[22px] border border-white/90 bg-[linear-gradient(145deg,rgba(255,255,255,0.84)_0%,rgba(236,253,245,0.78)_52%,rgba(219,234,254,0.74)_100%)] outline-none ring-1 ring-[#0f7b5a]/10 backdrop-blur-sm"
+              className="hw-visual group relative overflow-hidden rounded-[22px] border border-white/90 bg-[linear-gradient(145deg,rgba(255,255,255,0.96)_0%,rgba(236,253,245,0.92)_52%,rgba(219,234,254,0.9)_100%)] outline-none ring-1 ring-[#0f7b5a]/10"
               role="button"
               tabIndex={0}
               aria-label="Animación de flujo energético: pasa el ratón para cargar la batería"
@@ -972,7 +998,7 @@ function HardwareSection() {
           </div>
         </div>
 
-        <div className="mb-5 flex flex-col items-start justify-between gap-4 rounded-[18px] border border-white/70 bg-white/58 p-4 backdrop-blur-sm sm:flex-row sm:items-center sm:p-6">
+        <div className="mb-5 flex flex-col items-start justify-between gap-4 rounded-[18px] border border-[var(--color-border)] bg-white p-4 sm:flex-row sm:items-center sm:p-6">
           <div>
             <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.12em] text-[var(--color-primary)]">Decisión con datos</p>
             <p className="mt-1 text-[14px] leading-relaxed text-[var(--color-gray)]">Si el diagnóstico no encuentra margen accionable, no recomendamos hardware.</p>
@@ -1011,6 +1037,8 @@ function Footer() {
     ['Hardware', '#hardware'],
     ['Precios', '#precios'],
     ['FAQ', '#faq'],
+    ['Privacidad', '/privacidad'],
+    ['Aviso legal', '/aviso-legal'],
   ];
   return (
     <footer data-gsap-section className="px-6 py-12 bg-[var(--color-primary-hover)] text-white">
@@ -1061,19 +1089,19 @@ function MobileCTA() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const update = () => setVisible(window.scrollY > window.innerHeight * 0.18);
+    const update = () => setVisible(window.scrollY > window.innerHeight * 0.10);
     update();
     window.addEventListener('scroll', update, { passive: true });
     return () => window.removeEventListener('scroll', update);
   }, []);
 
   return (
-    <div className={`fixed bottom-0 left-0 right-0 z-40 md:hidden transition-all duration-300 ${visible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-full opacity-0'}`}>
+    <div className={`fixed bottom-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ${visible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-full opacity-0'}`}>
       <div className="pointer-events-none absolute -top-8 inset-x-0 bottom-0 bg-gradient-to-t from-white via-white/70 to-transparent" />
       <div className="relative px-6 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-2">
         <a href="#diagnostico"
           className="flex w-full items-center justify-center gap-2 min-h-[52px] rounded-[12px] border border-[var(--color-primary-hover)] font-display text-[15px] font-medium bg-[var(--color-primary)] text-white pointer-events-auto">
-          Diagnosticar mi cartera <ArrowRight className="h-4 w-4" />
+          Calcular margen perdido <ArrowRight className="h-4 w-4" />
         </a>
       </div>
     </div>
