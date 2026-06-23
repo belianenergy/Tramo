@@ -250,7 +250,7 @@ function PlatformHeroVisual() {
         <div className="mt-3 grid min-w-0 gap-3 lg:grid-cols-[0.88fr_1.12fr]">
           <div className="relative min-h-[220px] overflow-hidden rounded-[18px] border border-white/12 bg-white sm:min-h-[260px] md:min-h-[340px] md:rounded-[22px]">
             <Image
-              src="/images/hero-apartment-energy.webp"
+              src="/images/hero-apartment-energy.png"
               alt="Apartamento turístico con puntos de consumo detectados por Tramo"
               width={1449}
               height={1086}
