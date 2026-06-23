@@ -248,7 +248,7 @@ function PlatformHeroVisual() {
         </div>
 
         <div className="mt-3 grid min-w-0 gap-3 lg:grid-cols-[0.88fr_1.12fr]">
-          <div className="relative min-h-[220px] overflow-hidden rounded-[18px] border border-white/12 bg-white sm:min-h-[260px] md:min-h-[340px] md:rounded-[22px]">
+          <div className="relative min-h-[176px] overflow-hidden rounded-[18px] border border-white/12 bg-white sm:min-h-[260px] md:min-h-[340px] md:rounded-[22px]">
             <Image
               src="/images/hero-apartment-energy.webp"
               alt="Apartamento turístico con puntos de consumo detectados por Tramo"
@@ -275,7 +275,7 @@ function PlatformHeroVisual() {
                   data-consumption-symbol
                   onMouseEnter={() => setActive(i)}
                   onFocus={() => setActive(i)}
-                  className="group absolute z-20 -translate-x-1/2 -translate-y-1/2 rounded-full outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-primary)]"
+                  className="group absolute z-20 hidden -translate-x-1/2 -translate-y-1/2 rounded-full outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-primary)] sm:block"
                   style={{ left: `${item.x}%`, top: `${item.y}%` }}
                   aria-label={`${item.label}: ${item.note}`}
                 >
@@ -290,7 +290,7 @@ function PlatformHeroVisual() {
             })}
           </div>
 
-          <div data-platform-overlay className="min-w-0 rounded-[18px] bg-white p-4 text-[var(--color-dark)] md:rounded-[22px] md:p-5">
+          <div data-platform-overlay className="hidden min-w-0 rounded-[18px] bg-white p-4 text-[var(--color-dark)] sm:block md:rounded-[22px] md:p-5">
             <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-start">
               <div className="min-w-0">
                 <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.10em] text-[var(--color-gray)]">Decisión Tramo</p>
@@ -356,19 +356,19 @@ function Hero() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} id="hero" data-gsap-section className="relative overflow-hidden px-[var(--grid-gutter)] pt-10 pb-6 md:pt-10 md:pb-10 bg-[var(--color-bg)]">
+    <section ref={ref} id="hero" data-gsap-section className="relative overflow-hidden px-[var(--grid-gutter)] pt-7 pb-5 md:pt-10 md:pb-10 bg-[var(--color-bg)]">
       <div className="relative mx-auto max-w-full overflow-x-clip tramo-grid" style={{ maxWidth: 'var(--page-max)' }}>
-        <div className="col-span-full grid items-center gap-8 lg:grid-cols-12">
+        <div className="col-span-full grid items-center gap-6 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-6 lg:pr-6">
             <h1 data-anim="hero-up"
               className="font-display text-[clamp(2.1rem,5vw,3.8rem)] font-light leading-[1.06] text-[var(--color-dark)]"
               style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0, maxWidth: '100%', overflowWrap: 'anywhere' }}>
               Convierte la energía de tu cartera turística en margen operativo.
             </h1>
-            <p data-anim="hero-up" className="mt-6 max-w-md text-[15px] sm:text-[17px] leading-relaxed text-[var(--color-gray)]">
+            <p data-anim="hero-up" className="mt-4 max-w-md text-[15px] sm:mt-6 sm:text-[17px] leading-relaxed text-[var(--color-gray)]">
               Cruza reservas con CUPS y Datadis para detectar consumo fuera de estancia, activar reglas y preparar informes por propietario.
             </p>
-            <div data-anim="hero-up" className="mt-8 flex flex-wrap items-center gap-4">
+            <div data-anim="hero-up" className="mt-6 flex flex-wrap items-center gap-3 sm:mt-8 sm:gap-4">
               <CtaButton href="#diagnostico">Diagnosticar mi cartera</CtaButton>
               <CtaButton href="/app/dashboard" variant="ghost">Ver demo</CtaButton>
             </div>
@@ -628,8 +628,8 @@ function Pricing() {
       <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
         {pricingTiers.map((tier) => (
           <div key={tier.name}
-            className={`pricing-card relative flex flex-col rounded-[14px] p-6 bg-white transition-all duration-300 hover:scale-[1.02] ${
-              tier.recommended ? 'border-2 border-[var(--color-primary)] hover:shadow-[0_0_32px_-4px_rgba(15,123,90,0.25)]' : 'border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:shadow-md'
+            className={`pricing-card relative flex flex-col rounded-[16px] p-6 bg-white transition-all duration-300 hover:scale-[1.02] ${
+              tier.recommended ? 'border-2 border-[var(--color-primary)] shadow-[0_22px_70px_-42px_rgba(15,123,90,0.75)] lg:-translate-y-2 hover:shadow-[0_0_32px_-4px_rgba(15,123,90,0.25)]' : 'border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:shadow-md'
             }`}>
             {tier.recommended && (
               <div className="mb-4 w-fit rounded-[6px] px-3 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.08em] bg-[var(--color-primary)] text-white">
@@ -653,7 +653,7 @@ function Pricing() {
               ))}
             </ul>
             <a href="#diagnostico"
-              className={`mt-auto inline-flex min-h-[42px] w-full items-center justify-center rounded-[8px] px-3 text-[14px] font-medium transition-colors duration-200 ${
+              className={`mt-auto inline-flex min-h-[50px] w-full items-center justify-center rounded-[10px] px-3 text-[15px] font-medium transition-colors duration-200 ${
                 tier.recommended
                   ? 'bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)]'
                   : 'border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white'
@@ -747,7 +747,7 @@ PMS: ${data.pms || ''}`,
   }
 
   return (
-    <section id="diagnostico" data-gsap-section className="relative px-6 py-12 md:py-20 bg-[var(--color-primary)] text-white" style={{ scrollMarginTop: '80px' }}>
+    <section id="diagnostico" data-gsap-section className="relative px-6 py-12 md:py-20 bg-[var(--color-primary-hover)] text-white" style={{ scrollMarginTop: '80px' }}>
       <div className="relative mx-auto" style={{ maxWidth: '36rem' }}>
         <div className="text-center">
           <SectionHeading className="text-center" eyebrow="Diagnóstico gratuito">
@@ -762,30 +762,30 @@ PMS: ${data.pms || ''}`,
             <label className="block" htmlFor="lead-name">
               <span className="mb-1 block text-left text-[14px] font-medium text-white/86">Nombre</span>
               <input id="lead-name" name="name" required autoComplete="name" placeholder="Marta López"
-                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white/[0.18] border border-white/30 text-white placeholder:text-white/72 focus:outline-none focus:border-white/70 transition-colors" />
+                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white border border-white text-[var(--color-dark)] placeholder:text-[#64748b] focus:outline-none focus:ring-2 focus:ring-white/60 transition-colors" />
             </label>
             <label className="block" htmlFor="lead-email">
               <span className="mb-1 block text-left text-[14px] font-medium text-white/86">Email profesional</span>
               <input id="lead-email" name="email" type="email" required autoComplete="email" placeholder="marta@gestora.com"
-                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white/[0.18] border border-white/30 text-white placeholder:text-white/72 focus:outline-none focus:border-white/70 transition-colors" />
+                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white border border-white text-[var(--color-dark)] placeholder:text-[#64748b] focus:outline-none focus:ring-2 focus:ring-white/60 transition-colors" />
             </label>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="block" htmlFor="lead-company">
               <span className="mb-1 block text-left text-[14px] font-medium text-white/86">Nombre de la gestora</span>
               <input id="lead-company" name="company" autoComplete="organization" placeholder="Costa Norte Rentals"
-                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white/[0.18] border border-white/30 text-white placeholder:text-white/72 focus:outline-none focus:border-white/70 transition-colors" />
+                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white border border-white text-[var(--color-dark)] placeholder:text-[#64748b] focus:outline-none focus:ring-2 focus:ring-white/60 transition-colors" />
             </label>
             <label className="block" htmlFor="lead-units">
               <span className="mb-1 block text-left text-[14px] font-medium text-white/86">Número de apartamentos</span>
               <input id="lead-units" name="units" type="number" min="1" inputMode="numeric" placeholder="42"
-                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white/[0.18] border border-white/30 text-white placeholder:text-white/72 focus:outline-none focus:border-white/70 transition-colors" />
+                className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white border border-white text-[var(--color-dark)] placeholder:text-[#64748b] focus:outline-none focus:ring-2 focus:ring-white/60 transition-colors" />
             </label>
           </div>
           <label className="block" htmlFor="lead-pms">
             <span className="mb-1 block text-left text-[14px] font-medium text-white/86">PMS o sistema de reservas</span>
             <input id="lead-pms" name="pms" autoComplete="off" placeholder="Avantio, Guesty, Smoobu…"
-              className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white/[0.18] border border-white/30 text-white placeholder:text-white/72 focus:outline-none focus:border-white/70 transition-colors" />
+              className="w-full min-h-[48px] rounded-[8px] px-4 text-[15px] bg-white border border-white text-[var(--color-dark)] placeholder:text-[#64748b] focus:outline-none focus:ring-2 focus:ring-white/60 transition-colors" />
           </label>
           <div aria-live="polite" role="status" className="min-h-[2lh]">
             {status === 'sent' && <p className="rounded-[8px] p-3 text-[14px] font-medium bg-white/10">✅ Solicitud recibida. Te respondemos con una propuesta de diagnóstico.</p>}
@@ -799,7 +799,7 @@ PMS: ${data.pms || ''}`,
             )}
           </div>
           <button type="submit" disabled={status === 'sending'}
-            className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-[8px] px-6 font-display text-[15px] font-medium bg-white text-[var(--color-primary)] hover:bg-white/90 active:bg-white/80 disabled:opacity-60 transition-all duration-200">
+            className="inline-flex min-h-[56px] w-full items-center justify-center gap-2 rounded-[10px] px-6 font-display text-[16px] font-semibold bg-white text-[var(--color-primary-hover)] hover:bg-white/90 active:bg-white/80 disabled:opacity-60 transition-all duration-200 shadow-[0_18px_42px_-28px_rgba(0,0,0,0.55)]">
             {status === 'sending' ? 'Enviando...' : 'Solicitar diagnóstico'}
             <ArrowRight className="h-4 w-4" />
           </button>
@@ -872,84 +872,53 @@ function HardwareSection() {
       </div>
 
       <div ref={ref} className="relative z-10 mx-auto max-w-5xl">
-        {/* Sensor → Rule → Ahorro flow */}
-        <div className="mb-8 overflow-hidden rounded-[24px] border border-[var(--color-border)] bg-white p-4 md:p-6 lg:p-8">
-          <div className="grid gap-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.14em] text-[var(--color-primary)]">Flujo técnico · demo</p>
-              <h3 className="mt-3 font-display text-[clamp(1.35rem,3vw,2.15rem)] font-light leading-tight text-[var(--color-dark)]" style={{ letterSpacing: '-0.03em' }}>
-                Medir primero. Automatizar después. Financiar hardware solo si el margen lo pide.
-              </h3>
-              <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-[#475569]">
-                Unha secuencia simple: medir se fai falta, decidir con datos e investir só cando o retorno estimado é defendible.
-              </p>
-            </div>
-            <div
-              className="hw-visual group relative w-full overflow-hidden rounded-[22px] border border-[var(--color-border)] bg-white outline-none"
-              role="button"
-              tabIndex={0}
-              aria-label="Animación de flujo energético: pasa el ratón para cargar la batería"
-              onMouseEnter={chargeBattery}
-              onMouseLeave={dischargeBattery}
-              onClick={chargeBattery}
-              onTouchStart={chargeBattery}
-              onFocus={chargeBattery}
-              onBlur={dischargeBattery}
-            >
-              <div className="grid gap-4 p-4 sm:p-5 md:grid-cols-3 md:items-stretch">
-                <div className="rounded-[18px] border border-[var(--color-border)] bg-[#f8faf9] p-5 min-w-0">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-[12px] bg-[var(--color-primary-subtle)] text-[var(--color-primary)]">
-                    <Gauge className="h-5 w-5" />
-                  </div>
-                  <p className="mt-6 font-mono text-[14px] font-semibold uppercase tracking-[0.1em] text-[var(--color-primary)]">01 · medir</p>
-                  <h4 className="mt-2 font-display text-[22px] font-light leading-tight text-[var(--color-dark)]">Sensor opcional</h4>
-                  <p className="mt-3 text-[14px] leading-relaxed text-[#475569]">Solo si falta precisión por circuito: ACS, clima o standby.</p>
+        <div className="grid gap-4 lg:grid-cols-3">
+          {[
+            {
+              icon: Gauge,
+              kicker: 'Sensor opcional',
+              title: 'Instalar solo si falta medición',
+              body: 'ACS, clima o standby por circuito cuando Datadis no explica el consumo fantasma.',
+              meta: 'desde ~300 €/apto instalado',
+              tone: 'light',
+            },
+            {
+              icon: Zap,
+              kicker: 'Regla Tramo',
+              title: 'Automatizar antes de comprar hardware',
+              body: 'Reserva + tarifa + curva real. Si basta con una regla operativa, no se instala nada.',
+              meta: 'primero software, después inversión',
+              tone: 'primary',
+            },
+            {
+              icon: BatteryCharging,
+              kicker: 'Batería opcional',
+              title: 'Simular payback antes de invertir',
+              body: 'Arbitraje P1/P3 solo si la curva de carga y la ocupación sostienen el retorno.',
+              meta: '~5.500 € / 10 kWh · 4-7 años orientativo',
+              tone: 'light',
+            },
+          ].map((item) => {
+            const Icon = item.icon;
+            const primary = item.tone === 'primary';
+            return (
+              <article key={item.title} className={`hw-card rounded-[20px] border p-6 ${primary ? 'border-[var(--color-primary)] bg-[var(--color-primary)] text-white shadow-[0_28px_70px_-48px_rgba(15,123,90,0.9)]' : 'border-[var(--color-border)] bg-white text-[var(--color-dark)]'}`}>
+                <div className={`flex h-12 w-12 items-center justify-center rounded-[14px] ${primary ? 'bg-white/16 text-white' : 'bg-[var(--color-primary-subtle)] text-[var(--color-primary)]'}`}>
+                  <Icon className="h-5 w-5" />
                 </div>
-                <div className="rounded-[18px] border border-[var(--color-border)] bg-white p-5 min-w-0 shadow-[0_18px_50px_-42px_rgba(15,23,42,0.65)]">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-[12px] bg-[#eef7f3] text-[var(--color-primary)]">
-                    <Zap className="h-5 w-5" />
-                  </div>
-                  <p className="mt-6 font-mono text-[14px] font-semibold uppercase tracking-[0.1em] text-[var(--color-primary)]">02 · decidir</p>
-                  <h4 className="mt-2 font-display text-[22px] font-light leading-tight text-[var(--color-dark)]">Regla Tramo</h4>
-                  <p className="mt-3 text-[14px] leading-relaxed text-[#475569]">Cruza reserva, tarifa y curva real antes de automatizar nada.</p>
-                </div>
-                <div className="rounded-[18px] border border-[var(--color-border)] bg-[#f8faf9] p-5 min-w-0">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-[12px] bg-[var(--color-primary-subtle)] text-[var(--color-primary)]">
-                    <BatteryCharging className="h-5 w-5" />
-                  </div>
-                  <p className="mt-6 font-mono text-[14px] font-semibold uppercase tracking-[0.1em] text-[var(--color-primary)]">03 · invertir</p>
-                  <h4 className="mt-2 font-display text-[22px] font-light leading-tight text-[var(--color-dark)]">Batería opcional</h4>
-                  <p className="mt-3 text-[14px] leading-relaxed text-[#475569]">Solo con payback estimado e impacto suficiente en P1/P3.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+                <p className={`mt-7 font-mono text-[14px] font-semibold uppercase tracking-[0.1em] ${primary ? 'text-white/72' : 'text-[var(--color-primary)]'}`}>{item.kicker}</p>
+                <h3 className={`mt-2 font-display text-[22px] font-light leading-tight ${primary ? 'text-white' : 'text-[var(--color-dark)]'}`}>{item.title}</h3>
+                <p className={`mt-3 text-[14px] leading-relaxed ${primary ? 'text-white/78' : 'text-[#475569]'}`}>{item.body}</p>
+                <p className={`mt-6 inline-flex rounded-full px-3 py-1.5 font-mono text-[14px] font-semibold ${primary ? 'bg-white/16 text-white' : 'bg-[var(--color-primary-subtle)] text-[var(--color-primary)]'}`}>{item.meta}</p>
+              </article>
+            );
+          })}
         </div>
 
-        <div className="mb-5 flex flex-col items-start justify-between gap-4 rounded-[18px] border border-[var(--color-border)] bg-white p-4 sm:flex-row sm:items-center sm:p-6">
-          <div>
-            <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.12em] text-[var(--color-primary)]">Decisión con datos</p>
-            <p className="mt-1 text-[14px] leading-relaxed text-[var(--color-gray)]">Si el diagnóstico no encuentra margen accionable, no recomendamos hardware.</p>
-          </div>
-          <a href="#diagnostico" className="inline-flex min-h-[42px] items-center justify-center rounded-[10px] bg-[var(--color-primary)] px-4 text-[14px] font-medium text-white hover:bg-[var(--color-primary-hover)]">
-            Calcular margen
-          </a>
-        </div>
-
-        {/* Hardware cards */}
-        <div className="grid gap-4 pb-48 lg:grid-cols-2 lg:pb-0">
-          <div className="hw-card rounded-[18px] border border-white/20 bg-[var(--color-primary)] p-6 sm:p-6 text-white">
-            <h3 className="font-display text-[18px] sm:text-[19px] font-medium text-white">Sensores opcionales</h3>
-            <p className="mt-2 text-[14px] sm:text-[14px] leading-relaxed text-white/78">Medición por circuito para ACS, climatización y standby. Visibilidad completa del consumo fantasma.</p>
-            <p className="mt-4 inline-flex rounded-full bg-white/16 px-3 py-1.5 font-mono text-[14px] sm:text-[14px] font-semibold text-white">desde ~300 €/apto instalado</p>
-            <p className="mt-3 text-[14px] leading-relaxed text-white/62">Retorno estimado solo si el diagnóstico detecta consumo accionable. Sin ROI garantizado.</p>
-          </div>
-          <div className="hw-card rounded-[18px] border border-white/20 bg-[var(--color-primary-hover)] p-6 sm:p-6 text-white">
-            <h3 className="font-display text-[18px] sm:text-[19px] font-medium text-white">Batería opcional</h3>
-            <p className="mt-2 text-[14px] sm:text-[14px] leading-relaxed text-white/78">Almacenamiento para arbitraje OMIE: carga en valle (P3), descarga en punta (P1). Solo simulación.</p>
-            <p className="mt-4 inline-flex rounded-full bg-white/16 px-3 py-1.5 font-mono text-[14px] sm:text-[14px] font-semibold text-white">~5.500 € / 10 kWh</p>
-            <p className="mt-3 text-[14px] leading-relaxed text-white/62">Simulación con curva real de carga. Payback orientativo: 4-7 años según ocupación y tarifa.</p>
-          </div>
+        <div className="mt-4 grid gap-3 rounded-[18px] border border-[var(--color-border)] bg-white p-4 md:grid-cols-3">
+          <p className="rounded-[12px] bg-[var(--color-primary-subtle)] px-4 py-3 text-[14px] font-medium text-[var(--color-primary)]">Sí: consumo post-checkout repetido</p>
+          <p className="rounded-[12px] bg-[#f8faf9] px-4 py-3 text-[14px] font-medium text-[#475569]">No: curva estable sen anomalías</p>
+          <p className="rounded-[12px] bg-[#f8faf9] px-4 py-3 text-[14px] font-medium text-[#475569]">Sempre: payback antes de instalar</p>
         </div>
       </div>
     </Section>
