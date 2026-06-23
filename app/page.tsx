@@ -895,7 +895,7 @@ function HardwareSection() {
               </div>
             </div>
             <div
-              className="hw-visual group relative hidden overflow-hidden rounded-[22px] border border-white/90 bg-[linear-gradient(145deg,rgba(255,255,255,0.98)_0%,rgba(241,248,244,0.96)_100%)] outline-none ring-1 ring-[#0f7b5a]/10 md:block"
+              className="hw-visual group relative overflow-hidden rounded-[22px] border border-white/90 bg-[linear-gradient(145deg,rgba(255,255,255,0.98)_0%,rgba(236,253,245,0.94)_58%,rgba(238,247,243,0.96)_100%)] outline-none ring-1 ring-[#0f7b5a]/10"
               role="button"
               tabIndex={0}
               aria-label="Animación de flujo energético: pasa el ratón para cargar la batería"
@@ -906,7 +906,7 @@ function HardwareSection() {
               onFocus={chargeBattery}
               onBlur={dischargeBattery}
             >
-              <svg className="block aspect-[4/3] w-full max-h-[330px] md:max-h-none" viewBox="0 0 1200 900" aria-hidden="true">
+              <svg className="block h-[220px] w-full md:h-auto md:max-h-none" viewBox="0 0 1200 900" aria-hidden="true">
                 <defs>
                   <linearGradient id="arcadiaPanel" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0" stopColor="#ffffff" />
