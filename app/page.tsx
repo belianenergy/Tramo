@@ -114,7 +114,7 @@ function Nav() {
               ['Problema', '#producto'],
               ['Hardware', '#hardware'],
               ['Precios', '#precios'],
-              ['FAQ', '#faq'],
+              ['Dudas', '#faq'],
             ].map(([label, href]) => (
               <a key={href} href={href}
                 className="inline-flex min-h-[44px] items-center text-[14px] font-medium text-[var(--color-gray)] hover:text-[var(--color-primary)] transition-colors duration-200">
@@ -125,7 +125,7 @@ function Nav() {
           <div className="hidden items-center gap-4 lg:flex">
             <a href="/app/dashboard"
               className="inline-flex min-h-[44px] items-center justify-center rounded-[8px] px-4 text-[14px] font-medium border border-[var(--color-border)] text-[var(--color-dark)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-all duration-200">
-              Demo
+              Panel
             </a>
             <a href="#diagnostico"
               className="inline-flex min-h-[44px] items-center justify-center rounded-[8px] px-6 text-[14px] font-medium bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)] active:bg-[var(--color-primary-active)] transition-colors duration-200">
@@ -155,8 +155,8 @@ function Nav() {
             ['Problema', '#producto'],
             ['Hardware', '#hardware'],
             ['Precios', '#precios'],
-            ['FAQ', '#faq'],
-            ['Dashboard demo', '/app/dashboard'],
+            ['Dudas', '#faq'],
+            ['Panel operativo', '/app/dashboard'],
           ].map(([label, href]) => (
               <a key={href} href={href} onClick={() => setOpen(false)}
                 className="rounded-[16px] px-4 py-3 font-display text-[18px] font-light text-[var(--color-dark)] hover:bg-[var(--color-primary-subtle)] transition-colors duration-200">
@@ -239,7 +239,7 @@ function PlatformHeroVisual() {
       <div data-hero-scene className="min-w-0 overflow-hidden rounded-[24px] border border-[var(--color-border)] bg-[var(--color-dark)] p-3 shadow-[0_26px_80px_-42px_rgba(15,23,42,0.85)] md:rounded-[28px] md:p-4">
         <div className="flex min-w-0 items-center justify-between gap-3 border-b border-white/14 pb-3 text-white">
           <div className="min-w-0">
-            <p className="max-w-[24ch] font-mono text-[14px] font-semibold uppercase tracking-[0.06em] text-white/70">Demo operativa · cartera real</p>
+            <p className="max-w-[24ch] font-mono text-[14px] font-semibold uppercase tracking-[0.06em] text-white/70">Panel operativo · cartera real</p>
             <p className="mt-1 max-w-[24ch] font-display text-[19px] font-light leading-tight text-white md:text-[24px]">Apto A-14 · checkout terminado</p>
           </div>
           <div className="hidden shrink-0 rounded-full bg-white px-3 py-2 font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-[var(--color-dark)] sm:inline-flex">
@@ -248,18 +248,18 @@ function PlatformHeroVisual() {
         </div>
 
         <div className="mt-3 grid min-w-0 gap-3 lg:grid-cols-[0.88fr_1.12fr]">
-          <div className="relative min-h-[176px] overflow-hidden rounded-[18px] border border-white/12 bg-white sm:min-h-[260px] md:min-h-[340px] md:rounded-[22px]">
+          <div className="relative min-h-[176px] overflow-hidden rounded-[18px] border border-white/12 bg-white sm:min-h-[250px] md:min-h-[340px] md:rounded-[22px]">
             <Image
-              src="/images/hero-apartment-energy.webp"
+              src="/images/hero-apartment-energy.png"
               alt="Apartamento turístico con puntos de consumo detectados por Tramo"
               width={1449}
               height={1086}
               sizes="(min-width: 1024px) 360px, 100vw"
               priority
               className="h-full w-full object-cover"
-              style={{ opacity: 0.82 }}
+              style={{ opacity: 0.92 }}
             />
-            <div className="absolute left-3 top-3 max-w-[calc(100%-24px)] rounded-[12px] bg-white px-3 py-2 shadow-[0_16px_34px_-24px_rgba(15,23,42,0.75)]">
+            <div className="absolute left-3 top-3 z-30 max-w-[calc(100%-24px)] rounded-[12px] bg-white px-3 py-2 shadow-[0_16px_34px_-24px_rgba(15,23,42,0.75)]">
               <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.08em] text-[var(--color-gray)]">Consumo fuera</p>
               <p className="mt-1 font-display text-[24px] font-light leading-none text-[var(--color-dark)] tabular-nums">51 kWh</p>
             </div>
@@ -290,11 +290,11 @@ function PlatformHeroVisual() {
             })}
           </div>
 
-          <div data-platform-overlay className="hidden min-w-0 rounded-[18px] bg-white p-4 text-[var(--color-dark)] sm:block md:rounded-[22px] md:p-5">
+          <div data-platform-overlay className="min-w-0 rounded-[18px] bg-white p-4 text-[var(--color-dark)] md:rounded-[22px] md:p-5">
             <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-start">
               <div className="min-w-0">
                 <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.10em] text-[var(--color-gray)]">Decisión Tramo</p>
-                <h2 className="mt-2 font-display text-[26px] font-light leading-[1.05] text-[var(--color-dark)] md:text-[34px]">
+                <h2 className="mt-2 max-w-full font-display text-[24px] font-light leading-[1.05] text-[var(--color-dark)] md:text-[30px]" style={{ overflowWrap: 'break-word', textWrap: 'balance' }}>
                   Automatizar {selected.label.toLowerCase()}
                 </h2>
               </div>
@@ -356,21 +356,21 @@ function Hero() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} id="hero" data-gsap-section className="relative overflow-hidden px-[var(--grid-gutter)] pt-7 pb-5 md:pt-10 md:pb-10 bg-[var(--color-bg)]">
+    <section ref={ref} id="hero" data-gsap-section className="relative overflow-hidden px-[var(--grid-gutter)] pt-6 pb-6 md:pt-10 md:pb-10 bg-[var(--color-bg)]">
       <div className="relative mx-auto max-w-full overflow-x-clip tramo-grid" style={{ maxWidth: 'var(--page-max)' }}>
-        <div className="col-span-full grid items-center gap-6 lg:grid-cols-12 lg:gap-8">
+        <div className="col-span-full grid items-center gap-8 lg:grid-cols-12">
           <div className="lg:col-span-6 lg:pr-6">
             <h1 data-anim="hero-up"
               className="font-display text-[clamp(2.1rem,5vw,3.8rem)] font-light leading-[1.06] text-[var(--color-dark)]"
-              style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0, maxWidth: '100%', overflowWrap: 'anywhere' }}>
+              style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0, maxWidth: '100%', overflowWrap: 'break-word' }}>
               Convierte la energía de tu cartera turística en margen operativo.
             </h1>
-            <p data-anim="hero-up" className="mt-4 max-w-md text-[15px] sm:mt-6 sm:text-[17px] leading-relaxed text-[var(--color-gray)]">
+            <p data-anim="hero-up" className="mt-6 max-w-md text-[15px] sm:text-[17px] leading-relaxed text-[var(--color-gray)]">
               Cruza reservas con CUPS y Datadis para detectar consumo fuera de estancia, activar reglas y preparar informes por propietario.
             </p>
-            <div data-anim="hero-up" className="mt-6 flex flex-wrap items-center gap-3 sm:mt-8 sm:gap-4">
-              <CtaButton href="#diagnostico">Diagnosticar mi cartera</CtaButton>
-              <CtaButton href="/app/dashboard" variant="ghost">Ver demo</CtaButton>
+            <div data-anim="hero-up" className="mt-8 flex flex-wrap items-center gap-4">
+              <CtaButton href="#diagnostico">Calcular margen perdido</CtaButton>
+              <CtaButton href="/app/dashboard" variant="ghost">Ver panel</CtaButton>
             </div>
           </div>
           <div data-anim="hero-img" className="relative flex min-w-0 items-center justify-center lg:col-span-6">
@@ -501,7 +501,7 @@ const problems = [
 ];
 
 const decisions = [
-  { icon: CheckCircle2, title: 'Consumo fuera de estancia', body: 'Detecta energía activa post-checkout y estima el coste mensual.', tags: ['Reserva', 'CUPS'], bg: '#dbeafe', iconBg: '#bfdbfe', color: accents.blue },
+  { icon: CheckCircle2, title: 'Consumo fuera de estancia', body: 'Detecta energía activa tras la salida y estima el coste mensual.', tags: ['Reserva', 'CUPS'], bg: '#dbeafe', iconBg: '#bfdbfe', color: accents.blue },
   { icon: Gauge, title: 'Potencia revisable', body: 'Compara picos reales contra contrato y propone cambios con ahorro estimado.', tags: ['P1/P2/P3', 'Contrato'], bg: '#ccfbf1', iconBg: '#99f6e4', color: accents.teal },
   { icon: FileText, title: 'Informe por propietario', body: 'Convierte cada acción en explicación mensual: consumo, coste y evidencia.', tags: ['Propietario', 'PDF'], bg: '#ede9fe', iconBg: '#ddd6fe', color: accents.violet },
 ];
@@ -540,7 +540,7 @@ function ProblemsDecisions() {
             className={`reveal-card rounded-[18px] p-6 ring-1 ring-black/[0.04] transition-all duration-200 hover:scale-[1.01] md:p-8 ${index === 0 ? 'xl:col-span-2 xl:row-span-2 xl:min-h-[380px]' : ''}`}
             style={{ background: item.bg }}>
             {index === 0 ? (
-              <p className="mb-10 max-w-[8ch] font-display text-[clamp(3rem,5.6vw,5.8rem)] font-light leading-[0.9] tracking-[-0.045em] tabular-nums text-[var(--color-dark)]">post-checkout</p>
+              <p className="mb-10 max-w-[8ch] font-display text-[clamp(3rem,5.6vw,5.8rem)] font-light leading-[0.9] tracking-[-0.045em] tabular-nums text-[var(--color-dark)]">tras la salida</p>
             ) : (
               <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-[10px]" style={{ background: item.iconBg }}>
                 <Icon className="h-4 w-4" style={{ color: item.color }} />
@@ -628,8 +628,8 @@ function Pricing() {
       <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
         {pricingTiers.map((tier) => (
           <div key={tier.name}
-            className={`pricing-card relative flex flex-col rounded-[16px] p-6 bg-white transition-all duration-300 hover:scale-[1.02] ${
-              tier.recommended ? 'border-2 border-[var(--color-primary)] shadow-[0_22px_70px_-42px_rgba(15,123,90,0.75)] lg:-translate-y-2 hover:shadow-[0_0_32px_-4px_rgba(15,123,90,0.25)]' : 'border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:shadow-md'
+            className={`pricing-card relative flex flex-col rounded-[14px] p-6 bg-white transition-all duration-300 hover:scale-[1.02] ${
+              tier.recommended ? 'border-2 border-[var(--color-primary)] hover:shadow-[0_0_32px_-4px_rgba(15,123,90,0.25)]' : 'border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:shadow-md'
             }`}>
             {tier.recommended && (
               <div className="mb-4 w-fit rounded-[6px] px-3 py-1 font-mono text-[14px] font-semibold uppercase tracking-[0.08em] bg-[var(--color-primary)] text-white">
@@ -653,7 +653,7 @@ function Pricing() {
               ))}
             </ul>
             <a href="#diagnostico"
-              className={`mt-auto inline-flex min-h-[50px] w-full items-center justify-center rounded-[10px] px-3 text-[15px] font-medium transition-colors duration-200 ${
+              className={`mt-auto inline-flex min-h-[42px] w-full items-center justify-center rounded-[8px] px-3 text-[14px] font-medium transition-colors duration-200 ${
                 tier.recommended
                   ? 'bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)]'
                   : 'border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white'
@@ -668,7 +668,7 @@ function Pricing() {
   );
 }
 
-/* ── FAQ ── */
+/* ── Dudas ── */
 
 const faqs = [
   { q: '¿Qué necesito para empezar?', a: 'Acceso de solo lectura a tu contador (Datadis) y una integración con tu PMS. El diagnóstico inicial es gratuito.' },
@@ -677,7 +677,7 @@ const faqs = [
   { q: '¿Hay permanencia?', a: 'Facturación mensual sin permanencia. El primer mes es gratuito durante el piloto.' },
 ];
 
-function FAQ() {
+function Dudas() {
   return (
     <Section id="faq" className="pt-8 md:pt-12" style={{ scrollMarginTop: '80px' }}>
       <div className="mx-auto" style={{ maxWidth: '36rem' }}>
@@ -747,7 +747,7 @@ PMS: ${data.pms || ''}`,
   }
 
   return (
-    <section id="diagnostico" data-gsap-section className="relative px-6 py-12 md:py-20 bg-[var(--color-primary-hover)] text-white" style={{ scrollMarginTop: '80px' }}>
+    <section id="diagnostico" data-gsap-section className="relative px-6 py-12 md:py-20 bg-[var(--color-primary)] text-white" style={{ scrollMarginTop: '80px' }}>
       <div className="relative mx-auto" style={{ maxWidth: '36rem' }}>
         <div className="text-center">
           <SectionHeading className="text-center" eyebrow="Diagnóstico gratuito">
@@ -799,7 +799,7 @@ PMS: ${data.pms || ''}`,
             )}
           </div>
           <button type="submit" disabled={status === 'sending'}
-            className="inline-flex min-h-[56px] w-full items-center justify-center gap-2 rounded-[10px] px-6 font-display text-[16px] font-semibold bg-white text-[var(--color-primary-hover)] hover:bg-white/90 active:bg-white/80 disabled:opacity-60 transition-all duration-200 shadow-[0_18px_42px_-28px_rgba(0,0,0,0.55)]">
+            className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-[8px] px-6 font-display text-[15px] font-medium bg-white text-[var(--color-primary)] hover:bg-white/90 active:bg-white/80 disabled:opacity-60 transition-all duration-200">
             {status === 'sending' ? 'Enviando...' : 'Solicitar diagnóstico'}
             <ArrowRight className="h-4 w-4" />
           </button>
@@ -872,53 +872,156 @@ function HardwareSection() {
       </div>
 
       <div ref={ref} className="relative z-10 mx-auto max-w-5xl">
-        <div className="grid gap-4 lg:grid-cols-3">
-          {[
-            {
-              icon: Gauge,
-              kicker: 'Sensor opcional',
-              title: 'Instalar solo si falta medición',
-              body: 'ACS, clima o standby por circuito cuando Datadis no explica el consumo fantasma.',
-              meta: 'desde ~300 €/apto instalado',
-              tone: 'light',
-            },
-            {
-              icon: Zap,
-              kicker: 'Regla Tramo',
-              title: 'Automatizar antes de comprar hardware',
-              body: 'Reserva + tarifa + curva real. Si basta con una regla operativa, no se instala nada.',
-              meta: 'primero software, después inversión',
-              tone: 'primary',
-            },
-            {
-              icon: BatteryCharging,
-              kicker: 'Batería opcional',
-              title: 'Simular payback antes de invertir',
-              body: 'Arbitraje P1/P3 solo si la curva de carga y la ocupación sostienen el retorno.',
-              meta: '~5.500 € / 10 kWh · 4-7 años orientativo',
-              tone: 'light',
-            },
-          ].map((item) => {
-            const Icon = item.icon;
-            const primary = item.tone === 'primary';
-            return (
-              <article key={item.title} className={`hw-card rounded-[20px] border p-6 ${primary ? 'border-[var(--color-primary)] bg-[var(--color-primary)] text-white shadow-[0_28px_70px_-48px_rgba(15,123,90,0.9)]' : 'border-[var(--color-border)] bg-white text-[var(--color-dark)]'}`}>
-                <div className={`flex h-12 w-12 items-center justify-center rounded-[14px] ${primary ? 'bg-white/16 text-white' : 'bg-[var(--color-primary-subtle)] text-[var(--color-primary)]'}`}>
-                  <Icon className="h-5 w-5" />
-                </div>
-                <p className={`mt-7 font-mono text-[14px] font-semibold uppercase tracking-[0.1em] ${primary ? 'text-white/72' : 'text-[var(--color-primary)]'}`}>{item.kicker}</p>
-                <h3 className={`mt-2 font-display text-[22px] font-light leading-tight ${primary ? 'text-white' : 'text-[var(--color-dark)]'}`}>{item.title}</h3>
-                <p className={`mt-3 text-[14px] leading-relaxed ${primary ? 'text-white/78' : 'text-[#475569]'}`}>{item.body}</p>
-                <p className={`mt-6 inline-flex rounded-full px-3 py-1.5 font-mono text-[14px] font-semibold ${primary ? 'bg-white/16 text-white' : 'bg-[var(--color-primary-subtle)] text-[var(--color-primary)]'}`}>{item.meta}</p>
-              </article>
-            );
-          })}
+        {/* Sensor → Rule → Ahorro flow */}
+        <div className="mb-5 overflow-hidden rounded-[24px] border border-[var(--color-border)] bg-white p-4 md:mb-8 md:p-6 lg:p-8">
+          <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
+              <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.14em] text-[var(--color-primary)]">Flujo técnico</p>
+              <h3 className="mt-3 font-display text-[clamp(1.35rem,3vw,2.15rem)] font-light leading-tight text-[var(--color-dark)]" style={{ letterSpacing: '-0.03em' }}>
+                Medir primero. Automatizar después. Sin comprar sensores antes de demostrar margen.
+              </h3>
+              <div className="mt-6 grid gap-4 lg:grid-cols-3">
+                {[
+                  ['Sensor de cuadro', 'ACS · clima · standby', accents.teal],
+                  ['Regla Tramo', 'horario + reserva + tarifa', accents.amber],
+                  ['Informe', 'ahorro y payback estimado', 'var(--color-primary)'],
+                ].map(([title, body, color]) => (
+                  <div key={title} className="hw-card rounded-[16px] bg-white/86 p-4 ring-1 ring-white/70 backdrop-blur">
+                    <span className="block h-2 w-10 rounded-full" style={{ background: color }} />
+                    <p className="mt-3 text-[14px] font-medium text-[var(--color-dark)]">{title}</p>
+                    <p className="mt-1 text-[14px] leading-snug text-[var(--color-gray)]">{body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div
+              className="hw-visual group relative hidden overflow-hidden rounded-[22px] border border-white/90 bg-[linear-gradient(145deg,rgba(255,255,255,0.98)_0%,rgba(241,248,244,0.96)_100%)] outline-none ring-1 ring-[#0f7b5a]/10 md:block"
+              role="button"
+              tabIndex={0}
+              aria-label="Animación de flujo energético: pasa el ratón para cargar la batería"
+              onMouseEnter={chargeBattery}
+              onMouseLeave={dischargeBattery}
+              onClick={chargeBattery}
+              onTouchStart={chargeBattery}
+              onFocus={chargeBattery}
+              onBlur={dischargeBattery}
+            >
+              <svg className="block aspect-[4/3] w-full max-h-[330px] md:max-h-none" viewBox="0 0 1200 900" aria-hidden="true">
+                <defs>
+                  <linearGradient id="arcadiaPanel" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stopColor="#ffffff" />
+                    <stop offset="0.58" stopColor="#f7fbf8" />
+                    <stop offset="1" stopColor="#eef7f3" />
+                  </linearGradient>
+                  <linearGradient id="arcadiaBattery" x1="0" y1="640" x2="0" y2="315" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stopColor="var(--color-primary-hover)" stopOpacity="0.90" />
+                    <stop offset="0.45" stopColor="var(--color-primary)" stopOpacity="0.86" />
+                    <stop offset="1" stopColor="#38bdf8" stopOpacity="0.84" />
+                  </linearGradient>
+                  <linearGradient id="arcadiaFlow" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stopColor="#0f7b5a" stopOpacity="0" />
+                    <stop offset="0.52" stopColor="#0f7b5a" stopOpacity="0.72" />
+                    <stop offset="1" stopColor="#14b8a6" stopOpacity="0" />
+                  </linearGradient>
+                  <filter id="softPanelShadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="18" stdDeviation="22" floodColor="#0f172a" floodOpacity="0.10" />
+                  </filter>
+                  <clipPath id="batteryClip">
+                    <rect x="892" y="270" width="156" height="228" rx="32" />
+                  </clipPath>
+                </defs>
+
+                <rect x="58" y="72" width="1084" height="756" rx="42" fill="url(#arcadiaPanel)" stroke="rgba(15,123,90,0.12)" strokeWidth="2" />
+                <path d="M112 690 C310 615 458 732 654 646 C816 592 902 628 1068 542" fill="none" stroke="#0f7b5a" strokeOpacity="0.08" strokeWidth="80" strokeLinecap="round" />
+
+                {/* sensor module */}
+                <g className="hw-card" filter="url(#softPanelShadow)">
+                  <rect x="115" y="204" width="230" height="460" rx="40" fill="rgba(255,255,255,0.84)" stroke="rgba(15,123,90,0.30)" strokeWidth="2" />
+                  <g transform="translate(140 266)">
+                    <rect x="0" y="4" width="108" height="104" rx="28" fill="#d1fae5" stroke="#0f7b5a" strokeOpacity="0.38" strokeWidth="2" />
+                    <path d="M26 62 C26 36 44 22 64 22 C84 22 98 38 98 62" fill="none" stroke="#0f7b5a" strokeWidth="4" strokeLinecap="round" />
+                    <path d="M20 62 H48 M66 62 H100" stroke="#0f7b5a" strokeWidth="4" strokeLinecap="round" />
+                    <circle cx="58" cy="62" r="11" fill="#0f7b5a" fillOpacity="0.18" stroke="#0f7b5a" strokeOpacity="0.58" strokeWidth="2" />
+                    <path d="M58 62 L75 42" stroke="#0f7b5a" strokeWidth="3" strokeLinecap="round" />
+                    <path d="M126 36 h54 M126 70 h68 M126 104 h48" stroke="#0f7b5a" strokeOpacity="0.20" strokeWidth="13" strokeLinecap="round" />
+                    <path d="M118 140 C134 122 154 154 176 132" fill="none" stroke="#0f7b5a" strokeOpacity="0.36" strokeWidth="4" strokeLinecap="round" />
+                  </g>
+                  <text x="154" y="604" fill="var(--color-dark)" fontSize="28" fontWeight="600">Sensores</text>
+                  <text x="154" y="638" fill="#374151" fontSize="20">ACS · clima · standby</text>
+                </g>
+
+                {/* rule/chart module */}
+                <g className="hw-card" filter="url(#softPanelShadow)">
+                  <rect x="485" y="204" width="230" height="460" rx="40" fill="rgba(255,255,255,0.84)" stroke="rgba(245,158,11,0.34)" strokeWidth="2" />
+                  <g transform="translate(512 252)">
+                    <rect x="0" y="0" width="176" height="228" rx="26" fill="var(--color-status-warning-soft)" stroke="var(--color-status-warning)" strokeOpacity="0.30" strokeWidth="2" />
+                    <line x1="28" y1="184" x2="150" y2="184" stroke="var(--color-status-warning)" strokeOpacity="0.28" strokeWidth="2" />
+                    <line x1="28" y1="34" x2="28" y2="184" stroke="var(--color-status-warning)" strokeOpacity="0.22" strokeWidth="2" />
+                    <rect x="40" y="136" width="18" height="48" rx="5" fill="var(--color-status-warning)" fillOpacity="0.42" />
+                    <rect x="68" y="96" width="18" height="88" rx="5" fill="var(--color-status-warning)" fillOpacity="0.60" />
+                    <rect x="96" y="150" width="18" height="34" rx="5" fill="var(--color-status-warning)" fillOpacity="0.36" />
+                    <rect x="124" y="68" width="18" height="116" rx="5" fill="var(--color-status-warning)" fillOpacity="0.74" />
+                    <path d="M36 122 C54 74 74 108 92 86 C116 58 132 54 150 40" fill="none" stroke="var(--color-status-warning)" strokeWidth="4" strokeLinecap="round" />
+                    <circle cx="36" cy="122" r="4" fill="var(--color-status-warning)" />
+                    <circle cx="92" cy="86" r="4" fill="var(--color-status-warning)" />
+                    <circle cx="150" cy="40" r="5" fill="var(--color-status-warning)" />
+                  </g>
+                  <text x="523" y="604" fill="var(--color-dark)" fontSize="28" fontWeight="600">Regla Tramo</text>
+                  <text x="523" y="638" fill="#374151" fontSize="20">gráfico + tarifa</text>
+                </g>
+
+                {/* battery module */}
+                <g className="hw-card" filter="url(#softPanelShadow)">
+                  <rect x="855" y="204" width="230" height="460" rx="40" fill="rgba(248,250,249,0.96)" stroke="rgba(15,123,90,0.24)" strokeWidth="2" />
+                  <rect x="938" y="244" width="64" height="32" rx="10" fill="var(--color-primary)" fillOpacity="0.22" />
+                  <rect x="890" y="266" width="160" height="236" rx="28" fill="rgba(255,255,255,0.44)" stroke="rgba(15,123,90,0.28)" strokeWidth="4" />
+                  <g clipPath="url(#batteryClip)">
+                    <rect className="hw-battery-liquid" x="892" y="440" width="156" height="58" rx="18" fill="url(#arcadiaBattery)" />
+                    <line x1="914" x2="1026" y1="340" y2="340" stroke="rgba(37,99,235,0.14)" strokeWidth="2" />
+                    <line x1="914" x2="1026" y1="420" y2="420" stroke="rgba(37,99,235,0.14)" strokeWidth="2" />
+                  </g>
+                  <path d="M944 390 L984 298 L970 374 H1014 L952 484 L974 406 H944 Z" fill="rgba(15,123,90,0.34)" />
+                  <text x="918" y="604" fill="var(--color-dark)" fontSize="28" fontWeight="600">Batería</text>
+                  <text x="918" y="638" fill="#374151" fontSize="20">solo si compensa</text>
+                </g>
+
+                {/* flows */}
+                <path className="hw-energy-flow" d="M345 430 C398 392 432 392 485 430" fill="none" stroke="url(#arcadiaFlow)" strokeWidth="9" strokeLinecap="round" strokeDasharray="20 16" />
+                <path className="hw-energy-flow" d="M715 430 C768 392 802 392 855 430" fill="none" stroke="url(#arcadiaFlow)" strokeWidth="9" strokeLinecap="round" strokeDasharray="20 16" />
+                <circle className="hw-flow-pulse" cx="415" cy="412" r="10" fill="#0f7b5a" fillOpacity="0.50" />
+                <circle className="hw-flow-pulse" cx="785" cy="412" r="10" fill="var(--color-primary)" fillOpacity="0.48" />
+
+                <text x="94" y="132" fill="#0f7b5a" fontSize="19" fontWeight="700" letterSpacing="3">FLUJO TÉCNICO</text>
+                <text x="94" y="172" fill="#1A1A2E" fontSize="34" fontWeight="300">medición → regla → batería opcional</text>
+              </svg>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-4 grid gap-3 rounded-[18px] border border-[var(--color-border)] bg-white p-4 md:grid-cols-3">
-          <p className="rounded-[12px] bg-[var(--color-primary-subtle)] px-4 py-3 text-[14px] font-medium text-[var(--color-primary)]">Sí: consumo post-checkout repetido</p>
-          <p className="rounded-[12px] bg-[#f8faf9] px-4 py-3 text-[14px] font-medium text-[#475569]">No: curva estable sen anomalías</p>
-          <p className="rounded-[12px] bg-[#f8faf9] px-4 py-3 text-[14px] font-medium text-[#475569]">Sempre: payback antes de instalar</p>
+        <div className="mb-5 flex flex-col items-start justify-between gap-4 rounded-[18px] border border-[var(--color-border)] bg-white p-4 sm:flex-row sm:items-center sm:p-6">
+          <div>
+            <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.12em] text-[var(--color-primary)]">Decisión con datos</p>
+            <p className="mt-1 text-[14px] leading-relaxed text-[var(--color-gray)]">Si el diagnóstico no encuentra margen accionable, no recomendamos hardware.</p>
+          </div>
+          <a href="#diagnostico" className="inline-flex min-h-[42px] items-center justify-center rounded-[10px] bg-[var(--color-primary)] px-4 text-[14px] font-medium text-white hover:bg-[var(--color-primary-hover)]">
+            Calcular margen
+          </a>
+        </div>
+
+        {/* Hardware cards */}
+        <div className="grid gap-4 lg:grid-cols-2">
+          <div className="hw-card rounded-[18px] border border-white/20 bg-[var(--color-primary)] p-6 sm:p-6 text-white">
+            <h3 className="font-display text-[18px] sm:text-[19px] font-medium text-white">Sensores opcionales</h3>
+            <p className="mt-2 text-[14px] sm:text-[14px] leading-relaxed text-white/78">Medición por circuito para ACS, climatización y standby. Visibilidad completa del consumo fantasma.</p>
+            <p className="mt-4 inline-flex rounded-full bg-white/16 px-3 py-1.5 font-mono text-[14px] sm:text-[14px] font-semibold text-white">desde ~300 €/apto instalado</p>
+            <p className="mt-3 text-[14px] leading-relaxed text-white/62">Retorno estimado solo si el diagnóstico detecta consumo accionable. Sin ROI garantizado.</p>
+          </div>
+          <div className="hw-card rounded-[18px] border border-white/20 bg-[var(--color-primary-hover)] p-6 sm:p-6 text-white">
+            <h3 className="font-display text-[18px] sm:text-[19px] font-medium text-white">Batería opcional</h3>
+            <p className="mt-2 text-[14px] sm:text-[14px] leading-relaxed text-white/78">Almacenamiento para arbitraje OMIE: carga en valle (P3), descarga en punta (P1). Solo simulación.</p>
+            <p className="mt-4 inline-flex rounded-full bg-white/16 px-3 py-1.5 font-mono text-[14px] sm:text-[14px] font-semibold text-white">~5.500 € / 10 kWh</p>
+            <p className="mt-3 text-[14px] leading-relaxed text-white/62">Simulación con curva real de carga. Payback orientativo: 4-7 años según ocupación y tarifa.</p>
+          </div>
         </div>
       </div>
     </Section>
@@ -933,17 +1036,17 @@ function Footer() {
     ['Problema', '#producto'],
     ['Hardware', '#hardware'],
     ['Precios', '#precios'],
-    ['FAQ', '#faq'],
+    ['Dudas', '#faq'],
     ['Privacidad', '/privacidad'],
     ['Aviso legal', '/aviso-legal'],
   ];
   return (
-    <footer data-gsap-section className="px-6 py-12 bg-[var(--color-primary-hover)] text-white">
+    <footer data-gsap-section className="px-6 py-8 md:py-12 bg-[var(--color-primary-hover)] text-white">
       <div className="mx-auto" style={{ maxWidth: 'var(--page-max)' }}>
-        <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end">
+        <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-end">
           <div>
             <p className="font-mono text-[14px] font-semibold uppercase tracking-[0.15em]" style={{ color: 'rgba(255,255,255,0.76)' }}>
-              Tramo · Energy margin operations
+              Tramo · Operaciones de margen energético
             </p>
             <p className="mt-4 font-display text-[clamp(1.6rem,3.5vw,2.8rem)] font-light leading-[1.08] max-w-[18ch]"
               style={{ letterSpacing: '-0.025em', textWrap: 'balance', minWidth: 0 }}>
@@ -1019,7 +1122,7 @@ export default function Page() {
       <HardwareSection />
       <DiagnosticForm />
       <Pricing />
-      <FAQ />
+      <Dudas />
       <Footer />
         <MobileCTA />
       </main>
